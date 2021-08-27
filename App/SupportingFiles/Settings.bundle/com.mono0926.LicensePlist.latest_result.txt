@@ -1,0 +1,17 @@
+name: AppAuth-iOS, nameSpecified: AppAuth, owner: pace, version: 1.5.0
+
+name: Base32, nameSpecified: Base32, owner: pace, version: 1.2.0
+
+name: cloud-sdk-ios, nameSpecified: PACECloudSDK, owner: pace, version: 8.0.0
+
+name: JamitFoundation, nameSpecified: JamitFoundation, owner: JamitLabs, version: 
+
+name: JLCoordinator, nameSpecified: JLCoordinator, owner: JamitLabs, version: 1.1.0
+
+name: OneTimePassword, nameSpecified: OneTimePassword, owner: pace, version: 3.3.1
+
+name: swift-protobuf, nameSpecified: SwiftProtobuf, owner: apple, version: 1.15.0
+
+add-version-numbers: true
+
+LicensePlist Version: 3.0.5

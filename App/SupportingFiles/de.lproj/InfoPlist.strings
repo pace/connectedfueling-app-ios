@@ -1,0 +1,6 @@
+
+NSLocationWhenInUseUsageDescription = "Standortdaten werden verwendet um Tanksäulen in deiner Nähe anzuzeigen.";
+
+NSFaceIDUsageDescription = "Face ID wird verwendet um die Zwei-Faktor Authentifizierung schnell und einfach zu ermöglichen.";
+
+NSPhotoLibraryAddUsageDescription = "Wir verwenden Fotos um die Kopie der Rechnungsbelege als Bild bereitzustellen.";

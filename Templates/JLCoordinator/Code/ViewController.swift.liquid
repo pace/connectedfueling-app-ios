@@ -1,0 +1,12 @@
+// Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+
+import JamitFoundation
+import UIKit
+
+protocol {{ module_info.name }}ViewControllerDelegate: AnyObject {
+    // TODO: not yet implemented
+}
+
+final class {{ module_info.name }}ViewController: StatefulViewController<{{ module_info.name }}ViewModel> {
+    weak var delegate: {{ module_info.name }}ViewControllerDelegate?
+}

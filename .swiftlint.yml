@@ -1,0 +1,8 @@
+parent_config: https://raw.githubusercontent.com/JamitLabs/SwiftLintConfigs/stable/swiftlint.yml
+
+disabled_rules:
+- file_header
+- let_var_whitespace
+- redundant_type_annotation
+- type_contents_order
+- swiftybeaver_logging

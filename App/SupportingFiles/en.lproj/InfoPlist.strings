@@ -1,0 +1,6 @@
+
+NSLocationWhenInUseUsageDescription = "Location data is used to display gas stations near by.";
+
+NSFaceIDUsageDescription = "Face ID is used to enable two-factor authentication easily.";
+
+NSPhotoLibraryAddUsageDescription = "We use photos to provide the copy of the invoice receipts as an image.";

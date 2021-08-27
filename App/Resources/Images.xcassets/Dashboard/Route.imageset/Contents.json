@@ -1,0 +1,15 @@
+{
+  "images" : [
+    {
+      "filename" : "04Icons32X32IcStartnavigation.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
+  }
+}

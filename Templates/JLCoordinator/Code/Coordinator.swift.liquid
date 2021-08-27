@@ -1,0 +1,47 @@
+// Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+
+import JLCoordinator
+import UIKit
+
+final class {{ module_info.name }}Coordinator: Coordinator {
+    // MARK: - Properties
+    private lazy var viewController: {{ module_info.name }}ViewController = .instantiate()
+
+    override init(presenter: Presenter) {
+        super.init(presenter: presenter)
+    }
+
+    override func start() {
+        viewController.delegate = self
+        presenter.present(viewController, animated: true)
+    }
+
+    override func presenter(_ presenter: Presenter, didDismiss viewController: UIViewController) {
+        guard
+            viewController === self.viewController ||
+            self.viewController.tabBarController === viewController
+        else {
+            return
+        }
+
+        stop()
+    }
+
+    override func presenter(_ presenter: Presenter, didDismiss navigationController: UINavigationController) {
+        stop()
+    }
+
+    override func presenter(
+        _ presenter: Presenter,
+        didDismissAllViewControllersTo rootViewController: UIViewController,
+        of navigationController: UINavigationController
+    ) {
+        if viewController === rootViewController {
+            childCoordinators.forEach { $0.stop() }
+        }
+    }
+}
+
+extension {{ module_info.name }}Coordinator: {{ module_info.name }}ViewControllerDelegate {
+    // Needs implementation or should be removed
+}

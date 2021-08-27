@@ -1,0 +1,119 @@
+"ALERT.LOCATION_PERMISSION.ACTIONS.OPEN_SETTINGS" = "Einstellungen öffnen";
+
+"ALERT.LOCATION_PERMISSION.DESCRIPTION" = "Um dir die nächstgelegene Tankstelle anzuzeigen, brauchen wir Zugriff auf deinen aktuellen Standort.";
+
+"ALERT.LOCATION_PERMISSION.TITLE" = "Standort nicht freigegeben";
+
+"DASHBOARD.ACTIONS.NAVIGATE" = "ROUTE STARTEN";
+
+"DASHBOARD.ACTIONS.START_FUELING" = "HIER TANKEN";
+
+"DASHBOARD.EMPTY_VIEW.DESCRIPTION" = "Es wurden keine Tankstellen in deiner Nähe gefunden.";
+
+"DASHBOARD.EMPTY_VIEW.TITLE" = "Keine Tankstellen in deiner Nähe";
+
+"DASHBOARD.LOADING_VIEW.DESCRIPTION" = "Wir suchen die nächstgelegenen Tankstellen in deiner Nähe. Dies kann einen Moment dauern.";
+
+"DASHBOARD.LOADING_VIEW.TITLE" = "Suche Tankstellen...";
+
+"DASHBOARD.LOGOUT.CONFIRM.ACTION.CANCEL" = "ABBRECHEN";
+
+"DASHBOARD.LOGOUT.CONFIRM.ACTION.LOGOUT" = "ABMELDEN";
+
+"DASHBOARD.LOGOUT.CONFIRM.DESCRIPTION" = "Deine Daten sind weiterhin in deinem PACE-ID Account gespeichert.";
+
+"DASHBOARD.LOGOUT.CONFIRM.TITLE" = "Willst du dich wirklich abmelden?";
+
+"DASHBOARD.SECTIONS.NEAREST_GAS_STATION" = "Nächstgelegene Tankstelle";
+
+"DASHBOARD.SECTIONS.OTHER_GAS_STATIONS" = "Weitere Tankstellen";
+
+"FUEL_TYPE.DIESEL" = "DIESEL";
+
+"FUEL_TYPE.SUPER" = "SUPER";
+
+"FUEL_TYPE.SUPER_E10" = "SUPER E10";
+
+"FUEL_TYPE.SUPER_PLUS" = "SUPER PLUS";
+
+"GLOBAL.ACTIONS.CLOSE" = "Schließen";
+
+"MENU.ITEMS.FUEL_TYPE" = "Kraftstofftyp ändern";
+
+"MENU.ITEMS.IMPRINT" = "Impressum";
+
+"MENU.ITEMS.LOGOUT" = "Abmelden";
+
+"MENU.ITEMS.PAYMENT_HISTORY" = "Zahlungshistorie anzeigen";
+
+"MENU.ITEMS.PAYMENT_METHODS" = "Zahlungsmethoden bearbeiten";
+
+"MENU.ITEMS.PRIVACY" = "Datenschutzerklärung";
+
+"MENU.TITLE.PLACEHOLDER" = "PACE Connected Fueling";
+
+"ONBOARDING.ACTIONS.ADD_PAYMENT_METHOD" = "ZAHLUNGSMETHODE EINRICHTEN";
+
+"ONBOARDING.ACTIONS.AUTHENTICATE" = "ANMELDEN ODER REGISTRIEREN";
+
+"ONBOARDING.ACTIONS.COMPLETE" = "LOS GEHT'S!";
+
+"ONBOARDING.ACTIONS.NEXT" = "WEITER";
+
+"ONBOARDING.ACTIONS.SHARE_LOCATION" = "STANDORT FREIGEBEN";
+
+"ONBOARDING.ACTIONS.SKIP" = "Überspringen";
+
+"ONBOARDING.AUTHENTICATION.DESCRIPTION" = "Für die einfache Zahlung mit der App musst du dich registrieren oder mit deiner vorhandenen PACE-ID anmelden.";
+
+"ONBOARDING.AUTHENTICATION.TITLE" = "Profil hinterlegen";
+
+"ONBOARDING.CREATE_PIN.CONFIRM" = "WEITER";
+
+"ONBOARDING.CREATE_PIN.DESCRIPTION" = "Wähle eine vier-stellige PIN, die zur Bestätigung von Zahlungen verwendet werden soll.";
+
+"ONBOARDING.CREATE_PIN.TITLE" = "PIN wählen";
+
+"ONBOARDING.ENTER_ONE_TIME_PASSWORD.CONFIRM" = "BESTÄTIGEN";
+
+"ONBOARDING.ENTER_ONE_TIME_PASSWORD.DESCRIPTION" = "Bitte autorisiere die Änderung mit dem Bestätigungscode aus deinem E-Mail Postfach.";
+
+"ONBOARDING.ENTER_ONE_TIME_PASSWORD.TITLE" = "Bestätigungscode eingeben";
+
+"ONBOARDING.FUEL_TYPE.DESCRIPTION" = "Und zum Schluss: Welche Kraftstoffpreise sollen wir dir anzeigen?";
+
+"ONBOARDING.FUEL_TYPE.TITLE" = "Kraftstofftyp";
+
+"ONBOARDING.PAYMENT_METHOD.DESCRIPTION" = "Hinterlege eine Zahlungsmethode, damit du mit deinem ersten Tankvorgang starten kannst.";
+
+"ONBOARDING.PAYMENT_METHOD.TITLE" = "Zahlungsmethode";
+
+"ONBOARDING.PERMISSION.DESCRIPTION" = "Um die nächstgelegene Tankstelle zu sehen, benötigen wir Zugriff auf deinen genauen Standort.";
+
+"ONBOARDING.PERMISSION.TITLE" = "Tankstellen in deiner Nähe";
+
+"ONBOARDING.PIN.ERROR.INVALID_LENGTH" = "Die PIN muss vierstellig sein.";
+
+"ONBOARDING.PIN.ERROR.MISMATCH" = "Die PINs stimmen nicht überein. Versuche es erneut.";
+
+"ONBOARDING.PIN.ERROR.NOT_SECURE" = "Die PIN ist zu einfach (0000 oder 1234 sind nicht erlaubt). Wähle eine andere PIN";
+
+"ONBOARDING.PIN.ERROR.SERIES" = "Die PIN darf keine Serie auf- oder absteigender Ziffern sein.";
+
+"ONBOARDING.PIN.ERROR.TOO_FEW_DIGITS" = "Die PIN muss mindestens drei unterschiedliche Ziffern enthalten.";
+
+"ONBOARDING.TWO_FACTOR_AUTHENTICATION.BIOMETRY" = "BIOMETRIE VERWENDEN";
+
+"ONBOARDING.TWO_FACTOR_AUTHENTICATION.DESCRIPTION" = "Biometrische Scanner sind die schnellste und sicherste Art deine Zahlungsvorgänge zu bestätigen.";
+
+"ONBOARDING.TWO_FACTOR_AUTHENTICATION.PIN" = "PIN wählen";
+
+"ONBOARDING.TWO_FACTOR_AUTHENTICATION.TITLE" = "Sicher und schnell bezahlen";
+
+"ONBOARDING.VERIFY_PIN.CONFIRM" = "WEITER";
+
+"ONBOARDING.VERIFY_PIN.DESCRIPTION" = "Bitte gebe zur Bestätigung die PIN erneut ein.";
+
+"ONBOARDING.VERIFY_PIN.TITLE" = "PIN bestätigen";
+
+"PRICE.NOT_AVAILABLE" = "n. v.";

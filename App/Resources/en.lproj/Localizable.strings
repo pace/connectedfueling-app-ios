@@ -1,0 +1,119 @@
+"ALERT.LOCATION_PERMISSION.ACTIONS.OPEN_SETTINGS" = "Open settings";
+
+"ALERT.LOCATION_PERMISSION.DESCRIPTION" = "To show you the nearest gas station, we need access to your current location.";
+
+"ALERT.LOCATION_PERMISSION.TITLE" = "Location permission not granted";
+
+"DASHBOARD.ACTIONS.NAVIGATE" = "NAVIGATE TO";
+
+"DASHBOARD.ACTIONS.START_FUELING" = "FUEL HERE";
+
+"DASHBOARD.EMPTY_VIEW.DESCRIPTION" = "No gas stations where found nearby your location.";
+
+"DASHBOARD.EMPTY_VIEW.TITLE" = "No gas stations nearby";
+
+"DASHBOARD.LOADING_VIEW.DESCRIPTION" = "We are searching for the nearest gas stations in your area. This may take a moment.";
+
+"DASHBOARD.LOADING_VIEW.TITLE" = "Searching gas stations...";
+
+"DASHBOARD.LOGOUT.CONFIRM.ACTION.CANCEL" = "CANCEL";
+
+"DASHBOARD.LOGOUT.CONFIRM.ACTION.LOGOUT" = "LOGOUT";
+
+"DASHBOARD.LOGOUT.CONFIRM.DESCRIPTION" = "Your data will still be saved in your PACE-ID account.";
+
+"DASHBOARD.LOGOUT.CONFIRM.TITLE" = "Do you really want to logout?";
+
+"DASHBOARD.SECTIONS.NEAREST_GAS_STATION" = "Nearest gas station";
+
+"DASHBOARD.SECTIONS.OTHER_GAS_STATIONS" = "Other gas stations";
+
+"FUEL_TYPE.DIESEL" = "DIESEL";
+
+"FUEL_TYPE.SUPER" = "SUPER";
+
+"FUEL_TYPE.SUPER_E10" = "SUPER E10";
+
+"FUEL_TYPE.SUPER_PLUS" = "SUPER PLUS";
+
+"GLOBAL.ACTIONS.CLOSE" = "Close";
+
+"MENU.ITEMS.FUEL_TYPE" = "Change fuel type";
+
+"MENU.ITEMS.IMPRINT" = "Legal Notice";
+
+"MENU.ITEMS.LOGOUT" = "Logout";
+
+"MENU.ITEMS.PAYMENT_HISTORY" = "Show payment history";
+
+"MENU.ITEMS.PAYMENT_METHODS" = "Edit payment methods";
+
+"MENU.ITEMS.PRIVACY" = "Privacy Statement";
+
+"MENU.TITLE.PLACEHOLDER" = "PACE Connected Fueling";
+
+"ONBOARDING.ACTIONS.ADD_PAYMENT_METHOD" = "ADD PAYMENT METHOD";
+
+"ONBOARDING.ACTIONS.AUTHENTICATE" = "LOGIN OR REGISTER";
+
+"ONBOARDING.ACTIONS.COMPLETE" = "GO!";
+
+"ONBOARDING.ACTIONS.NEXT" = "NEXT";
+
+"ONBOARDING.ACTIONS.SHARE_LOCATION" = "ALLOW LOCATION ACCESS";
+
+"ONBOARDING.ACTIONS.SKIP" = "Skip";
+
+"ONBOARDING.AUTHENTICATION.DESCRIPTION" = "For easy payment with the app you have to register or login with your existing PACE-ID.";
+
+"ONBOARDING.AUTHENTICATION.TITLE" = "Add profile";
+
+"ONBOARDING.CREATE_PIN.CONFIRM" = "NEXT";
+
+"ONBOARDING.CREATE_PIN.DESCRIPTION" = "Choose a 4-digit PIN that can be used to authorise payments.";
+
+"ONBOARDING.CREATE_PIN.TITLE" = "Choose pin";
+
+"ONBOARDING.ENTER_ONE_TIME_PASSWORD.CONFIRM" = "CONFIRM";
+
+"ONBOARDING.ENTER_ONE_TIME_PASSWORD.DESCRIPTION" = "Please authorize the change with the confirmation code from your email inbox.";
+
+"ONBOARDING.ENTER_ONE_TIME_PASSWORD.TITLE" = "Enter confirmation code";
+
+"ONBOARDING.FUEL_TYPE.DESCRIPTION" = "And finally: What fuel prices should we show you?";
+
+"ONBOARDING.FUEL_TYPE.TITLE" = "Fuel type";
+
+"ONBOARDING.PAYMENT_METHOD.DESCRIPTION" = "Select a payment method to start your first refueling.";
+
+"ONBOARDING.PAYMENT_METHOD.TITLE" = "Payment method";
+
+"ONBOARDING.PERMISSION.DESCRIPTION" = "To show you the closest gas stations, we need to access your location.";
+
+"ONBOARDING.PERMISSION.TITLE" = "Gas stations near you";
+
+"ONBOARDING.PIN.ERROR.INVALID_LENGTH" = "The PIN needs to be a 4-digit number.";
+
+"ONBOARDING.PIN.ERROR.MISMATCH" = "The PINs don\'t match. Try again.";
+
+"ONBOARDING.PIN.ERROR.NOT_SECURE" = "The PIN is too simple (0000 or 1234 are not allowed). Choose a different PIN.";
+
+"ONBOARDING.PIN.ERROR.SERIES" = "The PIN can\'t be a series of ascending or descending numbers.";
+
+"ONBOARDING.PIN.ERROR.TOO_FEW_DIGITS" = "The PIN needs to contain at least three distinct digits.";
+
+"ONBOARDING.TWO_FACTOR_AUTHENTICATION.BIOMETRY" = "BIOMETRY";
+
+"ONBOARDING.TWO_FACTOR_AUTHENTICATION.DESCRIPTION" = "Biometric scanners are the fastest and most secure way to confirm your payment transactions.";
+
+"ONBOARDING.TWO_FACTOR_AUTHENTICATION.PIN" = "Choose PIN";
+
+"ONBOARDING.TWO_FACTOR_AUTHENTICATION.TITLE" = "Secure and fast payment";
+
+"ONBOARDING.VERIFY_PIN.CONFIRM" = "NEXT";
+
+"ONBOARDING.VERIFY_PIN.DESCRIPTION" = "Please re-enter the PIN for confirmation.";
+
+"ONBOARDING.VERIFY_PIN.TITLE" = "Confirm pin";
+
+"PRICE.NOT_AVAILABLE" = "n. a.";
