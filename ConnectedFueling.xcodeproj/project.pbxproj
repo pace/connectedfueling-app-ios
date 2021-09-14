@@ -995,7 +995,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint > /dev/null; then\n    swiftlint --quiet --config .swiftlint.yml\nelse\n    echo \"warning: SwiftLint not installed, download it from https://github.com/realm/SwiftLint\"\nfi\n\n";
+			shellScript = "if which swiftlint > /dev/null; then\n    swiftlint --quiet --config .swiftlint.yml\nelse\n    echo \"warning: SwiftLint not installed, download it from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1295,7 +1295,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 6JV7C6EKQH;
+				DEVELOPMENT_TEAM = 8T694MPXAZ;
 				INFOPLIST_FILE = App/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1405,7 +1405,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 6JV7C6EKQH;
+				DEVELOPMENT_TEAM = 8T694MPXAZ;
 				INFOPLIST_FILE = App/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1424,7 +1424,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 6JV7C6EKQH;
+				DEVELOPMENT_TEAM = 8T694MPXAZ;
 				INFOPLIST_FILE = App/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

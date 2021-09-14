@@ -8,4 +8,4 @@
 // STAGING CONFIGURATION
 // App Settings
 APP_NAME = PACE Connected Fueling (staging)
-APP_BUNDLE_IDENTIFIER = com.jamitlabs.ConnectedFueling.staging
+APP_BUNDLE_IDENTIFIER = car.pace.cofu
