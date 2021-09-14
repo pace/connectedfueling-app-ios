@@ -1,0 +1,8 @@
+app_identifier("car.pace.cofu") # The bundle identifier of your app
+apple_id("ios-dev@pace.car") # Your Apple email address
+
+itc_team_id("117967473") # App Store Connect Team ID
+team_id("8T694MPXAZ") # Developer Portal Team ID
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile
