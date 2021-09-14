@@ -80,28 +80,6 @@
             ReferencedContainer = "container:ConnectedFueling.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "PACE_CLOUD_REDIRECT_URI"
-            value = "$(PACE_CLOUD_REDIRECT_URI)"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-         <EnvironmentVariable
-            key = "PACE_CLOUD_URL"
-            value = "$(PACE_CLOUD_URL)"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-         <EnvironmentVariable
-            key = "PACE_CLOUD_CLIENT_ID"
-            value = "$(PACE_CLOUD_CLIENT_ID)"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-         <EnvironmentVariable
-            key = "PACE_CLOUD_API_KEY"
-            value = "$(PACE_CLOUD_API_KEY)"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Production"

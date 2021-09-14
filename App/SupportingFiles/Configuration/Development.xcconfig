@@ -8,4 +8,4 @@
 // DEVELOPMENT CONFIGURATION
 // App Settings
 APP_NAME = PACE Connected Fueling (dev)
-APP_BUNDLE_IDENTIFIER = com.jamitlabs.ConnectedFueling.dev
+APP_BUNDLE_IDENTIFIER = car.pace.cofu

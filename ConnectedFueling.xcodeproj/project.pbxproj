@@ -1011,7 +1011,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ -f App/SupportingFiles/Secrets.swift ]; then\n    echo \"Substituting secrets...\"\n    cp ./App/SupportingFiles/Secrets.swift ./App/SupportingFiles/Secrets.source.swift \n    envsubst < ./App/SupportingFiles/Secrets.source.swift > ./App/SupportingFiles/Secrets.swift\nfi\n";
+			shellScript = "if which envsubst > /dev/null; then\n    if [ -f App/SupportingFiles/Secrets.swift ]; then\n        echo \"Substituting secrets...\"\n        cp ./App/SupportingFiles/Secrets.swift ./App/SupportingFiles/Secrets.source.swift \n        envsubst < ./App/SupportingFiles/Secrets.source.swift > ./App/SupportingFiles/Secrets.swift\n    fi\nelse\n    echo \"warning: envsubst not installed, install the gettext package\"\nfi\n";
 		};
 		C57E894F26B17D7300A1B5C3 /* Cleanup Secrets */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1029,7 +1029,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ -f App/SupportingFiles/Secrets.source.swift ]; then\n    echo \"Clean up secrets...\"\n    mv ./App/SupportingFiles/Secrets.source.swift ./App/SupportingFiles/Secrets.swift\nfi\n";
+			shellScript = "echo $PACE_REDIRECT_URI\n\nif [ -f App/SupportingFiles/Secrets.source.swift ]; then\n    echo \"Clean up secrets...\"\n    mv ./App/SupportingFiles/Secrets.source.swift ./App/SupportingFiles/Secrets.swift\nfi\n";
 		};
 		CB5C213273134017EFD8721F /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1047,7 +1047,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint > /dev/null; then\n    swiftlint --quiet --config .swiftlint.yml\nelse\n    echo \"warning: SwiftLint not installed, download it from https://github.com/realm/SwiftLint\"\nfi\n\n";
+			shellScript = "if which swiftlint > /dev/null; then\n    swiftlint --quiet --config .swiftlint.yml\nelse\n    echo \"warning: SwiftLint not installed, download it from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1349,7 +1349,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 6JV7C6EKQH;
+				DEVELOPMENT_TEAM = 8T694MPXAZ;
 				INFOPLIST_FILE = App/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1458,7 +1458,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 6JV7C6EKQH;
+				DEVELOPMENT_TEAM = 8T694MPXAZ;
 				INFOPLIST_FILE = App/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1476,7 +1476,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 6JV7C6EKQH;
+				DEVELOPMENT_TEAM = 8T694MPXAZ;
 				INFOPLIST_FILE = App/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -12,25 +12,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
     ) -> Bool {
-        PACECloudSDK.shared.setup(
-            with: .init(
-                apiKey: Secrets.apiKey,
-                authenticationMode: .native,
-                environment: .sandbox,
-                customOIDConfiguration: .init(
-                    authorizationEndpoint: "\(Secrets.cloudURL)/auth/realms/pace/protocol/openid-connect/auth",
-                    tokenEndpoint: "\(Secrets.cloudURL)/auth/realms/pace/protocol/openid-connect/token",
-                    userEndpoint: "\(Secrets.cloudURL)/auth/realms/pace/protocol/openid-connect/userinfo",
-                    clientId: Secrets.clientID,
-                    redirectUri: Secrets.redirectURI
-                ),
-                isRedirectSchemeCheckEnabled: true,
-                domainACL: ["pace.cloud"],
-                allowedLowAccuracy: nil,
-                speedThresholdInKmPerHour: nil,
-                geoAppsScope: "pace-drive-ios"
-            )
-        )
+        PACECloudSDK.shared.setup(with: .init(apiKey: Secrets.apiKey, domainACL: ["pace.cloud"], geoAppsScope: "pace-drive-ios"))
 
         applyGlobalTheme()
 

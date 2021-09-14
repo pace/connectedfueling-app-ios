@@ -3,10 +3,7 @@
 import Foundation
 
 enum Secrets {
-    static let clientID: String = environmentVariable(named: "PACE_CLOUD_CLIENT_ID") ?? "${PACE_CLOUD_CLIENT_ID}"
-    static let cloudURL: String = environmentVariable(named: "PACE_CLOUD_URL") ?? "{PACE_CLOUD_URL}"
-    static let apiKey: String = environmentVariable(named: "PACE_CLOUD_API_KEY") ?? "${PACE_CLOUD_API_KEY}"
-    static let redirectURI: String = environmentVariable(named: "PACE_CLOUD_REDIRECT_URI") ?? "${PACE_CLOUD_REDIRECT_URI}"
+    static let apiKey: String = "PACE"
 
     private static func environmentVariable(named: String) -> String? {
         let processInfo = ProcessInfo.processInfo
