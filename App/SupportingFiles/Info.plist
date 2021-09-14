@@ -44,6 +44,15 @@
 	<string>Face ID wird verwendet um die Zwei-Faktor Authentifizierung schnell und einfach zu ermöglichen.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Standortdaten werden verwendet um Tanksäulen in deiner Nähe anzuzeigen.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Wir verwenden Fotos um die Kopie der Rechnungsbelege als Bild bereitzustellen.</string>
+	<key>PACECloudSDKIDKitSetup</key>
+	<dict>
+		<key>OIDConfigurationClientID</key>
+		<string>connected-fueling-app-ios</string>
+		<key>OIDConfigurationRedirectURI</key>
+		<string>cofu-app://callback</string>
+	</dict>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -84,7 +93,5 @@
 	<string>Light</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>Wir verwenden Fotos um die Kopie der Rechnungsbelege als Bild bereitzustellen.</string>
 </dict>
 </plist>

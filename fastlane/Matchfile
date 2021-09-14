@@ -1,0 +1,5 @@
+git_url("git@lab.jamit.de:pace/mobile/ios/certificates.git")
+storage_mode("git")
+type("appstore") # The default type, can be: appstore, adhoc, enterprise or development
+username("ios-dev@pace.car")
+force_for_new_devices(true)

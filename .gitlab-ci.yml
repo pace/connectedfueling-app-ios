@@ -1,0 +1,51 @@
+stages:
+  - test
+  - build
+  - publish
+
+before_script:
+  - bundle install || true
+  - git fetch --prune --prune-tags
+  - export TAG_COMMIT_TIME=$(git show -s --format=%ct $CI_COMMIT_SHA)
+  - echo "Commit time to be used as build number:" $TAG_COMMIT_TIME
+  - export BUILD_NUMBER=$(TZ=Etc/Utc date -j -f '%s' ${TAG_COMMIT_TIME} "+%Y%m%d%H")
+  - export VERSION_NAME=$(TZ=Etc/Utc date -j -f '%s' ${TAG_COMMIT_TIME} "+%y.%V.%u")
+  - echo "Building version $VERSION_NAME with build number $BUILD_NUMBER"
+
+.runner_tags:
+  tags:
+    - m1-xcode-12.5
+
+plist:
+  extends: .runner_tags
+  stage: test
+  before_script:
+    - echo "Ignore global before_script"
+  after_script:
+    - echo "Ignore global after_script"
+  script:
+    - cd App
+    - find . -name "*.strings" -size +0 -print0 | xargs -0 plutil -lint
+  only:
+    - merge_requests
+
+build_testflight_app:
+  extends: .runner_tags
+  stage: build
+  only:
+    - tags
+  script:
+    - bundle exec fastlane build_beta
+  artifacts:
+    name: "$(git show -s --format=%ct $CI_COMMIT_SHA)-beta"
+    paths:
+      - App.ipa
+    expire_in: 1 weeks
+
+publish_testflight_app:
+  extends: .runner_tags
+  stage: publish
+  only:
+    - tags
+  script:
+    - bundle exec fastlane publish
