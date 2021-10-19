@@ -9,6 +9,7 @@ final class PaymentMethodCoordinator: Coordinator {
     private let callback: Callback?
     private lazy var viewController: AppViewController = AppKit.appViewController(
         presetUrl: .payment,
+        isModalInPresentation: false,
         completion: callback
     )
 
