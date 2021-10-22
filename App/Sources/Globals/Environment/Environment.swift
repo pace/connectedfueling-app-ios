@@ -1,7 +1,19 @@
 import Foundation
+import PACECloudSDK
 
 /// Instance of the global configured environment
 let environment: Environment = .init(infoPropertyListName: "Info")
+
+/// Instance of the global environment of the PACECloudSDK
+let sdkEnvironment: PACECloudSDK.Environment = {
+    #if PRODUCTION
+        return .production
+    #elseif STAGING
+        return .stage
+    #else
+        return .sandbox
+    #endif
+}()
 
 /// Represents the configuration properties which are used app wide for example BaseURL etc.
 /// The Environment is the mapped Info.plist file and its containing configuration entry

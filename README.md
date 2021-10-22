@@ -23,16 +23,10 @@ These tools are required for developing the project. Please make sure to have in
 
 Here's a few simple steps to configure this project after checking it out:
 
-1. Open Project with Xcode wait until dependencies are fetched.
-2. Navigate to Menu Product / Scheme / Edit Scheme and configure your Environment Variables.
-    - PACE_CLOUD_CLIENT_ID
-    - PACE_CLOUD_URL
-    - PACE_CLOUD_API_KEY
-    - PACE_CLOUD_REDIRECT_URI
-
-![Environment Variables](./Screenshots/EnvironmentVariables.png)
-    
-3. Run the project ▶️
+1. Open Project with Xcode and wait until dependencies are fetched.
+2. Head over to App/Sources/AppDelegate.swift and replace the `apiKey` placeholder with your own api key of the PACECloudSDK in the `didFinishLaunchingWithOptions` method.
+3. Navigate to App/SupportingFiles/Info.plist and expand the `PACECloudSDKIDKitSetup` entry. Replace the placeholder values for both `OIDConfigurationRedirectURI` and `OIDConfigurationClientID` with your own values.
+4. Run the project ▶️
 
 ## Localization
 
