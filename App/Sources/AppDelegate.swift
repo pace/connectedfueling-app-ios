@@ -41,14 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
-        switch url.host {
-        case "redirect":
-            AppKit.handleRedirectURL(url)
-            return true
-
-        default:
-            return false
-        }
+        return PACECloudSDK.shared.application(open: url)
     }
 
     private func applyGlobalTheme() {
