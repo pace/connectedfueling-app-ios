@@ -12,7 +12,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
     ) -> Bool {
-        PACECloudSDK.shared.setup(with: .init(apiKey: Secrets.apiKey, domainACL: ["pace.cloud"], geoAppsScope: "pace-drive-ios"))
+        PACECloudSDK.shared.setup(
+            with: .init(
+                apiKey: <#Your API Key#>,
+                authenticationMode: .native,
+                environment: sdkEnvironment,
+                customOIDConfiguration: nil,
+                isRedirectSchemeCheckEnabled: true,
+                domainACL: ["pace.cloud"],
+                allowedLowAccuracy: nil,
+                speedThresholdInKmPerHour: nil,
+                geoAppsScope: "pace-drive-ios-min"
+            )
+        )
 
         applyGlobalTheme()
 
@@ -29,14 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
-        switch url.host {
-        case "redirect":
-            AppKit.handleRedirectURL(url)
-            return true
-
-        default:
-            return false
-        }
+        return PACECloudSDK.shared.application(open: url)
     }
 
     private func applyGlobalTheme() {

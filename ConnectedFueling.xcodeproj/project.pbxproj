@@ -77,7 +77,6 @@
 		C57E894326B16EC100A1B5C3 /* Keychain in Frameworks */ = {isa = PBXBuildFile; productRef = C57E894226B16EC100A1B5C3 /* Keychain */; };
 		C57E894526B16EC100A1B5C3 /* WeakCache in Frameworks */ = {isa = PBXBuildFile; productRef = C57E894426B16EC100A1B5C3 /* WeakCache */; };
 		C57E894726B16EC100A1B5C3 /* JamitFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = C57E894626B16EC100A1B5C3 /* JamitFoundation */; };
-		C582D55726B0831F004D00AF /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C582D55626B0831F004D00AF /* Secrets.swift */; };
 		C59F2C5926975B7600538E65 /* TwoFactorAuthenticationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C59F2C5826975B7600538E65 /* TwoFactorAuthenticationCoordinator.swift */; };
 		C5A2C37E26936C2500474AC9 /* ButtonViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A2C37D26936C2500474AC9 /* ButtonViewStyle.swift */; };
 		C5B5821126BAB29400DFFC27 /* PACECloudPaymentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B5821026BAB29400DFFC27 /* PACECloudPaymentRepository.swift */; };
@@ -95,7 +94,6 @@
 		C5E8A7EE26A5B7DF002119DD /* DashboardItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5E8A7ED26A5B7DF002119DD /* DashboardItemView.xib */; };
 		C5E8A7F326A5B7EB002119DD /* DashboardItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E8A7F226A5B7EB002119DD /* DashboardItemViewModel.swift */; };
 		C5E8A7FB26A5C3E1002119DD /* PACECloudGasStationListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E8A7FA26A5C3E1002119DD /* PACECloudGasStationListRepository.swift */; };
-		C5EE780A26D8E3EE0010864A /* PaymentReceiptCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EE780926D8E3EE0010864A /* PaymentReceiptCoordinator.swift */; };
 		C5F06EC626AECB1F00C43C81 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F06EC526AECB1F00C43C81 /* UIViewExtensions.swift */; };
 		C5F06EDD26AEE19200C43C81 /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F06EDC26AEE19200C43C81 /* InputViewController.swift */; };
 		C5F06EE226AEE1AC00C43C81 /* InputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F06EE126AEE1AC00C43C81 /* InputViewModel.swift */; };
@@ -136,7 +134,7 @@
 		2EB20D5198AC7E6603D98D72 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = wrapper.cfbundle; path = Settings.bundle; sourceTree = "<group>"; };
 		59988E381C75C4CDBC33748A /* AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTests.swift; sourceTree = "<group>"; };
 		59DD955527AC752031111001 /* AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTests.swift; sourceTree = "<group>"; };
-		5F48CEFA1A83BBDEFAE5A2BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5F48CEFA1A83BBDEFAE5A2BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61CEA57B6A734FF320B8B155 /* .keep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .keep; sourceTree = "<group>"; };
 		628262D4B9E8434A78957688 /* Tests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E8C990C71F6BEE3FCE18DFF /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
@@ -211,7 +209,6 @@
 		C57CD3BE26AC389700356BE6 /* DashboardHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardHeaderViewModel.swift; sourceTree = "<group>"; };
 		C57CD3C326AC38A100356BE6 /* DashboardHeaderViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardHeaderViewStyle.swift; sourceTree = "<group>"; };
 		C57CD3C826AC38AA00356BE6 /* DashboardHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardHeaderView.xib; sourceTree = "<group>"; };
-		C582D55626B0831F004D00AF /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		C59F2C5826975B7600538E65 /* TwoFactorAuthenticationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoFactorAuthenticationCoordinator.swift; sourceTree = "<group>"; };
 		C5A2C37D26936C2500474AC9 /* ButtonViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewStyle.swift; sourceTree = "<group>"; };
 		C5B5821026BAB29400DFFC27 /* PACECloudPaymentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PACECloudPaymentRepository.swift; sourceTree = "<group>"; };
@@ -229,7 +226,6 @@
 		C5E8A7ED26A5B7DF002119DD /* DashboardItemView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DashboardItemView.xib; sourceTree = "<group>"; };
 		C5E8A7F226A5B7EB002119DD /* DashboardItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardItemViewModel.swift; sourceTree = "<group>"; };
 		C5E8A7FA26A5C3E1002119DD /* PACECloudGasStationListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PACECloudGasStationListRepository.swift; sourceTree = "<group>"; };
-		C5EE780926D8E3EE0010864A /* PaymentReceiptCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentReceiptCoordinator.swift; sourceTree = "<group>"; };
 		C5F06EC526AECB1F00C43C81 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		C5F06EDC26AEE19200C43C81 /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
 		C5F06EE126AEE1AC00C43C81 /* InputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewModel.swift; sourceTree = "<group>"; };
@@ -357,7 +353,6 @@
 				C56DF93D268F2F910074DBC8 /* Onboarding */,
 				C56CD44D26BD4841004E61FB /* PaymentHistory */,
 				C55488C1269761AE0003E176 /* PaymentMethod */,
-				C5EE780826D8E3B90010864A /* PaymentReceipt */,
 				C51AC2CD26BAAA4300E475EB /* Permission */,
 			);
 			path = Coordinators;
@@ -378,13 +373,12 @@
 			children = (
 				D52FFF13B15D7803BD36A33C /* App.entitlements */,
 				B85EEB70498F372310AAFF58 /* BartyCrouch.swift */,
-				C582D55626B0831F004D00AF /* Secrets.swift */,
-				5F48CEFA1A83BBDEFAE5A2BE /* Info.plist */,
 				9B39CB100439D4A0A184FB62 /* InfoPlist.strings */,
 				C7A9480B4F2822EC76046822 /* InfoPlist.strings */,
 				65943E2C58A88B7E3A334F86 /* LaunchScreen.storyboard */,
 				2EB20D5198AC7E6603D98D72 /* Settings.bundle */,
 				3264D54344964F4C49918D6B /* Configuration */,
+				5F48CEFA1A83BBDEFAE5A2BE /* Info.plist */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -690,14 +684,6 @@
 			path = DashboardItemView;
 			sourceTree = "<group>";
 		};
-		C5EE780826D8E3B90010864A /* PaymentReceipt */ = {
-			isa = PBXGroup;
-			children = (
-				C5EE780926D8E3EE0010864A /* PaymentReceiptCoordinator.swift */,
-			);
-			path = PaymentReceipt;
-			sourceTree = "<group>";
-		};
 		C5F06EC426AECB0700C43C81 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -811,12 +797,10 @@
 				408EC6CF6DADB1BFD9EEB89B /* SwiftGen Version Check */,
 				9768C99DBF9A7EC06DC52AF8 /* SwiftGen */,
 				CB5C213273134017EFD8721F /* SwiftLint */,
-				C57E894B26B1755800A1B5C3 /* Substitute Secrets */,
 				61C5FAADDDB97DE33C6A85C3 /* Sources */,
 				790BB8E894854A0060A4E881 /* Create license settings page */,
 				73C63974CF6FCE513F940481 /* Resources */,
 				706E6AB48E36A6E1A7739527 /* Frameworks */,
-				C57E894F26B17D7300A1B5C3 /* Cleanup Secrets */,
 			);
 			buildRules = (
 			);
@@ -995,42 +979,6 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftgen > /dev/null; then\n    swiftgen config run --config swiftgen.yml\nelse\n    echo \"warning: SwiftGen not installed, download it from https://github.com/SwiftGen/SwiftGen\"\nfi\n\n";
 		};
-		C57E894B26B1755800A1B5C3 /* Substitute Secrets */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Substitute Secrets";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which envsubst > /dev/null; then\n    if [ -f App/SupportingFiles/Secrets.swift ]; then\n        echo \"Substituting secrets...\"\n        cp ./App/SupportingFiles/Secrets.swift ./App/SupportingFiles/Secrets.source.swift \n        envsubst < ./App/SupportingFiles/Secrets.source.swift > ./App/SupportingFiles/Secrets.swift\n    fi\nelse\n    echo \"warning: envsubst not installed, install the gettext package\"\nfi\n";
-		};
-		C57E894F26B17D7300A1B5C3 /* Cleanup Secrets */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Cleanup Secrets";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "echo $PACE_REDIRECT_URI\n\nif [ -f App/SupportingFiles/Secrets.source.swift ]; then\n    echo \"Clean up secrets...\"\n    mv ./App/SupportingFiles/Secrets.source.swift ./App/SupportingFiles/Secrets.swift\nfi\n";
-		};
 		CB5C213273134017EFD8721F /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1059,7 +1007,6 @@
 				C504075C269369BC00654C52 /* ButtonViewModel.swift in Sources */,
 				B46B802226C415240005AD7E /* InputValidator.swift in Sources */,
 				C56CD43726BD1A5C004E61FB /* SidebarInteractionController.swift in Sources */,
-				C582D55726B0831F004D00AF /* Secrets.swift in Sources */,
 				C5040754269369AD00654C52 /* ButtonView.swift in Sources */,
 				C56CD43226BC134A004E61FB /* SidebarPresenter.swift in Sources */,
 				C5DF1D6D26AFF82B00479678 /* PageIndicatorViewModel.swift in Sources */,
@@ -1073,7 +1020,6 @@
 				C56CD42E26BBF411004E61FB /* MenuItemTableViewCell.swift in Sources */,
 				C5DF1D7226AFF87100479678 /* PageIndicatorViewStyle.swift in Sources */,
 				C56CD42C26BBF3A1004E61FB /* MenuItemViewStyle.swift in Sources */,
-				C5EE780A26D8E3EE0010864A /* PaymentReceiptCoordinator.swift in Sources */,
 				C5331F8226B946A5000588C0 /* DashboardHeaderTableViewCell.swift in Sources */,
 				C518FA1C26AABA26000124D9 /* DashboardItemViewStyle.swift in Sources */,
 				C518FA2626AAC39C000124D9 /* DashboardViewModel.swift in Sources */,
@@ -1357,6 +1303,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_IDENTIFIER)";
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = PRODUCTION;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Production;
@@ -1466,6 +1413,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_IDENTIFIER)";
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG DEVELOPMENT";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Development;
@@ -1484,6 +1432,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_IDENTIFIER)";
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = STAGING;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Staging;
@@ -1598,7 +1547,7 @@
 			repositoryURL = "https://github.com/pace/cloud-sdk-ios";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 8.0.0;
+				minimumVersion = 9.0.0;
 			};
 		};
 		C57E893F26B16EC100A1B5C3 /* XCRemoteSwiftPackageReference "JamitFoundation" */ = {
