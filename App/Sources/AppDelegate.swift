@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     ) -> Bool {
         PACECloudSDK.shared.setup(
             with: .init(
-                apiKey: <#Your API Key#>,
+                apiKey: "connected-fueling-app",
                 authenticationMode: .native,
                 environment: sdkEnvironment,
                 customOIDConfiguration: nil,
