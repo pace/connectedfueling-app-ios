@@ -14,7 +14,7 @@ before_script:
 
 .runner_tags:
   tags:
-    - m1-xcode-12.5
+    - ios
 
 plist:
   extends: .runner_tags
