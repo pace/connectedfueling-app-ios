@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         )
 
         applyGlobalTheme()
+        AppKit.delegate = self
 
         if #available(iOS 13.0, *) {
             // NOTE: If iOS 13 is available SceneDelegate will be used to initialize the view
@@ -54,4 +55,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBar.tintColor = .white
         navigationBar.setTitleVerticalPositionAdjustment(0, for: .default)
     }
+}
+
+extension AppDelegate: AppKitDelegate {
+    func didFail(with error: AppKit.AppError) {}
+    func didReceiveAppDrawers(_ appDrawers: [AppKit.AppDrawer], _ appDatas: [AppKit.AppData]) {}
 }
