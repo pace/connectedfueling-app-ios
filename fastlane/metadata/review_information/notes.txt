@@ -1,0 +1,3 @@
+The app is used to showcase the mobile payment capabilities and therefore require a login.
+
+The app's audience is very limited, mainly used for our B2B and we will request the app to be unlisted in the App Store as soon as it is accepted by the review team.
