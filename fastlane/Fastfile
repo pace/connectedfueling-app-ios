@@ -1,7 +1,7 @@
 default_platform(:ios)
 
 PROJECT_PATH = 'ConnectedFueling.xcodeproj'
-TEAM_ID_PRODUCTION = '8T694MPXAZ'
+TEAM_ID_PRODUCTION = ENV['COMPANY_TEAM_ID']
 APP_ID_PRODUCTION = 'car.pace.cofu'
 
 platform :ios do
@@ -79,5 +79,42 @@ platform :ios do
 
   lane :publish do
     upload_to_testflight
+  end
+
+  desc 'Submit the latest uploaded version to Apple\'s app review'
+  lane :submit_review do
+    deliver(
+      reset_ratings: false,
+      submit_for_review: false,
+      automatic_release: false,
+      phased_release: true,
+      force: true, # Skip HTMl report verification
+      skip_screenshots: false,
+      overwrite_screenshots: true,
+      ignore_language_directory_validation: true,
+      app_version: version_number,
+      build_number: build_number,
+      skip_binary_upload: true,
+      skip_metadata: false,
+      metadata_path: "./fastlane/metadata",
+      submission_information: {
+        add_id_info_uses_idfa: false,
+        add_id_info_limits_tracking: true,
+        add_id_info_serves_ads: false,
+        add_id_info_tracks_action: true,
+        add_id_info_tracks_install: true,
+        content_rights_has_rights: true,
+        content_rights_contains_third_party_content: true,
+        export_compliance_platform: 'ios',
+        export_compliance_compliance_required: false,
+        export_compliance_encryption_updated: false,
+        export_compliance_app_type: nil,
+        export_compliance_uses_encryption: false,
+        export_compliance_is_exempt: false,
+        export_compliance_contains_third_party_cryptography: false,
+        export_compliance_contains_proprietary_cryptography: false,
+        export_compliance_available_on_french_store: false
+      }
+    )
   end
 end

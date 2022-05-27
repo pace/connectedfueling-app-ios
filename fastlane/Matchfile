@@ -1,5 +1,5 @@
-git_url("git@lab.jamit.de:pace/mobile/ios/certificates.git")
+git_url(ENV["MATCH_CERTIFICATES_REPO"])
 storage_mode("git")
 type("appstore") # The default type, can be: appstore, adhoc, enterprise or development
-username("ios-dev@pace.car")
+username(ENV["ASC_APPLE_ID"])
 force_for_new_devices(true)
