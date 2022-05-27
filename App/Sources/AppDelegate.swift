@@ -15,13 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PACECloudSDK.shared.setup(
             with: .init(
                 apiKey: "connected-fueling-app",
-                authenticationMode: .native,
                 environment: sdkEnvironment,
-                customOIDConfiguration: nil,
-                isRedirectSchemeCheckEnabled: true,
-                domainACL: ["pace.cloud"],
-                allowedLowAccuracy: nil,
-                speedThresholdInKmPerHour: nil,
                 geoAppsScope: "pace-drive-ios-min"
             )
         )
