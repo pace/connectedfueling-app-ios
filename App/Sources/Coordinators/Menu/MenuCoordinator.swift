@@ -38,7 +38,7 @@ final class MenuCoordinator: Coordinator {
             headerImage: nil,
             sections: [
                 makeSettingsSection(),
-                makeDocumentSection(),
+//                makeDocumentSection(),
                 makeProfileSection()
             ]
         )
