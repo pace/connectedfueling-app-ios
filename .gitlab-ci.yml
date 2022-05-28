@@ -49,3 +49,12 @@ publish_testflight_app:
     - tags
   script:
     - bundle exec fastlane publish
+
+submit:
+  extends: .runner_tags
+  stage: publish
+  needs: ["publish_testflight_app"]
+  only:
+    - tags
+  script:
+    - bundle exec fastlane submit_review --verbose
