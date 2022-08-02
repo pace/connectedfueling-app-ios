@@ -76,13 +76,13 @@ extension PACECloudGasStationListRepository {
         }
 
         let fuelPrice = station.prices.first { price in
-            return price.attributes?.fuelType == fuelType?.rawValue
+            return price.fuelType == fuelType?.rawValue
         }
 
         return .init(
             identifier: station.id,
-            name: station.attributes?.stationName ?? "",
-            addressLines: station.attributes?.address.flatMap(Self.makeAddressLines(for:)) ?? [],
+            name: station.stationName ?? "",
+            addressLines: station.address.flatMap(Self.makeAddressLines(for:)) ?? [],
             distanceInKilometers: distance,
             location: station.coordinate.flatMap { Location(longitude: $0.longitude, latitude: $0.latitude) },
             paymentMethods: station.cofuPaymentMethods,
@@ -94,12 +94,12 @@ extension PACECloudGasStationListRepository {
     }
 
     private func makeFuelPrice(for price: PCPOIFuelPrice) -> FuelPrice? {
-        guard let value = price.attributes?.price else { return nil }
+        guard let value = price.price else { return nil }
 
-        return .init(value: value, currency: price.attributes?.currency)
+        return .init(value: value, currency: price.currency)
     }
 
-    private static func makeAddressLines(for address: PCPOIGasStation.Attributes.Address) -> [String] {
+    private static func makeAddressLines(for address: PCPOIGasStation.Address) -> [String] {
         let street = [address.street, address.houseNo].compactMap { $0 }.joined(separator: " ")
         let city = [address.postalCode, address.city].compactMap { $0 }.joined(separator: " ")
         return [street, city]

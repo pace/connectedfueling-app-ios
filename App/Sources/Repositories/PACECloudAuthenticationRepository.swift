@@ -35,8 +35,14 @@ struct PACECloudAuthenticationRepository: AuthenticationRepository {
     }
 
     func invalidateAuthentication(_ completion: @escaping (Result<Void, Error>) -> Void) {
-        IDKit.resetSession {
-            completion(.success(()))
+        IDKit.resetSession { result in
+            switch result {
+            case .success:
+                completion(.success(()))
+
+            case .failure(let error):
+                completion(.failure(error))
+            }
         }
     }
 }

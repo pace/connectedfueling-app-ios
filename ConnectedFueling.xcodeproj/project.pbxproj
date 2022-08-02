@@ -1547,7 +1547,7 @@
 			repositoryURL = "https://github.com/pace/cloud-sdk-ios";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
+				minimumVersion = 10.0.0;
 			};
 		};
 		C57E893F26B16EC100A1B5C3 /* XCRemoteSwiftPackageReference "JamitFoundation" */ = {
