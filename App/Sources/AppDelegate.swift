@@ -44,8 +44,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         view.tintColor = Asset.Colors.Theme.primary.color
 
         let navigationBar = UINavigationBar.appearance()
-        navigationBar.isTranslucent = false
-        navigationBar.barTintColor = Asset.Colors.Theme.primary.color
+        if #available(iOS 13.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = Asset.Colors.Theme.primary.color
+            navigationBar.standardAppearance = appearance
+            navigationBar.scrollEdgeAppearance = navigationBar.standardAppearance
+        } else {
+            navigationBar.isTranslucent = false
+            navigationBar.barTintColor = Asset.Colors.Theme.primary.color
+        }
         navigationBar.tintColor = .white
         navigationBar.setTitleVerticalPositionAdjustment(0, for: .default)
     }
