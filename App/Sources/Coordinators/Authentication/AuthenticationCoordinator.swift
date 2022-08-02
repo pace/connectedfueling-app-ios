@@ -29,11 +29,9 @@ final class AuthenticationCoordinator: Coordinator {
             image: Asset.Images.profile.image,
             title: L10n.Onboarding.Authentication.title,
             description: L10n.Onboarding.Authentication.description,
-            actions: [
-                .init(title: L10n.Onboarding.Actions.authenticate) { [weak self] in
-                    self?.requestAuthentication()
-                }
-            ]
+            action: .init(title: L10n.Onboarding.Actions.authenticate) { [weak self] in
+                self?.requestAuthentication()
+            }
         )
 
         presenter.present(viewController, animated: true)

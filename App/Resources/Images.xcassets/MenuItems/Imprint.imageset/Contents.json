@@ -1,23 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "04Icons24X24IcImprint.png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "04Icons24X24IcImprint@2x.png",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "04Icons24X24IcImprint@3x.png",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "icon_menu_imprint.pdf",
+      "idiom" : "universal"
     }
   ],
   "info" : {
     "author" : "xcode",
     "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
   }
 }

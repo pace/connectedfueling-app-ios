@@ -28,29 +28,7 @@ final class FuelTypeCoordinator: Coordinator {
     }
 
     override func start() {
-        let isSelectedFuelTypeAvailable = selectedFuelType != nil
-        viewController.model = .init(
-            image: Asset.Images.fuelType.image,
-            title: L10n.Onboarding.FuelType.title,
-            description: L10n.Onboarding.FuelType.description,
-            applyLargeTitleInset: false,
-            applySecondaryActionInset: false,
-            actions: FuelType.allCases.map { fuelType in
-                let isNotSelectedFuelType = fuelType != selectedFuelType
-                return ButtonViewModel(
-                    title: localizedDescription(for: fuelType),
-                    isSelected: isSelectedFuelTypeAvailable && isNotSelectedFuelType
-                ) { [weak self] in
-                    self?.gasStationListInteractor.setFuelType(fuelType) { _ in
-                        guard let self = self else { return }
-
-                        self.callback?()
-                        self.presenter.dismiss(self.viewController, animated: true)
-                        self.stop()
-                    }
-                }
-            }
-        )
+        initModel()
 
         if isCompact {
             viewController.style = .compact
@@ -58,23 +36,37 @@ final class FuelTypeCoordinator: Coordinator {
 
         presenter.present(viewController, animated: true)
     }
-}
 
-// MARK: - Localization
-extension FuelTypeCoordinator {
-    private func localizedDescription(for fuelType: FuelType) -> String {
-        switch fuelType {
-        case .diesel:
-            return L10n.FuelType.diesel
-
-        case .ron95e5:
-            return L10n.FuelType.super
-
-        case .ron95e10:
-            return L10n.FuelType.superE10
-
-        case .ron98e5:
-            return L10n.FuelType.superPlus
-        }
+    private func initModel() {
+        viewController.model = .init(
+            image: Asset.Images.fuelType.image,
+            title: L10n.Onboarding.FuelType.title,
+            description: L10n.Onboarding.FuelType.description,
+            applyLargeTitleInset: false,
+            action: .init(title: L10n.Onboarding.Actions.save) { [weak self] in
+                guard let self = self else { return }
+                self.callback?()
+                self.presenter.dismiss(self.viewController, animated: true)
+                self.stop()
+            },
+            radios: FuelType.allCases.map { fuelType in
+                return ButtonViewModel(
+                    icon: Asset.Images.checkmarkInactive.image,
+                    selectedIcon: Asset.Images.checkmarkActive.image,
+                    title: fuelType.localizedDescription(),
+                    isSelected: fuelType == selectedFuelType
+                ) { [weak self] in
+                    guard let self = self,
+                          self.selectedFuelType != fuelType else { return }
+                    self.gasStationListInteractor.setFuelType(fuelType) { _ in
+                        self.selectedFuelType = fuelType
+                        if #available(iOS 13.0, *) {
+                            self.viewController.isModalInPresentation = true
+                        }
+                        self.initModel()
+                    }
+                }
+            }
+        )
     }
 }

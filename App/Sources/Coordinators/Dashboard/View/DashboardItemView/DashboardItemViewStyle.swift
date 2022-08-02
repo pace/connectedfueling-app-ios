@@ -4,11 +4,11 @@ import UIKit
 struct DashboardItemViewStyle {
     let backgroundColor: UIColor
     let titleStyle: LabelStyle
+    let descriptionStyle: LabelStyle
     let priceStyle: LabelStyle
+    let fuelTypeStyle: LabelStyle
     let borderStyle: BorderStyle
     let actionStyle: ButtonViewStyle
-    let distanceBadgeBackgroundColor: UIColor
-    let distanceBadgeBorderStyle: BorderStyle
     let distanceBadgeLabelStyle: LabelStyle
     let shadowColor: UIColor
     let shadowOffset: CGPoint
@@ -17,11 +17,11 @@ struct DashboardItemViewStyle {
     init(
         backgroundColor: UIColor = Self.default.backgroundColor,
         titleStyle: LabelStyle = Self.default.titleStyle,
+        descriptionStyle: LabelStyle = Self.default.descriptionStyle,
         priceStyle: LabelStyle = Self.default.priceStyle,
+        fuelTypeStyle: LabelStyle = Self.default.fuelTypeStyle,
         borderStyle: BorderStyle = Self.default.borderStyle,
         actionStyle: ButtonViewStyle = Self.default.actionStyle,
-        distanceBadgeBackgroundColor: UIColor = Self.default.distanceBadgeBackgroundColor,
-        distanceBadgeBorderStyle: BorderStyle = Self.default.distanceBadgeBorderStyle,
         distanceBadgeLabelStyle: LabelStyle = Self.default.distanceBadgeLabelStyle,
         shadowColor: UIColor = Self.default.shadowColor,
         shadowOffset: CGPoint = Self.default.shadowOffset,
@@ -29,11 +29,11 @@ struct DashboardItemViewStyle {
     ) {
         self.backgroundColor = backgroundColor
         self.titleStyle = titleStyle
+        self.descriptionStyle = descriptionStyle
         self.priceStyle = priceStyle
+        self.fuelTypeStyle = fuelTypeStyle
         self.borderStyle = borderStyle
         self.actionStyle = actionStyle
-        self.distanceBadgeBackgroundColor = distanceBadgeBackgroundColor
-        self.distanceBadgeBorderStyle = distanceBadgeBorderStyle
         self.distanceBadgeLabelStyle = distanceBadgeLabelStyle
         self.shadowColor = shadowColor
         self.shadowOffset = shadowOffset

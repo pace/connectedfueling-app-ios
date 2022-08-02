@@ -88,6 +88,7 @@ extension PACECloudGasStationListRepository {
             paymentMethods: station.cofuPaymentMethods,
             isFuelingAvailable: station.isConnectedFuelingAvailable,
             isFuelingEnabled: isFuelingEnabled,
+            fuelType: fuelType,
             fuelPrice: fuelPrice.flatMap(makeFuelPrice),
             currency: station.currency
         )

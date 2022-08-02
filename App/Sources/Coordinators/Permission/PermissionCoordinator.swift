@@ -26,11 +26,9 @@ final class PermissionCoordinator: Coordinator {
             image: Asset.Images.location.image,
             title: L10n.Onboarding.Permission.title,
             description: L10n.Onboarding.Permission.description,
-            actions: [
-                .init(title: L10n.Onboarding.Actions.shareLocation) { [weak self] in
+            action: .init(title: L10n.Onboarding.Actions.shareLocation) { [weak self] in
                     self?.presentLocationPermissionRequest()
-                }
-            ]
+            }
         )
 
         presenter.present(viewController, animated: true)

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,40 +16,35 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kdt-hH-vQg" customClass="Label" customModule="JamitFoundation">
-                    <rect key="frame" x="25" y="437.5" width="364" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <rect key="frame" x="25" y="436" width="364" height="24"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YhE-WJ-1Ct" customClass="Label" customModule="JamitFoundation">
-                    <rect key="frame" x="25" y="488.5" width="364" height="20.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <rect key="frame" x="25" y="474" width="364" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gkc-vV-xcs">
-                    <rect key="frame" x="138.5" y="231" width="137" height="136.5"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="gkc-vV-xcs" secondAttribute="height" multiplier="1:1" id="9Aa-q8-zIf"/>
-                    </constraints>
-                </imageView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="vcH-aJ-GeC">
+                    <rect key="frame" x="188.5" y="324" width="37" height="37"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vn1-8m-isC"/>
             <color key="backgroundColor" name="Theme/Background"/>
             <constraints>
-                <constraint firstItem="Kdt-hH-vQg" firstAttribute="top" secondItem="gkc-vV-xcs" secondAttribute="bottom" constant="70" id="EFk-ad-Wb3"/>
-                <constraint firstItem="gkc-vV-xcs" firstAttribute="width" secondItem="iMb-za-Xbx" secondAttribute="width" multiplier="0.33" id="Gh5-JO-xz1"/>
+                <constraint firstItem="Kdt-hH-vQg" firstAttribute="top" secondItem="vcH-aJ-GeC" secondAttribute="bottom" constant="75" id="Fft-QR-iDB"/>
                 <constraint firstItem="YhE-WJ-1Ct" firstAttribute="leading" secondItem="vn1-8m-isC" secondAttribute="leading" constant="25" id="PEY-x0-T7y"/>
                 <constraint firstItem="Kdt-hH-vQg" firstAttribute="leading" secondItem="vn1-8m-isC" secondAttribute="leading" constant="25" id="UTI-lD-UWa"/>
-                <constraint firstItem="gkc-vV-xcs" firstAttribute="centerX" secondItem="iMb-za-Xbx" secondAttribute="centerX" id="fMz-2U-J7e"/>
                 <constraint firstItem="vn1-8m-isC" firstAttribute="trailing" secondItem="Kdt-hH-vQg" secondAttribute="trailing" constant="25" id="gaN-VR-fnv"/>
-                <constraint firstItem="YhE-WJ-1Ct" firstAttribute="top" secondItem="Kdt-hH-vQg" secondAttribute="bottom" constant="30" id="kRL-1m-zVW"/>
+                <constraint firstItem="YhE-WJ-1Ct" firstAttribute="top" secondItem="Kdt-hH-vQg" secondAttribute="bottom" constant="14" id="kRL-1m-zVW"/>
                 <constraint firstItem="vn1-8m-isC" firstAttribute="trailing" secondItem="YhE-WJ-1Ct" secondAttribute="trailing" constant="25" id="lUp-40-Iab"/>
                 <constraint firstItem="Kdt-hH-vQg" firstAttribute="centerY" secondItem="iMb-za-Xbx" secondAttribute="centerY" id="mLy-1D-sl8"/>
+                <constraint firstItem="vcH-aJ-GeC" firstAttribute="centerX" secondItem="iMb-za-Xbx" secondAttribute="centerX" id="w2L-7N-71h"/>
             </constraints>
             <connections>
                 <outlet property="descriptionLabel" destination="YhE-WJ-1Ct" id="nZh-GT-Uck"/>
-                <outlet property="imageView" destination="gkc-vV-xcs" id="Reo-ru-dSX"/>
                 <outlet property="titleLabel" destination="Kdt-hH-vQg" id="AxL-tz-NMJ"/>
             </connections>
             <point key="canvasLocation" x="215.94202898550725" y="15.066964285714285"/>
@@ -57,10 +52,10 @@
     </objects>
     <designables>
         <designable name="Kdt-hH-vQg">
-            <size key="intrinsicContentSize" width="41.5" height="20.5"/>
+            <size key="intrinsicContentSize" width="49" height="24"/>
         </designable>
         <designable name="YhE-WJ-1Ct">
-            <size key="intrinsicContentSize" width="41.5" height="20.5"/>
+            <size key="intrinsicContentSize" width="40.5" height="19.5"/>
         </designable>
     </designables>
     <resources>

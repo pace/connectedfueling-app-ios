@@ -42,8 +42,6 @@ final class ButtonView: StatefulView<ButtonViewModel> {
         button.addTarget(self, action: #selector(didBeginHighlighting), for: [.touchDown])
         button.addTarget(self, action: #selector(didEndHighlighting), for: [.touchUpInside, .touchUpOutside, .touchCancel])
         button.clipsToBounds = true
-        button.contentEdgeInsets = .init(top: 10, left: 8, bottom: 10, right: 8)
-        button.imageEdgeInsets = .init(top: 0, left: 0, bottom: 0, right: 26)
         button.adjustsImageWhenHighlighted = false
         heightConstraint.isActive = true
 
@@ -59,7 +57,7 @@ final class ButtonView: StatefulView<ButtonViewModel> {
 
         button.isEnabled = model.isEnabled
         button.setTitle(model.title, for: [])
-        button.setImage(model.icon, for: [])
+        button.setImage(model.isSelected ? model.selectedIcon : model.icon, for: [])
         button.isSelected = model.isSelected
 
         didChangeStyle()
@@ -86,6 +84,13 @@ final class ButtonView: StatefulView<ButtonViewModel> {
         button.layer.shadowOpacity = 1
         button.layer.masksToBounds = false
         heightConstraint.constant = style.height
+
+        guard let imageView = button.imageView,
+              let titleLabel = button.titleLabel else { return }
+        let imageInset = -titleLabel.frame.width + button.frame.width - 20
+        button.contentEdgeInsets = .init(top: 12, left: 20, bottom: 12, right: 8)
+        button.titleEdgeInsets = .init(top: 0, left: -imageView.frame.width - 20, bottom: 0, right: 0)
+        button.imageEdgeInsets = .init(top: 0, left: 0, bottom: 0, right: imageInset)
     }
 
     @objc

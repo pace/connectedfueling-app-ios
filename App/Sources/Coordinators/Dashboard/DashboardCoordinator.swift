@@ -274,8 +274,19 @@ extension DashboardCoordinator: MenuCoordinatorDelegate {
 
     private func logout() {
         appStateInteractor.setOnboardingCompleted(false) { [weak self] _ in
-            IDKit.resetSession()
-            self?.callback()
+            IDKit.resetSession { result in
+                switch result {
+                case .success:
+                    DispatchQueue.main.async {
+                        self?.callback()
+                    }
+                    break
+
+                case .failure(let error):
+                    print(error)
+                    break
+                }
+            }
         }
     }
 }
@@ -311,6 +322,7 @@ extension DashboardCoordinator {
             title: station.name,
             description: station.addressLines.joined(separator: "\n"),
             price: station.fuelPrice?.value,
+            fuelType: station.fuelType,
             currency: station.fuelPrice?.currency,
             distance: Double(station.distanceInKilometers ?? 0),
             isPrimaryAction: station.isFuelingEnabled,
@@ -321,7 +333,6 @@ extension DashboardCoordinator {
     private func makeActionViewModel(for station: GasStation) -> ButtonViewModel {
         if station.isFuelingEnabled {
             return ButtonViewModel(
-                icon: Asset.Images.fuelPump.image,
                 title: L10n.Dashboard.Actions.startFueling
             ) { [weak self] in
                 self?.startFueling(at: station)
@@ -329,7 +340,6 @@ extension DashboardCoordinator {
         }
 
         return ButtonViewModel(
-            icon: Asset.Images.route.image,
             title: L10n.Dashboard.Actions.navigate
         ) { [weak self] in
             self?.openNavigation(to: station)

@@ -8,11 +8,12 @@ final class DashboardItemView: StatefulView<DashboardItemViewModel> {
         static let roundingThreshold: Double = 0.05
     }
 
-    @IBOutlet private var iconView: UIImageView!
+    @IBOutlet private var distanceImageView: UIImageView!
     @IBOutlet private var titleLabel: Label!
     @IBOutlet private var descriptionLabel: Label!
     @IBOutlet private var priceBackgroundView: UIView!
     @IBOutlet private var priceLabel: Label!
+    @IBOutlet private var fuelTypeLabel: Label!
     @IBOutlet private var distanceBackgroundView: UIView!
     @IBOutlet private var distanceLabel: Label!
     @IBOutlet private var actionContainerView: UIView!
@@ -65,7 +66,6 @@ final class DashboardItemView: StatefulView<DashboardItemViewModel> {
     override func didChangeModel() {
         super.didChangeModel()
 
-        iconView.image = model.icon
         titleLabel.text = model.title
         descriptionLabel.text = model.description
         priceBackgroundView.layer.cornerRadius = 8
@@ -81,6 +81,12 @@ final class DashboardItemView: StatefulView<DashboardItemViewModel> {
             priceLabel.text = L10n.Price.notAvailable
         }
 
+        if let fuelType = model.fuelType {
+            fuelTypeLabel.text = fuelType.localizedDescription().localizedCapitalized
+        } else {
+            fuelTypeLabel.text = L10n.Price.notAvailable
+        }
+
         if model.isPrimaryAction {
             actionButton.style = .action
         } else {
@@ -92,14 +98,15 @@ final class DashboardItemView: StatefulView<DashboardItemViewModel> {
         backgroundColor = style.backgroundColor
         titleLabel.style = style.titleStyle
         priceLabel.style = style.priceStyle
+        fuelTypeLabel.style = style.fuelTypeStyle
+        descriptionLabel.style = style.descriptionStyle
         borderStyle = style.borderStyle
+        distanceImageView.tintColor = style.distanceBadgeLabelStyle.color
         layer.shadowColor = style.shadowColor.cgColor
         layer.shadowRadius = style.shadowRadius
         layer.shadowOffset = .init(width: style.shadowOffset.x, height: style.shadowOffset.y)
         layer.shadowOpacity = 1
         layer.masksToBounds = false
-        distanceBackgroundView.backgroundColor = style.distanceBadgeBackgroundColor
-        distanceBackgroundView.borderStyle = style.distanceBadgeBorderStyle
         distanceLabel.style = style.distanceBadgeLabelStyle
         actionButton.style = style.actionStyle
         actionContainerViewHeightConstraint.constant = style.actionStyle.height
