@@ -15,9 +15,9 @@ final class OnboardingCoordinator: Coordinator {
         navigationOrientation: .horizontal,
         options: nil
     )
+    private lazy var navigationController: UINavigationController = .init(rootViewController: pageViewController)
     private lazy var pageIndicatorView: PageIndicatorView = .instantiate()
     private lazy var pageViewPresenter: PageViewPresenter = .init(pageViewController: pageViewController)
-    private lazy var authenticationViewController: OnboardingViewController = .instantiate()
     private lazy var authenticationCoordinator: AuthenticationCoordinator = .init(
         presenter: pageViewPresenter,
         modalPresenter: ModalPresenter(presentingViewController: pageViewController)
@@ -54,17 +54,27 @@ final class OnboardingCoordinator: Coordinator {
     }
 
     override func start() {
-        pageViewController.view.addStatusBarBackgroundView()
+        let titleView = UIImageView(image: Asset.Images.logo.image)
+        titleView.contentMode = .scaleAspectFill
+        let titleViewContainer = UIView(frame: .zero)
+        titleViewContainer.addSubview(titleView)
+        titleView.translatesAutoresizingMaskIntoConstraints = false
+        titleView.topAnchor.constraint(equalTo: titleViewContainer.topAnchor, constant: 12).isActive = true
+        titleViewContainer.leadingAnchor.constraint(equalTo: titleView.leadingAnchor).isActive = true
+        titleViewContainer.trailingAnchor.constraint(equalTo: titleView.trailingAnchor).isActive = true
+        titleView.bottomAnchor.constraint(equalTo: titleViewContainer.bottomAnchor, constant: -12).isActive = true
+        pageViewController.navigationItem.titleView = titleViewContainer
+
         pageViewController.view.backgroundColor = OnboardingViewStyle.regular.backgroundColor
         pageViewController.view.addSubview(pageIndicatorView)
         pageIndicatorView.translatesAutoresizingMaskIntoConstraints = false
-        pageIndicatorView.centerYAnchor.constraint(equalTo: pageViewController.view.bottomAnchor, constant: -40).isActive = true
+        pageIndicatorView.bottomAnchor.constraint(equalTo: pageViewController.view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
         pageIndicatorView.leadingAnchor.constraint(equalTo: pageViewController.view.leadingAnchor, constant: 80).isActive = true
         pageIndicatorView.trailingAnchor.constraint(equalTo: pageViewController.view.trailingAnchor, constant: -80).isActive = true
         pageIndicatorView.heightAnchor.constraint(equalToConstant: 3).isActive = true
         pageIndicatorView.model = .init(index: 0, count: 5)
         pageViewPresenter.delegate = pageIndicatorView
-        presenter.present(pageViewController, animated: true)
+        presenter.present(navigationController, animated: true)
 
         startPermissionCoordinator()
         startAuthenticationCoordinator()
@@ -77,11 +87,9 @@ final class OnboardingCoordinator: Coordinator {
             image: Asset.Images.paymentMethod.image,
             title: L10n.Onboarding.PaymentMethod.title,
             description: L10n.Onboarding.PaymentMethod.description,
-            actions: [
-                .init(title: L10n.Onboarding.Actions.addPaymentMethod) { [weak self] in
-                    self?.startPaymentMethodCoordinator()
-                }
-            ]
+            action: .init(title: L10n.Onboarding.Actions.addPaymentMethod) { [weak self] in
+                self?.startPaymentMethodCoordinator()
+            }
         )
 
         pageViewPresenter.present(paymentMethodViewController, animated: true)

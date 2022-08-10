@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		029208A8874FCB4E65427647 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D1F5315434E519EBEA5B2DB2 /* Localizable.strings */; };
+		0BF6DBAB28A292B3005B922A /* FuelTypeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF6DBAA28A292B3005B922A /* FuelTypeExtensions.swift */; };
 		1331D416CE5C76C2BC2511C1 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6153BAACE5ADFF31A001B07 /* AppCoordinator.swift */; };
 		16E730131166C556AA0708EF /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2EB20D5198AC7E6603D98D72 /* Settings.bundle */; };
 		1867B8D8BE2B8499106AC9E1 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B5B4A6AE57364F8FC6B771 /* Assets.swift */; };
@@ -125,6 +126,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0BF6DBAA28A292B3005B922A /* FuelTypeExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuelTypeExtensions.swift; sourceTree = "<group>"; };
 		0DDED74D77EA34B1E82D66CC /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		0DE070BD08140DF741A4FC14 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		12B00BFD33248FEC1315BFD5 /* Staging.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Staging.xcconfig; sourceTree = "<group>"; };
@@ -689,6 +691,7 @@
 			children = (
 				C5F06EC526AECB1F00C43C81 /* UIViewExtensions.swift */,
 				C5DF1D7C26B03E1D00479678 /* UIScreenExtensions.swift */,
+				0BF6DBAA28A292B3005B922A /* FuelTypeExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -923,7 +926,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which bartycrouch > /dev/null; then\n    bartycrouch update -x\n    bartycrouch lint -x\nelse\n    echo \"warning: BartyCrouch not installed, download it from https://github.com/Flinesoft/BartyCrouch\"\nfi\n\n";
+			shellScript = "# Default homebrew directory on m1\nif test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\n\nexport PATH\n\nif which bartycrouch > /dev/null; then\n    bartycrouch update -x\n    bartycrouch lint -x\nelse\n    echo \"warning: BartyCrouch not installed, download it from https://github.com/Flinesoft/BartyCrouch\"\nfi\n\n";
 		};
 		408EC6CF6DADB1BFD9EEB89B /* SwiftGen Version Check */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -977,7 +980,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftgen > /dev/null; then\n    swiftgen config run --config swiftgen.yml\nelse\n    echo \"warning: SwiftGen not installed, download it from https://github.com/SwiftGen/SwiftGen\"\nfi\n\n";
+			shellScript = "# Default homebrew directory on m1\nif test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\n\nexport PATH\n\nif which swiftgen > /dev/null; then\n    swiftgen config run --config swiftgen.yml\nelse\n    echo \"warning: SwiftGen not installed, download it from https://github.com/SwiftGen/SwiftGen\"\nfi\n\n";
 		};
 		CB5C213273134017EFD8721F /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -995,7 +998,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint > /dev/null; then\n    swiftlint --quiet --config .swiftlint.yml\nelse\n    echo \"warning: SwiftLint not installed, download it from https://github.com/realm/SwiftLint\"\nfi\n\n";
+			shellScript = "# Default homebrew directory on m1\nif test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\n\nexport PATH\n\nif which swiftlint > /dev/null; then\n    swiftlint --quiet --config .swiftlint.yml\nelse\n    echo \"warning: SwiftLint not installed, download it from https://github.com/realm/SwiftLint\"\nfi\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1020,6 +1023,7 @@
 				C56CD42E26BBF411004E61FB /* MenuItemTableViewCell.swift in Sources */,
 				C5DF1D7226AFF87100479678 /* PageIndicatorViewStyle.swift in Sources */,
 				C56CD42C26BBF3A1004E61FB /* MenuItemViewStyle.swift in Sources */,
+				0BF6DBAB28A292B3005B922A /* FuelTypeExtensions.swift in Sources */,
 				C5331F8226B946A5000588C0 /* DashboardHeaderTableViewCell.swift in Sources */,
 				C518FA1C26AABA26000124D9 /* DashboardItemViewStyle.swift in Sources */,
 				C518FA2626AAC39C000124D9 /* DashboardViewModel.swift in Sources */,

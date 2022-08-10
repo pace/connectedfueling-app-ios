@@ -11,25 +11,15 @@ final class OnboardingViewController: StatefulViewController<OnboardingViewModel
     @IBOutlet private var descriptionLabel: Label!
     @IBOutlet private var activityIndicatorView: UIActivityIndicatorView!
     @IBOutlet private var imageViewTopConstraint: NSLayoutConstraint!
-    @IBOutlet private var imageViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet private var titleTopConstraint: NSLayoutConstraint!
     @IBOutlet private var descriptionTopConstraint: NSLayoutConstraint!
     @IBOutlet private var descriptionLeadingConstraint: NSLayoutConstraint!
     @IBOutlet private var descriptionTrailingConstraint: NSLayoutConstraint!
     @IBOutlet private var descriptionBottomConstraint: NSLayoutConstraint!
 
-    private lazy var actionStackView: UIStackView = .init(arrangedSubviews: [])
+    private lazy var radioButtonStackView: UIStackView = .init(arrangedSubviews: [])
+    private lazy var actionButton: ButtonView = .instantiate()
     private lazy var secondaryActionButton: ButtonView = .instantiate()
-
-    private lazy var secondaryActionBoundBottomAnchor: NSLayoutConstraint = actionStackView.bottomAnchor.constraint(
-        equalTo: secondaryActionButton.topAnchor,
-        constant: -10
-    )
-
-    private lazy var parentBoundBottomAnchor: NSLayoutConstraint = actionStackView.bottomAnchor.constraint(
-        equalTo: view.bottomAnchor,
-        constant: -60
-    )
 
     var style: OnboardingViewStyle = UIScreen.main.bounds.height > Constants.screenHeightThreshold ? .default : .compact {
         didSet { didChangeStyle() }
@@ -38,22 +28,28 @@ final class OnboardingViewController: StatefulViewController<OnboardingViewModel
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        secondaryActionButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(secondaryActionButton)
+        view.addSubview(actionButton)
+        view.addSubview(radioButtonStackView)
+
+        secondaryActionButton.translatesAutoresizingMaskIntoConstraints = false
         secondaryActionButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 60).isActive = true
         secondaryActionButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -60).isActive = true
-        secondaryActionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -60).isActive = true
+        secondaryActionButton.bottomAnchor.constraint(equalTo: actionButton.topAnchor, constant: -10).isActive = true
 
-        actionStackView.alignment = .fill
-        actionStackView.axis = .vertical
-        actionStackView.spacing = 10
-        actionStackView.distribution = .fillEqually
-        actionStackView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(actionStackView)
-        actionStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 35).isActive = true
-        actionStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -35).isActive = true
-        secondaryActionBoundBottomAnchor.isActive = true
-        parentBoundBottomAnchor.isActive = false
+        actionButton.translatesAutoresizingMaskIntoConstraints = false
+        actionButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 35).isActive = true
+        actionButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -35).isActive = true
+        actionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -40).isActive = true
+
+        radioButtonStackView.alignment = .fill
+        radioButtonStackView.axis = .vertical
+        radioButtonStackView.spacing = 10
+        radioButtonStackView.distribution = .fillEqually
+        radioButtonStackView.translatesAutoresizingMaskIntoConstraints = false
+        radioButtonStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 35).isActive = true
+        radioButtonStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -35).isActive = true
+        radioButtonStackView.bottomAnchor.constraint(equalTo: actionButton.topAnchor, constant: -30).isActive = true
 
         didChangeStyle()
     }
@@ -66,6 +62,7 @@ final class OnboardingViewController: StatefulViewController<OnboardingViewModel
         descriptionLabel.text = model.description
         secondaryActionButton.isHidden = model.secondaryAction == nil
         model.secondaryAction.flatMap { secondaryActionButton.model = $0 }
+        actionButton.model = model.action
 
         if model.isLoading {
             activityIndicatorView.startAnimating()
@@ -73,34 +70,28 @@ final class OnboardingViewController: StatefulViewController<OnboardingViewModel
             activityIndicatorView.stopAnimating()
         }
 
-        if model.applySecondaryActionInset {
-            parentBoundBottomAnchor.isActive = false
-            secondaryActionBoundBottomAnchor.isActive = true
-        } else {
-            secondaryActionBoundBottomAnchor.isActive = false
-            parentBoundBottomAnchor.isActive = true
-        }
-
         titleTopConstraint.constant = model.applyLargeTitleInset ? style.iconSpacingBottom : style.iconSpacingBottom * 0.5
 
-        updateActionButtons()
+        updateRadioButtons()
     }
 
-    private func updateActionButtons() {
-        let buttons = actionStackView.arrangedSubviews.compactMap { $0 as? ButtonView }
-        actionStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+    private func updateRadioButtons() {
+        let buttons = radioButtonStackView.arrangedSubviews.compactMap { $0 as? ButtonView }
+        radioButtonStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
 
-        zip(buttons, model.actions).forEach { view, model in
+        zip(buttons, model.radios).forEach { view, model in
             view.model = model
+            view.style = .radio
             view.isHidden = false
-            actionStackView.addArrangedSubview(view)
+            radioButtonStackView.addArrangedSubview(view)
         }
 
-        if buttons.count < model.actions.count {
-            model.actions[buttons.count ..< model.actions.count].forEach { model in
+        if buttons.count < model.radios.count {
+            model.radios[buttons.count ..< model.radios.count].forEach { model in
                 let view = ButtonView.instantiate()
                 view.model = model
-                actionStackView.addArrangedSubview(view)
+                view.style = .radio
+                radioButtonStackView.addArrangedSubview(view)
             }
         }
     }
@@ -109,18 +100,13 @@ final class OnboardingViewController: StatefulViewController<OnboardingViewModel
         titleLabel.style = style.titleStyle
         descriptionLabel.style = style.descriptionStyle
         secondaryActionButton.style = style.secondaryAction
-        actionStackView.arrangedSubviews
+        actionButton.style = style.primaryAction
+        radioButtonStackView.arrangedSubviews
             .compactMap { $0 as? ButtonView }
-            .forEach { $0.style = style.primaryAction }
+            .forEach { $0.style = style.radio }
 
         view.backgroundColor = style.backgroundColor
         imageViewTopConstraint.constant = style.iconSpacingTop
-
-        if imageViewWidthConstraint.multiplier != style.iconWidth {
-            imageViewWidthConstraint.isActive = false
-            imageViewWidthConstraint = imageView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: style.iconWidth)
-            imageViewWidthConstraint.isActive = true
-        }
 
         titleTopConstraint.constant = model.applyLargeTitleInset ? style.iconSpacingBottom : style.iconSpacingBottom * 0.5
         descriptionTopConstraint.constant = style.descriptionInsets.top

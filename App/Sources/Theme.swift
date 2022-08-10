@@ -132,6 +132,7 @@ extension BorderStyle {
     static let small: Self = .init(color: .clear, width: 0, radius: .all(4))
     static let large: Self = .init(color: .clear, width: 0, radius: .all(8))
     static let largeOutline: Self = .init(color: Asset.Colors.Theme.primary.color, width: 1.5, radius: .all(8))
+    static let largeOutlineHighlighted: Self = .init(color: Asset.Colors.Theme.primary.color.withAlphaComponent(0.75), width: 1.5, radius: .all(8))
     static let largeOutlineSmallRadius: Self = .init(color: Asset.Colors.Theme.primary.color, width: 1.5, radius: .all(4))
 }
 
@@ -145,28 +146,22 @@ extension ButtonViewStyle {
         height: dynamicHeight,
         normalState: .init(
             titleStyle: LabelStyle.headline5.withColor(Asset.Colors.Text.lightText.color),
-            borderStyle: .small,
-            backgroundColor: Asset.Colors.Theme.primary.color,
-            shadowColor: Asset.Colors.Theme.buttonShadow.color,
-            shadowOffset: .init(x: 0, y: 0),
-            shadowRadius: 5
+            borderStyle: .large,
+            backgroundColor: Asset.Colors.Theme.primary.color
         ),
         highlightedState: .init(
             titleStyle: LabelStyle.headline5.withColor(Asset.Colors.Text.lightText.color),
-            borderStyle: .small,
-            backgroundColor: Asset.Colors.Theme.primary.color
+            borderStyle: .large,
+            backgroundColor: Asset.Colors.Theme.primary.color.withAlphaComponent(0.75)
         ),
         selectedState: .init(
             titleStyle: LabelStyle.headline5.withColor(Asset.Colors.Theme.primary.color),
-            borderStyle: .largeOutlineSmallRadius,
-            backgroundColor: Asset.Colors.Theme.background.color,
-            shadowColor: Asset.Colors.Theme.lightButtonShadow.color,
-            shadowOffset: .init(x: 0, y: 0),
-            shadowRadius: 5
+            borderStyle: .largeOutline,
+            backgroundColor: Asset.Colors.Theme.background.color
         ),
         disabledState: .init(
             titleStyle: LabelStyle.headline5.withColor(Asset.Colors.Text.lightText.color),
-            borderStyle: .small,
+            borderStyle: .large,
             backgroundColor: Asset.Colors.Theme.disabled.color
         )
     )
@@ -175,51 +170,69 @@ extension ButtonViewStyle {
         height: dynamicHeight,
         normalState: .init(
             titleStyle: LabelStyle.headline4,
-            borderStyle: .circular,
+            borderStyle: .large,
             backgroundColor: .clear
         ),
         highlightedState: .init(
             titleStyle: LabelStyle.headline4.withAlphaComponent(0.8),
-            borderStyle: .circular,
+            borderStyle: .large,
             backgroundColor: .clear
         ),
         selectedState: .init(
             titleStyle: LabelStyle.headline4,
-            borderStyle: .circular,
+            borderStyle: .large,
             backgroundColor: .clear
         ),
         disabledState: .init(
             titleStyle: LabelStyle.headline4.withAlphaComponent(0.6),
-            borderStyle: .circular,
+            borderStyle: .large,
             backgroundColor: .clear
+        )
+    )
+
+    static let radio: Self = .init(
+        height: dynamicHeight,
+        normalState: .init(
+            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.Theme.primary.color),
+            borderStyle: .largeOutline,
+            backgroundColor: Asset.Colors.Theme.background.color
+        ),
+        highlightedState: .init(
+            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.Theme.primary.color.withAlphaComponent(0.75)),
+            borderStyle: .largeOutlineHighlighted,
+            backgroundColor: Asset.Colors.Theme.background.color
+        ),
+        selectedState: .init(
+            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.Theme.primary.color),
+            borderStyle: .largeOutline,
+            backgroundColor: Asset.Colors.Theme.background.color
+        ),
+        disabledState: .init(
+            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.Theme.primary.color),
+            borderStyle: .largeOutline,
+            backgroundColor: Asset.Colors.Theme.background.color
         )
     )
 
     static let action: Self = .init(
         height: 50,
         normalState: .init(
-            titleStyle: LabelStyle.headline3.withColor(Asset.Colors.Text.lightText.color),
-            borderStyle: .large,
-            backgroundColor: Asset.Colors.Theme.primary.color,
-            shadowColor: Asset.Colors.Theme.buttonShadow.color,
-            shadowOffset: .init(x: 0, y: 0),
-            shadowRadius: 5
-        ),
-        highlightedState: .init(
-            titleStyle: LabelStyle.headline3.withColor(Asset.Colors.Text.lightText.color),
+            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.Text.lightText.color),
             borderStyle: .large,
             backgroundColor: Asset.Colors.Theme.primary.color
         ),
+        highlightedState: .init(
+            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.Text.lightText.color),
+            borderStyle: .large,
+            backgroundColor: Asset.Colors.Theme.primary.color.withAlphaComponent(0.75)
+        ),
         selectedState: .init(
-            titleStyle: LabelStyle.headline3.withColor(Asset.Colors.Theme.primary.color),
+            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.Theme.primary.color),
             borderStyle: .largeOutline,
-            backgroundColor: Asset.Colors.Theme.background.color,
-            shadowColor: Asset.Colors.Theme.buttonShadow.color,
-            shadowOffset: .init(x: 0, y: 0),
-            shadowRadius: 5
+            backgroundColor: Asset.Colors.Theme.background.color
         ),
         disabledState: .init(
-            titleStyle: LabelStyle.headline3.withColor(Asset.Colors.Text.lightText.color),
+            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.Text.lightText.color),
             borderStyle: .large,
             backgroundColor: Asset.Colors.Theme.disabled.color
         )
@@ -228,28 +241,23 @@ extension ButtonViewStyle {
     static let secondaryAction: Self = .init(
         height: 50,
         normalState: .init(
-            titleStyle: LabelStyle.headline3.withColor(Asset.Colors.Theme.primary.color),
+            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.Theme.primary.color),
             borderStyle: .largeOutline,
-            backgroundColor: Asset.Colors.Theme.background.color,
-            shadowColor: Asset.Colors.Theme.lightButtonShadow.color,
-            shadowOffset: .init(x: 0, y: 0),
-            shadowRadius: 5
+            backgroundColor: Asset.Colors.Theme.background.color
         ),
         highlightedState: .init(
-            titleStyle: LabelStyle.headline3.withColor(Asset.Colors.Theme.primary.color),
-            borderStyle: .largeOutline,
+            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.Theme.primary.color.withAlphaComponent(0.75)),
+            borderStyle: .largeOutlineHighlighted,
             backgroundColor: .clear
         ),
         selectedState: .init(
-            titleStyle: LabelStyle.headline3.withColor(Asset.Colors.Theme.primary.color),
+            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.Theme.primary.color),
             borderStyle: .largeOutline,
             backgroundColor: Asset.Colors.Theme.background.color,
-            shadowColor: Asset.Colors.Theme.lightButtonShadow.color,
-            shadowOffset: .init(x: 0, y: 0),
-            shadowRadius: 5
+            shadowColor: Asset.Colors.Theme.lightButtonShadow.color
         ),
         disabledState: .init(
-            titleStyle: LabelStyle.headline3.withColor(Asset.Colors.Theme.primary.color),
+            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.Theme.primary.color),
             borderStyle: .largeOutline,
             backgroundColor: .clear
         )
@@ -267,11 +275,11 @@ extension OnboardingViewStyle {
         descriptionStyle: .body2,
         primaryAction: .primary,
         secondaryAction: .secondary,
+        radio: .radio,
         backgroundColor: Asset.Colors.Theme.background.color,
         iconSpacingTop: 100,
-        iconSpacingBottom: 80,
-        iconWidth: 0.6,
-        descriptionInsets: .init(top: 50, left: 60, bottom: 40, right: 60)
+        iconSpacingBottom: 40,
+        descriptionInsets: .init(top: 14, left: 60, bottom: 40, right: 60)
     )
 
     static let compact: Self = .init(
@@ -279,11 +287,11 @@ extension OnboardingViewStyle {
         descriptionStyle: .body2,
         primaryAction: .primary,
         secondaryAction: .secondary,
+        radio: .radio,
         backgroundColor: Asset.Colors.Theme.background.color,
         iconSpacingTop: 60,
         iconSpacingBottom: 40,
-        iconWidth: 0.4,
-        descriptionInsets: .init(top: 25, left: 30, bottom: 20, right: 30)
+        descriptionInsets: .init(top: 14, left: 30, bottom: 20, right: 30)
     )
 }
 
@@ -310,7 +318,7 @@ extension PageIndicatorViewStyle {
 // MARK: Dashboard
 extension DashboardHeaderViewStyle {
     static let `default`: Self = .init(
-        titleStyle: LabelStyle.headline3.withTextAlignment(.left)
+        titleStyle: LabelStyle.headline1.withTextAlignment(.left)
     )
 }
 
@@ -320,13 +328,15 @@ extension DashboardItemViewStyle {
         titleStyle: LabelStyle.headline2
             .withTextAlignment(.left)
             .withNumberOfLines(2),
-        priceStyle: LabelStyle.headline2
-            .withTextAlignment(.right),
+        descriptionStyle: LabelStyle.body1
+            .withTextAlignment(.left)
+            .withNumberOfLines(0),
+        priceStyle: LabelStyle.headline1
+            .withTextAlignment(.center),
+        fuelTypeStyle: LabelStyle.body3.withTextAlignment(.center),
         borderStyle: .large,
         actionStyle: .action,
-        distanceBadgeBackgroundColor: Asset.Colors.Theme.backgroundLightGray.color,
-        distanceBadgeBorderStyle: .large,
-        distanceBadgeLabelStyle: .body3,
+        distanceBadgeLabelStyle: .body1.withColor(Asset.Colors.Theme.primary.color),
         shadowColor: Asset.Colors.Theme.shadow.color,
         shadowOffset: .init(x: 0, y: 2),
         shadowRadius: 10

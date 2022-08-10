@@ -9,6 +9,7 @@ public struct GasStation {
     public let paymentMethods: [String]
     public let isFuelingAvailable: Bool
     public let isFuelingEnabled: Bool
+    public let fuelType: FuelType?
     public let fuelPrice: FuelPrice?
     public let currency: String?
 
@@ -21,6 +22,7 @@ public struct GasStation {
         paymentMethods: [String],
         isFuelingAvailable: Bool,
         isFuelingEnabled: Bool,
+        fuelType: FuelType?,
         fuelPrice: FuelPrice?,
         currency: String?
     ) {
@@ -32,6 +34,7 @@ public struct GasStation {
         self.paymentMethods = paymentMethods
         self.isFuelingAvailable = isFuelingAvailable
         self.isFuelingEnabled = isFuelingEnabled
+        self.fuelType = fuelType
         self.fuelPrice = fuelPrice
         self.currency = currency
     }

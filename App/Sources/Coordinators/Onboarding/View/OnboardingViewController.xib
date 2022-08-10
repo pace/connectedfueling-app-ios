@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,25 +17,25 @@
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zOy-C1-wum" customClass="Label" customModule="JamitFoundation">
-                        <rect key="frame" x="60" y="500" width="294" height="19.5"/>
+                        <rect key="frame" x="60" y="319.5" width="294" height="19.5"/>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xLt-Ut-mdy" customClass="Label" customModule="JamitFoundation">
-                        <rect key="frame" x="30" y="428.5" width="354" height="21.5"/>
+                        <rect key="frame" x="30" y="284" width="354" height="21.5"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pIK-RP-Sjr">
-                        <rect key="frame" x="83" y="100" width="248" height="248.5"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="100" placeholderIntrinsicHeight="100" translatesAutoresizingMaskIntoConstraints="NO" id="pIK-RP-Sjr">
+                        <rect key="frame" x="157" y="144" width="100" height="100"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="pIK-RP-Sjr" secondAttribute="height" multiplier="1:1" id="pAK-g3-dHM"/>
+                            <constraint firstAttribute="height" constant="100" id="Kyb-Id-5i8"/>
                         </constraints>
                     </imageView>
                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="L7e-AN-Tfo">
-                        <rect key="frame" x="197" y="559.5" width="20" height="20"/>
+                        <rect key="frame" x="197" y="379" width="20" height="20"/>
                     </activityIndicatorView>
                 </subviews>
                 <viewLayoutGuide key="safeArea" id="C4a-fC-AnI"/>
@@ -45,13 +45,12 @@
                     <constraint firstItem="L7e-AN-Tfo" firstAttribute="top" secondItem="zOy-C1-wum" secondAttribute="bottom" constant="40" id="1w7-Dv-Dci"/>
                     <constraint firstItem="zOy-C1-wum" firstAttribute="leading" secondItem="C4a-fC-AnI" secondAttribute="leading" constant="60" id="9Ws-nL-rvj"/>
                     <constraint firstItem="pIK-RP-Sjr" firstAttribute="centerX" secondItem="Vsb-M8-8NW" secondAttribute="centerX" id="AFR-6W-a0O"/>
-                    <constraint firstItem="pIK-RP-Sjr" firstAttribute="top" secondItem="Vsb-M8-8NW" secondAttribute="top" constant="100" id="Hu1-As-RgO"/>
-                    <constraint firstItem="pIK-RP-Sjr" firstAttribute="width" secondItem="Vsb-M8-8NW" secondAttribute="width" multiplier="0.6" id="XS3-w8-EHq"/>
-                    <constraint firstItem="zOy-C1-wum" firstAttribute="top" secondItem="xLt-Ut-mdy" secondAttribute="bottom" constant="50" id="iIB-UQ-Ze3"/>
+                    <constraint firstItem="pIK-RP-Sjr" firstAttribute="top" secondItem="C4a-fC-AnI" secondAttribute="top" constant="100" id="L1E-WP-0Tu"/>
+                    <constraint firstItem="zOy-C1-wum" firstAttribute="top" secondItem="xLt-Ut-mdy" secondAttribute="bottom" constant="14" id="iIB-UQ-Ze3"/>
                     <constraint firstItem="C4a-fC-AnI" firstAttribute="trailing" secondItem="xLt-Ut-mdy" secondAttribute="trailing" constant="30" id="k5r-jt-nDQ"/>
                     <constraint firstItem="xLt-Ut-mdy" firstAttribute="leading" secondItem="C4a-fC-AnI" secondAttribute="leading" constant="30" id="mLD-K4-A2J"/>
                     <constraint firstItem="C4a-fC-AnI" firstAttribute="trailing" secondItem="zOy-C1-wum" secondAttribute="trailing" constant="60" id="nfW-Yj-E7t"/>
-                    <constraint firstItem="xLt-Ut-mdy" firstAttribute="top" secondItem="pIK-RP-Sjr" secondAttribute="bottom" constant="80" id="zx2-7C-xuo"/>
+                    <constraint firstItem="xLt-Ut-mdy" firstAttribute="top" secondItem="pIK-RP-Sjr" secondAttribute="bottom" constant="40" id="zx2-7C-xuo"/>
                 </constraints>
             </view>
             <connections>
@@ -62,8 +61,7 @@
                 <outlet property="descriptionTopConstraint" destination="iIB-UQ-Ze3" id="aVp-3B-uHi"/>
                 <outlet property="descriptionTrailingConstraint" destination="nfW-Yj-E7t" id="tSo-8S-MDq"/>
                 <outlet property="imageView" destination="pIK-RP-Sjr" id="5B1-oy-2Jw"/>
-                <outlet property="imageViewTopConstraint" destination="Hu1-As-RgO" id="32b-U6-E2f"/>
-                <outlet property="imageViewWidthConstraint" destination="XS3-w8-EHq" id="Z3c-gN-Efe"/>
+                <outlet property="imageViewTopConstraint" destination="L1E-WP-0Tu" id="0St-we-hB7"/>
                 <outlet property="titleLabel" destination="xLt-Ut-mdy" id="6Xi-al-Zse"/>
                 <outlet property="titleTopConstraint" destination="zx2-7C-xuo" id="Y0k-GM-gTU"/>
             </connections>

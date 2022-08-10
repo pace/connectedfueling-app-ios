@@ -39,7 +39,6 @@ final class PageViewPresenter: NSObject, Presenter {
         super.init()
 
         pageViewController.delegate = self
-        pageViewController.dataSource = self
 
         let scrollViews = pageViewController.view.subviews.compactMap { $0 as? UIScrollView }
         scrollViews.forEach { $0.delaysContentTouches = false }
@@ -152,40 +151,6 @@ extension PageViewPresenter: UIPageViewControllerDelegate {
             animated: false,
             completion: nil
         )
-    }
-}
-
-extension PageViewPresenter: UIPageViewControllerDataSource {
-    func pageViewController(
-        _ pageViewController: UIPageViewController,
-        viewControllerBefore viewController: UIViewController
-    ) -> UIViewController? {
-        guard
-            let indexOfViewController = viewControllers.firstIndex(of: viewController),
-            indexOfViewController > 0,
-            isSwipeBackwardEnabled
-        else {
-            return nil
-        }
-
-        let indexBefore = viewControllers.index(before: indexOfViewController)
-        return viewControllers[indexBefore]
-    }
-
-    func pageViewController(
-        _ pageViewController: UIPageViewController,
-        viewControllerAfter viewController: UIViewController
-    ) -> UIViewController? {
-        guard
-            let indexOfViewController = viewControllers.firstIndex(of: viewController),
-            indexOfViewController < viewControllers.count - 1,
-            isSwipeForwardEnabled
-        else {
-            return nil
-        }
-
-        let indexAfter = viewControllers.index(after: indexOfViewController)
-        return viewControllers[indexAfter]
     }
 }
 

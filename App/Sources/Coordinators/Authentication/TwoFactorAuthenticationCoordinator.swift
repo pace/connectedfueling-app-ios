@@ -31,8 +31,7 @@ final class TwoFactorAuthenticationCoordinator: Coordinator {
         viewController.model = .init(
             image: Asset.Images.biometry.image,
             title: L10n.Onboarding.TwoFactorAuthentication.title,
-            description: L10n.Onboarding.TwoFactorAuthentication.description,
-            actions: []
+            description: L10n.Onboarding.TwoFactorAuthentication.description
         )
 
         presenter.present(viewController, animated: true)
@@ -76,13 +75,11 @@ final class TwoFactorAuthenticationCoordinator: Coordinator {
 
         if methods.contains(.biometry) {
             viewController.model.secondaryAction = pinAction
-            viewController.model.actions = [
-                .init(title: L10n.Onboarding.TwoFactorAuthentication.biometry) { [weak self] in
-                    self?.requestAuthenticationWithBiometry()
-                }
-            ]
+            viewController.model.action = .init(title: L10n.Onboarding.TwoFactorAuthentication.biometry) { [weak self] in
+                self?.requestAuthenticationWithBiometry()
+            }
         } else {
-            viewController.model.actions = [pinAction]
+            viewController.model.action = pinAction
         }
     }
 
