@@ -87,7 +87,7 @@ extension DashboardViewController: UITableViewDataSource, UITableViewDelegate {
         if model.isLoading {
             return tableView.dequeue(cellOfType: LoadingTableViewCell.self, for: indexPath) { _ in
                 return LoadingViewModel(
-                    image: Asset.Images.gasStationLogo.image,
+                    image: nil,
                     title: L10n.Dashboard.LoadingView.title,
                     description: L10n.Dashboard.LoadingView.description
                 )
