@@ -8,8 +8,6 @@ let environment: Environment = .init(infoPropertyListName: "Info")
 let sdkEnvironment: PACECloudSDK.Environment = {
     #if PRODUCTION
         return .production
-    #elseif STAGING
-        return .stage
     #else
         return .sandbox
     #endif
