@@ -75,7 +75,7 @@ final class DashboardCoordinator: Coordinator {
             case let .success(stations):
                 self?.stations = stations
 
-            case .failure(CoreLocationRepositoryError.permissionNotGranted):
+            case .failure(CLError.denied):
                 self?.presentLocationPremissionAlert()
 
             case let .failure(error):
@@ -93,7 +93,7 @@ final class DashboardCoordinator: Coordinator {
             case let .success(stations):
                 self?.stations = stations
 
-            case .failure(CoreLocationRepositoryError.permissionNotGranted):
+            case .failure(CLError.denied):
                 self?.presentLocationPremissionAlert()
 
             case let .failure(error):

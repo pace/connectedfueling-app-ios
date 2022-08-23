@@ -1,34 +1,19 @@
 import CoreLocation
 import Domain
 
-public enum CoreLocationRepositoryError: Error {
-    case permissionNotGranted
-}
-
 final class CoreLocationRepository: NSObject, LocationRepository {
-    let defaultLocation: Location
-
     private var locationManager: CLLocationManager
     private var locationPermissionCallbacks: [LocationPermissionCallback] = []
     private var isRequestingLocationPermission: Bool = false
     private var locationUpdateCallbacks: [LocationUpdateCallback] = []
-    private var currentLocation: Location {
+    var currentLocation: Location? {
         didSet { didChangeCurrentLocation() }
     }
 
     init(
-        defaultLocation: CLLocation,
         locationManager: CLLocationManager = .init()
     ) {
-        self.defaultLocation = Location(
-            longitude: defaultLocation.coordinate.longitude,
-            latitude: defaultLocation.coordinate.latitude
-        )
         self.locationManager = locationManager
-        self.currentLocation = Location(
-            longitude: defaultLocation.coordinate.longitude,
-            latitude: defaultLocation.coordinate.latitude
-        )
         super.init()
 
         self.locationManager.delegate = self
@@ -69,6 +54,8 @@ final class CoreLocationRepository: NSObject, LocationRepository {
     }
 
     private func didChangeCurrentLocation() {
+        guard let currentLocation = currentLocation else { return }
+
         locationUpdateCallbacks.forEach { callback in
             callback(.success(currentLocation))
         }
