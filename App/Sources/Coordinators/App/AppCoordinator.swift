@@ -9,9 +9,7 @@ final class AppCoordinator: Coordinator {
         authenticationRepository: PACECloudAuthenticationRepository(presentingViewController: nil)
     )
 
-    private lazy var locationRepository: LocationRepository = CoreLocationRepository(
-        defaultLocation: .init(latitude: 0, longitude: 0)
-    )
+    private lazy var locationRepository: LocationRepository = CoreLocationRepository()
 
     private lazy var gasStationListInteractor: GasStationListInteractor = .init(
         gasStationListRepository: PACECloudGasStationListRepository(

@@ -1,4 +1,5 @@
 import Foundation
+import CoreLocation
 
 public final class GasStationListInteractor {
     public typealias GasStationUpdateCallback = (Result<[GasStation], Error>) -> Void
@@ -8,7 +9,10 @@ public final class GasStationListInteractor {
     private let updateDistanceThresholdInMeters: Double
     private var updateCallbacks: [GasStationUpdateCallback] = []
     private var lastUpdateLocation: Location?
-    private var currentLocation: Location {
+    private var currentLocation: Location? {
+        didSet { updateGasStations() }
+    }
+    private var locationError: Error? {
         didSet { updateGasStations() }
     }
 
@@ -20,7 +24,7 @@ public final class GasStationListInteractor {
         self.gasStationListRepository = gasStationListRepository
         self.locationRepository = locationRepository
         self.updateDistanceThresholdInMeters = updateDistanceThresholdInMeters
-        self.currentLocation = locationRepository.defaultLocation
+        self.currentLocation = locationRepository.currentLocation
     }
 
     public func getFuelType(_ completion: @escaping (Result<FuelType?, Error>) -> Void) {
@@ -34,9 +38,17 @@ public final class GasStationListInteractor {
     public func startGasStationUpdates(_ callback: @escaping GasStationUpdateCallback) {
         updateCallbacks.append(callback)
         locationRepository.startLocationUpdates { [weak self] result in
-            guard case let .success(location) = result else { return }
+            switch result {
+            case .success(let location):
+                self?.currentLocation = location
+                self?.locationError = nil
+                break
 
-            self?.currentLocation = location
+            case .failure(let error):
+                self?.currentLocation = nil
+                self?.locationError = error
+                break
+            }
         }
     }
 
@@ -52,6 +64,15 @@ public final class GasStationListInteractor {
 
 
     private func updateGasStations(_ callback: GasStationUpdateCallback? = nil) {
+        if let locationError = locationError {
+            lastUpdateLocation = nil
+            updateCallbacks.forEach { $0(.failure(locationError)) }
+            callback?(.failure(locationError))
+            return
+        }
+
+        guard let currentLocation = currentLocation else { return }
+
         let isUpdateRequired = lastUpdateLocation.flatMap { $0.distance(to: currentLocation) >= updateDistanceThresholdInMeters } ?? true
 
         guard isUpdateRequired else { return }

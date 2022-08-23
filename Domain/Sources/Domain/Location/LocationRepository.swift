@@ -1,10 +1,11 @@
 import Foundation
+import CoreLocation
 
 public protocol LocationRepository {
     typealias LocationPermissionCallback = (Result<LocationPermissionStatus, Error>) -> Void
     typealias LocationUpdateCallback = (Result<Location, Error>) -> Void
 
-    var defaultLocation: Location { get }
+    var currentLocation: Location? { get }
 
     func fetchLocationPermissionStatus(_ completion: @escaping LocationPermissionCallback)
 

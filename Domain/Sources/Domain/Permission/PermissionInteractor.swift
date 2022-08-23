@@ -1,4 +1,5 @@
 import Foundation
+import CoreLocation
 
 public final class PermissionInteractor {
     private let locationRepository: LocationRepository
