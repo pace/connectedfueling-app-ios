@@ -1,0 +1,123 @@
+"ALERT.LOCATION_PERMISSION.ACTIONS.OPEN_SETTINGS" = "Открытые настройки";
+
+"ALERT.LOCATION_PERMISSION.DESCRIPTION" = "Чтобы показать вам ближайшую заправочную станцию, нам необходим доступ к вашему текущему местоположению.";
+
+"ALERT.LOCATION_PERMISSION.TITLE" = "Местонахождение не разглашается";
+
+"DASHBOARD.ACTIONS.NAVIGATE" = "НАЧАЛЬНЫЙ МАРШРУТ";
+
+"DASHBOARD.ACTIONS.START_FUELING" = "ЗАПОЛНИТЕ ЗДЕСЬ";
+
+"DASHBOARD.EMPTY_VIEW.DESCRIPTION" = "Рядом с вами не найдено ни одной автозаправочной станции.";
+
+"DASHBOARD.EMPTY_VIEW.TITLE" = "Рядом с вами нет автозаправочных станций";
+
+"DASHBOARD.LOADING_VIEW.DESCRIPTION" = "Мы выполним поиск ближайших АЗС в вашем регионе. Это может занять некоторое время.";
+
+"DASHBOARD.LOADING_VIEW.TITLE" = "Поиск автозаправочных станций...";
+
+"DASHBOARD.LOGOUT.CONFIRM.ACTION.CANCEL" = "ОТМЕНИТЬ";
+
+"DASHBOARD.LOGOUT.CONFIRM.ACTION.LOGOUT" = "РЕГИСТРАЦИЯ";
+
+"DASHBOARD.LOGOUT.CONFIRM.DESCRIPTION" = "Ваши данные по-прежнему хранятся в вашей учетной записи PACE-ID.";
+
+"DASHBOARD.LOGOUT.CONFIRM.TITLE" = "Вы действительно хотите выписаться?";
+
+"DASHBOARD.SECTIONS.NEAREST_GAS_STATION" = "Ближайшая автозаправочная станция";
+
+"DASHBOARD.SECTIONS.OTHER_GAS_STATIONS" = "Больше автозаправочных станций";
+
+"FUEL_TYPE.DIESEL" = "ДИЗЕЛЬ";
+
+"FUEL_TYPE.SUPER" = "СУПЕР";
+
+"FUEL_TYPE.SUPER_E10" = "СУПЕР E10";
+
+"FUEL_TYPE.SUPER_PLUS" = "СУПЕР ПЛЮС";
+
+"GLOBAL.ACTIONS.CLOSE" = "Закрыть";
+
+"MENU.ITEMS.ESSO" = "Сайт Esso";
+
+"MENU.ITEMS.FUEL_TYPE" = "Изменить тип топлива";
+
+"MENU.ITEMS.IMPRINT" = "Оттиск";
+
+"MENU.ITEMS.LOGOUT" = "Выйти из системы";
+
+"MENU.ITEMS.PAYMENT_HISTORY" = "Показать историю платежей";
+
+"MENU.ITEMS.PAYMENT_METHODS" = "Редактирование способов оплаты";
+
+"MENU.ITEMS.PRIVACY" = "Политика конфиденциальности";
+
+"MENU.TITLE.PLACEHOLDER" = "Подключенные заправки PACE";
+
+"ONBOARDING.ACTIONS.ADD_PAYMENT_METHOD" = "УСТАНОВИТЬ СПОСОБ ОПЛАТЫ";
+
+"ONBOARDING.ACTIONS.AUTHENTICATE" = "ВОЙТИ ИЛИ ЗАРЕГИСТРИРОВАТЬСЯ";
+
+"ONBOARDING.ACTIONS.COMPLETE" = "ВПЕРЕД!";
+
+"ONBOARDING.ACTIONS.NEXT" = "ПРОДОЛЖЕНИЕ";
+
+"ONBOARDING.ACTIONS.SAVE" = "СПАСИБО";
+
+"ONBOARDING.ACTIONS.SHARE_LOCATION" = "СОВМЕСТНОЕ МЕСТОНАХОЖДЕНИЕ";
+
+"ONBOARDING.ACTIONS.SKIP" = "пропустить";
+
+"ONBOARDING.AUTHENTICATION.DESCRIPTION" = "Для удобства оплаты с помощью приложения необходимо зарегистрироваться или войти в систему с имеющимся у вас PACE ID.";
+
+"ONBOARDING.AUTHENTICATION.TITLE" = "Профиль вклада";
+
+"ONBOARDING.CREATE_PIN.CONFIRM" = "ПРОДОЛЖЕНИЕ";
+
+"ONBOARDING.CREATE_PIN.DESCRIPTION" = "Выберите четырехзначный PIN-код, который будет использоваться для подтверждения платежей.";
+
+"ONBOARDING.CREATE_PIN.TITLE" = "Выберите PIN-код";
+
+"ONBOARDING.ENTER_ONE_TIME_PASSWORD.CONFIRM" = "ПОДТВЕРДИТЬ";
+
+"ONBOARDING.ENTER_ONE_TIME_PASSWORD.DESCRIPTION" = "Пожалуйста, авторизуйте изменение с помощью кода подтверждения из вашего электронного почтового ящика.";
+
+"ONBOARDING.ENTER_ONE_TIME_PASSWORD.TITLE" = "Введите код подтверждения";
+
+"ONBOARDING.FUEL_TYPE.DESCRIPTION" = "И наконец: Какие цены на топливо мы должны вам показать?";
+
+"ONBOARDING.FUEL_TYPE.TITLE" = "Вид топлива";
+
+"ONBOARDING.PAYMENT_METHOD.DESCRIPTION" = "Введите способ оплаты, чтобы вы могли начать свою первую заправку.";
+
+"ONBOARDING.PAYMENT_METHOD.TITLE" = "Способ оплаты";
+
+"ONBOARDING.PERMISSION.DESCRIPTION" = "Чтобы увидеть ближайшую заправочную станцию, нам нужен доступ к вашему точному местоположению.";
+
+"ONBOARDING.PERMISSION.TITLE" = "Автозаправочные станции рядом с вами";
+
+"ONBOARDING.PIN.ERROR.INVALID_LENGTH" = "PIN-код должен состоять из четырех цифр.";
+
+"ONBOARDING.PIN.ERROR.MISMATCH" = "PIN-коды не совпадают. Попробуйте еще раз.";
+
+"ONBOARDING.PIN.ERROR.NOT_SECURE" = "PIN-код слишком прост (0000 или 1234 не допускаются). Выберите другой PIN-код";
+
+"ONBOARDING.PIN.ERROR.SERIES" = "PIN-код не должен представлять собой серию возрастающих или убывающих цифр.";
+
+"ONBOARDING.PIN.ERROR.TOO_FEW_DIGITS" = "PIN-код должен содержать не менее трех различных цифр.";
+
+"ONBOARDING.TWO_FACTOR_AUTHENTICATION.BIOMETRY" = "ИСПОЛЬЗОВАТЬ БИОМЕТРИКУ";
+
+"ONBOARDING.TWO_FACTOR_AUTHENTICATION.DESCRIPTION" = "Биометрические сканеры - это самый быстрый и безопасный способ подтверждения платежных операций.";
+
+"ONBOARDING.TWO_FACTOR_AUTHENTICATION.PIN" = "Выберите PIN-код";
+
+"ONBOARDING.TWO_FACTOR_AUTHENTICATION.TITLE" = "Безопасная и быстрая оплата";
+
+"ONBOARDING.VERIFY_PIN.CONFIRM" = "ПРОДОЛЖЕНИЕ";
+
+"ONBOARDING.VERIFY_PIN.DESCRIPTION" = "Для подтверждения введите PIN-код еще раз.";
+
+"ONBOARDING.VERIFY_PIN.TITLE" = "Подтверждение PIN-кода";
+
+"PRICE.NOT_AVAILABLE" = "н. в.";

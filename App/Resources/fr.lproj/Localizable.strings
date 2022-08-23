@@ -1,0 +1,123 @@
+"ALERT.LOCATION_PERMISSION.ACTIONS.OPEN_SETTINGS" = "Ouvrir les paramètres";
+
+"ALERT.LOCATION_PERMISSION.DESCRIPTION" = "Pour pouvoir t'indiquer la station-service la plus proche, nous devons avoir accès à ta position actuelle.";
+
+"ALERT.LOCATION_PERMISSION.TITLE" = "Site non validé";
+
+"DASHBOARD.ACTIONS.NAVIGATE" = "DÉMARRER UNE ROUTE";
+
+"DASHBOARD.ACTIONS.START_FUELING" = "FAIRE LE PLEIN ICI";
+
+"DASHBOARD.EMPTY_VIEW.DESCRIPTION" = "Aucune station-service n'a été trouvée près de chez toi.";
+
+"DASHBOARD.EMPTY_VIEW.TITLE" = "Pas de station-service près de chez toi";
+
+"DASHBOARD.LOADING_VIEW.DESCRIPTION" = "Nous recherchons les stations-service les plus proches de chez toi. Cela peut prendre un certain temps.";
+
+"DASHBOARD.LOADING_VIEW.TITLE" = "Recherche stations-service...";
+
+"DASHBOARD.LOGOUT.CONFIRM.ACTION.CANCEL" = "ANNULER";
+
+"DASHBOARD.LOGOUT.CONFIRM.ACTION.LOGOUT" = "S'INSCRIRE";
+
+"DASHBOARD.LOGOUT.CONFIRM.DESCRIPTION" = "Tes données sont toujours enregistrées dans ton compte PACE-ID.";
+
+"DASHBOARD.LOGOUT.CONFIRM.TITLE" = "Tu veux vraiment te désinscrire ?";
+
+"DASHBOARD.SECTIONS.NEAREST_GAS_STATION" = "Station-service la plus proche";
+
+"DASHBOARD.SECTIONS.OTHER_GAS_STATIONS" = "Autres stations-service";
+
+"FUEL_TYPE.DIESEL" = "DIESEL";
+
+"FUEL_TYPE.SUPER" = "SUPER";
+
+"FUEL_TYPE.SUPER_E10" = "SUPER E10";
+
+"FUEL_TYPE.SUPER_PLUS" = "SUPER PLUS";
+
+"GLOBAL.ACTIONS.CLOSE" = "Fermer";
+
+"MENU.ITEMS.ESSO" = "Site web Esso";
+
+"MENU.ITEMS.FUEL_TYPE" = "Modifier le type de carburant";
+
+"MENU.ITEMS.IMPRINT" = "Mentions légales";
+
+"MENU.ITEMS.LOGOUT" = "Se désinscrire";
+
+"MENU.ITEMS.PAYMENT_HISTORY" = "Afficher l'historique des paiements";
+
+"MENU.ITEMS.PAYMENT_METHODS" = "Traiter les modes de paiement";
+
+"MENU.ITEMS.PRIVACY" = "Déclaration de confidentialité";
+
+"MENU.TITLE.PLACEHOLDER" = "PACE Carburant connecté";
+
+"ONBOARDING.ACTIONS.ADD_PAYMENT_METHOD" = "METTRE EN PLACE UN MODE DE PAIEMENT";
+
+"ONBOARDING.ACTIONS.AUTHENTICATE" = "SE CONNECTER OU S'INSCRIRE";
+
+"ONBOARDING.ACTIONS.COMPLETE" = "C'EST PARTI !";
+
+"ONBOARDING.ACTIONS.NEXT" = "CONTINUER";
+
+"ONBOARDING.ACTIONS.SAVE" = "SAUVEGARDE";
+
+"ONBOARDING.ACTIONS.SHARE_LOCATION" = "PARTAGER L'EMPLACEMENT";
+
+"ONBOARDING.ACTIONS.SKIP" = "Sauter";
+
+"ONBOARDING.AUTHENTICATION.DESCRIPTION" = "Pour payer facilement avec l'application, tu dois t'inscrire ou te connecter avec ton identifiant PACE existant.";
+
+"ONBOARDING.AUTHENTICATION.TITLE" = "Déposer un profil";
+
+"ONBOARDING.CREATE_PIN.CONFIRM" = "CONTINUER";
+
+"ONBOARDING.CREATE_PIN.DESCRIPTION" = "Choisis un code PIN à quatre chiffres qui sera utilisé pour confirmer les paiements.";
+
+"ONBOARDING.CREATE_PIN.TITLE" = "Choisir un code PIN";
+
+"ONBOARDING.ENTER_ONE_TIME_PASSWORD.CONFIRM" = "CONFIRMER";
+
+"ONBOARDING.ENTER_ONE_TIME_PASSWORD.DESCRIPTION" = "Veuillez autoriser la modification à l'aide du code de confirmation figurant dans votre boîte aux lettres électronique.";
+
+"ONBOARDING.ENTER_ONE_TIME_PASSWORD.TITLE" = "Saisir le code de confirmation";
+
+"ONBOARDING.FUEL_TYPE.DESCRIPTION" = "Et pour finir : Quels prix de carburant devrions-nous t'indiquer ?";
+
+"ONBOARDING.FUEL_TYPE.TITLE" = "Type de carburant";
+
+"ONBOARDING.PAYMENT_METHOD.DESCRIPTION" = "Enregistre un mode de paiement pour pouvoir commencer à faire le plein.";
+
+"ONBOARDING.PAYMENT_METHOD.TITLE" = "Méthode de paiement";
+
+"ONBOARDING.PERMISSION.DESCRIPTION" = "Pour voir la station-service la plus proche, nous devons avoir accès à ta localisation exacte.";
+
+"ONBOARDING.PERMISSION.TITLE" = "Stations-service près de chez toi";
+
+"ONBOARDING.PIN.ERROR.INVALID_LENGTH" = "Le code PIN doit être composé de quatre chiffres.";
+
+"ONBOARDING.PIN.ERROR.MISMATCH" = "Les codes PIN ne correspondent pas. Réessaie.";
+
+"ONBOARDING.PIN.ERROR.NOT_SECURE" = "Le code PIN est trop simple (0000 ou 1234 ne sont pas autorisés). Choisis un autre code PIN";
+
+"ONBOARDING.PIN.ERROR.SERIES" = "Le code PIN ne doit pas être une série de chiffres croissants ou décroissants.";
+
+"ONBOARDING.PIN.ERROR.TOO_FEW_DIGITS" = "Le code PIN doit contenir au moins trois chiffres différents.";
+
+"ONBOARDING.TWO_FACTOR_AUTHENTICATION.BIOMETRY" = "UTILISER LA BIOMÉTRIE";
+
+"ONBOARDING.TWO_FACTOR_AUTHENTICATION.DESCRIPTION" = "Les scanners biométriques sont la manière la plus rapide et la plus sûre de confirmer tes opérations de paiement.";
+
+"ONBOARDING.TWO_FACTOR_AUTHENTICATION.PIN" = "Choisir un code PIN";
+
+"ONBOARDING.TWO_FACTOR_AUTHENTICATION.TITLE" = "Payer en toute sécurité et rapidement";
+
+"ONBOARDING.VERIFY_PIN.CONFIRM" = "CONTINUER";
+
+"ONBOARDING.VERIFY_PIN.DESCRIPTION" = "Veuillez saisir à nouveau le code PIN pour confirmer.";
+
+"ONBOARDING.VERIFY_PIN.TITLE" = "Confirmer le code PIN";
+
+"PRICE.NOT_AVAILABLE" = "n. v.";
