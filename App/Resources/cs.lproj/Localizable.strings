@@ -1,0 +1,123 @@
+"ALERT.LOCATION_PERMISSION.ACTIONS.OPEN_SETTINGS" = "Otevřít nastavení";
+
+"ALERT.LOCATION_PERMISSION.DESCRIPTION" = "Abychom vám mohli ukázat nejbližší čerpací stanici, potřebujeme přístup k vaší aktuální poloze.";
+
+"ALERT.LOCATION_PERMISSION.TITLE" = "Umístění nezveřejněno";
+
+"DASHBOARD.ACTIONS.NAVIGATE" = "START TRASY";
+
+"DASHBOARD.ACTIONS.START_FUELING" = "VYPLŇTE ZDE";
+
+"DASHBOARD.EMPTY_VIEW.DESCRIPTION" = "Ve vašem okolí nebyly nalezeny žádné čerpací stanice.";
+
+"DASHBOARD.EMPTY_VIEW.TITLE" = "Žádné čerpací stanice ve vašem okolí";
+
+"DASHBOARD.LOADING_VIEW.DESCRIPTION" = "Vyhledáme nejbližší čerpací stanice ve vaší oblasti. To může chvíli trvat.";
+
+"DASHBOARD.LOADING_VIEW.TITLE" = "Hledání čerpacích stanic...";
+
+"DASHBOARD.LOGOUT.CONFIRM.ACTION.CANCEL" = "CANCEL";
+
+"DASHBOARD.LOGOUT.CONFIRM.ACTION.LOGOUT" = "REGISTRACE";
+
+"DASHBOARD.LOGOUT.CONFIRM.DESCRIPTION" = "Vaše údaje jsou stále uloženy na vašem účtu PACE-ID.";
+
+"DASHBOARD.LOGOUT.CONFIRM.TITLE" = "Opravdu se chcete odhlásit?";
+
+"DASHBOARD.SECTIONS.NEAREST_GAS_STATION" = "Nejbližší čerpací stanice";
+
+"DASHBOARD.SECTIONS.OTHER_GAS_STATIONS" = "Více čerpacích stanic";
+
+"FUEL_TYPE.DIESEL" = "DIESEL";
+
+"FUEL_TYPE.SUPER" = "SUPER";
+
+"FUEL_TYPE.SUPER_E10" = "SUPER E10";
+
+"FUEL_TYPE.SUPER_PLUS" = "SUPER PLUS";
+
+"GLOBAL.ACTIONS.CLOSE" = "Zavřít";
+
+"MENU.ITEMS.ESSO" = "Webové stránky společnosti Esso";
+
+"MENU.ITEMS.FUEL_TYPE" = "Změna typu paliva";
+
+"MENU.ITEMS.IMPRINT" = "Otisk";
+
+"MENU.ITEMS.LOGOUT" = "Odhlášení";
+
+"MENU.ITEMS.PAYMENT_HISTORY" = "Zobrazit historii plateb";
+
+"MENU.ITEMS.PAYMENT_METHODS" = "Upravit způsoby platby";
+
+"MENU.ITEMS.PRIVACY" = "Zásady ochrany osobních údajů";
+
+"MENU.TITLE.PLACEHOLDER" = "PACE Connected Fueling";
+
+"ONBOARDING.ACTIONS.ADD_PAYMENT_METHOD" = "NASTAVIT ZPŮSOB PLATBY";
+
+"ONBOARDING.ACTIONS.AUTHENTICATE" = "PŘIHLASTE SE NEBO SE ZAREGISTRUJTE";
+
+"ONBOARDING.ACTIONS.COMPLETE" = "GO!";
+
+"ONBOARDING.ACTIONS.NEXT" = "POKRAČOVAT NA";
+
+"ONBOARDING.ACTIONS.SAVE" = "SAVE";
+
+"ONBOARDING.ACTIONS.SHARE_LOCATION" = "MÍSTO SDÍLENÍ";
+
+"ONBOARDING.ACTIONS.SKIP" = "přeskočit";
+
+"ONBOARDING.AUTHENTICATION.DESCRIPTION" = "Pro snadnou platbu pomocí aplikace se musíte zaregistrovat nebo přihlásit pomocí svého stávajícího PACE ID.";
+
+"ONBOARDING.AUTHENTICATION.TITLE" = "Profil vkladu";
+
+"ONBOARDING.CREATE_PIN.CONFIRM" = "POKRAČOVAT NA";
+
+"ONBOARDING.CREATE_PIN.DESCRIPTION" = "Zvolte čtyřmístný kód PIN, který se bude používat k potvrzování plateb.";
+
+"ONBOARDING.CREATE_PIN.TITLE" = "Zvolte kód PIN";
+
+"ONBOARDING.ENTER_ONE_TIME_PASSWORD.CONFIRM" = "POTVRZENÍ";
+
+"ONBOARDING.ENTER_ONE_TIME_PASSWORD.DESCRIPTION" = "Změnu autorizujte pomocí potvrzovacího kódu ze své e-mailové schránky.";
+
+"ONBOARDING.ENTER_ONE_TIME_PASSWORD.TITLE" = "Zadejte potvrzovací kód";
+
+"ONBOARDING.FUEL_TYPE.DESCRIPTION" = "A nakonec: Jaké ceny pohonných hmot bychom vám měli ukázat?";
+
+"ONBOARDING.FUEL_TYPE.TITLE" = "Typ paliva";
+
+"ONBOARDING.PAYMENT_METHOD.DESCRIPTION" = "Zadejte způsob platby, abyste mohli začít s prvním tankováním.";
+
+"ONBOARDING.PAYMENT_METHOD.TITLE" = "Způsob platby";
+
+"ONBOARDING.PERMISSION.DESCRIPTION" = "Pro zobrazení nejbližší čerpací stanice potřebujeme přístup k vaší přesné poloze.";
+
+"ONBOARDING.PERMISSION.TITLE" = "Čerpací stanice ve vašem okolí";
+
+"ONBOARDING.PIN.ERROR.INVALID_LENGTH" = "PIN musí být čtyřmístný.";
+
+"ONBOARDING.PIN.ERROR.MISMATCH" = "Kódy PIN se neshodují. Zkuste to znovu.";
+
+"ONBOARDING.PIN.ERROR.NOT_SECURE" = "PIN je příliš jednoduchý (0000 nebo 1234 nejsou povoleny). Zvolte jiný kód PIN";
+
+"ONBOARDING.PIN.ERROR.SERIES" = "PIN nesmí být tvořen řadou vzestupných nebo sestupných číslic.";
+
+"ONBOARDING.PIN.ERROR.TOO_FEW_DIGITS" = "PIN musí obsahovat alespoň tři různé číslice.";
+
+"ONBOARDING.TWO_FACTOR_AUTHENTICATION.BIOMETRY" = "POUŽITÍ BIOMETRIKY";
+
+"ONBOARDING.TWO_FACTOR_AUTHENTICATION.DESCRIPTION" = "Biometrické skenery představují nejrychlejší a nejbezpečnější způsob potvrzování platebních transakcí.";
+
+"ONBOARDING.TWO_FACTOR_AUTHENTICATION.PIN" = "Zvolte kód PIN";
+
+"ONBOARDING.TWO_FACTOR_AUTHENTICATION.TITLE" = "Bezpečná a rychlá platba";
+
+"ONBOARDING.VERIFY_PIN.CONFIRM" = "POKRAČOVAT NA";
+
+"ONBOARDING.VERIFY_PIN.DESCRIPTION" = "Pro potvrzení zadejte PIN znovu.";
+
+"ONBOARDING.VERIFY_PIN.TITLE" = "Potvrzení kódu PIN";
+
+"PRICE.NOT_AVAILABLE" = "n. v.";
