@@ -1,25 +1,69 @@
 import JamitFoundation
 import UIKit
 
-final class DashboardItemView: StatefulView<DashboardItemViewModel> {
+final class DashboardItemView: CofuView<DashboardItemViewModel> {
     enum Constants {
         static let distanceFormattingThresholdForMetersPrecision: Double = 1.0
         static let distanceFormattingThresholdInKm: Double = 10.0
         static let roundingThreshold: Double = 0.05
     }
 
-    @IBOutlet private var distanceImageView: UIImageView!
-    @IBOutlet private var titleLabel: Label!
-    @IBOutlet private var descriptionLabel: Label!
-    @IBOutlet private var priceBackgroundView: UIView!
-    @IBOutlet private var priceLabel: Label!
-    @IBOutlet private var fuelTypeLabel: Label!
-    @IBOutlet private var distanceBackgroundView: UIView!
-    @IBOutlet private var distanceLabel: Label!
-    @IBOutlet private var actionContainerView: UIView!
-    @IBOutlet private var actionContainerViewHeightConstraint: NSLayoutConstraint!
+    private lazy var distanceImageView: UIImageView = {
+        let imageView: UIImageView = .instantiate()
+        imageView.image = Asset.Images.navigation.image
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
 
-    private lazy var actionButton: ButtonView = .instantiate()
+    private lazy var titleLabel: Label = {
+        let label: Label = .instantiate()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
+    private lazy var descriptionLabel: Label = {
+        let label: Label = .instantiate()
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
+    private lazy var priceLabel: Label = {
+        let label: Label = .instantiate()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
+    private lazy var fuelTypeLabel: Label = {
+        let label: Label = .instantiate()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
+    private lazy var distanceLabel: Label = {
+        let label: Label = .instantiate()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
+    private lazy var priceBackgroundView: UIView = {
+        let view: UIView = .instantiate()
+        view.backgroundColor = Asset.Colors.Theme.backgroundLightGray.color
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+
+    private lazy var distanceBackgroundView: UIView = {
+        let view: UIView = .instantiate()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+
+    private lazy var actionButton: ButtonView = {
+        let button: ButtonView = .instantiate()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
 
     private static var priceFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
@@ -46,6 +90,8 @@ final class DashboardItemView: StatefulView<DashboardItemViewModel> {
         return formatter
     }()
 
+    private var actionViewHeightConstraint: NSLayoutConstraint?
+
     var style: DashboardItemViewStyle = .default {
         didSet { didChangeStyle() }
     }
@@ -53,14 +99,79 @@ final class DashboardItemView: StatefulView<DashboardItemViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        actionButton.translatesAutoresizingMaskIntoConstraints = false
-        actionContainerView.addSubview(actionButton)
-        actionButton.topAnchor.constraint(equalTo: actionContainerView.topAnchor).isActive = true
-        actionButton.leadingAnchor.constraint(equalTo: actionContainerView.leadingAnchor).isActive = true
-        actionButton.trailingAnchor.constraint(equalTo: actionContainerView.trailingAnchor).isActive = true
-        actionButton.bottomAnchor.constraint(equalTo: actionContainerView.bottomAnchor).isActive = true
-
         didChangeStyle()
+    }
+
+    override func setup() {
+        super.setup()
+
+        [
+            titleLabel,
+            descriptionLabel,
+            distanceBackgroundView,
+            priceBackgroundView,
+            actionButton
+        ].forEach(addSubview)
+
+        setupPriceView()
+        setupDistanceView()
+
+        titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20).isActive = true
+        titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
+        titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -150).isActive = true
+
+        descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
+        descriptionLabel.trailingAnchor.constraint(equalTo: priceBackgroundView.leadingAnchor, constant: -16).isActive = true
+        descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10).isActive = true
+
+        actionButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
+        actionButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
+        actionButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        actionButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20).isActive = true
+        actionButton.topAnchor.constraint(equalTo: distanceBackgroundView.bottomAnchor, constant: 20).isActive = true
+    }
+
+    private func setupPriceView() {
+        [
+            fuelTypeLabel,
+            priceLabel
+        ].forEach(priceBackgroundView.addSubview)
+
+        priceBackgroundView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        priceBackgroundView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
+        priceBackgroundView.topAnchor.constraint(equalTo: descriptionLabel.topAnchor).isActive = true
+        let topPrice = priceBackgroundView.bottomAnchor.constraint(lessThanOrEqualTo: actionButton.topAnchor, constant: 25)
+        topPrice.priority = .defaultLow
+        topPrice.isActive = true
+
+        fuelTypeLabel.trailingAnchor.constraint(equalTo: priceBackgroundView.trailingAnchor).isActive = true
+        fuelTypeLabel.leadingAnchor.constraint(equalTo: priceBackgroundView.leadingAnchor).isActive = true
+        fuelTypeLabel.topAnchor.constraint(equalTo: priceBackgroundView.topAnchor, constant: 4).isActive = true
+
+        priceLabel.trailingAnchor.constraint(equalTo: priceBackgroundView.trailingAnchor).isActive = true
+        priceLabel.leadingAnchor.constraint(equalTo: priceBackgroundView.leadingAnchor).isActive = true
+        priceLabel.bottomAnchor.constraint(equalTo: priceBackgroundView.bottomAnchor, constant: -5).isActive = true
+        priceLabel.topAnchor.constraint(equalTo: fuelTypeLabel.bottomAnchor).isActive = true
+    }
+
+    private func setupDistanceView() {
+        [
+            distanceImageView,
+            distanceLabel
+        ].forEach(distanceBackgroundView.addSubview)
+
+        distanceBackgroundView.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 1).isActive = true
+        distanceBackgroundView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
+        distanceBackgroundView.heightAnchor.constraint(equalToConstant: 26).isActive = true
+
+        distanceImageView.leadingAnchor.constraint(equalTo: distanceBackgroundView.leadingAnchor).isActive = true
+        distanceImageView.widthAnchor.constraint(equalToConstant: 24).isActive = true
+        distanceImageView.heightAnchor.constraint(equalToConstant: 24).isActive = true
+        distanceImageView.topAnchor.constraint(equalTo: distanceBackgroundView.topAnchor, constant: 1).isActive = true
+
+        distanceLabel.leadingAnchor.constraint(equalTo: distanceImageView.trailingAnchor, constant: 4).isActive = true
+        distanceLabel.centerYAnchor.constraint(equalTo: distanceBackgroundView.centerYAnchor).isActive = true
+        distanceLabel.trailingAnchor.constraint(equalTo: distanceBackgroundView.trailingAnchor).isActive = true
     }
 
     override func didChangeModel() {
@@ -109,7 +220,7 @@ final class DashboardItemView: StatefulView<DashboardItemViewModel> {
         layer.masksToBounds = false
         distanceLabel.style = style.distanceBadgeLabelStyle
         actionButton.style = style.actionStyle
-        actionContainerViewHeightConstraint.constant = style.actionStyle.height
+        actionViewHeightConstraint?.constant = style.actionStyle.height
     }
 
     private func makePriceText(forPrice price: Double, currency: String?) -> NSAttributedString {

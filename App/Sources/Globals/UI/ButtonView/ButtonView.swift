@@ -84,13 +84,6 @@ final class ButtonView: StatefulView<ButtonViewModel> {
         button.layer.shadowOpacity = 1
         button.layer.masksToBounds = false
         heightConstraint.constant = style.height
-
-        guard let imageView = button.imageView,
-              let titleLabel = button.titleLabel else { return }
-        let imageInset = -titleLabel.frame.width + button.frame.width - 20
-        button.contentEdgeInsets = .init(top: 12, left: 20, bottom: 12, right: 8)
-        button.titleEdgeInsets = .init(top: 0, left: -imageView.frame.width - 20, bottom: 0, right: 0)
-        button.imageEdgeInsets = .init(top: 0, left: 0, bottom: 0, right: imageInset)
     }
 
     @objc
@@ -115,5 +108,16 @@ final class ButtonView: StatefulView<ButtonViewModel> {
         button.isHighlighted = false
 
         didChangeStyle()
+    }
+
+    override func updateConstraints() {
+        super.updateConstraints()
+
+        guard let imageView = button.imageView,
+              let titleLabel = button.titleLabel else { return }
+        let imageInset = -titleLabel.frame.width + button.frame.width - 20
+        button.contentEdgeInsets = .init(top: 12, left: 20, bottom: 12, right: 8)
+        button.titleEdgeInsets = .init(top: 0, left: -imageView.frame.width - 20, bottom: 0, right: 0)
+        button.imageEdgeInsets = .init(top: 0, left: 0, bottom: 0, right: imageInset)
     }
 }

@@ -298,6 +298,9 @@ extension OnboardingViewStyle {
 // MARK: InputView
 extension InputViewStyle {
     static let `default`: Self = .init(
+        background: .white,
+        inputFieldTextColor: Asset.Colors.Text.darkText.color,
+        bottomLineColor: Asset.Colors.Text.darkText.color,
         titleStyle: .headline1,
         descriptionStyle: .body2,
         errorStyle: LabelStyle.body4
