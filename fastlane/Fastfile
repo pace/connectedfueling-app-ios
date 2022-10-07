@@ -68,12 +68,12 @@ platform :ios do
       scheme: 'App',
       export_team_id: TEAM_ID_PRODUCTION,
       configuration: 'Production',
-      include_bitcode: true,
+      include_bitcode: false,
       include_symbols: true,
       export_options: {
         method: 'app-store',
-        compileBitcode: true,
-        uploadBitcode: true,
+        compileBitcode: false,
+        uploadBitcode: false,
         uploadSymbols: true,
         provisioningProfiles: {
           APP_ID_PRODUCTION => ENV['sigh_car.pace.cofu_appstore_profile-name']
