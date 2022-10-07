@@ -56,6 +56,12 @@ platform :ios do
     set_info_plist_value(path: info_plist_path, key: 'CFBundleShortVersionString', value: version_number)
     set_info_plist_value(path: info_plist_path, key: 'CFBundleVersion', value: build_number)
 
+    update_signing(
+      target: 'App',
+      environment: 'Production',
+      team_id: TEAM_ID_PRODUCTION
+    )
+
     gym(
       clean: true,
       export_method: 'app-store',
@@ -72,9 +78,34 @@ platform :ios do
         provisioningProfiles: {
           APP_ID_PRODUCTION => ENV['sigh_car.pace.cofu_appstore_profile-name']
         }
-      },
-      codesigning_identity: 'Apple Distribution: PACE Telematics GmbH'
+      }
     )
+  end
+
+  lane :update_signing do |options|
+    Dir.chdir('..') do
+      project_path = PROJECT_PATH
+      project = Xcodeproj::Project.open(project_path)
+      puts options[:target]
+      puts project.targets
+      main_target = project.targets.select { |target| target.name == options[:target] }.first
+
+      if main_target
+        puts 'Found target'
+        puts "Environment: #{options[:environment]}"
+        configuration = main_target.build_configurations.select { |config| config.name == options[:environment] }.first
+
+        if configuration
+            puts 'Found configuration'
+            sdk = configuration.build_settings['SDKROOT'] || 'iphoneos'
+            configuration.build_settings["CODE_SIGN_IDENTITY[sdk=#{sdk}*]"] = 'iPhone Distribution'
+            configuration.build_settings["DEVELOPMENT_TEAM[sdk=#{sdk}*]"] = options[:team_id]
+            configuration.build_settings["PROVISIONING_PROFILE_SPECIFIER[sdk=#{sdk}*]"] = configuration.build_settings['PROVISIONING_PROFILE_SPECIFIER'] || 'ERROR'
+        end
+
+        project.save
+      end
+    end
   end
 
   lane :publish do
