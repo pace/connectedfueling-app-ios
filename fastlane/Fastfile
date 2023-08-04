@@ -109,7 +109,11 @@ platform :ios do
   end
 
   lane :publish do
-    upload_to_testflight
+    upload_to_testflight(
+      distribute_external: true,
+      groups: ['Jamit Labs', 'Partners'],
+      changelog: 'Have Fun Testing'
+    )
   end
 
   desc 'Submit the latest uploaded version to Apple\'s app review'

@@ -6,10 +6,11 @@ stages:
 before_script:
   - bundle install || true
   - git fetch --prune --prune-tags
-  - export TAG_COMMIT_TIME=$(git show -s --format=%ct $CI_COMMIT_SHA)
-  - echo "Commit time to be used as build number:" $TAG_COMMIT_TIME
-  - export BUILD_NUMBER=$(TZ=Etc/Utc date -j -f '%s' ${TAG_COMMIT_TIME} "+%Y%m%d%H")
-  - export VERSION_NAME=$(TZ=Etc/Utc date -j -f '%s' ${TAG_COMMIT_TIME} "+%y.%V.%u")
+  - echo "Latest tag to be used as build and version number"
+  - export LATEST_TAG=$(git describe --tags --abbrev=0 --match "connectedfueling-app-*")
+  - export TAG_NUMBER=${LATEST_TAG##connectedfueling-app-v} # Get content after connectedfueling-app-v
+  - export VERSION_NAME=${TAG_NUMBER%.*} # Get content before last .
+  - export BUILD_NUMBER=${TAG_NUMBER##*.} # Get content after last .
   - echo "Building version $VERSION_NAME with build number $BUILD_NUMBER"
 
 .runner_tags:
@@ -28,6 +29,37 @@ plist:
     - find . -name "*.strings" -size +0 -print0 | xargs -0 plutil -lint
   only:
     - merge_requests
+  interruptible: true
+
+### Release to TestFlight
+release_schedule:
+  image: node:latest
+  stage: publish
+  before_script: []
+  after_script: []
+  script:
+    - if $(eval $CONDITION); then echo "Releasing..."; else echo "Nothing to do"; exit 0; fi
+    - echo "Current time to be used as new build and version number"
+    - export BUILD_NUMBER=$(TZ=Etc/Utc date "+%Y%m%d%H")
+    - export VERSION_NAME=$(TZ=Etc/Utc date "+%y.%V.%u")
+    - export CUSTOM_TAG_NAME="${TAG_PREFIX}v${VERSION_NAME}.${BUILD_NUMBER}"
+    - export CUSTOM_BRANCH_NAME="main"
+    - echo "Creating tag with tag name:" $CUSTOM_TAG_NAME
+    - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@git.pace.cloud/pace/mobile/common.git tmp/common
+    - cd tmp/common/scripts/release
+    - yarn install
+    - node --unhandled-rejections=strict create-empty-release.js
+  only:
+    refs:
+      - schedules
+    variables:
+      - $SCHEDULED_JOB == "connectedfueling-app-testflight"
+  dependencies: []
+  needs: []
+  variables:
+    TAG_PREFIX: "connectedfueling-app-"
+  tags:
+    - docker
 
 build_testflight_app:
   extends: .runner_tags
@@ -41,6 +73,10 @@ build_testflight_app:
     paths:
       - App.ipa
     expire_in: 1 weeks
+  except:
+    variables:
+      - $CI_COMMIT_TAG !~ /^connectedfueling-app-/
+  interruptible: true
 
 publish_testflight_app:
   extends: .runner_tags
@@ -49,6 +85,10 @@ publish_testflight_app:
     - tags
   script:
     - bundle exec fastlane publish
+  except:
+    variables:
+      - $CI_COMMIT_TAG !~ /^connectedfueling-app-/
+  interruptible: true
 
 submit:
   extends: .runner_tags
@@ -58,3 +98,8 @@ submit:
     - tags
   script:
     - bundle exec fastlane submit_review --verbose
+  except:
+    variables:
+      - $CI_COMMIT_TAG !~ /^connectedfueling-app-/
+  when: manual
+  interruptible: true
