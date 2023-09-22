@@ -23,8 +23,8 @@ enum PinInputValidator: InputValidator {
         let intArray = input.compactMap { Int("\($0)") }
 
         guard
-            intArray.map { $0 - 1 }.dropFirst() != intArray.dropLast(),
-            intArray.reversed().map { $0 - 1 }.dropFirst() != intArray.reversed().dropLast()
+            intArray.map({ $0 - 1 }).dropFirst() != intArray.dropLast(),
+            intArray.reversed().map({ $0 - 1 }).dropFirst() != intArray.reversed().dropLast()
         else {
             return .failure(.consecutiveOrder)
         }
