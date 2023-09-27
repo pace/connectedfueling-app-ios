@@ -5,9 +5,7 @@
 	<key>PACECloudSDKIDKitSetup</key>
 	<dict>
 		<key>OIDConfigurationRedirectURI</key>
-		<string>YOUR_REDIRECT_URI</string>
-		<key>OIDConfigurationClientID</key>
-		<string>YOUR_CLIENT_ID</string>
+		<string>cofu-app://callback</string>
 	</dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
@@ -53,13 +51,6 @@
 	<string>Standortdaten werden verwendet um Tanksäulen in deiner Nähe anzuzeigen.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Wir verwenden Fotos um die Kopie der Rechnungsbelege als Bild bereitzustellen.</string>
-	<key>PACECloudSDKIDKitSetup</key>
-	<dict>
-		<key>OIDConfigurationClientID</key>
-		<string>connected-fueling-app-ios</string>
-		<key>OIDConfigurationRedirectURI</key>
-		<string>cofu-app://callback</string>
-	</dict>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

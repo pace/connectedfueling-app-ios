@@ -280,11 +280,9 @@ extension DashboardCoordinator: MenuCoordinatorDelegate {
                     DispatchQueue.main.async {
                         self?.callback()
                     }
-                    break
 
                 case .failure(let error):
                     print(error)
-                    break
                 }
             }
         }

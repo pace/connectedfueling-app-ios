@@ -27,7 +27,7 @@ final class PermissionCoordinator: Coordinator {
             title: L10n.Onboarding.Permission.title,
             description: L10n.Onboarding.Permission.description,
             action: .init(title: L10n.Onboarding.Actions.shareLocation) { [weak self] in
-                    self?.presentLocationPermissionRequest()
+                self?.presentLocationPermissionRequest()
             }
         )
 

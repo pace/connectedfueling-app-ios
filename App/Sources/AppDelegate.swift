@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         PACECloudSDK.shared.setup(
             with: .init(
                 apiKey: "connected-fueling-app",
+                clientId: "connected-fueling-app-ios",
                 environment: sdkEnvironment,
                 geoAppsScope: "pace-drive-ios-min"
             )
@@ -23,9 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         applyGlobalTheme()
         AppKit.delegate = self
 
-        if #available(iOS 13.0, *) {
-            // NOTE: If iOS 13 is available SceneDelegate will be used to initialize the view
-        } else {
+        if #unavailable(iOS 13.0) {
             window = UIWindow(frame: UIScreen.main.bounds)
 
             initialCoordinator = .init(presenter: InitialPresenter(window: window!))

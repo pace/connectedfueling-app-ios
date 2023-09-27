@@ -53,7 +53,7 @@ final class PageViewPresenter: NSObject, Presenter {
             pageViewController.view.isUserInteractionEnabled = false
             pageViewController.setViewControllers(
                 [viewControllers[index]],
-                direction: index > currentIndex  ? .forward : .reverse,
+                direction: index > currentIndex ? .forward : .reverse,
                 animated: true
             ) { [weak self] completed in
                 self?.pageViewController.view.isUserInteractionEnabled = true

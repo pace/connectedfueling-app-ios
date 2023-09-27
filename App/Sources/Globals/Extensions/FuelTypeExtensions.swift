@@ -1,7 +1,7 @@
 // Copyright © 2022 PACE Telematics GmbH. All rights reserved.
 
-import Foundation
 import Domain
+import Foundation
 
 extension FuelType {
     func localizedDescription() -> String {
