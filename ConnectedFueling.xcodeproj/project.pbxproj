@@ -142,6 +142,7 @@
 		196DA662F804967DD5324461 /* EnvironmentConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentConfiguration.swift; sourceTree = "<group>"; };
 		1A3A34BD7A6515F7FB5BEB9E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		2EB20D5198AC7E6603D98D72 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = wrapper.cfbundle; path = Settings.bundle; sourceTree = "<group>"; };
+		3B7370A72AD41A5300E9118B /* App Unit Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "App Unit Tests.xctestplan"; sourceTree = "<group>"; };
 		59988E381C75C4CDBC33748A /* AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTests.swift; sourceTree = "<group>"; };
 		59DD955527AC752031111001 /* AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTests.swift; sourceTree = "<group>"; };
 		5F48CEFA1A83BBDEFAE5A2BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -342,6 +343,7 @@
 		334CD4791118D6911A98FEF3 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				3B7370A72AD41A5300E9118B /* App Unit Tests.xctestplan */,
 				D5CB9857E6F3C95C3603F046 /* Sources */,
 				CF2D222B684311E04AE67EE7 /* Resources */,
 				2E61F1469C8EE21D0EF5D5E8 /* SupportingFiles */,

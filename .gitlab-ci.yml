@@ -13,25 +13,91 @@ before_script:
   - export BUILD_NUMBER=${TAG_NUMBER##*.} # Get content after last .
   - echo "Building version $VERSION_NAME with build number $BUILD_NUMBER"
 
+.dependent_changes: &dependent_changes
+    changes:
+      - .gitlab-ci.yml
+      - "ConnectedFueling.xcodeproj/project.pbxproj"
+      - "App/**/*"
+      - "Gemfile.lock"
+
+.only_merge_requests: &only_merge_requests
+  only:
+    refs:
+      - merge_requests
+    <<: *dependent_changes
+
+.only_master: &only_master
+  only:
+    refs:
+      - master
+    <<: *dependent_changes
+
 .runner_tags:
   tags:
     - ios
 
-plist:
+.base_template:
   extends: .runner_tags
+  interruptible: true
+
+## Merge requests
+### Plist
+plist:
+  extends: .base_template
   stage: test
   before_script:
     - echo "Ignore global before_script"
   after_script:
     - echo "Ignore global after_script"
   script:
-    - cd App
     - find . -name "*.strings" -size +0 -print0 | xargs -0 plutil -lint
-  only:
-    - merge_requests
-  interruptible: true
+  <<: *only_merge_requests
 
-### Release to TestFlight
+### Code style
+code_style:
+  extends: .base_template
+  stage: test
+  before_script:
+    - echo "Ignore global before_script"
+  after_script:
+    - echo "Ignore global after_script"
+  script:
+    - swiftlint
+  <<: *only_merge_requests
+
+### Unit tests
+unit_test:
+  extends: .base_template
+  stage: test
+  script:
+    - bundle exec fastlane test
+  allow_failure: false
+  <<: *only_merge_requests
+  except:
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /WIP/
+
+### Review
+build_review:
+  extends: .base_template
+  stage: build
+  script:
+    - bundle exec fastlane build_development
+  <<: *only_merge_requests
+  except:
+    refs:
+      - tags
+    variables:
+     - $CI_COMMIT_MESSAGE =~ /WIP/
+  environment:
+    name: review/$CI_COMMIT_REF_NAME
+  artifacts:
+    name: "review-app"
+    paths:
+      - ./App.ipa
+    expire_in: 2 days
+
+## Release to TestFlight
 release_schedule:
   image: node:latest
   stage: publish
@@ -62,7 +128,7 @@ release_schedule:
     - docker
 
 build_testflight_app:
-  extends: .runner_tags
+  extends: .base_template
   stage: build
   only:
     - tags
@@ -76,10 +142,9 @@ build_testflight_app:
   except:
     variables:
       - $CI_COMMIT_TAG !~ /^connectedfueling-app-/
-  interruptible: true
 
 publish_testflight_app:
-  extends: .runner_tags
+  extends: .base_template
   stage: publish
   only:
     - tags
@@ -88,10 +153,9 @@ publish_testflight_app:
   except:
     variables:
       - $CI_COMMIT_TAG !~ /^connectedfueling-app-/
-  interruptible: true
 
 submit:
-  extends: .runner_tags
+  extends: .base_template
   stage: publish
   needs: ["publish_testflight_app"]
   only:
@@ -102,4 +166,3 @@ submit:
     variables:
       - $CI_COMMIT_TAG !~ /^connectedfueling-app-/
   when: manual
-  interruptible: true
