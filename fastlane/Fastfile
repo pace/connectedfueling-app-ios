@@ -1,8 +1,8 @@
 default_platform(:ios)
 
 PROJECT_PATH = 'ConnectedFueling.xcodeproj'
-TEAM_ID_PRODUCTION = ENV['COMPANY_TEAM_ID']
-APP_ID_PRODUCTION = 'car.pace.cofu'
+TEAM_ID = ENV['COMPANY_TEAM_ID']
+APP_IDENTIFIER = 'car.pace.cofu'
 
 platform :ios do
   version_number = ENV['VERSION_NAME']
@@ -25,32 +25,58 @@ platform :ios do
     delete_keychain(name: ENV['MATCH_KEYCHAIN_NAME'])
   end
 
-  desc "Push a new beta build to TestFlight"
+  desc 'Run unit tests'
+  lane :test do
+    scan(
+      scheme: 'App Unit Tests',
+      configuration: 'Development',
+      reset_simulator: true,
+      force_quit_simulator: true,
+      prelaunch_simulator: true,
+      reinstall_app: true,
+      disable_concurrent_testing: true
+    )
+  end
+
+  desc 'Build development app'
+  lane :build_development do
+    build_cofu_app(config: 'Development')
+  end
+
+  desc 'Build development app'
   lane :build_beta do
+    build_cofu_app(config: 'Production')
+  end
+
+  desc "Push a new beta build to TestFlight"
+  private_lane :build_cofu_app do |options|
     verify_xcode
 
+    config = options[:config]
+    signing_type = config == 'Development' ? 'development' : 'appstore'
+    export_method = config == 'Development' ? 'development' : 'app-store'
     info_plist_path = 'App/SupportingFiles/Info.plist'
 
-    # Repair code signing
+    ## Repair code signing
     disable_automatic_code_signing(
       path: PROJECT_PATH,
-      team_id: TEAM_ID_PRODUCTION
+      team_id: TEAM_ID
     )
 
     match(
-      type: 'appstore',
-      team_id: TEAM_ID_PRODUCTION,
+      type: signing_type,
+      team_id: TEAM_ID,
       keychain_name: ENV['MATCH_KEYCHAIN_NAME'],
       keychain_password: ENV['MATCH_KEYCHAIN_PASSWORD'],
-      app_identifier: APP_ID_PRODUCTION,
+      app_identifier: APP_IDENTIFIER,
       verbose: true
     )
 
     update_project_provisioning(
       xcodeproj: PROJECT_PATH,
       target_filter: 'App',
-      profile: ENV['sigh_car.pace.cofu_appstore_profile-path'],
-      build_configuration: 'Production'
+      profile: ENV["sigh_car.pace.cofu_#{signing_type}_profile-path"],
+      build_configuration: config
     )
 
     set_info_plist_value(path: info_plist_path, key: 'CFBundleShortVersionString', value: version_number)
@@ -58,31 +84,34 @@ platform :ios do
 
     update_signing(
       target: 'App',
-      environment: 'Production',
-      team_id: TEAM_ID_PRODUCTION
+      config: config,
+      team_id: TEAM_ID
     )
 
     gym(
       clean: true,
-      export_method: 'app-store',
+      export_method: export_method,
       scheme: 'App',
-      export_team_id: TEAM_ID_PRODUCTION,
-      configuration: 'Production',
+      export_team_id: TEAM_ID,
+      configuration: config,
       include_bitcode: false,
       include_symbols: true,
       export_options: {
-        method: 'app-store',
+        method: export_method,
         compileBitcode: false,
         uploadBitcode: false,
         uploadSymbols: true,
         provisioningProfiles: {
-          APP_ID_PRODUCTION => ENV['sigh_car.pace.cofu_appstore_profile-name']
+          APP_IDENTIFIER => ENV["sigh_car.pace.cofu_#{signing_type}_profile-name"]
         }
       }
     )
   end
 
   lane :update_signing do |options|
+    environment = options[:config]
+    signing_identity = environment == 'Development' ? 'Apple Development' : 'iPhone Distribution'
+
     Dir.chdir('..') do
       project_path = PROJECT_PATH
       project = Xcodeproj::Project.open(project_path)
@@ -92,13 +121,13 @@ platform :ios do
 
       if main_target
         puts 'Found target'
-        puts "Environment: #{options[:environment]}"
-        configuration = main_target.build_configurations.select { |config| config.name == options[:environment] }.first
+        puts "Environment: #{environment}"
+        configuration = main_target.build_configurations.select { |config| config.name == environment }.first
 
         if configuration
             puts 'Found configuration'
             sdk = configuration.build_settings['SDKROOT'] || 'iphoneos'
-            configuration.build_settings["CODE_SIGN_IDENTITY[sdk=#{sdk}*]"] = 'iPhone Distribution'
+            configuration.build_settings["CODE_SIGN_IDENTITY[sdk=#{sdk}*]"] = signing_identity
             configuration.build_settings["DEVELOPMENT_TEAM[sdk=#{sdk}*]"] = options[:team_id]
             configuration.build_settings["PROVISIONING_PROFILE_SPECIFIER[sdk=#{sdk}*]"] = configuration.build_settings['PROVISIONING_PROFILE_SPECIFIER'] || 'ERROR'
         end

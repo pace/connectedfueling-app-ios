@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "F48DEA59-5453-45F9-8679-9F93F5A7758F",
+      "name" : "Configuration 1",
+      "options" : {
+        "testExecutionOrdering" : "random"
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testExecutionOrdering" : "random"
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:ConnectedFueling.xcodeproj",
+        "identifier" : "1F9108D316EA6D15BCD171CD",
+        "name" : "Tests"
+      }
+    }
+  ],
+  "version" : 1
+}
