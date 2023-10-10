@@ -1,37 +1,27 @@
-// Copyright © 2023 PACE Telematics GmbH. All rights reserved.
-
 import SwiftUI
 
 struct PageView<Content>: View where Content: View {
-    @Binding private var selectedIndex: Int
+    @Binding private var currentPage: Int
 
-    private let indexDisplayMode: PageTabViewStyle.IndexDisplayMode
-    private let indexBackgroundDisplayMode: PageIndexViewStyle.BackgroundDisplayMode
-    private let content: () -> Content
+    let numberOfPages: Int
+    let content: Content
 
-    init(selectedIndex: Binding<Int>,
-         indexDisplayMode: PageTabViewStyle.IndexDisplayMode = .automatic,
-         indexBackgroundDisplayMode: PageIndexViewStyle.BackgroundDisplayMode = .automatic,
-         @ViewBuilder content: @escaping () -> Content) {
-        self._selectedIndex = selectedIndex
-        self.indexDisplayMode = indexDisplayMode
-        self.indexBackgroundDisplayMode = indexBackgroundDisplayMode
-        self.content = content
+    init(numberOfPages: Int,
+         currentPage: Binding<Int>,
+         @ViewBuilder content: () -> Content) {
+        self.numberOfPages = numberOfPages
+        self._currentPage = currentPage
+        self.content = content()
     }
 
     var body: some View {
-        TabView(selection: $selectedIndex) {
-            content()
+        GeometryReader { geometry in
+            LazyHStack(spacing: 0) {
+                content.frame(width: geometry.size.width)
+            }
+            .frame(width: geometry.size.width, alignment: .leading)
+            .offset(x: -CGFloat(currentPage) * geometry.size.width)
+            .animation(.default)
         }
-        .tabViewStyle(.page(indexDisplayMode: indexDisplayMode))
-        .indexViewStyle(.page(backgroundDisplayMode: indexBackgroundDisplayMode))
     }
-}
-
-#Preview {
-    PageView(selectedIndex: .constant(2), indexDisplayMode: .always, indexBackgroundDisplayMode: .always, content: {
-        Text("Test 1")
-        Text("Test 2")
-        Text("Test 3")
-    })
 }

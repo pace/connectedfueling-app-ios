@@ -206,7 +206,7 @@ extension DashboardCoordinator: MenuCoordinatorDelegate {
         gasStationListInteractor.getFuelType { [weak self] result in
             guard let self = self else { return }
 
-            let selectedFuelType: FuelType?
+            let selectedFuelType: Domain.FuelType?
             switch result {
             case let .success(fuelType):
                 selectedFuelType = fuelType

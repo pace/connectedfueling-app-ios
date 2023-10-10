@@ -1,7 +1,7 @@
 import JamitFoundation
 import UIKit
 
-final class LoadingView: StatefulView<LoadingViewModel> {
+final class LoadingViewOld: StatefulView<LoadingViewModel> {
     @IBOutlet private var imageView: UIImageView!
     @IBOutlet private var titleLabel: Label!
     @IBOutlet private var descriptionLabel: Label!

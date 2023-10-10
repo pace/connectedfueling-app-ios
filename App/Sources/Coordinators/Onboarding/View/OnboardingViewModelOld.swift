@@ -1,7 +1,7 @@
 import JamitFoundation
 import UIKit
 
-struct OnboardingViewModel: ViewModelProtocol {
+struct OnboardingViewModelOld: ViewModelProtocol {
     typealias Action = () -> Void
 
     let image: UIImage?
@@ -34,7 +34,7 @@ struct OnboardingViewModel: ViewModelProtocol {
     }
 }
 
-extension OnboardingViewModel {
+extension OnboardingViewModelOld {
     static let `default`: Self = .init(
         image: nil,
         title: "",

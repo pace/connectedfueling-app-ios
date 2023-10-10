@@ -10,7 +10,7 @@ enum PACECloudGasStationListError: Error {
 
 final class PACECloudGasStationListRepository: GasStationListRepository {
     @UserDefault(key: "car.pace.ConnectedFueling.fuelType", defaultValue: nil)
-    private var fuelType: FuelType?
+    private var fuelType: Domain.FuelType?
 
     private let poiKitManager: POIKit.POIKitManager
 
@@ -18,11 +18,11 @@ final class PACECloudGasStationListRepository: GasStationListRepository {
         self.poiKitManager = poiKitManager
     }
 
-    func getFuelType(_ completion: @escaping (Result<FuelType?, Error>) -> Void) {
+    func getFuelType(_ completion: @escaping (Result<Domain.FuelType?, Error>) -> Void) {
         completion(.success(fuelType))
     }
 
-    func setFuelType(_ fuelType: FuelType, _ completion: @escaping (Result<Bool, Error>) -> Void) {
+    func setFuelType(_ fuelType: Domain.FuelType, _ completion: @escaping (Result<Bool, Error>) -> Void) {
         self.fuelType = fuelType
         completion(.success(true))
     }

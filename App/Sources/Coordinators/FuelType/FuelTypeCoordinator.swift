@@ -8,7 +8,7 @@ final class FuelTypeCoordinator: Coordinator {
 
     private let gasStationListInteractor: GasStationListInteractor
     private let isCompact: Bool
-    private var selectedFuelType: FuelType?
+    private var selectedFuelType: Domain.FuelType?
     private let callback: Callback?
     private lazy var viewController: OnboardingViewController = .instantiate()
 
@@ -16,7 +16,7 @@ final class FuelTypeCoordinator: Coordinator {
         gasStationListInteractor: GasStationListInteractor,
         presenter: Presenter,
         isCompact: Bool = false,
-        selectedFuelType: FuelType? = nil,
+        selectedFuelType: Domain.FuelType? = nil,
         callback: Callback? = nil
     ) {
         self.gasStationListInteractor = gasStationListInteractor
@@ -49,7 +49,7 @@ final class FuelTypeCoordinator: Coordinator {
                 self.presenter.dismiss(self.viewController, animated: true)
                 self.stop()
             },
-            radios: FuelType.allCases.map { fuelType in
+            radios: Domain.FuelType.allCases.map { fuelType in
                 return ButtonViewModel(
                     icon: Asset.Images.checkmarkInactive.image,
                     selectedIcon: Asset.Images.checkmarkActive.image,

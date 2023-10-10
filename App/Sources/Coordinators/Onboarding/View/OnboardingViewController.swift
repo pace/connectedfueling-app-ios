@@ -1,7 +1,7 @@
 import JamitFoundation
 import UIKit
 
-final class OnboardingViewController: StatefulViewController<OnboardingViewModel> {
+final class OnboardingViewController: StatefulViewController<OnboardingViewModelOld> {
     private enum Constants {
         static let screenHeightThreshold: CGFloat = 736
     }

@@ -1,10 +1,12 @@
-// Copyright © 2022 PACE Telematics GmbH. All rights reserved.
-
-import Domain
 import Foundation
 
-extension Domain.FuelType {
-    func localizedDescription() -> String {
+enum FuelType: String, CaseIterable, Codable, Equatable {
+    case diesel
+    case ron95e5
+    case ron95e10
+    case ron98e5
+
+    var localizedTitle: String {
         switch self {
         case .diesel:
             return L10n.FuelType.diesel

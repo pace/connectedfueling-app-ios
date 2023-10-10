@@ -2,7 +2,7 @@ import Foundation
 import PACECloudSDK
 
 /// Instance of the global configured environment
-let environment: Environment = .init(infoPropertyListName: "Info")
+let environment: EnvironmentOld = .init(infoPropertyListName: "Info")
 
 /// Instance of the global environment of the PACECloudSDK
 let sdkEnvironment: PACECloudSDK.Environment = {
@@ -15,7 +15,7 @@ let sdkEnvironment: PACECloudSDK.Environment = {
 
 /// Represents the configuration properties which are used app wide for example BaseURL etc.
 /// The Environment is the mapped Info.plist file and its containing configuration entry
-struct Environment: Decodable {
+struct EnvironmentOld: Decodable {
     private let configuration: EnvironmentConfiguration
 
     fileprivate init(infoPropertyListName filename: String) {
@@ -28,7 +28,7 @@ struct Environment: Decodable {
 
         do {
             let decoder = PropertyListDecoder()
-            self = try decoder.decode(Environment.self, from: file)
+            self = try decoder.decode(EnvironmentOld.self, from: file)
         } catch {
             fatalError("Could not decode Info.plist environments - \(error.localizedDescription)")
         }
@@ -36,14 +36,14 @@ struct Environment: Decodable {
 }
 
 // MARK: - Properties
-extension Environment {
+extension EnvironmentOld {
     var appName: String {
         return configuration.appName
     }
 }
 
 // MARK: - CodingKeys
-extension Environment {
+extension EnvironmentOld {
     enum CodingKeys: String, CodingKey {
         case configuration = "Configuration"
     }

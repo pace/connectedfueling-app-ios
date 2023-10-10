@@ -7,7 +7,7 @@ struct DashboardItemViewModel: ViewModelProtocol {
     let title: String
     let description: String
     let price: Double?
-    let fuelType: FuelType?
+    let fuelType: Domain.FuelType?
     let currency: String?
     let distance: Double
     let isPrimaryAction: Bool
@@ -18,7 +18,7 @@ struct DashboardItemViewModel: ViewModelProtocol {
         title: String = Self.default.title,
         description: String = Self.default.description,
         price: Double? = Self.default.price,
-        fuelType: FuelType? = Self.default.fuelType,
+        fuelType: Domain.FuelType? = Self.default.fuelType,
         currency: String? = Self.default.currency,
         distance: Double = Self.default.distance,
         isPrimaryAction: Bool = Self.default.isPrimaryAction,

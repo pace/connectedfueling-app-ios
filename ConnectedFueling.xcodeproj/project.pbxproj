@@ -14,13 +14,44 @@
 		1867B8D8BE2B8499106AC9E1 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B5B4A6AE57364F8FC6B771 /* Assets.swift */; };
 		1954A59A56D600A0D16D182D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99758AB82A54D1FDA908CA06 /* SceneDelegate.swift */; };
 		33F8348C3EAD92206DCBA221 /* EnvironmentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196DA662F804967DD5324461 /* EnvironmentConfiguration.swift */; };
+		3B4616C72ADE932D00DF57A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4616C62ADE932D00DF57A1 /* ContentView.swift */; };
+		3B4616C92ADEAFBA00DF57A1 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4616C82ADEAFBA00DF57A1 /* UserDefault.swift */; };
+		3B4616CD2ADECDBC00DF57A1 /* OnboardingTextInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4616CC2ADECDBC00DF57A1 /* OnboardingTextInputViewModel.swift */; };
+		3B7370BA2AD52F8C00E9118B /* OnboardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7370B92AD52F8C00E9118B /* OnboardingPageView.swift */; };
 		3B7370C32AD53A0E00E9118B /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7370C22AD53A0E00E9118B /* AppView.swift */; };
 		3B7370CA2AD566F300E9118B /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7370C92AD566F300E9118B /* Color+Extension.swift */; };
+		3BAE60582AD59239006EA9DD /* OnboardingPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE60572AD59239006EA9DD /* OnboardingPageViewModel.swift */; };
 		3BAE605B2AD677B7006EA9DD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE605A2AD677B7006EA9DD /* Constants.swift */; };
-		3BAE606F2AD7CBB9006EA9DD /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE606E2AD7CBB9006EA9DD /* PageView.swift */; };
+		3BAE60672AD68116006EA9DD /* OnboardingPageAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE60662AD68116006EA9DD /* OnboardingPageAction.swift */; };
+		3BAE606C2AD6E93D006EA9DD /* OnboardingFuelTypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE606B2AD6E93D006EA9DD /* OnboardingFuelTypeButton.swift */; };
 		3BAE60712AD7CBBF006EA9DD /* PageIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE60702AD7CBBF006EA9DD /* PageIndicatorView.swift */; };
 		3BAE60732AD7CBC4006EA9DD /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE60722AD7CBC4006EA9DD /* ActionButton.swift */; };
 		3BAE60752AD7CBCB006EA9DD /* TextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE60742AD7CBCB006EA9DD /* TextLabel.swift */; };
+		3BAE60772AD7CD5E006EA9DD /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE60762AD7CD5E006EA9DD /* LocationManager.swift */; };
+		3BAE607F2AD80ADE006EA9DD /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE607E2AD80ADE006EA9DD /* String+Extension.swift */; };
+		3BCF49F42ADFCA06005C20DC /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF49F32ADFCA06005C20DC /* View+Extension.swift */; };
+		3BCF49F62ADFF97D005C20DC /* OnboardingTextInputResponseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF49F52ADFF97D005C20DC /* OnboardingTextInputResponseType.swift */; };
+		3BCF49F82AE0079C005C20DC /* PINInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF49F72AE0079C005C20DC /* PINInputValidator.swift */; };
+		3BDE7B0D2AD82EDB009A88DF /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDE7B0C2AD82EDB009A88DF /* UserManager.swift */; };
+		3BDE7B142AD83D06009A88DF /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDE7B132AD83D06009A88DF /* LoadingView.swift */; };
+		3BDE7B162AD92B95009A88DF /* OnboardingTextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDE7B152AD92B95009A88DF /* OnboardingTextInputView.swift */; };
+		3BDE7B182AD931C0009A88DF /* TextInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDE7B172AD931C0009A88DF /* TextInputField.swift */; };
+		3BDE7B1A2AD94E06009A88DF /* OnboardingFuelTypeButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDE7B192AD94E06009A88DF /* OnboardingFuelTypeButtonsView.swift */; };
+		3BDE7B1C2AD96445009A88DF /* FuelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDE7B1B2AD96445009A88DF /* FuelType.swift */; };
+		3BDE7B1F2ADD13D6009A88DF /* OnboardingLocationPermissionPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDE7B1E2ADD13D6009A88DF /* OnboardingLocationPermissionPageViewModel.swift */; };
+		3BDE7B212ADD13E3009A88DF /* OnboardingAuthorizationPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDE7B202ADD13E3009A88DF /* OnboardingAuthorizationPageViewModel.swift */; };
+		3BDE7B232ADD1422009A88DF /* OnboardingTwoFactorAuthenticationPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDE7B222ADD1422009A88DF /* OnboardingTwoFactorAuthenticationPageViewModel.swift */; };
+		3BDE7B252ADD142D009A88DF /* OnboardingPaymentMethodsPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDE7B242ADD142D009A88DF /* OnboardingPaymentMethodsPageViewModel.swift */; };
+		3BDE7B272ADD1438009A88DF /* OnboardingFuelTypePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDE7B262ADD1438009A88DF /* OnboardingFuelTypePageViewModel.swift */; };
+		3BDE7B2B2ADD1C0F009A88DF /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDE7B2A2ADD1C0F009A88DF /* OnboardingViewModel.swift */; };
+		3BDE7B2D2ADD1E30009A88DF /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDE7B2C2ADD1E30009A88DF /* Array+Extension.swift */; };
+		3BDE7B2F2ADD257F009A88DF /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDE7B2E2ADD257F009A88DF /* OnboardingView.swift */; };
+		3BDE7B312ADD336B009A88DF /* ConnectedFuelingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDE7B302ADD336B009A88DF /* ConnectedFuelingApp.swift */; };
+		3BDE7B382ADD3468009A88DF /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDE7B372ADD3468009A88DF /* AppManager.swift */; };
+		3BDE7B3A2ADD42EB009A88DF /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDE7B392ADD42EB009A88DF /* PageView.swift */; };
+		3BDE7B3E2ADD7073009A88DF /* PaymentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDE7B3D2ADD7073009A88DF /* PaymentManager.swift */; };
+		3BDE7B4A2ADD7DC7009A88DF /* OnboardingTextInputType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDE7B492ADD7DC7009A88DF /* OnboardingTextInputType.swift */; };
+		3BDE7B502ADE7512009A88DF /* GasStationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDE7B4F2ADE7512009A88DF /* GasStationListView.swift */; };
 		4832F5ACEE84E68C56E5129B /* AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DD955527AC752031111001 /* AppTests.swift */; };
 		5B3AEF0CAC686220E4C322E7 /* JLCoordinator in Frameworks */ = {isa = PBXBuildFile; productRef = 768C7172D53CB9F731D15D69 /* JLCoordinator */; };
 		609680F4A2CE2D7E449F9251 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C7A9480B4F2822EC76046822 /* InfoPlist.strings */; };
@@ -49,7 +80,7 @@
 		C5331F8026B93D67000588C0 /* LoadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5331F7F26B93D67000588C0 /* LoadingTableViewCell.swift */; };
 		C5331F8226B946A5000588C0 /* DashboardHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5331F8126B946A5000588C0 /* DashboardHeaderTableViewCell.swift */; };
 		C55488C3269761BF0003E176 /* PaymentMethodCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55488C2269761BF0003E176 /* PaymentMethodCoordinator.swift */; };
-		C569EC8B26AAE7D1009665E8 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C569EC8A26AAE7D1009665E8 /* LoadingView.swift */; };
+		C569EC8B26AAE7D1009665E8 /* LoadingViewOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = C569EC8A26AAE7D1009665E8 /* LoadingViewOld.swift */; };
 		C569EC9026AAE7ED009665E8 /* LoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C569EC8F26AAE7ED009665E8 /* LoadingViewModel.swift */; };
 		C569EC9526AAE870009665E8 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C569EC9426AAE870009665E8 /* LoadingView.xib */; };
 		C56CD41626BBEE00004E61FB /* MenuCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56CD41526BBEE00004E61FB /* MenuCoordinator.swift */; };
@@ -76,7 +107,7 @@
 		C56DF9B9268F5A320074DBC8 /* PACECloudSDK in Frameworks */ = {isa = PBXBuildFile; productRef = C56DF9B8268F5A320074DBC8 /* PACECloudSDK */; };
 		C56DF9E1268F60B80074DBC8 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56DF9E0268F60B80074DBC8 /* OnboardingViewController.swift */; };
 		C56DF9E6268F60C20074DBC8 /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C56DF9E5268F60C20074DBC8 /* OnboardingViewController.xib */; };
-		C56DF9EB268F60FA0074DBC8 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56DF9EA268F60FA0074DBC8 /* OnboardingViewModel.swift */; };
+		C56DF9EB268F60FA0074DBC8 /* OnboardingViewModelOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = C56DF9EA268F60FA0074DBC8 /* OnboardingViewModelOld.swift */; };
 		C57CD3B726AC388B00356BE6 /* DashboardHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57CD3B626AC388B00356BE6 /* DashboardHeaderView.swift */; };
 		C57CD3BF26AC389700356BE6 /* DashboardHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57CD3BE26AC389700356BE6 /* DashboardHeaderViewModel.swift */; };
 		C57CD3C426AC38A100356BE6 /* DashboardHeaderViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57CD3C326AC38A100356BE6 /* DashboardHeaderViewStyle.swift */; };
@@ -109,7 +140,7 @@
 		C5F06EEF26AEE3F500C43C81 /* InputViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5F06EEE26AEE3F500C43C81 /* InputViewStyle.swift */; };
 		E030BF2168C66E50D306EC54 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DDED74D77EA34B1E82D66CC /* Colors.xcassets */; };
 		E33384C29B0186910E12EEA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92EDCAEA5155B139A67EC72 /* AppDelegate.swift */; };
-		E7925D709403540553288CE2 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8C990C71F6BEE3FCE18DFF /* Environment.swift */; };
+		E7925D709403540553288CE2 /* EnvironmentOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8C990C71F6BEE3FCE18DFF /* EnvironmentOld.swift */; };
 		E81148B8E0370A456B753AE0 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBB5E3649A1F3948609542F /* Strings.swift */; };
 		EE1D11878D72875C2EBE4BD8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C72B31A918630C1450DD690 /* Images.xcassets */; };
 		F13BB2312625CE417CE98DF1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9B39CB100439D4A0A184FB62 /* InfoPlist.strings */; };
@@ -149,20 +180,51 @@
 		196DA662F804967DD5324461 /* EnvironmentConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentConfiguration.swift; sourceTree = "<group>"; };
 		1A3A34BD7A6515F7FB5BEB9E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		2EB20D5198AC7E6603D98D72 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = wrapper.cfbundle; path = Settings.bundle; sourceTree = "<group>"; };
+		3B4616C62ADE932D00DF57A1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3B4616C82ADEAFBA00DF57A1 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
+		3B4616CC2ADECDBC00DF57A1 /* OnboardingTextInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTextInputViewModel.swift; sourceTree = "<group>"; };
 		3B7370A72AD41A5300E9118B /* App Unit Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "App Unit Tests.xctestplan"; sourceTree = "<group>"; };
+		3B7370B92AD52F8C00E9118B /* OnboardingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
 		3B7370C22AD53A0E00E9118B /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		3B7370C92AD566F300E9118B /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		3BAE60572AD59239006EA9DD /* OnboardingPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewModel.swift; sourceTree = "<group>"; };
 		3BAE605A2AD677B7006EA9DD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		3BAE606E2AD7CBB9006EA9DD /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		3BAE60662AD68116006EA9DD /* OnboardingPageAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageAction.swift; sourceTree = "<group>"; };
+		3BAE606B2AD6E93D006EA9DD /* OnboardingFuelTypeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFuelTypeButton.swift; sourceTree = "<group>"; };
 		3BAE60702AD7CBBF006EA9DD /* PageIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageIndicatorView.swift; sourceTree = "<group>"; };
 		3BAE60722AD7CBC4006EA9DD /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		3BAE60742AD7CBCB006EA9DD /* TextLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextLabel.swift; sourceTree = "<group>"; };
+		3BAE60762AD7CD5E006EA9DD /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		3BAE607E2AD80ADE006EA9DD /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		3BCF49F32ADFCA06005C20DC /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		3BCF49F52ADFF97D005C20DC /* OnboardingTextInputResponseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTextInputResponseType.swift; sourceTree = "<group>"; };
+		3BCF49F72AE0079C005C20DC /* PINInputValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PINInputValidator.swift; sourceTree = "<group>"; };
+		3BDE7B0C2AD82EDB009A88DF /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		3BDE7B132AD83D06009A88DF /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		3BDE7B152AD92B95009A88DF /* OnboardingTextInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTextInputView.swift; sourceTree = "<group>"; };
+		3BDE7B172AD931C0009A88DF /* TextInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputField.swift; sourceTree = "<group>"; };
+		3BDE7B192AD94E06009A88DF /* OnboardingFuelTypeButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFuelTypeButtonsView.swift; sourceTree = "<group>"; };
+		3BDE7B1B2AD96445009A88DF /* FuelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuelType.swift; sourceTree = "<group>"; };
+		3BDE7B1E2ADD13D6009A88DF /* OnboardingLocationPermissionPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLocationPermissionPageViewModel.swift; sourceTree = "<group>"; };
+		3BDE7B202ADD13E3009A88DF /* OnboardingAuthorizationPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingAuthorizationPageViewModel.swift; sourceTree = "<group>"; };
+		3BDE7B222ADD1422009A88DF /* OnboardingTwoFactorAuthenticationPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTwoFactorAuthenticationPageViewModel.swift; sourceTree = "<group>"; };
+		3BDE7B242ADD142D009A88DF /* OnboardingPaymentMethodsPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPaymentMethodsPageViewModel.swift; sourceTree = "<group>"; };
+		3BDE7B262ADD1438009A88DF /* OnboardingFuelTypePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFuelTypePageViewModel.swift; sourceTree = "<group>"; };
+		3BDE7B2A2ADD1C0F009A88DF /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		3BDE7B2C2ADD1E30009A88DF /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		3BDE7B2E2ADD257F009A88DF /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		3BDE7B302ADD336B009A88DF /* ConnectedFuelingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectedFuelingApp.swift; sourceTree = "<group>"; };
+		3BDE7B372ADD3468009A88DF /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
+		3BDE7B392ADD42EB009A88DF /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		3BDE7B3D2ADD7073009A88DF /* PaymentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentManager.swift; sourceTree = "<group>"; };
+		3BDE7B492ADD7DC7009A88DF /* OnboardingTextInputType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTextInputType.swift; sourceTree = "<group>"; };
+		3BDE7B4F2ADE7512009A88DF /* GasStationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasStationListView.swift; sourceTree = "<group>"; };
 		59988E381C75C4CDBC33748A /* AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTests.swift; sourceTree = "<group>"; };
 		59DD955527AC752031111001 /* AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTests.swift; sourceTree = "<group>"; };
 		5F48CEFA1A83BBDEFAE5A2BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61CEA57B6A734FF320B8B155 /* .keep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .keep; sourceTree = "<group>"; };
 		628262D4B9E8434A78957688 /* Tests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6E8C990C71F6BEE3FCE18DFF /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		6E8C990C71F6BEE3FCE18DFF /* EnvironmentOld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentOld.swift; sourceTree = "<group>"; };
 		6EBB5E3649A1F3948609542F /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		72B5B4A6AE57364F8FC6B771 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		875A7BEFDEE8AB75ADFFA828 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -201,7 +263,7 @@
 		C5331F7F26B93D67000588C0 /* LoadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingTableViewCell.swift; sourceTree = "<group>"; };
 		C5331F8126B946A5000588C0 /* DashboardHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		C55488C2269761BF0003E176 /* PaymentMethodCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentMethodCoordinator.swift; sourceTree = "<group>"; };
-		C569EC8A26AAE7D1009665E8 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		C569EC8A26AAE7D1009665E8 /* LoadingViewOld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewOld.swift; sourceTree = "<group>"; };
 		C569EC8F26AAE7ED009665E8 /* LoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewModel.swift; sourceTree = "<group>"; };
 		C569EC9426AAE870009665E8 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
 		C56CD41526BBEE00004E61FB /* MenuCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCoordinator.swift; sourceTree = "<group>"; };
@@ -229,7 +291,7 @@
 		C56DF93E268F2F9F0074DBC8 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
 		C56DF9E0268F60B80074DBC8 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		C56DF9E5268F60C20074DBC8 /* OnboardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
-		C56DF9EA268F60FA0074DBC8 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		C56DF9EA268F60FA0074DBC8 /* OnboardingViewModelOld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModelOld.swift; sourceTree = "<group>"; };
 		C57CD3B626AC388B00356BE6 /* DashboardHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardHeaderView.swift; sourceTree = "<group>"; };
 		C57CD3BE26AC389700356BE6 /* DashboardHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardHeaderViewModel.swift; sourceTree = "<group>"; };
 		C57CD3C326AC38A100356BE6 /* DashboardHeaderViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardHeaderViewStyle.swift; sourceTree = "<group>"; };
@@ -313,7 +375,7 @@
 		1D2A2B79F7FDA847200E1EC8 /* Environment */ = {
 			isa = PBXGroup;
 			children = (
-				6E8C990C71F6BEE3FCE18DFF /* Environment.swift */,
+				6E8C990C71F6BEE3FCE18DFF /* EnvironmentOld.swift */,
 				196DA662F804967DD5324461 /* EnvironmentConfiguration.swift */,
 			);
 			path = Environment;
@@ -366,12 +428,39 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
+		3B7370A82AD43EA200E9118B /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				3BAE60652AD6810F006EA9DD /* Model */,
+				3B7370A92AD5283800E9118B /* View */,
+				3BAE60452AD57F6E006EA9DD /* ViewModel */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		3B7370A92AD5283800E9118B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3BAE606B2AD6E93D006EA9DD /* OnboardingFuelTypeButton.swift */,
+				3BDE7B192AD94E06009A88DF /* OnboardingFuelTypeButtonsView.swift */,
+				3BDE7B152AD92B95009A88DF /* OnboardingTextInputView.swift */,
+				3B7370B92AD52F8C00E9118B /* OnboardingPageView.swift */,
+				3BDE7B2E2ADD257F009A88DF /* OnboardingView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		3B7370C02AD539FA00E9118B /* NewStuff */ = {
 			isa = PBXGroup;
 			children = (
 				3B7370C82AD566E500E9118B /* Extensions */,
+				3BDE7B4E2ADE74E8009A88DF /* GasStationList */,
 				3B7370C12AD53A0800E9118B /* Helpers */,
 				3BAE606D2AD7CBA6006EA9DD /* Managers */,
+				3BDE7B4D2ADE7391009A88DF /* Models */,
+				3B7370A82AD43EA200E9118B /* Onboarding */,
+				3BDE7B302ADD336B009A88DF /* ConnectedFuelingApp.swift */,
+				3B4616C62ADE932D00DF57A1 /* ContentView.swift */,
 			);
 			path = NewStuff;
 			sourceTree = "<group>";
@@ -381,6 +470,8 @@
 			children = (
 				3BAE605C2AD677C0006EA9DD /* View */,
 				3BAE605A2AD677B7006EA9DD /* Constants.swift */,
+				3BCF49F72AE0079C005C20DC /* PINInputValidator.swift */,
+				3B4616C82ADEAFBA00DF57A1 /* UserDefault.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -388,9 +479,23 @@
 		3B7370C82AD566E500E9118B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				3BDE7B2C2ADD1E30009A88DF /* Array+Extension.swift */,
 				3B7370C92AD566F300E9118B /* Color+Extension.swift */,
+				3BAE607E2AD80ADE006EA9DD /* String+Extension.swift */,
+				3BCF49F32ADFCA06005C20DC /* View+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3BAE60452AD57F6E006EA9DD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3BDE7B1D2ADD123D009A88DF /* PageViewModels */,
+				3B4616CC2ADECDBC00DF57A1 /* OnboardingTextInputViewModel.swift */,
+				3BAE60572AD59239006EA9DD /* OnboardingPageViewModel.swift */,
+				3BDE7B2A2ADD1C0F009A88DF /* OnboardingViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		3BAE605C2AD677C0006EA9DD /* View */ = {
@@ -398,18 +503,62 @@
 			children = (
 				3BAE60722AD7CBC4006EA9DD /* ActionButton.swift */,
 				3B7370C22AD53A0E00E9118B /* AppView.swift */,
+				3BDE7B132AD83D06009A88DF /* LoadingView.swift */,
 				3BAE60702AD7CBBF006EA9DD /* PageIndicatorView.swift */,
-				3BAE606E2AD7CBB9006EA9DD /* PageView.swift */,
+				3BDE7B392ADD42EB009A88DF /* PageView.swift */,
+				3BDE7B172AD931C0009A88DF /* TextInputField.swift */,
 				3BAE60742AD7CBCB006EA9DD /* TextLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
+		3BAE60652AD6810F006EA9DD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3BAE60662AD68116006EA9DD /* OnboardingPageAction.swift */,
+				3BDE7B492ADD7DC7009A88DF /* OnboardingTextInputType.swift */,
+				3BCF49F52ADFF97D005C20DC /* OnboardingTextInputResponseType.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		3BAE606D2AD7CBA6006EA9DD /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				3BDE7B372ADD3468009A88DF /* AppManager.swift */,
+				3BAE60762AD7CD5E006EA9DD /* LocationManager.swift */,
+				3BDE7B3D2ADD7073009A88DF /* PaymentManager.swift */,
+				3BDE7B0C2AD82EDB009A88DF /* UserManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		3BDE7B1D2ADD123D009A88DF /* PageViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				3BDE7B202ADD13E3009A88DF /* OnboardingAuthorizationPageViewModel.swift */,
+				3BDE7B262ADD1438009A88DF /* OnboardingFuelTypePageViewModel.swift */,
+				3BDE7B1E2ADD13D6009A88DF /* OnboardingLocationPermissionPageViewModel.swift */,
+				3BDE7B242ADD142D009A88DF /* OnboardingPaymentMethodsPageViewModel.swift */,
+				3BDE7B222ADD1422009A88DF /* OnboardingTwoFactorAuthenticationPageViewModel.swift */,
+			);
+			path = PageViewModels;
+			sourceTree = "<group>";
+		};
+		3BDE7B4D2ADE7391009A88DF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3BDE7B1B2AD96445009A88DF /* FuelType.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3BDE7B4E2ADE74E8009A88DF /* GasStationList */ = {
+			isa = PBXGroup;
+			children = (
+				3BDE7B4F2ADE7512009A88DF /* GasStationListView.swift */,
+			);
+			path = GasStationList;
 			sourceTree = "<group>";
 		};
 		47C20617796AF15FE262BF24 /* Coordinators */ = {
@@ -558,7 +707,7 @@
 		C569EC8926AAE7C3009665E8 /* LoadingView */ = {
 			isa = PBXGroup;
 			children = (
-				C569EC8A26AAE7D1009665E8 /* LoadingView.swift */,
+				C569EC8A26AAE7D1009665E8 /* LoadingViewOld.swift */,
 				C569EC9426AAE870009665E8 /* LoadingView.xib */,
 				C569EC8F26AAE7ED009665E8 /* LoadingViewModel.swift */,
 				C5331F7F26B93D67000588C0 /* LoadingTableViewCell.swift */,
@@ -675,7 +824,7 @@
 			children = (
 				C56DF9E0268F60B80074DBC8 /* OnboardingViewController.swift */,
 				C56DF9E5268F60C20074DBC8 /* OnboardingViewController.xib */,
-				C56DF9EA268F60FA0074DBC8 /* OnboardingViewModel.swift */,
+				C56DF9EA268F60FA0074DBC8 /* OnboardingViewModelOld.swift */,
 				C5CB313026944427005E8986 /* OnboardingViewStyle.swift */,
 			);
 			path = View;
@@ -781,9 +930,9 @@
 			isa = PBXGroup;
 			children = (
 				0DDED74D77EA34B1E82D66CC /* Colors.xcassets */,
+				8C72B31A918630C1450DD690 /* Images.xcassets */,
 				C56CD44C26BD4351004E61FB /* Documents */,
 				0B30A9284843DEA2AC71A133 /* Fonts */,
-				8C72B31A918630C1450DD690 /* Images.xcassets */,
 				D1F5315434E519EBEA5B2DB2 /* Localizable.strings */,
 			);
 			path = Resources;
@@ -1090,20 +1239,29 @@
 				C504075C269369BC00654C52 /* ButtonViewModel.swift in Sources */,
 				3BAE60712AD7CBBF006EA9DD /* PageIndicatorView.swift in Sources */,
 				3B7370CA2AD566F300E9118B /* Color+Extension.swift in Sources */,
+				3BDE7B272ADD1438009A88DF /* OnboardingFuelTypePageViewModel.swift in Sources */,
 				B46B802226C415240005AD7E /* InputValidator.swift in Sources */,
 				C56CD43726BD1A5C004E61FB /* SidebarInteractionController.swift in Sources */,
+				3BDE7B162AD92B95009A88DF /* OnboardingTextInputView.swift in Sources */,
+				3BDE7B1C2AD96445009A88DF /* FuelType.swift in Sources */,
 				3BAE60732AD7CBC4006EA9DD /* ActionButton.swift in Sources */,
 				C5040754269369AD00654C52 /* ButtonView.swift in Sources */,
+				3BDE7B1A2AD94E06009A88DF /* OnboardingFuelTypeButtonsView.swift in Sources */,
+				3BAE60582AD59239006EA9DD /* OnboardingPageViewModel.swift in Sources */,
 				C56CD43226BC134A004E61FB /* SidebarPresenter.swift in Sources */,
 				C5DF1D6D26AFF82B00479678 /* PageIndicatorViewModel.swift in Sources */,
 				C5F06EE226AEE1AC00C43C81 /* InputViewModel.swift in Sources */,
 				C55488C3269761BF0003E176 /* PaymentMethodCoordinator.swift in Sources */,
 				C5B8037F2695F77A00C8669B /* Theme.swift in Sources */,
 				C56CD41926BBEE1F004E61FB /* MenuViewController.swift in Sources */,
+				3BDE7B502ADE7512009A88DF /* GasStationListView.swift in Sources */,
 				C57CD3BF26AC389700356BE6 /* DashboardHeaderViewModel.swift in Sources */,
 				C56DF9E1268F60B80074DBC8 /* OnboardingViewController.swift in Sources */,
+				3B4616C92ADEAFBA00DF57A1 /* UserDefault.swift in Sources */,
 				3BAE60752AD7CBCB006EA9DD /* TextLabel.swift in Sources */,
+				3BDE7B2F2ADD257F009A88DF /* OnboardingView.swift in Sources */,
 				3B7370C32AD53A0E00E9118B /* AppView.swift in Sources */,
+				3BDE7B382ADD3468009A88DF /* AppManager.swift in Sources */,
 				C50407202693636600654C52 /* CoreLocationRepository.swift in Sources */,
 				C56CD42E26BBF411004E61FB /* MenuItemTableViewCell.swift in Sources */,
 				C5DF1D7226AFF87100479678 /* PageIndicatorViewStyle.swift in Sources */,
@@ -1112,40 +1270,60 @@
 				C5331F8226B946A5000588C0 /* DashboardHeaderTableViewCell.swift in Sources */,
 				C518FA1C26AABA26000124D9 /* DashboardItemViewStyle.swift in Sources */,
 				C518FA2626AAC39C000124D9 /* DashboardViewModel.swift in Sources */,
+				3BAE60672AD68116006EA9DD /* OnboardingPageAction.swift in Sources */,
+				3BDE7B2D2ADD1E30009A88DF /* Array+Extension.swift in Sources */,
+				3BDE7B312ADD336B009A88DF /* ConnectedFuelingApp.swift in Sources */,
+				3BDE7B1F2ADD13D6009A88DF /* OnboardingLocationPermissionPageViewModel.swift in Sources */,
 				E33384C29B0186910E12EEA2 /* AppDelegate.swift in Sources */,
+				3BDE7B252ADD142D009A88DF /* OnboardingPaymentMethodsPageViewModel.swift in Sources */,
 				C56DF93F268F2F9F0074DBC8 /* OnboardingCoordinator.swift in Sources */,
 				C56CD43526BC1447004E61FB /* SidebarPresentationController.swift in Sources */,
+				3BDE7B212ADD13E3009A88DF /* OnboardingAuthorizationPageViewModel.swift in Sources */,
+				3BAE606C2AD6E93D006EA9DD /* OnboardingFuelTypeButton.swift in Sources */,
 				C5F06EDD26AEE19200C43C81 /* InputViewController.swift in Sources */,
+				3BCF49F82AE0079C005C20DC /* PINInputValidator.swift in Sources */,
 				1867B8D8BE2B8499106AC9E1 /* Assets.swift in Sources */,
 				C50406A32693212400654C52 /* UserDefaultAppStateRepository.swift in Sources */,
 				C5E8A7FB26A5C3E1002119DD /* PACECloudGasStationListRepository.swift in Sources */,
+				3B4616CD2ADECDBC00DF57A1 /* OnboardingTextInputViewModel.swift in Sources */,
+				3BAE60772AD7CD5E006EA9DD /* LocationManager.swift in Sources */,
 				C57CD3C426AC38A100356BE6 /* DashboardHeaderViewStyle.swift in Sources */,
 				C50406FA269331AA00654C52 /* PageViewPresenter.swift in Sources */,
+				3BDE7B3A2ADD42EB009A88DF /* PageView.swift in Sources */,
 				C56CD42826BBF348004E61FB /* MenuItemView.swift in Sources */,
-				E7925D709403540553288CE2 /* Environment.swift in Sources */,
+				E7925D709403540553288CE2 /* EnvironmentOld.swift in Sources */,
+				3BCF49F62ADFF97D005C20DC /* OnboardingTextInputResponseType.swift in Sources */,
 				C518FA2B26AAC9E9000124D9 /* DashboardItemTableViewCell.swift in Sources */,
 				C569EC9026AAE7ED009665E8 /* LoadingViewModel.swift in Sources */,
+				3BDE7B3E2ADD7073009A88DF /* PaymentManager.swift in Sources */,
+				3B4616C72ADE932D00DF57A1 /* ContentView.swift in Sources */,
 				C5E520CB26A5A2E100FCE0AA /* DashboardCoordinator.swift in Sources */,
+				3B7370BA2AD52F8C00E9118B /* OnboardingPageView.swift in Sources */,
+				3BDE7B0D2AD82EDB009A88DF /* UserManager.swift in Sources */,
 				C51AC2CF26BAAA5A00E475EB /* PermissionCoordinator.swift in Sources */,
 				33F8348C3EAD92206DCBA221 /* EnvironmentConfiguration.swift in Sources */,
 				C5A2C37E26936C2500474AC9 /* ButtonViewStyle.swift in Sources */,
 				3BAE605B2AD677B7006EA9DD /* Constants.swift in Sources */,
 				1331D416CE5C76C2BC2511C1 /* AppCoordinator.swift in Sources */,
-				3BAE606F2AD7CBB9006EA9DD /* PageView.swift in Sources */,
-				C569EC8B26AAE7D1009665E8 /* LoadingView.swift in Sources */,
+				3BDE7B142AD83D06009A88DF /* LoadingView.swift in Sources */,
+				C569EC8B26AAE7D1009665E8 /* LoadingViewOld.swift in Sources */,
 				C56CD45226BD48E3004E61FB /* FuelTypeCoordinator.swift in Sources */,
 				C59F2C5926975B7600538E65 /* TwoFactorAuthenticationCoordinator.swift in Sources */,
 				C5331F8026B93D67000588C0 /* LoadingTableViewCell.swift in Sources */,
+				3BDE7B232ADD1422009A88DF /* OnboardingTwoFactorAuthenticationPageViewModel.swift in Sources */,
+				3BAE607F2AD80ADE006EA9DD /* String+Extension.swift in Sources */,
 				C5E8A7E926A5B7D0002119DD /* DashboardItemView.swift in Sources */,
 				C5F06EC626AECB1F00C43C81 /* UIViewExtensions.swift in Sources */,
 				C5B5821126BAB29400DFFC27 /* PACECloudPaymentRepository.swift in Sources */,
 				C5290F3F269DCC9200C8AE9A /* PACECloudTwoFactorAuthenticationRepository.swift in Sources */,
-				C56DF9EB268F60FA0074DBC8 /* OnboardingViewModel.swift in Sources */,
+				C56DF9EB268F60FA0074DBC8 /* OnboardingViewModelOld.swift in Sources */,
 				1954A59A56D600A0D16D182D /* SceneDelegate.swift in Sources */,
 				B46B802826C51E670005AD7E /* EmptyInputValidator.swift in Sources */,
 				C5F06EEF26AEE3F500C43C81 /* InputViewStyle.swift in Sources */,
+				3BDE7B2B2ADD1C0F009A88DF /* OnboardingViewModel.swift in Sources */,
 				C57CD3B726AC388B00356BE6 /* DashboardHeaderView.swift in Sources */,
 				B46B802426C415680005AD7E /* ValidationError.swift in Sources */,
+				3BDE7B4A2ADD7DC7009A88DF /* OnboardingTextInputType.swift in Sources */,
 				C56CD41626BBEE00004E61FB /* MenuCoordinator.swift in Sources */,
 				C56CD41B26BBEE26004E61FB /* MenuViewModel.swift in Sources */,
 				B4CA0AE526CA4A09002F50BB /* SeparatorHeaderFooterView.swift in Sources */,
@@ -1156,6 +1334,7 @@
 				C5CB317D269479AC005E8986 /* AuthenticationCoordinator.swift in Sources */,
 				C56CD44F26BD485A004E61FB /* PaymentHistoryCoordinator.swift in Sources */,
 				C5E8A7F326A5B7EB002119DD /* DashboardItemViewModel.swift in Sources */,
+				3BDE7B182AD931C0009A88DF /* TextInputField.swift in Sources */,
 				C56CD42A26BBF35F004E61FB /* MenuItemViewModel.swift in Sources */,
 				7945CBD1A64B029E1C2E5892 /* Storyboards.swift in Sources */,
 				B42B801B26CB977400793BF5 /* PACECloudUserRepository.swift in Sources */,
@@ -1166,6 +1345,7 @@
 				C56CD43D26BD3F16004E61FB /* DocumentViewController.swift in Sources */,
 				C56CD43F26BD3F29004E61FB /* DocumentViewModel.swift in Sources */,
 				C5DF1D6826AFF80600479678 /* PageIndicatorViewOld.swift in Sources */,
+				3BCF49F42ADFCA06005C20DC /* View+Extension.swift in Sources */,
 				C56CD43A26BD3EF4004E61FB /* DocumentCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

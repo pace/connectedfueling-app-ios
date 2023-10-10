@@ -64,7 +64,7 @@ final class CoreLocationRepository: NSObject, LocationRepository {
 
 // MARK: - Mapping
 extension CoreLocationRepository {
-    private func makeLocationStatus(for authorizationStatus: CLAuthorizationStatus) -> LocationPermissionStatus {
+    private func makeLocationStatus(for authorizationStatus: CLAuthorizationStatus) -> Domain.LocationPermissionStatus {
         switch authorizationStatus {
         case .notDetermined:
             return .notDetermined
