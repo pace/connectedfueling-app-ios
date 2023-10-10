@@ -9,7 +9,7 @@ extension UIView {
      */
     @discardableResult
     func addStatusBarBackgroundView(
-        color: UIColor = Asset.Colors.Theme.primary.color
+        color: UIColor = Asset.Colors.primaryTint.color
     ) -> UIView? {
         let view = UIView.instantiate()
         view.backgroundColor = color

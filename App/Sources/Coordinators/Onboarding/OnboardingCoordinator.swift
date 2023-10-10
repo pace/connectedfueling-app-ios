@@ -16,7 +16,7 @@ final class OnboardingCoordinator: Coordinator {
         options: nil
     )
     private lazy var navigationController: UINavigationController = .init(rootViewController: pageViewController)
-    private lazy var pageIndicatorView: PageIndicatorView = .instantiate()
+    private lazy var pageIndicatorView: PageIndicatorViewOld = .instantiate()
     private lazy var pageViewPresenter: PageViewPresenter = .init(pageViewController: pageViewController)
     private lazy var authenticationCoordinator: AuthenticationCoordinator = .init(
         presenter: pageViewPresenter,

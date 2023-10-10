@@ -14,6 +14,13 @@
 		1867B8D8BE2B8499106AC9E1 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B5B4A6AE57364F8FC6B771 /* Assets.swift */; };
 		1954A59A56D600A0D16D182D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99758AB82A54D1FDA908CA06 /* SceneDelegate.swift */; };
 		33F8348C3EAD92206DCBA221 /* EnvironmentConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196DA662F804967DD5324461 /* EnvironmentConfiguration.swift */; };
+		3B7370C32AD53A0E00E9118B /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7370C22AD53A0E00E9118B /* AppView.swift */; };
+		3B7370CA2AD566F300E9118B /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7370C92AD566F300E9118B /* Color+Extension.swift */; };
+		3BAE605B2AD677B7006EA9DD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE605A2AD677B7006EA9DD /* Constants.swift */; };
+		3BAE606F2AD7CBB9006EA9DD /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE606E2AD7CBB9006EA9DD /* PageView.swift */; };
+		3BAE60712AD7CBBF006EA9DD /* PageIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE60702AD7CBBF006EA9DD /* PageIndicatorView.swift */; };
+		3BAE60732AD7CBC4006EA9DD /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE60722AD7CBC4006EA9DD /* ActionButton.swift */; };
+		3BAE60752AD7CBCB006EA9DD /* TextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE60742AD7CBCB006EA9DD /* TextLabel.swift */; };
 		4832F5ACEE84E68C56E5129B /* AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DD955527AC752031111001 /* AppTests.swift */; };
 		5B3AEF0CAC686220E4C322E7 /* JLCoordinator in Frameworks */ = {isa = PBXBuildFile; productRef = 768C7172D53CB9F731D15D69 /* JLCoordinator */; };
 		609680F4A2CE2D7E449F9251 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C7A9480B4F2822EC76046822 /* InfoPlist.strings */; };
@@ -86,7 +93,7 @@
 		C5CB314D26947061005E8986 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = C5CB314C26947061005E8986 /* Domain */; };
 		C5CB316C2694783F005E8986 /* PACECloudAuthenticationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CB316B2694783F005E8986 /* PACECloudAuthenticationRepository.swift */; };
 		C5CB317D269479AC005E8986 /* AuthenticationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CB317226947951005E8986 /* AuthenticationCoordinator.swift */; };
-		C5DF1D6826AFF80600479678 /* PageIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DF1D6726AFF80600479678 /* PageIndicatorView.swift */; };
+		C5DF1D6826AFF80600479678 /* PageIndicatorViewOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DF1D6726AFF80600479678 /* PageIndicatorViewOld.swift */; };
 		C5DF1D6D26AFF82B00479678 /* PageIndicatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DF1D6C26AFF82B00479678 /* PageIndicatorViewModel.swift */; };
 		C5DF1D7226AFF87100479678 /* PageIndicatorViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DF1D7126AFF87100479678 /* PageIndicatorViewStyle.swift */; };
 		C5DF1D7D26B03E1D00479678 /* UIScreenExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5DF1D7C26B03E1D00479678 /* UIScreenExtensions.swift */; };
@@ -143,6 +150,13 @@
 		1A3A34BD7A6515F7FB5BEB9E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		2EB20D5198AC7E6603D98D72 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = wrapper.cfbundle; path = Settings.bundle; sourceTree = "<group>"; };
 		3B7370A72AD41A5300E9118B /* App Unit Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "App Unit Tests.xctestplan"; sourceTree = "<group>"; };
+		3B7370C22AD53A0E00E9118B /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		3B7370C92AD566F300E9118B /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		3BAE605A2AD677B7006EA9DD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		3BAE606E2AD7CBB9006EA9DD /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		3BAE60702AD7CBBF006EA9DD /* PageIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageIndicatorView.swift; sourceTree = "<group>"; };
+		3BAE60722AD7CBC4006EA9DD /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		3BAE60742AD7CBCB006EA9DD /* TextLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextLabel.swift; sourceTree = "<group>"; };
 		59988E381C75C4CDBC33748A /* AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTests.swift; sourceTree = "<group>"; };
 		59DD955527AC752031111001 /* AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTests.swift; sourceTree = "<group>"; };
 		5F48CEFA1A83BBDEFAE5A2BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -228,7 +242,7 @@
 		C5CB313F26946F91005E8986 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Domain; sourceTree = "<group>"; };
 		C5CB316B2694783F005E8986 /* PACECloudAuthenticationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PACECloudAuthenticationRepository.swift; sourceTree = "<group>"; };
 		C5CB317226947951005E8986 /* AuthenticationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationCoordinator.swift; sourceTree = "<group>"; };
-		C5DF1D6726AFF80600479678 /* PageIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageIndicatorView.swift; sourceTree = "<group>"; };
+		C5DF1D6726AFF80600479678 /* PageIndicatorViewOld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageIndicatorViewOld.swift; sourceTree = "<group>"; };
 		C5DF1D6C26AFF82B00479678 /* PageIndicatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageIndicatorViewModel.swift; sourceTree = "<group>"; };
 		C5DF1D7126AFF87100479678 /* PageIndicatorViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageIndicatorViewStyle.swift; sourceTree = "<group>"; };
 		C5DF1D7C26B03E1D00479678 /* UIScreenExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScreenExtensions.swift; sourceTree = "<group>"; };
@@ -352,6 +366,52 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
+		3B7370C02AD539FA00E9118B /* NewStuff */ = {
+			isa = PBXGroup;
+			children = (
+				3B7370C82AD566E500E9118B /* Extensions */,
+				3B7370C12AD53A0800E9118B /* Helpers */,
+				3BAE606D2AD7CBA6006EA9DD /* Managers */,
+			);
+			path = NewStuff;
+			sourceTree = "<group>";
+		};
+		3B7370C12AD53A0800E9118B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3BAE605C2AD677C0006EA9DD /* View */,
+				3BAE605A2AD677B7006EA9DD /* Constants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		3B7370C82AD566E500E9118B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3B7370C92AD566F300E9118B /* Color+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3BAE605C2AD677C0006EA9DD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3BAE60722AD7CBC4006EA9DD /* ActionButton.swift */,
+				3B7370C22AD53A0E00E9118B /* AppView.swift */,
+				3BAE60702AD7CBBF006EA9DD /* PageIndicatorView.swift */,
+				3BAE606E2AD7CBB9006EA9DD /* PageView.swift */,
+				3BAE60742AD7CBCB006EA9DD /* TextLabel.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3BAE606D2AD7CBA6006EA9DD /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		47C20617796AF15FE262BF24 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
@@ -405,6 +465,7 @@
 		8ACBB5DBF3363FF94745F45C /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				3B7370C02AD539FA00E9118B /* NewStuff */,
 				A92EDCAEA5155B139A67EC72 /* AppDelegate.swift */,
 				99758AB82A54D1FDA908CA06 /* SceneDelegate.swift */,
 				C5B8037E2695F77A00C8669B /* Theme.swift */,
@@ -656,7 +717,7 @@
 		C5DF1D6626AFF7F200479678 /* PageIndicatorView */ = {
 			isa = PBXGroup;
 			children = (
-				C5DF1D6726AFF80600479678 /* PageIndicatorView.swift */,
+				C5DF1D6726AFF80600479678 /* PageIndicatorViewOld.swift */,
 				C5DF1D6C26AFF82B00479678 /* PageIndicatorViewModel.swift */,
 				C5DF1D7126AFF87100479678 /* PageIndicatorViewStyle.swift */,
 			);
@@ -1027,8 +1088,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C504075C269369BC00654C52 /* ButtonViewModel.swift in Sources */,
+				3BAE60712AD7CBBF006EA9DD /* PageIndicatorView.swift in Sources */,
+				3B7370CA2AD566F300E9118B /* Color+Extension.swift in Sources */,
 				B46B802226C415240005AD7E /* InputValidator.swift in Sources */,
 				C56CD43726BD1A5C004E61FB /* SidebarInteractionController.swift in Sources */,
+				3BAE60732AD7CBC4006EA9DD /* ActionButton.swift in Sources */,
 				C5040754269369AD00654C52 /* ButtonView.swift in Sources */,
 				C56CD43226BC134A004E61FB /* SidebarPresenter.swift in Sources */,
 				C5DF1D6D26AFF82B00479678 /* PageIndicatorViewModel.swift in Sources */,
@@ -1038,6 +1102,8 @@
 				C56CD41926BBEE1F004E61FB /* MenuViewController.swift in Sources */,
 				C57CD3BF26AC389700356BE6 /* DashboardHeaderViewModel.swift in Sources */,
 				C56DF9E1268F60B80074DBC8 /* OnboardingViewController.swift in Sources */,
+				3BAE60752AD7CBCB006EA9DD /* TextLabel.swift in Sources */,
+				3B7370C32AD53A0E00E9118B /* AppView.swift in Sources */,
 				C50407202693636600654C52 /* CoreLocationRepository.swift in Sources */,
 				C56CD42E26BBF411004E61FB /* MenuItemTableViewCell.swift in Sources */,
 				C5DF1D7226AFF87100479678 /* PageIndicatorViewStyle.swift in Sources */,
@@ -1063,7 +1129,9 @@
 				C51AC2CF26BAAA5A00E475EB /* PermissionCoordinator.swift in Sources */,
 				33F8348C3EAD92206DCBA221 /* EnvironmentConfiguration.swift in Sources */,
 				C5A2C37E26936C2500474AC9 /* ButtonViewStyle.swift in Sources */,
+				3BAE605B2AD677B7006EA9DD /* Constants.swift in Sources */,
 				1331D416CE5C76C2BC2511C1 /* AppCoordinator.swift in Sources */,
+				3BAE606F2AD7CBB9006EA9DD /* PageView.swift in Sources */,
 				C569EC8B26AAE7D1009665E8 /* LoadingView.swift in Sources */,
 				C56CD45226BD48E3004E61FB /* FuelTypeCoordinator.swift in Sources */,
 				C59F2C5926975B7600538E65 /* TwoFactorAuthenticationCoordinator.swift in Sources */,
@@ -1097,7 +1165,7 @@
 				E81148B8E0370A456B753AE0 /* Strings.swift in Sources */,
 				C56CD43D26BD3F16004E61FB /* DocumentViewController.swift in Sources */,
 				C56CD43F26BD3F29004E61FB /* DocumentViewModel.swift in Sources */,
-				C5DF1D6826AFF80600479678 /* PageIndicatorView.swift in Sources */,
+				C5DF1D6826AFF80600479678 /* PageIndicatorViewOld.swift in Sources */,
 				C56CD43A26BD3EF4004E61FB /* DocumentCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1235,7 +1303,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1293,7 +1361,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";

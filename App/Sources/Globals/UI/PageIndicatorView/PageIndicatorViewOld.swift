@@ -1,7 +1,7 @@
 import JamitFoundation
 import UIKit
 
-final class PageIndicatorView: StatefulView<PageIndicatorViewModel> {
+final class PageIndicatorViewOld: StatefulView<PageIndicatorViewModel> {
     private lazy var containerView: UIStackView = .instantiate()
 
     var style: PageIndicatorViewStyle = .default {
@@ -52,7 +52,7 @@ final class PageIndicatorView: StatefulView<PageIndicatorViewModel> {
 }
 
 // MARK: - PageViewPresenterDelegate
-extension PageIndicatorView: PageViewPresenterDelegate {
+extension PageIndicatorViewOld: PageViewPresenterDelegate {
     func pageViewPresenter(_ pageViewPresenter: PageViewPresenter, didUpdateIndex index: Int, count: Int) {
         model.index = index
     }

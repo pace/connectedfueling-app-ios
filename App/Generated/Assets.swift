@@ -22,32 +22,26 @@ internal typealias AssetImageTypeAlias = ImageAsset.Image
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 internal enum Asset {
   internal enum Colors {
-    internal enum Feedback {
-      internal static let danger = ColorAsset(name: "Feedback/Danger")
-      internal static let info = ColorAsset(name: "Feedback/Info")
-      internal static let neutral = ColorAsset(name: "Feedback/Neutral")
-      internal static let success = ColorAsset(name: "Feedback/Success")
-      internal static let warning = ColorAsset(name: "Feedback/Warning")
-    }
-    internal enum Text {
-      internal static let darkText = ColorAsset(name: "Text/DarkText")
-      internal static let lightText = ColorAsset(name: "Text/LightText")
-    }
-    internal enum Theme {
-      internal static let accent = ColorAsset(name: "Theme/Accent")
-      internal static let background = ColorAsset(name: "Theme/Background")
-      internal static let backgroundGray = ColorAsset(name: "Theme/BackgroundGray")
-      internal static let backgroundLightGray = ColorAsset(name: "Theme/BackgroundLightGray")
-      internal static let disabled = ColorAsset(name: "Theme/Disabled")
-      internal static let lightButtonShadow = ColorAsset(name: "Theme/LightButtonShadow")
-      internal static let lightShadow = ColorAsset(name: "Theme/LightShadow")
-      internal static let pageIndicatorBackground = ColorAsset(name: "Theme/PageIndicatorBackground")
-      internal static let pageIndicatorForeground = ColorAsset(name: "Theme/PageIndicatorForeground")
-      internal static let primary = ColorAsset(name: "Theme/Primary")
-      internal static let secondary = ColorAsset(name: "Theme/Secondary")
-      internal static let shadow = ColorAsset(name: "Theme/Shadow")
-      internal static let buttonShadow = ColorAsset(name: "Theme/buttonShadow")
-    }
+    internal static let accent = ColorAsset(name: "Accent")
+    internal static let background = ColorAsset(name: "Background")
+    internal static let backgroundGray = ColorAsset(name: "BackgroundGray")
+    internal static let backgroundLightGray = ColorAsset(name: "BackgroundLightGray")
+    internal static let buttonShadow = ColorAsset(name: "ButtonShadow")
+    internal static let buttonShadowLight = ColorAsset(name: "ButtonShadowLight")
+    internal static let danger = ColorAsset(name: "Danger")
+    internal static let disabled = ColorAsset(name: "Disabled")
+    internal static let info = ColorAsset(name: "Info")
+    internal static let neutral = ColorAsset(name: "Neutral")
+    internal static let pageIndicatorBackground = ColorAsset(name: "PageIndicatorBackground")
+    internal static let pageIndicatorForeground = ColorAsset(name: "PageIndicatorForeground")
+    internal static let primaryTint = ColorAsset(name: "PrimaryTint")
+    internal static let secondaryTint = ColorAsset(name: "SecondaryTint")
+    internal static let shadow = ColorAsset(name: "Shadow")
+    internal static let shadowLight = ColorAsset(name: "ShadowLight")
+    internal static let success = ColorAsset(name: "Success")
+    internal static let textDark = ColorAsset(name: "TextDark")
+    internal static let textLight = ColorAsset(name: "TextLight")
+    internal static let warning = ColorAsset(name: "Warning")
   }
   internal enum Images {
     internal static let closeIcon = ImageAsset(name: "CloseIcon")

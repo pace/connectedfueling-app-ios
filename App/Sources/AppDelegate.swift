@@ -40,18 +40,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func applyGlobalTheme() {
         let view = UIView.appearance()
-        view.tintColor = Asset.Colors.Theme.primary.color
+        view.tintColor = Asset.Colors.primaryTint.color
 
         let navigationBar = UINavigationBar.appearance()
         if #available(iOS 13.0, *) {
             let appearance = UINavigationBarAppearance()
             appearance.configureWithOpaqueBackground()
-            appearance.backgroundColor = Asset.Colors.Theme.primary.color
+            appearance.backgroundColor = Asset.Colors.primaryTint.color
             navigationBar.standardAppearance = appearance
             navigationBar.scrollEdgeAppearance = navigationBar.standardAppearance
         } else {
             navigationBar.isTranslucent = false
-            navigationBar.barTintColor = Asset.Colors.Theme.primary.color
+            navigationBar.barTintColor = Asset.Colors.primaryTint.color
         }
         navigationBar.tintColor = .white
         navigationBar.setTitleVerticalPositionAdjustment(0, for: .default)

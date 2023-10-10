@@ -5,7 +5,7 @@ import UIKit
 // MARK: Labels
 extension LabelStyle {
     static let headline1: Self = .init(
-        color: Asset.Colors.Text.darkText.color,
+        color: Asset.Colors.textDark.color,
         font: .systemFont(ofSize: 20, weight: .semibold),
         numberOfLines: 0,
         lineBreakMode: .byTruncatingTail,
@@ -13,7 +13,7 @@ extension LabelStyle {
     )
 
     static let headline2: Self = .init(
-        color: Asset.Colors.Text.darkText.color,
+        color: Asset.Colors.textDark.color,
         font: .systemFont(ofSize: 18, weight: .semibold),
         numberOfLines: 0,
         lineBreakMode: .byTruncatingTail,
@@ -21,7 +21,7 @@ extension LabelStyle {
     )
 
     static let headline3: Self = .init(
-        color: Asset.Colors.Text.darkText.color,
+        color: Asset.Colors.textDark.color,
         font: .systemFont(ofSize: 16, weight: .semibold),
         numberOfLines: 0,
         lineBreakMode: .byTruncatingTail,
@@ -29,7 +29,7 @@ extension LabelStyle {
     )
 
     static let lightBoldHeadline3: Self = .init(
-        color: Asset.Colors.Text.lightText.color,
+        color: Asset.Colors.textLight.color,
         font: .systemFont(ofSize: 16, weight: .bold),
         numberOfLines: 0,
         lineBreakMode: .byTruncatingTail,
@@ -37,7 +37,7 @@ extension LabelStyle {
     )
 
     static let headline4: Self = .init(
-        color: Asset.Colors.Text.darkText.color,
+        color: Asset.Colors.textDark.color,
         font: .systemFont(ofSize: 16, weight: .medium),
         numberOfLines: 0,
         lineBreakMode: .byTruncatingTail,
@@ -45,7 +45,7 @@ extension LabelStyle {
     )
 
     static let headline5: Self = .init(
-        color: Asset.Colors.Text.darkText.color,
+        color: Asset.Colors.textDark.color,
         font: .systemFont(ofSize: 14, weight: .semibold),
         numberOfLines: 0,
         lineBreakMode: .byTruncatingTail,
@@ -53,7 +53,7 @@ extension LabelStyle {
     )
 
     static let body1: Self = .init(
-        color: Asset.Colors.Text.darkText.color,
+        color: Asset.Colors.textDark.color,
         font: .systemFont(ofSize: 16, weight: .medium),
         numberOfLines: 0,
         lineBreakMode: .byTruncatingTail,
@@ -61,7 +61,7 @@ extension LabelStyle {
     )
 
     static let body2: Self = .init(
-        color: Asset.Colors.Text.darkText.color,
+        color: Asset.Colors.textDark.color,
         font: .systemFont(ofSize: 16, weight: .regular),
         numberOfLines: 0,
         lineBreakMode: .byTruncatingTail,
@@ -69,7 +69,7 @@ extension LabelStyle {
     )
 
     static let body3: Self = .init(
-        color: Asset.Colors.Text.darkText.color,
+        color: Asset.Colors.textDark.color,
         font: .systemFont(ofSize: 12, weight: .medium),
         numberOfLines: 0,
         lineBreakMode: .byTruncatingTail,
@@ -77,7 +77,7 @@ extension LabelStyle {
     )
 
     static let body4: Self = .init(
-        color: Asset.Colors.Text.darkText.color,
+        color: Asset.Colors.textDark.color,
         font: .systemFont(ofSize: 12, weight: .regular),
         numberOfLines: 0,
         lineBreakMode: .byTruncatingTail,
@@ -131,9 +131,9 @@ extension BorderStyle {
     static let circular: Self = .init(color: .clear, width: 0, radius: .circular)
     static let small: Self = .init(color: .clear, width: 0, radius: .all(4))
     static let large: Self = .init(color: .clear, width: 0, radius: .all(8))
-    static let largeOutline: Self = .init(color: Asset.Colors.Theme.primary.color, width: 1.5, radius: .all(8))
-    static let largeOutlineHighlighted: Self = .init(color: Asset.Colors.Theme.primary.color.withAlphaComponent(0.75), width: 1.5, radius: .all(8))
-    static let largeOutlineSmallRadius: Self = .init(color: Asset.Colors.Theme.primary.color, width: 1.5, radius: .all(4))
+    static let largeOutline: Self = .init(color: Asset.Colors.primaryTint.color, width: 1.5, radius: .all(8))
+    static let largeOutlineHighlighted: Self = .init(color: Asset.Colors.primaryTint.color.withAlphaComponent(0.75), width: 1.5, radius: .all(8))
+    static let largeOutlineSmallRadius: Self = .init(color: Asset.Colors.primaryTint.color, width: 1.5, radius: .all(4))
 }
 
 // MARK: Buttons
@@ -145,24 +145,24 @@ extension ButtonViewStyle {
     static let primary: Self = .init(
         height: dynamicHeight,
         normalState: .init(
-            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.Text.lightText.color),
+            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.textLight.color),
             borderStyle: .large,
-            backgroundColor: Asset.Colors.Theme.primary.color
+            backgroundColor: Asset.Colors.primaryTint.color
         ),
         highlightedState: .init(
-            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.Text.lightText.color),
+            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.textLight.color),
             borderStyle: .large,
-            backgroundColor: Asset.Colors.Theme.primary.color.withAlphaComponent(0.75)
+            backgroundColor: Asset.Colors.primaryTint.color.withAlphaComponent(0.75)
         ),
         selectedState: .init(
-            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.Theme.primary.color),
+            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.primaryTint.color),
             borderStyle: .largeOutline,
-            backgroundColor: Asset.Colors.Theme.background.color
+            backgroundColor: Asset.Colors.background.color
         ),
         disabledState: .init(
-            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.Text.lightText.color),
+            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.textLight.color),
             borderStyle: .large,
-            backgroundColor: Asset.Colors.Theme.disabled.color
+            backgroundColor: Asset.Colors.disabled.color
         )
     )
 
@@ -193,71 +193,71 @@ extension ButtonViewStyle {
     static let radio: Self = .init(
         height: dynamicHeight,
         normalState: .init(
-            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.Theme.primary.color),
+            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.primaryTint.color),
             borderStyle: .largeOutline,
-            backgroundColor: Asset.Colors.Theme.background.color
+            backgroundColor: Asset.Colors.background.color
         ),
         highlightedState: .init(
-            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.Theme.primary.color.withAlphaComponent(0.75)),
+            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.primaryTint.color.withAlphaComponent(0.75)),
             borderStyle: .largeOutlineHighlighted,
-            backgroundColor: Asset.Colors.Theme.background.color
+            backgroundColor: Asset.Colors.background.color
         ),
         selectedState: .init(
-            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.Theme.primary.color),
+            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.primaryTint.color),
             borderStyle: .largeOutline,
-            backgroundColor: Asset.Colors.Theme.background.color
+            backgroundColor: Asset.Colors.background.color
         ),
         disabledState: .init(
-            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.Theme.primary.color),
+            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.primaryTint.color),
             borderStyle: .largeOutline,
-            backgroundColor: Asset.Colors.Theme.background.color
+            backgroundColor: Asset.Colors.background.color
         )
     )
 
     static let action: Self = .init(
         height: 50,
         normalState: .init(
-            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.Text.lightText.color),
+            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.textLight.color),
             borderStyle: .large,
-            backgroundColor: Asset.Colors.Theme.primary.color
+            backgroundColor: Asset.Colors.primaryTint.color
         ),
         highlightedState: .init(
-            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.Text.lightText.color),
+            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.textDark.color),
             borderStyle: .large,
-            backgroundColor: Asset.Colors.Theme.primary.color.withAlphaComponent(0.75)
+            backgroundColor: Asset.Colors.primaryTint.color.withAlphaComponent(0.75)
         ),
         selectedState: .init(
-            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.Theme.primary.color),
+            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.primaryTint.color),
             borderStyle: .largeOutline,
-            backgroundColor: Asset.Colors.Theme.background.color
+            backgroundColor: Asset.Colors.background.color
         ),
         disabledState: .init(
-            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.Text.lightText.color),
+            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.textLight.color),
             borderStyle: .large,
-            backgroundColor: Asset.Colors.Theme.disabled.color
+            backgroundColor: Asset.Colors.disabled.color
         )
     )
 
     static let secondaryAction: Self = .init(
         height: 50,
         normalState: .init(
-            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.Theme.primary.color),
+            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.primaryTint.color),
             borderStyle: .largeOutline,
-            backgroundColor: Asset.Colors.Theme.background.color
+            backgroundColor: Asset.Colors.background.color
         ),
         highlightedState: .init(
-            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.Theme.primary.color.withAlphaComponent(0.75)),
+            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.primaryTint.color.withAlphaComponent(0.75)),
             borderStyle: .largeOutlineHighlighted,
             backgroundColor: .clear
         ),
         selectedState: .init(
-            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.Theme.primary.color),
+            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.primaryTint.color),
             borderStyle: .largeOutline,
-            backgroundColor: Asset.Colors.Theme.background.color,
-            shadowColor: Asset.Colors.Theme.lightButtonShadow.color
+            backgroundColor: Asset.Colors.background.color,
+            shadowColor: Asset.Colors.buttonShadowLight.color
         ),
         disabledState: .init(
-            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.Theme.primary.color),
+            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.primaryTint.color),
             borderStyle: .largeOutline,
             backgroundColor: .clear
         )
@@ -276,7 +276,7 @@ extension OnboardingViewStyle {
         primaryAction: .primary,
         secondaryAction: .secondary,
         radio: .radio,
-        backgroundColor: Asset.Colors.Theme.background.color,
+        backgroundColor: Asset.Colors.background.color,
         iconSpacingTop: 100,
         iconSpacingBottom: 40,
         descriptionInsets: .init(top: 14, left: 60, bottom: 40, right: 60)
@@ -288,7 +288,7 @@ extension OnboardingViewStyle {
         primaryAction: .primary,
         secondaryAction: .secondary,
         radio: .radio,
-        backgroundColor: Asset.Colors.Theme.background.color,
+        backgroundColor: Asset.Colors.background.color,
         iconSpacingTop: 60,
         iconSpacingBottom: 40,
         descriptionInsets: .init(top: 14, left: 30, bottom: 20, right: 30)
@@ -301,7 +301,7 @@ extension InputViewStyle {
         titleStyle: .headline1,
         descriptionStyle: .body2,
         errorStyle: LabelStyle.body4
-            .withColor(Asset.Colors.Feedback.danger.color)
+            .withColor(Asset.Colors.danger.color)
             .withTextAlignment(.left)
     )
 }
@@ -309,8 +309,8 @@ extension InputViewStyle {
 // MARK: PageIndicatorView
 extension PageIndicatorViewStyle {
     static let `default`: Self = .init(
-        backgroundColor: Asset.Colors.Theme.pageIndicatorBackground.color,
-        foregroundColor: Asset.Colors.Theme.pageIndicatorForeground.color,
+        backgroundColor: Asset.Colors.pageIndicatorBackground.color,
+        foregroundColor: Asset.Colors.pageIndicatorForeground.color,
         spacing: 10
     )
 }
@@ -336,8 +336,8 @@ extension DashboardItemViewStyle {
         fuelTypeStyle: LabelStyle.body3.withTextAlignment(.center),
         borderStyle: .large,
         actionStyle: .action,
-        distanceBadgeLabelStyle: .body1.withColor(Asset.Colors.Theme.primary.color),
-        shadowColor: Asset.Colors.Theme.shadow.color,
+        distanceBadgeLabelStyle: .body1.withColor(Asset.Colors.primaryTint.color),
+        shadowColor: Asset.Colors.shadow.color,
         shadowOffset: .init(x: 0, y: 2),
         shadowRadius: 10
     )
@@ -346,7 +346,7 @@ extension DashboardItemViewStyle {
 // MARK: Menu
 extension MenuViewStyle {
     static let `default`: Self = .init(
-        headerBackground: Asset.Colors.Theme.primary.color,
+        headerBackground: Asset.Colors.primaryTint.color,
         headerTitleStyle: .lightBoldHeadline3
     )
 }

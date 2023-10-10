@@ -19,9 +19,9 @@ final class SeparatorHeaderFooterView: UITableViewHeaderFooterView {
     }
 
     private func setupView() {
-        backgroundColor = Asset.Colors.Theme.background.color
-        tintColor = Asset.Colors.Theme.background.color
-        lineView.backgroundColor = Asset.Colors.Theme.backgroundGray.color
+        backgroundColor = Asset.Colors.background.color
+        tintColor = Asset.Colors.background.color
+        lineView.backgroundColor = Asset.Colors.backgroundGray.color
         lineView.translatesAutoresizingMaskIntoConstraints = false
 
         addSubview(lineView)
