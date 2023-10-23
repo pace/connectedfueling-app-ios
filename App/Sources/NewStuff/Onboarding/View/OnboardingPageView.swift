@@ -16,11 +16,10 @@ struct OnboardingPageView: View {
                 AppView(urlString: viewModel.appUrlString)
             }
             .sheet(item: $viewModel.textInputViewModel) { textInputViewModel in
-                NavigationView {
+                AppNavigationView {
                     OnboardingTextInputView(viewModel: textInputViewModel)
                         .addNavigationBar(showsLogo: false)
                 }
-                .accentColor(Color.textLight)
             }
             .alert(isPresented: $viewModel.isErrorAlertPresented) {
                 Alert(title: Text("Oops, something went wrong"),

@@ -72,9 +72,8 @@ struct OnboardingTextInputView: View {
 }
 
 #Preview {
-    NavigationView {
+    AppNavigationView {
         OnboardingTextInputView(viewModel: .init(type: .pin, completion: { _ in }))
             .addNavigationBar(showsLogo: false)
     }
-    .accentColor(Color.textLight)
 }

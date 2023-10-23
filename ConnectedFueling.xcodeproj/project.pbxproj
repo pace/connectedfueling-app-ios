@@ -20,6 +20,12 @@
 		3B7370BA2AD52F8C00E9118B /* OnboardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7370B92AD52F8C00E9118B /* OnboardingPageView.swift */; };
 		3B7370C32AD53A0E00E9118B /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7370C22AD53A0E00E9118B /* AppView.swift */; };
 		3B7370CA2AD566F300E9118B /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7370C92AD566F300E9118B /* Color+Extension.swift */; };
+		3BA2DB0F2AE6A1F800187D86 /* AppScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA2DB0E2AE6A1F800187D86 /* AppScreen.swift */; };
+		3BA2DB112AE6A20000187D86 /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA2DB102AE6A20000187D86 /* AppTabView.swift */; };
+		3BA2DB132AE6A21800187D86 /* AppNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA2DB122AE6A21800187D86 /* AppNavigationView.swift */; };
+		3BA2DB152AE6A24800187D86 /* GasStationListNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA2DB142AE6A24800187D86 /* GasStationListNavigationView.swift */; };
+		3BA2DB182AE6A28000187D86 /* MenuNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA2DB172AE6A28000187D86 /* MenuNavigationView.swift */; };
+		3BA2DB1A2AE6A29300187D86 /* OnboardingNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA2DB192AE6A29300187D86 /* OnboardingNavigationView.swift */; };
 		3BAE60582AD59239006EA9DD /* OnboardingPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE60572AD59239006EA9DD /* OnboardingPageViewModel.swift */; };
 		3BAE605B2AD677B7006EA9DD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE605A2AD677B7006EA9DD /* Constants.swift */; };
 		3BAE60672AD68116006EA9DD /* OnboardingPageAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE60662AD68116006EA9DD /* OnboardingPageAction.swift */; };
@@ -187,6 +193,12 @@
 		3B7370B92AD52F8C00E9118B /* OnboardingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
 		3B7370C22AD53A0E00E9118B /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		3B7370C92AD566F300E9118B /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		3BA2DB0E2AE6A1F800187D86 /* AppScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppScreen.swift; sourceTree = "<group>"; };
+		3BA2DB102AE6A20000187D86 /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
+		3BA2DB122AE6A21800187D86 /* AppNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationView.swift; sourceTree = "<group>"; };
+		3BA2DB142AE6A24800187D86 /* GasStationListNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasStationListNavigationView.swift; sourceTree = "<group>"; };
+		3BA2DB172AE6A28000187D86 /* MenuNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuNavigationView.swift; sourceTree = "<group>"; };
+		3BA2DB192AE6A29300187D86 /* OnboardingNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingNavigationView.swift; sourceTree = "<group>"; };
 		3BAE60572AD59239006EA9DD /* OnboardingPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewModel.swift; sourceTree = "<group>"; };
 		3BAE605A2AD677B7006EA9DD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3BAE60662AD68116006EA9DD /* OnboardingPageAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageAction.swift; sourceTree = "<group>"; };
@@ -443,8 +455,9 @@
 			children = (
 				3BAE606B2AD6E93D006EA9DD /* OnboardingFuelTypeButton.swift */,
 				3BDE7B192AD94E06009A88DF /* OnboardingFuelTypeButtonsView.swift */,
-				3BDE7B152AD92B95009A88DF /* OnboardingTextInputView.swift */,
+				3BA2DB192AE6A29300187D86 /* OnboardingNavigationView.swift */,
 				3B7370B92AD52F8C00E9118B /* OnboardingPageView.swift */,
+				3BDE7B152AD92B95009A88DF /* OnboardingTextInputView.swift */,
 				3BDE7B2E2ADD257F009A88DF /* OnboardingView.swift */,
 			);
 			path = View;
@@ -457,7 +470,9 @@
 				3BDE7B4E2ADE74E8009A88DF /* GasStationList */,
 				3B7370C12AD53A0800E9118B /* Helpers */,
 				3BAE606D2AD7CBA6006EA9DD /* Managers */,
+				3BA2DB162AE6A27700187D86 /* Menu */,
 				3BDE7B4D2ADE7391009A88DF /* Models */,
+				3BA2DB0D2AE6A1EC00187D86 /* Navigation */,
 				3B7370A82AD43EA200E9118B /* Onboarding */,
 				3BDE7B302ADD336B009A88DF /* ConnectedFuelingApp.swift */,
 				3B4616C62ADE932D00DF57A1 /* ContentView.swift */,
@@ -485,6 +500,24 @@
 				3BCF49F32ADFCA06005C20DC /* View+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3BA2DB0D2AE6A1EC00187D86 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				3BA2DB122AE6A21800187D86 /* AppNavigationView.swift */,
+				3BA2DB0E2AE6A1F800187D86 /* AppScreen.swift */,
+				3BA2DB102AE6A20000187D86 /* AppTabView.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		3BA2DB162AE6A27700187D86 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				3BA2DB172AE6A28000187D86 /* MenuNavigationView.swift */,
+			);
+			path = Menu;
 			sourceTree = "<group>";
 		};
 		3BAE60452AD57F6E006EA9DD /* ViewModel */ = {
@@ -556,6 +589,7 @@
 		3BDE7B4E2ADE74E8009A88DF /* GasStationList */ = {
 			isa = PBXGroup;
 			children = (
+				3BA2DB142AE6A24800187D86 /* GasStationListNavigationView.swift */,
 				3BDE7B4F2ADE7512009A88DF /* GasStationListView.swift */,
 			);
 			path = GasStationList;
@@ -1255,12 +1289,14 @@
 				C5B8037F2695F77A00C8669B /* Theme.swift in Sources */,
 				C56CD41926BBEE1F004E61FB /* MenuViewController.swift in Sources */,
 				3BDE7B502ADE7512009A88DF /* GasStationListView.swift in Sources */,
+				3BA2DB182AE6A28000187D86 /* MenuNavigationView.swift in Sources */,
 				C57CD3BF26AC389700356BE6 /* DashboardHeaderViewModel.swift in Sources */,
 				C56DF9E1268F60B80074DBC8 /* OnboardingViewController.swift in Sources */,
 				3B4616C92ADEAFBA00DF57A1 /* UserDefault.swift in Sources */,
 				3BAE60752AD7CBCB006EA9DD /* TextLabel.swift in Sources */,
 				3BDE7B2F2ADD257F009A88DF /* OnboardingView.swift in Sources */,
 				3B7370C32AD53A0E00E9118B /* AppView.swift in Sources */,
+				3BA2DB1A2AE6A29300187D86 /* OnboardingNavigationView.swift in Sources */,
 				3BDE7B382ADD3468009A88DF /* AppManager.swift in Sources */,
 				C50407202693636600654C52 /* CoreLocationRepository.swift in Sources */,
 				C56CD42E26BBF411004E61FB /* MenuItemTableViewCell.swift in Sources */,
@@ -1279,6 +1315,7 @@
 				C56DF93F268F2F9F0074DBC8 /* OnboardingCoordinator.swift in Sources */,
 				C56CD43526BC1447004E61FB /* SidebarPresentationController.swift in Sources */,
 				3BDE7B212ADD13E3009A88DF /* OnboardingAuthorizationPageViewModel.swift in Sources */,
+				3BA2DB0F2AE6A1F800187D86 /* AppScreen.swift in Sources */,
 				3BAE606C2AD6E93D006EA9DD /* OnboardingFuelTypeButton.swift in Sources */,
 				C5F06EDD26AEE19200C43C81 /* InputViewController.swift in Sources */,
 				3BCF49F82AE0079C005C20DC /* PINInputValidator.swift in Sources */,
@@ -1302,6 +1339,8 @@
 				3BDE7B0D2AD82EDB009A88DF /* UserManager.swift in Sources */,
 				C51AC2CF26BAAA5A00E475EB /* PermissionCoordinator.swift in Sources */,
 				33F8348C3EAD92206DCBA221 /* EnvironmentConfiguration.swift in Sources */,
+				3BA2DB112AE6A20000187D86 /* AppTabView.swift in Sources */,
+				3BA2DB132AE6A21800187D86 /* AppNavigationView.swift in Sources */,
 				C5A2C37E26936C2500474AC9 /* ButtonViewStyle.swift in Sources */,
 				3BAE605B2AD677B7006EA9DD /* Constants.swift in Sources */,
 				1331D416CE5C76C2BC2511C1 /* AppCoordinator.swift in Sources */,
@@ -1328,6 +1367,7 @@
 				C56CD41B26BBEE26004E61FB /* MenuViewModel.swift in Sources */,
 				B4CA0AE526CA4A09002F50BB /* SeparatorHeaderFooterView.swift in Sources */,
 				C56CD42526BBF1D7004E61FB /* MenuViewStyle.swift in Sources */,
+				3BA2DB152AE6A24800187D86 /* GasStationListNavigationView.swift in Sources */,
 				C5CB313126944427005E8986 /* OnboardingViewStyle.swift in Sources */,
 				C518FA2126AABF9D000124D9 /* DashboardViewController.swift in Sources */,
 				C50ED93526AF06F8009A2E22 /* CreatePinCoordinator.swift in Sources */,

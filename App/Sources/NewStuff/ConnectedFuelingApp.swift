@@ -10,11 +10,7 @@ struct ConnectedFuelingApp: App {
 
     var body: some Scene {
         WindowGroup {
-            NavigationView {
-                ContentView()
-                    .addNavigationBar()
-            }
-            .accentColor(Color.textLight)
+            ContentView()
         }
     }
 
