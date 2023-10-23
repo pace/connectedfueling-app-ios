@@ -166,3 +166,15 @@ submit:
     variables:
       - $CI_COMMIT_TAG !~ /^connectedfueling-app-/
   when: manual
+
+### Merge main into release (triggers GitHub mirroring)
+trigger_github_mirroring:
+  extends: .base_template
+  stage: publish
+  before_script: []
+  after_script: []
+  script:
+    - ./scripts/trigger_github_mirroring.sh
+  rules:
+    - if: $SCHEDULED_JOB == "connectedfueling-app-github-mirroring"
+    - if: $SCHEDULED_JOB == "connectedfueling-app-testflight"
