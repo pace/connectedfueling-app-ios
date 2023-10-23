@@ -1,123 +1,87 @@
 "ALERT.LOCATION_PERMISSION.ACTIONS.OPEN_SETTINGS" = "Abrir la configuración";
-
 "ALERT.LOCATION_PERMISSION.DESCRIPTION" = "Para mostrarte la gasolinera más cercana, necesitamos acceder a tu ubicación actual.";
-
 "ALERT.LOCATION_PERMISSION.TITLE" = "Ubicación no divulgada";
-
 "DASHBOARD.ACTIONS.NAVIGATE" = "INICIAR LA RUTA";
-
 "DASHBOARD.ACTIONS.START_FUELING" = "RELLENA AQUÍ";
-
 "DASHBOARD.EMPTY_VIEW.DESCRIPTION" = "No se han encontrado gasolineras cerca de usted.";
-
 "DASHBOARD.EMPTY_VIEW.TITLE" = "No hay gasolineras cerca de usted";
-
 "DASHBOARD.LOADING_VIEW.DESCRIPTION" = "Buscaremos las gasolineras más cercanas en su zona. Esto puede llevar un momento.";
-
 "DASHBOARD.LOADING_VIEW.TITLE" = "Buscar gasolineras...";
-
 "DASHBOARD.LOGOUT.CONFIRM.ACTION.CANCEL" = "CANCELAR";
-
 "DASHBOARD.LOGOUT.CONFIRM.ACTION.LOGOUT" = "REGISTRO";
-
 "DASHBOARD.LOGOUT.CONFIRM.DESCRIPTION" = "Sus datos siguen almacenados en su cuenta PACE-ID.";
-
 "DASHBOARD.LOGOUT.CONFIRM.TITLE" = "¿Realmente quieres firmar la salida?";
-
 "DASHBOARD.SECTIONS.NEAREST_GAS_STATION" = "Gasolinera más cercana";
-
 "DASHBOARD.SECTIONS.OTHER_GAS_STATIONS" = "Más gasolineras";
-
 "FUEL_TYPE.DIESEL" = "DIESEL";
-
 "FUEL_TYPE.SUPER" = "SUPER";
-
 "FUEL_TYPE.SUPER_E10" = "SUPER E10";
-
 "FUEL_TYPE.SUPER_PLUS" = "SUPER PLUS";
-
 "GLOBAL.ACTIONS.CLOSE" = "Cerrar";
-
-"MENU.ITEMS.ESSO" = "Sitio web de Esso";
-
 "MENU.ITEMS.FUEL_TYPE" = "Cambiar el tipo de combustible";
-
 "MENU.ITEMS.IMPRINT" = "Pie de imprenta";
-
 "MENU.ITEMS.LOGOUT" = "Cerrar la sesión";
-
 "MENU.ITEMS.PAYMENT_HISTORY" = "Mostrar el historial de pagos";
-
 "MENU.ITEMS.PAYMENT_METHODS" = "Editar los métodos de pago";
-
 "MENU.ITEMS.PRIVACY" = "Política de privacidad";
-
 "MENU.TITLE.PLACEHOLDER" = "PACE Connected Fueling";
-
 "ONBOARDING.ACTIONS.ADD_PAYMENT_METHOD" = "ESTABLECER LA FORMA DE PAGO";
-
 "ONBOARDING.ACTIONS.AUTHENTICATE" = "CONECTARSE O REGISTRARSE";
-
 "ONBOARDING.ACTIONS.COMPLETE" = "¡ADELANTE!";
-
 "ONBOARDING.ACTIONS.NEXT" = "CONTINUAR";
-
 "ONBOARDING.ACTIONS.SAVE" = "GUARDAR";
-
 "ONBOARDING.ACTIONS.SHARE_LOCATION" = "COMPARTIR UBICACIÓN";
-
 "ONBOARDING.ACTIONS.SKIP" = "omitir";
-
 "ONBOARDING.AUTHENTICATION.DESCRIPTION" = "Para facilitar el pago con la app, debes registrarte o iniciar sesión con tu ID PACE existente.";
-
 "ONBOARDING.AUTHENTICATION.TITLE" = "Perfil de los depósitos";
-
 "ONBOARDING.CREATE_PIN.CONFIRM" = "CONTINUAR";
-
 "ONBOARDING.CREATE_PIN.DESCRIPTION" = "Seleccione un PIN de cuatro dígitos que se utilizará para confirmar los pagos.";
-
 "ONBOARDING.CREATE_PIN.TITLE" = "Seleccione el PIN";
-
 "ONBOARDING.ENTER_ONE_TIME_PASSWORD.CONFIRM" = "CONFIRMAR";
-
 "ONBOARDING.ENTER_ONE_TIME_PASSWORD.DESCRIPTION" = "Por favor, autorice el cambio con el código de confirmación de su buzón de correo electrónico.";
-
 "ONBOARDING.ENTER_ONE_TIME_PASSWORD.TITLE" = "Introduzca el código de confirmación";
-
 "ONBOARDING.FUEL_TYPE.DESCRIPTION" = "Y por último: ¿Qué precios de combustible debemos mostrar?";
-
 "ONBOARDING.FUEL_TYPE.TITLE" = "Tipo de combustible";
-
 "ONBOARDING.PAYMENT_METHOD.DESCRIPTION" = "Introduzca un método de pago para poder iniciar su primer repostaje.";
-
 "ONBOARDING.PAYMENT_METHOD.TITLE" = "Forma de pago";
-
 "ONBOARDING.PERMISSION.DESCRIPTION" = "Para ver la gasolinera más cercana, necesitamos acceder a su ubicación exacta.";
-
 "ONBOARDING.PERMISSION.TITLE" = "Gasolineras cerca de ti";
-
 "ONBOARDING.PIN.ERROR.INVALID_LENGTH" = "El PIN debe tener cuatro dígitos.";
-
 "ONBOARDING.PIN.ERROR.MISMATCH" = "Los PINs no coinciden. Inténtalo de nuevo.";
-
 "ONBOARDING.PIN.ERROR.NOT_SECURE" = "El PIN es demasiado simple (0000 o 1234 no están permitidos). Elija otro PIN";
-
 "ONBOARDING.PIN.ERROR.SERIES" = "El PIN no debe ser una serie de dígitos ascendentes o descendentes.";
-
 "ONBOARDING.PIN.ERROR.TOO_FEW_DIGITS" = "El PIN debe contener al menos tres dígitos diferentes.";
-
 "ONBOARDING.TWO_FACTOR_AUTHENTICATION.BIOMETRY" = "UTILIZAR LA BIOMÉTRICA";
-
 "ONBOARDING.TWO_FACTOR_AUTHENTICATION.DESCRIPTION" = "Los escáneres biométricos son la forma más rápida y segura de confirmar sus transacciones de pago.";
-
 "ONBOARDING.TWO_FACTOR_AUTHENTICATION.PIN" = "Seleccione el PIN";
-
 "ONBOARDING.TWO_FACTOR_AUTHENTICATION.TITLE" = "Pago seguro y rápido";
-
 "ONBOARDING.VERIFY_PIN.CONFIRM" = "CONTINUAR";
-
 "ONBOARDING.VERIFY_PIN.DESCRIPTION" = "Por favor, introduzca el PIN de nuevo para confirmar.";
-
 "ONBOARDING.VERIFY_PIN.TITLE" = "Confirmar PIN";
-
 "PRICE.NOT_AVAILABLE" = "n. v.";
+"ONBOARDING.ACTIONS.BACK" = "ATRÁS";
+"ONBOARDING.NETWORK_ERROR" = "Error al conectarse a Internet. Vuelve a intentarlo más tarde.";
+"ONBOARDING.UNKNOWN_ERROR" = "Un error desconocido ocurrió. Vuelve a intentarlo más tarde.";
+"COMMON.RETRY" = "Intentar otra vez";
+"ONBOARDING.INVALID_SESSION" = "Tu sesión ha caducado.";
+"ONBOARDING.RETRY_LOGIN" = "Reintentar iniciar sesión";
+"ONBOARDING.LOG_IN_UNSUCCESSFUL" = "Error de inicio de sesion. Sin una cuenta, no es posible pagar el combustible con el smartphone.";
+"ONBOARDING.AUTHORIZATION.REQUEST_FINGERPRINT" = "Confirma tu huella digital";
+"ONBOARDING.FINGERPRINT_ERROR" = "Error al reconocer la huella digital:";
+"ONBOARDING.FINGERPRINT_NONE_SAVED_TITLE" = "¡Actualmente no hay huellas dactilares guardadas!";
+"ONBOARDING.FINGERPRINT_SAVE" = "Añadir ahora";
+"ONBOARDING.ERROR_AUTHORISATION" = "No se pudo verificar su entrada. Intentar otra vez.";
+"HOME.LOOKING_FOR_LOCATION_TITLE" = "Buscando ubicación…";
+"HOME.LOOKING_FOR_LOCATION_TEXT" = "Actualmente te estamos localizando. Esto podría tardar un momento.";
+"HOME.PRICE_NOT_AVAILABLE_DESCRIPTION" = "Para esta gasolinera y su tipo de combustible no hay precios disponibles actualmente.";
+"HOME.LOADING_FAILED" = "Carga fallida";
+"HOME.LOADING_FAILED_TEXT" = "No se pudieron cargar gasolineras. ¡Comprueba tu conexión!";
+"LOCATION_DIALOG.PERMISSION_DENIED_TITLE" = "Permiso de ubicación no concedido";
+"LOCATION_DIALOG.PERMISSION_DENIED_TEXT" = "Para mostrarle la gasolinera más cercana, necesitamos acceso a su ubicación actual.";
+"LOCATION_DIALOG.DISABLED_TITLE" = "Servicios de ubicación inhabilitados";
+"LOCATION_DIALOG.DISABLED_TEXT" = "Para mostrarte gasolineras cercanas a ti, los servicios de localización deben estar habilitados.";
+"FUEL_TYPE_SELECTION" = "¿Qué precios de combustible deberíamos mostrarte?";
+"SHARE_TITLE" = "Compartir";
+"ONBOARDING.FUEL_TYPE_UNSELECTED_TEXT" = "Por favor seleccione un tipo de combustible.";
+"MENU.ITEMS.LICENCES" = "Licencias";
+"currency_format" = "";

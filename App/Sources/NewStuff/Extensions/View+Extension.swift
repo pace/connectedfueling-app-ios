@@ -9,7 +9,7 @@ extension View {
                     if showsLogo {
                         Image(.logo)
                     } else {
-                        Text("")
+                        Text("") // Add empty text to make the navigation visible
                     }
                 }
             }

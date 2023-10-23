@@ -27,7 +27,7 @@ final class PACECloudGasStationListRepository: GasStationListRepository {
         completion(.success(true))
     }
 
-    func fetchGasStations(at location: Location, _ completion: @escaping (Result<[GasStation], Error>) -> Void) {
+    func fetchGasStations(at location: Domain.Location, _ completion: @escaping (Result<[Domain.GasStation], Error>) -> Void) {
         let center = CLLocation(
             latitude: CLLocationDegrees(location.latitude),
             longitude: CLLocationDegrees(location.longitude)
@@ -36,7 +36,7 @@ final class PACECloudGasStationListRepository: GasStationListRepository {
         POIKit.requestCofuGasStations(center: center, radius: 10_000) { result in
             switch result {
             case let .success(stations):
-                var response: [GasStation] = []
+                var response: [Domain.GasStation] = []
                 let dispatchGroup = DispatchGroup()
                 stations
                     .filter { $0.isConnectedFuelingAvailable }
@@ -70,7 +70,7 @@ final class PACECloudGasStationListRepository: GasStationListRepository {
 
 // MARK: - Model Mapping
 extension PACECloudGasStationListRepository {
-    private func makeGasStation(for station: POIKit.GasStation, center: CLLocation, isFuelingEnabled: Bool) -> GasStation {
+    private func makeGasStation(for station: POIKit.GasStation, center: CLLocation, isFuelingEnabled: Bool) -> Domain.GasStation {
         let distance = station.coordinate.flatMap {
             Float(center.distance(from: CLLocation(latitude: $0.latitude, longitude: $0.longitude))) / 1_000
         }
@@ -84,7 +84,7 @@ extension PACECloudGasStationListRepository {
             name: station.stationName ?? "",
             addressLines: station.address.flatMap(Self.makeAddressLines(for:)) ?? [],
             distanceInKilometers: distance,
-            location: station.coordinate.flatMap { Location(longitude: $0.longitude, latitude: $0.latitude) },
+            location: station.coordinate.flatMap { Domain.Location(longitude: $0.longitude, latitude: $0.latitude) },
             paymentMethods: station.cofuPaymentMethods,
             isFuelingAvailable: station.isConnectedFuelingAvailable,
             isFuelingEnabled: isFuelingEnabled,
@@ -94,7 +94,7 @@ extension PACECloudGasStationListRepository {
         )
     }
 
-    private func makeFuelPrice(for price: PCPOIFuelPrice) -> FuelPrice? {
+    private func makeFuelPrice(for price: PCPOIFuelPrice) -> Domain.FuelPrice? {
         guard let value = price.price else { return nil }
 
         return .init(value: value, currency: price.currency)

@@ -1,12 +1,19 @@
 import CoreLocation
 import Foundation
 
+protocol LocationManagerDelegate: AnyObject {
+    func didUpdateLocations(locations: [CLLocation])
+    func didFail(with error: Error)
+}
+
 class LocationManager: NSObject {
     enum LocationPermissionStatus {
         case notDetermined
         case denied
         case authorized
     }
+
+    weak var delegate: LocationManagerDelegate?
 
     private let locationManager: CLLocationManager
 
@@ -39,6 +46,14 @@ class LocationManager: NSObject {
             break
         }
     }
+
+    func startUpdatingLocation() {
+        locationManager.startUpdatingLocation()
+    }
+
+    func stopUpdatingLocation() {
+        locationManager.stopUpdatingLocation()
+    }
 }
 
 private extension LocationManager {
@@ -67,9 +82,10 @@ extension LocationManager: CLLocationManagerDelegate {
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-
+        delegate?.didUpdateLocations(locations: locations)
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        delegate?.didFail(with: error)
     }
 }
