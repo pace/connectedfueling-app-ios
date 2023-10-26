@@ -199,6 +199,7 @@
 		3BA2DB142AE6A24800187D86 /* GasStationListNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasStationListNavigationView.swift; sourceTree = "<group>"; };
 		3BA2DB172AE6A28000187D86 /* MenuNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuNavigationView.swift; sourceTree = "<group>"; };
 		3BA2DB192AE6A29300187D86 /* OnboardingNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingNavigationView.swift; sourceTree = "<group>"; };
+		3BA912562AEA9C6F001004A0 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		3BAE60572AD59239006EA9DD /* OnboardingPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewModel.swift; sourceTree = "<group>"; };
 		3BAE605A2AD677B7006EA9DD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3BAE60662AD68116006EA9DD /* OnboardingPageAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageAction.swift; sourceTree = "<group>"; };
@@ -963,11 +964,12 @@
 		C6801568A82DC5EB61A0FAD9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				0DDED74D77EA34B1E82D66CC /* Colors.xcassets */,
-				8C72B31A918630C1450DD690 /* Images.xcassets */,
 				C56CD44C26BD4351004E61FB /* Documents */,
 				0B30A9284843DEA2AC71A133 /* Fonts */,
+				0DDED74D77EA34B1E82D66CC /* Colors.xcassets */,
+				8C72B31A918630C1450DD690 /* Images.xcassets */,
 				D1F5315434E519EBEA5B2DB2 /* Localizable.strings */,
+				3BA912562AEA9C6F001004A0 /* PrivacyInfo.xcprivacy */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
