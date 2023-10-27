@@ -12,7 +12,9 @@ struct AppTabView: View {
             ForEach(AppScreen.allCases) { screen in
                 screen.destination
                     .tag(screen)
-                    .tabItem { screen.label }
+                    .tabItem {
+                        screen.label
+                    }
             }
         }
         .accentColor(.primaryTint)

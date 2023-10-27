@@ -2,7 +2,7 @@ import SwiftUI
 
 struct LoadingView: View {
     private let rotationTime: Double = 0.75
-    private let animationTime: Double = 1.9 // Sum of all animation times
+    private let animationTime: Double = 1.9
     private let fullRotation: Angle = .degrees(360)
     private static let initialDegree: Angle = .degrees(270)
 
@@ -15,35 +15,36 @@ struct LoadingView: View {
     @State private var rotationDegreeS3 = initialDegree
 
     private let color: Color
-    private let loadingText: String?
+    private let title: String?
+    private let description: String?
 
-    init(color: Color = .primaryTint, loadingText: String? = nil) {
+    init(color: Color = .primaryTint,
+         title: String? = nil,
+         description: String? = nil) {
         self.color = color
-        self.loadingText = loadingText
+        self.title = title
+        self.description = description
     }
 
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             ZStack {
-                // S3
                 SpinnerCircle(start: spinnerStart, end: spinnerEndS2S3, rotation: rotationDegreeS3, color: color)
-
-                // S2
                 SpinnerCircle(start: spinnerStart, end: spinnerEndS2S3, rotation: rotationDegreeS2, color: color)
-
-                // S1
                 SpinnerCircle(start: spinnerStart, end: spinnerEndS1, rotation: rotationDegreeS1, color: color)
-
             }
-            .frame(width: 100, height: 100)
-            if let loadingText = loadingText {
-                Spacer()
-                    .frame(height: 20)
-                Text(loadingText)
-                    .font(.system(size: 16))
-                    .fontWeight(.semibold)
-                    .multilineTextAlignment(.center)
-                    .lineLimit(nil)
+            .frame(width: 75, height: 75)
+            if let title {
+                TextLabel(title, alignment: .center)
+                    .font(.system(size: 20, weight: .medium))
+                    .padding(.top, 40)
+                    .padding(.horizontal, 25)
+            }
+            if let description {
+                TextLabel(description, alignment: .center)
+                    .font(.system(size: 16, weight: .medium))
+                    .padding(.top, 10)
+                    .padding(.horizontal, 25)
             }
         }
         .onAppear {
@@ -54,8 +55,7 @@ struct LoadingView: View {
         }
     }
 
-    // MARK: Animation methods
-    func animateSpinner(with duration: Double, completion: @escaping (() -> Void)) {
+    private func animateSpinner(with duration: Double, completion: @escaping (() -> Void)) {
         Timer.scheduledTimer(withTimeInterval: duration, repeats: false) { _ in
             withAnimation(Animation.easeInOut(duration: self.rotationTime)) {
                 completion()
@@ -63,7 +63,7 @@ struct LoadingView: View {
         }
     }
 
-    func animateSpinner() {
+    private func animateSpinner() {
         animateSpinner(with: rotationTime) { self.spinnerEndS1 = 1.0 }
 
         animateSpinner(with: (rotationTime * 2) - 0.025) {
@@ -99,6 +99,12 @@ private extension LoadingView {
     }
 }
 
+// MARK: - No loading text
 #Preview {
-    LoadingView(color: .primaryTint, loadingText: nil)
+    LoadingView()
+}
+
+// MARK: - With loading text
+#Preview {
+    LoadingView(title: "Loading title", description: "Loading description")
 }

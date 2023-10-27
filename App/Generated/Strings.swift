@@ -10,6 +10,14 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
+  /// %2$@%1$@
+  internal static func currencyFormat(_ p1: Any, _ p2: Any) -> String {
+    return L10n.tr("Localizable", "currency_format", String(describing: p1), String(describing: p2), fallback: "%2$@%1$@")
+  }
+  /// What fuel prices should we show you?
+  internal static let fuelTypeSelection = L10n.tr("Localizable", "FUEL_TYPE_SELECTION", fallback: "What fuel prices should we show you?")
+  /// Share
+  internal static let shareTitle = L10n.tr("Localizable", "SHARE_TITLE", fallback: "Share")
   internal enum Alert {
     internal enum LocationPermission {
       /// To show you the nearest gas station, we need access to your current location.
@@ -21,6 +29,10 @@ internal enum L10n {
         internal static let openSettings = L10n.tr("Localizable", "ALERT.LOCATION_PERMISSION.ACTIONS.OPEN_SETTINGS", fallback: "Open settings")
       }
     }
+  }
+  internal enum Common {
+    /// Try again
+    internal static let retry = L10n.tr("Localizable", "COMMON.RETRY", fallback: "Try again")
   }
   internal enum Dashboard {
     internal enum Actions {
@@ -78,12 +90,36 @@ internal enum L10n {
       internal static let close = L10n.tr("Localizable", "GLOBAL.ACTIONS.CLOSE", fallback: "Close")
     }
   }
+  internal enum Home {
+    /// Loading failed
+    internal static let loadingFailed = L10n.tr("Localizable", "HOME.LOADING_FAILED", fallback: "Loading failed")
+    /// Gas stations could not be loaded. Check your connection!
+    internal static let loadingFailedText = L10n.tr("Localizable", "HOME.LOADING_FAILED_TEXT", fallback: "Gas stations could not be loaded. Check your connection!")
+    /// We are currently locating you. This might take a moment.
+    internal static let lookingForLocationText = L10n.tr("Localizable", "HOME.LOOKING_FOR_LOCATION_TEXT", fallback: "We are currently locating you. This might take a moment.")
+    /// Looking for location…
+    internal static let lookingForLocationTitle = L10n.tr("Localizable", "HOME.LOOKING_FOR_LOCATION_TITLE", fallback: "Looking for location…")
+    /// For this gas station and your fuel type there are currently no prices available.
+    internal static let priceNotAvailableDescription = L10n.tr("Localizable", "HOME.PRICE_NOT_AVAILABLE_DESCRIPTION", fallback: "For this gas station and your fuel type there are currently no prices available.")
+  }
+  internal enum LocationDialog {
+    /// To show you petrol stations near you, location services must be enabled.
+    internal static let disabledText = L10n.tr("Localizable", "LOCATION_DIALOG.DISABLED_TEXT", fallback: "To show you petrol stations near you, location services must be enabled.")
+    /// Location services disabled
+    internal static let disabledTitle = L10n.tr("Localizable", "LOCATION_DIALOG.DISABLED_TITLE", fallback: "Location services disabled")
+    /// To show you the nearest gas station, we need access to your current location.
+    internal static let permissionDeniedText = L10n.tr("Localizable", "LOCATION_DIALOG.PERMISSION_DENIED_TEXT", fallback: "To show you the nearest gas station, we need access to your current location.")
+    /// Location permission not granted
+    internal static let permissionDeniedTitle = L10n.tr("Localizable", "LOCATION_DIALOG.PERMISSION_DENIED_TITLE", fallback: "Location permission not granted")
+  }
   internal enum Menu {
     internal enum Items {
       /// Change fuel type
       internal static let fuelType = L10n.tr("Localizable", "MENU.ITEMS.FUEL_TYPE", fallback: "Change fuel type")
       /// Legal Notice
       internal static let imprint = L10n.tr("Localizable", "MENU.ITEMS.IMPRINT", fallback: "Legal Notice")
+      /// Licenses
+      internal static let licences = L10n.tr("Localizable", "MENU.ITEMS.LICENCES", fallback: "Licenses")
       /// Logout
       internal static let logout = L10n.tr("Localizable", "MENU.ITEMS.LOGOUT", fallback: "Logout")
       /// Show payment history
@@ -99,11 +135,33 @@ internal enum L10n {
     }
   }
   internal enum Onboarding {
+    /// Your input could not be verified. Try again.
+    internal static let errorAuthorisation = L10n.tr("Localizable", "ONBOARDING.ERROR_AUTHORISATION", fallback: "Your input could not be verified. Try again.")
+    /// Error recognising fingerprint:
+    internal static let fingerprintError = L10n.tr("Localizable", "ONBOARDING.FINGERPRINT_ERROR", fallback: "Error recognising fingerprint:")
+    /// Currently there are no saved fingerprints!
+    internal static let fingerprintNoneSavedTitle = L10n.tr("Localizable", "ONBOARDING.FINGERPRINT_NONE_SAVED_TITLE", fallback: "Currently there are no saved fingerprints!")
+    /// Add now
+    internal static let fingerprintSave = L10n.tr("Localizable", "ONBOARDING.FINGERPRINT_SAVE", fallback: "Add now")
+    /// Please select a fuel type.
+    internal static let fuelTypeUnselectedText = L10n.tr("Localizable", "ONBOARDING.FUEL_TYPE_UNSELECTED_TEXT", fallback: "Please select a fuel type.")
+    /// Your session is expired.
+    internal static let invalidSession = L10n.tr("Localizable", "ONBOARDING.INVALID_SESSION", fallback: "Your session is expired.")
+    /// Login failed. Without an account, paying your fuel with your smartphone is not possible.
+    internal static let logInUnsuccessful = L10n.tr("Localizable", "ONBOARDING.LOG_IN_UNSUCCESSFUL", fallback: "Login failed. Without an account, paying your fuel with your smartphone is not possible.")
+    /// Connecting to the internet failed. Try again later.
+    internal static let networkError = L10n.tr("Localizable", "ONBOARDING.NETWORK_ERROR", fallback: "Connecting to the internet failed. Try again later.")
+    /// Retry login
+    internal static let retryLogin = L10n.tr("Localizable", "ONBOARDING.RETRY_LOGIN", fallback: "Retry login")
+    /// An unknown error occurred. Try again later.
+    internal static let unknownError = L10n.tr("Localizable", "ONBOARDING.UNKNOWN_ERROR", fallback: "An unknown error occurred. Try again later.")
     internal enum Actions {
       /// ADD PAYMENT METHOD
       internal static let addPaymentMethod = L10n.tr("Localizable", "ONBOARDING.ACTIONS.ADD_PAYMENT_METHOD", fallback: "ADD PAYMENT METHOD")
       /// LOGIN OR REGISTER
       internal static let authenticate = L10n.tr("Localizable", "ONBOARDING.ACTIONS.AUTHENTICATE", fallback: "LOGIN OR REGISTER")
+      /// BACK
+      internal static let back = L10n.tr("Localizable", "ONBOARDING.ACTIONS.BACK", fallback: "BACK")
       /// GO!
       internal static let complete = L10n.tr("Localizable", "ONBOARDING.ACTIONS.COMPLETE", fallback: "GO!")
       /// NEXT
@@ -120,6 +178,10 @@ internal enum L10n {
       internal static let description = L10n.tr("Localizable", "ONBOARDING.AUTHENTICATION.DESCRIPTION", fallback: "For easy payment with the app you have to register or login with your existing PACE-ID.")
       /// Add profile
       internal static let title = L10n.tr("Localizable", "ONBOARDING.AUTHENTICATION.TITLE", fallback: "Add profile")
+    }
+    internal enum Authorization {
+      /// Confirm your fingerprint
+      internal static let requestFingerprint = L10n.tr("Localizable", "ONBOARDING.AUTHORIZATION.REQUEST_FINGERPRINT", fallback: "Confirm your fingerprint")
     }
     internal enum CreatePin {
       /// NEXT

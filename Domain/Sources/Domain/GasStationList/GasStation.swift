@@ -5,12 +5,12 @@ public struct GasStation {
     public let name: String
     public let addressLines: [String]
     public let distanceInKilometers: Float?
-    public let location: Location?
+    public let location: Domain.Location?
     public let paymentMethods: [String]
     public let isFuelingAvailable: Bool
     public let isFuelingEnabled: Bool
-    public let fuelType: FuelType?
-    public let fuelPrice: FuelPrice?
+    public let fuelType: Domain.FuelType?
+    public let fuelPrice: Domain.FuelPrice?
     public let currency: String?
 
     public init(
@@ -18,12 +18,12 @@ public struct GasStation {
         name: String,
         addressLines: [String],
         distanceInKilometers: Float?,
-        location: Location?,
+        location: Domain.Location?,
         paymentMethods: [String],
         isFuelingAvailable: Bool,
         isFuelingEnabled: Bool,
-        fuelType: FuelType?,
-        fuelPrice: FuelPrice?,
+        fuelType: Domain.FuelType?,
+        fuelPrice: Domain.FuelPrice?,
         currency: String?
     ) {
         self.identifier = identifier

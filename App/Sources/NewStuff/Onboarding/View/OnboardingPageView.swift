@@ -22,8 +22,7 @@ struct OnboardingPageView: View {
                 }
             }
             .alert(isPresented: $viewModel.isErrorAlertPresented) {
-                Alert(title: Text("Oops, something went wrong"),
-                      message: Text("Please try again"))
+                AppAlert.genericError
             }
     }
 

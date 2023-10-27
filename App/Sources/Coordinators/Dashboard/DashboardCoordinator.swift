@@ -26,11 +26,11 @@ final class DashboardCoordinator: Coordinator {
         )
     )
 
-    private var stations: [GasStation] = [] {
+    private var stations: [Domain.GasStation] = [] {
         didSet { updateDashboardViewModel() }
     }
 
-    private var stationsByDistance: [GasStation] {
+    private var stationsByDistance: [Domain.GasStation] {
         return stations.sorted { lhs, rhs in
             switch (lhs.distanceInKilometers, rhs.distanceInKilometers) {
             case let (.some(lhsDistance), .some(rhsDistance)):
@@ -142,7 +142,7 @@ extension DashboardCoordinator {
         UIApplication.shared.open(url)
     }
 
-    private func openNavigation(to station: GasStation) {
+    private func openNavigation(to station: Domain.GasStation) {
         guard let location = station.location else { return }
 
         let item = MKMapItem(
@@ -152,7 +152,7 @@ extension DashboardCoordinator {
         item.openInMaps(launchOptions: nil)
     }
 
-    private func startFueling(at station: GasStation) {
+    private func startFueling(at station: Domain.GasStation) {
         let viewController = AppKit.appViewController(
             presetUrl: .fueling(id: station.identifier)
         )
@@ -314,7 +314,7 @@ extension DashboardCoordinator {
         })
     }
 
-    private func makeGasStationItemViewModel(for station: GasStation) -> DashboardItemViewModel {
+    private func makeGasStationItemViewModel(for station: Domain.GasStation) -> DashboardItemViewModel {
         return .init(
             icon: Asset.Images.gasStationLogo.image,
             title: station.name,
@@ -328,7 +328,7 @@ extension DashboardCoordinator {
         )
     }
 
-    private func makeActionViewModel(for station: GasStation) -> ButtonViewModel {
+    private func makeActionViewModel(for station: Domain.GasStation) -> ButtonViewModel {
         if station.isFuelingEnabled {
             return ButtonViewModel(
                 title: L10n.Dashboard.Actions.startFueling

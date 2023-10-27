@@ -1,123 +1,87 @@
 "ALERT.LOCATION_PERMISSION.ACTIONS.OPEN_SETTINGS" = "Open instellingen";
-
 "ALERT.LOCATION_PERMISSION.DESCRIPTION" = "Om u het dichtstbijzijnde tankstation te tonen, hebben we toegang nodig tot uw huidige locatie.";
-
 "ALERT.LOCATION_PERMISSION.TITLE" = "Locatie niet vrijgegeven";
-
 "DASHBOARD.ACTIONS.NAVIGATE" = "START ROUTE";
-
 "DASHBOARD.ACTIONS.START_FUELING" = "VUL HIER IN";
-
 "DASHBOARD.EMPTY_VIEW.DESCRIPTION" = "Er werden geen benzinestations in uw buurt gevonden.";
-
 "DASHBOARD.EMPTY_VIEW.TITLE" = "Geen benzinestations in uw buurt";
-
 "DASHBOARD.LOADING_VIEW.DESCRIPTION" = "Wij zoeken de dichtstbijzijnde benzinestations in uw buurt. Dit kan even duren.";
-
 "DASHBOARD.LOADING_VIEW.TITLE" = "Zoek benzinestations...";
-
 "DASHBOARD.LOGOUT.CONFIRM.ACTION.CANCEL" = "CANCEL";
-
 "DASHBOARD.LOGOUT.CONFIRM.ACTION.LOGOUT" = "REGISTER";
-
 "DASHBOARD.LOGOUT.CONFIRM.DESCRIPTION" = "Uw gegevens worden nog steeds opgeslagen in uw PACE-ID account.";
-
 "DASHBOARD.LOGOUT.CONFIRM.TITLE" = "Wil je je echt afmelden?";
-
 "DASHBOARD.SECTIONS.NEAREST_GAS_STATION" = "Dichtstbijzijnde benzinestation";
-
 "DASHBOARD.SECTIONS.OTHER_GAS_STATIONS" = "Meer benzinestations";
-
 "FUEL_TYPE.DIESEL" = "DIESEL";
-
 "FUEL_TYPE.SUPER" = "SUPER";
-
 "FUEL_TYPE.SUPER_E10" = "SUPER E10";
-
 "FUEL_TYPE.SUPER_PLUS" = "SUPER PLUS";
-
 "GLOBAL.ACTIONS.CLOSE" = "Sluiten";
-
-"MENU.ITEMS.ESSO" = "Esso website";
-
 "MENU.ITEMS.FUEL_TYPE" = "Brandstofsoort wijzigen";
-
 "MENU.ITEMS.IMPRINT" = "Afdruk";
-
 "MENU.ITEMS.LOGOUT" = "Log uit.";
-
 "MENU.ITEMS.PAYMENT_HISTORY" = "Betalingsgeschiedenis tonen";
-
 "MENU.ITEMS.PAYMENT_METHODS" = "Betaalmethoden wijzigen";
-
 "MENU.ITEMS.PRIVACY" = "Privacybeleid";
-
 "MENU.TITLE.PLACEHOLDER" = "PACE aangesloten tanken";
-
 "ONBOARDING.ACTIONS.ADD_PAYMENT_METHOD" = "BETAALMETHODE INSTELLEN";
-
 "ONBOARDING.ACTIONS.AUTHENTICATE" = "LOG IN OF REGISTREER";
-
 "ONBOARDING.ACTIONS.COMPLETE" = "GA!";
-
 "ONBOARDING.ACTIONS.NEXT" = "CONTINUE";
-
 "ONBOARDING.ACTIONS.SAVE" = "SAVE";
-
 "ONBOARDING.ACTIONS.SHARE_LOCATION" = "LOCATIE DELEN";
-
 "ONBOARDING.ACTIONS.SKIP" = "skip";
-
 "ONBOARDING.AUTHENTICATION.DESCRIPTION" = "Om gemakkelijk met de app te kunnen betalen, moet u zich registreren of inloggen met uw bestaande PACE ID.";
-
 "ONBOARDING.AUTHENTICATION.TITLE" = "Depositoprofiel";
-
 "ONBOARDING.CREATE_PIN.CONFIRM" = "CONTINUE";
-
 "ONBOARDING.CREATE_PIN.DESCRIPTION" = "Kies een viercijferige pincode die u wilt gebruiken om betalingen te bevestigen.";
-
 "ONBOARDING.CREATE_PIN.TITLE" = "Selecteer PIN";
-
 "ONBOARDING.ENTER_ONE_TIME_PASSWORD.CONFIRM" = "BEVESTIGEN";
-
 "ONBOARDING.ENTER_ONE_TIME_PASSWORD.DESCRIPTION" = "Autoriseer de wijziging met de bevestigingscode uit uw e-mail inbox.";
-
 "ONBOARDING.ENTER_ONE_TIME_PASSWORD.TITLE" = "Bevestigingscode invoeren";
-
 "ONBOARDING.FUEL_TYPE.DESCRIPTION" = "En tenslotte: Welke brandstofprijzen moeten we u laten zien?";
-
 "ONBOARDING.FUEL_TYPE.TITLE" = "Type brandstof";
-
 "ONBOARDING.PAYMENT_METHOD.DESCRIPTION" = "Voer een betaalmethode in, zodat u uw eerste tankbeurt kunt beginnen.";
-
 "ONBOARDING.PAYMENT_METHOD.TITLE" = "Betaalmethode";
-
 "ONBOARDING.PERMISSION.DESCRIPTION" = "Om het dichtstbijzijnde tankstation te zien, hebben we toegang tot uw exacte locatie nodig.";
-
 "ONBOARDING.PERMISSION.TITLE" = "Benzinestations in uw buurt";
-
 "ONBOARDING.PIN.ERROR.INVALID_LENGTH" = "De PIN-code moet uit vier cijfers bestaan.";
-
 "ONBOARDING.PIN.ERROR.MISMATCH" = "De PIN's komen niet overeen. Probeer het nog eens.";
-
 "ONBOARDING.PIN.ERROR.NOT_SECURE" = "De PIN-code is te eenvoudig (0000 of 1234 zijn niet toegestaan). Kies een andere PIN";
-
 "ONBOARDING.PIN.ERROR.SERIES" = "De PIN-code mag geen oplopende of aflopende reeks cijfers zijn.";
-
 "ONBOARDING.PIN.ERROR.TOO_FEW_DIGITS" = "De PIN-code moet uit ten minste drie verschillende cijfers bestaan.";
-
 "ONBOARDING.TWO_FACTOR_AUTHENTICATION.BIOMETRY" = "GEBRUIK BIOMETRIEK";
-
 "ONBOARDING.TWO_FACTOR_AUTHENTICATION.DESCRIPTION" = "Biometrische scanners zijn de snelste en veiligste manier om uw betalingstransacties te bevestigen.";
-
 "ONBOARDING.TWO_FACTOR_AUTHENTICATION.PIN" = "Selecteer PIN";
-
 "ONBOARDING.TWO_FACTOR_AUTHENTICATION.TITLE" = "Veilige en snelle betaling";
-
 "ONBOARDING.VERIFY_PIN.CONFIRM" = "CONTINUE";
-
 "ONBOARDING.VERIFY_PIN.DESCRIPTION" = "Voer de PIN nogmaals in om te bevestigen.";
-
 "ONBOARDING.VERIFY_PIN.TITLE" = "Bevestig PIN";
-
 "PRICE.NOT_AVAILABLE" = "n. v.";
+"ONBOARDING.ACTIONS.BACK" = "RUG";
+"ONBOARDING.NETWORK_ERROR" = "Verbinding maken met internet is mislukt. Probeer het later nog eens.";
+"ONBOARDING.UNKNOWN_ERROR" = "Een onbekende fout is opgetreden. Probeer het later nog eens.";
+"COMMON.RETRY" = "Probeer het nog eens";
+"ONBOARDING.INVALID_SESSION" = "Uw sessie is verlopen.";
+"ONBOARDING.RETRY_LOGIN" = "Probeer opnieuw in te loggen";
+"ONBOARDING.LOG_IN_UNSUCCESSFUL" = "Aanmelden mislukt. Zonder account is het betalen van uw brandstof met uw smartphone niet mogelijk.";
+"ONBOARDING.AUTHORIZATION.REQUEST_FINGERPRINT" = "Bevestig uw vingerafdruk";
+"ONBOARDING.FINGERPRINT_ERROR" = "Fout bij herkennen vingerafdruk:";
+"ONBOARDING.FINGERPRINT_NONE_SAVED_TITLE" = "Momenteel zijn er geen opgeslagen vingerafdrukken!";
+"ONBOARDING.FINGERPRINT_SAVE" = "Voeg nu toe";
+"ONBOARDING.ERROR_AUTHORISATION" = "Uw invoer kan niet worden geverifieerd. Probeer het nog eens.";
+"HOME.LOOKING_FOR_LOCATION_TITLE" = "Op zoek naar locatie…";
+"HOME.LOOKING_FOR_LOCATION_TEXT" = "We zijn u momenteel aan het lokaliseren. Dit kan even duren.";
+"HOME.PRICE_NOT_AVAILABLE_DESCRIPTION" = "Voor dit tankstation en uw brandstoftype zijn momenteel geen prijzen beschikbaar.";
+"HOME.LOADING_FAILED" = "Laden mislukt";
+"HOME.LOADING_FAILED_TEXT" = "Benzinestations konden niet worden geladen. Controleer uw verbinding!";
+"LOCATION_DIALOG.PERMISSION_DENIED_TITLE" = "Locatietoestemming niet verleend";
+"LOCATION_DIALOG.PERMISSION_DENIED_TEXT" = "Om u het dichtstbijzijnde tankstation te kunnen tonen, hebben wij toegang tot uw huidige locatie nodig.";
+"LOCATION_DIALOG.DISABLED_TITLE" = "Locatieservices uitgeschakeld";
+"LOCATION_DIALOG.DISABLED_TEXT" = "Om u tankstations bij u in de buurt te kunnen tonen, moeten locatiediensten zijn ingeschakeld.";
+"FUEL_TYPE_SELECTION" = "Welke brandstofprijzen moeten we u laten zien?";
+"SHARE_TITLE" = "Deel";
+"ONBOARDING.FUEL_TYPE_UNSELECTED_TEXT" = "Selecteer een brandstoftype.";
+"MENU.ITEMS.LICENCES" = "Licenties";
+"currency_format" = "";

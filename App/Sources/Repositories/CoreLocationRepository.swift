@@ -6,7 +6,7 @@ final class CoreLocationRepository: NSObject, LocationRepository {
     private var locationPermissionCallbacks: [LocationPermissionCallback] = []
     private var isRequestingLocationPermission: Bool = false
     private var locationUpdateCallbacks: [LocationUpdateCallback] = []
-    var currentLocation: Location? {
+    var currentLocation: Domain.Location? {
         didSet { didChangeCurrentLocation() }
     }
 
@@ -92,7 +92,7 @@ extension CoreLocationRepository: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
 
-        currentLocation = Location(longitude: location.coordinate.longitude, latitude: location.coordinate.latitude)
+        currentLocation = Domain.Location(longitude: location.coordinate.longitude, latitude: location.coordinate.latitude)
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

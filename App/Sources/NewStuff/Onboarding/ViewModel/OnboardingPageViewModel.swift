@@ -15,7 +15,7 @@ class OnboardingPageViewModel: ObservableObject, Identifiable {
             didDismissAppView()
         }
     }
-    
+
     var appUrlString: String = ""
 
     @Published var textInputViewModel: OnboardingTextInputViewModel?
