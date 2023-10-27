@@ -19,6 +19,7 @@ before_script:
       - "ConnectedFueling.xcodeproj/project.pbxproj"
       - "App/**/*"
       - "Gemfile.lock"
+      - "scripts/**/*"
 
 .only_merge_requests: &only_merge_requests
   only:

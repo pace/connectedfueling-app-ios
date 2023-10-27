@@ -34,6 +34,15 @@ The project is localized for following languages:
 
 * English 
 * German 
+* Spanish 
+* Czech
+* French
+* Italian
+* Dutch
+* Polish
+* Portuguese
+* Romanian
+* Russian
 
 ## Environment/Build Configurations
 
