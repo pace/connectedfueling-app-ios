@@ -26,4 +26,8 @@ enum Constants {
         static let updateDistanceThresholdInMeters: Double = 500
         static let priceFormatFallback: String = "d.dds"
     }
+
+    enum CrashReporting {
+        static let sentryDSNInfoPlistKey = "SentryDSN"
+    }
 }
