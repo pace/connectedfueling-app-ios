@@ -26,9 +26,7 @@ internal enum Asset {
     internal static let complementary = ColorAsset(name: "Complementary")
     internal static let error = ColorAsset(name: "Error")
     internal static let primaryText = ColorAsset(name: "PrimaryText")
-    internal static let primaryTint = ColorAsset(name: "PrimaryTint")
     internal static let secondaryText = ColorAsset(name: "SecondaryText")
-    internal static let secondaryTint = ColorAsset(name: "SecondaryTint")
     internal static let shadow = ColorAsset(name: "Shadow")
     internal static let success = ColorAsset(name: "Success")
   }

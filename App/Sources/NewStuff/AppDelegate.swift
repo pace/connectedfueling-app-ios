@@ -20,18 +20,18 @@ private extension AppDelegate {
         PACECloudSDK.shared.setup(
             with: .init(
                 apiKey: "connected-fueling-app",
-                clientId: "connected-fueling-app-ios",
-                environment: sdkEnvironment,
-                geoAppsScope: "pace-drive-ios-min"
+                clientId: ConfigurationManager.configuration.clientId,
+                environment: sdkEnvironment
             )
         )
     }
 
     func setupNavigationBar() {
+        let primaryTintUIColor = UIColor(ConfigurationManager.configuration.primaryBrandingColor)
         let navigationBar = UINavigationBar.appearance()
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = Asset.Colors.primaryTint.color
+        appearance.backgroundColor = primaryTintUIColor
         navigationBar.standardAppearance = appearance
         navigationBar.scrollEdgeAppearance = navigationBar.standardAppearance
         navigationBar.tintColor = .white

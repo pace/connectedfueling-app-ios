@@ -8,6 +8,8 @@
 	<dict>
 		<key>OIDConfigurationRedirectURI</key>
 		<string>cofu-app://callback</string>
+		<key>OIDConfigurationIDPHint</key>
+		<string></string>
 	</dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
