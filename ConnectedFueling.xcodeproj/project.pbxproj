@@ -20,6 +20,14 @@
 		3B7370BA2AD52F8C00E9118B /* OnboardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7370B92AD52F8C00E9118B /* OnboardingPageView.swift */; };
 		3B7370C32AD53A0E00E9118B /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7370C22AD53A0E00E9118B /* AppView.swift */; };
 		3B7370CA2AD566F300E9118B /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7370C92AD566F300E9118B /* Color+Extension.swift */; };
+		3B77644B2AF91B2500BE185B /* CrashReportingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B77644A2AF91B2500BE185B /* CrashReportingManager.swift */; };
+		3B77644D2AF91B7400BE185B /* CrashReportingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B77644C2AF91B7400BE185B /* CrashReportingService.swift */; };
+		3B77644F2AF91BC300BE185B /* BugLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B77644E2AF91BC300BE185B /* BugLevel.swift */; };
+		3B7764522AF91C4100BE185B /* SentryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7764512AF91C4100BE185B /* SentryService.swift */; };
+		3B7764542AF91C4800BE185B /* CrashlyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7764532AF91C4800BE185B /* CrashlyticsService.swift */; };
+		3B7764582AF91FFD00BE185B /* Sentry in Frameworks */ = {isa = PBXBuildFile; productRef = 3B7764572AF91FFD00BE185B /* Sentry */; };
+		3B77645B2AF922F700BE185B /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3B77645A2AF922F700BE185B /* FirebaseCrashlytics */; };
+		3B784BDF2AFA1CC6006CBD4A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B784BDE2AFA1CC6006CBD4A /* GoogleService-Info.plist */; };
 		3BA2DAF92AE6755100187D86 /* GasStationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA2DAF82AE6755100187D86 /* GasStationListView.swift */; };
 		3BA2DAFE2AE6758300187D86 /* GasStationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA2DAFD2AE6758300187D86 /* GasStationListViewModel.swift */; };
 		3BA2DB002AE676FD00187D86 /* GasStationListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BA2DAFF2AE676FD00187D86 /* GasStationListItemView.swift */; };
@@ -208,6 +216,12 @@
 		3B7370B92AD52F8C00E9118B /* OnboardingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
 		3B7370C22AD53A0E00E9118B /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		3B7370C92AD566F300E9118B /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		3B77644A2AF91B2500BE185B /* CrashReportingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashReportingManager.swift; sourceTree = "<group>"; };
+		3B77644C2AF91B7400BE185B /* CrashReportingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashReportingService.swift; sourceTree = "<group>"; };
+		3B77644E2AF91BC300BE185B /* BugLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BugLevel.swift; sourceTree = "<group>"; };
+		3B7764512AF91C4100BE185B /* SentryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentryService.swift; sourceTree = "<group>"; };
+		3B7764532AF91C4800BE185B /* CrashlyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashlyticsService.swift; sourceTree = "<group>"; };
+		3B784BDE2AFA1CC6006CBD4A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3BA2DAF82AE6755100187D86 /* GasStationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasStationListView.swift; sourceTree = "<group>"; };
 		3BA2DAFD2AE6758300187D86 /* GasStationListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasStationListViewModel.swift; sourceTree = "<group>"; };
 		3BA2DAFF2AE676FD00187D86 /* GasStationListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasStationListItemView.swift; sourceTree = "<group>"; };
@@ -221,13 +235,13 @@
 		3BA2DB142AE6A24800187D86 /* GasStationListNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasStationListNavigationView.swift; sourceTree = "<group>"; };
 		3BA2DB172AE6A28000187D86 /* MenuNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuNavigationView.swift; sourceTree = "<group>"; };
 		3BA2DB192AE6A29300187D86 /* OnboardingNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingNavigationView.swift; sourceTree = "<group>"; };
-		3BA912562AEA9C6F001004A0 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		3BA2DB1C2AE6ABC300187D86 /* GasStationListSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasStationListSection.swift; sourceTree = "<group>"; };
 		3BA2DB212AE7A75E00187D86 /* GasStationListEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasStationListEmptyView.swift; sourceTree = "<group>"; };
 		3BA2DB232AE7B5E200187D86 /* POIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POIManager.swift; sourceTree = "<group>"; };
 		3BA2DB2D2AE8048600187D86 /* AppAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAlert.swift; sourceTree = "<group>"; };
 		3BA2DB3A2AE92F5100187D86 /* PriceNumberFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceNumberFormatter.swift; sourceTree = "<group>"; };
 		3BA9124E2AEA5C28001004A0 /* Alert+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+Extension.swift"; sourceTree = "<group>"; };
+		3BA912562AEA9C6F001004A0 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		3BAE60572AD59239006EA9DD /* OnboardingPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewModel.swift; sourceTree = "<group>"; };
 		3BAE605A2AD677B7006EA9DD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3BAE60662AD68116006EA9DD /* OnboardingPageAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageAction.swift; sourceTree = "<group>"; };
@@ -375,8 +389,10 @@
 				C56DF9B9268F5A320074DBC8 /* PACECloudSDK in Frameworks */,
 				C5CB314D26947061005E8986 /* Domain in Frameworks */,
 				5B3AEF0CAC686220E4C322E7 /* JLCoordinator in Frameworks */,
+				3B7764582AF91FFD00BE185B /* Sentry in Frameworks */,
 				C57E894526B16EC100A1B5C3 /* WeakCache in Frameworks */,
 				C57E894126B16EC100A1B5C3 /* UserDefaults in Frameworks */,
+				3B77645B2AF922F700BE185B /* FirebaseCrashlytics in Frameworks */,
 				C57E894326B16EC100A1B5C3 /* Keychain in Frameworks */,
 				C57E894726B16EC100A1B5C3 /* JamitFoundation in Frameworks */,
 			);
@@ -504,6 +520,7 @@
 				3BDE7B4D2ADE7391009A88DF /* Models */,
 				3BA2DB0D2AE6A1EC00187D86 /* Navigation */,
 				3B7370A82AD43EA200E9118B /* Onboarding */,
+				A92EDCAEA5155B139A67EC72 /* AppDelegate.swift */,
 				3BDE7B302ADD336B009A88DF /* ConnectedFuelingApp.swift */,
 				3B4616C62ADE932D00DF57A1 /* ContentView.swift */,
 			);
@@ -533,6 +550,26 @@
 				3BCF49F32ADFCA06005C20DC /* View+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3B7764492AF91B1500BE185B /* CrashReporting */ = {
+			isa = PBXGroup;
+			children = (
+				3B7764552AF91C4D00BE185B /* Services */,
+				3B77644E2AF91BC300BE185B /* BugLevel.swift */,
+				3B77644C2AF91B7400BE185B /* CrashReportingService.swift */,
+				3B77644A2AF91B2500BE185B /* CrashReportingManager.swift */,
+			);
+			path = CrashReporting;
+			sourceTree = "<group>";
+		};
+		3B7764552AF91C4D00BE185B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3B7764532AF91C4800BE185B /* CrashlyticsService.swift */,
+				3B7764512AF91C4100BE185B /* SentryService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		3BA2DAFA2AE6756700187D86 /* View */ = {
@@ -631,6 +668,7 @@
 		3BAE606D2AD7CBA6006EA9DD /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				3B7764492AF91B1500BE185B /* CrashReporting */,
 				3BDE7B372ADD3468009A88DF /* AppManager.swift */,
 				3BAE60762AD7CD5E006EA9DD /* LocationManager.swift */,
 				3BDE7B3D2ADD7073009A88DF /* PaymentManager.swift */,
@@ -709,6 +747,7 @@
 				65943E2C58A88B7E3A334F86 /* LaunchScreen.storyboard */,
 				2EB20D5198AC7E6603D98D72 /* Settings.bundle */,
 				3264D54344964F4C49918D6B /* Configuration */,
+				3B784BDE2AFA1CC6006CBD4A /* GoogleService-Info.plist */,
 				5F48CEFA1A83BBDEFAE5A2BE /* Info.plist */,
 			);
 			path = SupportingFiles;
@@ -726,7 +765,6 @@
 			isa = PBXGroup;
 			children = (
 				3B7370C02AD539FA00E9118B /* NewStuff */,
-				A92EDCAEA5155B139A67EC72 /* AppDelegate.swift */,
 				99758AB82A54D1FDA908CA06 /* SceneDelegate.swift */,
 				C5B8037E2695F77A00C8669B /* Theme.swift */,
 				47C20617796AF15FE262BF24 /* Coordinators */,
@@ -1135,6 +1173,7 @@
 				790BB8E894854A0060A4E881 /* Create license settings page */,
 				73C63974CF6FCE513F940481 /* Resources */,
 				706E6AB48E36A6E1A7739527 /* Frameworks */,
+				3B784BE02AFA1D7D006CBD4A /* Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -1149,6 +1188,8 @@
 				C57E894226B16EC100A1B5C3 /* Keychain */,
 				C57E894426B16EC100A1B5C3 /* WeakCache */,
 				C57E894626B16EC100A1B5C3 /* JamitFoundation */,
+				3B7764572AF91FFD00BE185B /* Sentry */,
+				3B77645A2AF922F700BE185B /* FirebaseCrashlytics */,
 			);
 			productName = App;
 			productReference = A21D1F58961E1C012B58255C /* App.app */;
@@ -1212,6 +1253,8 @@
 				21F2F0E07A0595B1ED8F0C1D /* XCRemoteSwiftPackageReference "JLCoordinator" */,
 				C56DF9B7268F5A320074DBC8 /* XCRemoteSwiftPackageReference "cloud-sdk-ios" */,
 				C57E893F26B16EC100A1B5C3 /* XCRemoteSwiftPackageReference "JamitFoundation" */,
+				3B7764562AF91FFD00BE185B /* XCRemoteSwiftPackageReference "sentry-cocoa" */,
+				3B7764592AF922F700BE185B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			projectDirPath = "";
 			projectRoot = "";
@@ -1239,6 +1282,7 @@
 				B4CB37C226D3A12900084986 /* DocumentViewController.xib in Resources */,
 				C56CD43026BBF441004E61FB /* MenuItemView.xib in Resources */,
 				C57CD3C926AC38AA00356BE6 /* DashboardHeaderView.xib in Resources */,
+				3B784BDF2AFA1CC6006CBD4A /* GoogleService-Info.plist in Resources */,
 				609680F4A2CE2D7E449F9251 /* InfoPlist.strings in Resources */,
 				C5E8A7EE26A5B7DF002119DD /* DashboardItemView.xib in Resources */,
 				8B3D69400817E6B01B1C4350 /* LaunchScreen.storyboard in Resources */,
@@ -1268,6 +1312,29 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Default homebrew directory on m1\nif test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\n\nexport PATH\n\nif which bartycrouch > /dev/null; then\n    bartycrouch update -x\n    bartycrouch lint -x\nelse\n    echo \"warning: BartyCrouch not installed, download it from https://github.com/Flinesoft/BartyCrouch\"\nfi\n\n";
+		};
+		3B784BE02AFA1D7D006CBD4A /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${PRODUCT_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist",
+				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/GoogleService-Info.plist",
+				"$(TARGET_BUILD_DIR)/$(EXECUTABLE_PATH)",
+			);
+			name = Crashlytics;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
 		};
 		408EC6CF6DADB1BFD9EEB89B /* SwiftGen Version Check */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1359,6 +1426,7 @@
 				3BDE7B1C2AD96445009A88DF /* FuelType.swift in Sources */,
 				3BAE60732AD7CBC4006EA9DD /* ActionButton.swift in Sources */,
 				C5040754269369AD00654C52 /* ButtonView.swift in Sources */,
+				3B77644D2AF91B7400BE185B /* CrashReportingService.swift in Sources */,
 				3BDE7B1A2AD94E06009A88DF /* OnboardingFuelTypeButtonsView.swift in Sources */,
 				3BA2DB002AE676FD00187D86 /* GasStationListItemView.swift in Sources */,
 				3BAE60582AD59239006EA9DD /* OnboardingPageViewModel.swift in Sources */,
@@ -1388,6 +1456,7 @@
 				0BF6DBAB28A292B3005B922A /* FuelTypeExtensions.swift in Sources */,
 				C5331F8226B946A5000588C0 /* DashboardHeaderTableViewCell.swift in Sources */,
 				C518FA1C26AABA26000124D9 /* DashboardItemViewStyle.swift in Sources */,
+				3B7764542AF91C4800BE185B /* CrashlyticsService.swift in Sources */,
 				C518FA2626AAC39C000124D9 /* DashboardViewModel.swift in Sources */,
 				3BAE60672AD68116006EA9DD /* OnboardingPageAction.swift in Sources */,
 				3BA2DB222AE7A75E00187D86 /* GasStationListEmptyView.swift in Sources */,
@@ -1411,9 +1480,11 @@
 				3BAE60772AD7CD5E006EA9DD /* LocationManager.swift in Sources */,
 				C57CD3C426AC38A100356BE6 /* DashboardHeaderViewStyle.swift in Sources */,
 				C50406FA269331AA00654C52 /* PageViewPresenter.swift in Sources */,
+				3B77644F2AF91BC300BE185B /* BugLevel.swift in Sources */,
 				3BDE7B3A2ADD42EB009A88DF /* PageView.swift in Sources */,
 				C56CD42826BBF348004E61FB /* MenuItemView.swift in Sources */,
 				E7925D709403540553288CE2 /* EnvironmentOld.swift in Sources */,
+				3B77644B2AF91B2500BE185B /* CrashReportingManager.swift in Sources */,
 				3BA9124F2AEA5C28001004A0 /* Alert+Extension.swift in Sources */,
 				3BCF49F62ADFF97D005C20DC /* OnboardingTextInputResponseType.swift in Sources */,
 				C518FA2B26AAC9E9000124D9 /* DashboardItemTableViewCell.swift in Sources */,
@@ -1442,6 +1513,7 @@
 				C5F06EC626AECB1F00C43C81 /* UIViewExtensions.swift in Sources */,
 				C5B5821126BAB29400DFFC27 /* PACECloudPaymentRepository.swift in Sources */,
 				C5290F3F269DCC9200C8AE9A /* PACECloudTwoFactorAuthenticationRepository.swift in Sources */,
+				3B7764522AF91C4100BE185B /* SentryService.swift in Sources */,
 				3BA2DAF92AE6755100187D86 /* GasStationListView.swift in Sources */,
 				C56DF9EB268F60FA0074DBC8 /* OnboardingViewModelOld.swift in Sources */,
 				1954A59A56D600A0D16D182D /* SceneDelegate.swift in Sources */,
@@ -1696,7 +1768,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_IDENTIFIER)";
 				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = PRODUCTION;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "PRODUCTION CRASHLYTICS SENTRY";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Production;
@@ -1741,6 +1813,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 8T694MPXAZ;
 				INFOPLIST_FILE = App/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1749,7 +1822,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(APP_BUNDLE_IDENTIFIER)";
 				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG DEVELOPMENT";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG DEVELOPMENT CRASHLYTICS SENTRY";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Development;
@@ -1838,6 +1911,22 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		3B7764562AF91FFD00BE185B /* XCRemoteSwiftPackageReference "sentry-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/getsentry/sentry-cocoa";
+			requirement = {
+				kind = exactVersion;
+				version = 8.15.0;
+			};
+		};
+		3B7764592AF922F700BE185B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = exactVersion;
+				version = 10.17.0;
+			};
+		};
 		C56DF9B7268F5A320074DBC8 /* XCRemoteSwiftPackageReference "cloud-sdk-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pace/cloud-sdk-ios";
@@ -1857,6 +1946,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3B7764572AF91FFD00BE185B /* Sentry */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3B7764562AF91FFD00BE185B /* XCRemoteSwiftPackageReference "sentry-cocoa" */;
+			productName = Sentry;
+		};
+		3B77645A2AF922F700BE185B /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3B7764592AF922F700BE185B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
 		768C7172D53CB9F731D15D69 /* JLCoordinator */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 21F2F0E07A0595B1ED8F0C1D /* XCRemoteSwiftPackageReference "JLCoordinator" */;
