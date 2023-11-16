@@ -5,7 +5,7 @@ import UIKit
 // MARK: Labels
 extension LabelStyle {
     static let headline1: Self = .init(
-        color: Asset.Colors.textDark.color,
+        color: Asset.Colors.primaryText.color,
         font: .systemFont(ofSize: 20, weight: .semibold),
         numberOfLines: 0,
         lineBreakMode: .byTruncatingTail,
@@ -13,7 +13,7 @@ extension LabelStyle {
     )
 
     static let headline2: Self = .init(
-        color: Asset.Colors.textDark.color,
+        color: Asset.Colors.primaryText.color,
         font: .systemFont(ofSize: 18, weight: .semibold),
         numberOfLines: 0,
         lineBreakMode: .byTruncatingTail,
@@ -21,7 +21,7 @@ extension LabelStyle {
     )
 
     static let headline3: Self = .init(
-        color: Asset.Colors.textDark.color,
+        color: Asset.Colors.primaryText.color,
         font: .systemFont(ofSize: 16, weight: .semibold),
         numberOfLines: 0,
         lineBreakMode: .byTruncatingTail,
@@ -29,7 +29,7 @@ extension LabelStyle {
     )
 
     static let lightBoldHeadline3: Self = .init(
-        color: Asset.Colors.textLight.color,
+        color: .white,
         font: .systemFont(ofSize: 16, weight: .bold),
         numberOfLines: 0,
         lineBreakMode: .byTruncatingTail,
@@ -37,7 +37,7 @@ extension LabelStyle {
     )
 
     static let headline4: Self = .init(
-        color: Asset.Colors.textDark.color,
+        color: Asset.Colors.primaryText.color,
         font: .systemFont(ofSize: 16, weight: .medium),
         numberOfLines: 0,
         lineBreakMode: .byTruncatingTail,
@@ -45,7 +45,7 @@ extension LabelStyle {
     )
 
     static let headline5: Self = .init(
-        color: Asset.Colors.textDark.color,
+        color: Asset.Colors.primaryText.color,
         font: .systemFont(ofSize: 14, weight: .semibold),
         numberOfLines: 0,
         lineBreakMode: .byTruncatingTail,
@@ -53,7 +53,7 @@ extension LabelStyle {
     )
 
     static let body1: Self = .init(
-        color: Asset.Colors.textDark.color,
+        color: Asset.Colors.primaryText.color,
         font: .systemFont(ofSize: 16, weight: .medium),
         numberOfLines: 0,
         lineBreakMode: .byTruncatingTail,
@@ -61,7 +61,7 @@ extension LabelStyle {
     )
 
     static let body2: Self = .init(
-        color: Asset.Colors.textDark.color,
+        color: Asset.Colors.primaryText.color,
         font: .systemFont(ofSize: 16, weight: .regular),
         numberOfLines: 0,
         lineBreakMode: .byTruncatingTail,
@@ -69,7 +69,7 @@ extension LabelStyle {
     )
 
     static let body3: Self = .init(
-        color: Asset.Colors.textDark.color,
+        color: Asset.Colors.primaryText.color,
         font: .systemFont(ofSize: 12, weight: .medium),
         numberOfLines: 0,
         lineBreakMode: .byTruncatingTail,
@@ -77,7 +77,7 @@ extension LabelStyle {
     )
 
     static let body4: Self = .init(
-        color: Asset.Colors.textDark.color,
+        color: Asset.Colors.primaryText.color,
         font: .systemFont(ofSize: 12, weight: .regular),
         numberOfLines: 0,
         lineBreakMode: .byTruncatingTail,
@@ -145,12 +145,12 @@ extension ButtonViewStyle {
     static let primary: Self = .init(
         height: dynamicHeight,
         normalState: .init(
-            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.textLight.color),
+            titleStyle: LabelStyle.headline5.withColor(.white),
             borderStyle: .large,
             backgroundColor: Asset.Colors.primaryTint.color
         ),
         highlightedState: .init(
-            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.textLight.color),
+            titleStyle: LabelStyle.headline5.withColor(.white),
             borderStyle: .large,
             backgroundColor: Asset.Colors.primaryTint.color.withAlphaComponent(0.75)
         ),
@@ -160,9 +160,9 @@ extension ButtonViewStyle {
             backgroundColor: Asset.Colors.background.color
         ),
         disabledState: .init(
-            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.textLight.color),
+            titleStyle: LabelStyle.headline5.withColor(.white),
             borderStyle: .large,
-            backgroundColor: Asset.Colors.disabled.color
+            backgroundColor: .gray
         )
     )
 
@@ -217,12 +217,12 @@ extension ButtonViewStyle {
     static let action: Self = .init(
         height: 50,
         normalState: .init(
-            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.textLight.color),
+            titleStyle: LabelStyle.headline5.withColor(.white),
             borderStyle: .large,
             backgroundColor: Asset.Colors.primaryTint.color
         ),
         highlightedState: .init(
-            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.textDark.color),
+            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.primaryText.color),
             borderStyle: .large,
             backgroundColor: Asset.Colors.primaryTint.color.withAlphaComponent(0.75)
         ),
@@ -232,9 +232,9 @@ extension ButtonViewStyle {
             backgroundColor: Asset.Colors.background.color
         ),
         disabledState: .init(
-            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.textLight.color),
+            titleStyle: LabelStyle.headline5.withColor(.white),
             borderStyle: .large,
-            backgroundColor: Asset.Colors.disabled.color
+            backgroundColor: .gray
         )
     )
 
@@ -254,7 +254,7 @@ extension ButtonViewStyle {
             titleStyle: LabelStyle.headline5.withColor(Asset.Colors.primaryTint.color),
             borderStyle: .largeOutline,
             backgroundColor: Asset.Colors.background.color,
-            shadowColor: Asset.Colors.buttonShadowLight.color
+            shadowColor: .gray
         ),
         disabledState: .init(
             titleStyle: LabelStyle.headline5.withColor(Asset.Colors.primaryTint.color),
@@ -301,7 +301,7 @@ extension InputViewStyle {
         titleStyle: .headline1,
         descriptionStyle: .body2,
         errorStyle: LabelStyle.body4
-            .withColor(Asset.Colors.danger.color)
+            .withColor(Asset.Colors.error.color)
             .withTextAlignment(.left)
     )
 }
@@ -309,8 +309,8 @@ extension InputViewStyle {
 // MARK: PageIndicatorView
 extension PageIndicatorViewStyle {
     static let `default`: Self = .init(
-        backgroundColor: Asset.Colors.pageIndicatorBackground.color,
-        foregroundColor: Asset.Colors.pageIndicatorForeground.color,
+        backgroundColor: .gray,
+        foregroundColor: .gray,
         spacing: 10
     )
 }

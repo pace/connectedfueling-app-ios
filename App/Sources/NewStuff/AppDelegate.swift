@@ -34,7 +34,7 @@ private extension AppDelegate {
         appearance.backgroundColor = Asset.Colors.primaryTint.color
         navigationBar.standardAppearance = appearance
         navigationBar.scrollEdgeAppearance = navigationBar.standardAppearance
-        navigationBar.tintColor = Asset.Colors.textLight.color
+        navigationBar.tintColor = .white
     }
 
     func setupCrashReporting() {

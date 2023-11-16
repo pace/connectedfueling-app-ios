@@ -22,26 +22,15 @@ internal typealias AssetImageTypeAlias = ImageAsset.Image
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 internal enum Asset {
   internal enum Colors {
-    internal static let accent = ColorAsset(name: "Accent")
     internal static let background = ColorAsset(name: "Background")
-    internal static let backgroundGray = ColorAsset(name: "BackgroundGray")
-    internal static let backgroundLightGray = ColorAsset(name: "BackgroundLightGray")
-    internal static let buttonShadow = ColorAsset(name: "ButtonShadow")
-    internal static let buttonShadowLight = ColorAsset(name: "ButtonShadowLight")
-    internal static let danger = ColorAsset(name: "Danger")
-    internal static let disabled = ColorAsset(name: "Disabled")
-    internal static let info = ColorAsset(name: "Info")
-    internal static let neutral = ColorAsset(name: "Neutral")
-    internal static let pageIndicatorBackground = ColorAsset(name: "PageIndicatorBackground")
-    internal static let pageIndicatorForeground = ColorAsset(name: "PageIndicatorForeground")
+    internal static let complementary = ColorAsset(name: "Complementary")
+    internal static let error = ColorAsset(name: "Error")
+    internal static let primaryText = ColorAsset(name: "PrimaryText")
     internal static let primaryTint = ColorAsset(name: "PrimaryTint")
+    internal static let secondaryText = ColorAsset(name: "SecondaryText")
     internal static let secondaryTint = ColorAsset(name: "SecondaryTint")
     internal static let shadow = ColorAsset(name: "Shadow")
-    internal static let shadowLight = ColorAsset(name: "ShadowLight")
     internal static let success = ColorAsset(name: "Success")
-    internal static let textDark = ColorAsset(name: "TextDark")
-    internal static let textLight = ColorAsset(name: "TextLight")
-    internal static let warning = ColorAsset(name: "Warning")
   }
   internal enum Images {
     internal static let closeIcon = ImageAsset(name: "CloseIcon")
