@@ -7,7 +7,7 @@ struct TextLabel: View {
     private let alignment: TextAlignment
 
     init(_ text: String,
-         textColor: Color = .textDark,
+         textColor: Color = .primaryText,
          alignment: TextAlignment = .leading) {
         self.text = text
         self.attributedText = nil
@@ -16,7 +16,7 @@ struct TextLabel: View {
     }
 
     init(_ attributedText: AttributedString,
-         textColor: Color = .textDark,
+         textColor: Color = .primaryText,
          alignment: TextAlignment = .leading) {
         self.text = nil
         self.attributedText = attributedText

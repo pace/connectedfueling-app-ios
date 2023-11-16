@@ -16,13 +16,13 @@ struct TextInputField: View {
         VStack {
             textField
                 .font(.system(size: 14, weight: .regular))
-                .foregroundStyle(Color.textDark)
-                .tint(Color.textDark)
+                .foregroundStyle(Color.primaryText)
+                .tint(Color.primaryText)
                 .keyboardType(.numberPad)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, Constants.View.defaultDescriptionLabelPadding)
             Rectangle()
-                .fill(Color.textDark)
+                .fill(Color.primaryText)
                 .padding(.horizontal, Constants.View.defaultDescriptionLabelPadding)
                 .frame(height: 1)
         }

@@ -45,10 +45,10 @@ struct ActionButton: View {
     private var foregroundColor: Color {
         switch style {
         case .primary:
-            return .textLight
+            return .white
 
         case .secondary:
-            return isDisabled ? .textDark.opacity(0.6) : .textDark
+            return isDisabled ? .primaryText.opacity(0.6) : .primaryText
 
         case .ternary:
             return .primaryTint
@@ -58,7 +58,7 @@ struct ActionButton: View {
     private var backgroundColor: Color {
         switch style {
         case .primary:
-            return isDisabled ? .disabled : .primaryTint
+            return isDisabled ? .gray : .primaryTint
 
         case .secondary, .ternary:
             return .clear

@@ -79,7 +79,7 @@ struct GasStationListItemView: View {
     private var priceLabelBackgroundContainer: some View {
         Rectangle()
             .frame(width: 100, height: 50)
-            .foregroundStyle(Color.backgroundLightGray)
+            .foregroundStyle(Color.complementary)
             .cornerRadius(8)
     }
 

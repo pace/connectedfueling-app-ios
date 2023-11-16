@@ -11,6 +11,6 @@ struct AppNavigationView<Content>: View where Content: View {
         NavigationView {
             content()
         }
-        .accentColor(Color.textLight)
+        .accentColor(.white)
     }
 }

@@ -8,8 +8,8 @@ struct PageIndicatorView: View {
     private let dashHeight: CGFloat = 3
     private let dashCornerRadius: CGFloat = 1.5
     private let dashSpacing: CGFloat = 10
-    private let primaryColor = Color.pageIndicatorForeground
-    private let secondaryColor = Color.pageIndicatorBackground
+    private let primaryColor = Color.complementary
+    private let secondaryColor = Color.secondaryText
 
     init(numberOfPages: Int, selectedIndex: Binding<Int>) {
         self.numberOfPages = numberOfPages
