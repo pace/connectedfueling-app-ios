@@ -1,11 +1,9 @@
-// Copyright © 2023 PACE Telematics GmbH. All rights reserved.
-
 import SwiftUI
 
 enum AppAlert {
     static var genericError: Alert {
         Alert(title: Text("Oops, something went wrong"),
-              message: Text("Please try again"))
+              message: Text(L10n.commonRetry))
     }
 
     static var locationPermissionError: Alert {
@@ -21,9 +19,16 @@ enum AppAlert {
 
     static func networkError(retryAction: @escaping () -> Void) -> Alert {
         Alert(title: Text("No network connection"),
-              message: Text("Please try again"),
-              primaryButton: .default(Text("Try again"),
+              primaryButton: .default(Text(L10n.commonRetry),
                                       action: retryAction),
               secondaryButton: .cancel())
+    }
+
+    static func logout(logoutAction: @escaping () -> Void) -> Alert {
+        Alert(title: Text(L10n.Dashboard.Logout.Confirm.title),
+              message: Text(L10n.Dashboard.Logout.Confirm.description),
+              primaryButton: .default(Text(L10n.Dashboard.Logout.Confirm.Action.logout),
+                                      action: logoutAction),
+              secondaryButton: .cancel(Text(L10n.Dashboard.Logout.Confirm.Action.cancel)))
     }
 }

@@ -1,13 +1,8 @@
 import SwiftUI
 
 struct OnboardingView: View {
-    @ObservedObject private var viewModel: OnboardingViewModel
+    @StateObject private var viewModel: OnboardingViewModel = .init()
     @State private var currentPage = 0
-
-    init(viewModel: OnboardingViewModel) {
-        self.viewModel = viewModel
-        self.currentPage = currentPage
-    }
 
     var body: some View {
         pageView
@@ -31,5 +26,5 @@ struct OnboardingView: View {
 }
 
 #Preview {
-    OnboardingView(viewModel: .init())
+    OnboardingView()
 }

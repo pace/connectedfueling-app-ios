@@ -1,5 +1,3 @@
-// Copyright © 2023 PACE Telematics GmbH. All rights reserved.
-
 import CoreLocation
 import Foundation
 import PACECloudSDK
@@ -7,10 +5,15 @@ import PACECloudSDK
 struct POIManager {
     var fuelType: FuelType? {
         get {
-            AppUserDefaults.value(for: Constants.UserDefaults.fuelType)
+            guard let data = UserDefaults.standard.data(forKey: Constants.UserDefaults.fuelType),
+                  let fuelType = try? JSONDecoder().decode(FuelType.self, from: data) 
+            else { return nil }
+
+            return fuelType
         }
         set {
-            AppUserDefaults.set(newValue, for: Constants.UserDefaults.fuelType)
+            guard let data = try? JSONEncoder().encode(newValue) else { return }
+            UserDefaults.standard.set(data, forKey: Constants.UserDefaults.fuelType)
         }
     }
 
@@ -58,7 +61,7 @@ private extension POIManager {
         let stationLocation = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
         let distanceInKilometers = location.distance(from: stationLocation) / 1_000
 
-        let price = station.prices.first(where: { $0.fuelType == selectedFuelType?.rawValue })
+        let price = station.prices.first(where: { $0.fuelType == selectedFuelType?.rawValue }) // TODO: - Select correct fuel type
         let fuelPrice: FuelPrice = .init(value: 1.389, currency: "EUR", format: "d.dds")//price.flatMap { makeFuelPrice(for: $0, currency: station.currency, format: station.priceFormat) }
 
         return .init(id: stationId,

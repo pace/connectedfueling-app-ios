@@ -1,13 +1,17 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var onboardingViewModel: OnboardingViewModel = .init()
     @State private var selection: AppScreen = .gasStationList
+    @AppStorage(Constants.UserDefaults.isOnboardingCompleted) private var isOnboardingCompleted: Bool = false
 
-    private let appManager: AppManager = .init()
+    private let appManager: AppManager
+
+    init() {
+        self.appManager = .init()
+    }
 
     var body: some View {
-        if onboardingViewModel.isOnboardingCompleted {
+        if isOnboardingCompleted {
             tabView
         } else {
             onboarding
@@ -21,6 +25,6 @@ struct ContentView: View {
 
     @ViewBuilder
     private var onboarding: some View {
-        OnboardingNavigationView(onboardingViewModel: onboardingViewModel)
+        OnboardingNavigationView()
     }
 }

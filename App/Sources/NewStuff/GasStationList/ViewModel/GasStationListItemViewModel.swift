@@ -1,5 +1,3 @@
-// Copyright © 2023 PACE Telematics GmbH. All rights reserved.
-
 import MapKit
 import PACECloudSDK
 import SwiftUI

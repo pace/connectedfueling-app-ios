@@ -1,14 +1,11 @@
 import Foundation
 
 class OnboardingViewModel: ObservableObject {
-    @Published var isOnboardingCompleted: Bool
     @Published var currentPage: Int = 0
 
     var pageViewModels: [OnboardingPageViewModel]
 
     init() {
-        isOnboardingCompleted = AppUserDefaults.value(for: Constants.UserDefaults.isOnboardingCompleted) ?? false
-
         pageViewModels = [
             OnboardingLocationPermissionPageViewModel(),
             OnboardingAuthorizationPageViewModel(),
@@ -34,8 +31,7 @@ class OnboardingViewModel: ObservableObject {
         let newPage = currentPage + 1
 
         if newPage == pageViewModels.count {
-            AppUserDefaults.set(true, for: Constants.UserDefaults.isOnboardingCompleted)
-            isOnboardingCompleted = true
+            UserDefaults.standard.set(true, forKey: Constants.UserDefaults.isOnboardingCompleted)
         } else {
             currentPage = newPage
             checkNextPreconditions()

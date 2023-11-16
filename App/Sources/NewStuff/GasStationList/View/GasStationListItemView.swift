@@ -1,5 +1,3 @@
-// Copyright © 2023 PACE Telematics GmbH. All rights reserved.
-
 import SwiftUI
 
 struct GasStationListItemView: View {
@@ -11,18 +9,10 @@ struct GasStationListItemView: View {
 
     var body: some View {
         content
-            .background(backgroundContainer)
+            .background(BackgroundContainer())
             .sheet(item: $viewModel.fuelingUrlString) { fuelingUrlString in
                 AppView(urlString: fuelingUrlString, isModalInPresentation: true)
             }
-    }
-
-    @ViewBuilder
-    private var backgroundContainer: some View {
-        Rectangle()
-            .foregroundStyle(Color.background)
-            .cornerRadius(10)
-            .shadow(color: .shadow, radius: 10, x: 0, y: 2)
     }
 
     @ViewBuilder
@@ -34,8 +24,7 @@ struct GasStationListItemView: View {
                 priceLabel
             }
             ActionButton(title: viewModel.actionTitle,
-                         style: viewModel.gasStation.isConnectedFuelingEnabled ? .primary : .ternary,
-                         horizontalPadding: 0) {
+                         style: viewModel.gasStation.isConnectedFuelingEnabled ? .primary : .ternary) {
                 // Since buttons that are included in a list behave differently
                 // than intended, e.g not highlighted when tapped and the List treats
                 // the entire list item as the button,
