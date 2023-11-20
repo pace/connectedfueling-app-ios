@@ -131,9 +131,9 @@ extension BorderStyle {
     static let circular: Self = .init(color: .clear, width: 0, radius: .circular)
     static let small: Self = .init(color: .clear, width: 0, radius: .all(4))
     static let large: Self = .init(color: .clear, width: 0, radius: .all(8))
-    static let largeOutline: Self = .init(color: Asset.Colors.primaryTint.color, width: 1.5, radius: .all(8))
-    static let largeOutlineHighlighted: Self = .init(color: Asset.Colors.primaryTint.color.withAlphaComponent(0.75), width: 1.5, radius: .all(8))
-    static let largeOutlineSmallRadius: Self = .init(color: Asset.Colors.primaryTint.color, width: 1.5, radius: .all(4))
+    static let largeOutline: Self = .init(color: .black, width: 1.5, radius: .all(8))
+    static let largeOutlineHighlighted: Self = .init(color: .black, width: 1.5, radius: .all(8))
+    static let largeOutlineSmallRadius: Self = .init(color: .black, width: 1.5, radius: .all(4))
 }
 
 // MARK: Buttons
@@ -147,15 +147,15 @@ extension ButtonViewStyle {
         normalState: .init(
             titleStyle: LabelStyle.headline5.withColor(.white),
             borderStyle: .large,
-            backgroundColor: Asset.Colors.primaryTint.color
+            backgroundColor: .black
         ),
         highlightedState: .init(
             titleStyle: LabelStyle.headline5.withColor(.white),
             borderStyle: .large,
-            backgroundColor: Asset.Colors.primaryTint.color.withAlphaComponent(0.75)
+            backgroundColor: .black
         ),
         selectedState: .init(
-            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.primaryTint.color),
+            titleStyle: LabelStyle.headline5.withColor(.black),
             borderStyle: .largeOutline,
             backgroundColor: Asset.Colors.background.color
         ),
@@ -193,22 +193,22 @@ extension ButtonViewStyle {
     static let radio: Self = .init(
         height: dynamicHeight,
         normalState: .init(
-            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.primaryTint.color),
+            titleStyle: LabelStyle.headline5.withColor(.black),
             borderStyle: .largeOutline,
             backgroundColor: Asset.Colors.background.color
         ),
         highlightedState: .init(
-            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.primaryTint.color.withAlphaComponent(0.75)),
+            titleStyle: LabelStyle.headline5.withColor(.black),
             borderStyle: .largeOutlineHighlighted,
             backgroundColor: Asset.Colors.background.color
         ),
         selectedState: .init(
-            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.primaryTint.color),
+            titleStyle: LabelStyle.headline5.withColor(.black),
             borderStyle: .largeOutline,
             backgroundColor: Asset.Colors.background.color
         ),
         disabledState: .init(
-            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.primaryTint.color),
+            titleStyle: LabelStyle.headline5.withColor(.black),
             borderStyle: .largeOutline,
             backgroundColor: Asset.Colors.background.color
         )
@@ -219,15 +219,15 @@ extension ButtonViewStyle {
         normalState: .init(
             titleStyle: LabelStyle.headline5.withColor(.white),
             borderStyle: .large,
-            backgroundColor: Asset.Colors.primaryTint.color
+            backgroundColor: .black
         ),
         highlightedState: .init(
             titleStyle: LabelStyle.headline5.withColor(Asset.Colors.primaryText.color),
             borderStyle: .large,
-            backgroundColor: Asset.Colors.primaryTint.color.withAlphaComponent(0.75)
+            backgroundColor: .black
         ),
         selectedState: .init(
-            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.primaryTint.color),
+            titleStyle: LabelStyle.headline5.withColor(.black),
             borderStyle: .largeOutline,
             backgroundColor: Asset.Colors.background.color
         ),
@@ -241,23 +241,23 @@ extension ButtonViewStyle {
     static let secondaryAction: Self = .init(
         height: 50,
         normalState: .init(
-            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.primaryTint.color),
+            titleStyle: LabelStyle.headline5.withColor(.black),
             borderStyle: .largeOutline,
             backgroundColor: Asset.Colors.background.color
         ),
         highlightedState: .init(
-            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.primaryTint.color.withAlphaComponent(0.75)),
+            titleStyle: LabelStyle.headline5.withColor(.black),
             borderStyle: .largeOutlineHighlighted,
             backgroundColor: .clear
         ),
         selectedState: .init(
-            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.primaryTint.color),
+            titleStyle: LabelStyle.headline5.withColor(.black),
             borderStyle: .largeOutline,
             backgroundColor: Asset.Colors.background.color,
             shadowColor: .gray
         ),
         disabledState: .init(
-            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.primaryTint.color),
+            titleStyle: LabelStyle.headline5.withColor(.black),
             borderStyle: .largeOutline,
             backgroundColor: .clear
         )
@@ -336,7 +336,7 @@ extension DashboardItemViewStyle {
         fuelTypeStyle: LabelStyle.body3.withTextAlignment(.center),
         borderStyle: .large,
         actionStyle: .action,
-        distanceBadgeLabelStyle: .body1.withColor(Asset.Colors.primaryTint.color),
+        distanceBadgeLabelStyle: .body1.withColor(.black),
         shadowColor: Asset.Colors.shadow.color,
         shadowOffset: .init(x: 0, y: 2),
         shadowRadius: 10
@@ -346,7 +346,7 @@ extension DashboardItemViewStyle {
 // MARK: Menu
 extension MenuViewStyle {
     static let `default`: Self = .init(
-        headerBackground: Asset.Colors.primaryTint.color,
+        headerBackground: .black,
         headerTitleStyle: .lightBoldHeadline3
     )
 }
