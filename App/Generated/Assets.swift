@@ -48,6 +48,8 @@ internal enum Asset {
       internal static let privacyPolicy = ImageAsset(name: "MenuItems/PrivacyPolicy")
       internal static let profile = ImageAsset(name: "MenuItems/Profile")
     }
+    internal static let errorIcon = ImageAsset(name: "error_icon")
+    internal static let noGasStationsIcon = ImageAsset(name: "no_gas_stations_icon")
     internal static let biometry = ImageAsset(name: "Biometry")
     internal static let checkmarkActive = ImageAsset(name: "CheckmarkActive")
     internal static let checkmarkInactive = ImageAsset(name: "CheckmarkInactive")
@@ -55,6 +57,10 @@ internal enum Asset {
     internal static let location = ImageAsset(name: "Location")
     internal static let paymentMethod = ImageAsset(name: "PaymentMethod")
     internal static let profile = ImageAsset(name: "Profile")
+    internal static let accountIcon = ImageAsset(name: "account_icon")
+    internal static let fuelTypeSelection = ImageAsset(name: "fuel_type_selection")
+    internal static let transactions = ImageAsset(name: "transactions")
+    internal static let walletTabItem = ImageAsset(name: "wallet_tab_item")
   }
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name

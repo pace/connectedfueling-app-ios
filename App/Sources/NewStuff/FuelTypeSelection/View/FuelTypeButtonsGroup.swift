@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct OnboardingFuelTypeButtonsView: View {
+struct FuelTypeButtonsGroup: View {
     @Binding private var selectedFuelType: FuelType?
     @State private var fuelTypes: [FuelType]
 
@@ -13,13 +13,13 @@ struct OnboardingFuelTypeButtonsView: View {
     var body: some View {
         VStack {
             ForEach(fuelTypes, id: \.self) {
-                OnboardingFuelTypeButton(fuelType: $0, selectedValue: $selectedFuelType)
+                FuelTypeButton(fuelType: $0, selectedValue: $selectedFuelType)
             }
         }
     }
 }
 
 #Preview {
-    OnboardingFuelTypeButtonsView(fuelTypes: FuelType.allCases,
-                                  selectedFuelType: .constant(.diesel))
+    FuelTypeButtonsGroup(fuelTypes: FuelType.selectableFilters,
+                         selectedFuelType: .constant(.diesel))
 }

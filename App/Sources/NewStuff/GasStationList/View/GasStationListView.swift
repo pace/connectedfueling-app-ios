@@ -1,5 +1,3 @@
-// Copyright © 2023 PACE Telematics GmbH. All rights reserved.
-
 import SwiftUI
 
 struct GasStationListView: View {
@@ -61,8 +59,7 @@ struct GasStationListView: View {
     }
 
     private var loadingView: some View {
-        LoadingView(title: L10n.Dashboard.LoadingView.title,
-                    description: L10n.Dashboard.LoadingView.description)
+        LoadingSpinner()
     }
 }
 

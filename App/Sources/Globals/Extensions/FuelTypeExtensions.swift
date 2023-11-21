@@ -1,5 +1,3 @@
-// Copyright © 2022 PACE Telematics GmbH. All rights reserved.
-
 import Domain
 import Foundation
 

@@ -52,6 +52,12 @@ extension UserManager {
         IDKit.latestAccessToken()
     }
 
+    var email: String? {
+        guard let currentAccessToken = latestAccessToken else { return nil }
+        let tokenValidator = IDKit.TokenValidator(accessToken: currentAccessToken)
+        return tokenValidator.jwtValue(for: Constants.jwtEmailKey) as? String
+    }
+
     private var isBiometricAuthenticationEnabled: Bool {
         IDKit.isBiometricAuthenticationEnabled()
     }
@@ -67,6 +73,16 @@ extension UserManager {
         switch await IDKit.authorize() {
         case .success(let accessToken):
             return .success(accessToken)
+
+        case .failure(let error):
+            return .failure(error)
+        }
+    }
+
+    func logout() async -> Result<Void, Error> {
+        switch await IDKit.resetSession() {
+        case .success:
+            return .success(())
 
         case .failure(let error):
             return .failure(error)

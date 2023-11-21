@@ -1,5 +1,3 @@
-// Copyright © 2021 PACE Telematics GmbH. All rights reserved.
-
 import Foundation
 
 /// Protocol that defines an input validator

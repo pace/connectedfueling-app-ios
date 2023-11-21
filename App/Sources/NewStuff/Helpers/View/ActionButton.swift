@@ -11,17 +11,14 @@ struct ActionButton: View {
 
     private let title: String
     private let style: Style
-    private let horizontalPadding: CGFloat
     private let action: () -> Void
 
     init(title: String,
          style: Style = .primary,
-         horizontalPadding: CGFloat = Constants.View.defaultButtonPadding,
          isDisabled: Binding<Bool> = .constant(false),
          action: @escaping () -> Void) {
         self.title = title
         self.style = style
-        self.horizontalPadding = horizontalPadding
         self._isDisabled = isDisabled
         self.action = action
     }
@@ -39,16 +36,15 @@ struct ActionButton: View {
         .overlay(
             style == .ternary ? border : nil
         )
-        .padding(.horizontal, horizontalPadding)
     }
 
     private var foregroundColor: Color {
         switch style {
         case .primary:
-            return .white
+            return .primaryText
 
         case .secondary:
-            return isDisabled ? .primaryText.opacity(0.6) : .primaryText
+            return isDisabled ? .primaryTint.opacity(0.6) : .primaryTint
 
         case .ternary:
             return .primaryTint
@@ -61,14 +57,14 @@ struct ActionButton: View {
             return isDisabled ? .gray : .primaryTint
 
         case .secondary, .ternary:
-            return .clear
+            return .complementary
         }
     }
 
     private var font: Font {
         switch style {
         case .primary, .ternary:
-            return .system(size: 14, weight: .semibold)
+            return .system(size: 16, weight: .semibold)
 
         case .secondary:
             return .system(size: 16, weight: .medium)

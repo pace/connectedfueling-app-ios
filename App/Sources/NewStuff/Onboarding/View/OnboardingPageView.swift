@@ -54,7 +54,7 @@ struct OnboardingPageView: View {
                     .padding(.horizontal, Constants.View.defaultDescriptionLabelPadding)
             }
             if viewModel.isLoading {
-                LoadingView()
+                LoadingSpinner()
                     .padding(.top, 40)
             }
             viewModel.additionalContent()

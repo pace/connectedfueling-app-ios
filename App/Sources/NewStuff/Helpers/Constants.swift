@@ -3,6 +3,8 @@ import Foundation
 enum Constants {
     static let otpDigitsCount: Int = 6
     static let pinDigitsCount: Int = 4
+    static let applePayKind: String = "applepay"
+    static let jwtEmailKey: String = "email"
 
     enum View {
         static let defaultButtonPadding: CGFloat = 35
@@ -11,8 +13,9 @@ enum Constants {
     }
 
     enum UserDefaults {
-        static let isOnboardingCompleted: String = "car.pace.ConnectedFueling.isOnboardingCompleted"
-        static let fuelType: String = "car.pace.ConnectedFueling.fuelType"
+        static let migrationVersion: String = "migrationVersion"
+        static let isOnboardingCompleted: String = "isOnboardingCompleted"
+        static let fuelType: String = "fuelType"
     }
 
     enum Distance {
@@ -29,5 +32,9 @@ enum Constants {
 
     enum CrashReporting {
         static let sentryDSNInfoPlistKey = "SentryDSN"
+    }
+
+    enum FuelTypeFilter {
+        static let defaultFuelType: FuelType = .cheapestPetrol
     }
 }

@@ -10,14 +10,68 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
+  /// Try again
+  internal static let commonRetry = L10n.tr("Localizable", "common_retry", fallback: "Try again")
   /// %2$@%1$@
   internal static func currencyFormat(_ p1: Any, _ p2: Any) -> String {
     return L10n.tr("Localizable", "currency_format", String(describing: p1), String(describing: p2), fallback: "%2$@%1$@")
   }
+  /// Diesel
+  internal static let fuelGroupDiesel = L10n.tr("Localizable", "fuel_group_diesel", fallback: "Diesel")
+  /// Petrol
+  internal static let fuelGroupPetrol = L10n.tr("Localizable", "fuel_group_petrol", fallback: "Petrol")
+  /// Fuel selection
+  internal static let fuelSelectionTitle = L10n.tr("Localizable", "fuel_selection_title", fallback: "Fuel selection")
   /// What fuel prices should we show you?
   internal static let fuelTypeSelection = L10n.tr("Localizable", "FUEL_TYPE_SELECTION", fallback: "What fuel prices should we show you?")
+  /// Loading failed
+  internal static let generalErrorTitle = L10n.tr("Localizable", "general_error_title", fallback: "Loading failed")
+  /// List
+  internal static let listTabLabel = L10n.tr("Localizable", "list_tab_label", fallback: "List")
+  /// More
+  internal static let moreTabLabel = L10n.tr("Localizable", "more_tab_label", fallback: "More")
+  /// Apple Pay
+  internal static let paymentMethodKindApplepay = L10n.tr("Localizable", "payment_method_kind_applepay", fallback: "Apple Pay")
+  /// Credit card
+  internal static let paymentMethodKindCreditCard = L10n.tr("Localizable", "payment_method_kind_credit_card", fallback: "Credit card")
+  /// Credit card
+  internal static let paymentMethodKindCreditcard = L10n.tr("Localizable", "payment_method_kind_creditcard", fallback: "Credit card")
+  /// DKV Card
+  internal static let paymentMethodKindDkv = L10n.tr("Localizable", "payment_method_kind_dkv", fallback: "DKV Card")
+  /// Fuel card
+  internal static let paymentMethodKindFuelCard = L10n.tr("Localizable", "payment_method_kind_fuel_card", fallback: "Fuel card")
+  /// giropay
+  internal static let paymentMethodKindGiropay = L10n.tr("Localizable", "payment_method_kind_giropay", fallback: "giropay")
+  /// HoyerCard
+  internal static let paymentMethodKindHoyer = L10n.tr("Localizable", "payment_method_kind_hoyer", fallback: "HoyerCard")
+  /// PayPal
+  internal static let paymentMethodKindPaypal = L10n.tr("Localizable", "payment_method_kind_paypal", fallback: "PayPal")
+  /// SEPA direct debit
+  internal static let paymentMethodKindSepa = L10n.tr("Localizable", "payment_method_kind_sepa", fallback: "SEPA direct debit")
+  /// ZGM Card
+  internal static let paymentMethodKindZgm = L10n.tr("Localizable", "payment_method_kind_zgm", fallback: "ZGM Card")
+  /// Add
+  internal static let paymentMethodsAddButton = L10n.tr("Localizable", "payment_methods_add_button", fallback: "Add")
+  /// Add a payment method or fuel card so that you can start your first refueling process
+  internal static let paymentMethodsEmptyDescription = L10n.tr("Localizable", "payment_methods_empty_description", fallback: "Add a payment method or fuel card so that you can start your first refueling process")
+  /// No payment methods or fuel cards
+  internal static let paymentMethodsEmptyTitle = L10n.tr("Localizable", "payment_methods_empty_title", fallback: "No payment methods or fuel cards")
+  /// Your payment methods and fuel cards could not be loaded. Check your connection!
+  internal static let paymentMethodsErrorDescription = L10n.tr("Localizable", "payment_methods_error_description", fallback: "Your payment methods and fuel cards could not be loaded. Check your connection!")
+  /// We load your payment methods and fuel cards. Please wait a moment.
+  internal static let paymentMethodsLoadingDescription = L10n.tr("Localizable", "payment_methods_loading_description", fallback: "We load your payment methods and fuel cards. Please wait a moment.")
+  /// Loading payment methods and fuel cards…
+  internal static let paymentMethodsLoadingTitle = L10n.tr("Localizable", "payment_methods_loading_title", fallback: "Loading payment methods and fuel cards…")
+  /// Payment methods & fuel cards
+  internal static let paymentMethodsTitle = L10n.tr("Localizable", "payment_methods_title", fallback: "Payment methods & fuel cards")
   /// Share
   internal static let shareTitle = L10n.tr("Localizable", "SHARE_TITLE", fallback: "Share")
+  /// Transactions
+  internal static let transactionsTitle = L10n.tr("Localizable", "transactions_title", fallback: "Transactions")
+  /// You are logged in as
+  internal static let walletHeaderText = L10n.tr("Localizable", "wallet_header_text", fallback: "You are logged in as")
+  /// Wallet
+  internal static let walletTabLabel = L10n.tr("Localizable", "wallet_tab_label", fallback: "Wallet")
   internal enum Alert {
     internal enum LocationPermission {
       /// To show you the nearest gas station, we need access to your current location.
@@ -29,10 +83,6 @@ internal enum L10n {
         internal static let openSettings = L10n.tr("Localizable", "ALERT.LOCATION_PERMISSION.ACTIONS.OPEN_SETTINGS", fallback: "Open settings")
       }
     }
-  }
-  internal enum Common {
-    /// Try again
-    internal static let retry = L10n.tr("Localizable", "COMMON.RETRY", fallback: "Try again")
   }
   internal enum Dashboard {
     internal enum Actions {
@@ -91,8 +141,6 @@ internal enum L10n {
     }
   }
   internal enum Home {
-    /// Loading failed
-    internal static let loadingFailed = L10n.tr("Localizable", "HOME.LOADING_FAILED", fallback: "Loading failed")
     /// Gas stations could not be loaded. Check your connection!
     internal static let loadingFailedText = L10n.tr("Localizable", "HOME.LOADING_FAILED_TEXT", fallback: "Gas stations could not be loaded. Check your connection!")
     /// We are currently locating you. This might take a moment.
@@ -114,6 +162,8 @@ internal enum L10n {
   }
   internal enum Menu {
     internal enum Items {
+      /// Contact us
+      internal static let contact = L10n.tr("Localizable", "MENU.ITEMS.CONTACT", fallback: "Contact us")
       /// Change fuel type
       internal static let fuelType = L10n.tr("Localizable", "MENU.ITEMS.FUEL_TYPE", fallback: "Change fuel type")
       /// Legal Notice
@@ -128,6 +178,8 @@ internal enum L10n {
       internal static let paymentMethods = L10n.tr("Localizable", "MENU.ITEMS.PAYMENT_METHODS", fallback: "Edit payment methods")
       /// Privacy Statement
       internal static let privacy = L10n.tr("Localizable", "MENU.ITEMS.PRIVACY", fallback: "Privacy Statement")
+      /// Terms of Use
+      internal static let terms = L10n.tr("Localizable", "MENU.ITEMS.TERMS", fallback: "Terms of Use")
     }
     internal enum Title {
       /// PACE Connected Fueling
@@ -137,8 +189,10 @@ internal enum L10n {
   internal enum Onboarding {
     /// Your input could not be verified. Try again.
     internal static let errorAuthorisation = L10n.tr("Localizable", "ONBOARDING.ERROR_AUTHORISATION", fallback: "Your input could not be verified. Try again.")
-    /// Error recognising fingerprint:
-    internal static let fingerprintError = L10n.tr("Localizable", "ONBOARDING.FINGERPRINT_ERROR", fallback: "Error recognising fingerprint:")
+    /// Error recognizing fingerprint: %s
+    internal static func fingerprintError(_ p1: UnsafePointer<CChar>) -> String {
+      return L10n.tr("Localizable", "ONBOARDING.FINGERPRINT_ERROR", p1, fallback: "Error recognizing fingerprint: %s")
+    }
     /// Currently there are no saved fingerprints!
     internal static let fingerprintNoneSavedTitle = L10n.tr("Localizable", "ONBOARDING.FINGERPRINT_NONE_SAVED_TITLE", fallback: "Currently there are no saved fingerprints!")
     /// Add now

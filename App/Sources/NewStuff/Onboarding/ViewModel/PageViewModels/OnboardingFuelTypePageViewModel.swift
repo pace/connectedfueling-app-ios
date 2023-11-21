@@ -7,7 +7,11 @@ class OnboardingFuelTypePageViewModel: OnboardingPageViewModel {
         }
     }
 
-    init() {
+    private(set) var poiManager: POIManager
+
+    init(poiManager: POIManager = .init()) {
+        self.poiManager = poiManager
+
         super.init(image: .fuelType,
                    title: L10n.Onboarding.FuelType.title,
                    description: L10n.Onboarding.FuelType.description)
@@ -18,7 +22,7 @@ class OnboardingFuelTypePageViewModel: OnboardingPageViewModel {
     override func setupPageActions() {
         pageActions = [
             .init(title: L10n.Onboarding.Actions.save, action: { [weak self] in
-                AppUserDefaults.set(self?.selectedFuelType, for: Constants.UserDefaults.fuelType)
+                self?.poiManager.fuelType = self?.selectedFuelType
                 self?.finishOnboardingPage()
             })
         ]
@@ -26,15 +30,15 @@ class OnboardingFuelTypePageViewModel: OnboardingPageViewModel {
 
     override func additionalContent() -> AnyView? {
         AnyView(
-            OnboardingFuelTypeButtonsView(fuelTypes: FuelType.allCases,
-                                          selectedFuelType: .init(
-                                            get: {
-                                                self.selectedFuelType
-                                            },
-                                            set: { [weak self] in
-                                                self?.selectedFuelType = $0
-                                            }
-                                          ))
+            FuelTypeButtonsGroup(fuelTypes: FuelType.selectableFilters,
+                                 selectedFuelType: .init(
+                                    get: {
+                                        self.selectedFuelType
+                                    },
+                                    set: { [weak self] in
+                                        self?.selectedFuelType = $0
+                                    }
+                                 ))
             .padding(.top, 40)
         )
     }
