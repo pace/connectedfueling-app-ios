@@ -41,7 +41,7 @@ class GasStationListItemViewModel: ObservableObject {
         gasStation.isConnectedFuelingEnabled ? L10n.Dashboard.Actions.startFueling : L10n.Dashboard.Actions.navigate
     }
 
-    let gasStation: GasStation
+    @Published var gasStation: GasStation
 
     private let priceFormatter: PriceNumberFormatter
 

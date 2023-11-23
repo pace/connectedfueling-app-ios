@@ -31,6 +31,10 @@ enum Constants {
         static let priceFormatFallback: String = "d.dds"
     }
 
+    enum GasStationDetail {
+        static let mapDelta: Double = 0.01 // TODO: decide delta value
+    }
+
     enum CrashReporting {
         static let sentryDSNInfoPlistKey = "SentryDSN"
     }
