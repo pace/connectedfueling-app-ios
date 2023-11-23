@@ -1,7 +1,8 @@
 {
     "client_id": "connected-fueling-app-ios",
     "primary_branding_color": "#00CCF0",
-    "secondary_branding_color": "#E1FCFF",
+    "secondary_branding_color": "#00CCF0",
+    "highlight_color": "#00CCF0",
     "native_fuelcard_management_enabled": true,
     "map_enabled": false,
     "vehicle_integration_enabled": false,

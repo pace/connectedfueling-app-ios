@@ -48,7 +48,7 @@ private extension AppDelegate {
     func setupTabBar() {
         let appearance = UITabBarAppearance()
         appearance.shadowImage = UIImage()
-        appearance.backgroundColor = UIColor(Color.background)
+        appearance.backgroundColor = UIColor(Color.genericWhite)
         UITabBar.appearance().scrollEdgeAppearance = appearance
     }
 

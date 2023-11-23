@@ -28,7 +28,7 @@ final class DashboardViewController: StatefulViewController<DashboardViewModel> 
         tableView.separatorStyle = .none
         tableView.allowsSelection = false
         tableView.showsVerticalScrollIndicator = false
-        tableView.backgroundColor = Asset.Colors.background.color
+        tableView.backgroundColor = Asset.Colors.genericWhite.color
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
         tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true

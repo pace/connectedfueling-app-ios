@@ -26,7 +26,7 @@ struct FuelTypeButton: View {
             }
             .frame(maxWidth: .infinity, minHeight: 50)
         })
-        .background(Color.complementary)
+        .background(Color.lightGrey)
         .cornerRadius(12)
     }
 
@@ -35,7 +35,7 @@ struct FuelTypeButton: View {
         ZStack {
             Circle()
                 .frame(width: 30, height: 30)
-                .foregroundStyle(Color.background)
+                .foregroundStyle(Color.genericWhite)
                 .overlay(radioButtonOutline)
             if isSelected {
                 Circle()
@@ -48,7 +48,7 @@ struct FuelTypeButton: View {
     @ViewBuilder
     private var radioButtonOutline: some View {
         Circle()
-            .stroke(isSelected ? Color.primaryTint : .secondary, lineWidth: 1)
+            .stroke(isSelected ? Color.primaryTint : .genericGrey, lineWidth: 1)
     }
 
     var isSelected: Bool {

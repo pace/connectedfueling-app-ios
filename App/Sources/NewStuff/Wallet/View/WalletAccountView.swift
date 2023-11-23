@@ -21,7 +21,7 @@ struct WalletAccountView: View {
             Image(.accountIcon)
                 .frame(width: 40, height: 40, alignment: .center)
             VStack(alignment: .leading, spacing: 3) {
-                TextLabel(L10n.walletHeaderText, textColor: .secondaryText)
+                TextLabel(L10n.walletHeaderText, textColor: .genericGrey)
                     .font(.system(size: 14))
                 TextLabel("patrick@pace.car") // TODO: - Localized String
                     .font(.system(size: 16, weight: .medium))

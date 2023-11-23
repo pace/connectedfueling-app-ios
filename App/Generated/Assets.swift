@@ -22,13 +22,15 @@ internal typealias AssetImageTypeAlias = ImageAsset.Image
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 internal enum Asset {
   internal enum Colors {
-    internal static let background = ColorAsset(name: "Background")
-    internal static let complementary = ColorAsset(name: "Complementary")
-    internal static let error = ColorAsset(name: "Error")
-    internal static let primaryText = ColorAsset(name: "PrimaryText")
-    internal static let secondaryText = ColorAsset(name: "SecondaryText")
-    internal static let shadow = ColorAsset(name: "Shadow")
-    internal static let success = ColorAsset(name: "Success")
+    internal static let genericBlack = ColorAsset(name: "generic_black")
+    internal static let genericGreen = ColorAsset(name: "generic_green")
+    internal static let genericGrey = ColorAsset(name: "generic_grey")
+    internal static let genericOrange = ColorAsset(name: "generic_orange")
+    internal static let genericRed = ColorAsset(name: "generic_red")
+    internal static let genericWhite = ColorAsset(name: "generic_white")
+    internal static let genericYellow = ColorAsset(name: "generic_yellow")
+    internal static let lightGrey = ColorAsset(name: "light_grey")
+    internal static let shadow = ColorAsset(name: "shadow")
   }
   internal enum Images {
     internal static let closeIcon = ImageAsset(name: "CloseIcon")

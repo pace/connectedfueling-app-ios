@@ -17,6 +17,7 @@
 		3B4616C72ADE932D00DF57A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4616C62ADE932D00DF57A1 /* ContentView.swift */; };
 		3B4616CD2ADECDBC00DF57A1 /* OnboardingTextInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4616CC2ADECDBC00DF57A1 /* OnboardingTextInputViewModel.swift */; };
 		3B5880D12B0CA7DE0057CDC5 /* Image+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5880D02B0CA7DE0057CDC5 /* Image+Extension.swift */; };
+		3B6254D72B0F5DCC008FAB25 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6254D62B0F5DCC008FAB25 /* Style.swift */; };
 		3B62772E2B074CE300528A1F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B62772D2B074CE300528A1F /* LoadingView.swift */; };
 		3B6277302B07506600528A1F /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B62772F2B07506600528A1F /* ErrorView.swift */; };
 		3B6277322B0750C300528A1F /* BackgroundContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6277312B0750C300528A1F /* BackgroundContainer.swift */; };
@@ -235,6 +236,7 @@
 		3B4616CC2ADECDBC00DF57A1 /* OnboardingTextInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTextInputViewModel.swift; sourceTree = "<group>"; };
 		3B5880CF2B0C93890057CDC5 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3B5880D02B0CA7DE0057CDC5 /* Image+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extension.swift"; sourceTree = "<group>"; };
+		3B6254D62B0F5DCC008FAB25 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		3B62772D2B074CE300528A1F /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		3B62772F2B07506600528A1F /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		3B6277312B0750C300528A1F /* BackgroundContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundContainer.swift; sourceTree = "<group>"; };
@@ -582,6 +584,7 @@
 				3BAE605A2AD677B7006EA9DD /* Constants.swift */,
 				3BCF49F72AE0079C005C20DC /* PINInputValidator.swift */,
 				3BA2DB3A2AE92F5100187D86 /* PriceNumberFormatter.swift */,
+				3B6254D62B0F5DCC008FAB25 /* Style.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1661,6 +1664,7 @@
 				3BE2C5B52B061DF2002B0421 /* WalletListItemView.swift in Sources */,
 				C569EC8B26AAE7D1009665E8 /* LoadingViewOld.swift in Sources */,
 				C56CD45226BD48E3004E61FB /* FuelTypeCoordinator.swift in Sources */,
+				3B6254D72B0F5DCC008FAB25 /* Style.swift in Sources */,
 				3B6277302B07506600528A1F /* ErrorView.swift in Sources */,
 				C59F2C5926975B7600538E65 /* TwoFactorAuthenticationCoordinator.swift in Sources */,
 				C5331F8026B93D67000588C0 /* LoadingTableViewCell.swift in Sources */,
