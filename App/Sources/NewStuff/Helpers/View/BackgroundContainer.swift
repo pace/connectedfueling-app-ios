@@ -3,7 +3,7 @@ import SwiftUI
 struct BackgroundContainer: View {
     var body: some View {
         Rectangle()
-            .foregroundStyle(Color.background)
+            .foregroundStyle(Color.genericWhite)
             .cornerRadius(12)
             .addShadow()
     }

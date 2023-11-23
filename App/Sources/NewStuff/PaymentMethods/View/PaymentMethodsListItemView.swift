@@ -16,7 +16,7 @@ struct PaymentMethodsListItemView: View {
                 viewModel.presentPaymentApp()
             } label: {
                 VStack(alignment: .leading, spacing: 0) {
-                    TextLabel(viewModel.localizedKind, textColor: .secondaryText)
+                    TextLabel(viewModel.localizedKind, textColor: .genericGrey)
                         .font(.system(size: 14))
                     TextLabel(viewModel.identification)
                         .font(.system(size: 16, weight: .medium))
@@ -33,7 +33,7 @@ struct PaymentMethodsListItemView: View {
             image.resizable()
         } placeholder: {
             Image.paymentMethodIcon
-                .foregroundStyle(Color.secondary)
+                .foregroundStyle(Color.genericGrey)
         }
     }
 }

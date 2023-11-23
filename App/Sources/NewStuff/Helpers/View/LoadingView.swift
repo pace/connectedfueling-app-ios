@@ -22,7 +22,7 @@ struct LoadingView: View {
                 .font(.system(size: 20, weight: .bold))
                 .padding(.top, 15)
             if let description {
-                TextLabel(description, textColor: .secondaryText)
+                TextLabel(description, textColor: .genericGrey)
                     .font(.system(size: 16))
                     .padding(.top, 15)
             }

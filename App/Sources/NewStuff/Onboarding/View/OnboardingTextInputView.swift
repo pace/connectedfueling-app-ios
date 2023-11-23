@@ -33,7 +33,7 @@ struct OnboardingTextInputView: View {
                 .focused($focusedField, equals: .input)
                 .keyboardType(.numberPad)
                 .padding(.top, 20)
-            TextLabel(viewModel.warningText, textColor: .error)
+            TextLabel(viewModel.warningText, textColor: .genericRed)
                 .font(.system(size: 12, weight: .regular))
                 .padding(.horizontal, Constants.View.defaultTitleLabelPadding)
                 .padding(.top, 10)

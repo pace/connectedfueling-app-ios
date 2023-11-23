@@ -5,7 +5,7 @@ import UIKit
 // MARK: Labels
 extension LabelStyle {
     static let headline1: Self = .init(
-        color: Asset.Colors.primaryText.color,
+        color: Asset.Colors.genericBlack.color,
         font: .systemFont(ofSize: 20, weight: .semibold),
         numberOfLines: 0,
         lineBreakMode: .byTruncatingTail,
@@ -13,7 +13,7 @@ extension LabelStyle {
     )
 
     static let headline2: Self = .init(
-        color: Asset.Colors.primaryText.color,
+        color: Asset.Colors.genericBlack.color,
         font: .systemFont(ofSize: 18, weight: .semibold),
         numberOfLines: 0,
         lineBreakMode: .byTruncatingTail,
@@ -21,7 +21,7 @@ extension LabelStyle {
     )
 
     static let headline3: Self = .init(
-        color: Asset.Colors.primaryText.color,
+        color: Asset.Colors.genericBlack.color,
         font: .systemFont(ofSize: 16, weight: .semibold),
         numberOfLines: 0,
         lineBreakMode: .byTruncatingTail,
@@ -37,7 +37,7 @@ extension LabelStyle {
     )
 
     static let headline4: Self = .init(
-        color: Asset.Colors.primaryText.color,
+        color: Asset.Colors.genericBlack.color,
         font: .systemFont(ofSize: 16, weight: .medium),
         numberOfLines: 0,
         lineBreakMode: .byTruncatingTail,
@@ -45,7 +45,7 @@ extension LabelStyle {
     )
 
     static let headline5: Self = .init(
-        color: Asset.Colors.primaryText.color,
+        color: Asset.Colors.genericBlack.color,
         font: .systemFont(ofSize: 14, weight: .semibold),
         numberOfLines: 0,
         lineBreakMode: .byTruncatingTail,
@@ -53,7 +53,7 @@ extension LabelStyle {
     )
 
     static let body1: Self = .init(
-        color: Asset.Colors.primaryText.color,
+        color: Asset.Colors.genericBlack.color,
         font: .systemFont(ofSize: 16, weight: .medium),
         numberOfLines: 0,
         lineBreakMode: .byTruncatingTail,
@@ -61,7 +61,7 @@ extension LabelStyle {
     )
 
     static let body2: Self = .init(
-        color: Asset.Colors.primaryText.color,
+        color: Asset.Colors.genericBlack.color,
         font: .systemFont(ofSize: 16, weight: .regular),
         numberOfLines: 0,
         lineBreakMode: .byTruncatingTail,
@@ -69,7 +69,7 @@ extension LabelStyle {
     )
 
     static let body3: Self = .init(
-        color: Asset.Colors.primaryText.color,
+        color: Asset.Colors.genericBlack.color,
         font: .systemFont(ofSize: 12, weight: .medium),
         numberOfLines: 0,
         lineBreakMode: .byTruncatingTail,
@@ -77,7 +77,7 @@ extension LabelStyle {
     )
 
     static let body4: Self = .init(
-        color: Asset.Colors.primaryText.color,
+        color: Asset.Colors.genericBlack.color,
         font: .systemFont(ofSize: 12, weight: .regular),
         numberOfLines: 0,
         lineBreakMode: .byTruncatingTail,
@@ -157,7 +157,7 @@ extension ButtonViewStyle {
         selectedState: .init(
             titleStyle: LabelStyle.headline5.withColor(.black),
             borderStyle: .largeOutline,
-            backgroundColor: Asset.Colors.background.color
+            backgroundColor: Asset.Colors.genericWhite.color
         ),
         disabledState: .init(
             titleStyle: LabelStyle.headline5.withColor(.white),
@@ -195,22 +195,22 @@ extension ButtonViewStyle {
         normalState: .init(
             titleStyle: LabelStyle.headline5.withColor(.black),
             borderStyle: .largeOutline,
-            backgroundColor: Asset.Colors.background.color
+            backgroundColor: Asset.Colors.genericWhite.color
         ),
         highlightedState: .init(
             titleStyle: LabelStyle.headline5.withColor(.black),
             borderStyle: .largeOutlineHighlighted,
-            backgroundColor: Asset.Colors.background.color
+            backgroundColor: Asset.Colors.genericWhite.color
         ),
         selectedState: .init(
             titleStyle: LabelStyle.headline5.withColor(.black),
             borderStyle: .largeOutline,
-            backgroundColor: Asset.Colors.background.color
+            backgroundColor: Asset.Colors.genericWhite.color
         ),
         disabledState: .init(
             titleStyle: LabelStyle.headline5.withColor(.black),
             borderStyle: .largeOutline,
-            backgroundColor: Asset.Colors.background.color
+            backgroundColor: Asset.Colors.genericWhite.color
         )
     )
 
@@ -222,14 +222,14 @@ extension ButtonViewStyle {
             backgroundColor: .black
         ),
         highlightedState: .init(
-            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.primaryText.color),
+            titleStyle: LabelStyle.headline5.withColor(Asset.Colors.genericBlack.color),
             borderStyle: .large,
             backgroundColor: .black
         ),
         selectedState: .init(
             titleStyle: LabelStyle.headline5.withColor(.black),
             borderStyle: .largeOutline,
-            backgroundColor: Asset.Colors.background.color
+            backgroundColor: Asset.Colors.genericWhite.color
         ),
         disabledState: .init(
             titleStyle: LabelStyle.headline5.withColor(.white),
@@ -243,7 +243,7 @@ extension ButtonViewStyle {
         normalState: .init(
             titleStyle: LabelStyle.headline5.withColor(.black),
             borderStyle: .largeOutline,
-            backgroundColor: Asset.Colors.background.color
+            backgroundColor: Asset.Colors.genericWhite.color
         ),
         highlightedState: .init(
             titleStyle: LabelStyle.headline5.withColor(.black),
@@ -253,7 +253,7 @@ extension ButtonViewStyle {
         selectedState: .init(
             titleStyle: LabelStyle.headline5.withColor(.black),
             borderStyle: .largeOutline,
-            backgroundColor: Asset.Colors.background.color,
+            backgroundColor: Asset.Colors.genericWhite.color,
             shadowColor: .gray
         ),
         disabledState: .init(
@@ -276,7 +276,7 @@ extension OnboardingViewStyle {
         primaryAction: .primary,
         secondaryAction: .secondary,
         radio: .radio,
-        backgroundColor: Asset.Colors.background.color,
+        backgroundColor: Asset.Colors.genericWhite.color,
         iconSpacingTop: 100,
         iconSpacingBottom: 40,
         descriptionInsets: .init(top: 14, left: 60, bottom: 40, right: 60)
@@ -288,7 +288,7 @@ extension OnboardingViewStyle {
         primaryAction: .primary,
         secondaryAction: .secondary,
         radio: .radio,
-        backgroundColor: Asset.Colors.background.color,
+        backgroundColor: Asset.Colors.genericWhite.color,
         iconSpacingTop: 60,
         iconSpacingBottom: 40,
         descriptionInsets: .init(top: 14, left: 30, bottom: 20, right: 30)
@@ -301,7 +301,7 @@ extension InputViewStyle {
         titleStyle: .headline1,
         descriptionStyle: .body2,
         errorStyle: LabelStyle.body4
-            .withColor(Asset.Colors.error.color)
+            .withColor(Asset.Colors.genericRed.color)
             .withTextAlignment(.left)
     )
 }

@@ -77,7 +77,7 @@ class PriceNumberFormatter: NumberFormatter {
     }
 
     private func addSuperscriptToLastDigit(of string: String) -> AttributedString {
-        let textColor: Color = .primaryText
+        let textColor: Color = .genericBlack
         let font: Font = .system(size: 20, weight: .semibold)
         let fontSuperscript: Font = .system(size: 12, weight: .semibold)
 
