@@ -2,7 +2,7 @@ import PACECloudSDK
 import SwiftUI
 
 class WalletViewModel: ObservableObject {
-    @Published private(set) var listItems: [WalletListItemViewModel] = []
+    @Published private(set) var listItems: [ListItem] = []
     @Published var alert: Alert?
 
     private let userManager: UserManager
@@ -39,24 +39,26 @@ class WalletViewModel: ObservableObject {
 }
 
 private extension WalletViewModel {
-    var paymentMethodsListItem: WalletListItemViewModel {
-        .init(icon: .walletTabItem,
+    var paymentMethodsListItem: ListItem {
+        .init(icon: .walletTabIcon,
               title: L10n.paymentMethodsTitle,
-              navigationType: .detail(destination: AnyView(
+              action: .detail(destination: AnyView(
                 PaymentMethodsView()
               )))
     }
 
-    var transactionsListItem: WalletListItemViewModel {
+    var transactionsListItem: ListItem {
         .init(icon: .transactions,
               title: L10n.transactionsTitle,
-              navigationType: .appPresentation(urlString: PACECloudSDK.URL.transactions.absoluteString))
+              action: .presentedContent(AnyView(
+                AppView(urlString: PACECloudSDK.URL.transactions.absoluteString)
+              )))
     }
 
-    var fuelTypeSelectionListItem: WalletListItemViewModel {
+    var fuelTypeSelectionListItem: ListItem {
         .init(icon: .fuelTypeSelection,
               title: L10n.fuelSelectionTitle,
-              navigationType: .detail(destination: AnyView(
+              action: .detail(destination: AnyView(
                 FuelTypeSelectionView()
               )))
     }

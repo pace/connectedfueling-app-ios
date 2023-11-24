@@ -64,17 +64,17 @@ final class MenuCoordinator: Coordinator {
 
             let isEmailAvailable = userInfo.email != nil
             self?.viewController.model.headerTitle = userInfo.email ?? L10n.Menu.Title.placeholder
-            self?.viewController.model.headerImage = isEmailAvailable ? Asset.Images.MenuItems.profile.image : nil
+            self?.viewController.model.headerImage = nil
         }
     }
 
-    private func makeDocumentSection() -> MenuViewModel.Section {
+    private func makeDocumentSection() -> MenuViewModelOld.Section {
         return .init(
             items: [
                 ActionViewModel(
                     content: MenuItemViewModel(
                         title: L10n.Menu.Items.imprint,
-                        icon: Asset.Images.MenuItems.imprint.image
+                        icon: nil
                     )
                 ) { [weak self] in
                     self?.didTriggerAction(.openImprint)
@@ -82,7 +82,7 @@ final class MenuCoordinator: Coordinator {
                 ActionViewModel(
                     content: MenuItemViewModel(
                         title: L10n.Menu.Items.privacy,
-                        icon: Asset.Images.MenuItems.privacyPolicy.image
+                        icon: nil
                     )
                 ) { [weak self] in
                     self?.didTriggerAction(.openPrivacyPolicy)
@@ -91,13 +91,13 @@ final class MenuCoordinator: Coordinator {
         )
     }
 
-    private func makeSettingsSection() -> MenuViewModel.Section {
+    private func makeSettingsSection() -> MenuViewModelOld.Section {
         return .init(
             items: [
                 ActionViewModel(
                     content: MenuItemViewModel(
                         title: L10n.Menu.Items.fuelType,
-                        icon: Asset.Images.MenuItems.fuelType.image
+                        icon: nil
                     )
                 ) { [weak self] in
                     self?.didTriggerAction(.openFuelTypeSelection)
@@ -105,7 +105,7 @@ final class MenuCoordinator: Coordinator {
                 ActionViewModel(
                     content: MenuItemViewModel(
                         title: L10n.Menu.Items.paymentMethods,
-                        icon: Asset.Images.MenuItems.paymentMethods.image
+                        icon: nil
                     )
                 ) { [weak self] in
                     self?.didTriggerAction(.openPaymentMethods)
@@ -113,7 +113,7 @@ final class MenuCoordinator: Coordinator {
                 ActionViewModel(
                     content: MenuItemViewModel(
                         title: L10n.Menu.Items.paymentHistory,
-                        icon: Asset.Images.MenuItems.paymentHistory.image
+                        icon: nil
                     )
                 ) { [weak self] in
                     self?.didTriggerAction(.openPaymentHistory)
@@ -122,13 +122,13 @@ final class MenuCoordinator: Coordinator {
         )
     }
 
-    private func makeProfileSection() -> MenuViewModel.Section {
+    private func makeProfileSection() -> MenuViewModelOld.Section {
         return .init(
             items: [
                 ActionViewModel(
                     content: MenuItemViewModel(
                         title: L10n.Menu.Items.logout,
-                        icon: Asset.Images.MenuItems.logout.image
+                        icon: nil
                     )
                 ) { [weak self] in
                     self?.didTriggerAction(.logout)

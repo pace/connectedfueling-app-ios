@@ -61,7 +61,7 @@ final class DashboardCoordinator: Coordinator {
     override func start() {
         dashboardViewController.delegate = self
         dashboardViewController.navigationItem.leftBarButtonItems = [
-            .init(image: Asset.Images.menu.image, style: .plain, target: self, action: #selector(presentMenu))
+            .init(image: nil, style: .plain, target: self, action: #selector(presentMenu))
         ]
 
         menuGestureRecognizer.edges = .left
