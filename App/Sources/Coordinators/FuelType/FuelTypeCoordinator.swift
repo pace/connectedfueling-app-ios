@@ -39,7 +39,7 @@ final class FuelTypeCoordinator: Coordinator {
 
     private func initModel() {
         viewController.model = .init(
-            image: Asset.Images.fuelType.image,
+            image: nil,
             title: "L10n.Onboarding.FuelType.title",
             description: "L10n.Onboarding.FuelType.description",
             applyLargeTitleInset: false,
@@ -51,8 +51,8 @@ final class FuelTypeCoordinator: Coordinator {
             },
             radios: Domain.FuelType.allCases.map { fuelType in
                 return ButtonViewModel(
-                    icon: Asset.Images.checkmarkInactive.image,
-                    selectedIcon: Asset.Images.checkmarkActive.image,
+                    icon: nil,
+                    selectedIcon: nil,
                     title: fuelType.localizedDescription(),
                     isSelected: fuelType == selectedFuelType
                 ) { [weak self] in

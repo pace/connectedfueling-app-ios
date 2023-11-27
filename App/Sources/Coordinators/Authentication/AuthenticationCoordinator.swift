@@ -26,7 +26,7 @@ final class AuthenticationCoordinator: Coordinator {
 
     override func start() {
         viewController.model = .init(
-            image: Asset.Images.profile.image,
+            image: nil,
             title: "L10n.Onboarding.Authentication.title",
             description: "L10n.Onboarding.Authentication.description",
             action: .init(title: "L10n.Onboarding.Actions.authenticate") { [weak self] in

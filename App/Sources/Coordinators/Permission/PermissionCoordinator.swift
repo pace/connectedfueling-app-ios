@@ -23,7 +23,7 @@ final class PermissionCoordinator: Coordinator {
 
     override func start() {
         viewController.model = .init(
-            image: Asset.Images.location.image,
+            image: nil,
             title: "L10n.Onboarding.Permission.title",
             description: "L10n.Onboarding.Permission.description",
             action: .init(title: "L10n.Onboarding.Actions.shareLocation") { [weak self] in

@@ -16,8 +16,8 @@ struct WalletView: View {
 }
 
 #Preview {
-    NavigationView {
+    AppNavigationView {
         WalletView()
-            .addNavigationBar()
+            .addNavigationBar(style: .standard(title: L10n.walletTabLabel))
     }
 }

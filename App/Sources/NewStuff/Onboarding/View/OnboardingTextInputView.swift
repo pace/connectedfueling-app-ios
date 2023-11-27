@@ -74,6 +74,6 @@ struct OnboardingTextInputView: View {
 #Preview {
     AppNavigationView {
         OnboardingTextInputView(viewModel: .init(type: .pin, completion: { _ in }))
-            .addNavigationBar(showsLogo: false)
+            .addNavigationBar(style: .standard(title: nil))
     }
 }

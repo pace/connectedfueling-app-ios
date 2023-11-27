@@ -1,8 +1,4 @@
 "ALERT.LOCATION_PERMISSION.ACTIONS.OPEN_SETTINGS" = "Åbn indstillinger";
-"ALERT.LOCATION_PERMISSION.DESCRIPTION" = "For at vise dig den nærmeste tankstation skal vi have adgang til din aktuelle position.";
-"ALERT.LOCATION_PERMISSION.TITLE" = "Tilladelse til placering ikke givet";
-"DASHBOARD.ACTIONS.NAVIGATE" = "NAVIGÉR TIL";
-"DASHBOARD.ACTIONS.START_FUELING" = "BRÆNDSTOF HER";
 "DASHBOARD.EMPTY_VIEW.DESCRIPTION" = "Der blev ikke fundet nogen tankstationer i nærheden af din placering.";
 "DASHBOARD.EMPTY_VIEW.TITLE" = "Ingen tankstationer i nærheden";
 "DASHBOARD.LOADING_VIEW.DESCRIPTION" = "Vi søger efter de nærmeste tankstationer i dit område. Det kan tage et øjeblik.";
@@ -38,7 +34,11 @@
 "MENU.TITLE.PLACEHOLDER" = "PACE Connected Fueling";
 "PRICE.NOT_AVAILABLE" = "n. a.";
 "SHARE_TITLE" = "Del";
+"alert_location_permission_description" = "For at vise dig den nærmeste tankstation skal vi have adgang til din aktuelle position.";
+"alert_location_permission_title" = "Tilladelse til placering ikke givet";
 "closed_label" = "LUKKET";
+"common_start_fueling" = "Start tankning";
+"common_start_navigation" = "Start navigation";
 "common_use_accept" = "Acceptere";
 "common_use_back" = "Tilbage";
 "common_use_cancel" = "Annuller";

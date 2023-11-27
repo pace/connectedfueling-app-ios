@@ -107,7 +107,7 @@ class GasStationDetailViewModel: ObservableObject {
     }
 
     var actionTitle: String {
-        gasStation.isConnectedFuelingEnabled ? L10n.Dashboard.Actions.startFueling : L10n.Dashboard.Actions.navigate
+        gasStation.isConnectedFuelingEnabled ? L10n.commonStartFueling : L10n.commonStartNavigation
     }
 
     init(gasStation: GasStation) {

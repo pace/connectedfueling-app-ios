@@ -5,14 +5,26 @@ class OnboardingViewModel: ObservableObject {
 
     var pageViewModels: [OnboardingPageViewModel]
 
-    init() {
+    private let style: ConfigurationManager.Configuration.OnboardingStyle
+
+    init(configuration: ConfigurationManager.Configuration = ConfigurationManager.configuration) {
+        self.style = configuration.onboardingStyle
+
         pageViewModels = [
-            OnboardingLocationPermissionPageViewModel(),
-            OnboardingAuthorizationPageViewModel(),
-            OnboardingTwoFactorAuthenticationPageViewModel(),
-            OnboardingPaymentMethodsPageViewModel(),
-            OnboardingFuelTypePageViewModel()
+            OnboardingLegalPageViewModel(style: style),
+            OnboardingLocationPermissionPageViewModel(style: style),
+            OnboardingAuthorizationPageViewModel(style: style),
+            OnboardingTwoFactorAuthenticationPageViewModel(style: style),
+            OnboardingPaymentMethodsPageViewModel(style: style),
+            OnboardingFuelTypePageViewModel(style: style)
         ]
+
+        // TODO: - If Tracking enabled
+        // Analytics
+        // Is crashlytics tracking?
+        if true {
+            pageViewModels.insert(OnboardingAnalyticsPageViewModel(style: style), at: 1)
+        }
 
         setupDelegates()
     }
@@ -23,18 +35,27 @@ class OnboardingViewModel: ObservableObject {
         }
     }
 
-    func checkNextPreconditions() {
-        pageViewModels[safe: currentPage]?.checkPreconditions()
+    @MainActor
+    private func nextIncompletePage(page: Int) async -> Int? {
+        guard let isNextPageCompleted = await pageViewModels[safe: page]?.isPageAlreadyCompleted() else { return nil }
+        return isNextPageCompleted ? await nextIncompletePage(page: page + 1) : page
     }
 
     func nextPage() {
-        let newPage = currentPage + 1
+        Task { @MainActor [weak self] in
+            guard let self else { return }
 
-        if newPage == pageViewModels.count {
-            UserDefaults.standard.set(true, forKey: Constants.UserDefaults.isOnboardingCompleted)
-        } else {
-            currentPage = newPage
-            checkNextPreconditions()
+            guard let currentPageViewModel = self.pageViewModels[safe: self.currentPage] else { return }
+
+            currentPageViewModel.isCheckingNextPages = true
+            let nextIncompletePage = await self.nextIncompletePage(page: self.currentPage + 1)
+            currentPageViewModel.isCheckingNextPages = false
+
+            if let nextIncompletePage {
+                self.currentPage = nextIncompletePage
+            } else {
+                UserDefaults.standard.set(true, forKey: Constants.UserDefaults.isOnboardingCompleted)
+            }
         }
     }
 }

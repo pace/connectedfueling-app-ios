@@ -66,7 +66,7 @@ private extension MenuViewModel {
         .init(icon: .termsIcon,
               title: L10n.Menu.Items.terms,
               action: .presentedContent(AnyView(
-                WebView(htmlString: loadLegalHtmlString(fileName: Constants.File.terms))
+                WebView(htmlString: loadLegalHtmlString(fileName: Constants.File.termsOfUse))
               )))
     }
 

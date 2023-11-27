@@ -15,10 +15,14 @@ struct LoadingSpinner: View {
     @State private var rotationDegreeS3 = initialDegree
 
     private let color: Color
+    private let size: CGFloat
+
     init(color: Color = .primaryTint,
+         size: CGFloat = 40,
          title: String? = nil,
          description: String? = nil) {
         self.color = color
+        self.size = size
     }
 
     var body: some View {
@@ -28,7 +32,7 @@ struct LoadingSpinner: View {
                 SpinnerCircle(start: spinnerStart, end: spinnerEndS2S3, rotation: rotationDegreeS2, color: color)
                 SpinnerCircle(start: spinnerStart, end: spinnerEndS1, rotation: rotationDegreeS1, color: color)
             }
-            .frame(width: 40, height: 40)
+            .frame(width: size, height: size)
         }
         .onAppear {
             animateSpinner()

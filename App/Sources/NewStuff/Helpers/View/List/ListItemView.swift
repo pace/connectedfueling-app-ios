@@ -55,7 +55,7 @@ struct ListItemView: View {
 }
 
 #Preview {
-    NavigationView {
+    AppNavigationView {
         VStack {
             ListItemView(listItem: .init(icon: .walletTabIcon,
                                          title: "Item 1",
@@ -63,6 +63,7 @@ struct ListItemView: View {
             ListItemView(listItem: .init(icon: .walletTabIcon,
                                          title: "Item 2",
                                          action: .presentedContent(AnyView(Text("Hello")))))
-        }.addNavigationBar()
+        }
+        .addNavigationBar(style: .standard(title: "List"))
     }
 }

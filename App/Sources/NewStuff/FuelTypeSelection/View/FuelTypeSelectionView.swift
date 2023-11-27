@@ -16,8 +16,8 @@ struct FuelTypeSelectionView: View {
 }
 
 #Preview {
-    NavigationView {
+    AppNavigationView {
         FuelTypeSelectionView()
-            .addNavigationBar(showsLogo: false, navigationTitle: L10n.fuelTypeSelection)
+            .addNavigationBar(style: .standard(title: L10n.fuelTypeSelection))
     }
 }

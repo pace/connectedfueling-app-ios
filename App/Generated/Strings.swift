@@ -10,8 +10,16 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
+  /// To show you the nearest gas station, we need access to your current location.
+  internal static let alertLocationPermissionDescription = L10n.tr("Localizable", "alert_location_permission_description", fallback: "To show you the nearest gas station, we need access to your current location.")
+  /// Location permission not granted
+  internal static let alertLocationPermissionTitle = L10n.tr("Localizable", "alert_location_permission_title", fallback: "Location permission not granted")
   /// CLOSED
   internal static let closedLabel = L10n.tr("Localizable", "closed_label", fallback: "CLOSED")
+  /// Start fueling
+  internal static let commonStartFueling = L10n.tr("Localizable", "common_start_fueling", fallback: "Start fueling")
+  /// Start navigation
+  internal static let commonStartNavigation = L10n.tr("Localizable", "common_start_navigation", fallback: "Start navigation")
   /// Accept
   internal static let commonUseAccept = L10n.tr("Localizable", "common_use_accept", fallback: "Accept")
   /// Back
@@ -144,8 +152,8 @@ internal enum L10n {
   internal static let onboardingPaymentMethodTitle = L10n.tr("Localizable", "onboarding_payment_method_title", fallback: "Payment method")
   /// Allow location access
   internal static let onboardingPermissionAction = L10n.tr("Localizable", "onboarding_permission_action", fallback: "Allow location access")
-  /// To show you the closest gas station, we need access to your exact location.
-  internal static let onboardingPermissionDescription = L10n.tr("Localizable", "onboarding_permission_description", fallback: "To show you the closest gas station, we need access to your exact location.")
+  /// To show you the closest gas station, we need access to your precise location.
+  internal static let onboardingPermissionDescription = L10n.tr("Localizable", "onboarding_permission_description", fallback: "To show you the closest gas station, we need access to your precise location.")
   /// Gas stations near you
   internal static let onboardingPermissionTitle = L10n.tr("Localizable", "onboarding_permission_title", fallback: "Gas stations near you")
   /// The PIN must be a 4-digit number.
@@ -222,10 +230,6 @@ internal enum L10n {
   internal static let walletTabLabel = L10n.tr("Localizable", "wallet_tab_label", fallback: "Wallet")
   internal enum Alert {
     internal enum LocationPermission {
-      /// To show you the nearest gas station, we need access to your current location.
-      internal static let description = L10n.tr("Localizable", "ALERT.LOCATION_PERMISSION.DESCRIPTION", fallback: "To show you the nearest gas station, we need access to your current location.")
-      /// Location permission not granted
-      internal static let title = L10n.tr("Localizable", "ALERT.LOCATION_PERMISSION.TITLE", fallback: "Location permission not granted")
       internal enum Actions {
         /// Open settings
         internal static let openSettings = L10n.tr("Localizable", "ALERT.LOCATION_PERMISSION.ACTIONS.OPEN_SETTINGS", fallback: "Open settings")
@@ -233,12 +237,6 @@ internal enum L10n {
     }
   }
   internal enum Dashboard {
-    internal enum Actions {
-      /// NAVIGATE TO
-      internal static let navigate = L10n.tr("Localizable", "DASHBOARD.ACTIONS.NAVIGATE", fallback: "NAVIGATE TO")
-      /// FUEL HERE
-      internal static let startFueling = L10n.tr("Localizable", "DASHBOARD.ACTIONS.START_FUELING", fallback: "FUEL HERE")
-    }
     internal enum EmptyView {
       /// No gas stations where found nearby your location.
       internal static let description = L10n.tr("Localizable", "DASHBOARD.EMPTY_VIEW.DESCRIPTION", fallback: "No gas stations where found nearby your location.")

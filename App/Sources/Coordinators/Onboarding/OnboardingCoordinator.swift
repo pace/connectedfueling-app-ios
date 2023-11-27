@@ -84,7 +84,7 @@ final class OnboardingCoordinator: Coordinator {
         guard !paymentMethodViewController.isBeingPresented else { return }
 
         paymentMethodViewController.model = .init(
-            image: Asset.Images.paymentMethod.image,
+            image: nil,
             title: "L10n.Onboarding.PaymentMethod.title",
             description: "L10n.Onboarding.PaymentMethod.description",
             action: .init(title: "L10n.Onboarding.Actions.addPaymentMethod") { [weak self] in

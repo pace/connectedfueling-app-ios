@@ -1,8 +1,4 @@
 "ALERT.LOCATION_PERMISSION.ACTIONS.OPEN_SETTINGS" = "Открытые настройки";
-"ALERT.LOCATION_PERMISSION.DESCRIPTION" = "Чтобы показать вам ближайшую заправочную станцию, нам необходим доступ к вашему текущему местоположению.";
-"ALERT.LOCATION_PERMISSION.TITLE" = "Местонахождение не разглашается";
-"DASHBOARD.ACTIONS.NAVIGATE" = "НАЧАЛЬНЫЙ МАРШРУТ";
-"DASHBOARD.ACTIONS.START_FUELING" = "ЗАПОЛНИТЕ ЗДЕСЬ";
 "DASHBOARD.EMPTY_VIEW.DESCRIPTION" = "Рядом с вами не найдено ни одной автозаправочной станции.";
 "DASHBOARD.EMPTY_VIEW.TITLE" = "Рядом с вами нет автозаправочных станций";
 "DASHBOARD.LOADING_VIEW.DESCRIPTION" = "Мы выполним поиск ближайших АЗС в вашем регионе. Это может занять некоторое время.";
@@ -38,7 +34,11 @@
 "MENU.TITLE.PLACEHOLDER" = "PACE Connected Fueling";
 "PRICE.NOT_AVAILABLE" = "н. в.";
 "SHARE_TITLE" = "Делиться";
+"alert_location_permission_description" = "Чтобы показать вам ближайшую заправочную станцию, нам необходим доступ к вашему текущему местоположению.";
+"alert_location_permission_title" = "Местонахождение не разглашается";
 "closed_label" = "ЗАКРЫТО";
+"common_start_fueling" = "Начните заправляться";
+"common_start_navigation" = "Начать навигацию";
 "common_use_accept" = "Принимать";
 "common_use_back" = "Назад";
 "common_use_cancel" = "Отмена";

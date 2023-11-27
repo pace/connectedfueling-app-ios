@@ -1,8 +1,4 @@
 "ALERT.LOCATION_PERMISSION.ACTIONS.OPEN_SETTINGS" = "Open instellingen";
-"ALERT.LOCATION_PERMISSION.DESCRIPTION" = "Om u het dichtstbijzijnde tankstation te tonen, hebben we toegang nodig tot uw huidige locatie.";
-"ALERT.LOCATION_PERMISSION.TITLE" = "Locatie niet vrijgegeven";
-"DASHBOARD.ACTIONS.NAVIGATE" = "START ROUTE";
-"DASHBOARD.ACTIONS.START_FUELING" = "VUL HIER IN";
 "DASHBOARD.EMPTY_VIEW.DESCRIPTION" = "Er werden geen benzinestations in uw buurt gevonden.";
 "DASHBOARD.EMPTY_VIEW.TITLE" = "Geen benzinestations in uw buurt";
 "DASHBOARD.LOADING_VIEW.DESCRIPTION" = "Wij zoeken de dichtstbijzijnde benzinestations in uw buurt. Dit kan even duren.";
@@ -38,7 +34,11 @@
 "MENU.TITLE.PLACEHOLDER" = "PACE Connected Fueling";
 "PRICE.NOT_AVAILABLE" = "n. v.";
 "SHARE_TITLE" = "Deel";
+"alert_location_permission_description" = "Om u het dichtstbijzijnde tankstation te tonen, hebben we toegang nodig tot uw huidige locatie.";
+"alert_location_permission_title" = "Locatie niet vrijgegeven";
 "closed_label" = "GESLOTEN";
+"common_start_fueling" = "Begin met tanken";
+"common_start_navigation" = "Start navigatie";
 "common_use_accept" = "Aanvaarden";
 "common_use_back" = "Terug";
 "common_use_cancel" = "Annuleren";

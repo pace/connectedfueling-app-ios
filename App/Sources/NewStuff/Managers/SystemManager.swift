@@ -4,7 +4,7 @@ enum SystemManager {
     static var languageCode: String {
         Locale.current.languageCode ?? Constants.fallbackLanguageCode
     }
-    
+
     static func loadJSONFromBundle<T: Decodable>(fileName: String) -> T {
         let filePath = filePathInBundle(fileName: fileName, fileExtension: "json")
 

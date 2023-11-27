@@ -1,8 +1,4 @@
 "ALERT.LOCATION_PERMISSION.ACTIONS.OPEN_SETTINGS" = "Abrir la configuración";
-"ALERT.LOCATION_PERMISSION.DESCRIPTION" = "Para mostrarte la gasolinera más cercana, necesitamos acceder a tu ubicación actual.";
-"ALERT.LOCATION_PERMISSION.TITLE" = "Ubicación no divulgada";
-"DASHBOARD.ACTIONS.NAVIGATE" = "INICIAR LA RUTA";
-"DASHBOARD.ACTIONS.START_FUELING" = "RELLENA AQUÍ";
 "DASHBOARD.EMPTY_VIEW.DESCRIPTION" = "No se han encontrado gasolineras cerca de usted.";
 "DASHBOARD.EMPTY_VIEW.TITLE" = "No hay gasolineras cerca de usted";
 "DASHBOARD.LOADING_VIEW.DESCRIPTION" = "Buscaremos las gasolineras más cercanas en su zona. Esto puede llevar un momento.";
@@ -38,7 +34,11 @@
 "MENU.TITLE.PLACEHOLDER" = "PACE Connected Fueling";
 "PRICE.NOT_AVAILABLE" = "n. v.";
 "SHARE_TITLE" = "Compartir";
+"alert_location_permission_description" = "Para mostrarte la gasolinera más cercana, necesitamos acceder a tu ubicación actual.";
+"alert_location_permission_title" = "Ubicación no divulgada";
 "closed_label" = "CERRADO";
+"common_start_fueling" = "Empezar a repostar";
+"common_start_navigation" = "Iniciar la navegación";
 "common_use_accept" = "Aceptar";
 "common_use_back" = "Volver";
 "common_use_cancel" = "Cancelar";

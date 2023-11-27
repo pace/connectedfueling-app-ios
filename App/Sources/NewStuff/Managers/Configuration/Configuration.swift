@@ -6,7 +6,10 @@ extension ConfigurationManager {
         let primaryBrandingColorHex: String
         let secondaryBrandingColorHex: String
         let highlightColorHex: String
+        let isAnalyticsEnabled: Bool
 
+        private(set) var onboardingStyle: OnboardingStyle = .secondary
+        private(set) var gasStationListStyle: GasStationListStyle = .secondary
         private(set) var textButtonsColorHex: String?
         private(set) var isNativeFuelCardManagementEnabled: Bool = true
         private(set) var isMapEnabled: Bool = false
@@ -34,6 +37,16 @@ extension ConfigurationManager {
 }
 
 extension ConfigurationManager.Configuration {
+    enum OnboardingStyle: String, Decodable {
+        case primary
+        case secondary
+    }
+
+    enum GasStationListStyle: String, Decodable {
+        case primary
+        case secondary
+    }
+
     struct MenuEntry: Decodable {
         let menuItems: [MenuItem]
     }
@@ -53,6 +66,9 @@ extension ConfigurationManager.Configuration {
         case primaryBrandingColorHex = "primary_branding_color"
         case secondaryBrandingColorHex = "secondary_branding_color"
         case highlightColorHex = "highlight_color"
+        case isAnalyticsEnabled = "analytics_enabled"
+        case onboardingStyle = "onboarding_style"
+        case gasStationListStyle = "gas_station_list_style"
         case textButtonsColorHex = "text_buttons_color"
         case isNativeFuelCardManagementEnabled = "native_fuelcard_management_enabled"
         case isMapEnabled = "map_enabled"

@@ -1,8 +1,4 @@
 "ALERT.LOCATION_PERMISSION.ACTIONS.OPEN_SETTINGS" = "Deschideți setările";
-"ALERT.LOCATION_PERMISSION.DESCRIPTION" = "Pentru a vă arăta cea mai apropiată benzinărie, avem nevoie de acces la locația dvs. actuală.";
-"ALERT.LOCATION_PERMISSION.TITLE" = "Locația nu a fost publicată";
-"DASHBOARD.ACTIONS.NAVIGATE" = "RUTĂ DE PORNIRE";
-"DASHBOARD.ACTIONS.START_FUELING" = "COMPLETAȚI AICI";
 "DASHBOARD.EMPTY_VIEW.DESCRIPTION" = "Nu au fost găsite stații de benzină în apropierea dumneavoastră.";
 "DASHBOARD.EMPTY_VIEW.TITLE" = "Nu există stații de benzină în apropierea dumneavoastră";
 "DASHBOARD.LOADING_VIEW.DESCRIPTION" = "Vom căuta cele mai apropiate stații de benzină din zona dumneavoastră. Acest lucru poate dura un moment.";
@@ -38,7 +34,11 @@
 "MENU.TITLE.PLACEHOLDER" = "PACE Connected Fueling";
 "PRICE.NOT_AVAILABLE" = "n. v.";
 "SHARE_TITLE" = "Acțiune";
+"alert_location_permission_description" = "Pentru a vă arăta cea mai apropiată benzinărie, avem nevoie de acces la locația dvs. actuală.";
+"alert_location_permission_title" = "Locația nu a fost publicată";
 "closed_label" = "ÎNCHIS";
+"common_start_fueling" = "Începeți să alimentați";
+"common_start_navigation" = "Începeți navigarea";
 "common_use_accept" = "Accept";
 "common_use_back" = "Înapoi";
 "common_use_cancel" = "Anulează";

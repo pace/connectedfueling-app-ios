@@ -11,27 +11,26 @@ class OnboardingPaymentMethodsPageViewModel: OnboardingPageViewModel {
         }
     }
 
-    init(paymentManager: PaymentManager = .init()) {
+    init(style: ConfigurationManager.Configuration.OnboardingStyle,
+         paymentManager: PaymentManager = .init()) {
         self.paymentManager = paymentManager
 
-        super.init(image: .paymentMethod,
+        super.init(style: style,
+                   image: .onboardingPaymentMethodIcon,
                    title: L10n.onboardingPaymentMethodTitle,
                    description: L10n.onboardingPaymentMethodDescription)
-
-        appUrlString = PACECloudSDK.URL.payment.absoluteString
     }
 
     override func setupPageActions() {
         pageActions = [
             .init(title: L10n.onboardingPaymentMethodAction, action: { [weak self] in
-                self?.showAppView = true
+                self?.appUrlString = PACECloudSDK.URL.payment.absoluteString
             })
         ]
     }
 
-    override func checkPreconditions() {
-        super.checkPreconditions()
-        checkHasPaymentMethods()
+    override func isPageAlreadyCompleted() async -> Bool {
+        await hasPaymentMethods()
     }
 
     override func didDismissAppView() {
@@ -39,22 +38,17 @@ class OnboardingPaymentMethodsPageViewModel: OnboardingPageViewModel {
         finishOnboardingPage()
     }
 
-    private func checkHasPaymentMethods() {
-        Task { @MainActor [weak self] in
-            self?.isLoading = true
-            let result = await self?.paymentManager.hasPaymentMethods() ?? .failure(APIClientError.invalidDataError)
-            self?.isLoading = false
+    private func hasPaymentMethods() async -> Bool {
+        let result = await paymentManager.hasPaymentMethods()
 
-            switch result {
-            case .success(let hasPaymentMethods):
-                if hasPaymentMethods {
-                    self?.finishOnboardingPage()
-                }
+        switch result {
+        case .success(let hasPaymentMethods):
+            return hasPaymentMethods
 
-            case .failure(let error):
-                NSLog("[OnboardingPaymentMethodsPageViewModel] Failed checking payment methods with error \(error)")
-                self?.isErrorAlertPresented = true
-            }
+        case .failure(let error):
+            NSLog("[OnboardingPaymentMethodsPageViewModel] Failed checking payment methods with error \(error)")
+            alert = AppAlert.genericError
+            return false
         }
     }
 }

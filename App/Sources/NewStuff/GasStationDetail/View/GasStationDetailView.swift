@@ -160,7 +160,7 @@ struct GasStationDetailView: View {
     @ViewBuilder
     private var button: some View {
         ActionButton(title: viewModel.actionTitle,
-                     style: viewModel.gasStation.isConnectedFuelingEnabled ? .primary : .ternary) {
+                     style: viewModel.gasStation.isConnectedFuelingEnabled ? .primary : .secondary) {
             viewModel.didTapActionButton()
         }
         .buttonStyle(.plain)

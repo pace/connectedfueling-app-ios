@@ -1,34 +1,40 @@
 import SwiftUI
 
 class OnboardingPageViewModel: ObservableObject, Identifiable {
-    let image: ImageResource
+    let style: ConfigurationManager.Configuration.OnboardingStyle
+    let image: Image
     let title: String
     let description: String
-    @Published var pageActions: [OnboardingPageAction]
-    @Published var isLoading: Bool = false
-    @Published var isActionDisabled: Bool = false
-    @Published var isErrorAlertPresented: Bool = false
 
-    @Published var showAppView: Bool = false {
+    var isCheckingNextPages: Bool = false {
         didSet {
-            guard oldValue && !showAppView else { return } // Has been dismissed
-            didDismissAppView()
+            isActionDisabled = isCheckingNextPages
+            isActionLoading = isCheckingNextPages
         }
     }
 
-    var appUrlString: String = ""
+    @Published var pageActions: [OnboardingPageAction]
+    @Published var isLoading: Bool = false
+    @Published var isActionDisabled: Bool = false
+    @Published var isActionLoading: Bool = false
 
+    @Published var webView: WebView?
     @Published var textInputViewModel: OnboardingTextInputViewModel?
+    @Published var appUrlString: String?
+
+    @Published var alert: Alert?
 
     weak var onboardingViewModel: OnboardingViewModel?
 
     private(set) var rootView: (any View)?
 
-    init(image: ImageResource,
+    init(style: ConfigurationManager.Configuration.OnboardingStyle,
+         image: Image,
          title: String,
          description: String,
          pageActions: [OnboardingPageAction] = []) {
-        self.image = image
+        self.style = style
+        self.image = image.renderingMode(.template)
         self.title = title
         self.description = description
         self.pageActions = pageActions
@@ -37,8 +43,9 @@ class OnboardingPageViewModel: ObservableObject, Identifiable {
     }
 
     func setupPageActions() {}
-    func checkPreconditions() {}
+    func isPageAlreadyCompleted() async -> Bool { false }
     func additionalContent() -> AnyView? { nil }
+    func handleLinks(_ url: URL) -> OpenURLAction.Result { .discarded }
 
     func viewWillAppear(_ view: some View) {
         rootView = view

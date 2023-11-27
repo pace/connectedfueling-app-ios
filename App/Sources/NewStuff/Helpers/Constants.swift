@@ -17,6 +17,7 @@ enum Constants {
         static let migrationVersion: String = "migrationVersion"
         static let isOnboardingCompleted: String = "isOnboardingCompleted"
         static let fuelType: String = "fuelType"
+        static let isAnalyticsAllowed: String = "isAnalyticsAllowed"
     }
 
     enum Distance {
@@ -45,8 +46,15 @@ enum Constants {
 
     enum File {
         static let configuration: String = "configuration"
-        static let terms: String = "terms"
+        static let termsOfUse: String = "terms"
         static let dataPrivacy: String = "privacy"
         static let imprint: String = "imprint"
+        static let analytics: String = "analytics"
+    }
+
+    enum Onboarding {
+        static let termsOfUseURL: String = "terms_of_use"
+        static let dataPrivacyURL: String = "data_privacy"
+        static let analyticsURL: String = "analytics"
     }
 }

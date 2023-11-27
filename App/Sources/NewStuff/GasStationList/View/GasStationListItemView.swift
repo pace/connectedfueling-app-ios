@@ -24,7 +24,7 @@ struct GasStationListItemView: View {
                 priceLabel
             }
             ActionButton(title: viewModel.actionTitle,
-                         style: viewModel.gasStation.isConnectedFuelingEnabled ? .primary : .ternary) {
+                         style: viewModel.gasStation.isConnectedFuelingEnabled ? .primary : .secondary) {
                 // Since buttons that are included in a list behave differently
                 // than intended, e.g not highlighted when tapped and the List treats
                 // the entire list item as the button,

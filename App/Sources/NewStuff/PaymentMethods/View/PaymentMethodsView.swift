@@ -61,8 +61,8 @@ struct PaymentMethodsView: View {
 }
 
 #Preview {
-    NavigationView {
+    AppNavigationView {
         PaymentMethodsView()
-            .addNavigationBar(showsLogo: false, navigationTitle: L10n.paymentMethodsTitle)
+            .addNavigationBar(style: .standard(title: L10n.paymentMethodsTitle))
     }
 }

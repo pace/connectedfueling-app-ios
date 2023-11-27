@@ -12,10 +12,12 @@ class OnboardingTwoFactorAuthenticationPageViewModel: OnboardingPageViewModel {
         }
     }
 
-    init(userManager: UserManager = .init()) {
+    init(style: ConfigurationManager.Configuration.OnboardingStyle,
+         userManager: UserManager = .init()) {
         self.userManager = userManager
 
-        super.init(image: .biometry,
+        super.init(style: style,
+                   image: .onboardingBiometryIcon,
                    title: L10n.onboardingTwoFactorAuthenticationTitle,
                    description: L10n.onboardingTwoFactorAuthenticationDescription,
                    pageActions: [
@@ -23,8 +25,8 @@ class OnboardingTwoFactorAuthenticationPageViewModel: OnboardingPageViewModel {
                    ])
     }
 
-    override func checkPreconditions() {
-        super.checkPreconditions()
+    override func viewWillAppear(_ view: some View) {
+        super.viewWillAppear(view)
         determineTwoFactorAuthenticationConfiguration()
     }
 
@@ -84,7 +86,7 @@ class OnboardingTwoFactorAuthenticationPageViewModel: OnboardingPageViewModel {
             case .success(let didSetPIN):
                 guard didSetPIN else {
                     NSLog("[OnboardingTwoFactorAuthenticationPageViewModel] Failed setting PIN")
-                    self?.isErrorAlertPresented = true
+                    self?.alert = AppAlert.genericError
                     return
                 }
 
@@ -92,7 +94,7 @@ class OnboardingTwoFactorAuthenticationPageViewModel: OnboardingPageViewModel {
 
             case .failure(let error):
                 NSLog("[OnboardingTwoFactorAuthenticationPageViewModel] Failed setting pin with \(error)")
-                self?.isErrorAlertPresented = true
+                self?.alert = AppAlert.genericError
             }
         }
     }
@@ -110,7 +112,7 @@ class OnboardingTwoFactorAuthenticationPageViewModel: OnboardingPageViewModel {
             case .success(let isEnabled):
                 guard isEnabled else {
                     NSLog("[OnboardingTwoFactorAuthenticationPageViewModel] Failed enabling biometric authentication")
-                    self?.isErrorAlertPresented = true
+                    self?.alert = AppAlert.genericError
                     return
                 }
 
@@ -120,7 +122,7 @@ class OnboardingTwoFactorAuthenticationPageViewModel: OnboardingPageViewModel {
                 NSLog("[OnboardingTwoFactorAuthenticationPageViewModel] Failed enabling biometric authentication with error \(error)")
 
                 guard otp == nil else {
-                    self?.isErrorAlertPresented = true
+                    self?.alert = AppAlert.genericError
                     return
                 }
 
@@ -137,7 +139,7 @@ class OnboardingTwoFactorAuthenticationPageViewModel: OnboardingPageViewModel {
             case .success(let didSendMailOTP):
                 guard didSendMailOTP else {
                     NSLog("[OnboardingTwoFactorAuthenticationPageViewModel] Failed sending mail OTP")
-                    self?.isErrorAlertPresented = true
+                    self?.alert = AppAlert.genericError
                     return
                 }
 
@@ -151,7 +153,7 @@ class OnboardingTwoFactorAuthenticationPageViewModel: OnboardingPageViewModel {
 
             case .failure(let error):
                 NSLog("[OnboardingTwoFactorAuthenticationPageViewModel] Failed sending mail OTP with \(error)")
-                self?.isErrorAlertPresented = true
+                self?.alert = AppAlert.genericError
             }
         }
     }

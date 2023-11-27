@@ -32,9 +32,14 @@ class WalletViewModel: ObservableObject {
 
             default:
                 NSLog("[WalletViewModel] Successfully logged out user")
-                UserDefaults.standard.set(false, forKey: Constants.UserDefaults.isOnboardingCompleted)
+                self?.reset()
             }
         }
+    }
+
+    private func reset() {
+        UserDefaults.standard.set(false, forKey: Constants.UserDefaults.isOnboardingCompleted)
+        UserDefaults.standard.set(false, forKey: Constants.UserDefaults.isAnalyticsAllowed)
     }
 }
 
