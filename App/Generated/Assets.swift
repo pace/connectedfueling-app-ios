@@ -40,16 +40,11 @@ internal enum Asset {
     internal static let noResults = ImageAsset(name: "NoResults")
     internal static let route = ImageAsset(name: "Route")
     internal static let logo = ImageAsset(name: "Logo")
-    internal static let menu = ImageAsset(name: "Menu")
-    internal enum MenuItems {
-      internal static let fuelType = ImageAsset(name: "MenuItems/FuelType")
-      internal static let imprint = ImageAsset(name: "MenuItems/Imprint")
-      internal static let logout = ImageAsset(name: "MenuItems/Logout")
-      internal static let paymentHistory = ImageAsset(name: "MenuItems/PaymentHistory")
-      internal static let paymentMethods = ImageAsset(name: "MenuItems/PaymentMethods")
-      internal static let privacyPolicy = ImageAsset(name: "MenuItems/PrivacyPolicy")
-      internal static let profile = ImageAsset(name: "MenuItems/Profile")
-    }
+    internal static let dataPrivacyIcon = ImageAsset(name: "data_privacy_icon")
+    internal static let externalSiteIcon = ImageAsset(name: "external_site_icon")
+    internal static let imprintIcon = ImageAsset(name: "imprint_icon")
+    internal static let menuTabIcon = ImageAsset(name: "menu_tab_icon")
+    internal static let termsIcon = ImageAsset(name: "terms_icon")
     internal static let errorIcon = ImageAsset(name: "error_icon")
     internal static let noGasStationsIcon = ImageAsset(name: "no_gas_stations_icon")
     internal static let biometry = ImageAsset(name: "Biometry")
@@ -62,7 +57,7 @@ internal enum Asset {
     internal static let accountIcon = ImageAsset(name: "account_icon")
     internal static let fuelTypeSelection = ImageAsset(name: "fuel_type_selection")
     internal static let transactions = ImageAsset(name: "transactions")
-    internal static let walletTabItem = ImageAsset(name: "wallet_tab_item")
+    internal static let walletTabIcon = ImageAsset(name: "wallet_tab_icon")
   }
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name

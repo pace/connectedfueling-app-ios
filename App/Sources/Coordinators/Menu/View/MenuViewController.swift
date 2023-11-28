@@ -1,7 +1,7 @@
 import JamitFoundation
 import UIKit
 
-final class MenuViewController: StatefulViewController<MenuViewModel> {
+final class MenuViewController: StatefulViewController<MenuViewModelOld> {
     @IBOutlet private var headerBackgroundView: UIView!
     @IBOutlet private var headerTitleLabel: Label!
     @IBOutlet private var headerImageView: UIImageView!

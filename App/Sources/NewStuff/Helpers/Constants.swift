@@ -5,6 +5,7 @@ enum Constants {
     static let pinDigitsCount: Int = 4
     static let applePayKind: String = "applepay"
     static let jwtEmailKey: String = "email"
+    static let fallbackLanguageCode: String = "en"
 
     enum View {
         static let defaultButtonPadding: CGFloat = 35
@@ -36,5 +37,12 @@ enum Constants {
 
     enum FuelTypeFilter {
         static let defaultFuelType: FuelType = .cheapestPetrol
+    }
+
+    enum File {
+        static let configuration: String = "configuration"
+        static let terms: String = "terms"
+        static let dataPrivacy: String = "privacy"
+        static let imprint: String = "imprint"
     }
 }

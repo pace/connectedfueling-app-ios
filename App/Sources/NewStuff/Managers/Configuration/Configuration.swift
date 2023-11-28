@@ -12,7 +12,7 @@ extension ConfigurationManager {
         private(set) var isMapEnabled: Bool = false
         private(set) var isVehicleIntergrationEnabled: Bool = false
         private(set) var hidePrices: Bool = false
-        private(set) var menuItems: [MenuItem] = []
+        private(set) var menuEntries: [MenuEntry]?
 
         var primaryBrandingColor: Color {
             .init(hex: primaryBrandingColorHex)
@@ -34,6 +34,12 @@ extension ConfigurationManager {
 }
 
 extension ConfigurationManager.Configuration {
+    struct MenuEntry: Decodable {
+        let menuItems: [MenuItem]
+    }
+}
+
+extension ConfigurationManager.Configuration.MenuEntry {
     struct MenuItem: Decodable {
         let name: String
         let url: String
@@ -52,13 +58,19 @@ extension ConfigurationManager.Configuration {
         case isMapEnabled = "map_enabled"
         case isVehicleIntergrationEnabled = "vehicle_integration_enabled"
         case hidePrices = "hide_prices"
+        case menuEntries = "menu_entries"
+    }
+}
+
+extension ConfigurationManager.Configuration.MenuEntry {
+    enum CodingKeys: String, CodingKey {
         case menuItems = "menu_entry"
     }
 }
 
-extension ConfigurationManager.Configuration.MenuItem {
+extension ConfigurationManager.Configuration.MenuEntry.MenuItem {
     enum CodingKeys: String, CodingKey {
         case name, url
-        case languageCode = "language_code"
+        case languageCode = "languages_code"
     }
 }

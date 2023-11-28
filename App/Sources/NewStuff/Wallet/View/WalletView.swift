@@ -8,7 +8,7 @@ struct WalletView: View {
             WalletAccountView(viewModel: viewModel)
                 .padding(.top, 10)
                 .padding(.horizontal, 20)
-            WalletListView(viewModel: viewModel)
+            ListView(listItems: viewModel.listItems)
                 .padding(.top, 30)
             Spacer()
         }
