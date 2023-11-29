@@ -8,13 +8,13 @@ class OnboardingAuthorizationPageViewModel: OnboardingPageViewModel {
         self.userManager = userManager
 
         super.init(image: .profile,
-                   title: L10n.Onboarding.Authentication.title,
-                   description: L10n.Onboarding.Authentication.description)
+                   title: "L10n.Onboarding.Authentication.title",
+                   description: "L10n.Onboarding.Authentication.description")
     }
 
     override func setupPageActions() {
         pageActions = [
-            .init(title: L10n.Onboarding.Actions.authenticate, action: { [weak self] in
+            .init(title: "L10n.Onboarding.Actions.authenticate", action: { [weak self] in
                 guard let rootView = self?.rootView else { return }
                 self?.authorize(rootView: rootView)
             })

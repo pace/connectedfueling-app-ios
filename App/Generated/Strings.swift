@@ -10,8 +10,44 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
+  /// CLOSED
+  internal static let closedLabel = L10n.tr("Localizable", "closed_label", fallback: "CLOSED")
+  /// Accept
+  internal static let commonUseAccept = L10n.tr("Localizable", "common_use_accept", fallback: "Accept")
+  /// Back
+  internal static let commonUseBack = L10n.tr("Localizable", "common_use_back", fallback: "Back")
+  /// Cancel
+  internal static let commonUseCancel = L10n.tr("Localizable", "common_use_cancel", fallback: "Cancel")
+  /// Confirm
+  internal static let commonUseConfirm = L10n.tr("Localizable", "common_use_confirm", fallback: "Confirm")
+  /// Decline
+  internal static let commonUseDecline = L10n.tr("Localizable", "common_use_decline", fallback: "Decline")
+  /// Friday
+  internal static let commonUseFriday = L10n.tr("Localizable", "common_use_friday", fallback: "Friday")
+  /// Monday
+  internal static let commonUseMonday = L10n.tr("Localizable", "common_use_monday", fallback: "Monday")
+  /// Connection to the Internet failed. Try again later.
+  internal static let commonUseNetworkError = L10n.tr("Localizable", "common_use_network_error", fallback: "Connection to the Internet failed. Try again later.")
+  /// Next
+  internal static let commonUseNext = L10n.tr("Localizable", "common_use_next", fallback: "Next")
   /// Try again
-  internal static let commonRetry = L10n.tr("Localizable", "common_retry", fallback: "Try again")
+  internal static let commonUseRetry = L10n.tr("Localizable", "common_use_retry", fallback: "Try again")
+  /// Saturday
+  internal static let commonUseSaturday = L10n.tr("Localizable", "common_use_saturday", fallback: "Saturday")
+  /// Save
+  internal static let commonUseSave = L10n.tr("Localizable", "common_use_save", fallback: "Save")
+  /// Skip
+  internal static let commonUseSkip = L10n.tr("Localizable", "common_use_skip", fallback: "Skip")
+  /// Sunday
+  internal static let commonUseSunday = L10n.tr("Localizable", "common_use_sunday", fallback: "Sunday")
+  /// Thursday
+  internal static let commonUseThursday = L10n.tr("Localizable", "common_use_thursday", fallback: "Thursday")
+  /// Tuesday
+  internal static let commonUseTuesday = L10n.tr("Localizable", "common_use_tuesday", fallback: "Tuesday")
+  /// An unknown error has occurred. Try again later.
+  internal static let commonUseUnknownError = L10n.tr("Localizable", "common_use_unknown_error", fallback: "An unknown error has occurred. Try again later.")
+  /// Wednesday
+  internal static let commonUseWednesday = L10n.tr("Localizable", "common_use_wednesday", fallback: "Wednesday")
   /// %2$@%1$@
   internal static func currencyFormat(_ p1: Any, _ p2: Any) -> String {
     return L10n.tr("Localizable", "currency_format", String(describing: p1), String(describing: p2), fallback: "%2$@%1$@")
@@ -24,12 +60,124 @@ internal enum L10n {
   internal static let fuelSelectionTitle = L10n.tr("Localizable", "fuel_selection_title", fallback: "Fuel selection")
   /// What fuel prices should we show you?
   internal static let fuelTypeSelection = L10n.tr("Localizable", "FUEL_TYPE_SELECTION", fallback: "What fuel prices should we show you?")
+  /// The gas station is currently closed.
+  internal static let gasStationClosedHint = L10n.tr("Localizable", "gas_station_closed_hint", fallback: "The gas station is currently closed.")
+  /// Gas station
+  internal static let gasStationDefaultName = L10n.tr("Localizable", "gas_station_default_name", fallback: "Gas station")
+  /// The gas station data could not be loaded. Check your connection!
+  internal static let gasStationErrorDescription = L10n.tr("Localizable", "gas_station_error_description", fallback: "The gas station data could not be loaded. Check your connection!")
+  /// Fuel prices are unfortunately not available.
+  internal static let gasStationFuelPricesNotAvailable = L10n.tr("Localizable", "gas_station_fuel_prices_not_available", fallback: "Fuel prices are unfortunately not available.")
+  /// Fuel prices
+  internal static let gasStationFuelPricesTitle = L10n.tr("Localizable", "gas_station_fuel_prices_title", fallback: "Fuel prices")
+  /// Last price change %s
+  internal static func gasStationLastUpdated(_ p1: UnsafePointer<CChar>) -> String {
+    return L10n.tr("Localizable", "gas_station_last_updated", p1, fallback: "Last price change %s")
+  }
+  /// We are loading the gas station data. Please wait a moment.
+  internal static let gasStationLoadingDescription = L10n.tr("Localizable", "gas_station_loading_description", fallback: "We are loading the gas station data. Please wait a moment.")
+  /// Loading gas station data...
+  internal static let gasStationLoadingTitle = L10n.tr("Localizable", "gas_station_loading_title", fallback: "Loading gas station data...")
+  /// %s away
+  internal static func gasStationLocationAway(_ p1: UnsafePointer<CChar>) -> String {
+    return L10n.tr("Localizable", "gas_station_location_away", p1, fallback: "%s away")
+  }
+  /// You are here
+  internal static let gasStationLocationHere = L10n.tr("Localizable", "gas_station_location_here", fallback: "You are here")
+  /// open 24 hours
+  internal static let gasStationOpeningHoursAlwaysOpen = L10n.tr("Localizable", "gas_station_opening_hours_always_open", fallback: "open 24 hours")
+  /// closed
+  internal static let gasStationOpeningHoursClosed = L10n.tr("Localizable", "gas_station_opening_hours_closed", fallback: "closed")
+  /// Daily
+  internal static let gasStationOpeningHoursDaily = L10n.tr("Localizable", "gas_station_opening_hours_daily", fallback: "Daily")
+  /// Opening hours may differ on holidays.
+  internal static let gasStationOpeningHoursHint = L10n.tr("Localizable", "gas_station_opening_hours_hint", fallback: "Opening hours may differ on holidays.")
+  /// Opening hours are currently not available.
+  internal static let gasStationOpeningHoursNotAvailable = L10n.tr("Localizable", "gas_station_opening_hours_not_available", fallback: "Opening hours are currently not available.")
+  /// Opening hours
+  internal static let gasStationOpeningHoursTitle = L10n.tr("Localizable", "gas_station_opening_hours_title", fallback: "Opening hours")
   /// Loading failed
   internal static let generalErrorTitle = L10n.tr("Localizable", "general_error_title", fallback: "Loading failed")
   /// List
   internal static let listTabLabel = L10n.tr("Localizable", "list_tab_label", fallback: "List")
   /// More
   internal static let moreTabLabel = L10n.tr("Localizable", "more_tab_label", fallback: "More")
+  /// Log in or register
+  internal static let onboardingAuthenticationAction = L10n.tr("Localizable", "onboarding_authentication_action", fallback: "Log in or register")
+  /// For easy payment with the app you have to register or login with your existing PACE-ID.
+  internal static let onboardingAuthenticationDescription = L10n.tr("Localizable", "onboarding_authentication_description", fallback: "For easy payment with the app you have to register or login with your existing PACE-ID.")
+  /// Add profile
+  internal static let onboardingAuthenticationTitle = L10n.tr("Localizable", "onboarding_authentication_title", fallback: "Add profile")
+  /// Choose a four-digit PIN to be used to confirm payments.
+  internal static let onboardingCreatePinDescription = L10n.tr("Localizable", "onboarding_create_pin_description", fallback: "Choose a four-digit PIN to be used to confirm payments.")
+  /// Choose PIN
+  internal static let onboardingCreatePinTitle = L10n.tr("Localizable", "onboarding_create_pin_title", fallback: "Choose PIN")
+  /// Please authorise the change with the confirmation code from your e-mail inbox.
+  internal static let onboardingEnterOneTimePasswordDescription = L10n.tr("Localizable", "onboarding_enter_one_time_password_description", fallback: "Please authorise the change with the confirmation code from your e-mail inbox.")
+  /// Enter confirmation code
+  internal static let onboardingEnterOneTimePasswordTitle = L10n.tr("Localizable", "onboarding_enter_one_time_password_title", fallback: "Enter confirmation code")
+  /// Your input could not be verified. Please try again.
+  internal static let onboardingErrorAuthorization = L10n.tr("Localizable", "onboarding_error_authorization", fallback: "Your input could not be verified. Please try again.")
+  /// And finally: Which fuel prices should we show you?
+  internal static let onboardingFuelTypeDescription = L10n.tr("Localizable", "onboarding_fuel_type_description", fallback: "And finally: Which fuel prices should we show you?")
+  /// Fuel type
+  internal static let onboardingFuelTypeTitle = L10n.tr("Localizable", "onboarding_fuel_type_title", fallback: "Fuel type")
+  /// Please select a fuel type.
+  internal static let onboardingFuelTypeUnselectedText = L10n.tr("Localizable", "onboarding_fuel_type_unselected_text", fallback: "Please select a fuel type.")
+  /// Your session has expired.
+  internal static let onboardingInvalidSession = L10n.tr("Localizable", "onboarding_invalid_session", fallback: "Your session has expired.")
+  /// privacy policy
+  internal static let onboardingLegalDataPrivacy = L10n.tr("Localizable", "onboarding_legal_data_privacy", fallback: "privacy policy")
+  /// I agree to the terms of use and have read and understood the privacy policy.
+  internal static let onboardingLegalDescription = L10n.tr("Localizable", "onboarding_legal_description", fallback: "I agree to the terms of use and have read and understood the privacy policy.")
+  /// terms of use
+  internal static let onboardingLegalTermsOfUse = L10n.tr("Localizable", "onboarding_legal_terms_of_use", fallback: "terms of use")
+  /// Before we continue
+  internal static let onboardingLegalTitle = L10n.tr("Localizable", "onboarding_legal_title", fallback: "Before we continue")
+  /// Login failed. Without an account, paying your fuel with your smartphone is not possible.
+  internal static let onboardingLoginUnsuccessful = L10n.tr("Localizable", "onboarding_login_unsuccessful", fallback: "Login failed. Without an account, paying your fuel with your smartphone is not possible.")
+  /// Add payment method
+  internal static let onboardingPaymentMethodAction = L10n.tr("Localizable", "onboarding_payment_method_action", fallback: "Add payment method")
+  /// Select a payment method to start your first refueling.
+  internal static let onboardingPaymentMethodDescription = L10n.tr("Localizable", "onboarding_payment_method_description", fallback: "Select a payment method to start your first refueling.")
+  /// Payment method
+  internal static let onboardingPaymentMethodTitle = L10n.tr("Localizable", "onboarding_payment_method_title", fallback: "Payment method")
+  /// Allow location access
+  internal static let onboardingPermissionAction = L10n.tr("Localizable", "onboarding_permission_action", fallback: "Allow location access")
+  /// To show you the closest gas station, we need access to your exact location.
+  internal static let onboardingPermissionDescription = L10n.tr("Localizable", "onboarding_permission_description", fallback: "To show you the closest gas station, we need access to your exact location.")
+  /// Gas stations near you
+  internal static let onboardingPermissionTitle = L10n.tr("Localizable", "onboarding_permission_title", fallback: "Gas stations near you")
+  /// The PIN must be a 4-digit number.
+  internal static let onboardingPinErrorInvalidLength = L10n.tr("Localizable", "onboarding_pin_error_invalid_length", fallback: "The PIN must be a 4-digit number.")
+  /// The PINs do not match. Try again.
+  internal static let onboardingPinErrorMismatch = L10n.tr("Localizable", "onboarding_pin_error_mismatch", fallback: "The PINs do not match. Try again.")
+  /// The PIN is too simple (0000 or 1234 are not allowed). Choose a different PIN
+  internal static let onboardingPinErrorNotSecure = L10n.tr("Localizable", "onboarding_pin_error_not_secure", fallback: "The PIN is too simple (0000 or 1234 are not allowed). Choose a different PIN")
+  /// The PIN must not be a series of ascending or descending digits.
+  internal static let onboardingPinErrorSeries = L10n.tr("Localizable", "onboarding_pin_error_series", fallback: "The PIN must not be a series of ascending or descending digits.")
+  /// The PIN must contain at least three different digits.
+  internal static let onboardingPinErrorTooFewDigits = L10n.tr("Localizable", "onboarding_pin_error_too_few_digits", fallback: "The PIN must contain at least three different digits.")
+  /// Retry login
+  internal static let onboardingRetryLogin = L10n.tr("Localizable", "onboarding_retry_login", fallback: "Retry login")
+  /// app tracking
+  internal static let onboardingTrackingAppTracking = L10n.tr("Localizable", "onboarding_tracking_app_tracking", fallback: "app tracking")
+  /// Allow app tracking so that we can further optimise the use of the app for you.
+  internal static let onboardingTrackingDescription = L10n.tr("Localizable", "onboarding_tracking_description", fallback: "Allow app tracking so that we can further optimise the use of the app for you.")
+  /// Improve your experience
+  internal static let onboardingTrackingTitle = L10n.tr("Localizable", "onboarding_tracking_title", fallback: "Improve your experience")
+  /// Biometry
+  internal static let onboardingTwoFactorAuthenticationBiometry = L10n.tr("Localizable", "onboarding_two_factor_authentication_biometry", fallback: "Biometry")
+  /// Biometric scanners are the fastest and most secure way to confirm your payment transactions.
+  internal static let onboardingTwoFactorAuthenticationDescription = L10n.tr("Localizable", "onboarding_two_factor_authentication_description", fallback: "Biometric scanners are the fastest and most secure way to confirm your payment transactions.")
+  /// Choose PIN
+  internal static let onboardingTwoFactorAuthenticationPin = L10n.tr("Localizable", "onboarding_two_factor_authentication_pin", fallback: "Choose PIN")
+  /// Secure and fast payment
+  internal static let onboardingTwoFactorAuthenticationTitle = L10n.tr("Localizable", "onboarding_two_factor_authentication_title", fallback: "Secure and fast payment")
+  /// Please enter the PIN again to confirm.
+  internal static let onboardingVerifyPinDescription = L10n.tr("Localizable", "onboarding_verify_pin_description", fallback: "Please enter the PIN again to confirm.")
+  /// Confirm PIN
+  internal static let onboardingVerifyPinTitle = L10n.tr("Localizable", "onboarding_verify_pin_title", fallback: "Confirm PIN")
   /// Apple Pay
   internal static let paymentMethodKindApplepay = L10n.tr("Localizable", "payment_method_kind_applepay", fallback: "Apple Pay")
   /// Credit card
@@ -110,8 +258,6 @@ internal enum L10n {
         /// Do you really want to logout?
         internal static let title = L10n.tr("Localizable", "DASHBOARD.LOGOUT.CONFIRM.TITLE", fallback: "Do you really want to logout?")
         internal enum Action {
-          /// CANCEL
-          internal static let cancel = L10n.tr("Localizable", "DASHBOARD.LOGOUT.CONFIRM.ACTION.CANCEL", fallback: "CANCEL")
           /// LOGOUT
           internal static let logout = L10n.tr("Localizable", "DASHBOARD.LOGOUT.CONFIRM.ACTION.LOGOUT", fallback: "LOGOUT")
         }
@@ -184,124 +330,6 @@ internal enum L10n {
     internal enum Title {
       /// PACE Connected Fueling
       internal static let placeholder = L10n.tr("Localizable", "MENU.TITLE.PLACEHOLDER", fallback: "PACE Connected Fueling")
-    }
-  }
-  internal enum Onboarding {
-    /// Your input could not be verified. Try again.
-    internal static let errorAuthorisation = L10n.tr("Localizable", "ONBOARDING.ERROR_AUTHORISATION", fallback: "Your input could not be verified. Try again.")
-    /// Error recognizing fingerprint: %s
-    internal static func fingerprintError(_ p1: UnsafePointer<CChar>) -> String {
-      return L10n.tr("Localizable", "ONBOARDING.FINGERPRINT_ERROR", p1, fallback: "Error recognizing fingerprint: %s")
-    }
-    /// Currently there are no saved fingerprints!
-    internal static let fingerprintNoneSavedTitle = L10n.tr("Localizable", "ONBOARDING.FINGERPRINT_NONE_SAVED_TITLE", fallback: "Currently there are no saved fingerprints!")
-    /// Add now
-    internal static let fingerprintSave = L10n.tr("Localizable", "ONBOARDING.FINGERPRINT_SAVE", fallback: "Add now")
-    /// Please select a fuel type.
-    internal static let fuelTypeUnselectedText = L10n.tr("Localizable", "ONBOARDING.FUEL_TYPE_UNSELECTED_TEXT", fallback: "Please select a fuel type.")
-    /// Your session is expired.
-    internal static let invalidSession = L10n.tr("Localizable", "ONBOARDING.INVALID_SESSION", fallback: "Your session is expired.")
-    /// Login failed. Without an account, paying your fuel with your smartphone is not possible.
-    internal static let logInUnsuccessful = L10n.tr("Localizable", "ONBOARDING.LOG_IN_UNSUCCESSFUL", fallback: "Login failed. Without an account, paying your fuel with your smartphone is not possible.")
-    /// Connecting to the internet failed. Try again later.
-    internal static let networkError = L10n.tr("Localizable", "ONBOARDING.NETWORK_ERROR", fallback: "Connecting to the internet failed. Try again later.")
-    /// Retry login
-    internal static let retryLogin = L10n.tr("Localizable", "ONBOARDING.RETRY_LOGIN", fallback: "Retry login")
-    /// An unknown error occurred. Try again later.
-    internal static let unknownError = L10n.tr("Localizable", "ONBOARDING.UNKNOWN_ERROR", fallback: "An unknown error occurred. Try again later.")
-    internal enum Actions {
-      /// ADD PAYMENT METHOD
-      internal static let addPaymentMethod = L10n.tr("Localizable", "ONBOARDING.ACTIONS.ADD_PAYMENT_METHOD", fallback: "ADD PAYMENT METHOD")
-      /// LOGIN OR REGISTER
-      internal static let authenticate = L10n.tr("Localizable", "ONBOARDING.ACTIONS.AUTHENTICATE", fallback: "LOGIN OR REGISTER")
-      /// BACK
-      internal static let back = L10n.tr("Localizable", "ONBOARDING.ACTIONS.BACK", fallback: "BACK")
-      /// GO!
-      internal static let complete = L10n.tr("Localizable", "ONBOARDING.ACTIONS.COMPLETE", fallback: "GO!")
-      /// NEXT
-      internal static let next = L10n.tr("Localizable", "ONBOARDING.ACTIONS.NEXT", fallback: "NEXT")
-      /// SAVE
-      internal static let save = L10n.tr("Localizable", "ONBOARDING.ACTIONS.SAVE", fallback: "SAVE")
-      /// ALLOW LOCATION ACCESS
-      internal static let shareLocation = L10n.tr("Localizable", "ONBOARDING.ACTIONS.SHARE_LOCATION", fallback: "ALLOW LOCATION ACCESS")
-      /// Skip
-      internal static let skip = L10n.tr("Localizable", "ONBOARDING.ACTIONS.SKIP", fallback: "Skip")
-    }
-    internal enum Authentication {
-      /// For easy payment with the app you have to register or login with your existing PACE-ID.
-      internal static let description = L10n.tr("Localizable", "ONBOARDING.AUTHENTICATION.DESCRIPTION", fallback: "For easy payment with the app you have to register or login with your existing PACE-ID.")
-      /// Add profile
-      internal static let title = L10n.tr("Localizable", "ONBOARDING.AUTHENTICATION.TITLE", fallback: "Add profile")
-    }
-    internal enum Authorization {
-      /// Confirm your fingerprint
-      internal static let requestFingerprint = L10n.tr("Localizable", "ONBOARDING.AUTHORIZATION.REQUEST_FINGERPRINT", fallback: "Confirm your fingerprint")
-    }
-    internal enum CreatePin {
-      /// NEXT
-      internal static let confirm = L10n.tr("Localizable", "ONBOARDING.CREATE_PIN.CONFIRM", fallback: "NEXT")
-      /// Choose a 4-digit PIN that can be used to authorise payments.
-      internal static let description = L10n.tr("Localizable", "ONBOARDING.CREATE_PIN.DESCRIPTION", fallback: "Choose a 4-digit PIN that can be used to authorise payments.")
-      /// Choose pin
-      internal static let title = L10n.tr("Localizable", "ONBOARDING.CREATE_PIN.TITLE", fallback: "Choose pin")
-    }
-    internal enum EnterOneTimePassword {
-      /// CONFIRM
-      internal static let confirm = L10n.tr("Localizable", "ONBOARDING.ENTER_ONE_TIME_PASSWORD.CONFIRM", fallback: "CONFIRM")
-      /// Please authorize the change with the confirmation code from your email inbox.
-      internal static let description = L10n.tr("Localizable", "ONBOARDING.ENTER_ONE_TIME_PASSWORD.DESCRIPTION", fallback: "Please authorize the change with the confirmation code from your email inbox.")
-      /// Enter confirmation code
-      internal static let title = L10n.tr("Localizable", "ONBOARDING.ENTER_ONE_TIME_PASSWORD.TITLE", fallback: "Enter confirmation code")
-    }
-    internal enum FuelType {
-      /// And finally: What fuel prices should we show you?
-      internal static let description = L10n.tr("Localizable", "ONBOARDING.FUEL_TYPE.DESCRIPTION", fallback: "And finally: What fuel prices should we show you?")
-      /// Fuel type
-      internal static let title = L10n.tr("Localizable", "ONBOARDING.FUEL_TYPE.TITLE", fallback: "Fuel type")
-    }
-    internal enum PaymentMethod {
-      /// Select a payment method to start your first refueling.
-      internal static let description = L10n.tr("Localizable", "ONBOARDING.PAYMENT_METHOD.DESCRIPTION", fallback: "Select a payment method to start your first refueling.")
-      /// Payment method
-      internal static let title = L10n.tr("Localizable", "ONBOARDING.PAYMENT_METHOD.TITLE", fallback: "Payment method")
-    }
-    internal enum Permission {
-      /// To show you the closest gas stations, we need to access your location.
-      internal static let description = L10n.tr("Localizable", "ONBOARDING.PERMISSION.DESCRIPTION", fallback: "To show you the closest gas stations, we need to access your location.")
-      /// Gas stations near you
-      internal static let title = L10n.tr("Localizable", "ONBOARDING.PERMISSION.TITLE", fallback: "Gas stations near you")
-    }
-    internal enum Pin {
-      internal enum Error {
-        /// The PIN needs to be a 4-digit number.
-        internal static let invalidLength = L10n.tr("Localizable", "ONBOARDING.PIN.ERROR.INVALID_LENGTH", fallback: "The PIN needs to be a 4-digit number.")
-        /// The PINs don't match. Try again.
-        internal static let mismatch = L10n.tr("Localizable", "ONBOARDING.PIN.ERROR.MISMATCH", fallback: "The PINs don't match. Try again.")
-        /// The PIN is too simple (0000 or 1234 are not allowed). Choose a different PIN.
-        internal static let notSecure = L10n.tr("Localizable", "ONBOARDING.PIN.ERROR.NOT_SECURE", fallback: "The PIN is too simple (0000 or 1234 are not allowed). Choose a different PIN.")
-        /// The PIN can't be a series of ascending or descending numbers.
-        internal static let series = L10n.tr("Localizable", "ONBOARDING.PIN.ERROR.SERIES", fallback: "The PIN can't be a series of ascending or descending numbers.")
-        /// The PIN needs to contain at least three distinct digits.
-        internal static let tooFewDigits = L10n.tr("Localizable", "ONBOARDING.PIN.ERROR.TOO_FEW_DIGITS", fallback: "The PIN needs to contain at least three distinct digits.")
-      }
-    }
-    internal enum TwoFactorAuthentication {
-      /// BIOMETRY
-      internal static let biometry = L10n.tr("Localizable", "ONBOARDING.TWO_FACTOR_AUTHENTICATION.BIOMETRY", fallback: "BIOMETRY")
-      /// Biometric scanners are the fastest and most secure way to confirm your payment transactions.
-      internal static let description = L10n.tr("Localizable", "ONBOARDING.TWO_FACTOR_AUTHENTICATION.DESCRIPTION", fallback: "Biometric scanners are the fastest and most secure way to confirm your payment transactions.")
-      /// Choose PIN
-      internal static let pin = L10n.tr("Localizable", "ONBOARDING.TWO_FACTOR_AUTHENTICATION.PIN", fallback: "Choose PIN")
-      /// Secure and fast payment
-      internal static let title = L10n.tr("Localizable", "ONBOARDING.TWO_FACTOR_AUTHENTICATION.TITLE", fallback: "Secure and fast payment")
-    }
-    internal enum VerifyPin {
-      /// NEXT
-      internal static let confirm = L10n.tr("Localizable", "ONBOARDING.VERIFY_PIN.CONFIRM", fallback: "NEXT")
-      /// Please re-enter the PIN for confirmation.
-      internal static let description = L10n.tr("Localizable", "ONBOARDING.VERIFY_PIN.DESCRIPTION", fallback: "Please re-enter the PIN for confirmation.")
-      /// Confirm pin
-      internal static let title = L10n.tr("Localizable", "ONBOARDING.VERIFY_PIN.TITLE", fallback: "Confirm pin")
     }
   }
   internal enum Price {

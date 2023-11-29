@@ -13,15 +13,15 @@ class OnboardingFuelTypePageViewModel: OnboardingPageViewModel {
         self.poiManager = poiManager
 
         super.init(image: .fuelType,
-                   title: L10n.Onboarding.FuelType.title,
-                   description: L10n.Onboarding.FuelType.description)
+                   title: L10n.onboardingFuelTypeTitle,
+                   description: L10n.onboardingFuelTypeDescription)
 
         isActionDisabled = selectedFuelType == nil
     }
 
     override func setupPageActions() {
         pageActions = [
-            .init(title: L10n.Onboarding.Actions.save, action: { [weak self] in
+            .init(title: L10n.commonUseNext, action: { [weak self] in
                 self?.poiManager.fuelType = self?.selectedFuelType
                 self?.finishOnboardingPage()
             })

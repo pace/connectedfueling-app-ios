@@ -15,15 +15,15 @@ class OnboardingPaymentMethodsPageViewModel: OnboardingPageViewModel {
         self.paymentManager = paymentManager
 
         super.init(image: .paymentMethod,
-                   title: L10n.Onboarding.PaymentMethod.title,
-                   description: L10n.Onboarding.PaymentMethod.description)
+                   title: L10n.onboardingPaymentMethodTitle,
+                   description: L10n.onboardingPaymentMethodDescription)
 
         appUrlString = PACECloudSDK.URL.payment.absoluteString
     }
 
     override func setupPageActions() {
         pageActions = [
-            .init(title: L10n.Onboarding.Actions.addPaymentMethod, action: { [weak self] in
+            .init(title: L10n.onboardingPaymentMethodAction, action: { [weak self] in
                 self?.showAppView = true
             })
         ]

@@ -27,9 +27,9 @@ final class AuthenticationCoordinator: Coordinator {
     override func start() {
         viewController.model = .init(
             image: Asset.Images.profile.image,
-            title: L10n.Onboarding.Authentication.title,
-            description: L10n.Onboarding.Authentication.description,
-            action: .init(title: L10n.Onboarding.Actions.authenticate) { [weak self] in
+            title: "L10n.Onboarding.Authentication.title",
+            description: "L10n.Onboarding.Authentication.description",
+            action: .init(title: "L10n.Onboarding.Actions.authenticate") { [weak self] in
                 self?.requestAuthentication()
             }
         )

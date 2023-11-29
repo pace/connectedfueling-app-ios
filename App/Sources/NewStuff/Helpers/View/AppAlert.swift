@@ -3,7 +3,7 @@ import SwiftUI
 enum AppAlert {
     static var genericError: Alert {
         Alert(title: Text("Oops, something went wrong"),
-              message: Text(L10n.commonRetry))
+              message: Text(L10n.commonUseRetry))
     }
 
     static var locationPermissionError: Alert {
@@ -19,7 +19,7 @@ enum AppAlert {
 
     static func networkError(retryAction: @escaping () -> Void) -> Alert {
         Alert(title: Text("No network connection"),
-              primaryButton: .default(Text(L10n.commonRetry),
+              primaryButton: .default(Text(L10n.commonUseRetry),
                                       action: retryAction),
               secondaryButton: .cancel())
     }
@@ -29,6 +29,6 @@ enum AppAlert {
               message: Text(L10n.Dashboard.Logout.Confirm.description),
               primaryButton: .default(Text(L10n.Dashboard.Logout.Confirm.Action.logout),
                                       action: logoutAction),
-              secondaryButton: .cancel(Text(L10n.Dashboard.Logout.Confirm.Action.cancel)))
+              secondaryButton: .cancel(Text(L10n.commonUseCancel)))
     }
 }

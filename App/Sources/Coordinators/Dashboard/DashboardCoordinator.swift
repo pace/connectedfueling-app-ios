@@ -263,7 +263,7 @@ extension DashboardCoordinator: MenuCoordinatorDelegate {
 
         alertController.addAction(
             UIAlertAction(
-                title: L10n.Dashboard.Logout.Confirm.Action.cancel,
+                title: L10n.commonUseCancel,
                 style: .cancel,
                 handler: nil
             )

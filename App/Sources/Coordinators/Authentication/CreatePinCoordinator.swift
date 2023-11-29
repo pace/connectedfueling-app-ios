@@ -28,9 +28,9 @@ final class CreatePinCoordinator: Coordinator {
     private func presentCreatePinViewController() {
         createPinViewController.style = .default
         createPinViewController.model = .init(
-            title: L10n.Onboarding.CreatePin.title,
-            description: L10n.Onboarding.CreatePin.description,
-            submitTitle: L10n.Onboarding.CreatePin.confirm,
+            title: "L10n.Onboarding.CreatePin.title",
+            description: "L10n.Onboarding.CreatePin.description",
+            submitTitle: "L10n.Onboarding.CreatePin.confirm",
             onValidate: { [weak createPinViewController] input in
                 switch PinInputValidator.validate(input: input) {
                 case let .failure(error):
@@ -57,13 +57,13 @@ final class CreatePinCoordinator: Coordinator {
     private func presentVerifyPinViewController(pin: String) {
         verifyPinViewController.style = .default
         verifyPinViewController.model = .init(
-            title: L10n.Onboarding.VerifyPin.title,
-            description: L10n.Onboarding.VerifyPin.description,
-            submitTitle: L10n.Onboarding.VerifyPin.confirm,
+            title: "L10n.Onboarding.VerifyPin.title",
+            description: "L10n.Onboarding.VerifyPin.description",
+            submitTitle: "L10n.Onboarding.VerifyPin.confirm",
             onValidate: { [weak verifyPinViewController] input in
                 let isInputValid = input == pin
                 verifyPinViewController?.model.isConfirmButtonEnabled = isInputValid
-                verifyPinViewController?.model.error = isInputValid ? nil : L10n.Onboarding.Pin.Error.mismatch
+                verifyPinViewController?.model.error = isInputValid ? nil : "L10n.Onboarding.Pin.Error.mismatch"
             },
             onSubmit: { [weak self] pin in
                 self?.requestOneTimePassword(withPin: pin)
@@ -76,9 +76,9 @@ final class CreatePinCoordinator: Coordinator {
     private func presentOneTimePasswordInputViewController(pin: String) {
         oneTimePasswordViewController.style = .default
         oneTimePasswordViewController.model = .init(
-            title: L10n.Onboarding.EnterOneTimePassword.title,
-            description: L10n.Onboarding.EnterOneTimePassword.description,
-            submitTitle: L10n.Onboarding.EnterOneTimePassword.confirm,
+            title: "L10n.Onboarding.EnterOneTimePassword.title",
+            description: "L10n.Onboarding.EnterOneTimePassword.description",
+            submitTitle: "L10n.Onboarding.EnterOneTimePassword.confirm",
             onValidate: { [weak oneTimePasswordViewController] input in
                 switch EmptyInputValidator.validate(input: input) {
                 case .success:

@@ -85,9 +85,9 @@ final class OnboardingCoordinator: Coordinator {
 
         paymentMethodViewController.model = .init(
             image: Asset.Images.paymentMethod.image,
-            title: L10n.Onboarding.PaymentMethod.title,
-            description: L10n.Onboarding.PaymentMethod.description,
-            action: .init(title: L10n.Onboarding.Actions.addPaymentMethod) { [weak self] in
+            title: "L10n.Onboarding.PaymentMethod.title",
+            description: "L10n.Onboarding.PaymentMethod.description",
+            action: .init(title: "L10n.Onboarding.Actions.addPaymentMethod") { [weak self] in
                 self?.startPaymentMethodCoordinator()
             }
         )

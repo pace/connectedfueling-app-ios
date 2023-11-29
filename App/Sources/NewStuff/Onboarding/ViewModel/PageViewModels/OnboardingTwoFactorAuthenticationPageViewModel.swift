@@ -16,10 +16,10 @@ class OnboardingTwoFactorAuthenticationPageViewModel: OnboardingPageViewModel {
         self.userManager = userManager
 
         super.init(image: .biometry,
-                   title: L10n.Onboarding.TwoFactorAuthentication.title,
-                   description: L10n.Onboarding.TwoFactorAuthentication.description,
+                   title: L10n.onboardingTwoFactorAuthenticationTitle,
+                   description: L10n.onboardingTwoFactorAuthenticationDescription,
                    pageActions: [
-                    .init(title: L10n.Onboarding.TwoFactorAuthentication.pin, action: {}) // Placeholder action
+                    .init(title: L10n.onboardingTwoFactorAuthenticationPin, action: {}) // Placeholder action
                    ])
     }
 
@@ -45,14 +45,14 @@ class OnboardingTwoFactorAuthenticationPageViewModel: OnboardingPageViewModel {
             }
 
             var pageActions: [OnboardingPageAction] = [
-                .init(title: L10n.Onboarding.TwoFactorAuthentication.pin, action: { [weak self] in
+                .init(title: L10n.onboardingTwoFactorAuthenticationPin, action: { [weak self] in
                     self?.requestTwoFactorAuthenticationWithPIN()
                 })
             ]
 
             if availableTwoFactorAuthenticationMethods.contains(.biometry) {
                 pageActions.insert(
-                    .init(title: L10n.Onboarding.TwoFactorAuthentication.biometry, action: { [weak self] in
+                    .init(title: L10n.onboardingTwoFactorAuthenticationBiometry, action: { [weak self] in
                         self?.requestTwoFactorAuthenticationWithBiometry()
                     }), at: 0)
             }

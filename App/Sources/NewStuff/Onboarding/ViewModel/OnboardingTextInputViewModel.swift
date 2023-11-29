@@ -27,25 +27,25 @@ class OnboardingTextInputViewModel: ObservableObject, Identifiable {
 
         switch type {
         case .biometryOTP, .pinOTP:
-            title = L10n.Onboarding.EnterOneTimePassword.title
-            description = L10n.Onboarding.EnterOneTimePassword.description
-            actionTitle = L10n.Onboarding.EnterOneTimePassword.confirm
+            title = L10n.onboardingEnterOneTimePasswordTitle
+            description = L10n.onboardingEnterOneTimePasswordDescription
+            actionTitle = L10n.commonUseConfirm
             isInputSecure = false
             numberOfDigitsRequired = Constants.otpDigitsCount
             nextTextInputViewModel = nil
 
         case .pin:
-            title = L10n.Onboarding.CreatePin.title
-            description = L10n.Onboarding.CreatePin.description
-            actionTitle = L10n.Onboarding.CreatePin.confirm
+            title = L10n.onboardingCreatePinTitle
+            description = L10n.onboardingCreatePinDescription
+            actionTitle = L10n.commonUseConfirm
             isInputSecure = true
             numberOfDigitsRequired = Constants.pinDigitsCount
             nextTextInputViewModel = .init(type: .pinConfirmation, completion: completion)
 
         case .pinConfirmation:
-            title = L10n.Onboarding.VerifyPin.title
-            description = L10n.Onboarding.VerifyPin.description
-            actionTitle = L10n.Onboarding.VerifyPin.confirm
+            title = L10n.onboardingVerifyPinTitle
+            description = L10n.onboardingVerifyPinDescription
+            actionTitle = L10n.commonUseConfirm
             isInputSecure = true
             numberOfDigitsRequired = Constants.pinDigitsCount
             nextTextInputViewModel = .init(type: .pinOTP, completion: completion)
@@ -86,19 +86,19 @@ class OnboardingTextInputViewModel: ObservableObject, Identifiable {
                     ""
 
                 case .repetition:
-                    L10n.Onboarding.Pin.Error.tooFewDigits
+                    L10n.onboardingPinErrorTooFewDigits
 
                 case .invalidLength:
-                    L10n.Onboarding.Pin.Error.invalidLength
+                    L10n.onboardingPinErrorInvalidLength
 
                 case .consecutiveOrder:
-                    L10n.Onboarding.Pin.Error.series
+                    L10n.onboardingPinErrorSeries
                 }
             }
 
         case .pinConfirmation:
             warningText = if !input.isEmpty && input != previousTextInput {
-                L10n.Onboarding.Pin.Error.mismatch
+                L10n.onboardingPinErrorMismatch
             } else {
                 ""
             }

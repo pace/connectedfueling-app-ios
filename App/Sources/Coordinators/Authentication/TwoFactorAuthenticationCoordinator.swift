@@ -30,8 +30,8 @@ final class TwoFactorAuthenticationCoordinator: Coordinator {
     override func start() {
         viewController.model = .init(
             image: Asset.Images.biometry.image,
-            title: L10n.Onboarding.TwoFactorAuthentication.title,
-            description: L10n.Onboarding.TwoFactorAuthentication.description
+            title: "L10n.Onboarding.TwoFactorAuthentication.title",
+            description: "L10n.Onboarding.TwoFactorAuthentication.description"
         )
 
         presenter.present(viewController, animated: true)
@@ -69,13 +69,13 @@ final class TwoFactorAuthenticationCoordinator: Coordinator {
     }
 
     private func updateViewModel(with methods: Set<TwoFactorAuthenticationMethod>) {
-        let pinAction: ButtonViewModel = .init(title: L10n.Onboarding.TwoFactorAuthentication.pin) { [weak self] in
+        let pinAction: ButtonViewModel = .init(title: "L10n.Onboarding.TwoFactorAuthentication.pin") { [weak self] in
             self?.requestAuthenticationWithPin()
         }
 
         if methods.contains(.biometry) {
             viewController.model.secondaryAction = pinAction
-            viewController.model.action = .init(title: L10n.Onboarding.TwoFactorAuthentication.biometry) { [weak self] in
+            viewController.model.action = .init(title: "L10n.Onboarding.TwoFactorAuthentication.biometry") { [weak self] in
                 self?.requestAuthenticationWithBiometry()
             }
         } else {
@@ -154,9 +154,9 @@ final class TwoFactorAuthenticationCoordinator: Coordinator {
     private func presentOneTimePasswordInputViewControllerForBiometry() {
         oneTimePasswordViewController.style = .default
         oneTimePasswordViewController.model = .init(
-            title: L10n.Onboarding.EnterOneTimePassword.title,
-            description: L10n.Onboarding.EnterOneTimePassword.description,
-            submitTitle: L10n.Onboarding.EnterOneTimePassword.confirm,
+            title: "L10n.Onboarding.EnterOneTimePassword.title",
+            description: "L10n.Onboarding.EnterOneTimePassword.description",
+            submitTitle: "L10n.Onboarding.EnterOneTimePassword.confirm",
             onValidate: { [weak oneTimePasswordViewController] input in
                 switch EmptyInputValidator.validate(input: input) {
                 case .success:

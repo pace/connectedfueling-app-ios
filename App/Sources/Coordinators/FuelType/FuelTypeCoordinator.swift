@@ -40,10 +40,10 @@ final class FuelTypeCoordinator: Coordinator {
     private func initModel() {
         viewController.model = .init(
             image: Asset.Images.fuelType.image,
-            title: L10n.Onboarding.FuelType.title,
-            description: L10n.Onboarding.FuelType.description,
+            title: "L10n.Onboarding.FuelType.title",
+            description: "L10n.Onboarding.FuelType.description",
             applyLargeTitleInset: false,
-            action: .init(title: L10n.Onboarding.Actions.save) { [weak self] in
+            action: .init(title: "L10n.Onboarding.Actions.save") { [weak self] in
                 guard let self = self else { return }
                 self.callback?()
                 self.presenter.dismiss(self.viewController, animated: true)

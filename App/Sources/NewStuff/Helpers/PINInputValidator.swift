@@ -13,13 +13,13 @@ enum PINInputValidator {
                 return nil
 
             case .invalidLength:
-                return L10n.Onboarding.Pin.Error.invalidLength
+                return L10n.onboardingPinErrorInvalidLength
 
             case .consecutiveOrder:
-                return L10n.Onboarding.Pin.Error.series
+                return L10n.onboardingPinErrorSeries
 
             case .repetition:
-                return L10n.Onboarding.Pin.Error.tooFewDigits
+                return L10n.onboardingPinErrorTooFewDigits
             }
         }
     }
