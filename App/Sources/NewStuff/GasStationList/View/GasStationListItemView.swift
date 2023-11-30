@@ -99,7 +99,10 @@ struct GasStationListItemView: View {
                                                                   fuelType: .init(rawValue: "ron95e5"),
                                                                   fuelPrice: .init(value: 1.38,
                                                                                    currency: "EUR",
-                                                                                   format: "d.dds"))))
+                                                                                   format: "d.dds"), 
+                                                                  prices: [],
+                                                                  lastUpdated: Date(),
+                                                                  openingHours: [])))
         GasStationListItemView(viewModel: .init(gasStation: .init(id: "id",
                                                                   name: "MobyPay 3435",
                                                                   addressLines: [
@@ -111,6 +114,9 @@ struct GasStationListItemView: View {
                                                                   paymentMethods: [],
                                                                   isConnectedFuelingEnabled: false,
                                                                   fuelType: nil,
-                                                                  fuelPrice: nil)))
+                                                                  fuelPrice: nil,
+                                                                  prices: [],
+                                                                  lastUpdated: Date(),
+                                                                  openingHours: [])))
     }
 }

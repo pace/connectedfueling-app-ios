@@ -116,6 +116,18 @@
 		78A03BF61250A7C5612A6D61 /* AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59988E381C75C4CDBC33748A /* AppTests.swift */; };
 		7945CBD1A64B029E1C2E5892 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76903322D717F76242447D3 /* Storyboards.swift */; };
 		8B3D69400817E6B01B1C4350 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65943E2C58A88B7E3A334F86 /* LaunchScreen.storyboard */; };
+		9A00F2272B0E513D0050C7FA /* GasStationDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A00F2262B0E513D0050C7FA /* GasStationDetailViewModel.swift */; };
+		9A00F2292B0E51CF0050C7FA /* GasStationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A00F2282B0E51CE0050C7FA /* GasStationDetailView.swift */; };
+		9A00F22B2B0E56320050C7FA /* DistanceTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A00F22A2B0E56320050C7FA /* DistanceTagView.swift */; };
+		9A00F22D2B0E59720050C7FA /* PriceCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A00F22C2B0E59720050C7FA /* PriceCardView.swift */; };
+		9A00F22F2B0F978A0050C7FA /* PriceCardStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A00F22E2B0F978A0050C7FA /* PriceCardStack.swift */; };
+		9A00F2312B0FA3220050C7FA /* OpeningHoursRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A00F2302B0FA3220050C7FA /* OpeningHoursRow.swift */; };
+		9A00F2332B14D4210050C7FA /* POIAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A00F2322B14D4200050C7FA /* POIAddress.swift */; };
+		9A00F2352B14E6360050C7FA /* OpeningHourInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A00F2342B14E6360050C7FA /* OpeningHourInfo.swift */; };
+		9A00F2382B14EC930050C7FA /* PriceCardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A00F2372B14EC930050C7FA /* PriceCardData.swift */; };
+		9A00F23A2B15EAC50050C7FA /* MapGasStationBottomMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A00F2392B15EAC50050C7FA /* MapGasStationBottomMarkerView.swift */; };
+		9A00F23C2B162BA00050C7FA /* OpeningHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A00F23B2B162BA00050C7FA /* OpeningHours.swift */; };
+		9A00F23E2B162BC70050C7FA /* OpeningHour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A00F23D2B162BC70050C7FA /* OpeningHour.swift */; };
 		B42B801B26CB977400793BF5 /* PACECloudUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B801A26CB977400793BF5 /* PACECloudUserRepository.swift */; };
 		B46B802226C415240005AD7E /* InputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46B802126C415240005AD7E /* InputValidator.swift */; };
 		B46B802426C415680005AD7E /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46B802326C415680005AD7E /* ValidationError.swift */; };
@@ -381,6 +393,18 @@
 		965411B0424133686BA98506 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		97BF6AB5AFB0B23C62DD08B1 /* .keep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .keep; sourceTree = "<group>"; };
 		99758AB82A54D1FDA908CA06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		9A00F2262B0E513D0050C7FA /* GasStationDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasStationDetailViewModel.swift; sourceTree = "<group>"; };
+		9A00F2282B0E51CE0050C7FA /* GasStationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasStationDetailView.swift; sourceTree = "<group>"; };
+		9A00F22A2B0E56320050C7FA /* DistanceTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceTagView.swift; sourceTree = "<group>"; };
+		9A00F22C2B0E59720050C7FA /* PriceCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceCardView.swift; sourceTree = "<group>"; };
+		9A00F22E2B0F978A0050C7FA /* PriceCardStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceCardStack.swift; sourceTree = "<group>"; };
+		9A00F2302B0FA3220050C7FA /* OpeningHoursRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningHoursRow.swift; sourceTree = "<group>"; };
+		9A00F2322B14D4200050C7FA /* POIAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POIAddress.swift; sourceTree = "<group>"; };
+		9A00F2342B14E6360050C7FA /* OpeningHourInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningHourInfo.swift; sourceTree = "<group>"; };
+		9A00F2372B14EC930050C7FA /* PriceCardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceCardData.swift; sourceTree = "<group>"; };
+		9A00F2392B15EAC50050C7FA /* MapGasStationBottomMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapGasStationBottomMarkerView.swift; sourceTree = "<group>"; };
+		9A00F23B2B162BA00050C7FA /* OpeningHours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningHours.swift; sourceTree = "<group>"; };
+		9A00F23D2B162BC70050C7FA /* OpeningHour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningHour.swift; sourceTree = "<group>"; };
 		9B39CB100439D4A0A184FB62 /* InfoPlist.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9C1CE9993B510A7FDB08F21C /* UITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A21D1F58961E1C012B58255C /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -638,6 +662,7 @@
 		3B7370C02AD539FA00E9118B /* NewStuff */ = {
 			isa = PBXGroup;
 			children = (
+				9A00F2212B0E4DD60050C7FA /* GasStationDetail */,
 				3B7370C82AD566E500E9118B /* Extensions */,
 				3B819DB42B063ED200B4803A /* FuelTypeSelection */,
 				3BDE7B4E2ADE74E8009A88DF /* GasStationList */,
@@ -911,6 +936,9 @@
 				3BDE7B1B2AD96445009A88DF /* FuelType.swift */,
 				3BA2DB032AE677CA00187D86 /* GasStation.swift */,
 				3B819DCD2B06699900B4803A /* PaymentMethod.swift */,
+				9A00F2322B14D4200050C7FA /* POIAddress.swift */,
+				9A00F23B2B162BA00050C7FA /* OpeningHours.swift */,
+				9A00F23D2B162BC70050C7FA /* OpeningHour.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -996,6 +1024,54 @@
 				C504071E2693633400654C52 /* Repositories */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		9A00F2212B0E4DD60050C7FA /* GasStationDetail */ = {
+			isa = PBXGroup;
+			children = (
+				9A00F2242B0E4DFA0050C7FA /* Model */,
+				9A00F2252B0E4DFE0050C7FA /* View */,
+				9A00F2222B0E4DE80050C7FA /* ViewModel */,
+			);
+			path = GasStationDetail;
+			sourceTree = "<group>";
+		};
+		9A00F2222B0E4DE80050C7FA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9A00F2262B0E513D0050C7FA /* GasStationDetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9A00F2242B0E4DFA0050C7FA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9A00F2342B14E6360050C7FA /* OpeningHourInfo.swift */,
+				9A00F2372B14EC930050C7FA /* PriceCardData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9A00F2252B0E4DFE0050C7FA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9A00F2362B14EC630050C7FA /* Components */,
+				9A00F2282B0E51CE0050C7FA /* GasStationDetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9A00F2362B14EC630050C7FA /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9A00F22A2B0E56320050C7FA /* DistanceTagView.swift */,
+				9A00F22C2B0E59720050C7FA /* PriceCardView.swift */,
+				9A00F22E2B0F978A0050C7FA /* PriceCardStack.swift */,
+				9A00F2302B0FA3220050C7FA /* OpeningHoursRow.swift */,
+				9A00F2392B15EAC50050C7FA /* MapGasStationBottomMarkerView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		B42B801926CABA8D00793BF5 /* HeaderFooterView */ = {
@@ -1665,15 +1741,18 @@
 				C57CD3BF26AC389700356BE6 /* DashboardHeaderViewModel.swift in Sources */,
 				C56DF9E1268F60B80074DBC8 /* OnboardingViewController.swift in Sources */,
 				3B819DC82B06655000B4803A /* PaymentMethodsView.swift in Sources */,
+				9A00F23E2B162BC70050C7FA /* OpeningHour.swift in Sources */,
 				3BAE60752AD7CBCB006EA9DD /* TextLabel.swift in Sources */,
 				3BDE7B2F2ADD257F009A88DF /* OnboardingView.swift in Sources */,
 				3B7370C32AD53A0E00E9118B /* AppView.swift in Sources */,
+				9A00F22D2B0E59720050C7FA /* PriceCardView.swift in Sources */,
 				3BA2DB1A2AE6A29300187D86 /* OnboardingNavigationView.swift in Sources */,
 				3B6D85182B10D1E200701DEE /* SafariView.swift in Sources */,
 				3BDE7B382ADD3468009A88DF /* AppManager.swift in Sources */,
 				C50407202693636600654C52 /* CoreLocationRepository.swift in Sources */,
 				3BA2DB242AE7B5E200187D86 /* POIManager.swift in Sources */,
 				C56CD42E26BBF411004E61FB /* MenuItemTableViewCell.swift in Sources */,
+				9A00F23C2B162BA00050C7FA /* OpeningHours.swift in Sources */,
 				3B6277352B0768C300528A1F /* AppError.swift in Sources */,
 				C5DF1D7226AFF87100479678 /* PageIndicatorViewStyle.swift in Sources */,
 				3B819DCA2B06660C00B4803A /* PaymentMethodsListView.swift in Sources */,
@@ -1692,7 +1771,9 @@
 				3B6277372B07748B00528A1F /* DisclosureIndicator.swift in Sources */,
 				3BDE7B1F2ADD13D6009A88DF /* OnboardingLocationPermissionPageViewModel.swift in Sources */,
 				E33384C29B0186910E12EEA2 /* AppDelegate.swift in Sources */,
+				9A00F2292B0E51CF0050C7FA /* GasStationDetailView.swift in Sources */,
 				3BDE7B252ADD142D009A88DF /* OnboardingPaymentMethodsPageViewModel.swift in Sources */,
+				9A00F23A2B15EAC50050C7FA /* MapGasStationBottomMarkerView.swift in Sources */,
 				3BE2C5A92B06006B002B0421 /* WalletViewModel.swift in Sources */,
 				C56DF93F268F2F9F0074DBC8 /* OnboardingCoordinator.swift in Sources */,
 				C56CD43526BC1447004E61FB /* SidebarPresentationController.swift in Sources */,
@@ -1721,6 +1802,7 @@
 				3B77644B2AF91B2500BE185B /* CrashReportingManager.swift in Sources */,
 				3BA9124F2AEA5C28001004A0 /* Alert+Extension.swift in Sources */,
 				3BCF49F62ADFF97D005C20DC /* OnboardingTextInputResponseType.swift in Sources */,
+				9A00F2272B0E513D0050C7FA /* GasStationDetailViewModel.swift in Sources */,
 				C518FA2B26AAC9E9000124D9 /* DashboardItemTableViewCell.swift in Sources */,
 				C569EC9026AAE7ED009665E8 /* LoadingViewModel.swift in Sources */,
 				3BDE7B3E2ADD7073009A88DF /* PaymentManager.swift in Sources */,
@@ -1746,12 +1828,14 @@
 				C5331F8026B93D67000588C0 /* LoadingTableViewCell.swift in Sources */,
 				3BDE7B232ADD1422009A88DF /* OnboardingTwoFactorAuthenticationPageViewModel.swift in Sources */,
 				3BAE607F2AD80ADE006EA9DD /* String+Extension.swift in Sources */,
+				9A00F22F2B0F978A0050C7FA /* PriceCardStack.swift in Sources */,
 				C5E8A7E926A5B7D0002119DD /* DashboardItemView.swift in Sources */,
 				3B6D84E92B1096A500701DEE /* MenuViewModel.swift in Sources */,
 				C5F06EC626AECB1F00C43C81 /* UIViewExtensions.swift in Sources */,
 				3B819DC62B06654300B4803A /* PaymentMethodViewModel.swift in Sources */,
 				C5B5821126BAB29400DFFC27 /* PACECloudPaymentRepository.swift in Sources */,
 				3BE2C5AE2B060BD9002B0421 /* WalletAccountView.swift in Sources */,
+				9A00F2312B0FA3220050C7FA /* OpeningHoursRow.swift in Sources */,
 				C5290F3F269DCC9200C8AE9A /* PACECloudTwoFactorAuthenticationRepository.swift in Sources */,
 				3BE4E9122AFCD54B00AC5EE9 /* Configuration.swift in Sources */,
 				3BD94C942B0B704400CE6676 /* PKPaymentNetwork+Extension.swift in Sources */,
@@ -1760,6 +1844,7 @@
 				C56DF9EB268F60FA0074DBC8 /* OnboardingViewModelOld.swift in Sources */,
 				3B6254E02B0F9FF8008FAB25 /* ListView.swift in Sources */,
 				3B9562EE2B06002B00AD4184 /* WalletView.swift in Sources */,
+				9A00F22B2B0E56320050C7FA /* DistanceTagView.swift in Sources */,
 				3B819DCE2B06699900B4803A /* PaymentMethod.swift in Sources */,
 				1954A59A56D600A0D16D182D /* SceneDelegate.swift in Sources */,
 				B46B802826C51E670005AD7E /* EmptyInputValidator.swift in Sources */,
@@ -1772,6 +1857,7 @@
 				3BA2DB022AE6776C00187D86 /* GasStationListItemViewModel.swift in Sources */,
 				C56CD41B26BBEE26004E61FB /* MenuViewModelOld.swift in Sources */,
 				3BA2DB0C2AE69BF200187D86 /* NSLocale+Extension.swift in Sources */,
+				9A00F2382B14EC930050C7FA /* PriceCardData.swift in Sources */,
 				B4CA0AE526CA4A09002F50BB /* SeparatorHeaderFooterView.swift in Sources */,
 				C56CD42526BBF1D7004E61FB /* MenuViewStyle.swift in Sources */,
 				C5CB313126944427005E8986 /* OnboardingViewStyle.swift in Sources */,
@@ -1799,6 +1885,7 @@
 				C5DF1D6826AFF80600479678 /* PageIndicatorViewOld.swift in Sources */,
 				3BCF49F42ADFCA06005C20DC /* View+Extension.swift in Sources */,
 				C56CD43A26BD3EF4004E61FB /* DocumentCoordinator.swift in Sources */,
+				9A00F2352B14E6360050C7FA /* OpeningHourInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

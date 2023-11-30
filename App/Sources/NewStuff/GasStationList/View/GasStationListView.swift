@@ -40,7 +40,9 @@ struct GasStationListView: View {
         List(sections, id: \.self) { section in
             Section(header: section.header) {
                 ForEach(section.gasStations, id: \.self) { gasStation in
-                    GasStationListItemView(viewModel: .init(gasStation: gasStation))
+                    NavigationLink(destination: GasStationDetailView(viewModel: .init(gasStation: gasStation))) {
+                        GasStationListItemView(viewModel: .init(gasStation: gasStation))
+                    }
                 }
             }
             .listRowInsets(.init(top: 0, leading: 25, bottom: 10, trailing: 25))
@@ -91,11 +93,31 @@ struct GasStationListView: View {
                         "76131 Karlsruhe"
                       ],
                       distanceInKilometers: 0.134,
-                      location: nil,
+                      location: .init(latitude: 49.013573, longitude: 8.419447),
                       paymentMethods: [],
                       isConnectedFuelingEnabled: true,
                       fuelType: .init(rawValue: "ron95e5"),
-                      fuelPrice: .init(value: 1.38, currency: "EUR", format: "d.dds"))
+                      fuelPrice: .init(value: 1.38, currency: "EUR", format: "d.dds"), 
+                      prices: [
+                        .init(fuelType: .diesel,
+                              fuelPrice: .init(value: 1.889,
+                                               currency: "eur",
+                                               format: "d.dds")),
+                        .init(fuelType: .ron95e5,
+                              fuelPrice: .init(value: 1.789,
+                                               currency: "eur",
+                                               format: "d.dds"))
+                      ],
+                      lastUpdated: Date(),
+                      openingHours: [.init(days: [.monday, .tuesday],
+                                           hours: [.init(from: "8", to: "17")],
+                                           rule: .open),
+                                     .init(days: [.wednesday, .thursday, .friday],
+                                           hours: [.init(from: "9", to: "19")],
+                                           rule: .open),
+                                     .init(days: [.saturday, .sunday],
+                                           hours: [.init(from: "10", to: "16")],
+                                           rule: .open)])
             ),
             .other([
                 .init(id: "id-1",
@@ -105,11 +127,51 @@ struct GasStationListView: View {
                         "76131 Karlsruhe"
                       ],
                       distanceInKilometers: 0.234,
-                      location: nil,
+                      location: .init(latitude: 49.013573, longitude: 8.419447),
                       paymentMethods: [],
                       isConnectedFuelingEnabled: true,
                       fuelType: .init(rawValue: "ron95e5"),
-                      fuelPrice: .init(value: 1.389, currency: "EUR", format: "d.dds")),
+                      fuelPrice: .init(value: 1.389, currency: "EUR", format: "d.dds"), 
+                      prices: [
+                        .init(fuelType: .diesel,
+                              fuelPrice: .init(value: 1.889,
+                                               currency: "eur",
+                                               format: "d.dds")),
+                        .init(fuelType: .ron95e5,
+                              fuelPrice: .init(value: 1.789,
+                                               currency: "eur",
+                                               format: "d.dds")),
+                        .init(fuelType: .ron98e5,
+                              fuelPrice: .init(value: 1.789,
+                                               currency: "eur",
+                                               format: "d.dds")),
+                        .init(fuelType: .ron100,
+                              fuelPrice: .init(value: 1.759,
+                                               currency: "eur",
+                                               format: "d.dds")),
+                        .init(fuelType: .dieselGtl,
+                              fuelPrice: .init(value: 1.789,
+                                               currency: "eur",
+                                               format: "d.dds")),
+                        .init(fuelType: .premiumPetrol,
+                              fuelPrice: .init(value: 1.989,
+                                               currency: "eur",
+                                               format: "d.dds")),
+                        .init(fuelType: .ron95e10,
+                              fuelPrice: .init(value: 1.339,
+                                               currency: "eur",
+                                               format: "d.dds"))
+                      ],
+                      lastUpdated: Date(),
+                      openingHours: [.init(days: [.monday, .tuesday],
+                                           hours: [.init(from: "8", to: "17")],
+                                           rule: .open),
+                                     .init(days: [.wednesday, .thursday, .friday],
+                                           hours: [.init(from: "9", to: "19")],
+                                           rule: .open),
+                                     .init(days: [.saturday, .sunday],
+                                           hours: [.init(from: "10", to: "16")],
+                                           rule: .open)]),
                 .init(id: "id-2",
                       name: "MobyPay 3437",
                       addressLines: [
@@ -117,11 +179,14 @@ struct GasStationListView: View {
                         "76131 Karlsruhe"
                       ],
                       distanceInKilometers: 0.334,
-                      location: nil,
+                      location: .init(latitude: 49.013573, longitude: 8.419447),
                       paymentMethods: [],
                       isConnectedFuelingEnabled: false,
                       fuelType: .init(rawValue: "ron95e5"),
-                      fuelPrice: .init(value: 1.38, currency: "EUR", format: nil))
+                      fuelPrice: .init(value: 1.38, currency: "EUR", format: nil), 
+                      prices: [],
+                      lastUpdated: Date(),
+                      openingHours: [])
             ])
         ]))
         .addNavigationBar()

@@ -39,6 +39,7 @@ internal enum Asset {
     internal static let navigation = ImageAsset(name: "Navigation")
     internal static let noResults = ImageAsset(name: "NoResults")
     internal static let route = ImageAsset(name: "Route")
+    internal static let arrowsOutward = ImageAsset(name: "arrows_outward")
     internal static let logo = ImageAsset(name: "Logo")
     internal static let dataPrivacyIcon = ImageAsset(name: "data_privacy_icon")
     internal static let externalSiteIcon = ImageAsset(name: "external_site_icon")
