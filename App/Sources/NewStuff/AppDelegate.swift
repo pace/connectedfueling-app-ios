@@ -22,6 +22,8 @@ private extension AppDelegate {
 
         setupNavigationBar()
         setupTabBar()
+
+        refreshSessionIfNeeded()
     }
 
     func setupPACECloudSDK() {
@@ -54,5 +56,13 @@ private extension AppDelegate {
 
     func setupCrashReporting() {
         CrashReportingManager().setup()
+    }
+
+    func refreshSessionIfNeeded() {
+        guard UserDefaults.standard.bool(forKey: Constants.UserDefaults.isOnboardingCompleted) else { return }
+
+        Task {
+            await UserManager().refresh()
+        }
     }
 }

@@ -8,7 +8,7 @@ struct UserManager {
         case biometry
     }
 
-    func availableTwoFactorAuthenticationMethods() -> Set<TwoFactorAuthenticationMethod> {
+    var availableTwoFactorAuthenticationMethods: Set<TwoFactorAuthenticationMethod> {
         var methods: Set<TwoFactorAuthenticationMethod> = [.pin]
 
         if isBiometricAuthenticationSupported {
@@ -58,15 +58,19 @@ extension UserManager {
         return tokenValidator.jwtValue(for: Constants.jwtEmailKey) as? String
     }
 
-    private var isBiometricAuthenticationEnabled: Bool {
+    var isBiometricAuthenticationEnabled: Bool {
         IDKit.isBiometricAuthenticationEnabled()
     }
 
-    private var isBiometricAuthenticationSupported: Bool {
+    var isBiometricAuthenticationSupported: Bool {
         let context = LAContext()
         var error: NSError?
         let isSupported = context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error)
         return isSupported
+    }
+
+    func disableBiometricAuthentication() {
+        IDKit.disableBiometricAuthentication()
     }
 
     func authorize() async -> Result<String?, Error> {
@@ -79,12 +83,36 @@ extension UserManager {
         }
     }
 
+    @discardableResult
+    func refresh() async -> Result<String?, Error> {
+        switch await IDKit.refreshToken() {
+        case .success(let accessToken):
+            return .success(accessToken)
+
+        case .failure(let error):
+            NSLog("[UserManager] Failed token refresh with error \(error).")
+
+            if case .failedTokenRefresh = error {
+                reset()
+            }
+
+            return .failure(error)
+        }
+    }
+
+    @discardableResult
     func logout() async -> Result<Void, Error> {
+        defer {
+            reset()
+        }
+
         switch await IDKit.resetSession() {
         case .success:
+            NSLog("[UserManager] Successfully logged out user")
             return .success(())
 
         case .failure(let error):
+            NSLog("[UserManager] Failed ending remote session with \(error). User session will still be terminated.")
             return .failure(error)
         }
     }
@@ -143,5 +171,12 @@ extension UserManager {
         case let .failure(error):
             return .failure(error)
         }
+    }
+}
+
+private extension UserManager {
+    private func reset() {
+        UserDefaults.standard.set(false, forKey: Constants.UserDefaults.isOnboardingCompleted)
+        UserDefaults.standard.set(false, forKey: Constants.UserDefaults.isAnalyticsAllowed)
     }
 }

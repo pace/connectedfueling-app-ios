@@ -22,12 +22,16 @@ internal enum L10n {
   internal static let commonStartNavigation = L10n.tr("Localizable", "common_start_navigation", fallback: "Start navigation")
   /// Accept
   internal static let commonUseAccept = L10n.tr("Localizable", "common_use_accept", fallback: "Accept")
+  /// Are you sure?
+  internal static let commonUseAreYouSure = L10n.tr("Localizable", "common_use_are_you_sure", fallback: "Are you sure?")
   /// Back
   internal static let commonUseBack = L10n.tr("Localizable", "common_use_back", fallback: "Back")
   /// Cancel
   internal static let commonUseCancel = L10n.tr("Localizable", "common_use_cancel", fallback: "Cancel")
   /// Confirm
   internal static let commonUseConfirm = L10n.tr("Localizable", "common_use_confirm", fallback: "Confirm")
+  /// Deactivate
+  internal static let commonUseDeactivate = L10n.tr("Localizable", "common_use_deactivate", fallback: "Deactivate")
   /// Decline
   internal static let commonUseDecline = L10n.tr("Localizable", "common_use_decline", fallback: "Decline")
   /// Friday
@@ -230,6 +234,14 @@ internal enum L10n {
   internal static let walletTabLabel = L10n.tr("Localizable", "wallet_tab_label", fallback: "Wallet")
   /// Transactions
   internal static let walletTransactionsTitle = L10n.tr("Localizable", "wallet_transactions_title", fallback: "Transactions")
+  /// Biometrics successfully set up
+  internal static let walletTwoFactorAuthenticationBiometrySetupSuccessful = L10n.tr("Localizable", "wallet_two_factor_authentication_biometry_setup_successful", fallback: "Biometrics successfully set up")
+  /// Biometrics
+  internal static let walletTwoFactorAuthenticationBiometryTitle = L10n.tr("Localizable", "wallet_two_factor_authentication_biometry_title", fallback: "Biometrics")
+  /// PIN set successfully
+  internal static let walletTwoFactorAuthenticationPinSetupSuccessful = L10n.tr("Localizable", "wallet_two_factor_authentication_pin_setup_successful", fallback: "PIN set successfully")
+  /// Set PIN
+  internal static let walletTwoFactorAuthenticationPinTitle = L10n.tr("Localizable", "wallet_two_factor_authentication_pin_title", fallback: "Set PIN")
   /// Authorisation
   internal static let walletTwoFactorAuthenticationTitle = L10n.tr("Localizable", "wallet_two_factor_authentication_title", fallback: "Authorisation")
   internal enum Alert {

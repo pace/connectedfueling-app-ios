@@ -40,9 +40,11 @@
 "common_start_fueling" = "Start tankning";
 "common_start_navigation" = "Start navigation";
 "common_use_accept" = "Acceptere";
+"common_use_are_you_sure" = "Er du sikker?";
 "common_use_back" = "Tilbage";
 "common_use_cancel" = "Annuller";
 "common_use_confirm" = "Bekræft";
+"common_use_deactivate" = "Deaktiver";
 "common_use_decline" = "Nedgang";
 "common_use_friday" = "Fredag";
 "common_use_monday" = "Mandag";
@@ -139,4 +141,8 @@
 "wallet_payment_methods_title" = "Betalingsmetoder og brændstofkort";
 "wallet_tab_label" = "Pung";
 "wallet_transactions_title" = "Transaktioner";
+"wallet_two_factor_authentication_biometry_setup_successful" = "Biometri er sat op med succes";
+"wallet_two_factor_authentication_biometry_title" = "Biometri";
+"wallet_two_factor_authentication_pin_setup_successful" = "PIN-kode indstillet korrekt";
+"wallet_two_factor_authentication_pin_title" = "Indstil PIN-kode";
 "wallet_two_factor_authentication_title" = "Godkendelsesprocedure";

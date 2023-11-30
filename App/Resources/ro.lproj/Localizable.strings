@@ -40,9 +40,11 @@
 "common_start_fueling" = "Începeți să alimentați";
 "common_start_navigation" = "Începeți navigarea";
 "common_use_accept" = "Accept";
+"common_use_are_you_sure" = "Ești sigur?";
 "common_use_back" = "Înapoi";
 "common_use_cancel" = "Anulează";
 "common_use_confirm" = "Confirmați";
+"common_use_deactivate" = "Dezactivați";
 "common_use_decline" = "Declin";
 "common_use_friday" = "Vineri";
 "common_use_monday" = "Luni";
@@ -139,4 +141,8 @@
 "wallet_payment_methods_title" = "Metode de plată și carduri de combustibil";
 "wallet_tab_label" = "Portofel";
 "wallet_transactions_title" = "Tranzacții";
+"wallet_two_factor_authentication_biometry_setup_successful" = "Biometrie instalată cu succes";
+"wallet_two_factor_authentication_biometry_title" = "Biometrie";
+"wallet_two_factor_authentication_pin_setup_successful" = "PIN setat cu succes";
+"wallet_two_factor_authentication_pin_title" = "Setați PIN-ul";
 "wallet_two_factor_authentication_title" = "Procedura de autorizare";

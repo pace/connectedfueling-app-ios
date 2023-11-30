@@ -10,8 +10,7 @@ struct ListItemView: View {
 
     var body: some View {
         HStack(spacing: 0) {
-            Image(listItem.icon)
-                .frame(width: 19, height: 19, alignment: .center)
+            ListItemIconView(listItem.icon)
                 .padding(.trailing, .paddingXS)
             switch listItem.action {
             case .presentedContent(let content):
@@ -31,7 +30,7 @@ struct ListItemView: View {
     @ViewBuilder
     private var titleLabel: some View {
         TextLabel(listItem.title)
-            .font(.system(size: 16, weight: .medium))
+            .font(.system(size: 16, weight: .bold))
     }
 
     @ViewBuilder

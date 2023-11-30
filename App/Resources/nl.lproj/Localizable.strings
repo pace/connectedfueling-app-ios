@@ -40,9 +40,11 @@
 "common_start_fueling" = "Begin met tanken";
 "common_start_navigation" = "Start navigatie";
 "common_use_accept" = "Aanvaarden";
+"common_use_are_you_sure" = "Weet je het zeker?";
 "common_use_back" = "Terug";
 "common_use_cancel" = "Annuleren";
 "common_use_confirm" = "Bevestig";
+"common_use_deactivate" = "Deactiveer";
 "common_use_decline" = "Daling";
 "common_use_friday" = "Vrijdag";
 "common_use_monday" = "Maandag";
@@ -139,4 +141,8 @@
 "wallet_payment_methods_title" = "Betaalmethoden & tankkaarten";
 "wallet_tab_label" = "Portemonnee";
 "wallet_transactions_title" = "Transacties";
+"wallet_two_factor_authentication_biometry_setup_successful" = "Biometrie succesvol opgezet";
+"wallet_two_factor_authentication_biometry_title" = "Biometrie";
+"wallet_two_factor_authentication_pin_setup_successful" = "PIN succesvol ingesteld";
+"wallet_two_factor_authentication_pin_title" = "PIN instellen";
 "wallet_two_factor_authentication_title" = "Autorisatieprocedure";
