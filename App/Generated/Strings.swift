@@ -64,8 +64,6 @@ internal enum L10n {
   internal static let fuelGroupDiesel = L10n.tr("Localizable", "fuel_group_diesel", fallback: "Diesel")
   /// Petrol
   internal static let fuelGroupPetrol = L10n.tr("Localizable", "fuel_group_petrol", fallback: "Petrol")
-  /// Fuel selection
-  internal static let fuelSelectionTitle = L10n.tr("Localizable", "fuel_selection_title", fallback: "Fuel selection")
   /// What fuel prices should we show you?
   internal static let fuelTypeSelection = L10n.tr("Localizable", "FUEL_TYPE_SELECTION", fallback: "What fuel prices should we show you?")
   /// The gas station is currently closed.
@@ -218,16 +216,22 @@ internal enum L10n {
   internal static let paymentMethodsLoadingDescription = L10n.tr("Localizable", "payment_methods_loading_description", fallback: "We load your payment methods and fuel cards. Please wait a moment.")
   /// Loading payment methods and fuel cards…
   internal static let paymentMethodsLoadingTitle = L10n.tr("Localizable", "payment_methods_loading_title", fallback: "Loading payment methods and fuel cards…")
-  /// Payment methods & fuel cards
-  internal static let paymentMethodsTitle = L10n.tr("Localizable", "payment_methods_title", fallback: "Payment methods & fuel cards")
   /// Share
   internal static let shareTitle = L10n.tr("Localizable", "SHARE_TITLE", fallback: "Share")
-  /// Transactions
-  internal static let transactionsTitle = L10n.tr("Localizable", "transactions_title", fallback: "Transactions")
+  /// Delete account
+  internal static let walletAccountDeletionTitle = L10n.tr("Localizable", "wallet_account_deletion_title", fallback: "Delete account")
+  /// Fuel selection
+  internal static let walletFuelTypeSelectionTitle = L10n.tr("Localizable", "wallet_fuel_type_selection_title", fallback: "Fuel selection")
   /// You are logged in as
   internal static let walletHeaderText = L10n.tr("Localizable", "wallet_header_text", fallback: "You are logged in as")
+  /// Payment methods & fuel cards
+  internal static let walletPaymentMethodsTitle = L10n.tr("Localizable", "wallet_payment_methods_title", fallback: "Payment methods & fuel cards")
   /// Wallet
   internal static let walletTabLabel = L10n.tr("Localizable", "wallet_tab_label", fallback: "Wallet")
+  /// Transactions
+  internal static let walletTransactionsTitle = L10n.tr("Localizable", "wallet_transactions_title", fallback: "Transactions")
+  /// Authorisation
+  internal static let walletTwoFactorAuthenticationTitle = L10n.tr("Localizable", "wallet_two_factor_authentication_title", fallback: "Authorisation")
   internal enum Alert {
     internal enum LocationPermission {
       internal enum Actions {

@@ -60,7 +60,6 @@
 "currency_format" = "%2$@%1$@";
 "fuel_group_diesel" = "Diesel";
 "fuel_group_petrol" = "Benzin";
-"fuel_selection_title" = "Valg af brændstof";
 "gas_station_closed_hint" = "Tankstationen er i øjeblikket lukket.";
 "gas_station_default_name" = "Tankstation";
 "gas_station_error_description" = "Tankstationens data kunne ikke indlæses. Tjek din forbindelse!";
@@ -134,7 +133,10 @@
 "payment_methods_error_description" = "Dine betalingsmetoder og brændstofkort kunne ikke indlæses. Tjek din forbindelse!";
 "payment_methods_loading_description" = "Vi indlæser dine betalingsmetoder og brændstofkort. Vent venligst et øjeblik.";
 "payment_methods_loading_title" = "Indlæsning af betalingsmetoder og brændstofkort...";
-"payment_methods_title" = "Betalingsmetoder og brændstofkort";
-"transactions_title" = "Transaktioner";
+"wallet_account_deletion_title" = "Slet konto";
+"wallet_fuel_type_selection_title" = "Valg af brændstof";
 "wallet_header_text" = "Du er logget ind som";
+"wallet_payment_methods_title" = "Betalingsmetoder og brændstofkort";
 "wallet_tab_label" = "Pung";
+"wallet_transactions_title" = "Transaktioner";
+"wallet_two_factor_authentication_title" = "Godkendelsesprocedure";

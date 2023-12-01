@@ -60,7 +60,6 @@
 "currency_format" = "%2$@%1$@";
 "fuel_group_diesel" = "Diesel";
 "fuel_group_petrol" = "Essence";
-"fuel_selection_title" = "Sélection du carburant";
 "gas_station_closed_hint" = "La station-service est actuellement fermée.";
 "gas_station_default_name" = "Station-service";
 "gas_station_error_description" = "Les données de la station-service n'ont pas pu être chargées. Vérifiez votre connexion !";
@@ -134,7 +133,10 @@
 "payment_methods_error_description" = "Vos moyens de paiement et cartes de carburant n'ont pas pu être chargés. Vérifiez votre connexion !";
 "payment_methods_loading_description" = "Nous chargeons vos moyens de paiement et vos cartes de carburant. Veuillez patienter un moment.";
 "payment_methods_loading_title" = "Chargement des moyens de paiement et des cartes de carburant...";
-"payment_methods_title" = "Méthodes de paiement & cartes de carburant";
-"transactions_title" = "Transactions";
+"wallet_account_deletion_title" = "Supprimer un compte";
+"wallet_fuel_type_selection_title" = "Sélection du carburant";
 "wallet_header_text" = "Vous êtes connecté en tant que";
+"wallet_payment_methods_title" = "Méthodes de paiement & cartes de carburant";
 "wallet_tab_label" = "Portefeuille";
+"wallet_transactions_title" = "Transactions";
+"wallet_two_factor_authentication_title" = "Procédure d'autorisation";

@@ -60,7 +60,6 @@
 "currency_format" = "%2$@%1$@";
 "fuel_group_diesel" = "Diesel";
 "fuel_group_petrol" = "Benzine";
-"fuel_selection_title" = "Brandstof selecteren";
 "gas_station_closed_hint" = "Het tankstation is momenteel gesloten.";
 "gas_station_default_name" = "Tankstation";
 "gas_station_error_description" = "De gegevens van het tankstation konden niet worden geladen. Controleer uw verbinding!";
@@ -134,7 +133,10 @@
 "payment_methods_error_description" = "Je betaalmethoden en tankkaarten konden niet worden geladen. Controleer uw verbinding!";
 "payment_methods_loading_description" = "We laden je betaalmethoden en tankkaarten. Een ogenblik geduld alstublieft.";
 "payment_methods_loading_title" = "Betaalmethoden en tankkaarten laden...";
-"payment_methods_title" = "Betaalmethoden & tankkaarten";
-"transactions_title" = "Transacties";
+"wallet_account_deletion_title" = "Account verwijderen";
+"wallet_fuel_type_selection_title" = "Brandstof selecteren";
 "wallet_header_text" = "U bent aangemeld als";
+"wallet_payment_methods_title" = "Betaalmethoden & tankkaarten";
 "wallet_tab_label" = "Portemonnee";
+"wallet_transactions_title" = "Transacties";
+"wallet_two_factor_authentication_title" = "Autorisatieprocedure";

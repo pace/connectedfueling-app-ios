@@ -60,7 +60,6 @@
 "currency_format" = "%2$@%1$@";
 "fuel_group_diesel" = "Diesel";
 "fuel_group_petrol" = "Benzină";
-"fuel_selection_title" = "Selectarea combustibilului";
 "gas_station_closed_hint" = "Benzinăria este în prezent închisă.";
 "gas_station_default_name" = "Benzinărie";
 "gas_station_error_description" = "Datele benzinăriei nu au putut fi încărcate. Verificați conexiunea!";
@@ -134,7 +133,10 @@
 "payment_methods_error_description" = "Metodele de plată și cardurile de combustibil nu au putut fi încărcate. Verificați conexiunea!";
 "payment_methods_loading_description" = "Vă încărcăm metodele de plată și cardurile de combustibil. Vă rugăm să așteptați un moment.";
 "payment_methods_loading_title" = "Încărcarea metodelor de plată și a cardurilor de combustibil...";
-"payment_methods_title" = "Metode de plată și carduri de combustibil";
-"transactions_title" = "Tranzacții";
+"wallet_account_deletion_title" = "Ștergeți contul";
+"wallet_fuel_type_selection_title" = "Selectarea combustibilului";
 "wallet_header_text" = "Sunteți autentificat ca";
+"wallet_payment_methods_title" = "Metode de plată și carduri de combustibil";
 "wallet_tab_label" = "Portofel";
+"wallet_transactions_title" = "Tranzacții";
+"wallet_two_factor_authentication_title" = "Procedura de autorizare";

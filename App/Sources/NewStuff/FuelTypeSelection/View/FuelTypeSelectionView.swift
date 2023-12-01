@@ -9,7 +9,7 @@ struct FuelTypeSelectionView: View {
                                  selectedFuelType: $viewModel.selectedFuelType)
             Spacer()
         }
-        .navigationTitle(L10n.fuelSelectionTitle)
+        .navigationTitle(L10n.walletFuelTypeSelectionTitle)
         .padding(.top, 10)
         .padding(.horizontal, 20)
     }

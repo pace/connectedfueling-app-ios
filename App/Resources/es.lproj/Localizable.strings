@@ -60,7 +60,6 @@
 "currency_format" = "%2$@%1$@";
 "fuel_group_diesel" = "Diesel";
 "fuel_group_petrol" = "Gasolina";
-"fuel_selection_title" = "Selección de combustible";
 "gas_station_closed_hint" = "La gasolinera está actualmente cerrada.";
 "gas_station_default_name" = "Gasolinera";
 "gas_station_error_description" = "No se han podido cargar los datos de la gasolinera. Compruebe su conexión.";
@@ -134,7 +133,10 @@
 "payment_methods_error_description" = "Sus métodos de pago y tarjetas de combustible no se han podido cargar. Compruebe su conexión.";
 "payment_methods_loading_description" = "Cargamos sus métodos de pago y tarjetas de combustible. Por favor, espere un momento.";
 "payment_methods_loading_title" = "Carga de medios de pago y tarjetas de combustible...";
-"payment_methods_title" = "Métodos de pago y tarjetas de combustible";
-"transactions_title" = "Transacciones";
+"wallet_account_deletion_title" = "Eliminar cuenta";
+"wallet_fuel_type_selection_title" = "Selección de combustible";
 "wallet_header_text" = "Ha iniciado sesión como";
+"wallet_payment_methods_title" = "Métodos de pago y tarjetas de combustible";
 "wallet_tab_label" = "Cartera";
+"wallet_transactions_title" = "Transacciones";
+"wallet_two_factor_authentication_title" = "Procedimiento de autorización";

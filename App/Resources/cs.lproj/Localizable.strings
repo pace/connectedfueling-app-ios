@@ -60,7 +60,6 @@
 "currency_format" = "%2$@%1$@";
 "fuel_group_diesel" = "Diesel";
 "fuel_group_petrol" = "Benzín";
-"fuel_selection_title" = "Výběr paliva";
 "gas_station_closed_hint" = "Čerpací stanice je v současné době uzavřena.";
 "gas_station_default_name" = "Čerpací stanice";
 "gas_station_error_description" = "Data čerpací stanice se nepodařilo načíst. Zkontrolujte připojení!";
@@ -134,7 +133,10 @@
 "payment_methods_error_description" = "Vaše platební metody a palivové karty nebylo možné načíst. Zkontrolujte své připojení!";
 "payment_methods_loading_description" = "Načítáme vaše platební metody a palivové karty. Chvíli prosím počkejte.";
 "payment_methods_loading_title" = "Načítání platebních metod a palivových karet...";
-"payment_methods_title" = "Platební metody a palivové karty";
-"transactions_title" = "Transakce";
+"wallet_account_deletion_title" = "Odstranění účtu";
+"wallet_fuel_type_selection_title" = "Výběr paliva";
 "wallet_header_text" = "Jste přihlášeni jako";
+"wallet_payment_methods_title" = "Platební metody a palivové karty";
 "wallet_tab_label" = "Peněženka";
+"wallet_transactions_title" = "Transakce";
+"wallet_two_factor_authentication_title" = "Autorizační postup";

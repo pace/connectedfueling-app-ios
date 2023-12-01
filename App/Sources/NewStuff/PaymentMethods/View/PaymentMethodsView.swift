@@ -5,7 +5,7 @@ struct PaymentMethodsView: View {
 
     var body: some View {
         content
-            .navigationTitle(L10n.paymentMethodsTitle)
+            .navigationTitle(L10n.walletPaymentMethodsTitle)
             .onAppear {
                 viewModel.fetchPaymentMethods()
             }
@@ -63,6 +63,6 @@ struct PaymentMethodsView: View {
 #Preview {
     AppNavigationView {
         PaymentMethodsView()
-            .addNavigationBar(style: .standard(title: L10n.paymentMethodsTitle))
+            .addNavigationBar(style: .standard(title: L10n.walletPaymentMethodsTitle))
     }
 }

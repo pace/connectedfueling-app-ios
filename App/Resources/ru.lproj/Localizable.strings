@@ -60,7 +60,6 @@
 "currency_format" = "%2$@%1$@";
 "fuel_group_diesel" = "Дизель";
 "fuel_group_petrol" = "Бензин";
-"fuel_selection_title" = "Выбор топлива";
 "gas_station_closed_hint" = "В настоящее время автозаправочная станция закрыта.";
 "gas_station_default_name" = "Автозаправочная станция";
 "gas_station_error_description" = "Данные о заправке не удалось загрузить. Проверьте ваше соединение!";
@@ -134,7 +133,10 @@
 "payment_methods_error_description" = "Не удалось загрузить ваши способы оплаты и топливные карты. Проверьте свое соединение!";
 "payment_methods_loading_description" = "Мы загружаем ваши способы оплаты и топливные карты. Пожалуйста, подождите немного.";
 "payment_methods_loading_title" = "Загрузка способов оплаты и топливных карт...";
-"payment_methods_title" = "Способы оплаты и топливные карты";
-"transactions_title" = "Транзакции";
+"wallet_account_deletion_title" = "Удалить аккаунт";
+"wallet_fuel_type_selection_title" = "Выбор топлива";
 "wallet_header_text" = "Вы вошли в систему как";
+"wallet_payment_methods_title" = "Способы оплаты и топливные карты";
 "wallet_tab_label" = "Бумажник";
+"wallet_transactions_title" = "Транзакции";
+"wallet_two_factor_authentication_title" = "Процедура авторизации";

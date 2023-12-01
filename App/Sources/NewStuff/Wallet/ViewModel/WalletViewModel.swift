@@ -46,7 +46,7 @@ class WalletViewModel: ObservableObject {
 private extension WalletViewModel {
     var paymentMethodsListItem: ListItem {
         .init(icon: .walletTabIcon,
-              title: L10n.paymentMethodsTitle,
+              title: L10n.walletPaymentMethodsTitle,
               action: .detail(destination: AnyView(
                 PaymentMethodsView()
               )))
@@ -54,7 +54,7 @@ private extension WalletViewModel {
 
     var transactionsListItem: ListItem {
         .init(icon: .transactions,
-              title: L10n.transactionsTitle,
+              title: L10n.walletTransactionsTitle,
               action: .presentedContent(AnyView(
                 AppView(urlString: PACECloudSDK.URL.transactions.absoluteString)
               )))
@@ -62,7 +62,7 @@ private extension WalletViewModel {
 
     var fuelTypeSelectionListItem: ListItem {
         .init(icon: .fuelTypeSelection,
-              title: L10n.fuelSelectionTitle,
+              title: L10n.walletFuelTypeSelectionTitle,
               action: .detail(destination: AnyView(
                 FuelTypeSelectionView()
               )))
