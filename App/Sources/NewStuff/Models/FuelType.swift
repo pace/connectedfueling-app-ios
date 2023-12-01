@@ -112,5 +112,5 @@ enum FuelType: String, Codable {
         ].contains(self)
     }
 
-    static let selectableFilters: [FuelType] = [.cheapestDiesel, .cheapestPetrol]
+    static let selectableFilters: [FuelType] = [.cheapestPetrol, .cheapestDiesel]
 }

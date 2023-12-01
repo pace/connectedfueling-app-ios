@@ -7,8 +7,8 @@ enum AppAlert {
     }
 
     static var locationPermissionError: Alert {
-        Alert(title: Text(L10n.Alert.LocationPermission.title),
-              message: Text(L10n.Alert.LocationPermission.description),
+        Alert(title: Text(L10n.alertLocationPermissionTitle),
+              message: Text(L10n.alertLocationPermissionDescription),
               primaryButton: .default(Text(L10n.Alert.LocationPermission.Actions.openSettings),
                                       action: {
             guard let url = URL(string: UIApplication.openSettingsURLString) else { return }

@@ -26,8 +26,10 @@ struct TextLabel: View {
 
     var body: some View {
         if let text {
-            Text(text)
+            // Use explicit String initializers to enable markdown
+            Text(.init(text))
                 .foregroundStyle(textColor)
+                .tint(.primaryTint)
                 .multilineTextAlignment(alignment)
         } else if let attributedText {
             Text(attributedText)

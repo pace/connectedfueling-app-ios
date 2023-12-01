@@ -6,9 +6,6 @@ struct OnboardingView: View {
 
     var body: some View {
         pageView
-            .onAppear {
-                viewModel.checkNextPreconditions()
-            }
     }
 
     @ViewBuilder
@@ -19,12 +16,18 @@ struct OnboardingView: View {
                     .padding(.bottom, 20)
             }
         }
-        .overlay(PageIndicatorView(numberOfPages: viewModel.pageViewModels.count,
-                                   selectedIndex: $viewModel.currentPage),
-                 alignment: .bottom)
     }
 }
 
 #Preview {
-    OnboardingView()
+    AppNavigationView {
+        switch ConfigurationManager.configuration.onboardingStyle {
+        case .primary:
+            OnboardingView()
+
+        case .secondary:
+            OnboardingView()
+                .addNavigationBar(style: .centeredIcon(icon: .secondaryHeaderIcon))
+        }
+    }
 }

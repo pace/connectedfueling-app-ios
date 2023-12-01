@@ -4,7 +4,7 @@ import Foundation
 import PACECloudSDK
 
 /// GasStation opening hours
-struct OpeningHours: POIModelConvertible, CustomStringConvertible {
+struct OpeningHours: CustomStringConvertible {
     /// a list of days where this rule applies
     let days: [Days]
 
@@ -47,7 +47,7 @@ struct OpeningHours: POIModelConvertible, CustomStringConvertible {
 }
 
 /// GasStation opening rule
-enum OpeningRule: String, POIModelConvertible {
+enum OpeningRule: String {
     /// open
     case open
     /// closed
@@ -75,7 +75,7 @@ enum OpeningRule: String, POIModelConvertible {
 }
 
 /// WeekDays for GasStation OpeningHours
-enum Days: String, CaseIterable, POIModelConvertible {
+enum Days: String, CaseIterable {
     /// monday
     case monday = "mo"
     /// tuesday

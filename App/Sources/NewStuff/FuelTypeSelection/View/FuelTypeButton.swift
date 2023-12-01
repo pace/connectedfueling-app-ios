@@ -18,16 +18,16 @@ struct FuelTypeButton: View {
         }, label: {
             HStack(spacing: 20) {
                 TextLabel(fuelType.localizedTitle)
-                    .font(.system(size: 14, weight: .semibold))
+                    .font(.system(size: 16, weight: .bold))
                     .padding(.leading, 20)
                 Spacer()
                 radioButton
                     .padding(.trailing, 20)
             }
-            .frame(maxWidth: .infinity, minHeight: 50)
+            .frame(width: 180, height: 50)
         })
         .background(Color.lightGrey)
-        .cornerRadius(12)
+        .cornerRadius(.cornerRadius)
     }
 
     @ViewBuilder
@@ -58,9 +58,9 @@ struct FuelTypeButton: View {
 
 #Preview {
     VStack {
-        FuelTypeButton(fuelType: .diesel,
-                       selectedValue: .constant(.diesel))
-        FuelTypeButton(fuelType: .ron95e5,
-                       selectedValue: .constant(.diesel))
+        FuelTypeButton(fuelType: .cheapestDiesel,
+                       selectedValue: .constant(.cheapestDiesel))
+        FuelTypeButton(fuelType: .cheapestPetrol,
+                       selectedValue: .constant(.cheapestPetrol))
     }
 }

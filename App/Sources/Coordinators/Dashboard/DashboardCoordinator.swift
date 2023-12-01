@@ -122,8 +122,8 @@ extension DashboardCoordinator {
 
     private func presentLocationPremissionAlert() {
         let alert = UIAlertController(
-            title: L10n.Alert.LocationPermission.title,
-            message: L10n.Alert.LocationPermission.description,
+            title: "L10n.Alert.LocationPermission.title",
+            message: "L10n.Alert.LocationPermission.description",
             preferredStyle: .alert
         )
 
@@ -331,14 +331,14 @@ extension DashboardCoordinator {
     private func makeActionViewModel(for station: Domain.GasStation) -> ButtonViewModel {
         if station.isFuelingEnabled {
             return ButtonViewModel(
-                title: L10n.Dashboard.Actions.startFueling
+                title: "L10n.Dashboard.Actions.startFueling"
             ) { [weak self] in
                 self?.startFueling(at: station)
             }
         }
 
         return ButtonViewModel(
-            title: L10n.Dashboard.Actions.navigate
+            title: "L10n.Dashboard.Actions.navigate"
         ) { [weak self] in
             self?.openNavigation(to: station)
         }

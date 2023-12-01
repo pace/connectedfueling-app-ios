@@ -1,8 +1,4 @@
 "ALERT.LOCATION_PERMISSION.ACTIONS.OPEN_SETTINGS" = "Otevřít nastavení";
-"ALERT.LOCATION_PERMISSION.DESCRIPTION" = "Abychom vám mohli ukázat nejbližší čerpací stanici, potřebujeme přístup k vaší aktuální poloze.";
-"ALERT.LOCATION_PERMISSION.TITLE" = "Umístění nezveřejněno";
-"DASHBOARD.ACTIONS.NAVIGATE" = "START TRASY";
-"DASHBOARD.ACTIONS.START_FUELING" = "VYPLŇTE ZDE";
 "DASHBOARD.EMPTY_VIEW.DESCRIPTION" = "Ve vašem okolí nebyly nalezeny žádné čerpací stanice.";
 "DASHBOARD.EMPTY_VIEW.TITLE" = "Žádné čerpací stanice ve vašem okolí";
 "DASHBOARD.LOADING_VIEW.DESCRIPTION" = "Vyhledáme nejbližší čerpací stanice ve vaší oblasti. To může chvíli trvat.";
@@ -38,7 +34,11 @@
 "MENU.TITLE.PLACEHOLDER" = "PACE Connected Fueling";
 "PRICE.NOT_AVAILABLE" = "n. v.";
 "SHARE_TITLE" = "Podíl";
+"alert_location_permission_description" = "Abychom vám mohli ukázat nejbližší čerpací stanici, potřebujeme přístup k vaší aktuální poloze.";
+"alert_location_permission_title" = "Umístění nezveřejněno";
 "closed_label" = "UZAVŘENO";
+"common_start_fueling" = "Zahájení tankování";
+"common_start_navigation" = "Spuštění navigace";
 "common_use_accept" = "Akceptovat";
 "common_use_back" = "Zpět";
 "common_use_cancel" = "Zrušit";

@@ -16,7 +16,7 @@ struct ListView: View {
 }
 
 #Preview {
-    NavigationView {
+    AppNavigationView {
         ListView(listItems: [
             .init(icon: .walletTabIcon,
                   title: "Item 1",
@@ -25,6 +25,6 @@ struct ListView: View {
                   title: "Item 2",
                   action: .presentedContent(AnyView(Text("Hello"))))
         ])
-        .addNavigationBar()
+        .addNavigationBar(style: .standard(title: "List"))
     }
 }

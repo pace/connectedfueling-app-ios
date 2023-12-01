@@ -1,8 +1,4 @@
 "ALERT.LOCATION_PERMISSION.ACTIONS.OPEN_SETTINGS" = "Einstellungen öffnen";
-"ALERT.LOCATION_PERMISSION.DESCRIPTION" = "Um dir die nächstgelegene Tankstelle anzuzeigen, brauchen wir Zugriff auf deinen aktuellen Standort.";
-"ALERT.LOCATION_PERMISSION.TITLE" = "Standort nicht freigegeben";
-"DASHBOARD.ACTIONS.NAVIGATE" = "ROUTE STARTEN";
-"DASHBOARD.ACTIONS.START_FUELING" = "HIER TANKEN";
 "DASHBOARD.EMPTY_VIEW.DESCRIPTION" = "Es wurden keine Tankstellen in deiner Nähe gefunden.";
 "DASHBOARD.EMPTY_VIEW.TITLE" = "Keine Tankstellen in deiner Nähe";
 "DASHBOARD.LOADING_VIEW.DESCRIPTION" = "Wir suchen die nächstgelegenen Tankstellen in deiner Nähe. Dies kann einen Moment dauern.";
@@ -38,7 +34,11 @@
 "MENU.TITLE.PLACEHOLDER" = "PACE Connected Fueling";
 "PRICE.NOT_AVAILABLE" = "n. v.";
 "SHARE_TITLE" = "Teilen";
+"alert_location_permission_description" = "Um dir die nächstgelegene Tankstelle anzuzeigen, brauchen wir Zugriff auf deinen aktuellen Standort.";
+"alert_location_permission_title" = "Standort nicht freigegeben";
 "closed_label" = "GESCHLOSSEN";
+"common_start_fueling" = "Tankvorgang starten";
+"common_start_navigation" = "Navigation starten";
 "common_use_accept" = "Zustimmen";
 "common_use_back" = "Zurück";
 "common_use_cancel" = "Abbrechen";

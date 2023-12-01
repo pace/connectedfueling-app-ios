@@ -11,7 +11,7 @@ struct FuelTypeButtonsGroup: View {
     }
 
     var body: some View {
-        VStack {
+        VStack(spacing: .paddingXS) {
             ForEach(fuelTypes, id: \.self) {
                 FuelTypeButton(fuelType: $0, selectedValue: $selectedFuelType)
             }

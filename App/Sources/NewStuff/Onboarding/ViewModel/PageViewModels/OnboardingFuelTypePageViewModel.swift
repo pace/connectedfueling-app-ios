@@ -9,10 +9,12 @@ class OnboardingFuelTypePageViewModel: OnboardingPageViewModel {
 
     private(set) var poiManager: POIManager
 
-    init(poiManager: POIManager = .init()) {
+    init(style: ConfigurationManager.Configuration.OnboardingStyle,
+         poiManager: POIManager = .init()) {
         self.poiManager = poiManager
 
-        super.init(image: .fuelType,
+        super.init(style: style,
+                   image: .onboardingFuelTypeIcon,
                    title: L10n.onboardingFuelTypeTitle,
                    description: L10n.onboardingFuelTypeDescription)
 
@@ -39,7 +41,8 @@ class OnboardingFuelTypePageViewModel: OnboardingPageViewModel {
                                         self?.selectedFuelType = $0
                                     }
                                  ))
-            .padding(.top, 40)
+            .padding(.horizontal, .paddingM)
+            .padding(.top, .paddingL)
         )
     }
 }

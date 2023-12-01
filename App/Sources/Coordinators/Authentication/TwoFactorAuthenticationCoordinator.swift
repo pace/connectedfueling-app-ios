@@ -29,7 +29,7 @@ final class TwoFactorAuthenticationCoordinator: Coordinator {
 
     override func start() {
         viewController.model = .init(
-            image: Asset.Images.biometry.image,
+            image: nil,
             title: "L10n.Onboarding.TwoFactorAuthentication.title",
             description: "L10n.Onboarding.TwoFactorAuthentication.description"
         )

@@ -1,8 +1,4 @@
 "ALERT.LOCATION_PERMISSION.ACTIONS.OPEN_SETTINGS" = "Open settings";
-"ALERT.LOCATION_PERMISSION.DESCRIPTION" = "To show you the nearest gas station, we need access to your current location.";
-"ALERT.LOCATION_PERMISSION.TITLE" = "Location permission not granted";
-"DASHBOARD.ACTIONS.NAVIGATE" = "NAVIGATE TO";
-"DASHBOARD.ACTIONS.START_FUELING" = "FUEL HERE";
 "DASHBOARD.EMPTY_VIEW.DESCRIPTION" = "No gas stations where found nearby your location.";
 "DASHBOARD.EMPTY_VIEW.TITLE" = "No gas stations nearby";
 "DASHBOARD.LOADING_VIEW.DESCRIPTION" = "We are searching for the nearest gas stations in your area. This may take a moment.";
@@ -38,7 +34,11 @@
 "MENU.TITLE.PLACEHOLDER" = "PACE Connected Fueling";
 "PRICE.NOT_AVAILABLE" = "n. a.";
 "SHARE_TITLE" = "Share";
+"alert_location_permission_description" = "To show you the nearest gas station, we need access to your current location.";
+"alert_location_permission_title" = "Location permission not granted";
 "closed_label" = "CLOSED";
+"common_start_fueling" = "Start fueling";
+"common_start_navigation" = "Start navigation";
 "common_use_accept" = "Accept";
 "common_use_back" = "Back";
 "common_use_cancel" = "Cancel";
@@ -101,7 +101,7 @@
 "onboarding_payment_method_description" = "Select a payment method to start your first refueling.";
 "onboarding_payment_method_title" = "Payment method";
 "onboarding_permission_action" = "Allow location access";
-"onboarding_permission_description" = "To show you the closest gas station, we need access to your exact location.";
+"onboarding_permission_description" = "To show you the closest gas station, we need access to your precise location.";
 "onboarding_permission_title" = "Gas stations near you";
 "onboarding_pin_error_invalid_length" = "The PIN must be a 4-digit number.";
 "onboarding_pin_error_mismatch" = "The PINs do not match. Try again.";

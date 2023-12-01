@@ -4,7 +4,7 @@ import Foundation
 import PACECloudSDK
 
 /// opening hour range
-struct OpeningHour: POIModelConvertible, CustomStringConvertible {
+struct OpeningHour: CustomStringConvertible {
     /// opening time, format: hh:mm, minutes are omitted if :00
     let from: String
 

@@ -4,10 +4,12 @@ import SwiftUI
 class OnboardingLocationPermissionPageViewModel: OnboardingPageViewModel {
     private let locationManager: LocationManager
 
-    init(locationManager: LocationManager = .init()) {
+    init(style: ConfigurationManager.Configuration.OnboardingStyle,
+         locationManager: LocationManager = .init()) {
         self.locationManager = locationManager
 
-        super.init(image: .location,
+        super.init(style: style,
+                   image: .onboardingLocationIcon,
                    title: L10n.onboardingPermissionTitle,
                    description: L10n.onboardingPermissionDescription)
     }
@@ -20,22 +22,34 @@ class OnboardingLocationPermissionPageViewModel: OnboardingPageViewModel {
         ]
     }
 
-    override func checkPreconditions() {
-        super.checkPreconditions()
-        fetchLocationPermissionStatus()
+    // TODO: - Update
+    /**
+     
+    In case we actually want to skip steps
+
+    override func isPageAlreadyCompleted() async -> Bool {
+        await self?.locationManager.currentLocationPermissionStatus() == .authorized
     }
 
-    private func fetchLocationPermissionStatus() {
-        Task { @MainActor [weak self] in
-            guard await self?.locationManager.currentLocationPermissionStatus() == .authorized else { return }
-            self?.finishOnboardingPage()
-        }
-    }
+     */
 
     private func requestLocationPermission() {
-        locationManager.requestLocationPermission { [weak self] status in
-            guard status == .authorized else { return }
-            self?.finishOnboardingPage()
+        Task { @MainActor [weak self] in
+            guard let currentStatus = await self?.locationManager.currentLocationPermissionStatus() else { return }
+
+            switch currentStatus {
+            case .notDetermined:
+                self?.locationManager.requestLocationPermission { [weak self] status in
+                    guard status == .authorized else { return }
+                    self?.finishOnboardingPage()
+                }
+
+            case .denied:
+                self?.alert = AppAlert.locationPermissionError
+
+            case .authorized:
+                self?.finishOnboardingPage()
+            }
         }
     }
 }

@@ -1,8 +1,4 @@
 "ALERT.LOCATION_PERMISSION.ACTIONS.OPEN_SETTINGS" = "Impostazioni aperte";
-"ALERT.LOCATION_PERMISSION.DESCRIPTION" = "Per mostrarvi la stazione di servizio più vicina, abbiamo bisogno di accedere alla vostra posizione attuale.";
-"ALERT.LOCATION_PERMISSION.TITLE" = "Posizione non resa nota";
-"DASHBOARD.ACTIONS.NAVIGATE" = "INIZIO PERCORSO";
-"DASHBOARD.ACTIONS.START_FUELING" = "COMPILARE QUI";
 "DASHBOARD.EMPTY_VIEW.DESCRIPTION" = "Non sono state trovate stazioni di servizio vicino a voi.";
 "DASHBOARD.EMPTY_VIEW.TITLE" = "Non ci sono stazioni di servizio nelle vicinanze";
 "DASHBOARD.LOADING_VIEW.DESCRIPTION" = "Cercheremo le stazioni di servizio più vicine alla vostra zona. L'operazione potrebbe richiedere un attimo.";
@@ -38,7 +34,11 @@
 "MENU.TITLE.PLACEHOLDER" = "PACE Connected Fueling";
 "PRICE.NOT_AVAILABLE" = "n. v.";
 "SHARE_TITLE" = "Condividere";
+"alert_location_permission_description" = "Per mostrarvi la stazione di servizio più vicina, abbiamo bisogno di accedere alla vostra posizione attuale.";
+"alert_location_permission_title" = "Posizione non resa nota";
 "closed_label" = "CHIUSO";
+"common_start_fueling" = "Inizia a fare rifornimento";
+"common_start_navigation" = "Inizia la navigazione";
 "common_use_accept" = "Accettare";
 "common_use_back" = "Indietro";
 "common_use_cancel" = "Cancella";
