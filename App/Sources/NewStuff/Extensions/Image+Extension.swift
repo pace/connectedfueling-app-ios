@@ -1,6 +1,7 @@
 import SwiftUI
 
 extension Image {
+    // Common
     static let paymentMethodIcon: Image = .init(systemName: "creditcard")
     static let disclosureIndicator: Image = .init(systemName: "chevron.right")
     static let listTabIcon: Image = .init(systemName: "list.bullet")

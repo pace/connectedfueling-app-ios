@@ -5,6 +5,49 @@ import SwiftUI
 class GasStationListItemViewModel: ObservableObject {
     @Published var fuelingUrlString: String?
 
+    var isNearby: Bool {
+        gasStation.distanceInKilometers ?? 0 < Constants.Distance.formattingThresholdForMetersPrecision - Constants.Distance.roundingThreshold
+    }
+
+    var isHighlighted: Bool {
+        isNearby && gasStation.isConnectedFuelingEnabled
+    }
+
+    var closesIn: Int {
+        gasStation.poiOpeningHours.minuteTillClose()
+    }
+
+    var isClosed: Bool {
+        closesIn == -Int.max
+    }
+
+    var showIsClosed: Bool {
+        !gasStation.openingHours.isEmpty && isClosed
+    }
+
+    var isClosingSoon: Bool {
+        closesIn > 0 && closesIn <= 30 // TODO: decide value
+    }
+
+    var closingTimeToday: String? {
+        let closingHourToday = gasStation.poiOpeningHours.getOpeningHours(for: Date()).toString().components(separatedBy: " – ")
+
+        guard let result = closingHourToday.last,
+              !result.isEmpty else { return nil }
+
+        return String(result)
+    }
+
+    var distanceStyle: DistanceTagView.Style {
+        if showIsClosed || isClosingSoon {
+            return .closed(formattedDistance)
+        } else if isNearby {
+            return .nearby
+        } else {
+            return .distant(formattedDistance)
+        }
+    }
+
     var formattedDistance: String {
         let distance = gasStation.distanceInKilometers ?? 0
         let distanceMeasurement = Measurement<UnitLength>(value: distance, unit: .kilometers)
@@ -16,6 +59,15 @@ class GasStationListItemViewModel: ObservableObject {
         } else {
             return decimalDistanceFormatter.string(from: distanceMeasurement)
         }
+    }
+
+    var priceAvailable: Bool {
+        guard gasStation.fuelPrice != nil,
+              gasStation.fuelType != nil else {
+            return false
+        }
+
+        return true
     }
 
     var formattedFuelType: String {
@@ -66,6 +118,16 @@ class GasStationListItemViewModel: ObservableObject {
     init(gasStation: GasStation) {
         self.gasStation = gasStation
         self.priceFormatter = PriceNumberFormatter(with: gasStation.fuelPrice?.format ?? Constants.GasStationList.priceFormatFallback)
+    }
+
+    // TODO: maybe add to sdk?
+    private func getClosesAt() -> String? {
+        let closingHourToday = gasStation.poiOpeningHours.getOpeningHours(for: Date()).toString().components(separatedBy: " - ")
+
+        guard let result = closingHourToday.last,
+              !result.isEmpty else { return nil }
+
+        return String(result)
     }
 
     func didTapActionButton() {

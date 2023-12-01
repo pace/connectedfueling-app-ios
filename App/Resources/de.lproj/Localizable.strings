@@ -37,6 +37,7 @@
 "alert_location_permission_description" = "Um dir die nächstgelegene Tankstelle anzuzeigen, brauchen wir Zugriff auf deinen aktuellen Standort.";
 "alert_location_permission_title" = "Standort nicht freigegeben";
 "closed_label" = "GESCHLOSSEN";
+"common_pay_here_now" = "Jetzt hier bezahlen!";
 "common_start_fueling" = "Tankvorgang starten";
 "common_start_navigation" = "Navigation starten";
 "common_use_accept" = "Zustimmen";
@@ -78,6 +79,7 @@
 "gas_station_opening_hours_hint" = "An Feiertagen können die Öffnungszeiten evtl. abweichen.";
 "gas_station_opening_hours_not_available" = "Öffnungszeiten sind leider nicht verfügbar.";
 "gas_station_opening_hours_title" = "Öffnungszeiten";
+"gasstation_closes_in" = "Tankstelle schließt um %s  Uhr";
 "general_error_title" = "Laden fehlgeschlagen";
 "list_tab_label" = "Liste";
 "more_tab_label" = "Mehr";

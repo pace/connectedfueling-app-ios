@@ -37,6 +37,7 @@
 "alert_location_permission_description" = "For at vise dig den nærmeste tankstation skal vi have adgang til din aktuelle position.";
 "alert_location_permission_title" = "Tilladelse til placering ikke givet";
 "closed_label" = "LUKKET";
+"common_pay_here_now" = "Betal her og nu!";
 "common_start_fueling" = "Start tankning";
 "common_start_navigation" = "Start navigation";
 "common_use_accept" = "Acceptere";
@@ -78,6 +79,7 @@
 "gas_station_opening_hours_hint" = "Åbningstiderne kan variere på helligdage.";
 "gas_station_opening_hours_not_available" = "Åbningstider er ikke tilgængelige i øjeblikket.";
 "gas_station_opening_hours_title" = "Åbningstider";
+"gasstation_closes_in" = "Tankstationen lukker kl. %s";
 "general_error_title" = "Indlæsning mislykkedes";
 "list_tab_label" = "Liste";
 "more_tab_label" = "Mere";

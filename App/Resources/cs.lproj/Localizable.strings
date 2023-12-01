@@ -37,6 +37,7 @@
 "alert_location_permission_description" = "Abychom vám mohli ukázat nejbližší čerpací stanici, potřebujeme přístup k vaší aktuální poloze.";
 "alert_location_permission_title" = "Umístění nezveřejněno";
 "closed_label" = "UZAVŘENO";
+"common_pay_here_now" = "Zaplaťte zde hned!";
 "common_start_fueling" = "Zahájení tankování";
 "common_start_navigation" = "Spuštění navigace";
 "common_use_accept" = "Akceptovat";
@@ -78,6 +79,7 @@
 "gas_station_opening_hours_hint" = "Otevírací doba se může o svátcích lišit.";
 "gas_station_opening_hours_not_available" = "Otevírací doba není v současné době k dispozici.";
 "gas_station_opening_hours_title" = "Otevírací doba";
+"gasstation_closes_in" = "Čerpací stanice se zavírá v %s";
 "general_error_title" = "Načítání se nezdařilo";
 "list_tab_label" = "Seznam";
 "more_tab_label" = "Více";

@@ -37,6 +37,7 @@
 "alert_location_permission_description" = "Чтобы показать вам ближайшую заправочную станцию, нам необходим доступ к вашему текущему местоположению.";
 "alert_location_permission_title" = "Местонахождение не разглашается";
 "closed_label" = "ЗАКРЫТО";
+"common_pay_here_now" = "Оплатите здесь и сейчас!";
 "common_start_fueling" = "Начните заправляться";
 "common_start_navigation" = "Начать навигацию";
 "common_use_accept" = "Принимать";
@@ -78,6 +79,7 @@
 "gas_station_opening_hours_hint" = "Часы работы могут отличаться в праздничные дни.";
 "gas_station_opening_hours_not_available" = "Часы работы в настоящее время не указаны.";
 "gas_station_opening_hours_title" = "Часы работы";
+"gasstation_closes_in" = "Заправочная станция закрывается в %s";
 "general_error_title" = "Загрузка не удалась";
 "list_tab_label" = "Список";
 "more_tab_label" = "Подробнее";

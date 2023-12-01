@@ -75,9 +75,9 @@ struct GasStationDetailView: View {
                     DistanceTagView(viewModel.distanceStyle)
                     Spacer()
                 }
-                if viewModel.isClosed {
+                if viewModel.showIsClosed {
                     HStack {
-                        Image(systemName: "exclamationmark.circle")
+                        Image(.errorIcon)
                             .frame(width: 24, height: 24)
                             .foregroundColor(Color.genericRed)
                         TextLabel(L10n.gasStationClosedHint, textColor: Color.genericRed)
@@ -221,6 +221,7 @@ struct GasStationDetailView: View {
                                                                       hours: [.init(from: "10", to: "16")],
                                                                       rule: .open)
                                                             ])))
+    .ignoresSafeArea()
 }
 
 // MARK: - Near & 2 prices
