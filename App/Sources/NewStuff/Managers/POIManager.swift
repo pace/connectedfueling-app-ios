@@ -104,7 +104,7 @@ private extension POIManager {
             guard let fuelType: FuelType = .init(rawValue: $0.fuelType ?? "") else { return nil }
 
             return .init(fuelType: fuelType,
-                         fuelPrice: .init(value: $0.price ?? 0.0,
+                         fuelPrice: .init(value: $0.price ?? 0.0, // TODO: - No fallback here, if there is no price -> there is no price
                                           currency: $0.currency,
                                           format: station.priceFormat))
         }

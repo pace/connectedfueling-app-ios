@@ -81,17 +81,16 @@ class PriceNumberFormatter: NumberFormatter {
         let font: Font = .system(size: 20, weight: .semibold)
         let fontSuperscript: Font = .system(size: 12, weight: .semibold)
 
-        guard let superscriptChar = string.last(where: { $0.isNumber }) else {
+        guard let superscriptIndex = string.lastIndex(where: { $0.isNumber }) else {
             return .init(string)
         }
-
-        let superscriptString = String(superscriptChar)
 
         var attributedString = AttributedString(string)
         attributedString.font = font
         attributedString.foregroundColor = textColor
 
-        guard let superscriptRange = attributedString.range(of: superscriptString) else {
+        guard let lowerBoundIndex = AttributedString.Index(superscriptIndex, within: attributedString),
+              let upperBoundIndex = AttributedString.Index(string.index(superscriptIndex, offsetBy: 1), within: attributedString) else {
             return attributedString
         }
 
@@ -100,7 +99,9 @@ class PriceNumberFormatter: NumberFormatter {
         superscriptContainer.font = fontSuperscript
         superscriptContainer.foregroundColor = textColor
 
+        let superscriptRange = Range(uncheckedBounds: (lower: lowerBoundIndex, upper: upperBoundIndex))
         attributedString[superscriptRange].setAttributes(superscriptContainer)
+
         return attributedString
     }
 }
