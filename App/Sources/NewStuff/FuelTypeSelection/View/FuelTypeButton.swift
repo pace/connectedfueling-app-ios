@@ -5,26 +5,29 @@ struct FuelTypeButton: View {
 
     private let fuelType: FuelType
     private let iconSize: CGFloat = 25
+    private let buttonWidth: CGFloat
 
     init(fuelType: FuelType,
-         selectedValue: Binding<FuelType?>) {
+         selectedValue: Binding<FuelType?>,
+         buttonWidth: CGFloat = .infinity) {
         self.fuelType = fuelType
         self._selectedValue = selectedValue
+        self.buttonWidth = buttonWidth
     }
 
     var body: some View {
         Button(action: {
             selectedValue = fuelType
         }, label: {
-            HStack(spacing: 20) {
+            HStack(spacing: .paddingM) {
                 TextLabel(fuelType.localizedTitle)
                     .font(.system(size: 16, weight: .bold))
-                    .padding(.leading, 20)
+                    .padding(.leading, .paddingM)
                 Spacer()
                 radioButton
-                    .padding(.trailing, 20)
+                    .padding(.trailing, .paddingM)
             }
-            .frame(width: 180, height: 50)
+            .frame(width: buttonWidth, height: 50)
         })
         .background(Color.lightGrey)
         .cornerRadius(.cornerRadius)

@@ -35,7 +35,7 @@ class OnboardingTwoFactorAuthenticationPageViewModel: OnboardingPageViewModel {
             self?.isRequestRunning = true
 
             let configuredTwoFactorAuthenticationMethods = await self?.userManager.configuredTwoFactorAuthenticationMethods() ?? []
-            let availableTwoFactorAuthenticationMethods = self?.userManager.availableTwoFactorAuthenticationMethods() ?? []
+            let availableTwoFactorAuthenticationMethods = self?.userManager.availableTwoFactorAuthenticationMethods ?? []
 
             self?.configuredTwoFactorAuthenticationMethods = configuredTwoFactorAuthenticationMethods
             self?.isRequestRunning = false

@@ -47,4 +47,9 @@ class PaymentMethodsViewModel: ObservableObject {
     func showPaymentApp() {
         paymentAppUrlString = paymentManager.paymentAppUrlString
     }
+
+    func didClosePaymentApp() {
+        paymentAppUrlString = nil
+        fetchPaymentMethods()
+    }
 }

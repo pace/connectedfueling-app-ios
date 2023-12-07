@@ -40,9 +40,11 @@
 "common_start_fueling" = "Zahájení tankování";
 "common_start_navigation" = "Spuštění navigace";
 "common_use_accept" = "Akceptovat";
+"common_use_are_you_sure" = "Jste si jistý?";
 "common_use_back" = "Zpět";
 "common_use_cancel" = "Zrušit";
 "common_use_confirm" = "Potvrďte";
+"common_use_deactivate" = "Deaktivace";
 "common_use_decline" = "Pokles";
 "common_use_friday" = "Pátek";
 "common_use_monday" = "Pondělí";
@@ -139,4 +141,8 @@
 "wallet_payment_methods_title" = "Platební metody a palivové karty";
 "wallet_tab_label" = "Peněženka";
 "wallet_transactions_title" = "Transakce";
+"wallet_two_factor_authentication_biometry_setup_successful" = "Úspěšné nastavení biometrických údajů";
+"wallet_two_factor_authentication_biometry_title" = "Biometrické údaje";
+"wallet_two_factor_authentication_pin_setup_successful" = "Úspěšné nastavení kódu PIN";
+"wallet_two_factor_authentication_pin_title" = "Nastavení kódu PIN";
 "wallet_two_factor_authentication_title" = "Autorizační postup";

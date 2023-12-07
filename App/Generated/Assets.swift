@@ -58,10 +58,15 @@ internal enum Asset {
     internal static let onboardingPaymentMethodIcon = ImageAsset(name: "onboarding_payment_method_icon")
     internal static let onboardingPrimaryHeaderIcon = ImageAsset(name: "onboarding_primary_header_icon")
     internal static let onboardingSignInIcon = ImageAsset(name: "onboarding_sign_in_icon")
-    internal static let accountIcon = ImageAsset(name: "account_icon")
-    internal static let fuelTypeSelection = ImageAsset(name: "fuel_type_selection")
-    internal static let transactions = ImageAsset(name: "transactions")
+    internal static let walletAccountDeletionIcon = ImageAsset(name: "wallet_account_deletion_icon")
+    internal static let walletAccountIcon = ImageAsset(name: "wallet_account_icon")
+    internal static let walletFuelTypeSelectionIcon = ImageAsset(name: "wallet_fuel_type_selection_icon")
+    internal static let walletLogoutIcon = ImageAsset(name: "wallet_logout_icon")
     internal static let walletTabIcon = ImageAsset(name: "wallet_tab_icon")
+    internal static let walletTransactionsIcon = ImageAsset(name: "wallet_transactions_icon")
+    internal static let walletTwoFactorAuthenticationIcon = ImageAsset(name: "wallet_two_factor_authentication_icon")
+    internal static let walletTwoFactorAuthenticationPinIcon = ImageAsset(name: "wallet_two_factor_authentication_pin_icon")
+    internal static let walletTwoFactorAuthenticatonBiometryIcon = ImageAsset(name: "wallet_two_factor_authenticaton_biometry_icon")
   }
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name

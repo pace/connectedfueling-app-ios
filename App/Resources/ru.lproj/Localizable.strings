@@ -40,9 +40,11 @@
 "common_start_fueling" = "Начните заправляться";
 "common_start_navigation" = "Начать навигацию";
 "common_use_accept" = "Принимать";
+"common_use_are_you_sure" = "Вы уверены?";
 "common_use_back" = "Назад";
 "common_use_cancel" = "Отмена";
 "common_use_confirm" = "Подтвердите";
+"common_use_deactivate" = "Деактивировать";
 "common_use_decline" = "Снижение";
 "common_use_friday" = "Пятница";
 "common_use_monday" = "Понедельник";
@@ -139,4 +141,8 @@
 "wallet_payment_methods_title" = "Способы оплаты и топливные карты";
 "wallet_tab_label" = "Бумажник";
 "wallet_transactions_title" = "Транзакции";
+"wallet_two_factor_authentication_biometry_setup_successful" = "Биометрия успешно установлена";
+"wallet_two_factor_authentication_biometry_title" = "Биометрия";
+"wallet_two_factor_authentication_pin_setup_successful" = "PIN-код установлен успешно";
+"wallet_two_factor_authentication_pin_title" = "Установите PIN-код";
 "wallet_two_factor_authentication_title" = "Процедура авторизации";

@@ -5,6 +5,10 @@ class WalletViewModel: ObservableObject {
     @Published private(set) var listItems: [ListItem] = []
     @Published var alert: Alert?
 
+    var email: String? {
+        userManager.email
+    }
+
     private let userManager: UserManager
 
     init(userManager: UserManager = .init()) {
@@ -13,33 +17,28 @@ class WalletViewModel: ObservableObject {
         listItems = [
             paymentMethodsListItem,
             transactionsListItem,
-            fuelTypeSelectionListItem
+            fuelTypeSelectionListItem,
+            twoFactorAuthenticationListItem,
+            accountDeletionListItem
         ]
+    }
+
+    private func logout() {
+        Task { [weak self] in
+            await self?.userManager.logout()
+        }
     }
 
     func didTapLogout() {
         alert = AppAlert.logout(logoutAction: logout)
     }
 
-    private func logout() {
-        Task { @MainActor [weak self] in
-            guard let result = await self?.userManager.logout() else { return }
-
-            switch result {
-            case .failure(let error):
-                NSLog("[WalletViewModel] Failed logging out with error \(error)")
-                self?.alert = AppAlert.genericError
-
-            default:
-                NSLog("[WalletViewModel] Successfully logged out user")
-                self?.reset()
-            }
+    func checkAccountDeletion() {
+        // If the account got deleted
+        // the token refresh will fail and the session will be reset
+        Task { [weak self] in
+            await self?.userManager.refresh()
         }
-    }
-
-    private func reset() {
-        UserDefaults.standard.set(false, forKey: Constants.UserDefaults.isOnboardingCompleted)
-        UserDefaults.standard.set(false, forKey: Constants.UserDefaults.isAnalyticsAllowed)
     }
 }
 
@@ -53,7 +52,7 @@ private extension WalletViewModel {
     }
 
     var transactionsListItem: ListItem {
-        .init(icon: .transactions,
+        .init(icon: .walletTransactionsIcon,
               title: L10n.walletTransactionsTitle,
               action: .presentedContent(AnyView(
                 AppView(urlString: PACECloudSDK.URL.transactions.absoluteString)
@@ -61,10 +60,26 @@ private extension WalletViewModel {
     }
 
     var fuelTypeSelectionListItem: ListItem {
-        .init(icon: .fuelTypeSelection,
+        .init(icon: .walletFuelTypeSelectionIcon,
               title: L10n.walletFuelTypeSelectionTitle,
               action: .detail(destination: AnyView(
                 FuelTypeSelectionView()
+              )))
+    }
+
+    var twoFactorAuthenticationListItem: ListItem {
+        .init(icon: .walletTwoFactorAuthenticationIcon,
+              title: L10n.walletTwoFactorAuthenticationTitle,
+              action: .detail(destination: AnyView(
+                TwoFactorAuthenticationView()
+              )))
+    }
+
+    var accountDeletionListItem: ListItem {
+        .init(icon: .walletAccountDeletionIcon,
+              title: L10n.walletAccountDeletionTitle,
+              action: .presentedContent(AnyView(
+                AppView(urlString: PACECloudSDK.URL.paceID.absoluteString, completion: checkAccountDeletion)
               )))
     }
 }

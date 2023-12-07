@@ -40,9 +40,11 @@
 "common_start_fueling" = "Rozpoczęcie tankowania";
 "common_start_navigation" = "Rozpocznij nawigację";
 "common_use_accept" = "Zaakceptować";
+"common_use_are_you_sure" = "Jesteś pewien?";
 "common_use_back" = "Powrót";
 "common_use_cancel" = "Anuluj";
 "common_use_confirm" = "Potwierdzenie";
+"common_use_deactivate" = "Dezaktywuj";
 "common_use_decline" = "Spadek";
 "common_use_friday" = "Piątek";
 "common_use_monday" = "Poniedziałek";
@@ -139,4 +141,8 @@
 "wallet_payment_methods_title" = "Metody płatności i karty paliwowe";
 "wallet_tab_label" = "Portfel";
 "wallet_transactions_title" = "Transakcje";
+"wallet_two_factor_authentication_biometry_setup_successful" = "Pomyślna konfiguracja danych biometrycznych";
+"wallet_two_factor_authentication_biometry_title" = "Biometria";
+"wallet_two_factor_authentication_pin_setup_successful" = "Pomyślne ustawienie kodu PIN";
+"wallet_two_factor_authentication_pin_title" = "Ustaw PIN";
 "wallet_two_factor_authentication_title" = "Procedura autoryzacji";

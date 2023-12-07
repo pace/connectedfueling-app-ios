@@ -1,10 +1,10 @@
-import Foundation
+import SwiftUI
 
 class OnboardingTextInputViewModel: ObservableObject, Identifiable {
     @Published var isActionDisabled: Bool = true
     @Published var isNextTextInputViewPresented: Bool = false
     @Published var warningText: String = ""
-    @Published var isErrorAlertPresented: Bool = false
+    @Published var alert: Alert?
 
     let title: String
     let description: String
@@ -118,7 +118,7 @@ class OnboardingTextInputViewModel: ObservableObject, Identifiable {
             case .success(let didSendMailOTP):
                 guard didSendMailOTP else {
                     NSLog("[OnboardingTextInputViewModel] Failed sending mail OTP")
-                    self?.isErrorAlertPresented = true
+                    self?.alert = AppAlert.genericError
                     return
                 }
 
@@ -126,7 +126,7 @@ class OnboardingTextInputViewModel: ObservableObject, Identifiable {
 
             case .failure(let error):
                 NSLog("[OnboardingTextInputViewModel] Failed sending mail OTP with \(error)")
-                self?.isErrorAlertPresented = true
+                self?.alert = AppAlert.genericError
             }
         }
     }

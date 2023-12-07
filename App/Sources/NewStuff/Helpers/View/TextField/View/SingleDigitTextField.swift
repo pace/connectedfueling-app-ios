@@ -49,7 +49,6 @@ struct SingleDigitTextField: UIViewRepresentable {
         uiView.becomeFirstResponder()
     }
 
-
     func makeCoordinator() -> Coordinator {
         Coordinator(textFieldIndex: textFieldIndex,
                     numberOfDigits: numberOfDigits,

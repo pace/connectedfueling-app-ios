@@ -40,7 +40,8 @@ class OnboardingFuelTypePageViewModel: OnboardingPageViewModel {
                                     set: { [weak self] in
                                         self?.selectedFuelType = $0
                                     }
-                                 ))
+                                 ),
+                                buttonWidth: 180)
             .padding(.horizontal, .paddingM)
             .padding(.top, .paddingL)
         )

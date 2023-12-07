@@ -2,15 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>SentryDSN</key>
-	<string>https://581d11342efa4adcb392c568eaa71ca3@sentry.pace.cloud/276</string>
-	<key>PACECloudSDKIDKitSetup</key>
-	<dict>
-		<key>OIDConfigurationRedirectURI</key>
-		<string>cofu-app://callback</string>
-		<key>OIDConfigurationIDPHint</key>
-		<string></string>
-	</dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -55,6 +46,15 @@
 	<string>Standortdaten werden verwendet um Tanksäulen in deiner Nähe anzuzeigen.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Wir verwenden Fotos um die Kopie der Rechnungsbelege als Bild bereitzustellen.</string>
+	<key>PACECloudSDKIDKitSetup</key>
+	<dict>
+		<key>OIDConfigurationIDPHint</key>
+		<string></string>
+		<key>OIDConfigurationRedirectURI</key>
+		<string>cofu-app://callback</string>
+	</dict>
+	<key>SentryDSN</key>
+	<string>https://581d11342efa4adcb392c568eaa71ca3@sentry.pace.cloud/276</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -67,7 +67,7 @@
 		<string>armv7</string>
 	</array>
 	<key>UIStatusBarStyle</key>
-	<string>UIStatusBarStyleLightContent</string>
+	<string></string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

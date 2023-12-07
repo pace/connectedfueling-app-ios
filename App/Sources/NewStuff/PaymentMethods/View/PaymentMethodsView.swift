@@ -45,7 +45,7 @@ struct PaymentMethodsView: View {
         .padding(.bottom, 10)
         .sheet(item: $viewModel.paymentAppUrlString) { urlString in
             AppView(urlString: urlString) {
-                viewModel.fetchPaymentMethods()
+                viewModel.didClosePaymentApp()
             }
         }
     }
