@@ -5,7 +5,7 @@ class OnboardingLocationPermissionPageViewModel: OnboardingPageViewModel {
     private let locationManager: LocationManager
 
     init(style: ConfigurationManager.Configuration.OnboardingStyle,
-         locationManager: LocationManager = .init()) {
+         locationManager: LocationManager = .shared) {
         self.locationManager = locationManager
 
         super.init(style: style,

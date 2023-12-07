@@ -1,6 +1,7 @@
 import SwiftUI
 
 enum AppScreen: CaseIterable, Identifiable {
+    case map
     case gasStationList
     case wallet
     case menu
@@ -21,6 +22,9 @@ extension AppScreen {
     @ViewBuilder
     var destination: some View {
         switch self {
+        case .map:
+            MapNavigationView()
+
         case .gasStationList:
             GasStationListNavigationView()
 
@@ -34,6 +38,9 @@ extension AppScreen {
 
     private var image: Image {
         switch self {
+        case .map:
+            Image.mapTabIcon.renderingMode(.template)
+
         case .gasStationList:
             Image.listTabIcon.renderingMode(.template)
 
@@ -47,6 +54,9 @@ extension AppScreen {
 
     private var title: String {
         switch self {
+        case .map:
+            L10n.mapTabLabel
+
         case .gasStationList:
             L10n.listTabLabel
 

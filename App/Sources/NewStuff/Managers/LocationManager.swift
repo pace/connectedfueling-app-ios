@@ -7,33 +7,42 @@ protocol LocationManagerDelegate: AnyObject {
 }
 
 class LocationManager: NSObject {
-    enum LocationPermissionStatus {
-        case notDetermined
-        case denied
-        case authorized
-    }
+    static let shared: LocationManager = .init()
 
-    weak var delegate: LocationManagerDelegate?
+    private var delegates: [Delegate] = []
 
     private let locationManager: CLLocationManager
+    private var locationPermissionCallback: ((PermissionStatus) -> Void)?
 
-    private var locationPermissionCallback: ((LocationPermissionStatus) -> Void)?
+    private var latestLocations: [CLLocation] = []
 
-    init(locationManager: CLLocationManager = .init()) {
-        self.locationManager = locationManager
+    private override init() {
+        self.locationManager = .init()
 
         super.init()
 
         self.locationManager.delegate = self
     }
 
-    func currentLocationPermissionStatus() async -> LocationPermissionStatus {
+    func subscribe(_ subscriber: LocationManagerDelegate) {
+        guard !delegates.contains(where: { $0.receiver === subscriber }) else { return }
+
+        let delegate: Delegate = .init(receiver: subscriber)
+        delegates.append(delegate)
+        delegate.receiver?.didUpdateLocations(locations: latestLocations)
+    }
+
+    func unsubscribe(_ subscriber: LocationManagerDelegate) {
+        delegates.removeAll(where: { $0.receiver === subscriber })
+    }
+
+    func currentLocationPermissionStatus() async -> PermissionStatus {
         let status = locationManager.authorizationStatus
         let mappedStatus = makeLocationPermissionStatus(for: status)
         return mappedStatus
     }
 
-    func requestLocationPermission(completion: @escaping (LocationPermissionStatus) -> Void) {
+    func requestLocationPermission(completion: @escaping (PermissionStatus) -> Void) {
         self.locationPermissionCallback = completion
 
         let status = locationManager.authorizationStatus
@@ -50,14 +59,10 @@ class LocationManager: NSObject {
     func startUpdatingLocation() {
         locationManager.startUpdatingLocation()
     }
-
-    func stopUpdatingLocation() {
-        locationManager.stopUpdatingLocation()
-    }
 }
 
 private extension LocationManager {
-    func makeLocationPermissionStatus(for authorizationStatus: CLAuthorizationStatus) -> LocationPermissionStatus {
+    func makeLocationPermissionStatus(for authorizationStatus: CLAuthorizationStatus) -> PermissionStatus {
         switch authorizationStatus {
         case .notDetermined:
             return .notDetermined
@@ -82,10 +87,27 @@ extension LocationManager: CLLocationManagerDelegate {
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        delegate?.didUpdateLocations(locations: locations)
+        latestLocations = locations
+        delegates.forEach { $0.receiver?.didUpdateLocations(locations: locations) }
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        delegate?.didFail(with: error)
+        delegates.forEach { $0.receiver?.didFail(with: error) }
+    }
+}
+
+extension LocationManager {
+    enum PermissionStatus {
+        case notDetermined
+        case denied
+        case authorized
+    }
+
+    private class Delegate {
+        weak var receiver: LocationManagerDelegate?
+
+        init(receiver: LocationManagerDelegate) {
+            self.receiver = receiver
+        }
     }
 }

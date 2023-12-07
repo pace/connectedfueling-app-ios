@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "navigation-filled.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

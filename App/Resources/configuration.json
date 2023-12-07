@@ -7,7 +7,7 @@
     "gas_station_list_style": "primary",
     "analytics_enabled": true,
     "native_fuelcard_management_enabled": true,
-    "map_enabled": false,
+    "map_enabled": true,
     "vehicle_integration_enabled": false,
     "hide_prices": false,
     "menu_entry": []

@@ -1,6 +1,6 @@
 "ALERT.LOCATION_PERMISSION.ACTIONS.OPEN_SETTINGS" = "Einstellungen öffnen";
 "DASHBOARD.EMPTY_VIEW.DESCRIPTION" = "Es wurden keine Tankstellen in deiner Nähe gefunden.";
-"DASHBOARD.EMPTY_VIEW.TITLE" = "Keine Tankstellen in deiner Nähe";
+"DASHBOARD.EMPTY_VIEW.TITLE" = "Leider keine Tankstellen in deiner Nähe";
 "DASHBOARD.LOADING_VIEW.DESCRIPTION" = "Wir suchen die nächstgelegenen Tankstellen in deiner Nähe. Dies kann einen Moment dauern.";
 "DASHBOARD.LOADING_VIEW.TITLE" = "Suche Tankstellen...";
 "DASHBOARD.LOGOUT.CONFIRM.ACTION.LOGOUT" = "ABMELDEN";
@@ -44,6 +44,7 @@
 "common_use_are_you_sure" = "Bist du sicher?";
 "common_use_back" = "Zurück";
 "common_use_cancel" = "Abbrechen";
+"common_use_close" = "Schließen";
 "common_use_confirm" = "Bestätigen";
 "common_use_deactivate" = "Deaktivieren";
 "common_use_decline" = "Ablehnen";
@@ -63,7 +64,9 @@
 "currency_format" = "%1$@%2$@";
 "fuel_group_diesel" = "Diesel";
 "fuel_group_petrol" = "Benzin";
+"fueling_tab_label" = "Tanken";
 "gas_station_closed_hint" = "Die Tankstelle ist aktuell geschlossen.";
+"gas_station_closes_soon_hint" = "Tankstelle schließt um %s Uhr";
 "gas_station_default_name" = "Tankstelle";
 "gas_station_error_description" = "Die Tankstellendaten konnten nicht geladen werden. Überprüfe deine Verbindung!";
 "gas_station_fuel_prices_not_available" = "Kraftstoffpreise sind leider nicht verfügbar.";
@@ -81,7 +84,11 @@
 "gas_station_opening_hours_title" = "Öffnungszeiten";
 "gasstation_closes_in" = "Tankstelle schließt um %s  Uhr";
 "general_error_title" = "Laden fehlgeschlagen";
+"good_day_message" = "Guten Tag!";
+"good_evening_message" = "Guten Abend!";
+"good_morning_message" = "Guten Morgen!";
 "list_tab_label" = "Liste";
+"map_tab_label" = "Karte";
 "more_tab_label" = "Mehr";
 "onboarding_authentication_action" = "Anmelden oder registrieren";
 "onboarding_authentication_description" = "Für die einfache Zahlung mit der App musst du dich registrieren oder mit deiner vorhandenen PACE-ID anmelden.";
@@ -108,12 +115,12 @@
 "onboarding_permission_title" = "Tankstellen in deiner Nähe";
 "onboarding_pin_error_invalid_length" = "Die PIN muss vierstellig sein.";
 "onboarding_pin_error_mismatch" = "Die PINs stimmen nicht überein. Versuche es erneut.";
-"onboarding_pin_error_not_secure" = "Die PIN ist zu einfach (0000 oder 1234 sind nicht erlaubt). Wähle eine andere PIN";
+"onboarding_pin_error_not_secure" = "Die PIN ist zu einfach (0000 oder 1234 sind nicht erlaubt). Wähle eine andere PIN.";
 "onboarding_pin_error_series" = "Die PIN darf keine Serie auf- oder absteigender Ziffern sein.";
 "onboarding_pin_error_too_few_digits" = "Die PIN muss mindestens drei unterschiedliche Ziffern enthalten.";
 "onboarding_retry_login" = "Anmeldung erneut versuchen";
-"onboarding_tracking_app_tracking" = "App-Tracking";
-"onboarding_tracking_description" = "Stimme dem App-Tracking zu, damit wir die Nutzung der App für dich weiter optimieren können.";
+"onboarding_tracking_app_tracking" = "Nutzungsanalyse";
+"onboarding_tracking_description" = "Stimme der Nutzungsanalyse zu, damit wir diese App weiter für dich optimieren können.";
 "onboarding_tracking_title" = "Verbessere deine Erfahrung";
 "onboarding_two_factor_authentication_biometry" = "Biometrie verwenden";
 "onboarding_two_factor_authentication_description" = "Biometrische Scanner sind die schnellste und sicherste Art deine Zahlungsvorgänge zu bestätigen.";
@@ -137,6 +144,7 @@
 "payment_methods_error_description" = "Deine Bezahlmethoden und Tankkarten konnten nicht geladen werden. Überprüfe deine Verbindung!";
 "payment_methods_loading_description" = "Wir laden deine Bezahlmethoden und Tankkarten. Bitte warte einen Moment.";
 "payment_methods_loading_title" = "Lade Bezahlmethoden und Tankkarten...";
+"search_title" = "Orte suchen";
 "wallet_account_deletion_title" = "Account löschen";
 "wallet_fuel_type_selection_title" = "Kraftstoffauswahl";
 "wallet_header_text" = "Du bist angemeldet als";

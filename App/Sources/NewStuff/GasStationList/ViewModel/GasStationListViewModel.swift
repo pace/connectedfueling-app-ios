@@ -17,13 +17,13 @@ class GasStationListViewModel: ObservableObject {
     init(configuration: ConfigurationManager.Configuration = ConfigurationManager.configuration,
          stations: [GasStation]? = nil,
          poiManager: POIManager = .init(),
-         locationManager: LocationManager = .init()) {
+         locationManager: LocationManager = .shared) {
         self.style = configuration.gasStationListStyle
         self.stations = stations
         self.poiManager = poiManager
         self.locationManager = locationManager
 
-        self.locationManager.delegate = self
+        self.locationManager.subscribe(self)
     }
 
     func viewWillAppear() {

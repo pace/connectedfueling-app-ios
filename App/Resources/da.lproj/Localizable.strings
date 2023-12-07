@@ -1,6 +1,6 @@
 "ALERT.LOCATION_PERMISSION.ACTIONS.OPEN_SETTINGS" = "Åbn indstillinger";
 "DASHBOARD.EMPTY_VIEW.DESCRIPTION" = "Der blev ikke fundet nogen tankstationer i nærheden af din placering.";
-"DASHBOARD.EMPTY_VIEW.TITLE" = "Ingen tankstationer i nærheden";
+"DASHBOARD.EMPTY_VIEW.TITLE" = "Desværre ingen benzinstationer i nærheden af dig";
 "DASHBOARD.LOADING_VIEW.DESCRIPTION" = "Vi søger efter de nærmeste tankstationer i dit område. Det kan tage et øjeblik.";
 "DASHBOARD.LOADING_VIEW.TITLE" = "Søger på tankstationer...";
 "DASHBOARD.LOGOUT.CONFIRM.ACTION.LOGOUT" = "LOGOUT";
@@ -44,6 +44,7 @@
 "common_use_are_you_sure" = "Er du sikker?";
 "common_use_back" = "Tilbage";
 "common_use_cancel" = "Annuller";
+"common_use_close" = "Luk";
 "common_use_confirm" = "Bekræft";
 "common_use_deactivate" = "Deaktiver";
 "common_use_decline" = "Nedgang";
@@ -63,7 +64,9 @@
 "currency_format" = "%2$@%1$@";
 "fuel_group_diesel" = "Diesel";
 "fuel_group_petrol" = "Benzin";
+"fueling_tab_label" = "Påfyldning af brændstof";
 "gas_station_closed_hint" = "Tankstationen er i øjeblikket lukket.";
+"gas_station_closes_soon_hint" = "Tankstationen lukker kl. %s";
 "gas_station_default_name" = "Tankstation";
 "gas_station_error_description" = "Tankstationens data kunne ikke indlæses. Tjek din forbindelse!";
 "gas_station_fuel_prices_not_available" = "Brændstofpriser er desværre ikke tilgængelige.";
@@ -81,7 +84,11 @@
 "gas_station_opening_hours_title" = "Åbningstider";
 "gasstation_closes_in" = "Tankstationen lukker kl. %s";
 "general_error_title" = "Indlæsning mislykkedes";
+"good_day_message" = "Hej med jer!";
+"good_evening_message" = "Godaften!";
+"good_morning_message" = "Godmorgen!";
 "list_tab_label" = "Liste";
+"map_tab_label" = "Kort";
 "more_tab_label" = "Mere";
 "onboarding_authentication_action" = "Log ind eller registrer dig";
 "onboarding_authentication_description" = "For at foretage en simpel betaling med appen skal du registrere dig eller logge ind med dit eksisterende PACE-ID.";
@@ -108,12 +115,12 @@
 "onboarding_permission_title" = "Tankstationer nær dig";
 "onboarding_pin_error_invalid_length" = "PIN-koden skal bestå af fire cifre.";
 "onboarding_pin_error_mismatch" = "PIN-koderne stemmer ikke overens. Prøv igen.";
-"onboarding_pin_error_not_secure" = "PIN-koden er for simpel (0000 eller 1234 er ikke tilladt). Vælg en anden PIN-kode";
+"onboarding_pin_error_not_secure" = "PIN-koden er for simpel (0000 eller 1234 er ikke tilladt). Vælg en anden PIN-kode.";
 "onboarding_pin_error_series" = "PIN-koden må ikke være en serie af stigende eller faldende cifre.";
 "onboarding_pin_error_too_few_digits" = "PIN-koden skal indeholde mindst tre forskellige cifre.";
 "onboarding_retry_login" = "Prøv at logge ind igen";
-"onboarding_tracking_app_tracking" = "app-sporing";
-"onboarding_tracking_description" = "Accepter app-sporing, så vi yderligere kan optimere brugen af appen for dig.";
+"onboarding_tracking_app_tracking" = "brugsanalysen";
+"onboarding_tracking_description" = "Accepter brugsanalysen, så vi kan optimere denne app yderligere for dig.";
 "onboarding_tracking_title" = "Forbedre din oplevelse";
 "onboarding_two_factor_authentication_biometry" = "Brug biometri";
 "onboarding_two_factor_authentication_description" = "Biometriske scannere er den hurtigste og mest sikre måde at bekræfte dine betalingstransaktioner på.";
@@ -137,6 +144,7 @@
 "payment_methods_error_description" = "Dine betalingsmetoder og brændstofkort kunne ikke indlæses. Tjek din forbindelse!";
 "payment_methods_loading_description" = "Vi indlæser dine betalingsmetoder og brændstofkort. Vent venligst et øjeblik.";
 "payment_methods_loading_title" = "Indlæsning af betalingsmetoder og brændstofkort...";
+"search_title" = "Søg efter steder";
 "wallet_account_deletion_title" = "Slet konto";
 "wallet_fuel_type_selection_title" = "Valg af brændstof";
 "wallet_header_text" = "Du er logget ind som";

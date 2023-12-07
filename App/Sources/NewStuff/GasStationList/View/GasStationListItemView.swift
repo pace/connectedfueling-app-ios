@@ -91,7 +91,7 @@ struct GasStationListItemView: View {
                 Spacer()
             }
             .padding(.bottom, .paddingXS)
-        } else if viewModel.showIsClosed {
+        } else if viewModel.isClosed {
             HStack {
                 Spacer()
                 Image(.errorIcon)

@@ -1,6 +1,6 @@
 "ALERT.LOCATION_PERMISSION.ACTIONS.OPEN_SETTINGS" = "Open instellingen";
 "DASHBOARD.EMPTY_VIEW.DESCRIPTION" = "Er werden geen benzinestations in uw buurt gevonden.";
-"DASHBOARD.EMPTY_VIEW.TITLE" = "Geen benzinestations in uw buurt";
+"DASHBOARD.EMPTY_VIEW.TITLE" = "Helaas geen tankstations bij jou in de buurt";
 "DASHBOARD.LOADING_VIEW.DESCRIPTION" = "Wij zoeken de dichtstbijzijnde benzinestations in uw buurt. Dit kan even duren.";
 "DASHBOARD.LOADING_VIEW.TITLE" = "Zoek benzinestations...";
 "DASHBOARD.LOGOUT.CONFIRM.ACTION.LOGOUT" = "REGISTER";
@@ -44,6 +44,7 @@
 "common_use_are_you_sure" = "Weet je het zeker?";
 "common_use_back" = "Terug";
 "common_use_cancel" = "Annuleren";
+"common_use_close" = "Sluit";
 "common_use_confirm" = "Bevestig";
 "common_use_deactivate" = "Deactiveer";
 "common_use_decline" = "Daling";
@@ -63,7 +64,9 @@
 "currency_format" = "%2$@%1$@";
 "fuel_group_diesel" = "Diesel";
 "fuel_group_petrol" = "Benzine";
+"fueling_tab_label" = "Bijtanken";
 "gas_station_closed_hint" = "Het tankstation is momenteel gesloten.";
+"gas_station_closes_soon_hint" = "Tankstation sluit om %s";
 "gas_station_default_name" = "Tankstation";
 "gas_station_error_description" = "De gegevens van het tankstation konden niet worden geladen. Controleer uw verbinding!";
 "gas_station_fuel_prices_not_available" = "Brandstofprijzen zijn helaas niet beschikbaar.";
@@ -81,7 +84,11 @@
 "gas_station_opening_hours_title" = "Openingstijden";
 "gasstation_closes_in" = "Benzinestation sluit om %s";
 "general_error_title" = "Laden mislukt";
+"good_day_message" = "Hallo!";
+"good_evening_message" = "Goedenavond!";
+"good_morning_message" = "Goedemorgen!";
 "list_tab_label" = "Lijst";
+"map_tab_label" = "Kaart";
 "more_tab_label" = "Meer";
 "onboarding_authentication_action" = "Inloggen of registreren";
 "onboarding_authentication_description" = "Om een eenvoudige betaling met de app te doen, moet je je registreren of inloggen met je bestaande PACE ID.";
@@ -108,12 +115,12 @@
 "onboarding_permission_title" = "Tankstations bij jou in de buurt";
 "onboarding_pin_error_invalid_length" = "De PIN-code moet uit vier cijfers bestaan.";
 "onboarding_pin_error_mismatch" = "De pincodes komen niet overeen. Probeer het opnieuw.";
-"onboarding_pin_error_not_secure" = "De PIN-code is te eenvoudig (0000 of 1234 is niet toegestaan). Kies een andere PIN-code";
+"onboarding_pin_error_not_secure" = "De PIN-code is te eenvoudig (0000 of 1234 is niet toegestaan). Kies een andere PIN-code.";
 "onboarding_pin_error_series" = "De PIN-code mag geen reeks oplopende of aflopende cijfers zijn.";
 "onboarding_pin_error_too_few_digits" = "De PIN-code moet minstens drie verschillende cijfers bevatten.";
 "onboarding_retry_login" = "Probeer opnieuw in te loggen";
-"onboarding_tracking_app_tracking" = "app tracking";
-"onboarding_tracking_description" = "Akkoord gaan met app tracking zodat we het gebruik van de app verder voor je kunnen optimaliseren.";
+"onboarding_tracking_app_tracking" = "gebruiksanalyse";
+"onboarding_tracking_description" = "Accepteer de gebruiksanalyse zodat we deze app verder voor je kunnen optimaliseren.";
 "onboarding_tracking_title" = "Verbeter uw ervaring";
 "onboarding_two_factor_authentication_biometry" = "Biometrie gebruiken";
 "onboarding_two_factor_authentication_description" = "Biometrische scanners zijn de snelste en veiligste manier om je betalingstransacties te bevestigen.";
@@ -137,6 +144,7 @@
 "payment_methods_error_description" = "Je betaalmethoden en tankkaarten konden niet worden geladen. Controleer uw verbinding!";
 "payment_methods_loading_description" = "We laden je betaalmethoden en tankkaarten. Een ogenblik geduld alstublieft.";
 "payment_methods_loading_title" = "Betaalmethoden en tankkaarten laden...";
+"search_title" = "Locaties zoeken";
 "wallet_account_deletion_title" = "Account verwijderen";
 "wallet_fuel_type_selection_title" = "Brandstof selecteren";
 "wallet_header_text" = "U bent aangemeld als";

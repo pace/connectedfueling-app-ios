@@ -13,16 +13,12 @@ class GasStationListItemViewModel: ObservableObject {
         isNearby && gasStation.isConnectedFuelingEnabled
     }
 
-    var closesIn: Int {
-        gasStation.poiOpeningHours.minuteTillClose()
-    }
-
-    var showIsClosed: Bool {
-        !gasStation.openingHours.isEmpty && closesIn == -Int.max
+    var isClosed: Bool {
+        gasStation.isClosed
     }
 
     var isClosingSoon: Bool {
-        closesIn > 0 && closesIn <= 30 // TODO: decide value
+        gasStation.closesIn > 0 && gasStation.closesIn <= 30 // TODO: decide value
     }
 
     var closingTimeToday: String? {
@@ -35,7 +31,7 @@ class GasStationListItemViewModel: ObservableObject {
     }
 
     var distanceStyle: DistanceTagView.Style {
-        if showIsClosed || isClosingSoon {
+        if isClosed || isClosingSoon {
             return .closed(formattedDistance)
         } else if isNearby {
             return .nearby
