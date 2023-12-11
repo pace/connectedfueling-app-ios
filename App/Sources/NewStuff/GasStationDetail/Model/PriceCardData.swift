@@ -3,6 +3,6 @@
 import Foundation
 
 struct PriceCardData: Hashable {
-    var fuelType: String
-    var price: AttributedString
+    let fuelType: String
+    let price: AttributedString
 }

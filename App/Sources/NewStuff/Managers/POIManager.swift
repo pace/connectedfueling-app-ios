@@ -6,7 +6,7 @@ struct POIManager {
     var fuelType: FuelType? {
         get {
             guard let data = UserDefaults.standard.data(forKey: Constants.UserDefaults.fuelType),
-                  let fuelType = try? JSONDecoder().decode(FuelType.self, from: data) 
+                  let fuelType = try? JSONDecoder().decode(FuelType.self, from: data)
             else { return nil }
 
             return fuelType
@@ -18,7 +18,7 @@ struct POIManager {
     }
 
     func fetchCofuStations(at location: CLLocation) async -> Result<[GasStation], Error> {
-        let result = await POIKit.requestCofuGasStations(center: location, radius: Constants.GasStationList.cofuStationRadius)
+        let result = await POIKit.requestCofuGasStations(center: location, radius: Constants.GasStation.cofuStationRadius)
         let selectedFuelType = fuelType
 
         switch result {
@@ -97,18 +97,11 @@ private extension POIManager {
         let stationLocation = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
         let distanceInKilometers = location.distance(from: stationLocation) / 1_000
 
-        let price = station.prices.first(where: { $0.fuelType == selectedFuelType?.rawValue })
-        let fuelPrice: FuelPrice = .init(value: 1.389, currency: "EUR", format: "d.dds")//price.flatMap { makeFuelPrice(for: $0, currency: station.currency, format: station.priceFormat) } // TODO: unmock
-
-        let prices: [FuelPriceInfo] = station.prices.compactMap {
-            guard let fuelType: FuelType = .init(rawValue: $0.fuelType ?? "") else { return nil }
-
-            return .init(fuelType: fuelType,
-                         fuelPrice: .init(value: $0.price ?? 0.0, // TODO: - No fallback here, if there is no price -> there is no price
-                                          currency: $0.currency,
-                                          format: station.priceFormat))
+        let priceFormat = station.priceFormat ?? Constants.GasStation.priceFormatFallback
+        let currency = station.currency
+        let prices: [FuelPrice] = station.prices.compactMap {
+            makeFuelPrice(for: $0, currency: currency, priceFormat: priceFormat)
         }
-
         let openingHours = station.openingHours?.rules?.map { OpeningHours(from: $0) } ?? []
 
         return .init(id: stationId,
@@ -118,16 +111,18 @@ private extension POIManager {
                      location: stationLocation,
                      paymentMethods: station.cofuPaymentMethods,
                      isConnectedFuelingEnabled: isConnectedFuelingEnabled,
-                     fuelType: fuelType,
-                     fuelPrice: fuelPrice,
                      prices: prices,
                      lastUpdated: station.lastUpdated,
                      openingHours: openingHours)
     }
 
-    func makeFuelPrice(for price: PCPOIFuelPrice, currency: String?, format: String?) -> FuelPrice? {
-        guard let value = price.price, let currency else { return nil }
-        return .init(value: value, currency: currency, format: format)
+    func makeFuelPrice(for price: PCPOIFuelPrice, currency: String?, priceFormat: String) -> FuelPrice? {
+        guard let value = price.price,
+              let rawFuelType = price.fuelType,
+              let fuelType: FuelType = .init(rawValue: rawFuelType),
+              let currency else { return nil }
+
+        return .init(value: value, fuelType: fuelType, currency: currency, format: priceFormat)
     }
 
     func makeAddressLines(for address: PCPOIGasStation.Address) -> [String] {

@@ -1,22 +1,15 @@
 import CoreLocation
 import PACECloudSDK
 
-struct FuelPriceInfo {
-    let fuelType: FuelType
-    let fuelPrice: FuelPrice
-}
-
 class GasStation: ObservableObject, Hashable, Comparable {
     let id: String
     let name: String
     let addressLines: [String]
     @Published var distanceInKilometers: Double?
-    let location: CLLocation?
+    let location: CLLocation
     let paymentMethods: [String]
     let isConnectedFuelingEnabled: Bool
-    let fuelType: FuelType? // TODO: use selected fueltype (&fuelPrice) in `prices`
-    let fuelPrice: FuelPrice?
-    @Published var prices: [FuelPriceInfo]
+    @Published var prices: [FuelPrice]
     @Published var lastUpdated: Date?
 
     /// opening / operating hours
@@ -26,7 +19,16 @@ class GasStation: ObservableObject, Hashable, Comparable {
         openingHours.map { $0.poiConverted() }
     }
 
-    init(id: String, name: String, addressLines: [String], distanceInKilometers: Double?, location: CLLocation?, paymentMethods: [String], isConnectedFuelingEnabled: Bool, fuelType: FuelType?, fuelPrice: FuelPrice?, prices: [FuelPriceInfo], lastUpdated: Date?, openingHours: [OpeningHours]) {
+    init(id: String,
+         name: String,
+         addressLines: [String],
+         distanceInKilometers: Double?,
+         location: CLLocation,
+         paymentMethods: [String],
+         isConnectedFuelingEnabled: Bool,
+         prices: [FuelPrice],
+         lastUpdated: Date?,
+         openingHours: [OpeningHours]) {
         self.id = id
         self.name = name
         self.addressLines = addressLines
@@ -34,11 +36,15 @@ class GasStation: ObservableObject, Hashable, Comparable {
         self.location = location
         self.paymentMethods = paymentMethods
         self.isConnectedFuelingEnabled = isConnectedFuelingEnabled
-        self.fuelType = fuelType
-        self.fuelPrice = fuelPrice
         self.prices = prices
         self.lastUpdated = lastUpdated
         self.openingHours = openingHours
+    }
+
+    func lowestPrice(for fuelTypeKeys: [String]) -> FuelPrice? {
+        prices
+            .filter { fuelTypeKeys.contains($0.fuelType.rawValue) }
+            .min(by: { $0.value < $1.value })
     }
 
     func hash(into hasher: inout Hasher) {

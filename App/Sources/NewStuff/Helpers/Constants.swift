@@ -26,7 +26,7 @@ enum Constants {
         static let roundingThreshold: Double = 0.05
     }
 
-    enum GasStationList {
+    enum GasStation {
         static let cofuStationRadius: Double = 10_000
         static let updateDistanceThresholdInMeters: Double = 500
         static let priceFormatFallback: String = "d.dds"

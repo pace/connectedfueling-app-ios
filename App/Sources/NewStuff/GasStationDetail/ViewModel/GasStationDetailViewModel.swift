@@ -1,5 +1,3 @@
-// Copyright © 2023 PACE Telematics GmbH. All rights reserved.
-
 import Combine
 import CoreLocation
 import Foundation
@@ -51,7 +49,7 @@ class GasStationDetailViewModel: ObservableObject {
     }
 
     var location: CLLocationCoordinate2D {
-        gasStation.location?.coordinate ?? .init()
+        gasStation.location.coordinate
     }
 
     var openingHourRows: [OpeningHourInfo] = []
@@ -87,10 +85,6 @@ class GasStationDetailViewModel: ObservableObject {
         return formatter
     }()
 
-    var formattedPrice: AttributedString {
-        formattedPrice(for: gasStation.fuelPrice?.value, currency: gasStation.fuelPrice?.currency)
-    }
-
     private func formattedPrice(for price: Double?, currency: String?) -> AttributedString {
         guard let price = price,
               let currency = currency else {
@@ -107,9 +101,9 @@ class GasStationDetailViewModel: ObservableObject {
     }
 
     var priceInfos: [PriceCardData] {
-        gasStation.prices.map { .init(fuelType: $0.fuelType.localizedTitle,
-                                      price: formattedPrice(for: $0.fuelPrice.value,
-                                                            currency: $0.fuelPrice.currency)) }
+        gasStation.prices.map { 
+            .init(fuelType: $0.fuelType.localizedTitle,
+                  price: formattedPrice(for: $0.value, currency: $0.currency)) }
     }
 
     var actionTitle: String {
@@ -118,7 +112,7 @@ class GasStationDetailViewModel: ObservableObject {
 
     init(gasStation: GasStation) {
         self.gasStation = gasStation
-        self.priceFormatter = PriceNumberFormatter(with: gasStation.fuelPrice?.format ?? Constants.GasStationList.priceFormatFallback)
+        self.priceFormatter = PriceNumberFormatter(with: gasStation.prices.first?.format ?? Constants.GasStation.priceFormatFallback)
         let openingHoursViewValues: [(String, String)] = gasStation.poiOpeningHours.openingHours().toReadableStrings()
         self.openingHourRows = parseGasStationOpeningHours(with: openingHoursViewValues, from: gasStation)
 
@@ -149,12 +143,7 @@ class GasStationDetailViewModel: ObservableObject {
     }
 
     func startNavigation() {
-        guard let location = gasStation.location else {
-            NSLog("[GasStationDetailViewModel] Failed starting navigation. No gas station location available.")
-            return
-        }
-
-        let coordinate: CLLocationCoordinate2D = location.coordinate
+        let coordinate: CLLocationCoordinate2D = gasStation.location.coordinate
         let placemark: MKPlacemark = MKPlacemark(coordinate: coordinate)
         let item = MKMapItem(placemark: placemark)
         item.name = gasStation.name

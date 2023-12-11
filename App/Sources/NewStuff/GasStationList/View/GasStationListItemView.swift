@@ -136,14 +136,15 @@ struct GasStationListItemView: View {
                                                                     "76131 Karlsruhe"
                                                                   ],
                                                                   distanceInKilometers: 0.234,
-                                                                  location: nil,
+                                                                  location: .init(latitude: 0, longitude: 0),
                                                                   paymentMethods: [],
                                                                   isConnectedFuelingEnabled: true,
-                                                                  fuelType: .init(rawValue: "ron95e5"),
-                                                                  fuelPrice: .init(value: 1.38,
-                                                                                   currency: "EUR",
-                                                                                   format: "d.dds"), 
-                                                                  prices: [],
+                                                                  prices: [
+                                                                    .init(value: 1.79,
+                                                                          fuelType: .ron95e5,
+                                                                          currency: "EUR",
+                                                                          format: "d.dds")
+                                                                  ],
                                                                   lastUpdated: Date(),
                                                                   openingHours: [
                                                                     .init(days: [.monday, .tuesday],
@@ -163,12 +164,15 @@ struct GasStationListItemView: View {
                                                                     "76131 Karlsruhe"
                                                                   ],
                                                                   distanceInKilometers: 0.234,
-                                                                  location: nil,
+                                                                  location: .init(latitude: 0, longitude: 0),
                                                                   paymentMethods: [],
                                                                   isConnectedFuelingEnabled: false,
-                                                                  fuelType: nil,
-                                                                  fuelPrice: nil,
-                                                                  prices: [],
+                                                                  prices: [
+                                                                    .init(value: 1.89,
+                                                                          fuelType: .diesel,
+                                                                          currency: "EUR",
+                                                                          format: "d.dds")
+                                                                  ],
                                                                   lastUpdated: Date(),
                                                                   openingHours: [])))
     }

@@ -86,7 +86,7 @@ extension GasStationListViewModel: LocationManagerDelegate {
         guard let location = locations.last else { return }
         currentLocation = location
 
-        let isUpdateRequired = previousLocation.flatMap { $0.distance(from: location) >= Constants.GasStationList.updateDistanceThresholdInMeters } ?? true
+        let isUpdateRequired = previousLocation.flatMap { $0.distance(from: location) >= Constants.GasStation.updateDistanceThresholdInMeters } ?? true
         guard isUpdateRequired else { return }
 
         previousLocation = location

@@ -17,12 +17,8 @@ class GasStationListItemViewModel: ObservableObject {
         gasStation.poiOpeningHours.minuteTillClose()
     }
 
-    var isClosed: Bool {
-        closesIn == -Int.max
-    }
-
     var showIsClosed: Bool {
-        !gasStation.openingHours.isEmpty && isClosed
+        !gasStation.openingHours.isEmpty && closesIn == -Int.max
     }
 
     var isClosingSoon: Bool {
@@ -62,27 +58,22 @@ class GasStationListItemViewModel: ObservableObject {
     }
 
     var priceAvailable: Bool {
-        guard gasStation.fuelPrice != nil,
-              gasStation.fuelType != nil else {
-            return false
-        }
-
-        return true
+        !gasStation.prices.isEmpty
     }
 
     var formattedFuelType: String {
-        gasStation.fuelType?.localizedTitle.localizedCapitalized ?? L10n.Price.notAvailable
+        poiManager.fuelType?.localizedTitle ?? L10n.Price.notAvailable
     }
 
     var formattedPrice: AttributedString {
-        guard let price = gasStation.fuelPrice?.value,
-              let currency = gasStation.fuelPrice?.currency else {
+        guard let selectedFuelType = poiManager.fuelType,
+              let price = gasStation.lowestPrice(for: selectedFuelType.keys) else {
             return .init(L10n.Price.notAvailable)
         }
 
-        let currencySymbol = NSLocale.symbol(for: currency)
+        let currencySymbol = NSLocale.symbol(for: price.currency)
 
-        guard let formattedPriceValue = priceFormatter.localizedPrice(from: NSNumber(value: price), currencySymbol: currencySymbol) else {
+        guard let formattedPriceValue = priceFormatter.localizedPrice(from: NSNumber(value: price.value), currencySymbol: currencySymbol) else {
             return .init(L10n.Price.notAvailable)
         }
 
@@ -96,6 +87,7 @@ class GasStationListItemViewModel: ObservableObject {
     @Published var gasStation: GasStation
 
     private let priceFormatter: PriceNumberFormatter
+    private let poiManager: POIManager
 
     private let decimalDistanceFormatter: MeasurementFormatter = {
         let formatter = MeasurementFormatter()
@@ -115,9 +107,10 @@ class GasStationListItemViewModel: ObservableObject {
         return formatter
     }()
 
-    init(gasStation: GasStation) {
+    init(gasStation: GasStation, poiManager: POIManager = .init()) {
         self.gasStation = gasStation
-        self.priceFormatter = PriceNumberFormatter(with: gasStation.fuelPrice?.format ?? Constants.GasStationList.priceFormatFallback)
+        self.priceFormatter = PriceNumberFormatter(with: gasStation.prices.first?.format ?? Constants.GasStation.priceFormatFallback)
+        self.poiManager = POIManager()
     }
 
     // TODO: maybe add to sdk?
@@ -143,12 +136,7 @@ class GasStationListItemViewModel: ObservableObject {
     }
 
     func startNavigation() {
-        guard let location = gasStation.location else {
-            NSLog("[GasStationListItemViewModel] Failed starting navigation. No gas station location available.")
-            return
-        }
-
-        let coordinate: CLLocationCoordinate2D = location.coordinate
+        let coordinate: CLLocationCoordinate2D = gasStation.location.coordinate
         let placemark: MKPlacemark = MKPlacemark(coordinate: coordinate)
         let item = MKMapItem(placemark: placemark)
         item.name = gasStation.name
