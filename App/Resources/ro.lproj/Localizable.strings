@@ -37,6 +37,7 @@
 "alert_location_permission_description" = "Pentru a vă arăta cea mai apropiată benzinărie, avem nevoie de acces la locația dvs. actuală.";
 "alert_location_permission_title" = "Locația nu a fost publicată";
 "closed_label" = "ÎNCHIS";
+"common_pay_here_now" = "Plătiți aici acum!";
 "common_start_fueling" = "Începeți să alimentați";
 "common_start_navigation" = "Începeți navigarea";
 "common_use_accept" = "Accept";
@@ -78,6 +79,7 @@
 "gas_station_opening_hours_hint" = "Orele de deschidere pot fi diferite în zilele de sărbătoare.";
 "gas_station_opening_hours_not_available" = "În prezent, orele de deschidere nu sunt disponibile.";
 "gas_station_opening_hours_title" = "Ore de deschidere";
+"gasstation_closes_in" = "Benzinăria se închide la %s";
 "general_error_title" = "Încărcarea nu a reușit";
 "list_tab_label" = "Lista";
 "more_tab_label" = "Mai mult";

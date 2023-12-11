@@ -6,6 +6,11 @@ struct PriceCardView: View {
     var title: String
     var priceText: AttributedString
 
+    init(title: String, priceText: AttributedString) {
+        self.title = title
+        self.priceText = priceText
+    }
+
     var body: some View {
         ZStack {
             Color(uiColor: Asset.Colors.lightGrey.color)
@@ -15,10 +20,9 @@ struct PriceCardView: View {
                     .font(.system(size: 14))
                     .multilineTextAlignment(.center)
                 TextLabel(priceText)
-                    .font(.system(size: 24, weight: .heavy))
             }
             .frame(alignment: .center)
-            .padding(.horizontal, .paddingXS)
+            .padding(.horizontal, .paddingXXS)
         }
         .frame(width: 112, height: 63)
     }

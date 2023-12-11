@@ -139,6 +139,7 @@
 		9A00F23A2B15EAC50050C7FA /* MapGasStationBottomMarkerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A00F2392B15EAC50050C7FA /* MapGasStationBottomMarkerView.swift */; };
 		9A00F23C2B162BA00050C7FA /* OpeningHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A00F23B2B162BA00050C7FA /* OpeningHours.swift */; };
 		9A00F23E2B162BC70050C7FA /* OpeningHour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A00F23D2B162BC70050C7FA /* OpeningHour.swift */; };
+		9A00F2412B1A1FCE0050C7FA /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A00F2402B1A1FCE0050C7FA /* RoundedCorner.swift */; };
 		B42B801B26CB977400793BF5 /* PACECloudUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B801A26CB977400793BF5 /* PACECloudUserRepository.swift */; };
 		B46B802226C415240005AD7E /* InputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46B802126C415240005AD7E /* InputValidator.swift */; };
 		B46B802426C415680005AD7E /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46B802326C415680005AD7E /* ValidationError.swift */; };
@@ -438,6 +439,8 @@
 		9A00F2392B15EAC50050C7FA /* MapGasStationBottomMarkerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapGasStationBottomMarkerView.swift; sourceTree = "<group>"; };
 		9A00F23B2B162BA00050C7FA /* OpeningHours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningHours.swift; sourceTree = "<group>"; };
 		9A00F23D2B162BC70050C7FA /* OpeningHour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningHour.swift; sourceTree = "<group>"; };
+		9A00F2402B1A1FCE0050C7FA /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		9AD7365F2B1E0AA200B5A517 /* TestStationCPK.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = TestStationCPK.gpx; path = App/SupportingFiles/Routes/TestStationCPK.gpx; sourceTree = "<group>"; };
 		9B39CB100439D4A0A184FB62 /* InfoPlist.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9C1CE9993B510A7FDB08F21C /* UITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A21D1F58961E1C012B58255C /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -570,6 +573,7 @@
 		1BB371EF469A394221D53348 = {
 			isa = PBXGroup;
 			children = (
+				9AD7365F2B1E0AA200B5A517 /* TestStationCPK.gpx */,
 				C4DFB02345F5F4B89FF8794C /* App */,
 				C5CB313F26946F91005E8986 /* Domain */,
 				C56DF951268F32B90074DBC8 /* Frameworks */,
@@ -977,6 +981,7 @@
 				3BDE7B172AD931C0009A88DF /* TextInputField.swift */,
 				3BAE60742AD7CBCB006EA9DD /* TextLabel.swift */,
 				3B6D84EE2B10B01600701DEE /* WebView.swift */,
+				9A00F2402B1A1FCE0050C7FA /* RoundedCorner.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1971,6 +1976,7 @@
 				3B55852C2B189053009E300B /* SingleDigitTextFieldOld.swift in Sources */,
 				C56CD44F26BD485A004E61FB /* PaymentHistoryCoordinator.swift in Sources */,
 				3B5A1C8E2B163E7800EA5754 /* OnboardingLegalPageViewModel.swift in Sources */,
+				9A00F2412B1A1FCE0050C7FA /* RoundedCorner.swift in Sources */,
 				C5E8A7F326A5B7EB002119DD /* DashboardItemViewModel.swift in Sources */,
 				3BDE7B182AD931C0009A88DF /* TextInputField.swift in Sources */,
 				C56CD42A26BBF35F004E61FB /* MenuItemViewModel.swift in Sources */,

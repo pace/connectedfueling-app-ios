@@ -37,6 +37,7 @@
 "alert_location_permission_description" = "To show you the nearest gas station, we need access to your current location.";
 "alert_location_permission_title" = "Location permission not granted";
 "closed_label" = "CLOSED";
+"common_pay_here_now" = "Pay here now!";
 "common_start_fueling" = "Start fueling";
 "common_start_navigation" = "Start navigation";
 "common_use_accept" = "Accept";
@@ -78,6 +79,7 @@
 "gas_station_opening_hours_hint" = "Opening hours may differ on holidays.";
 "gas_station_opening_hours_not_available" = "Opening hours are currently not available.";
 "gas_station_opening_hours_title" = "Opening hours";
+"gasstation_closes_in" = "Petrol station closes at %s";
 "general_error_title" = "Loading failed";
 "list_tab_label" = "List";
 "more_tab_label" = "More";

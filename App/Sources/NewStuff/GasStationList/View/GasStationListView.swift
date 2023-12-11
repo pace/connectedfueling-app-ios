@@ -16,17 +16,50 @@ struct GasStationListView: View {
 
     @ViewBuilder
     private var content: some View {
-        if let sections = viewModel.sections {
-            if sections.isEmpty {
-                emptyView
-            } else {
-                list(of: sections)
-            }
-        } else {
-            loadingView
-                .onAppear {
-                    viewModel.viewWillAppear()
+        switch viewModel.style {
+        case .primary:
+            viewContent
+                .edgesIgnoringSafeArea(.top)
+
+        case .secondary:
+            viewContent
+        }
+    }
+
+    @ViewBuilder
+    private var viewContent: some View {
+        VStack(spacing: 0) {
+            headerContent
+                .padding(.bottom, 10)
+            if let stations = viewModel.stations {
+                if stations.isEmpty {
+                    Spacer()
+                    emptyView
+                    Spacer()
+                } else {
+                    list(of: stations)
                 }
+            } else {
+                Spacer()
+                loadingView
+                    .onAppear {
+                        viewModel.viewWillAppear()
+                    }
+                Spacer()
+            }
+        }
+    }
+
+    @ViewBuilder
+    private var headerContent: some View {
+        if viewModel.style == .primary {
+            Image(.gasStationListPrimaryHeaderIcon)
+                .resizable()
+                .scaledToFill()
+                .frame(maxWidth: .infinity, maxHeight: 200, alignment: .bottom)
+        } else {
+            Spacer()
+                .frame(height: 2)
         }
     }
 
@@ -36,28 +69,16 @@ struct GasStationListView: View {
     }
 
     @ViewBuilder
-    private func list(of sections: [GasStationListSection]) -> some View {
-        List(sections, id: \.self) { section in
-            Section(header: section.header) {
-                ForEach(section.gasStations, id: \.self) { gasStation in
-                    NavigationLink(destination: GasStationDetailView(viewModel: .init(gasStation: gasStation))) {
-                        GasStationListItemView(viewModel: .init(gasStation: gasStation))
-                    }
-                }
+    private func list(of stations: [GasStation]) -> some View {
+        List {
+            ForEach(stations, id: \.self) { gasStation in
+                GasStationListItemView(viewModel: .init(gasStation: gasStation))
             }
             .listRowInsets(.init(top: 0, leading: 25, bottom: 10, trailing: 25))
             .listRowSeparator(.hidden)
+            .listRowBackground(Color.clear)
         }
         .listStyle(.plain)
-        .refreshable {
-            viewModel.reloadCofuStations()
-        }
-    }
-
-    @ViewBuilder
-    private func sectionHeader(title: String) -> some View {
-        TextLabel(title)
-            .font(.system(size: 20, weight: .semibold))
     }
 
     private var loadingView: some View {
@@ -84,10 +105,10 @@ struct GasStationListView: View {
     AppNavigationView {
         switch ConfigurationManager.configuration.gasStationListStyle {
         case .primary:
-            GasStationListView(viewModel: .init(sections: []))
+            GasStationListView(viewModel: .init(stations: []))
 
         case .secondary:
-            GasStationListView(viewModel: .init(sections: []))
+            GasStationListView(viewModel: .init(stations: []))
                 .addNavigationBar(style: .centeredIcon(icon: .secondaryHeaderIcon))
         }
     }
@@ -98,8 +119,7 @@ struct GasStationListView: View {
     AppNavigationView {
         switch ConfigurationManager.configuration.gasStationListStyle {
         case .primary:
-            GasStationListView(viewModel: .init(sections: [
-                .nearest(
+            GasStationListView(viewModel: .init(stations: [
                     .init(id: "id",
                           name: "MobyPay 3435",
                           addressLines: [
@@ -111,7 +131,7 @@ struct GasStationListView: View {
                           paymentMethods: [],
                           isConnectedFuelingEnabled: true,
                           fuelType: .init(rawValue: "ron95e5"),
-                          fuelPrice: .init(value: 1.38, currency: "EUR", format: "d.dds"),
+                          fuelPrice: .init(value: 1.399, currency: "EUR", format: "d.dds"),
                           prices: [
                             .init(fuelType: .diesel,
                                   fuelPrice: .init(value: 1.889,
@@ -131,9 +151,63 @@ struct GasStationListView: View {
                                                rule: .open),
                                          .init(days: [.saturday, .sunday],
                                                hours: [.init(from: "10", to: "16")],
-                                               rule: .open)])
-                ),
-                .other([
+                                               rule: .open)]),
+                    .init(id: "id3",
+                          name: "Tanke Danke",
+                          addressLines: ["Address line 1", "Address line 2"],
+                          distanceInKilometers: 0.234,
+                          location: .init(latitude: 49.012233, longitude: 8.427348),
+                          paymentMethods: [],
+                          isConnectedFuelingEnabled: false,
+                          fuelType: .cheapestDiesel,
+                          fuelPrice: .init(value: 1.998, currency: "eur", format: "d.dds"),
+                          prices: [
+                            .init(fuelType: .ron95e5,
+                                  fuelPrice: .init(value: 1.789,
+                                                   currency: "eur",
+                                                   format: "d.dds")),
+                            .init(fuelType: .ron95e10,
+                                  fuelPrice: .init(value: 1.339,
+                                                   currency: "eur",
+                                                   format: "d.dds"))
+                          ],
+                          lastUpdated: Date(),
+                          openingHours: [
+                            .init(days: [.monday, .tuesday],
+                                  hours: [.init(from: "8", to: "15:30")],
+                                  rule: .open),
+                            .init(days: [.wednesday, .thursday, .friday],
+                                  hours: [.init(from: "9", to: "19")],
+                                  rule: .open),
+                            .init(days: [.saturday, .sunday],
+                                  hours: [.init(from: "10", to: "16")],
+                                  rule: .open)
+                          ]),
+                    .init(id: "id2",
+                          name: "Tanke Danke",
+                          addressLines: ["Address line 1", "Address line 2"],
+                          distanceInKilometers: 0.234,
+                          location: .init(latitude: 49.012233, longitude: 8.427348),
+                          paymentMethods: [],
+                          isConnectedFuelingEnabled: true,
+                          fuelType: .cheapestDiesel,
+                          fuelPrice: .init(value: 1.998, currency: "eur", format: "d.dds"),
+                          prices: [
+                            .init(fuelType: .ron95e5,
+                                  fuelPrice: .init(value: 1.789,
+                                                   currency: "eur",
+                                                   format: "d.dds")),
+                            .init(fuelType: .ron95e10,
+                                  fuelPrice: .init(value: 1.339,
+                                                   currency: "eur",
+                                                   format: "d.dds"))
+                          ],
+                          lastUpdated: Date(),
+                          openingHours: [
+                            .init(days: [.monday, .tuesday, .wednesday, .thursday, .friday, .saturday, .sunday],
+                                  hours: [.init(from: "3", to: "22")],
+                                  rule: .open),
+                          ]),
                     .init(id: "id-1",
                           name: "MobyPay 3436",
                           addressLines: [
@@ -201,12 +275,10 @@ struct GasStationListView: View {
                           prices: [],
                           lastUpdated: Date(),
                           openingHours: [])
-                ])
             ]))
         
         case .secondary:
-            GasStationListView(viewModel: .init(sections: [
-                .nearest(
+            GasStationListView(viewModel: .init(stations: [
                     .init(id: "id",
                           name: "MobyPay 3435",
                           addressLines: [
@@ -238,9 +310,7 @@ struct GasStationListView: View {
                                                rule: .open),
                                          .init(days: [.saturday, .sunday],
                                                hours: [.init(from: "10", to: "16")],
-                                               rule: .open)])
-                ),
-                .other([
+                                               rule: .open)]),
                     .init(id: "id-1",
                           name: "MobyPay 3436",
                           addressLines: [
@@ -308,7 +378,6 @@ struct GasStationListView: View {
                           prices: [],
                           lastUpdated: Date(),
                           openingHours: [])
-                ])
             ]))
             .addNavigationBar(style: .centeredIcon(icon: .secondaryHeaderIcon))
         }

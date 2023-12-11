@@ -37,6 +37,7 @@
 "alert_location_permission_description" = "Para lhe mostrar a estação de serviço mais próxima, precisamos de ter acesso à sua localização actual.";
 "alert_location_permission_title" = "Localização não libertada";
 "closed_label" = "FECHADO";
+"common_pay_here_now" = "Pague aqui agora!";
 "common_start_fueling" = "Começar a abastecer";
 "common_start_navigation" = "Iniciar navegação";
 "common_use_accept" = "Aceitar";
@@ -78,6 +79,7 @@
 "gas_station_opening_hours_hint" = "O horário de abertura pode ser diferente nos feriados.";
 "gas_station_opening_hours_not_available" = "O horário de abertura não está actualmente disponível.";
 "gas_station_opening_hours_title" = "Horário de abertura";
+"gasstation_closes_in" = "A bomba de gasolina fecha a %s";
 "general_error_title" = "Falha no carregamento";
 "list_tab_label" = "Lista";
 "more_tab_label" = "Mais";

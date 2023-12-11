@@ -3,7 +3,7 @@ import PACECloudSDK
 import SwiftUI
 
 class GasStationListViewModel: ObservableObject {
-    @Published var sections: [GasStationListSection]?
+    @Published var stations: [GasStation]?
     @Published var alert: Alert?
 
     private var currentLocation: CLLocation?
@@ -12,10 +12,14 @@ class GasStationListViewModel: ObservableObject {
     private let poiManager: POIManager
     private let locationManager: LocationManager
 
-    init(sections: [GasStationListSection]? = nil,
+    let style: ConfigurationManager.Configuration.GasStationListStyle
+
+    init(configuration: ConfigurationManager.Configuration = ConfigurationManager.configuration,
+         stations: [GasStation]? = nil,
          poiManager: POIManager = .init(),
          locationManager: LocationManager = .init()) {
-        self.sections = sections
+        self.style = configuration.gasStationListStyle
+        self.stations = stations
         self.poiManager = poiManager
         self.locationManager = locationManager
 
@@ -50,18 +54,7 @@ class GasStationListViewModel: ObservableObject {
     }
 
     private func updateSections(with cofuStations: [GasStation]) {
-        var sections: [GasStationListSection] = []
-
-        if let firstStation = cofuStations.first {
-            sections.append(.nearest(firstStation))
-        }
-
-        if cofuStations.count > 1 {
-            let otherStations = cofuStations.suffix(from: 1).map { $0 }
-            sections.append(.other(otherStations))
-        }
-
-        self.sections = sections
+        self.stations = cofuStations
     }
 
     private func handleError(_ error: Error) {

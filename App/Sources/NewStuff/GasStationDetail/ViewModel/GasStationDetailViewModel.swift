@@ -1,11 +1,11 @@
 // Copyright © 2023 PACE Telematics GmbH. All rights reserved.
 
+import Combine
 import CoreLocation
 import Foundation
 import MapKit
 import PACECloudSDK
 import SwiftUI
-import Combine
 
 class GasStationDetailViewModel: ObservableObject {
     @Published var fuelingUrlString: String?
@@ -28,6 +28,10 @@ class GasStationDetailViewModel: ObservableObject {
         closesIn == -Int.max
     }
 
+    var showIsClosed: Bool {
+        !gasStation.openingHours.isEmpty && isClosed
+    }
+
     var lastUpdated: String? {
         guard let date = gasStation.lastUpdated else { return nil }
         let formatter = DateFormatter()
@@ -37,7 +41,7 @@ class GasStationDetailViewModel: ObservableObject {
     }
 
     var distanceStyle: DistanceTagView.Style {
-        if isClosed {
+        if showIsClosed {
             return .closed(formattedDistance)
         } else if isNearby {
             return .nearby
@@ -103,7 +107,9 @@ class GasStationDetailViewModel: ObservableObject {
     }
 
     var priceInfos: [PriceCardData] {
-        gasStation.prices.map { .init(fuelType: $0.fuelType.localizedTitle ?? "unknown", price: formattedPrice(for: $0.fuelPrice.value, currency: $0.fuelPrice.currency)) }
+        gasStation.prices.map { .init(fuelType: $0.fuelType.localizedTitle,
+                                      price: formattedPrice(for: $0.fuelPrice.value,
+                                                            currency: $0.fuelPrice.currency)) }
     }
 
     var actionTitle: String {

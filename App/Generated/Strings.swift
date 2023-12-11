@@ -16,6 +16,8 @@ internal enum L10n {
   internal static let alertLocationPermissionTitle = L10n.tr("Localizable", "alert_location_permission_title", fallback: "Location permission not granted")
   /// CLOSED
   internal static let closedLabel = L10n.tr("Localizable", "closed_label", fallback: "CLOSED")
+  /// Pay here now!
+  internal static let commonPayHereNow = L10n.tr("Localizable", "common_pay_here_now", fallback: "Pay here now!")
   /// Start fueling
   internal static let commonStartFueling = L10n.tr("Localizable", "common_start_fueling", fallback: "Start fueling")
   /// Start navigation
@@ -106,6 +108,10 @@ internal enum L10n {
   internal static let gasStationOpeningHoursNotAvailable = L10n.tr("Localizable", "gas_station_opening_hours_not_available", fallback: "Opening hours are currently not available.")
   /// Opening hours
   internal static let gasStationOpeningHoursTitle = L10n.tr("Localizable", "gas_station_opening_hours_title", fallback: "Opening hours")
+  /// Petrol station closes at %s
+  internal static func gasstationClosesIn(_ p1: UnsafePointer<CChar>) -> String {
+    return L10n.tr("Localizable", "gasstation_closes_in", p1, fallback: "Petrol station closes at %s")
+  }
   /// Loading failed
   internal static let generalErrorTitle = L10n.tr("Localizable", "general_error_title", fallback: "Loading failed")
   /// List

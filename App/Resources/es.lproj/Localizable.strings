@@ -37,6 +37,7 @@
 "alert_location_permission_description" = "Para mostrarte la gasolinera más cercana, necesitamos acceder a tu ubicación actual.";
 "alert_location_permission_title" = "Ubicación no divulgada";
 "closed_label" = "CERRADO";
+"common_pay_here_now" = "Pague aquí ahora";
 "common_start_fueling" = "Empezar a repostar";
 "common_start_navigation" = "Iniciar la navegación";
 "common_use_accept" = "Aceptar";
@@ -78,6 +79,7 @@
 "gas_station_opening_hours_hint" = "Los horarios de apertura pueden variar en los días festivos.";
 "gas_station_opening_hours_not_available" = "El horario de apertura no está disponible actualmente.";
 "gas_station_opening_hours_title" = "Horarios de apertura";
+"gasstation_closes_in" = "La gasolinera cierra a las %s";
 "general_error_title" = "Carga fallida";
 "list_tab_label" = "Lista";
 "more_tab_label" = "Más";

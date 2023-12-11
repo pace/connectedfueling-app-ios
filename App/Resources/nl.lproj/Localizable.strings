@@ -37,6 +37,7 @@
 "alert_location_permission_description" = "Om u het dichtstbijzijnde tankstation te tonen, hebben we toegang nodig tot uw huidige locatie.";
 "alert_location_permission_title" = "Locatie niet vrijgegeven";
 "closed_label" = "GESLOTEN";
+"common_pay_here_now" = "Betaal nu hier!";
 "common_start_fueling" = "Begin met tanken";
 "common_start_navigation" = "Start navigatie";
 "common_use_accept" = "Aanvaarden";
@@ -78,6 +79,7 @@
 "gas_station_opening_hours_hint" = "Op feestdagen kunnen andere openingstijden gelden.";
 "gas_station_opening_hours_not_available" = "De openingstijden zijn momenteel niet bekend.";
 "gas_station_opening_hours_title" = "Openingstijden";
+"gasstation_closes_in" = "Benzinestation sluit om %s";
 "general_error_title" = "Laden mislukt";
 "list_tab_label" = "Lijst";
 "more_tab_label" = "Meer";
