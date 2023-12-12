@@ -152,6 +152,14 @@
 		9A00F23C2B162BA00050C7FA /* OpeningHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A00F23B2B162BA00050C7FA /* OpeningHours.swift */; };
 		9A00F23E2B162BC70050C7FA /* OpeningHour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A00F23D2B162BC70050C7FA /* OpeningHour.swift */; };
 		9A00F2412B1A1FCE0050C7FA /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A00F2402B1A1FCE0050C7FA /* RoundedCorner.swift */; };
+		9AAAA8C92B28C24E00C515ED /* BonusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAAA8C82B28C24E00C515ED /* BonusView.swift */; };
+		9AAAA8D02B29F6C900C515ED /* ShareObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAAA8CF2B29F6C900C515ED /* ShareObject.swift */; };
+		9ADC1EBD2B2749D90027B82B /* TransactionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC1EBC2B2749D90027B82B /* TransactionData.swift */; };
+		9ADC1EC02B274E340027B82B /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC1EBF2B274E340027B82B /* TransactionCell.swift */; };
+		9ADC1EC42B275B270027B82B /* TransactionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC1EC32B275B270027B82B /* TransactionDetailView.swift */; };
+		9ADC1EC62B275B8E0027B82B /* TransactionDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC1EC52B275B8E0027B82B /* TransactionDetailViewModel.swift */; };
+		9ADF34852B2748CB00134E1D /* TransactionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADF34842B2748CB00134E1D /* TransactionListView.swift */; };
+		9ADF34872B2748E800134E1D /* TransactionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADF34862B2748E800134E1D /* TransactionListViewModel.swift */; };
 		B42B801B26CB977400793BF5 /* PACECloudUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42B801A26CB977400793BF5 /* PACECloudUserRepository.swift */; };
 		B46B802226C415240005AD7E /* InputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46B802126C415240005AD7E /* InputValidator.swift */; };
 		B46B802426C415680005AD7E /* ValidationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46B802326C415680005AD7E /* ValidationError.swift */; };
@@ -464,7 +472,15 @@
 		9A00F23B2B162BA00050C7FA /* OpeningHours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningHours.swift; sourceTree = "<group>"; };
 		9A00F23D2B162BC70050C7FA /* OpeningHour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningHour.swift; sourceTree = "<group>"; };
 		9A00F2402B1A1FCE0050C7FA /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		9AAAA8C82B28C24E00C515ED /* BonusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusView.swift; sourceTree = "<group>"; };
+		9AAAA8CF2B29F6C900C515ED /* ShareObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareObject.swift; sourceTree = "<group>"; };
 		9AD7365F2B1E0AA200B5A517 /* TestStationCPK.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = TestStationCPK.gpx; path = App/SupportingFiles/Routes/TestStationCPK.gpx; sourceTree = "<group>"; };
+		9ADC1EBC2B2749D90027B82B /* TransactionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionData.swift; sourceTree = "<group>"; };
+		9ADC1EBF2B274E340027B82B /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
+		9ADC1EC32B275B270027B82B /* TransactionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailView.swift; sourceTree = "<group>"; };
+		9ADC1EC52B275B8E0027B82B /* TransactionDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailViewModel.swift; sourceTree = "<group>"; };
+		9ADF34842B2748CB00134E1D /* TransactionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListView.swift; sourceTree = "<group>"; };
+		9ADF34862B2748E800134E1D /* TransactionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewModel.swift; sourceTree = "<group>"; };
 		9B39CB100439D4A0A184FB62 /* InfoPlist.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9C1CE9993B510A7FDB08F21C /* UITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A21D1F58961E1C012B58255C /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -858,9 +874,9 @@
 		3B7370C02AD539FA00E9118B /* NewStuff */ = {
 			isa = PBXGroup;
 			children = (
-				9A00F2212B0E4DD60050C7FA /* GasStationDetail */,
 				3B7370C82AD566E500E9118B /* Extensions */,
 				3B819DB42B063ED200B4803A /* FuelTypeSelection */,
+				9A00F2212B0E4DD60050C7FA /* GasStationDetail */,
 				3BDE7B4E2ADE74E8009A88DF /* GasStationList */,
 				3B7370C12AD53A0800E9118B /* Helpers */,
 				3BAE606D2AD7CBA6006EA9DD /* Managers */,
@@ -888,6 +904,7 @@
 				3BCF49F72AE0079C005C20DC /* PINInputValidator.swift */,
 				3BA2DB3A2AE92F5100187D86 /* PriceNumberFormatter.swift */,
 				3B6254D62B0F5DCC008FAB25 /* Style.swift */,
+				9AAAA8CF2B29F6C900C515ED /* ShareObject.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -986,6 +1003,9 @@
 		3B9562EA2B05FFFF00AD4184 /* Wallet */ = {
 			isa = PBXGroup;
 			children = (
+				9AAAA8C72B28C23700C515ED /* Bonus */,
+				9ADC1EBE2B274D4C0027B82B /* TransactionDetail */,
+				9ADF34812B27487300134E1D /* TransactionList */,
 				3B9562EB2B06001300AD4184 /* View */,
 				3B9562EC2B06001600AD4184 /* ViewModel */,
 			);
@@ -1294,6 +1314,74 @@
 				9A00F2302B0FA3220050C7FA /* OpeningHoursRow.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		9AAAA8C72B28C23700C515ED /* Bonus */ = {
+			isa = PBXGroup;
+			children = (
+				9AAAA8C82B28C24E00C515ED /* BonusView.swift */,
+			);
+			path = Bonus;
+			sourceTree = "<group>";
+		};
+		9ADC1EBB2B2749C70027B82B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9ADC1EBC2B2749D90027B82B /* TransactionData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9ADC1EBE2B274D4C0027B82B /* TransactionDetail */ = {
+			isa = PBXGroup;
+			children = (
+				9ADC1EC22B275B0F0027B82B /* ViewModel */,
+				9ADC1EC12B275B060027B82B /* View */,
+			);
+			path = TransactionDetail;
+			sourceTree = "<group>";
+		};
+		9ADC1EC12B275B060027B82B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9ADC1EC32B275B270027B82B /* TransactionDetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9ADC1EC22B275B0F0027B82B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9ADC1EC52B275B8E0027B82B /* TransactionDetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9ADF34812B27487300134E1D /* TransactionList */ = {
+			isa = PBXGroup;
+			children = (
+				9ADC1EBB2B2749C70027B82B /* Model */,
+				9ADF34832B27489100134E1D /* ViewModel */,
+				9ADF34822B27488400134E1D /* View */,
+			);
+			path = TransactionList;
+			sourceTree = "<group>";
+		};
+		9ADF34822B27488400134E1D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9ADF34842B2748CB00134E1D /* TransactionListView.swift */,
+				9ADC1EBF2B274E340027B82B /* TransactionCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9ADF34832B27489100134E1D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9ADF34862B2748E800134E1D /* TransactionListViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		B42B801926CABA8D00793BF5 /* HeaderFooterView */ = {
@@ -1960,6 +2048,7 @@
 				3BA2DB1D2AE6ABC300187D86 /* GasStationListSection.swift in Sources */,
 				C5B8037F2695F77A00C8669B /* Theme.swift in Sources */,
 				3BA2DAFE2AE6758300187D86 /* GasStationListViewModel.swift in Sources */,
+				9ADF34872B2748E800134E1D /* TransactionListViewModel.swift in Sources */,
 				3B0CFF9E2B27475C00EFC3ED /* MapBottomAnnotationView.swift in Sources */,
 				3B819DC42B06653400B4803A /* PaymentMethodsViewModel.swift in Sources */,
 				C56CD41926BBEE1F004E61FB /* MenuViewController.swift in Sources */,
@@ -1981,6 +2070,7 @@
 				9A00F22D2B0E59720050C7FA /* PriceCardView.swift in Sources */,
 				3BA2DB1A2AE6A29300187D86 /* OnboardingNavigationView.swift in Sources */,
 				3B6D85182B10D1E200701DEE /* SafariView.swift in Sources */,
+				9AAAA8C92B28C24E00C515ED /* BonusView.swift in Sources */,
 				3BDE7B382ADD3468009A88DF /* AppManager.swift in Sources */,
 				C50407202693636600654C52 /* CoreLocationRepository.swift in Sources */,
 				3BA2DB242AE7B5E200187D86 /* POIManager.swift in Sources */,
@@ -2000,15 +2090,18 @@
 				3BA2DB222AE7A75E00187D86 /* GasStationListEmptyView.swift in Sources */,
 				3B6254E42B0FA5C9008FAB25 /* ListItem.swift in Sources */,
 				3BDE7B2D2ADD1E30009A88DF /* Array+Extension.swift in Sources */,
+				9ADC1EBD2B2749D90027B82B /* TransactionData.swift in Sources */,
 				3BDE7B312ADD336B009A88DF /* ConnectedFuelingApp.swift in Sources */,
 				3B819DCC2B06664E00B4803A /* PaymentMethodsListItemView.swift in Sources */,
 				3B6277372B07748B00528A1F /* DisclosureIndicator.swift in Sources */,
+				9ADC1EC62B275B8E0027B82B /* TransactionDetailViewModel.swift in Sources */,
 				3BDE7B1F2ADD13D6009A88DF /* OnboardingLocationPermissionPageViewModel.swift in Sources */,
 				E33384C29B0186910E12EEA2 /* AppDelegate.swift in Sources */,
 				9A00F2292B0E51CF0050C7FA /* GasStationDetailView.swift in Sources */,
 				3BDE7B252ADD142D009A88DF /* OnboardingPaymentMethodsPageViewModel.swift in Sources */,
 				3BE2C5A92B06006B002B0421 /* WalletViewModel.swift in Sources */,
 				C56DF93F268F2F9F0074DBC8 /* OnboardingCoordinator.swift in Sources */,
+				9ADC1EC42B275B270027B82B /* TransactionDetailView.swift in Sources */,
 				C56CD43526BC1447004E61FB /* SidebarPresentationController.swift in Sources */,
 				3BDE7B212ADD13E3009A88DF /* OnboardingAuthorizationPageViewModel.swift in Sources */,
 				3BA2DB0F2AE6A1F800187D86 /* AppScreen.swift in Sources */,
@@ -2037,6 +2130,7 @@
 				3BA9124F2AEA5C28001004A0 /* Alert+Extension.swift in Sources */,
 				3BCF49F62ADFF97D005C20DC /* OnboardingTextInputResponseType.swift in Sources */,
 				9A00F2272B0E513D0050C7FA /* GasStationDetailViewModel.swift in Sources */,
+				9ADC1EC02B274E340027B82B /* TransactionCell.swift in Sources */,
 				C518FA2B26AAC9E9000124D9 /* DashboardItemTableViewCell.swift in Sources */,
 				C569EC9026AAE7ED009665E8 /* LoadingViewModel.swift in Sources */,
 				3BDE7B3E2ADD7073009A88DF /* PaymentManager.swift in Sources */,
@@ -2073,6 +2167,7 @@
 				C5F06EC626AECB1F00C43C81 /* UIViewExtensions.swift in Sources */,
 				3B819DC62B06654300B4803A /* PaymentMethodViewModel.swift in Sources */,
 				C5B5821126BAB29400DFFC27 /* PACECloudPaymentRepository.swift in Sources */,
+				9ADF34852B2748CB00134E1D /* TransactionListView.swift in Sources */,
 				3BE2C5AE2B060BD9002B0421 /* WalletAccountView.swift in Sources */,
 				9A00F2312B0FA3220050C7FA /* OpeningHoursRow.swift in Sources */,
 				C5290F3F269DCC9200C8AE9A /* PACECloudTwoFactorAuthenticationRepository.swift in Sources */,
@@ -2119,6 +2214,7 @@
 				3B6E0B7B2B21FC2E001F4FE9 /* MapView.swift in Sources */,
 				B46B802626C415840005AD7E /* PinInputValidator.swift in Sources */,
 				3B819DB72B063F0400B4803A /* FuelTypeSelectionView.swift in Sources */,
+				9AAAA8D02B29F6C900C515ED /* ShareObject.swift in Sources */,
 				C5CB316C2694783F005E8986 /* PACECloudAuthenticationRepository.swift in Sources */,
 				3B6D84ED2B10A17200701DEE /* SystemManager.swift in Sources */,
 				3B6254E22B0F9FFD008FAB25 /* ListItemView.swift in Sources */,

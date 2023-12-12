@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "bonus-fake-page.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -8,8 +8,11 @@ struct WalletView: View {
             WalletAccountView(viewModel: viewModel)
                 .padding(.top, 10)
                 .padding(.horizontal, 20)
+            Image(.deutschlandCardTeaser)
+                .resizable()
+                .scaledToFit()
             ListView(listItems: viewModel.listItems)
-                .padding(.top, 30)
+                .padding(.top, 10)
             Spacer()
         }
     }

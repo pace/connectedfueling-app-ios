@@ -15,6 +15,7 @@ class WalletViewModel: ObservableObject {
         self.userManager = userManager
 
         listItems = [
+            bonusItemList,
             paymentMethodsListItem,
             transactionsListItem,
             fuelTypeSelectionListItem,
@@ -43,6 +44,14 @@ class WalletViewModel: ObservableObject {
 }
 
 private extension WalletViewModel {
+    var bonusItemList: ListItem {
+        .init(icon: .walletBonusIcon,
+              title: "Bonus", // TODO: string
+              action: .detail(destination: AnyView(
+                BonusView()
+              )))
+    }
+
     var paymentMethodsListItem: ListItem {
         .init(icon: .walletTabIcon,
               title: L10n.walletPaymentMethodsTitle,
@@ -54,8 +63,10 @@ private extension WalletViewModel {
     var transactionsListItem: ListItem {
         .init(icon: .walletTransactionsIcon,
               title: L10n.walletTransactionsTitle,
-              action: .presentedContent(AnyView(
-                AppView(urlString: PACECloudSDK.URL.transactions.absoluteString)
+              action: .detail(destination: AnyView(
+                TransactionListView(viewModel: .init())
+                    .navigationTitle(L10n.walletTransactionsTitle)
+                //AppView(urlString: PACECloudSDK.URL.transactions.absoluteString)
               )))
     }
 
