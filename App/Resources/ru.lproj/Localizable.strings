@@ -1,6 +1,6 @@
 "ALERT.LOCATION_PERMISSION.ACTIONS.OPEN_SETTINGS" = "Открытые настройки";
 "DASHBOARD.EMPTY_VIEW.DESCRIPTION" = "Рядом с вами не найдено ни одной автозаправочной станции.";
-"DASHBOARD.EMPTY_VIEW.TITLE" = "Рядом с вами нет автозаправочных станций";
+"DASHBOARD.EMPTY_VIEW.TITLE" = "К сожалению, поблизости нет автозаправочных станций";
 "DASHBOARD.LOADING_VIEW.DESCRIPTION" = "Мы выполним поиск ближайших АЗС в вашем регионе. Это может занять некоторое время.";
 "DASHBOARD.LOADING_VIEW.TITLE" = "Поиск автозаправочных станций...";
 "DASHBOARD.LOGOUT.CONFIRM.ACTION.LOGOUT" = "РЕГИСТРАЦИЯ";
@@ -44,6 +44,7 @@
 "common_use_are_you_sure" = "Вы уверены?";
 "common_use_back" = "Назад";
 "common_use_cancel" = "Отмена";
+"common_use_close" = "Закрыть";
 "common_use_confirm" = "Подтвердите";
 "common_use_deactivate" = "Деактивировать";
 "common_use_decline" = "Снижение";
@@ -63,7 +64,9 @@
 "currency_format" = "%2$@%1$@";
 "fuel_group_diesel" = "Дизель";
 "fuel_group_petrol" = "Бензин";
+"fueling_tab_label" = "Заправка";
 "gas_station_closed_hint" = "В настоящее время автозаправочная станция закрыта.";
+"gas_station_closes_soon_hint" = "Заправочная станция закрывается в %s";
 "gas_station_default_name" = "Автозаправочная станция";
 "gas_station_error_description" = "Данные о заправке не удалось загрузить. Проверьте ваше соединение!";
 "gas_station_fuel_prices_not_available" = "Цены на топливо, к сожалению, недоступны.";
@@ -81,7 +84,11 @@
 "gas_station_opening_hours_title" = "Часы работы";
 "gasstation_closes_in" = "Заправочная станция закрывается в %s";
 "general_error_title" = "Загрузка не удалась";
+"good_day_message" = "Здравствуйте!";
+"good_evening_message" = "Добрый вечер!";
+"good_morning_message" = "Доброе утро!";
 "list_tab_label" = "Список";
+"map_tab_label" = "Карта";
 "more_tab_label" = "Подробнее";
 "onboarding_authentication_action" = "Войдите или зарегистрируйтесь";
 "onboarding_authentication_description" = "Чтобы совершить простой платеж с помощью приложения, вам нужно зарегистрироваться или войти в систему с помощью существующего идентификатора PACE.";
@@ -108,12 +115,12 @@
 "onboarding_permission_title" = "Автозаправочные станции рядом с вами";
 "onboarding_pin_error_invalid_length" = "PIN-код должен состоять из четырех цифр.";
 "onboarding_pin_error_mismatch" = "PIN-коды не совпадают. Попробуйте еще раз.";
-"onboarding_pin_error_not_secure" = "Слишком простой PIN-код (0000 или 1234 недопустимы). Выберите другой PIN-код";
+"onboarding_pin_error_not_secure" = "Слишком простой PIN-код (0000 или 1234 недопустимы). Выберите другой PIN-код.";
 "onboarding_pin_error_series" = "PIN-код не должен состоять из ряда возрастающих или убывающих цифр.";
 "onboarding_pin_error_too_few_digits" = "PIN-код должен содержать не менее трех разных цифр.";
 "onboarding_retry_login" = "Попробуйте войти в систему снова";
-"onboarding_tracking_app_tracking" = "отслеживание приложения";
-"onboarding_tracking_description" = "Согласитесь на отслеживание приложения, чтобы мы могли оптимизировать его использование для вас.";
+"onboarding_tracking_app_tracking" = "анализ использования";
+"onboarding_tracking_description" = "Согласитесь на анализ использования, чтобы мы могли и дальше оптимизировать это приложение для вас.";
 "onboarding_tracking_title" = "Улучшите свой опыт";
 "onboarding_two_factor_authentication_biometry" = "Используйте биометрические данные";
 "onboarding_two_factor_authentication_description" = "Биометрические сканеры - самый быстрый и безопасный способ подтверждения платежных операций.";
@@ -137,6 +144,7 @@
 "payment_methods_error_description" = "Не удалось загрузить ваши способы оплаты и топливные карты. Проверьте свое соединение!";
 "payment_methods_loading_description" = "Мы загружаем ваши способы оплаты и топливные карты. Пожалуйста, подождите немного.";
 "payment_methods_loading_title" = "Загрузка способов оплаты и топливных карт...";
+"search_title" = "Места поиска";
 "wallet_account_deletion_title" = "Удалить аккаунт";
 "wallet_fuel_type_selection_title" = "Выбор топлива";
 "wallet_header_text" = "Вы вошли в систему как";

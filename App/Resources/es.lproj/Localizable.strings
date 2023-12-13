@@ -1,6 +1,6 @@
 "ALERT.LOCATION_PERMISSION.ACTIONS.OPEN_SETTINGS" = "Abrir la configuración";
 "DASHBOARD.EMPTY_VIEW.DESCRIPTION" = "No se han encontrado gasolineras cerca de usted.";
-"DASHBOARD.EMPTY_VIEW.TITLE" = "No hay gasolineras cerca de usted";
+"DASHBOARD.EMPTY_VIEW.TITLE" = "Lamentablemente no hay gasolineras cerca de usted";
 "DASHBOARD.LOADING_VIEW.DESCRIPTION" = "Buscaremos las gasolineras más cercanas en su zona. Esto puede llevar un momento.";
 "DASHBOARD.LOADING_VIEW.TITLE" = "Buscar gasolineras...";
 "DASHBOARD.LOGOUT.CONFIRM.ACTION.LOGOUT" = "REGISTRO";
@@ -44,6 +44,7 @@
 "common_use_are_you_sure" = "¿Seguro?";
 "common_use_back" = "Volver";
 "common_use_cancel" = "Cancelar";
+"common_use_close" = "Cerrar";
 "common_use_confirm" = "Confirme";
 "common_use_deactivate" = "Desactivar";
 "common_use_decline" = "Declinación";
@@ -63,7 +64,9 @@
 "currency_format" = "%2$@%1$@";
 "fuel_group_diesel" = "Diesel";
 "fuel_group_petrol" = "Gasolina";
+"fueling_tab_label" = "Repostar";
 "gas_station_closed_hint" = "La gasolinera está actualmente cerrada.";
+"gas_station_closes_soon_hint" = "La gasolinera cierra a las %s";
 "gas_station_default_name" = "Gasolinera";
 "gas_station_error_description" = "No se han podido cargar los datos de la gasolinera. Compruebe su conexión.";
 "gas_station_fuel_prices_not_available" = "Lamentablemente, no se dispone de los precios del combustible.";
@@ -81,7 +84,11 @@
 "gas_station_opening_hours_title" = "Horarios de apertura";
 "gasstation_closes_in" = "La gasolinera cierra a las %s";
 "general_error_title" = "Carga fallida";
+"good_day_message" = "¡Hola!";
+"good_evening_message" = "¡Buenas noches!";
+"good_morning_message" = "¡Buenos días!";
 "list_tab_label" = "Lista";
+"map_tab_label" = "Mapa";
 "more_tab_label" = "Más";
 "onboarding_authentication_action" = "Conectarse o registrarse";
 "onboarding_authentication_description" = "Para realizar un pago sencillo con la aplicación, debe registrarse o iniciar sesión con su identificación PACE existente.";
@@ -108,12 +115,12 @@
 "onboarding_permission_title" = "Gasolineras cercanas";
 "onboarding_pin_error_invalid_length" = "El PIN debe tener cuatro dígitos.";
 "onboarding_pin_error_mismatch" = "Los PIN no coinciden. Inténtelo de nuevo.";
-"onboarding_pin_error_not_secure" = "El PIN es demasiado simple (0000 o 1234 no están permitidos). Elija un PIN diferente";
+"onboarding_pin_error_not_secure" = "El PIN es demasiado simple (0000 o 1234 no están permitidos). Elija un PIN diferente.";
 "onboarding_pin_error_series" = "El PIN no debe ser una serie de dígitos ascendentes o descendentes.";
 "onboarding_pin_error_too_few_digits" = "El PIN debe contener al menos tres dígitos diferentes.";
 "onboarding_retry_login" = "Intenta conectarte de nuevo";
-"onboarding_tracking_app_tracking" = "seguimiento de la aplicación";
-"onboarding_tracking_description" = "Aceptar el seguimiento de la aplicación para que podamos optimizar aún más el uso de la aplicación para usted.";
+"onboarding_tracking_app_tracking" = "análisis de uso";
+"onboarding_tracking_description" = "Acepta el análisis de uso para que podamos optimizar aún más esta aplicación para ti.";
 "onboarding_tracking_title" = "Mejore su experiencia";
 "onboarding_two_factor_authentication_biometry" = "Utilizar la biometría";
 "onboarding_two_factor_authentication_description" = "Los escáneres biométricos son la forma más rápida y segura de confirmar sus transacciones de pago.";
@@ -137,6 +144,7 @@
 "payment_methods_error_description" = "Sus métodos de pago y tarjetas de combustible no se han podido cargar. Compruebe su conexión.";
 "payment_methods_loading_description" = "Cargamos sus métodos de pago y tarjetas de combustible. Por favor, espere un momento.";
 "payment_methods_loading_title" = "Carga de medios de pago y tarjetas de combustible...";
+"search_title" = "Buscar lugares";
 "wallet_account_deletion_title" = "Eliminar cuenta";
 "wallet_fuel_type_selection_title" = "Selección de combustible";
 "wallet_header_text" = "Ha iniciado sesión como";

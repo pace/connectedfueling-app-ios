@@ -1,6 +1,6 @@
 "ALERT.LOCATION_PERMISSION.ACTIONS.OPEN_SETTINGS" = "Otevřít nastavení";
 "DASHBOARD.EMPTY_VIEW.DESCRIPTION" = "Ve vašem okolí nebyly nalezeny žádné čerpací stanice.";
-"DASHBOARD.EMPTY_VIEW.TITLE" = "Žádné čerpací stanice ve vašem okolí";
+"DASHBOARD.EMPTY_VIEW.TITLE" = "Bohužel ve vaší blízkosti nejsou žádné čerpací stanice";
 "DASHBOARD.LOADING_VIEW.DESCRIPTION" = "Vyhledáme nejbližší čerpací stanice ve vaší oblasti. To může chvíli trvat.";
 "DASHBOARD.LOADING_VIEW.TITLE" = "Hledání čerpacích stanic...";
 "DASHBOARD.LOGOUT.CONFIRM.ACTION.LOGOUT" = "REGISTRACE";
@@ -44,6 +44,7 @@
 "common_use_are_you_sure" = "Jste si jistý?";
 "common_use_back" = "Zpět";
 "common_use_cancel" = "Zrušit";
+"common_use_close" = "Zavřít";
 "common_use_confirm" = "Potvrďte";
 "common_use_deactivate" = "Deaktivace";
 "common_use_decline" = "Pokles";
@@ -63,7 +64,9 @@
 "currency_format" = "%2$@%1$@";
 "fuel_group_diesel" = "Diesel";
 "fuel_group_petrol" = "Benzín";
+"fueling_tab_label" = "Doplňování paliva";
 "gas_station_closed_hint" = "Čerpací stanice je v současné době uzavřena.";
+"gas_station_closes_soon_hint" = "Čerpací stanice se zavírá v %s";
 "gas_station_default_name" = "Čerpací stanice";
 "gas_station_error_description" = "Data čerpací stanice se nepodařilo načíst. Zkontrolujte připojení!";
 "gas_station_fuel_prices_not_available" = "Ceny pohonných hmot bohužel nejsou k dispozici.";
@@ -81,7 +84,11 @@
 "gas_station_opening_hours_title" = "Otevírací doba";
 "gasstation_closes_in" = "Čerpací stanice se zavírá v %s";
 "general_error_title" = "Načítání se nezdařilo";
+"good_day_message" = "Dobrý den!";
+"good_evening_message" = "Dobrý večer!";
+"good_morning_message" = "Dobré ráno!";
 "list_tab_label" = "Seznam";
+"map_tab_label" = "Mapa";
 "more_tab_label" = "Více";
 "onboarding_authentication_action" = "Přihlaste se nebo se zaregistrujte";
 "onboarding_authentication_description" = "Chcete-li provést jednoduchou platbu pomocí aplikace, musíte se zaregistrovat nebo přihlásit pomocí svého stávajícího PACE ID.";
@@ -108,12 +115,12 @@
 "onboarding_permission_title" = "Čerpací stanice ve vašem okolí";
 "onboarding_pin_error_invalid_length" = "PIN musí mít čtyři číslice.";
 "onboarding_pin_error_mismatch" = "Kódy PIN se neshodují. Zkuste to znovu.";
-"onboarding_pin_error_not_secure" = "PIN je příliš jednoduchý (0000 nebo 1234 nejsou povoleny). Zvolte jiný PIN";
+"onboarding_pin_error_not_secure" = "PIN je příliš jednoduchý (0000 nebo 1234 nejsou povoleny). Zvolte jiný PIN.";
 "onboarding_pin_error_series" = "PIN nesmí být tvořen řadou vzestupných nebo sestupných číslic.";
 "onboarding_pin_error_too_few_digits" = "PIN musí obsahovat alespoň tři různé číslice.";
 "onboarding_retry_login" = "Zkuste se znovu přihlásit";
-"onboarding_tracking_app_tracking" = "sledování aplikací";
-"onboarding_tracking_description" = "Souhlas se sledováním aplikace, abychom pro vás mohli dále optimalizovat její používání.";
+"onboarding_tracking_app_tracking" = "analýzu používání";
+"onboarding_tracking_description" = "Přijměte analýzu používání, abychom pro vás mohli tuto aplikaci dále optimalizovat.";
 "onboarding_tracking_title" = "Zlepšete své zkušenosti";
 "onboarding_two_factor_authentication_biometry" = "Použití biometrických údajů";
 "onboarding_two_factor_authentication_description" = "Biometrické skenery představují nejrychlejší a nejbezpečnější způsob potvrzování platebních transakcí.";
@@ -137,6 +144,7 @@
 "payment_methods_error_description" = "Vaše platební metody a palivové karty nebylo možné načíst. Zkontrolujte své připojení!";
 "payment_methods_loading_description" = "Načítáme vaše platební metody a palivové karty. Chvíli prosím počkejte.";
 "payment_methods_loading_title" = "Načítání platebních metod a palivových karet...";
+"search_title" = "Vyhledávání lokalit";
 "wallet_account_deletion_title" = "Odstranění účtu";
 "wallet_fuel_type_selection_title" = "Výběr paliva";
 "wallet_header_text" = "Jste přihlášeni jako";

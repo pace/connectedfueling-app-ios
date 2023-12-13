@@ -1,6 +1,6 @@
 "ALERT.LOCATION_PERMISSION.ACTIONS.OPEN_SETTINGS" = "Deschideți setările";
 "DASHBOARD.EMPTY_VIEW.DESCRIPTION" = "Nu au fost găsite stații de benzină în apropierea dumneavoastră.";
-"DASHBOARD.EMPTY_VIEW.TITLE" = "Nu există stații de benzină în apropierea dumneavoastră";
+"DASHBOARD.EMPTY_VIEW.TITLE" = "Din păcate, nu există stații de benzină în apropierea dumneavoastră";
 "DASHBOARD.LOADING_VIEW.DESCRIPTION" = "Vom căuta cele mai apropiate stații de benzină din zona dumneavoastră. Acest lucru poate dura un moment.";
 "DASHBOARD.LOADING_VIEW.TITLE" = "Căutați benzinării...";
 "DASHBOARD.LOGOUT.CONFIRM.ACTION.LOGOUT" = "ÎNREGISTRARE";
@@ -44,6 +44,7 @@
 "common_use_are_you_sure" = "Ești sigur?";
 "common_use_back" = "Înapoi";
 "common_use_cancel" = "Anulează";
+"common_use_close" = "Închideți";
 "common_use_confirm" = "Confirmați";
 "common_use_deactivate" = "Dezactivați";
 "common_use_decline" = "Declin";
@@ -63,7 +64,9 @@
 "currency_format" = "%2$@%1$@";
 "fuel_group_diesel" = "Diesel";
 "fuel_group_petrol" = "Benzină";
+"fueling_tab_label" = "Realimentare cu combustibil";
 "gas_station_closed_hint" = "Benzinăria este în prezent închisă.";
+"gas_station_closes_soon_hint" = "Benzinăria se închide la %s";
 "gas_station_default_name" = "Benzinărie";
 "gas_station_error_description" = "Datele benzinăriei nu au putut fi încărcate. Verificați conexiunea!";
 "gas_station_fuel_prices_not_available" = "Din păcate, prețurile combustibilului nu sunt disponibile.";
@@ -81,7 +84,11 @@
 "gas_station_opening_hours_title" = "Ore de deschidere";
 "gasstation_closes_in" = "Benzinăria se închide la %s";
 "general_error_title" = "Încărcarea nu a reușit";
+"good_day_message" = "Bună!";
+"good_evening_message" = "Bună seara!";
+"good_morning_message" = "Bună dimineața!";
 "list_tab_label" = "Lista";
+"map_tab_label" = "Hartă";
 "more_tab_label" = "Mai mult";
 "onboarding_authentication_action" = "Autentificați-vă sau înregistrați-vă";
 "onboarding_authentication_description" = "Pentru a efectua o plată simplă cu ajutorul aplicației, trebuie să vă înregistrați sau să vă conectați cu ID-ul PACE existent.";
@@ -108,12 +115,12 @@
 "onboarding_permission_title" = "Benzinării în apropierea dumneavoastră";
 "onboarding_pin_error_invalid_length" = "PIN-ul trebuie să fie format din patru cifre.";
 "onboarding_pin_error_mismatch" = "PIN-urile nu se potrivesc. Încercați din nou.";
-"onboarding_pin_error_not_secure" = "PIN-ul este prea simplu (0000 sau 1234 nu sunt permise). Alegeți un alt PIN";
+"onboarding_pin_error_not_secure" = "PIN-ul este prea simplu (0000 sau 1234 nu sunt permise). Alegeți un alt PIN.";
 "onboarding_pin_error_series" = "PIN-ul nu trebuie să fie o serie de cifre ascendente sau descendente.";
 "onboarding_pin_error_too_few_digits" = "PIN-ul trebuie să conțină cel puțin trei cifre diferite.";
 "onboarding_retry_login" = "Încercați să vă conectați din nou";
-"onboarding_tracking_app_tracking" = "urmărirea aplicației";
-"onboarding_tracking_description" = "Sunteți de acord cu urmărirea aplicației, astfel încât să putem optimiza în continuare utilizarea aplicației pentru dumneavoastră.";
+"onboarding_tracking_app_tracking" = "analiza de utilizare";
+"onboarding_tracking_description" = "Acceptați analiza de utilizare, astfel încât să putem optimiza în continuare această aplicație pentru dumneavoastră.";
 "onboarding_tracking_title" = "Îmbunătățiți experiența dvs.";
 "onboarding_two_factor_authentication_biometry" = "Utilizați date biometrice";
 "onboarding_two_factor_authentication_description" = "Scanerele biometrice reprezintă cea mai rapidă și mai sigură modalitate de a confirma tranzacțiile de plată.";
@@ -137,6 +144,7 @@
 "payment_methods_error_description" = "Metodele de plată și cardurile de combustibil nu au putut fi încărcate. Verificați conexiunea!";
 "payment_methods_loading_description" = "Vă încărcăm metodele de plată și cardurile de combustibil. Vă rugăm să așteptați un moment.";
 "payment_methods_loading_title" = "Încărcarea metodelor de plată și a cardurilor de combustibil...";
+"search_title" = "Căutați locații";
 "wallet_account_deletion_title" = "Ștergeți contul";
 "wallet_fuel_type_selection_title" = "Selectarea combustibilului";
 "wallet_header_text" = "Sunteți autentificat ca";

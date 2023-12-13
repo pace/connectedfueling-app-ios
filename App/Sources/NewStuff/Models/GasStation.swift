@@ -19,6 +19,14 @@ class GasStation: ObservableObject, Hashable, Comparable {
         openingHours.map { $0.poiConverted() }
     }
 
+    var closesIn: Int {
+        poiOpeningHours.minuteTillClose()
+    }
+
+    var isClosed: Bool {
+        !openingHours.isEmpty && closesIn == -Int.max
+    }
+
     init(id: String,
          name: String,
          addressLines: [String],

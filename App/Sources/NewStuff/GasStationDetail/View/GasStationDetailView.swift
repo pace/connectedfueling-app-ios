@@ -49,11 +49,11 @@ struct GasStationDetailView: View {
     @ViewBuilder
     private var map: some View {
         Map(coordinateRegion: .constant(MKCoordinateRegion(center: viewModel.location,
-                                                           span: MKCoordinateSpan(latitudeDelta: Constants.GasStationDetail.mapDelta,
-                                                                                  longitudeDelta: Constants.GasStationDetail.mapDelta))),
+                                                           span: MKCoordinateSpan(latitudeDelta: Constants.Map.mapSpanDelta,
+                                                                                  longitudeDelta: Constants.Map.mapSpanDelta))),
             annotationItems: [IdentifiablePlace(coordinate: viewModel.location)]) { place in
             MapAnnotation(coordinate: place.coordinate) {
-                MapGasStationBottomMarkerView()
+                MapBottomAnnotationView(viewModel: .init(annotation: .init(gasStation: viewModel.gasStation)))
             }
         }
             .allowsHitTesting(false)

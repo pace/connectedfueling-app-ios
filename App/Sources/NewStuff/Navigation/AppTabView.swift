@@ -9,7 +9,7 @@ struct AppTabView: View {
 
     var body: some View {
         TabView(selection: $selection) {
-            ForEach(AppScreen.allCases) { screen in
+            ForEach(appScreens) { screen in
                 screen.destination
                     .tag(screen)
                     .tabItem {
@@ -18,5 +18,13 @@ struct AppTabView: View {
             }
         }
         .accentColor(.primaryTint)
+    }
+
+    var appScreens: [AppScreen] {
+        if !ConfigurationManager.configuration.isMapEnabled {
+            AppScreen.allCases.filter { $0 != .map }
+        } else {
+            AppScreen.allCases
+        }
     }
 }

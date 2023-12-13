@@ -1,6 +1,6 @@
 "ALERT.LOCATION_PERMISSION.ACTIONS.OPEN_SETTINGS" = "Ouvrir les paramètres";
 "DASHBOARD.EMPTY_VIEW.DESCRIPTION" = "Aucune station-service n'a été trouvée près de chez toi.";
-"DASHBOARD.EMPTY_VIEW.TITLE" = "Pas de station-service près de chez toi";
+"DASHBOARD.EMPTY_VIEW.TITLE" = "Désolé, il n'y a pas de station-service près de chez toi";
 "DASHBOARD.LOADING_VIEW.DESCRIPTION" = "Nous recherchons les stations-service les plus proches de chez toi. Cela peut prendre un certain temps.";
 "DASHBOARD.LOADING_VIEW.TITLE" = "Recherche stations-service...";
 "DASHBOARD.LOGOUT.CONFIRM.ACTION.LOGOUT" = "S'INSCRIRE";
@@ -44,6 +44,7 @@
 "common_use_are_you_sure" = "Tu es sûr ?";
 "common_use_back" = "Retour";
 "common_use_cancel" = "Annuler";
+"common_use_close" = "Fermer";
 "common_use_confirm" = "Confirmer";
 "common_use_deactivate" = "Désactiver";
 "common_use_decline" = "Décliner";
@@ -63,7 +64,9 @@
 "currency_format" = "%2$@%1$@";
 "fuel_group_diesel" = "Diesel";
 "fuel_group_petrol" = "Essence";
+"fueling_tab_label" = "Faire le plein";
 "gas_station_closed_hint" = "La station-service est actuellement fermée.";
+"gas_station_closes_soon_hint" = "La station-service ferme à %s heures";
 "gas_station_default_name" = "Station-service";
 "gas_station_error_description" = "Les données de la station-service n'ont pas pu être chargées. Vérifiez votre connexion !";
 "gas_station_fuel_prices_not_available" = "Les prix des carburants ne sont malheureusement pas disponibles.";
@@ -81,7 +84,11 @@
 "gas_station_opening_hours_title" = "Heures d'ouverture";
 "gasstation_closes_in" = "La station-service ferme à %s heures";
 "general_error_title" = "Le chargement a échoué";
+"good_day_message" = "Bonjour !";
+"good_evening_message" = "Bonsoir !";
+"good_morning_message" = "Bonjour !";
 "list_tab_label" = "Liste";
+"map_tab_label" = "Carte";
 "more_tab_label" = "Plus";
 "onboarding_authentication_action" = "Se connecter ou s'inscrire";
 "onboarding_authentication_description" = "Pour payer facilement avec l'application, tu dois t'inscrire ou te connecter avec ton identifiant PACE existant.";
@@ -108,12 +115,12 @@
 "onboarding_permission_title" = "Stations-service près de chez toi";
 "onboarding_pin_error_invalid_length" = "Le code PIN doit être composé de quatre chiffres.";
 "onboarding_pin_error_mismatch" = "Les codes PIN ne correspondent pas. Réessaie.";
-"onboarding_pin_error_not_secure" = "Le code PIN est trop simple (0000 ou 1234 ne sont pas autorisés). Choisis un autre code PIN";
+"onboarding_pin_error_not_secure" = "Le code PIN est trop simple (0000 ou 1234 ne sont pas autorisés). Choisis un autre code PIN.";
 "onboarding_pin_error_series" = "Le code PIN ne doit pas être une série de chiffres croissants ou décroissants.";
 "onboarding_pin_error_too_few_digits" = "Le code PIN doit contenir au moins trois chiffres différents.";
 "onboarding_retry_login" = "Réessayer de se connecter";
-"onboarding_tracking_app_tracking" = "suivi de l'application";
-"onboarding_tracking_description" = "Accepte le suivi de l'application afin que nous puissions continuer à optimiser l'utilisation de l'application pour toi.";
+"onboarding_tracking_app_tracking" = "l'analyse de l'utilisation";
+"onboarding_tracking_description" = "Accepter l'analyse de l'utilisation afin que nous puissions optimiser cette application pour vous.";
 "onboarding_tracking_title" = "Améliore ton expérience";
 "onboarding_two_factor_authentication_biometry" = "Utiliser la biométrie";
 "onboarding_two_factor_authentication_description" = "Les scanners biométriques sont la manière la plus rapide et la plus sûre de confirmer tes opérations de paiement.";
@@ -137,6 +144,7 @@
 "payment_methods_error_description" = "Vos moyens de paiement et cartes de carburant n'ont pas pu être chargés. Vérifiez votre connexion !";
 "payment_methods_loading_description" = "Nous chargeons vos moyens de paiement et vos cartes de carburant. Veuillez patienter un moment.";
 "payment_methods_loading_title" = "Chargement des moyens de paiement et des cartes de carburant...";
+"search_title" = "Chercher des lieux";
 "wallet_account_deletion_title" = "Supprimer un compte";
 "wallet_fuel_type_selection_title" = "Sélection du carburant";
 "wallet_header_text" = "Vous êtes connecté en tant que";

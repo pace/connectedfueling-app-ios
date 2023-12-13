@@ -1,6 +1,6 @@
 "ALERT.LOCATION_PERMISSION.ACTIONS.OPEN_SETTINGS" = "Open settings";
 "DASHBOARD.EMPTY_VIEW.DESCRIPTION" = "No gas stations where found nearby your location.";
-"DASHBOARD.EMPTY_VIEW.TITLE" = "No gas stations nearby";
+"DASHBOARD.EMPTY_VIEW.TITLE" = "Unfortunately no gas stations near you";
 "DASHBOARD.LOADING_VIEW.DESCRIPTION" = "We are searching for the nearest gas stations in your area. This may take a moment.";
 "DASHBOARD.LOADING_VIEW.TITLE" = "Searching gas stations...";
 "DASHBOARD.LOGOUT.CONFIRM.ACTION.LOGOUT" = "LOGOUT";
@@ -44,6 +44,7 @@
 "common_use_are_you_sure" = "Are you sure?";
 "common_use_back" = "Back";
 "common_use_cancel" = "Cancel";
+"common_use_close" = "Close";
 "common_use_confirm" = "Confirm";
 "common_use_deactivate" = "Deactivate";
 "common_use_decline" = "Decline";
@@ -63,7 +64,9 @@
 "currency_format" = "%2$@%1$@";
 "fuel_group_diesel" = "Diesel";
 "fuel_group_petrol" = "Petrol";
+"fueling_tab_label" = "Fueling";
 "gas_station_closed_hint" = "The gas station is currently closed.";
+"gas_station_closes_soon_hint" = "Petrol station closes at %s";
 "gas_station_default_name" = "Gas station";
 "gas_station_error_description" = "The gas station data could not be loaded. Check your connection!";
 "gas_station_fuel_prices_not_available" = "Fuel prices are unfortunately not available.";
@@ -81,7 +84,11 @@
 "gas_station_opening_hours_title" = "Opening hours";
 "gasstation_closes_in" = "Petrol station closes at %s";
 "general_error_title" = "Loading failed";
+"good_day_message" = "Hello!";
+"good_evening_message" = "Good evening!";
+"good_morning_message" = "Good morning!";
 "list_tab_label" = "List";
+"map_tab_label" = "Map";
 "more_tab_label" = "More";
 "onboarding_authentication_action" = "Log in or register";
 "onboarding_authentication_description" = "For easy payment with the app you have to register or login with your existing PACE-ID.";
@@ -108,12 +115,12 @@
 "onboarding_permission_title" = "Gas stations near you";
 "onboarding_pin_error_invalid_length" = "The PIN must be a 4-digit number.";
 "onboarding_pin_error_mismatch" = "The PINs do not match. Try again.";
-"onboarding_pin_error_not_secure" = "The PIN is too simple (0000 or 1234 are not allowed). Choose a different PIN";
+"onboarding_pin_error_not_secure" = "The PIN is too simple (0000 or 1234 are not allowed). Choose a different PIN.";
 "onboarding_pin_error_series" = "The PIN must not be a series of ascending or descending digits.";
 "onboarding_pin_error_too_few_digits" = "The PIN must contain at least three different digits.";
 "onboarding_retry_login" = "Retry login";
-"onboarding_tracking_app_tracking" = "app tracking";
-"onboarding_tracking_description" = "Allow app tracking so that we can further optimise the use of the app for you.";
+"onboarding_tracking_app_tracking" = "usage analysis";
+"onboarding_tracking_description" = "Accept the usage analysis so that we can further optimize this app for you.";
 "onboarding_tracking_title" = "Improve your experience";
 "onboarding_two_factor_authentication_biometry" = "Biometry";
 "onboarding_two_factor_authentication_description" = "Biometric scanners are the fastest and most secure way to confirm your payment transactions.";
@@ -137,6 +144,7 @@
 "payment_methods_error_description" = "Your payment methods and fuel cards could not be loaded. Check your connection!";
 "payment_methods_loading_description" = "We load your payment methods and fuel cards. Please wait a moment.";
 "payment_methods_loading_title" = "Loading payment methods and fuel cards…";
+"search_title" = "Search places";
 "wallet_account_deletion_title" = "Delete account";
 "wallet_fuel_type_selection_title" = "Fuel selection";
 "wallet_header_text" = "You are logged in as";

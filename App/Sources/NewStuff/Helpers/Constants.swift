@@ -27,13 +27,14 @@ enum Constants {
     }
 
     enum GasStation {
-        static let cofuStationRadius: Double = 10_000
+        static let cofuStationRadius: Double = 50_000
         static let updateDistanceThresholdInMeters: Double = 500
         static let priceFormatFallback: String = "d.dds"
     }
 
-    enum GasStationDetail {
-        static let mapDelta: Double = 0.01 // TODO: decide delta value
+    enum Map {
+        static let mapSpanDelta: Double = 0.01 // TODO: decide delta value
+        static let updateDistanceThresholdInMeters: Double = 500
     }
 
     enum CrashReporting {

@@ -1,6 +1,6 @@
 "ALERT.LOCATION_PERMISSION.ACTIONS.OPEN_SETTINGS" = "Ustawienia otwarte";
 "DASHBOARD.EMPTY_VIEW.DESCRIPTION" = "W pobliżu nie znaleziono żadnych stacji benzynowych.";
-"DASHBOARD.EMPTY_VIEW.TITLE" = "Brak stacji benzynowych w pobliżu";
+"DASHBOARD.EMPTY_VIEW.TITLE" = "Niestety w pobliżu nie ma stacji benzynowych";
 "DASHBOARD.LOADING_VIEW.DESCRIPTION" = "Wyszukamy najbliższe stacje benzynowe w Twojej okolicy. Może to zająć chwilę.";
 "DASHBOARD.LOADING_VIEW.TITLE" = "Wyszukaj stacje benzynowe...";
 "DASHBOARD.LOGOUT.CONFIRM.ACTION.LOGOUT" = "REGISTER";
@@ -44,6 +44,7 @@
 "common_use_are_you_sure" = "Jesteś pewien?";
 "common_use_back" = "Powrót";
 "common_use_cancel" = "Anuluj";
+"common_use_close" = "Zamknij";
 "common_use_confirm" = "Potwierdzenie";
 "common_use_deactivate" = "Dezaktywuj";
 "common_use_decline" = "Spadek";
@@ -63,7 +64,9 @@
 "currency_format" = "%2$@%1$@";
 "fuel_group_diesel" = "Diesel";
 "fuel_group_petrol" = "Benzyna";
+"fueling_tab_label" = "Tankowanie";
 "gas_station_closed_hint" = "Stacja benzynowa jest obecnie zamknięta.";
+"gas_station_closes_soon_hint" = "Stacja benzynowa zostanie zamknięta o %s";
 "gas_station_default_name" = "Stacja benzynowa";
 "gas_station_error_description" = "Nie można załadować danych stacji benzynowej. Sprawdź połączenie!";
 "gas_station_fuel_prices_not_available" = "Ceny paliwa nie są niestety dostępne.";
@@ -81,7 +84,11 @@
 "gas_station_opening_hours_title" = "Godziny otwarcia";
 "gasstation_closes_in" = "Stacja benzynowa zostaje zamknięta o godzinie %s";
 "general_error_title" = "Ładowanie nie powiodło się";
+"good_day_message" = "Cześć!";
+"good_evening_message" = "Dobry wieczór!";
+"good_morning_message" = "Dzień dobry!";
 "list_tab_label" = "Lista";
+"map_tab_label" = "Mapa";
 "more_tab_label" = "Więcej";
 "onboarding_authentication_action" = "Zaloguj się lub zarejestruj";
 "onboarding_authentication_description" = "Aby dokonać prostej płatności za pomocą aplikacji, należy się zarejestrować lub zalogować przy użyciu istniejącego identyfikatora PACE ID.";
@@ -108,12 +115,12 @@
 "onboarding_permission_title" = "Stacje benzynowe w pobliżu";
 "onboarding_pin_error_invalid_length" = "Kod PIN musi składać się z czterech cyfr.";
 "onboarding_pin_error_mismatch" = "Kody PIN nie są zgodne. Spróbuj ponownie.";
-"onboarding_pin_error_not_secure" = "Kod PIN jest zbyt prosty (0000 lub 1234 są niedozwolone). Wybierz inny kod PIN";
+"onboarding_pin_error_not_secure" = "Kod PIN jest zbyt prosty (0000 lub 1234 są niedozwolone). Wybierz inny kod PIN.";
 "onboarding_pin_error_series" = "Kod PIN nie może być ciągiem cyfr rosnących lub malejących.";
 "onboarding_pin_error_too_few_digits" = "Kod PIN musi zawierać co najmniej trzy różne cyfry.";
 "onboarding_retry_login" = "Spróbuj zalogować się ponownie";
-"onboarding_tracking_app_tracking" = "śledzenie aplikacji";
-"onboarding_tracking_description" = "Zgoda na śledzenie aplikacji, abyśmy mogli jeszcze bardziej zoptymalizować korzystanie z aplikacji.";
+"onboarding_tracking_app_tracking" = "analizę użytkowania";
+"onboarding_tracking_description" = "Zaakceptuj analizę użytkowania, abyśmy mogli dalej optymalizować tę aplikację dla Ciebie.";
 "onboarding_tracking_title" = "Ulepsz swoje doświadczenie";
 "onboarding_two_factor_authentication_biometry" = "Korzystanie z danych biometrycznych";
 "onboarding_two_factor_authentication_description" = "Skanery biometryczne to najszybszy i najbezpieczniejszy sposób potwierdzania transakcji płatniczych.";
@@ -137,6 +144,7 @@
 "payment_methods_error_description" = "Nie można załadować metod płatności i kart paliwowych. Sprawdź połączenie!";
 "payment_methods_loading_description" = "Wczytujemy metody płatności i karty paliwowe. Prosimy o chwilę oczekiwania.";
 "payment_methods_loading_title" = "Ładowanie metod płatności i kart paliwowych...";
+"search_title" = "Lokalizacje wyszukiwania";
 "wallet_account_deletion_title" = "Usuń konto";
 "wallet_fuel_type_selection_title" = "Wybór paliwa";
 "wallet_header_text" = "Jesteś zalogowany jako";

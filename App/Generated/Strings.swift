@@ -30,6 +30,8 @@ internal enum L10n {
   internal static let commonUseBack = L10n.tr("Localizable", "common_use_back", fallback: "Back")
   /// Cancel
   internal static let commonUseCancel = L10n.tr("Localizable", "common_use_cancel", fallback: "Cancel")
+  /// Close
+  internal static let commonUseClose = L10n.tr("Localizable", "common_use_close", fallback: "Close")
   /// Confirm
   internal static let commonUseConfirm = L10n.tr("Localizable", "common_use_confirm", fallback: "Confirm")
   /// Deactivate
@@ -72,8 +74,14 @@ internal enum L10n {
   internal static let fuelGroupPetrol = L10n.tr("Localizable", "fuel_group_petrol", fallback: "Petrol")
   /// What fuel prices should we show you?
   internal static let fuelTypeSelection = L10n.tr("Localizable", "FUEL_TYPE_SELECTION", fallback: "What fuel prices should we show you?")
+  /// Fueling
+  internal static let fuelingTabLabel = L10n.tr("Localizable", "fueling_tab_label", fallback: "Fueling")
   /// The gas station is currently closed.
   internal static let gasStationClosedHint = L10n.tr("Localizable", "gas_station_closed_hint", fallback: "The gas station is currently closed.")
+  /// Petrol station closes at %s
+  internal static func gasStationClosesSoonHint(_ p1: UnsafePointer<CChar>) -> String {
+    return L10n.tr("Localizable", "gas_station_closes_soon_hint", p1, fallback: "Petrol station closes at %s")
+  }
   /// Gas station
   internal static let gasStationDefaultName = L10n.tr("Localizable", "gas_station_default_name", fallback: "Gas station")
   /// The gas station data could not be loaded. Check your connection!
@@ -114,8 +122,16 @@ internal enum L10n {
   }
   /// Loading failed
   internal static let generalErrorTitle = L10n.tr("Localizable", "general_error_title", fallback: "Loading failed")
+  /// Hello!
+  internal static let goodDayMessage = L10n.tr("Localizable", "good_day_message", fallback: "Hello!")
+  /// Good evening!
+  internal static let goodEveningMessage = L10n.tr("Localizable", "good_evening_message", fallback: "Good evening!")
+  /// Good morning!
+  internal static let goodMorningMessage = L10n.tr("Localizable", "good_morning_message", fallback: "Good morning!")
   /// List
   internal static let listTabLabel = L10n.tr("Localizable", "list_tab_label", fallback: "List")
+  /// Map
+  internal static let mapTabLabel = L10n.tr("Localizable", "map_tab_label", fallback: "Map")
   /// More
   internal static let moreTabLabel = L10n.tr("Localizable", "more_tab_label", fallback: "More")
   /// Log in or register
@@ -168,18 +184,18 @@ internal enum L10n {
   internal static let onboardingPinErrorInvalidLength = L10n.tr("Localizable", "onboarding_pin_error_invalid_length", fallback: "The PIN must be a 4-digit number.")
   /// The PINs do not match. Try again.
   internal static let onboardingPinErrorMismatch = L10n.tr("Localizable", "onboarding_pin_error_mismatch", fallback: "The PINs do not match. Try again.")
-  /// The PIN is too simple (0000 or 1234 are not allowed). Choose a different PIN
-  internal static let onboardingPinErrorNotSecure = L10n.tr("Localizable", "onboarding_pin_error_not_secure", fallback: "The PIN is too simple (0000 or 1234 are not allowed). Choose a different PIN")
+  /// The PIN is too simple (0000 or 1234 are not allowed). Choose a different PIN.
+  internal static let onboardingPinErrorNotSecure = L10n.tr("Localizable", "onboarding_pin_error_not_secure", fallback: "The PIN is too simple (0000 or 1234 are not allowed). Choose a different PIN.")
   /// The PIN must not be a series of ascending or descending digits.
   internal static let onboardingPinErrorSeries = L10n.tr("Localizable", "onboarding_pin_error_series", fallback: "The PIN must not be a series of ascending or descending digits.")
   /// The PIN must contain at least three different digits.
   internal static let onboardingPinErrorTooFewDigits = L10n.tr("Localizable", "onboarding_pin_error_too_few_digits", fallback: "The PIN must contain at least three different digits.")
   /// Retry login
   internal static let onboardingRetryLogin = L10n.tr("Localizable", "onboarding_retry_login", fallback: "Retry login")
-  /// app tracking
-  internal static let onboardingTrackingAppTracking = L10n.tr("Localizable", "onboarding_tracking_app_tracking", fallback: "app tracking")
-  /// Allow app tracking so that we can further optimise the use of the app for you.
-  internal static let onboardingTrackingDescription = L10n.tr("Localizable", "onboarding_tracking_description", fallback: "Allow app tracking so that we can further optimise the use of the app for you.")
+  /// usage analysis
+  internal static let onboardingTrackingAppTracking = L10n.tr("Localizable", "onboarding_tracking_app_tracking", fallback: "usage analysis")
+  /// Accept the usage analysis so that we can further optimize this app for you.
+  internal static let onboardingTrackingDescription = L10n.tr("Localizable", "onboarding_tracking_description", fallback: "Accept the usage analysis so that we can further optimize this app for you.")
   /// Improve your experience
   internal static let onboardingTrackingTitle = L10n.tr("Localizable", "onboarding_tracking_title", fallback: "Improve your experience")
   /// Biometry
@@ -226,6 +242,8 @@ internal enum L10n {
   internal static let paymentMethodsLoadingDescription = L10n.tr("Localizable", "payment_methods_loading_description", fallback: "We load your payment methods and fuel cards. Please wait a moment.")
   /// Loading payment methods and fuel cards…
   internal static let paymentMethodsLoadingTitle = L10n.tr("Localizable", "payment_methods_loading_title", fallback: "Loading payment methods and fuel cards…")
+  /// Search places
+  internal static let searchTitle = L10n.tr("Localizable", "search_title", fallback: "Search places")
   /// Share
   internal static let shareTitle = L10n.tr("Localizable", "SHARE_TITLE", fallback: "Share")
   /// Delete account
@@ -262,8 +280,8 @@ internal enum L10n {
     internal enum EmptyView {
       /// No gas stations where found nearby your location.
       internal static let description = L10n.tr("Localizable", "DASHBOARD.EMPTY_VIEW.DESCRIPTION", fallback: "No gas stations where found nearby your location.")
-      /// No gas stations nearby
-      internal static let title = L10n.tr("Localizable", "DASHBOARD.EMPTY_VIEW.TITLE", fallback: "No gas stations nearby")
+      /// Unfortunately no gas stations near you
+      internal static let title = L10n.tr("Localizable", "DASHBOARD.EMPTY_VIEW.TITLE", fallback: "Unfortunately no gas stations near you")
     }
     internal enum LoadingView {
       /// We are searching for the nearest gas stations in your area. This may take a moment.
