@@ -9,7 +9,7 @@ struct GasStationListNavigationView: View {
 
             case .secondary:
                 GasStationListView()
-                    .addNavigationBar(style: .centeredIcon(icon: .secondaryHeaderIcon))
+                    .addNavigationBar(style: .centeredIcon(icon: .brandIcon))
             }
         }
     }

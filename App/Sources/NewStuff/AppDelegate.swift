@@ -37,14 +37,14 @@ private extension AppDelegate {
     }
 
     func setupNavigationBar() {
-        let primaryTintUIColor = UIColor(ConfigurationManager.configuration.primaryBrandingColor)
         let navigationBar = UINavigationBar.appearance()
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = primaryTintUIColor
+        appearance.backgroundColor = UIColor(Color.genericWhite)
+        appearance.shadowImage = UIImage()
+        appearance.shadowColor = .none
         navigationBar.standardAppearance = appearance
         navigationBar.scrollEdgeAppearance = navigationBar.standardAppearance
-        navigationBar.tintColor = .white
     }
 
     func setupTabBar() {

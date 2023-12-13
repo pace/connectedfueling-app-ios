@@ -141,6 +141,6 @@ struct OnboardingPageView: View {
                                             pageActions: [
                                                 .init(title: "Test Action", action: {})
                                             ]))
-        .addNavigationBar(style: .centeredIcon(icon: .secondaryHeaderIcon))
+        .addNavigationBar(style: .centeredIcon(icon: .brandIcon))
     }
 }

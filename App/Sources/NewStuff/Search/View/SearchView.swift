@@ -12,7 +12,7 @@ struct SearchView: View {
     var body: some View {
         AppNavigationView {
             searchContent
-                .addNavigationBar(style: .centeredIcon(icon: .secondaryHeaderIcon))
+                .addNavigationBar(style: .centeredIcon(icon: .brandIcon))
                 .navigationBarItems(trailing: Button(L10n.commonUseClose, action: {
                     dismiss()
                 }))

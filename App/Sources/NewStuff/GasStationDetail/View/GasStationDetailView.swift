@@ -63,7 +63,7 @@ struct GasStationDetailView: View {
 
     @ViewBuilder
     private var info: some View {
-        HStack {
+        HStack(alignment: .top) {
             VStack(spacing: .paddingXS) {
                 HStack {
                     TextLabel(viewModel.gasStation.name)
@@ -87,6 +87,7 @@ struct GasStationDetailView: View {
                 }
             }
             Spacer()
+            Image(.brandIcon)
         }
     }
 

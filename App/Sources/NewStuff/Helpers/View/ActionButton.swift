@@ -58,7 +58,7 @@ struct ActionButton: View {
     }
 
     private var foregroundColor: Color {
-        let color: Color = style == .primary ? .genericBlack : .primaryTint
+        let color: Color = style == .primary ? .textButtons : .primaryTint
         return color.opacity(isDisabled ? disabledOpacity : 1)
     }
 

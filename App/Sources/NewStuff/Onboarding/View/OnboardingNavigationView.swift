@@ -9,7 +9,7 @@ struct OnboardingNavigationView: View {
 
             case .secondary:
                 OnboardingView()
-                    .addNavigationBar(style: .centeredIcon(icon: .secondaryHeaderIcon))
+                    .addNavigationBar(style: .centeredIcon(icon: .brandIcon))
             }
         }
     }
