@@ -34,6 +34,7 @@ struct MapView: View {
                 MapAnnotationView(viewModel: .init(annotation: annotation), isTopAnnotationViewHidden: $viewModel.isTopAnnotationHidden)
             }
         }
+            .accentColor(.primaryTint)
             .onReceive(viewModel.$region.debounce(for: .milliseconds(500), scheduler: RunLoop.main), perform: { newRegion in
                 viewModel.didChangeRegion(newRegion)
             })
