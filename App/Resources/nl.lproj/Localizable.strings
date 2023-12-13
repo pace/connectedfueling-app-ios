@@ -34,6 +34,7 @@
 "MENU.TITLE.PLACEHOLDER" = "PACE Connected Fueling";
 "PRICE.NOT_AVAILABLE" = "n. v.";
 "SHARE_TITLE" = "Deel";
+"actions_and_coupons_section_title" = "Promoties en kortingsbonnen";
 "alert_location_permission_description" = "Om u het dichtstbijzijnde tankstation te tonen, hebben we toegang nodig tot uw huidige locatie.";
 "alert_location_permission_title" = "Locatie niet vrijgegeven";
 "closed_label" = "GESLOTEN";
@@ -52,6 +53,7 @@
 "common_use_monday" = "Maandag";
 "common_use_network_error" = "Verbinding met internet mislukt. Probeer het later opnieuw.";
 "common_use_next" = "Volgende";
+"common_use_pump" = "Benzinepomp";
 "common_use_retry" = "Probeer het nog eens.";
 "common_use_saturday" = "Zaterdag";
 "common_use_save" = "Sla";
@@ -82,6 +84,7 @@
 "gas_station_opening_hours_hint" = "Op feestdagen kunnen andere openingstijden gelden.";
 "gas_station_opening_hours_not_available" = "De openingstijden zijn momenteel niet bekend.";
 "gas_station_opening_hours_title" = "Openingstijden";
+"gas_stations_near_you_section_title" = "Tankstations bij jou in de buurt";
 "gasstation_closes_in" = "Benzinestation sluit om %s";
 "general_error_title" = "Laden mislukt";
 "good_day_message" = "Hallo!";
@@ -145,7 +148,14 @@
 "payment_methods_loading_description" = "We laden je betaalmethoden en tankkaarten. Een ogenblik geduld alstublieft.";
 "payment_methods_loading_title" = "Betaalmethoden en tankkaarten laden...";
 "search_title" = "Locaties zoeken";
+"transactions_details_title" = "Transactiegegevens";
+"transactions_empty_title" = "Nog geen transacties";
+"transactions_last_transaction_title" = "Je laatste transactie";
+"transactions_receipt_title" = "Ontvangstbewijs";
+"transactions_station_details_title" = "Details station";
+"transactions_tap_on_receipt_title" = "Tik op het ontvangstbewijs om het op te slaan";
 "wallet_account_deletion_title" = "Account verwijderen";
+"wallet_bonus_title" = "Bonus";
 "wallet_fuel_type_selection_title" = "Brandstof selecteren";
 "wallet_header_text" = "U bent aangemeld als";
 "wallet_payment_methods_title" = "Betaalmethoden & tankkaarten";

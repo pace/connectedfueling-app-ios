@@ -34,7 +34,7 @@ struct TransactionListView: View {
 
     @ViewBuilder
     private var empty: some View {
-        TextLabel("Noch keine Transaktionen") // TODO: string / design
+        TextLabel(L10n.transactionsEmptyTitle)
     }
 }
 

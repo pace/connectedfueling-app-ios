@@ -34,6 +34,7 @@
 "MENU.TITLE.PLACEHOLDER" = "PACE Connected Fueling";
 "PRICE.NOT_AVAILABLE" = "n. v.";
 "SHARE_TITLE" = "Teilen";
+"actions_and_coupons_section_title" = "Aktionen & Coupons";
 "alert_location_permission_description" = "Um dir die nächstgelegene Tankstelle anzuzeigen, brauchen wir Zugriff auf deinen aktuellen Standort.";
 "alert_location_permission_title" = "Standort nicht freigegeben";
 "closed_label" = "GESCHLOSSEN";
@@ -52,6 +53,7 @@
 "common_use_monday" = "Montag";
 "common_use_network_error" = "Verbindung zum Internet fehlgeschlagen. Versuche es später erneut.";
 "common_use_next" = "Weiter";
+"common_use_pump" = "Zapfsäule";
 "common_use_retry" = "Erneut versuchen";
 "common_use_saturday" = "Samstag";
 "common_use_save" = "Speichern";
@@ -82,6 +84,7 @@
 "gas_station_opening_hours_hint" = "An Feiertagen können die Öffnungszeiten evtl. abweichen.";
 "gas_station_opening_hours_not_available" = "Öffnungszeiten sind leider nicht verfügbar.";
 "gas_station_opening_hours_title" = "Öffnungszeiten";
+"gas_stations_near_you_section_title" = "Tankstellen in deiner Nähe";
 "gasstation_closes_in" = "Tankstelle schließt um %s  Uhr";
 "general_error_title" = "Laden fehlgeschlagen";
 "good_day_message" = "Guten Tag!";
@@ -145,7 +148,14 @@
 "payment_methods_loading_description" = "Wir laden deine Bezahlmethoden und Tankkarten. Bitte warte einen Moment.";
 "payment_methods_loading_title" = "Lade Bezahlmethoden und Tankkarten...";
 "search_title" = "Orte suchen";
+"transactions_details_title" = "Transaktionsdetails";
+"transactions_empty_title" = "Noch keine Transaktionen";
+"transactions_last_transaction_title" = "Deine letzte Transaktion";
+"transactions_receipt_title" = "Beleg";
+"transactions_station_details_title" = "Stationsdetails";
+"transactions_tap_on_receipt_title" = "Tippe auf den Beleg, um ihn zu speichern";
 "wallet_account_deletion_title" = "Account löschen";
+"wallet_bonus_title" = "Bonus";
 "wallet_fuel_type_selection_title" = "Kraftstoffauswahl";
 "wallet_header_text" = "Du bist angemeldet als";
 "wallet_payment_methods_title" = "Bezahlmethoden & Tankkarten";

@@ -34,6 +34,7 @@
 "MENU.TITLE.PLACEHOLDER" = "PACE Connected Fueling";
 "PRICE.NOT_AVAILABLE" = "n. a.";
 "SHARE_TITLE" = "Share";
+"actions_and_coupons_section_title" = "Promotions & Coupons";
 "alert_location_permission_description" = "To show you the nearest gas station, we need access to your current location.";
 "alert_location_permission_title" = "Location permission not granted";
 "closed_label" = "CLOSED";
@@ -52,6 +53,7 @@
 "common_use_monday" = "Monday";
 "common_use_network_error" = "Connection to the Internet failed. Try again later.";
 "common_use_next" = "Next";
+"common_use_pump" = "Fuel pump";
 "common_use_retry" = "Try again";
 "common_use_saturday" = "Saturday";
 "common_use_save" = "Save";
@@ -82,9 +84,10 @@
 "gas_station_opening_hours_hint" = "Opening hours may differ on holidays.";
 "gas_station_opening_hours_not_available" = "Opening hours are currently not available.";
 "gas_station_opening_hours_title" = "Opening hours";
+"gas_stations_near_you_section_title" = "Petrol stations near you";
 "gasstation_closes_in" = "Petrol station closes at %s";
 "general_error_title" = "Loading failed";
-"good_day_message" = "Hello!";
+"good_day_message" = "Good afternoon!";
 "good_evening_message" = "Good evening!";
 "good_morning_message" = "Good morning!";
 "list_tab_label" = "List";
@@ -145,7 +148,14 @@
 "payment_methods_loading_description" = "We load your payment methods and fuel cards. Please wait a moment.";
 "payment_methods_loading_title" = "Loading payment methods and fuel cards…";
 "search_title" = "Search places";
+"transactions_details_title" = "Transaction details";
+"transactions_empty_title" = "No transactions yet";
+"transactions_last_transaction_title" = "Your last transaction";
+"transactions_receipt_title" = "Receipt";
+"transactions_station_details_title" = "Station details";
+"transactions_tap_on_receipt_title" = "Tap on the receipt to save it";
 "wallet_account_deletion_title" = "Delete account";
+"wallet_bonus_title" = "Bonus";
 "wallet_fuel_type_selection_title" = "Fuel selection";
 "wallet_header_text" = "You are logged in as";
 "wallet_payment_methods_title" = "Payment methods & fuel cards";

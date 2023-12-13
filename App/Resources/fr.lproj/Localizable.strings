@@ -34,6 +34,7 @@
 "MENU.TITLE.PLACEHOLDER" = "PACE Connected Fueling";
 "PRICE.NOT_AVAILABLE" = "n. v.";
 "SHARE_TITLE" = "Partager";
+"actions_and_coupons_section_title" = "Actions & coupons";
 "alert_location_permission_description" = "Pour pouvoir t'indiquer la station-service la plus proche, nous devons avoir accès à ta position actuelle.";
 "alert_location_permission_title" = "Site non validé";
 "closed_label" = "FERMÉ";
@@ -52,6 +53,7 @@
 "common_use_monday" = "Lundi";
 "common_use_network_error" = "Échec de la connexion à Internet. Réessaie plus tard.";
 "common_use_next" = "Suivant";
+"common_use_pump" = "Pompe à essence";
 "common_use_retry" = "Essayer à nouveau";
 "common_use_saturday" = "Samedi";
 "common_use_save" = "Enregistrer";
@@ -82,6 +84,7 @@
 "gas_station_opening_hours_hint" = "Les heures d'ouverture peuvent différer les jours fériés.";
 "gas_station_opening_hours_not_available" = "Les heures d'ouverture ne sont pas disponibles actuellement.";
 "gas_station_opening_hours_title" = "Heures d'ouverture";
+"gas_stations_near_you_section_title" = "Stations-service près de chez toi";
 "gasstation_closes_in" = "La station-service ferme à %s heures";
 "general_error_title" = "Le chargement a échoué";
 "good_day_message" = "Bonjour !";
@@ -145,7 +148,14 @@
 "payment_methods_loading_description" = "Nous chargeons vos moyens de paiement et vos cartes de carburant. Veuillez patienter un moment.";
 "payment_methods_loading_title" = "Chargement des moyens de paiement et des cartes de carburant...";
 "search_title" = "Chercher des lieux";
+"transactions_details_title" = "Détails de la transaction";
+"transactions_empty_title" = "Pas encore de transactions";
+"transactions_last_transaction_title" = "Ta dernière transaction";
+"transactions_receipt_title" = "Document";
+"transactions_station_details_title" = "Détails de la station";
+"transactions_tap_on_receipt_title" = "Tape sur le document pour l'enregistrer";
 "wallet_account_deletion_title" = "Supprimer un compte";
+"wallet_bonus_title" = "Bonus";
 "wallet_fuel_type_selection_title" = "Sélection du carburant";
 "wallet_header_text" = "Vous êtes connecté en tant que";
 "wallet_payment_methods_title" = "Méthodes de paiement & cartes de carburant";

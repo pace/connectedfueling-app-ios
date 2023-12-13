@@ -13,7 +13,7 @@ struct TransactionDetailView: View {
             receipt
         }
         .onAppear(perform: viewModel.detailWillAppear)
-        .navigationTitle("Transaktionsdetails") // TODO: string
+        .navigationTitle(L10n.transactionsDetailsTitle)
     }
 
     @ViewBuilder
@@ -32,10 +32,10 @@ struct TransactionDetailView: View {
                 TextLabel(viewModel.address)
                     .font(.system(size: 16))
                     .padding(.bottom, 1)
-//                TextLabel("Stationdetails", textColor: .primaryTint) // TODO: String
+//                TextLabel(L10n.transactionsStationDetailsTitle, textColor: .primaryTint) // TODO: String
 //                    .padding(.bottom, .paddingXS)
                 TextLabel("\(viewModel.day), \(viewModel.date) · \(viewModel.time)")
-                TextLabel("Zapfsäule \(viewModel.pump)") // TODO: String
+                TextLabel("\(L10n.commonUsePump) \(viewModel.pump)")
             }
             .padding(.paddingS)
         }
@@ -93,7 +93,7 @@ struct TransactionDetailView: View {
                     .resizable()
                     .frame(width: 24, height: 24)
                     .foregroundColor(.genericGrey)
-                TextLabel("Tippe auf den Beleg um ihn zu speichern", textColor: .genericGrey) // TODO: string
+                TextLabel(L10n.transactionsTapOnReceiptTitle, textColor: .genericGrey)
                     .font(.system(size: 14))
                     .multilineTextAlignment(.center)
                     .padding(.bottom, .paddingL)
@@ -103,7 +103,7 @@ struct TransactionDetailView: View {
 
     func showShareSheet(image: UIImage) {
         DispatchQueue.main.async {
-            let shareObject = ShareObject(shareData: image, customTitle: "Receipt") // TODO: string
+            let shareObject = ShareObject(shareData: image, customTitle: L10n.transactionsReceiptTitle)
 
             let activityVC = UIActivityViewController(activityItems: [shareObject], applicationActivities: nil)
             UIApplication.shared.windows.first?.rootViewController?.present(activityVC, animated: true, completion: nil)

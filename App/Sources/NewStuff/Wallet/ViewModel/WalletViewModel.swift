@@ -46,7 +46,7 @@ class WalletViewModel: ObservableObject {
 private extension WalletViewModel {
     var bonusItemList: ListItem {
         .init(icon: .walletBonusIcon,
-              title: "Bonus", // TODO: string
+              title: L10n.walletBonusTitle,
               action: .detail(destination: AnyView(
                 BonusView()
               )))
@@ -66,7 +66,6 @@ private extension WalletViewModel {
               action: .detail(destination: AnyView(
                 TransactionListView(viewModel: .init())
                     .navigationTitle(L10n.walletTransactionsTitle)
-                //AppView(urlString: PACECloudSDK.URL.transactions.absoluteString)
               )))
     }
 

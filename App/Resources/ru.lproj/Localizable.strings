@@ -34,6 +34,7 @@
 "MENU.TITLE.PLACEHOLDER" = "PACE Connected Fueling";
 "PRICE.NOT_AVAILABLE" = "н. в.";
 "SHARE_TITLE" = "Делиться";
+"actions_and_coupons_section_title" = "Акции и купоны";
 "alert_location_permission_description" = "Чтобы показать вам ближайшую заправочную станцию, нам необходим доступ к вашему текущему местоположению.";
 "alert_location_permission_title" = "Местонахождение не разглашается";
 "closed_label" = "ЗАКРЫТО";
@@ -52,6 +53,7 @@
 "common_use_monday" = "Понедельник";
 "common_use_network_error" = "Не удалось подключиться к Интернету. Повторите попытку позже.";
 "common_use_next" = "Следующий";
+"common_use_pump" = "Бензоколонка";
 "common_use_retry" = "Попробуйте еще раз";
 "common_use_saturday" = "Суббота";
 "common_use_save" = "Сохранить";
@@ -82,6 +84,7 @@
 "gas_station_opening_hours_hint" = "Часы работы могут отличаться в праздничные дни.";
 "gas_station_opening_hours_not_available" = "Часы работы в настоящее время не указаны.";
 "gas_station_opening_hours_title" = "Часы работы";
+"gas_stations_near_you_section_title" = "Автозаправочные станции рядом с вами";
 "gasstation_closes_in" = "Заправочная станция закрывается в %s";
 "general_error_title" = "Загрузка не удалась";
 "good_day_message" = "Здравствуйте!";
@@ -145,7 +148,14 @@
 "payment_methods_loading_description" = "Мы загружаем ваши способы оплаты и топливные карты. Пожалуйста, подождите немного.";
 "payment_methods_loading_title" = "Загрузка способов оплаты и топливных карт...";
 "search_title" = "Места поиска";
+"transactions_details_title" = "Детали сделки";
+"transactions_empty_title" = "Транзакций пока нет";
+"transactions_last_transaction_title" = "Ваша последняя транзакция";
+"transactions_receipt_title" = "Квитанция";
+"transactions_station_details_title" = "Информация о станции";
+"transactions_tap_on_receipt_title" = "Нажмите на квитанцию, чтобы сохранить ее";
 "wallet_account_deletion_title" = "Удалить аккаунт";
+"wallet_bonus_title" = "Бонус";
 "wallet_fuel_type_selection_title" = "Выбор топлива";
 "wallet_header_text" = "Вы вошли в систему как";
 "wallet_payment_methods_title" = "Способы оплаты и топливные карты";

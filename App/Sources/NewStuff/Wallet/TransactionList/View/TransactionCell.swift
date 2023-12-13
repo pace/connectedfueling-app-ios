@@ -17,7 +17,7 @@ struct TransactionCell: View {
         VStack {
             if viewModel.isLatest {
                 HStack {
-                    TextLabel("Deine letzte Transaktion", textColor: .primaryTint) // TODO: string
+                    TextLabel(L10n.transactionsLastTransactionTitle, textColor: .primaryTint)
                         .font(.system(size: 14, weight: .bold))
                     Spacer()
                 }
