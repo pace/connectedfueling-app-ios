@@ -45,7 +45,7 @@ class PriceNumberFormatter: NumberFormatter {
 
         let localizedPrice = L10n.currencyFormat(formattedString, currencySymbol)
 
-        guard usesSuperscript else { return .init(localizedPrice) }
+        guard usesSuperscript else { return  addAttributes(to: localizedPrice) }
 
         let superscriptString = addSuperscriptToLastDigit(of: localizedPrice)
         return superscriptString
@@ -74,6 +74,17 @@ class PriceNumberFormatter: NumberFormatter {
         usesSuperscript = fractionDigitsString.contains("s")
 
         return fractionDigitsString.count
+    }
+
+    private func addAttributes(to string: String) -> AttributedString {
+        let textColor: Color = .genericBlack
+        let font: Font = .system(size: 24, weight: .heavy)
+
+        var attributedString = AttributedString(string)
+        attributedString.font = font
+        attributedString.foregroundColor = textColor
+
+        return attributedString
     }
 
     private func addSuperscriptToLastDigit(of string: String) -> AttributedString {

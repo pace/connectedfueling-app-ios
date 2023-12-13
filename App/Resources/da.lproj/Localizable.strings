@@ -34,6 +34,7 @@
 "MENU.TITLE.PLACEHOLDER" = "PACE Connected Fueling";
 "PRICE.NOT_AVAILABLE" = "n. a.";
 "SHARE_TITLE" = "Del";
+"actions_and_coupons_section_title" = "Kampagner og kuponer";
 "alert_location_permission_description" = "For at vise dig den nærmeste tankstation skal vi have adgang til din aktuelle position.";
 "alert_location_permission_title" = "Tilladelse til placering ikke givet";
 "closed_label" = "LUKKET";
@@ -52,6 +53,7 @@
 "common_use_monday" = "Mandag";
 "common_use_network_error" = "Forbindelsen til internettet mislykkedes. Prøv igen senere.";
 "common_use_next" = "Næste";
+"common_use_pump" = "Benzinpumpe";
 "common_use_retry" = "Prøv igen";
 "common_use_saturday" = "Lørdag";
 "common_use_save" = "Gem";
@@ -82,6 +84,7 @@
 "gas_station_opening_hours_hint" = "Åbningstiderne kan variere på helligdage.";
 "gas_station_opening_hours_not_available" = "Åbningstider er ikke tilgængelige i øjeblikket.";
 "gas_station_opening_hours_title" = "Åbningstider";
+"gas_stations_near_you_section_title" = "Tankstationer nær dig";
 "gasstation_closes_in" = "Tankstationen lukker kl. %s";
 "general_error_title" = "Indlæsning mislykkedes";
 "good_day_message" = "Hej med jer!";
@@ -145,7 +148,14 @@
 "payment_methods_loading_description" = "Vi indlæser dine betalingsmetoder og brændstofkort. Vent venligst et øjeblik.";
 "payment_methods_loading_title" = "Indlæsning af betalingsmetoder og brændstofkort...";
 "search_title" = "Søg efter steder";
+"transactions_details_title" = "Detaljer om transaktionen";
+"transactions_empty_title" = "Ingen transaktioner endnu";
+"transactions_last_transaction_title" = "Din sidste transaktion";
+"transactions_receipt_title" = "Kvittering";
+"transactions_station_details_title" = "Detaljer om stationen";
+"transactions_tap_on_receipt_title" = "Tryk på kvitteringen for at gemme den";
 "wallet_account_deletion_title" = "Slet konto";
+"wallet_bonus_title" = "Bonus";
 "wallet_fuel_type_selection_title" = "Valg af brændstof";
 "wallet_header_text" = "Du er logget ind som";
 "wallet_payment_methods_title" = "Betalingsmetoder og brændstofkort";

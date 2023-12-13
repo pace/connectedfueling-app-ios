@@ -34,6 +34,7 @@
 "MENU.TITLE.PLACEHOLDER" = "PACE Connected Fueling";
 "PRICE.NOT_AVAILABLE" = "n. v.";
 "SHARE_TITLE" = "Compartilhar";
+"actions_and_coupons_section_title" = "Promoções e cupões";
 "alert_location_permission_description" = "Para lhe mostrar a estação de serviço mais próxima, precisamos de ter acesso à sua localização actual.";
 "alert_location_permission_title" = "Localização não libertada";
 "closed_label" = "FECHADO";
@@ -52,6 +53,7 @@
 "common_use_monday" = "Segunda-feira";
 "common_use_network_error" = "A ligação à Internet falhou. Tente novamente mais tarde.";
 "common_use_next" = "Próximo";
+"common_use_pump" = "Bomba de gasolina";
 "common_use_retry" = "Tente novamente";
 "common_use_saturday" = "Sábado";
 "common_use_save" = "Guardar";
@@ -82,6 +84,7 @@
 "gas_station_opening_hours_hint" = "O horário de abertura pode ser diferente nos feriados.";
 "gas_station_opening_hours_not_available" = "O horário de abertura não está actualmente disponível.";
 "gas_station_opening_hours_title" = "Horário de abertura";
+"gas_stations_near_you_section_title" = "Estações de serviço perto de si";
 "gasstation_closes_in" = "A bomba de gasolina fecha a %s";
 "general_error_title" = "Falha no carregamento";
 "good_day_message" = "Olá!";
@@ -145,7 +148,14 @@
 "payment_methods_loading_description" = "Carregamos os seus métodos de pagamento e cartões de combustível. Aguarde um momento.";
 "payment_methods_loading_title" = "Carregamento de métodos de pagamento e cartões de combustível...";
 "search_title" = "Locais de pesquisa";
+"transactions_details_title" = "Detalhes da transação";
+"transactions_empty_title" = "Ainda não há transacções";
+"transactions_last_transaction_title" = "A sua última transação";
+"transactions_receipt_title" = "Recibo";
+"transactions_station_details_title" = "Detalhes da estação";
+"transactions_tap_on_receipt_title" = "Toque no recibo para o guardar";
 "wallet_account_deletion_title" = "Eliminar a conta";
+"wallet_bonus_title" = "Bónus";
 "wallet_fuel_type_selection_title" = "Seleção de combustível";
 "wallet_header_text" = "Tem sessão iniciada como";
 "wallet_payment_methods_title" = "Métodos de pagamento e cartões de combustível";

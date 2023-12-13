@@ -10,6 +10,8 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
+  /// Promotions & Coupons
+  internal static let actionsAndCouponsSectionTitle = L10n.tr("Localizable", "actions_and_coupons_section_title", fallback: "Promotions & Coupons")
   /// To show you the nearest gas station, we need access to your current location.
   internal static let alertLocationPermissionDescription = L10n.tr("Localizable", "alert_location_permission_description", fallback: "To show you the nearest gas station, we need access to your current location.")
   /// Location permission not granted
@@ -46,6 +48,8 @@ internal enum L10n {
   internal static let commonUseNetworkError = L10n.tr("Localizable", "common_use_network_error", fallback: "Connection to the Internet failed. Try again later.")
   /// Next
   internal static let commonUseNext = L10n.tr("Localizable", "common_use_next", fallback: "Next")
+  /// Fuel pump
+  internal static let commonUsePump = L10n.tr("Localizable", "common_use_pump", fallback: "Fuel pump")
   /// Try again
   internal static let commonUseRetry = L10n.tr("Localizable", "common_use_retry", fallback: "Try again")
   /// Saturday
@@ -116,14 +120,16 @@ internal enum L10n {
   internal static let gasStationOpeningHoursNotAvailable = L10n.tr("Localizable", "gas_station_opening_hours_not_available", fallback: "Opening hours are currently not available.")
   /// Opening hours
   internal static let gasStationOpeningHoursTitle = L10n.tr("Localizable", "gas_station_opening_hours_title", fallback: "Opening hours")
+  /// Petrol stations near you
+  internal static let gasStationsNearYouSectionTitle = L10n.tr("Localizable", "gas_stations_near_you_section_title", fallback: "Petrol stations near you")
   /// Petrol station closes at %s
   internal static func gasstationClosesIn(_ p1: UnsafePointer<CChar>) -> String {
     return L10n.tr("Localizable", "gasstation_closes_in", p1, fallback: "Petrol station closes at %s")
   }
   /// Loading failed
   internal static let generalErrorTitle = L10n.tr("Localizable", "general_error_title", fallback: "Loading failed")
-  /// Hello!
-  internal static let goodDayMessage = L10n.tr("Localizable", "good_day_message", fallback: "Hello!")
+  /// Good afternoon!
+  internal static let goodDayMessage = L10n.tr("Localizable", "good_day_message", fallback: "Good afternoon!")
   /// Good evening!
   internal static let goodEveningMessage = L10n.tr("Localizable", "good_evening_message", fallback: "Good evening!")
   /// Good morning!
@@ -246,8 +252,22 @@ internal enum L10n {
   internal static let searchTitle = L10n.tr("Localizable", "search_title", fallback: "Search places")
   /// Share
   internal static let shareTitle = L10n.tr("Localizable", "SHARE_TITLE", fallback: "Share")
+  /// Transaction details
+  internal static let transactionsDetailsTitle = L10n.tr("Localizable", "transactions_details_title", fallback: "Transaction details")
+  /// No transactions yet
+  internal static let transactionsEmptyTitle = L10n.tr("Localizable", "transactions_empty_title", fallback: "No transactions yet")
+  /// Your last transaction
+  internal static let transactionsLastTransactionTitle = L10n.tr("Localizable", "transactions_last_transaction_title", fallback: "Your last transaction")
+  /// Receipt
+  internal static let transactionsReceiptTitle = L10n.tr("Localizable", "transactions_receipt_title", fallback: "Receipt")
+  /// Station details
+  internal static let transactionsStationDetailsTitle = L10n.tr("Localizable", "transactions_station_details_title", fallback: "Station details")
+  /// Tap on the receipt to save it
+  internal static let transactionsTapOnReceiptTitle = L10n.tr("Localizable", "transactions_tap_on_receipt_title", fallback: "Tap on the receipt to save it")
   /// Delete account
   internal static let walletAccountDeletionTitle = L10n.tr("Localizable", "wallet_account_deletion_title", fallback: "Delete account")
+  /// Bonus
+  internal static let walletBonusTitle = L10n.tr("Localizable", "wallet_bonus_title", fallback: "Bonus")
   /// Fuel selection
   internal static let walletFuelTypeSelectionTitle = L10n.tr("Localizable", "wallet_fuel_type_selection_title", fallback: "Fuel selection")
   /// You are logged in as

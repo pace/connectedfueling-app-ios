@@ -34,6 +34,7 @@
 "MENU.TITLE.PLACEHOLDER" = "PACE Connected Fueling";
 "PRICE.NOT_AVAILABLE" = "n. v.";
 "SHARE_TITLE" = "Compartir";
+"actions_and_coupons_section_title" = "Promociones y cupones";
 "alert_location_permission_description" = "Para mostrarte la gasolinera más cercana, necesitamos acceder a tu ubicación actual.";
 "alert_location_permission_title" = "Ubicación no divulgada";
 "closed_label" = "CERRADO";
@@ -52,6 +53,7 @@
 "common_use_monday" = "Lunes";
 "common_use_network_error" = "La conexión a Internet ha fallado. Vuelva a intentarlo más tarde.";
 "common_use_next" = "Próximo";
+"common_use_pump" = "Gasolinera";
 "common_use_retry" = "Inténtalo de nuevo";
 "common_use_saturday" = "Sábado";
 "common_use_save" = "Guardar";
@@ -82,6 +84,7 @@
 "gas_station_opening_hours_hint" = "Los horarios de apertura pueden variar en los días festivos.";
 "gas_station_opening_hours_not_available" = "El horario de apertura no está disponible actualmente.";
 "gas_station_opening_hours_title" = "Horarios de apertura";
+"gas_stations_near_you_section_title" = "Gasolineras cercanas";
 "gasstation_closes_in" = "La gasolinera cierra a las %s";
 "general_error_title" = "Carga fallida";
 "good_day_message" = "¡Hola!";
@@ -145,7 +148,14 @@
 "payment_methods_loading_description" = "Cargamos sus métodos de pago y tarjetas de combustible. Por favor, espere un momento.";
 "payment_methods_loading_title" = "Carga de medios de pago y tarjetas de combustible...";
 "search_title" = "Buscar lugares";
+"transactions_details_title" = "Detalles de la transacción";
+"transactions_empty_title" = "Aún no hay transacciones";
+"transactions_last_transaction_title" = "Su última transacción";
+"transactions_receipt_title" = "Recibo";
+"transactions_station_details_title" = "Detalles de la estación";
+"transactions_tap_on_receipt_title" = "Pulse sobre el recibo para guardarlo";
 "wallet_account_deletion_title" = "Eliminar cuenta";
+"wallet_bonus_title" = "Bono";
 "wallet_fuel_type_selection_title" = "Selección de combustible";
 "wallet_header_text" = "Ha iniciado sesión como";
 "wallet_payment_methods_title" = "Métodos de pago y tarjetas de combustible";

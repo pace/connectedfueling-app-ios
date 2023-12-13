@@ -34,6 +34,7 @@
 "MENU.TITLE.PLACEHOLDER" = "PACE Connected Fueling";
 "PRICE.NOT_AVAILABLE" = "n. v.";
 "SHARE_TITLE" = "Acțiune";
+"actions_and_coupons_section_title" = "Promoții și cupoane";
 "alert_location_permission_description" = "Pentru a vă arăta cea mai apropiată benzinărie, avem nevoie de acces la locația dvs. actuală.";
 "alert_location_permission_title" = "Locația nu a fost publicată";
 "closed_label" = "ÎNCHIS";
@@ -52,6 +53,7 @@
 "common_use_monday" = "Luni";
 "common_use_network_error" = "Conexiunea la Internet a eșuat. Încercați din nou mai târziu.";
 "common_use_next" = "Următorul";
+"common_use_pump" = "Pompă de benzină";
 "common_use_retry" = "Încearcă din nou";
 "common_use_saturday" = "Sâmbătă";
 "common_use_save" = "Salvați";
@@ -82,6 +84,7 @@
 "gas_station_opening_hours_hint" = "Orele de deschidere pot fi diferite în zilele de sărbătoare.";
 "gas_station_opening_hours_not_available" = "În prezent, orele de deschidere nu sunt disponibile.";
 "gas_station_opening_hours_title" = "Ore de deschidere";
+"gas_stations_near_you_section_title" = "Benzinării în apropierea dumneavoastră";
 "gasstation_closes_in" = "Benzinăria se închide la %s";
 "general_error_title" = "Încărcarea nu a reușit";
 "good_day_message" = "Bună!";
@@ -145,7 +148,14 @@
 "payment_methods_loading_description" = "Vă încărcăm metodele de plată și cardurile de combustibil. Vă rugăm să așteptați un moment.";
 "payment_methods_loading_title" = "Încărcarea metodelor de plată și a cardurilor de combustibil...";
 "search_title" = "Căutați locații";
+"transactions_details_title" = "Detaliile tranzacției";
+"transactions_empty_title" = "Nu există încă tranzacții";
+"transactions_last_transaction_title" = "Ultima dvs. tranzacție";
+"transactions_receipt_title" = "Chitanță";
+"transactions_station_details_title" = "Detalii despre stație";
+"transactions_tap_on_receipt_title" = "Apăsați pe chitanță pentru a o salva";
 "wallet_account_deletion_title" = "Ștergeți contul";
+"wallet_bonus_title" = "Bonus";
 "wallet_fuel_type_selection_title" = "Selectarea combustibilului";
 "wallet_header_text" = "Sunteți autentificat ca";
 "wallet_payment_methods_title" = "Metode de plată și carduri de combustibil";

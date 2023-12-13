@@ -34,6 +34,7 @@
 "MENU.TITLE.PLACEHOLDER" = "PACE Connected Fueling";
 "PRICE.NOT_AVAILABLE" = "n. v.";
 "SHARE_TITLE" = "Podíl";
+"actions_and_coupons_section_title" = "Propagační akce a kupóny";
 "alert_location_permission_description" = "Abychom vám mohli ukázat nejbližší čerpací stanici, potřebujeme přístup k vaší aktuální poloze.";
 "alert_location_permission_title" = "Umístění nezveřejněno";
 "closed_label" = "UZAVŘENO";
@@ -52,6 +53,7 @@
 "common_use_monday" = "Pondělí";
 "common_use_network_error" = "Připojení k internetu se nezdařilo. Zkuste to později.";
 "common_use_next" = "Další";
+"common_use_pump" = "Benzínové čerpadlo";
 "common_use_retry" = "Zkuste to znovu";
 "common_use_saturday" = "Sobota";
 "common_use_save" = "Uložit";
@@ -82,6 +84,7 @@
 "gas_station_opening_hours_hint" = "Otevírací doba se může o svátcích lišit.";
 "gas_station_opening_hours_not_available" = "Otevírací doba není v současné době k dispozici.";
 "gas_station_opening_hours_title" = "Otevírací doba";
+"gas_stations_near_you_section_title" = "Čerpací stanice ve vašem okolí";
 "gasstation_closes_in" = "Čerpací stanice se zavírá v %s";
 "general_error_title" = "Načítání se nezdařilo";
 "good_day_message" = "Dobrý den!";
@@ -145,7 +148,14 @@
 "payment_methods_loading_description" = "Načítáme vaše platební metody a palivové karty. Chvíli prosím počkejte.";
 "payment_methods_loading_title" = "Načítání platebních metod a palivových karet...";
 "search_title" = "Vyhledávání lokalit";
+"transactions_details_title" = "Podrobnosti o transakci";
+"transactions_empty_title" = "Zatím žádné transakce";
+"transactions_last_transaction_title" = "Vaše poslední transakce";
+"transactions_receipt_title" = "Příjem";
+"transactions_station_details_title" = "Podrobnosti o stanici";
+"transactions_tap_on_receipt_title" = "Klepnutím na účtenku ji uložíte";
 "wallet_account_deletion_title" = "Odstranění účtu";
+"wallet_bonus_title" = "Bonus";
 "wallet_fuel_type_selection_title" = "Výběr paliva";
 "wallet_header_text" = "Jste přihlášeni jako";
 "wallet_payment_methods_title" = "Platební metody a palivové karty";

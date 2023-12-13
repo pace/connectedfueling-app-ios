@@ -34,6 +34,7 @@
 "MENU.TITLE.PLACEHOLDER" = "PACE Connected Fueling";
 "PRICE.NOT_AVAILABLE" = "n. v.";
 "SHARE_TITLE" = "Udział";
+"actions_and_coupons_section_title" = "Promocje i kupony";
 "alert_location_permission_description" = "Aby pokazać Ci najbliższą stację benzynową, potrzebujemy dostępu do Twojej aktualnej lokalizacji.";
 "alert_location_permission_title" = "Lokalizacja nie została ujawniona";
 "closed_label" = "ZAMKNIĘTE";
@@ -52,6 +53,7 @@
 "common_use_monday" = "Poniedziałek";
 "common_use_network_error" = "Połączenie z Internetem nie powiodło się. Spróbuj ponownie później.";
 "common_use_next" = "Następny";
+"common_use_pump" = "Pompa benzynowa";
 "common_use_retry" = "Spróbuj ponownie";
 "common_use_saturday" = "Sobota";
 "common_use_save" = "Zapisz";
@@ -82,6 +84,7 @@
 "gas_station_opening_hours_hint" = "W święta godziny otwarcia mogą się różnić.";
 "gas_station_opening_hours_not_available" = "Godziny otwarcia nie są obecnie dostępne.";
 "gas_station_opening_hours_title" = "Godziny otwarcia";
+"gas_stations_near_you_section_title" = "Stacje benzynowe w pobliżu";
 "gasstation_closes_in" = "Stacja benzynowa zostaje zamknięta o godzinie %s";
 "general_error_title" = "Ładowanie nie powiodło się";
 "good_day_message" = "Cześć!";
@@ -145,7 +148,14 @@
 "payment_methods_loading_description" = "Wczytujemy metody płatności i karty paliwowe. Prosimy o chwilę oczekiwania.";
 "payment_methods_loading_title" = "Ładowanie metod płatności i kart paliwowych...";
 "search_title" = "Lokalizacje wyszukiwania";
+"transactions_details_title" = "Szczegóły transakcji";
+"transactions_empty_title" = "Brak transakcji";
+"transactions_last_transaction_title" = "Ostatnia transakcja";
+"transactions_receipt_title" = "Pokwitowanie";
+"transactions_station_details_title" = "Szczegóły stacji";
+"transactions_tap_on_receipt_title" = "Dotknij paragonu, aby go zapisać";
 "wallet_account_deletion_title" = "Usuń konto";
+"wallet_bonus_title" = "Bonus";
 "wallet_fuel_type_selection_title" = "Wybór paliwa";
 "wallet_header_text" = "Jesteś zalogowany jako";
 "wallet_payment_methods_title" = "Metody płatności i karty paliwowe";
