@@ -13,8 +13,10 @@ struct ContentView: View {
     var body: some View {
         if isOnboardingCompleted {
             tabView
+                .pagingTransition()
         } else {
             onboarding
+                .pagingTransition()
         }
     }
 

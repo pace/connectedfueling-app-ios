@@ -100,7 +100,6 @@
 		3BAE60752AD7CBCB006EA9DD /* TextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE60742AD7CBCB006EA9DD /* TextLabel.swift */; };
 		3BAE60772AD7CD5E006EA9DD /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE60762AD7CD5E006EA9DD /* LocationManager.swift */; };
 		3BAE607F2AD80ADE006EA9DD /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BAE607E2AD80ADE006EA9DD /* String+Extension.swift */; };
-		3BCE54932B20644F0074DBF0 /* SwiftUIIntrospect in Frameworks */ = {isa = PBXBuildFile; productRef = 3BCE54922B20644F0074DBF0 /* SwiftUIIntrospect */; };
 		3BCF49F42ADFCA06005C20DC /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF49F32ADFCA06005C20DC /* View+Extension.swift */; };
 		3BCF49F62ADFF97D005C20DC /* OnboardingTextInputResponseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF49F52ADFF97D005C20DC /* OnboardingTextInputResponseType.swift */; };
 		3BCF49F82AE0079C005C20DC /* PINInputValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF49F72AE0079C005C20DC /* PINInputValidator.swift */; };
@@ -122,7 +121,7 @@
 		3BDE7B2F2ADD257F009A88DF /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDE7B2E2ADD257F009A88DF /* OnboardingView.swift */; };
 		3BDE7B312ADD336B009A88DF /* ConnectedFuelingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDE7B302ADD336B009A88DF /* ConnectedFuelingApp.swift */; };
 		3BDE7B382ADD3468009A88DF /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDE7B372ADD3468009A88DF /* AppManager.swift */; };
-		3BDE7B3A2ADD42EB009A88DF /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDE7B392ADD42EB009A88DF /* PageView.swift */; };
+		3BDE7B3A2ADD42EB009A88DF /* OnboardingPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDE7B392ADD42EB009A88DF /* OnboardingPagerView.swift */; };
 		3BDE7B3E2ADD7073009A88DF /* PaymentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDE7B3D2ADD7073009A88DF /* PaymentManager.swift */; };
 		3BDE7B4A2ADD7DC7009A88DF /* OnboardingTextInputType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDE7B492ADD7DC7009A88DF /* OnboardingTextInputType.swift */; };
 		3BDE7B502ADE7512009A88DF /* GasStationListNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BDE7B4F2ADE7512009A88DF /* GasStationListNavigationView.swift */; };
@@ -350,7 +349,7 @@
 		3BDE7B2E2ADD257F009A88DF /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		3BDE7B302ADD336B009A88DF /* ConnectedFuelingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectedFuelingApp.swift; sourceTree = "<group>"; };
 		3BDE7B372ADD3468009A88DF /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
-		3BDE7B392ADD42EB009A88DF /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		3BDE7B392ADD42EB009A88DF /* OnboardingPagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPagerView.swift; sourceTree = "<group>"; };
 		3BDE7B3D2ADD7073009A88DF /* PaymentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentManager.swift; sourceTree = "<group>"; };
 		3BDE7B492ADD7DC7009A88DF /* OnboardingTextInputType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTextInputType.swift; sourceTree = "<group>"; };
 		3BDE7B4F2ADE7512009A88DF /* GasStationListNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasStationListNavigationView.swift; sourceTree = "<group>"; };
@@ -413,7 +412,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C56DF9B9268F5A320074DBC8 /* PACECloudSDK in Frameworks */,
-				3BCE54932B20644F0074DBF0 /* SwiftUIIntrospect in Frameworks */,
 				3B7764582AF91FFD00BE185B /* Sentry in Frameworks */,
 				3B77645B2AF922F700BE185B /* FirebaseCrashlytics in Frameworks */,
 			);
@@ -671,6 +669,7 @@
 			isa = PBXGroup;
 			children = (
 				3BA2DB192AE6A29300187D86 /* OnboardingNavigationView.swift */,
+				3BDE7B392ADD42EB009A88DF /* OnboardingPagerView.swift */,
 				3B7370B92AD52F8C00E9118B /* OnboardingPageView.swift */,
 				3BDE7B152AD92B95009A88DF /* OnboardingTextInputView.swift */,
 				3BDE7B2E2ADD257F009A88DF /* OnboardingView.swift */,
@@ -903,7 +902,6 @@
 				3B62772F2B07506600528A1F /* ErrorView.swift */,
 				3BDE7B132AD83D06009A88DF /* LoadingSpinner.swift */,
 				3B62772D2B074CE300528A1F /* LoadingView.swift */,
-				3BDE7B392ADD42EB009A88DF /* PageView.swift */,
 				3B6D85172B10D1E200701DEE /* SafariView.swift */,
 				3B65A4872B1A08EC006B6890 /* Switch.swift */,
 				3BDE7B172AD931C0009A88DF /* TextInputField.swift */,
@@ -1250,7 +1248,6 @@
 				C56DF9B8268F5A320074DBC8 /* PACECloudSDK */,
 				3B7764572AF91FFD00BE185B /* Sentry */,
 				3B77645A2AF922F700BE185B /* FirebaseCrashlytics */,
-				3BCE54922B20644F0074DBF0 /* SwiftUIIntrospect */,
 			);
 			productName = App;
 			productReference = A21D1F58961E1C012B58255C /* App.app */;
@@ -1315,7 +1312,6 @@
 				C56DF9B7268F5A320074DBC8 /* XCRemoteSwiftPackageReference "cloud-sdk-ios" */,
 				3B7764562AF91FFD00BE185B /* XCRemoteSwiftPackageReference "sentry-cocoa" */,
 				3B7764592AF922F700BE185B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				3BCE54912B20644F0074DBF0 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
 			);
 			projectDirPath = "";
 			projectRoot = "";
@@ -1527,7 +1523,7 @@
 				3B5880D12B0CA7DE0057CDC5 /* Image+Extension.swift in Sources */,
 				3B9562F02B06003300AD4184 /* WalletNavigationView.swift in Sources */,
 				3B77644F2AF91BC300BE185B /* BugLevel.swift in Sources */,
-				3BDE7B3A2ADD42EB009A88DF /* PageView.swift in Sources */,
+				3BDE7B3A2ADD42EB009A88DF /* OnboardingPagerView.swift in Sources */,
 				3B77644B2AF91B2500BE185B /* CrashReportingManager.swift in Sources */,
 				3BA9124F2AEA5C28001004A0 /* Alert+Extension.swift in Sources */,
 				3BCF49F62ADFF97D005C20DC /* OnboardingTextInputResponseType.swift in Sources */,
@@ -2020,14 +2016,6 @@
 				version = 10.17.0;
 			};
 		};
-		3BCE54912B20644F0074DBF0 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect";
-			requirement = {
-				kind = exactVersion;
-				version = 1.1.1;
-			};
-		};
 		C56DF9B7268F5A320074DBC8 /* XCRemoteSwiftPackageReference "cloud-sdk-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pace/cloud-sdk-ios";
@@ -2048,11 +2036,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3B7764592AF922F700BE185B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseCrashlytics;
-		};
-		3BCE54922B20644F0074DBF0 /* SwiftUIIntrospect */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3BCE54912B20644F0074DBF0 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
-			productName = SwiftUIIntrospect;
 		};
 		C56DF9B8268F5A320074DBC8 /* PACECloudSDK */ = {
 			isa = XCSwiftPackageProductDependency;
