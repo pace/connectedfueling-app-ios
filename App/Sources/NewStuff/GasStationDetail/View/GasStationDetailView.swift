@@ -35,9 +35,7 @@ struct GasStationDetailView: View {
                 VStack(spacing: .paddingL) {
                     map
                     info
-                    if !viewModel.priceInfos.isEmpty {
-                        prices
-                    }
+                    prices
                     openingHours
                 }
             }
@@ -63,31 +61,48 @@ struct GasStationDetailView: View {
 
     @ViewBuilder
     private var info: some View {
-        HStack(alignment: .top) {
-            VStack(spacing: .paddingXS) {
-                HStack {
-                    TextLabel(viewModel.gasStation.name)
-                        .font(.system(size: 20, weight: .bold))
-                    Spacer()
-                }
-                address
-                HStack {
-                    DistanceTagView(viewModel.distanceStyle)
-                    Spacer()
-                }
-                if viewModel.showIsClosed {
+        VStack {
+            HStack(alignment: .top) {
+                VStack(spacing: .paddingXS) {
                     HStack {
-                        Image(.errorIcon)
-                            .frame(width: 24, height: 24)
-                            .foregroundColor(Color.genericRed)
-                        TextLabel(L10n.gasStationClosedHint, textColor: Color.genericRed)
-                            .font(.system(size: 14, weight: .bold))
+                        TextLabel(viewModel.gasStation.name)
+                            .font(.system(size: 20, weight: .bold))
+                        Spacer()
+                    }
+                    address
+                    HStack {
+                        DistanceTagView(viewModel.distanceStyle)
                         Spacer()
                     }
                 }
+                Spacer()
+                Image(.brandIcon)
             }
-            Spacer()
-            Image(.brandIcon)
+            closeDisclaimer
+                .padding(.top, .paddingXXXS)
+        }
+    }
+
+    @ViewBuilder
+    private var closeDisclaimer: some View {
+        if viewModel.isClosingSoon, let closingTimeToday = viewModel.closingTimeToday {
+            HStack {
+                Image(.errorIcon)
+                    .frame(width: 24, height: 24)
+                    .foregroundColor(Color.genericRed)
+                TextLabel(L10n.gasstationClosesIn(closingTimeToday), textColor: Color.genericRed)
+                    .font(.system(size: 14, weight: .bold))
+                Spacer()
+            }
+        } else if viewModel.showIsClosed {
+            HStack {
+                Image(.errorIcon)
+                    .frame(width: 24, height: 24)
+                    .foregroundColor(Color.genericRed)
+                TextLabel(L10n.gasStationClosedHint, textColor: Color.genericRed)
+                    .font(.system(size: 14, weight: .bold))
+                Spacer()
+            }
         }
     }
 
@@ -112,12 +127,20 @@ struct GasStationDetailView: View {
                     .font(.system(size: 16, weight: .bold))
                 Spacer()
             }
-            PriceCardStack(viewModel.priceInfos)
-            if let lastUpdated = viewModel.lastUpdated {
+            if viewModel.priceInfos.isEmpty {
                 HStack {
-                    TextLabel(L10n.gasStationLastUpdated(lastUpdated))
+                    TextLabel(L10n.gasStationFuelPricesNotAvailable)
                         .font(.system(size: 12))
                     Spacer()
+                }
+            } else {
+                PriceCardStack(viewModel.priceInfos)
+                if let lastUpdated = viewModel.lastUpdated {
+                    HStack {
+                        TextLabel(L10n.gasStationLastUpdated(lastUpdated))
+                            .font(.system(size: 12))
+                        Spacer()
+                    }
                 }
             }
         }

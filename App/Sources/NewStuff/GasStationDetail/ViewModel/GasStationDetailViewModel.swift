@@ -26,8 +26,21 @@ class GasStationDetailViewModel: ObservableObject {
         closesIn == -Int.max
     }
 
+    var isClosingSoon: Bool {
+        gasStation.closesIn > 0 && gasStation.closesIn <= 30 // TODO: decide value
+    }
+
     var showIsClosed: Bool {
         !gasStation.openingHours.isEmpty && isClosed
+    }
+
+    var closingTimeToday: String? {
+        let closingHourToday = gasStation.poiOpeningHours.getOpeningHours(for: Date()).toString().components(separatedBy: " – ")
+
+        guard let result = closingHourToday.last,
+              !result.isEmpty else { return nil }
+
+        return String(result)
     }
 
     var lastUpdated: String? {
@@ -39,7 +52,7 @@ class GasStationDetailViewModel: ObservableObject {
     }
 
     var distanceStyle: DistanceTagView.Style {
-        if showIsClosed {
+        if showIsClosed || isClosingSoon {
             return .closed(formattedDistance)
         } else if isNearby {
             return .nearby
