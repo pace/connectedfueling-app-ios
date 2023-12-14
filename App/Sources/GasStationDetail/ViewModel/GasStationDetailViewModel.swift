@@ -14,6 +14,10 @@ class GasStationDetailViewModel: ObservableObject {
 
     private let priceFormatter: PriceNumberFormatter
 
+    var showPrices: Bool {
+        !ConfigurationManager.configuration.hidePrices
+    }
+
     var isNearby: Bool {
         gasStation.distanceInKilometers ?? 0 < Constants.Distance.formattingThresholdForMetersPrecision - Constants.Distance.roundingThreshold
     }

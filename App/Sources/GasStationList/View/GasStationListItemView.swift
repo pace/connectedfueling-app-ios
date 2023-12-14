@@ -111,18 +111,37 @@ struct GasStationListItemView: View {
             TextLabel(viewModel.gasStation.name, alignment: .leading)
                 .font(.system(size: 20, weight: .bold))
                 .padding(.bottom, .paddingXXS)
-            ForEach(viewModel.gasStation.addressLines, id: \.self) { addressLine in
-                TextLabel(addressLine)
-                    .font(.system(size: 16, weight: .medium))
+            address
+        }
+    }
+
+    @ViewBuilder
+    private var address: some View {
+        if viewModel.showPrices {
+            VStack {
+                ForEach(viewModel.gasStation.addressLines, id: \.self) { addressLine in
+                    HStack {
+                        TextLabel(addressLine, alignment: .leading)
+                            .font(.system(size: 16, weight: .medium))
+                        Spacer()
+                    }
+                }
             }
+        } else {
+            TextLabel(viewModel.singleLineAddress, alignment: .leading)
+                .font(.system(size: 16, weight: .medium))
         }
     }
 
     @ViewBuilder
     private var priceLabel: some View {
-        if viewModel.priceAvailable {
-            PriceCardView(title: viewModel.formattedFuelType,
-                          priceText: viewModel.formattedPrice)
+        if viewModel.showPrices {
+            if viewModel.priceAvailable {
+                PriceCardView(title: viewModel.formattedFuelType,
+                              priceText: viewModel.formattedPrice)
+            } else {
+                PriceUnavailableCardView()
+            }
         }
     }
 }
@@ -161,6 +180,24 @@ struct GasStationListItemView: View {
                                                                   name: "MobyPay 3435",
                                                                   addressLines: [
                                                                     "Gerwigstraße 2",
+                                                                    "76131 Karlsruhe"
+                                                                  ],
+                                                                  distanceInKilometers: 0.234,
+                                                                  location: .init(latitude: 0, longitude: 0),
+                                                                  paymentMethods: [],
+                                                                  isConnectedFuelingEnabled: false,
+                                                                  prices: [
+                                                                    .init(value: 1.89,
+                                                                          fuelType: .diesel,
+                                                                          currency: "EUR",
+                                                                          format: "d.dds")
+                                                                  ],
+                                                                  lastUpdated: Date(),
+                                                                  openingHours: [])))
+        GasStationListItemView(viewModel: .init(gasStation: .init(id: "id",
+                                                                  name: "MobyPay 3435",
+                                                                  addressLines: [
+                                                                    "So-Very-Long-Road-I-Cant-Believe-It 111",
                                                                     "76131 Karlsruhe"
                                                                   ],
                                                                   distanceInKilometers: 0.234,

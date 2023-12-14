@@ -5,6 +5,10 @@ class MapAnnotationViewModel: ObservableObject {
         annotation.gasStation.name
     }
 
+    var showPrices: Bool {
+        !ConfigurationManager.configuration.hidePrices
+    }
+
     var formattedPrice: AttributedString? {
         guard let selectedFuelType = poiManager.fuelType,
               let price = annotation.gasStation.lowestPrice(for: selectedFuelType.keys) else {

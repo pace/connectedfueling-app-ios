@@ -148,6 +148,7 @@
 		9A00F2412B1A1FCE0050C7FA /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A00F2402B1A1FCE0050C7FA /* RoundedCorner.swift */; };
 		9AAAA8C92B28C24E00C515ED /* BonusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAAA8C82B28C24E00C515ED /* BonusView.swift */; };
 		9AAAA8D02B29F6C900C515ED /* ShareObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAAA8CF2B29F6C900C515ED /* ShareObject.swift */; };
+		9AAAA8D22B2B4EC600C515ED /* PriceUnavailableCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAAA8D12B2B4EC500C515ED /* PriceUnavailableCardView.swift */; };
 		9ADC1EBD2B2749D90027B82B /* TransactionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC1EBC2B2749D90027B82B /* TransactionData.swift */; };
 		9ADC1EC02B274E340027B82B /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC1EBF2B274E340027B82B /* TransactionCell.swift */; };
 		9ADC1EC42B275B270027B82B /* TransactionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC1EC32B275B270027B82B /* TransactionDetailView.swift */; };
@@ -384,6 +385,7 @@
 		9A00F2402B1A1FCE0050C7FA /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		9AAAA8C82B28C24E00C515ED /* BonusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusView.swift; sourceTree = "<group>"; };
 		9AAAA8CF2B29F6C900C515ED /* ShareObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareObject.swift; sourceTree = "<group>"; };
+		9AAAA8D12B2B4EC500C515ED /* PriceUnavailableCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceUnavailableCardView.swift; sourceTree = "<group>"; };
 		9ADC1EBC2B2749D90027B82B /* TransactionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionData.swift; sourceTree = "<group>"; };
 		9ADC1EBF2B274E340027B82B /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		9ADC1EC32B275B270027B82B /* TransactionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailView.swift; sourceTree = "<group>"; };
@@ -1075,6 +1077,7 @@
 			children = (
 				9A00F22A2B0E56320050C7FA /* DistanceTagView.swift */,
 				9A00F22C2B0E59720050C7FA /* PriceCardView.swift */,
+				9AAAA8D12B2B4EC500C515ED /* PriceUnavailableCardView.swift */,
 				9A00F22E2B0F978A0050C7FA /* PriceCardStack.swift */,
 				9A00F2302B0FA3220050C7FA /* OpeningHoursRow.swift */,
 			);
@@ -1488,6 +1491,7 @@
 				9AAAA8C92B28C24E00C515ED /* BonusView.swift in Sources */,
 				3BDE7B382ADD3468009A88DF /* AppManager.swift in Sources */,
 				3BA2DB242AE7B5E200187D86 /* POIManager.swift in Sources */,
+				9AAAA8D22B2B4EC600C515ED /* PriceUnavailableCardView.swift in Sources */,
 				9A00F23C2B162BA00050C7FA /* OpeningHours.swift in Sources */,
 				3B6277352B0768C300528A1F /* AppError.swift in Sources */,
 				3B5585302B189EAD009E300B /* SingleDigitTextField.swift in Sources */,
