@@ -337,7 +337,7 @@ extension DashboardItemViewStyle {
         borderStyle: .large,
         actionStyle: .action,
         distanceBadgeLabelStyle: .body1.withColor(.black),
-        shadowColor: Asset.Colors.shadow.color,
+        shadowColor: .black,
         shadowOffset: .init(x: 0, y: 2),
         shadowRadius: 10
     )

@@ -24,7 +24,7 @@ extension Color {
         let hexString = self.hexString
         let rgbValues = Color.rgbValues(hex: hexString)
         let intensity = (rgbValues.r * 0.299) + (rgbValues.g * 0.587) + (rgbValues.b * 0.114)
-        return intensity > 186 ? .genericBlack : .genericWhite
+        return intensity > 0.5 ? .genericBlack : .genericWhite
     }
 
     var hexString: String {

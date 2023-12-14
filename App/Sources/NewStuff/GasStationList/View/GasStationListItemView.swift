@@ -108,7 +108,7 @@ struct GasStationListItemView: View {
     @ViewBuilder
     private var details: some View {
         VStack(alignment: .leading, spacing: 0) {
-            TextLabel(viewModel.gasStation.name)
+            TextLabel(viewModel.gasStation.name, alignment: .leading)
                 .font(.system(size: 20, weight: .bold))
                 .padding(.bottom, .paddingXXS)
             ForEach(viewModel.gasStation.addressLines, id: \.self) { addressLine in
