@@ -92,30 +92,12 @@
         }
       },
       {
-        "package": "JamitFoundation",
-        "repositoryURL": "https://github.com/JamitLabs/JamitFoundation.git",
-        "state": {
-          "branch": "feature/border-style",
-          "revision": "ffae09ef964ed3e38e5b9b238bef5c24b7acf0a3",
-          "version": null
-        }
-      },
-      {
         "package": "Japx",
         "repositoryURL": "https://github.com/pace/Japx",
         "state": {
           "branch": null,
           "revision": "06fe392a1ecc05d0158d505d06899f0a9133030f",
           "version": "5.0.0"
-        }
-      },
-      {
-        "package": "JLCoordinator",
-        "repositoryURL": "https://github.com/JamitLabs/JLCoordinator.git",
-        "state": {
-          "branch": null,
-          "revision": "7c495ab7dde143ca2c3bb0ae32247da2cf8c01ad",
-          "version": "1.1.0"
         }
       },
       {

@@ -3,11 +3,6 @@ strings:
   outputs:
     - templateName: structured-swift4
       output: ${PROJECT_DIR}/App/Generated/Strings.swift
-ib:
-  inputs: ${PROJECT_DIR}/App/Sources
-  outputs:
-    - templateName: scenes-swift4
-      output: ${PROJECT_DIR}/App/Generated/Storyboards.swift
 xcassets:
   inputs:
     - ${PROJECT_DIR}/App/Resources/Images.xcassets
