@@ -18,6 +18,15 @@ extension View {
                 }
             }
     }
+
+    @ViewBuilder
+    func pagingTransition() -> some View {
+        self.transition(.asymmetric(
+            insertion: .move(edge: .trailing),
+            removal: .move(edge: .leading))
+        )
+        .animation(.default)
+    }
 }
 
 extension View {
