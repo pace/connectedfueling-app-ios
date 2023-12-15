@@ -90,6 +90,7 @@
 "good_day_message" = "Здравствуйте!";
 "good_evening_message" = "Добрый вечер!";
 "good_morning_message" = "Доброе утро!";
+"list_price_not_available" = "Цена недоступна";
 "list_tab_label" = "Список";
 "map_tab_label" = "Карта";
 "more_tab_label" = "Подробнее";

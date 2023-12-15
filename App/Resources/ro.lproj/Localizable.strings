@@ -90,6 +90,7 @@
 "good_day_message" = "Bună!";
 "good_evening_message" = "Bună seara!";
 "good_morning_message" = "Bună dimineața!";
+"list_price_not_available" = "Prețul nu este disponibil";
 "list_tab_label" = "Lista";
 "map_tab_label" = "Hartă";
 "more_tab_label" = "Mai mult";

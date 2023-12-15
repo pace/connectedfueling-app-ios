@@ -90,6 +90,7 @@
 "good_day_message" = "Dobrý den!";
 "good_evening_message" = "Dobrý večer!";
 "good_morning_message" = "Dobré ráno!";
+"list_price_not_available" = "Cena není k dispozici";
 "list_tab_label" = "Seznam";
 "map_tab_label" = "Mapa";
 "more_tab_label" = "Více";

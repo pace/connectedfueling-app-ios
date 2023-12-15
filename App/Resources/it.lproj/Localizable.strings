@@ -90,6 +90,7 @@
 "good_day_message" = "Ciao!";
 "good_evening_message" = "Buona sera!";
 "good_morning_message" = "Buongiorno!";
+"list_price_not_available" = "Prezzo non disponibile";
 "list_tab_label" = "Elenco";
 "map_tab_label" = "Mappa";
 "more_tab_label" = "Più";

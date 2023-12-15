@@ -8,7 +8,7 @@ struct PriceUnavailableCardView: View {
             Color(uiColor: Asset.Colors.lightGrey.color)
                 .cornerRadius(8)
             VStack {
-                TextLabel("Preis nicht verfügbar") // TODO: string
+                TextLabel(L10n.listPriceNotAvailable)
                     .font(.system(size: 14))
             }
             .frame(alignment: .center)

@@ -134,6 +134,8 @@ internal enum L10n {
   internal static let goodEveningMessage = L10n.tr("Localizable", "good_evening_message", fallback: "Good evening!")
   /// Good morning!
   internal static let goodMorningMessage = L10n.tr("Localizable", "good_morning_message", fallback: "Good morning!")
+  /// Price not available
+  internal static let listPriceNotAvailable = L10n.tr("Localizable", "list_price_not_available", fallback: "Price not available")
   /// List
   internal static let listTabLabel = L10n.tr("Localizable", "list_tab_label", fallback: "List")
   /// Map
