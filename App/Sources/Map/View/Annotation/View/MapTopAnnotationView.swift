@@ -24,7 +24,8 @@ struct MapTopAnnotationView: View {
                     closedLabel
                         .padding(.top, 5)
                         .padding(.bottom, 5)
-                } else if let formattedPrice = viewModel.formattedPrice {
+                } else if viewModel.showPrices,
+                          let formattedPrice = viewModel.formattedPrice {
                     TextLabel(formattedPrice)
                         .font(.system(size: 24, weight: .heavy))
                 }

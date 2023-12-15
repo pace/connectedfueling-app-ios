@@ -33,7 +33,7 @@ struct GasStationDetailView: View {
                 VStack(spacing: .paddingL) {
                     map
                     info
-                    prices
+                    if viewModel.showPrices { prices }
                     openingHours
                 }
             }

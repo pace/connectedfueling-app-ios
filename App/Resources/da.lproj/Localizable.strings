@@ -90,6 +90,7 @@
 "good_day_message" = "Hej med jer!";
 "good_evening_message" = "Godaften!";
 "good_morning_message" = "Godmorgen!";
+"list_price_not_available" = "Pris ikke tilgængelig";
 "list_tab_label" = "Liste";
 "map_tab_label" = "Kort";
 "more_tab_label" = "Mere";

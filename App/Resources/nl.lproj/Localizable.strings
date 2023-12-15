@@ -90,6 +90,7 @@
 "good_day_message" = "Hallo!";
 "good_evening_message" = "Goedenavond!";
 "good_morning_message" = "Goedemorgen!";
+"list_price_not_available" = "Prijs niet beschikbaar";
 "list_tab_label" = "Lijst";
 "map_tab_label" = "Kaart";
 "more_tab_label" = "Meer";

@@ -13,6 +13,10 @@ class GasStationListItemViewModel: ObservableObject {
         isNearby && gasStation.isConnectedFuelingEnabled
     }
 
+    var showPrices: Bool {
+        !ConfigurationManager.configuration.hidePrices
+    }
+
     var isClosed: Bool {
         gasStation.isClosed
     }
@@ -50,6 +54,27 @@ class GasStationListItemViewModel: ObservableObject {
             return singleFractionDistanceFormatter.string(from: distanceMeasurement)
         } else {
             return decimalDistanceFormatter.string(from: distanceMeasurement)
+        }
+    }
+
+    var singleLineAddress: String {
+        if gasStation.addressLines.count <= 1 {
+            return gasStation.addressLines.first ?? ""
+        } else {
+            var result: String = ""
+
+            if let first = gasStation.addressLines.first,
+               !first.isEmpty {
+                result.append(first)
+            }
+
+            if let second = gasStation.addressLines.last,
+               second != result,
+               !second.isEmpty {
+                result.append(", " + second)
+            }
+
+            return result
         }
     }
 
