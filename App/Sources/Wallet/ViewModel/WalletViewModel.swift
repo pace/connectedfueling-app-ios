@@ -11,14 +11,20 @@ class WalletViewModel: ObservableObject {
 
     private let userManager: UserManager
 
-    init(userManager: UserManager = .init()) {
+    init(userManager: UserManager = .init(), configuration: ConfigurationManager.Configuration = ConfigurationManager.configuration) {
         self.userManager = userManager
 
         listItems = [
             bonusItemList,
             paymentMethodsListItem,
-            transactionsListItem,
-            fuelTypeSelectionListItem,
+            transactionsListItem
+        ]
+
+        if !configuration.hidePrices {
+            listItems.append(fuelTypeSelectionListItem)
+        }
+
+        listItems += [
             twoFactorAuthenticationListItem,
             accountDeletionListItem
         ]

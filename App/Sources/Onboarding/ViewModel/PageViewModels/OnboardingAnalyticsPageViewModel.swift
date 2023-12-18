@@ -21,7 +21,7 @@ class OnboardingAnalyticsPageViewModel: OnboardingPageViewModel {
             .init(title: L10n.commonUseAccept, action: { [weak self] in
                 NSLog("[OnboardingAnalyticsPageViewModel] Did accept app tracking")
 
-                UserDefaults.standard.set(true, forKey: Constants.UserDefaults.isAnalyticsAllowed)
+                UserDefaults.isAnalyticsAllowed = true
                 self?.finishOnboardingPage()
             }),
             .init(title: L10n.commonUseDecline, action: { [weak self] in

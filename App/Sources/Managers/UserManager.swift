@@ -176,7 +176,7 @@ extension UserManager {
 
 private extension UserManager {
     private func reset() {
-        UserDefaults.standard.set(false, forKey: Constants.UserDefaults.isOnboardingCompleted)
-        UserDefaults.standard.set(false, forKey: Constants.UserDefaults.isAnalyticsAllowed)
+        UserDefaults.isOnboardingCompleted = false
+        UserDefaults.isAnalyticsAllowed = false
     }
 }

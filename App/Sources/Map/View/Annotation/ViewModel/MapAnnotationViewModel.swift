@@ -1,27 +1,15 @@
+import Combine
 import Foundation
 
 class MapAnnotationViewModel: ObservableObject {
+    @Published var formattedPrice: AttributedString?
+
     var name: String {
         annotation.gasStation.name
     }
 
     var showPrices: Bool {
         !ConfigurationManager.configuration.hidePrices
-    }
-
-    var formattedPrice: AttributedString? {
-        guard let selectedFuelType = poiManager.fuelType,
-              let price = annotation.gasStation.lowestPrice(for: selectedFuelType.keys) else {
-            return nil
-        }
-
-        let currencySymbol = NSLocale.symbol(for: price.currency)
-
-        guard let formattedPriceValue = priceFormatter.localizedPrice(from: NSNumber(value: price.value), currencySymbol: currencySymbol) else {
-            return nil
-        }
-
-        return formattedPriceValue
     }
 
     var usesSmallHeight: Bool {
@@ -42,5 +30,10 @@ class MapAnnotationViewModel: ObservableObject {
         self.annotation = annotation
         self.poiManager = poiManager
         self.priceFormatter = PriceNumberFormatter(with: annotation.gasStation.prices.first?.format ?? Constants.GasStation.priceFormatFallback)
+
+        poiManager
+            .formattedPricePublisher(gasStation: annotation.gasStation, 
+                                     priceFormatter: priceFormatter)
+            .assign(to: &$formattedPrice)
     }
 }

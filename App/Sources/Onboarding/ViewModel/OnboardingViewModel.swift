@@ -15,15 +15,17 @@ class OnboardingViewModel: ObservableObject {
             OnboardingLocationPermissionPageViewModel(style: style),
             OnboardingAuthorizationPageViewModel(style: style),
             OnboardingTwoFactorAuthenticationPageViewModel(style: style),
-            OnboardingPaymentMethodsPageViewModel(style: style),
-            OnboardingFuelTypePageViewModel(style: style)
+            OnboardingPaymentMethodsPageViewModel(style: style)
         ]
 
-        // TODO: - If Tracking enabled
-        // Analytics
-        // Is crashlytics tracking?
-        if true {
+        if configuration.isAnalyticsEnabled {
             pageViewModels.insert(OnboardingAnalyticsPageViewModel(style: style), at: 1)
+        }
+
+        if !configuration.hidePrices {
+            pageViewModels.append(
+                OnboardingFuelTypePageViewModel(style: style)
+            )
         }
 
         setupDelegates()
@@ -54,7 +56,7 @@ class OnboardingViewModel: ObservableObject {
             if let nextIncompletePage {
                 self.currentPage = nextIncompletePage
             } else {
-                UserDefaults.standard.set(true, forKey: Constants.UserDefaults.isOnboardingCompleted)
+                UserDefaults.isOnboardingCompleted = true
             }
         }
     }

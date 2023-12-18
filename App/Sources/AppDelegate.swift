@@ -59,7 +59,7 @@ private extension AppDelegate {
     }
 
     func refreshSessionIfNeeded() {
-        guard UserDefaults.standard.bool(forKey: Constants.UserDefaults.isOnboardingCompleted) else { return }
+        guard UserDefaults.isOnboardingCompleted else { return }
 
         Task {
             await UserManager().refresh()
