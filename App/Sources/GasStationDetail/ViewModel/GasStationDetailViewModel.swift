@@ -1,4 +1,3 @@
-import Combine
 import CoreLocation
 import Foundation
 import MapKit
@@ -7,10 +6,7 @@ import SwiftUI
 
 class GasStationDetailViewModel: ObservableObject {
     @Published var fuelingUrlString: String?
-
     @Published var gasStation: GasStation
-
-    var anyCancellable: AnyCancellable? = nil
 
     private let priceFormatter: PriceNumberFormatter
 
@@ -132,11 +128,6 @@ class GasStationDetailViewModel: ObservableObject {
         self.priceFormatter = PriceNumberFormatter(with: gasStation.prices.first?.format ?? Constants.GasStation.priceFormatFallback)
         let openingHoursViewValues: [(String, String)] = gasStation.poiOpeningHours.openingHours().toReadableStrings()
         self.openingHourRows = parseGasStationOpeningHours(with: openingHoursViewValues, from: gasStation)
-
-        // TODO: How to handle nested ObservableObjects (here work around)
-        anyCancellable = gasStation.objectWillChange.sink { [weak self] _ in
-            self?.objectWillChange.send()
-        }
     }
 
     private func parseGasStationOpeningHours(with openingHoursViewValues: [(String, String)],
