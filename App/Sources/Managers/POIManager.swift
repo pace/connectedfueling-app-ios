@@ -38,42 +38,6 @@ struct POIManager {
             return .failure(error)
         }
     }
-
-    // TODO: fetch single gas station
-
-//    func fetchCofuStation(with id: String) async -> Result<GasStation, Error> {
-//        let selectedFuelType = fuelType
-//
-//        switch result {
-//        case let .success(poiStations):
-//            let gasStations = await withTaskGroup(of: GasStation?.self, returning: [GasStation].self) { group in
-//                for poiStation in poiStations where poiStation.isConnectedFuelingAvailable {
-//                    guard let poiStationId = poiStation.id else { continue }
-//
-//                    group.addTask {
-//                        let isPoiInRange = await POIKit.isPoiInRange(id: poiStationId)
-//                        let gasStation = self.makeGasStation(for: poiStation,
-//                                                             selectedFuelType: selectedFuelType,
-//                                                             location: location,
-//                                                             isConnectedFuelingEnabled: isPoiInRange)
-//                        return gasStation
-//                    }
-//                }
-//
-//                let gasStations: [GasStation] = await group.reduce(into: []) {
-//                    guard let gasStation = $1 else { return }
-//                    $0.append(gasStation)
-//                }
-//
-//                return gasStations
-//            }
-//
-//            return .success(gasStations)
-//
-//        case .failure(let error):
-//            return .failure(error)
-//        }
-//    }
 }
 
 // MARK: - Fuel type
@@ -100,18 +64,15 @@ extension POIManager {
                                  priceFormatter: PriceNumberFormatter) -> AnyPublisher<AttributedString?, Never> {
         selectedFuelTypePublisher
             .map { selectedFuelType in
-                formatPrice(gasStation: gasStation, 
-                            selectedFuelType: selectedFuelType,
-                            priceFormatter: priceFormatter)
+                guard let price = gasStation.lowestPrice(for: selectedFuelType.keys) else { return nil }
+                return formatPrice(price: price,
+                                   priceFormatter: priceFormatter)
             }
             .eraseToAnyPublisher()
     }
 
-    private func formatPrice(gasStation: GasStation, 
-                             selectedFuelType: FuelType,
-                             priceFormatter: PriceNumberFormatter) -> AttributedString? {
-        guard let price = gasStation.lowestPrice(for: selectedFuelType.keys) else { return nil }
-
+    func formatPrice(price: FuelPrice,
+                     priceFormatter: PriceNumberFormatter) -> AttributedString? {
         let currencySymbol = NSLocale.symbol(for: price.currency)
 
         guard let formattedPriceValue = priceFormatter.localizedPrice(from: NSNumber(value: price.value),

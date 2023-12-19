@@ -1,16 +1,16 @@
 import CoreLocation
 import PACECloudSDK
 
-class GasStation: ObservableObject, Hashable, Comparable {
+class GasStation: Hashable, Comparable {
     let id: String
     let name: String
     let addressLines: [String]
-    @Published var distanceInKilometers: Double?
+    let distanceInKilometers: Double?
     let location: CLLocation
     let paymentMethods: [String]
     let isConnectedFuelingEnabled: Bool
-    @Published var prices: [FuelPrice]
-    @Published var lastUpdated: Date?
+    let prices: [FuelPrice]
+    let lastUpdated: Date?
 
     /// opening / operating hours
     let openingHours: [OpeningHours]
@@ -25,6 +25,10 @@ class GasStation: ObservableObject, Hashable, Comparable {
 
     var isClosed: Bool {
         !openingHours.isEmpty && closesIn == -Int.max
+    }
+
+    var isNearby: Bool {
+        distanceInKilometers ?? 0 < Constants.Distance.formattingThresholdForMetersPrecision - Constants.Distance.roundingThreshold
     }
 
     init(id: String,
