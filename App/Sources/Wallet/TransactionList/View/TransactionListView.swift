@@ -18,7 +18,7 @@ struct TransactionListView: View {
     @ViewBuilder
     private var content: some View {
         List(viewModel.transactions) { transaction in
-            NavigationLink(destination: TransactionDetailView(viewModel: transaction)) {
+            NavigationLink(destination: destination(for: transaction)) {
                 TransactionCell(viewModel: transaction)
             }
         }
@@ -33,6 +33,11 @@ struct TransactionListView: View {
     @ViewBuilder
     private var empty: some View {
         TextLabel(L10n.transactionsEmptyTitle)
+    }
+
+    private func destination(for transactionViewModel: TransactionDetailViewModel) -> some View {
+        TransactionDetailView(viewModel: transactionViewModel)
+            .addNavigationBar(style: .standard(title: L10n.transactionsDetailsTitle))
     }
 }
 

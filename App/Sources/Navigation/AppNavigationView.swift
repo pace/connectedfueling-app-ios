@@ -11,6 +11,7 @@ struct AppNavigationView<Content>: View where Content: View {
         NavigationView {
             content
         }
+        .navigationTransparentBar() // Mandatory for customisable NavigationBar background color
         .accentColor(.genericBlack)
     }
 }

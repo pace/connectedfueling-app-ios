@@ -45,7 +45,8 @@ struct ListItemView: View {
     @ViewBuilder
     private func detailContent(with destination: some View) -> some View {
         ZStack(alignment: .leading) {
-            NavigationLink(destination: destination) {
+            NavigationLink(destination: destination
+                .addNavigationBar(style: .standard(title: listItem.title))) {
                 EmptyView()
             }.opacity(0)
             titleLabel

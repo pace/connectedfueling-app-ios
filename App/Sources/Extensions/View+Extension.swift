@@ -3,7 +3,7 @@ import SwiftUI
 // MARK: - Navigation Bar
 extension View {
     @ViewBuilder
-    func addNavigationBar(style: NavigationBarStyle) -> some View {
+    func addNavigationBar(style: NavigationBarStyle, backgroundColor: Color = .genericWhite) -> some View {
         self.navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {
@@ -16,6 +16,9 @@ extension View {
                         Image(icon)
                     }
                 }
+            }
+            .navigationBarBackground {
+                backgroundColor
             }
     }
 
@@ -39,5 +42,19 @@ extension View {
 extension View {
     func cornerRadius(_ radius: CGFloat, corners: UIRectCorner) -> some View {
         clipShape( RoundedCorner(radius: radius, corners: corners) )
+    }
+}
+
+// MARK: - Customisable NavigationBar background color
+
+public extension View {
+    func navigationBarBackground<Background: View>(@ViewBuilder _ background: @escaping () -> Background) -> some View {
+        modifier(NavigationBarColorModifier(background: background))
+    }
+}
+
+public extension View {
+    func navigationTransparentBar() -> some View {
+        modifier(NavigationBarTransparentStyle())
     }
 }

@@ -20,7 +20,7 @@ struct GasStationDetailView: View {
 
     var body: some View {
         content
-            .background(BackgroundContainer())
+            .background(Color.genericWhite)
             .sheet(item: $viewModel.fuelingUrlString) { fuelingUrlString in
                 AppView(urlString: fuelingUrlString, isModalInPresentation: true)
             }
