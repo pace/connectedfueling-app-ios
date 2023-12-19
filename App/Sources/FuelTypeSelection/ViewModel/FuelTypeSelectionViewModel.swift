@@ -3,6 +3,7 @@ import Foundation
 class FuelTypeSelectionViewModel: ObservableObject {
     @Published var selectedFuelType: FuelType? {
         didSet {
+            guard let selectedFuelType else { return }
             poiManager.fuelType = selectedFuelType
         }
     }

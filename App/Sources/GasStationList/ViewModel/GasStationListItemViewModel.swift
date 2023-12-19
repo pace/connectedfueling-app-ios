@@ -83,28 +83,14 @@ class GasStationListItemViewModel: ObservableObject {
     }
 
     var formattedFuelType: String {
-        poiManager.fuelType?.localizedTitle ?? L10n.Price.notAvailable
-    }
-
-    var formattedPrice: AttributedString {
-        guard let selectedFuelType = poiManager.fuelType,
-              let price = gasStation.lowestPrice(for: selectedFuelType.keys) else {
-            return .init(L10n.Price.notAvailable)
-        }
-
-        let currencySymbol = NSLocale.symbol(for: price.currency)
-
-        guard let formattedPriceValue = priceFormatter.localizedPrice(from: NSNumber(value: price.value), currencySymbol: currencySymbol) else {
-            return .init(L10n.Price.notAvailable)
-        }
-
-        return formattedPriceValue
+        poiManager.fuelType.localizedTitle
     }
 
     var actionTitle: String {
         gasStation.isConnectedFuelingEnabled ? L10n.commonStartFueling : L10n.commonStartNavigation
     }
 
+    @Published var formattedPrice: AttributedString = .init(L10n.listPriceNotAvailable)
     @Published var gasStation: GasStation
 
     private let priceFormatter: PriceNumberFormatter
@@ -131,7 +117,15 @@ class GasStationListItemViewModel: ObservableObject {
     init(gasStation: GasStation, poiManager: POIManager = .init()) {
         self.gasStation = gasStation
         self.priceFormatter = PriceNumberFormatter(with: gasStation.prices.first?.format ?? Constants.GasStation.priceFormatFallback)
-        self.poiManager = POIManager()
+        self.poiManager = poiManager
+
+        poiManager
+            .formattedPricePublisher(gasStation: gasStation,
+                                     priceFormatter: priceFormatter)
+            .map { formattedPrice in
+                formattedPrice ?? .init(L10n.listPriceNotAvailable)
+            }
+            .assign(to: &$formattedPrice)
     }
 
     // TODO: maybe add to sdk?

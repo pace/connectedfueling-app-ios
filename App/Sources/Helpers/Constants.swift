@@ -14,13 +14,6 @@ enum Constants {
         static let defaultDescriptionLabelPadding: CGFloat = 60
     }
 
-    enum UserDefaults {
-        static let migrationVersion: String = "migrationVersion"
-        static let isOnboardingCompleted: String = "isOnboardingCompleted"
-        static let fuelType: String = "fuelType"
-        static let isAnalyticsAllowed: String = "isAnalyticsAllowed"
-    }
-
     enum Distance {
         static let formattingThresholdForMetersPrecision: Double = 1.0
         static let formattingThresholdInKm: Double = 10.0

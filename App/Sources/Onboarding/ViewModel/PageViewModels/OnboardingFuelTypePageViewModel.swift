@@ -24,7 +24,8 @@ class OnboardingFuelTypePageViewModel: OnboardingPageViewModel {
     override func setupPageActions() {
         pageActions = [
             .init(title: L10n.commonUseNext, action: { [weak self] in
-                self?.poiManager.fuelType = self?.selectedFuelType
+                guard let selectedFuelType = self?.selectedFuelType else { return }
+                self?.poiManager.fuelType = selectedFuelType
                 self?.finishOnboardingPage()
             })
         ]
@@ -34,8 +35,8 @@ class OnboardingFuelTypePageViewModel: OnboardingPageViewModel {
         AnyView(
             FuelTypeButtonsGroup(fuelTypes: FuelType.selectableFilters,
                                  selectedFuelType: .init(
-                                    get: {
-                                        self.selectedFuelType
+                                    get: { [weak self] in
+                                        self?.selectedFuelType
                                     },
                                     set: { [weak self] in
                                         self?.selectedFuelType = $0

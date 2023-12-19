@@ -25,6 +25,7 @@
 		3B5A1C8A2B15FC6C00EA5754 /* NavigationBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5A1C892B15FC6C00EA5754 /* NavigationBarStyle.swift */; };
 		3B5A1C8E2B163E7800EA5754 /* OnboardingLegalPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5A1C8D2B163E7800EA5754 /* OnboardingLegalPageViewModel.swift */; };
 		3B5A1C902B163F0D00EA5754 /* OnboardingAnalyticsPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5A1C8F2B163F0D00EA5754 /* OnboardingAnalyticsPageViewModel.swift */; };
+		3B5DDF3E2B305B0600C8E5DE /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5DDF3D2B305B0600C8E5DE /* UserDefaults+Extension.swift */; };
 		3B618A262B29969B00563E73 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B618A252B29969B00563E73 /* SearchViewModel.swift */; };
 		3B618A282B2996D800563E73 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B618A272B2996D800563E73 /* SearchView.swift */; };
 		3B6254D72B0F5DCC008FAB25 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6254D62B0F5DCC008FAB25 /* Style.swift */; };
@@ -222,6 +223,7 @@
 		3B5A1C892B15FC6C00EA5754 /* NavigationBarStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarStyle.swift; sourceTree = "<group>"; };
 		3B5A1C8D2B163E7800EA5754 /* OnboardingLegalPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLegalPageViewModel.swift; sourceTree = "<group>"; };
 		3B5A1C8F2B163F0D00EA5754 /* OnboardingAnalyticsPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingAnalyticsPageViewModel.swift; sourceTree = "<group>"; };
+		3B5DDF3D2B305B0600C8E5DE /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		3B618A252B29969B00563E73 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		3B618A272B2996D800563E73 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		3B6254D62B0F5DCC008FAB25 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
@@ -702,6 +704,7 @@
 				3BA2DB0B2AE69BF200187D86 /* NSLocale+Extension.swift */,
 				3BD94C932B0B704400CE6676 /* PKPaymentNetwork+Extension.swift */,
 				3BAE607E2AD80ADE006EA9DD /* String+Extension.swift */,
+				3B5DDF3D2B305B0600C8E5DE /* UserDefaults+Extension.swift */,
 				3BCF49F32ADFCA06005C20DC /* View+Extension.swift */,
 			);
 			path = Extensions;
@@ -1580,6 +1583,7 @@
 				3B6D84ED2B10A17200701DEE /* SystemManager.swift in Sources */,
 				3B6254E22B0F9FFD008FAB25 /* ListItemView.swift in Sources */,
 				3BA6C4622B23205C00A109F5 /* MapAnnotationView.swift in Sources */,
+				3B5DDF3E2B305B0600C8E5DE /* UserDefaults+Extension.swift in Sources */,
 				E81148B8E0370A456B753AE0 /* Strings.swift in Sources */,
 				3B62772E2B074CE300528A1F /* LoadingView.swift in Sources */,
 				3B5A1C902B163F0D00EA5754 /* OnboardingAnalyticsPageViewModel.swift in Sources */,

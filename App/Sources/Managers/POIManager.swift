@@ -1,22 +1,9 @@
+import Combine
 import CoreLocation
 import Foundation
 import PACECloudSDK
 
 struct POIManager {
-    var fuelType: FuelType? {
-        get {
-            guard let data = UserDefaults.standard.data(forKey: Constants.UserDefaults.fuelType),
-                  let fuelType = try? JSONDecoder().decode(FuelType.self, from: data)
-            else { return nil }
-
-            return fuelType
-        }
-        set {
-            guard let data = try? JSONEncoder().encode(newValue) else { return }
-            UserDefaults.standard.set(data, forKey: Constants.UserDefaults.fuelType)
-        }
-    }
-
     func fetchCofuStations(at location: CLLocation) async -> Result<[GasStation], Error> {
         let result = await POIKit.requestCofuGasStations(center: location, radius: Constants.GasStation.cofuStationRadius)
         let selectedFuelType = fuelType
@@ -87,6 +74,51 @@ struct POIManager {
 //            return .failure(error)
 //        }
 //    }
+}
+
+// MARK: - Fuel type
+extension POIManager {
+    var fuelType: FuelType {
+        get {
+            UserDefaults.fuelType
+        }
+        set {
+            UserDefaults.fuelType = newValue
+        }
+    }
+
+    var selectedFuelTypePublisher: AnyPublisher<FuelType, Never> {
+        UserDefaults.standard
+            .publisher(for: \.fuelTypeRawValue)
+            .removeDuplicates()
+            .compactMap { FuelType(rawValue: $0) }
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
+    }
+
+    func formattedPricePublisher(gasStation: GasStation,
+                                 priceFormatter: PriceNumberFormatter) -> AnyPublisher<AttributedString?, Never> {
+        selectedFuelTypePublisher
+            .map { selectedFuelType in
+                formatPrice(gasStation: gasStation, 
+                            selectedFuelType: selectedFuelType,
+                            priceFormatter: priceFormatter)
+            }
+            .eraseToAnyPublisher()
+    }
+
+    private func formatPrice(gasStation: GasStation, 
+                             selectedFuelType: FuelType,
+                             priceFormatter: PriceNumberFormatter) -> AttributedString? {
+        guard let price = gasStation.lowestPrice(for: selectedFuelType.keys) else { return nil }
+
+        let currencySymbol = NSLocale.symbol(for: price.currency)
+
+        guard let formattedPriceValue = priceFormatter.localizedPrice(from: NSNumber(value: price.value),
+                                                                      currencySymbol: currencySymbol) else { return nil }
+
+        return formattedPriceValue
+    }
 }
 
 private extension POIManager {
