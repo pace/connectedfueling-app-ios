@@ -92,7 +92,7 @@ struct GasStationDetailView: View {
                     .font(.system(size: 14, weight: .bold))
                 Spacer()
             }
-        } else if viewModel.showIsClosed {
+        } else if viewModel.isClosed {
             HStack {
                 Image(.errorIcon)
                     .frame(width: 24, height: 24)
@@ -267,7 +267,7 @@ struct GasStationDetailView: View {
                                                             openingHours: [
                                                                 .init(days: [.monday, .tuesday, .wednesday, .thursday, .friday, .saturday, .sunday],
                                                                       hours: [.init(from: "3", to: "22")],
-                                                                      rule: .open),
+                                                                      rule: .open)
                                                             ])))
 }
 

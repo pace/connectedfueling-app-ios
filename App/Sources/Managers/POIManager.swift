@@ -64,18 +64,15 @@ extension POIManager {
                                  priceFormatter: PriceNumberFormatter) -> AnyPublisher<AttributedString?, Never> {
         selectedFuelTypePublisher
             .map { selectedFuelType in
-                formatPrice(gasStation: gasStation, 
-                            selectedFuelType: selectedFuelType,
-                            priceFormatter: priceFormatter)
+                guard let price = gasStation.lowestPrice(for: selectedFuelType.keys) else { return nil }
+                return formatPrice(price: price,
+                                   priceFormatter: priceFormatter)
             }
             .eraseToAnyPublisher()
     }
 
-    private func formatPrice(gasStation: GasStation, 
-                             selectedFuelType: FuelType,
-                             priceFormatter: PriceNumberFormatter) -> AttributedString? {
-        guard let price = gasStation.lowestPrice(for: selectedFuelType.keys) else { return nil }
-
+    func formatPrice(price: FuelPrice,
+                     priceFormatter: PriceNumberFormatter) -> AttributedString? {
         let currencySymbol = NSLocale.symbol(for: price.currency)
 
         guard let formattedPriceValue = priceFormatter.localizedPrice(from: NSNumber(value: price.value),

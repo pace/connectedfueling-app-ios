@@ -27,6 +27,10 @@ class GasStation: Hashable, Comparable {
         !openingHours.isEmpty && closesIn == -Int.max
     }
 
+    var isNearby: Bool {
+        distanceInKilometers ?? 0 < Constants.Distance.formattingThresholdForMetersPrecision - Constants.Distance.roundingThreshold
+    }
+
     init(id: String,
          name: String,
          addressLines: [String],
