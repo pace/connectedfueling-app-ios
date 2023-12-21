@@ -11,7 +11,6 @@ struct TransactionDetailView: View {
             receipt
         }
         .onAppear(perform: viewModel.detailWillAppear)
-        .navigationTitle(L10n.transactionsDetailsTitle)
     }
 
     @ViewBuilder

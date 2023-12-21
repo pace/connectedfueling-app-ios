@@ -150,6 +150,9 @@
 		9AAAA8C92B28C24E00C515ED /* BonusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAAA8C82B28C24E00C515ED /* BonusView.swift */; };
 		9AAAA8D02B29F6C900C515ED /* ShareObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAAA8CF2B29F6C900C515ED /* ShareObject.swift */; };
 		9AAAA8D22B2B4EC600C515ED /* PriceUnavailableCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAAA8D12B2B4EC500C515ED /* PriceUnavailableCardView.swift */; };
+		9AC2D2FD2B32DCC6001A1864 /* NavigationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC2D2FC2B32DCC6001A1864 /* NavigationConfigurator.swift */; };
+		9AC2D2FF2B32DD84001A1864 /* NavigationBarColorModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC2D2FE2B32DD84001A1864 /* NavigationBarColorModifier.swift */; };
+		9AC2D3022B32DDDA001A1864 /* NavigationBarTransparentStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC2D3012B32DDDA001A1864 /* NavigationBarTransparentStyle.swift */; };
 		9ADC1EBD2B2749D90027B82B /* TransactionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC1EBC2B2749D90027B82B /* TransactionData.swift */; };
 		9ADC1EC02B274E340027B82B /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC1EBF2B274E340027B82B /* TransactionCell.swift */; };
 		9ADC1EC42B275B270027B82B /* TransactionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC1EC32B275B270027B82B /* TransactionDetailView.swift */; };
@@ -389,6 +392,9 @@
 		9AAAA8C82B28C24E00C515ED /* BonusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusView.swift; sourceTree = "<group>"; };
 		9AAAA8CF2B29F6C900C515ED /* ShareObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareObject.swift; sourceTree = "<group>"; };
 		9AAAA8D12B2B4EC500C515ED /* PriceUnavailableCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceUnavailableCardView.swift; sourceTree = "<group>"; };
+		9AC2D2FC2B32DCC6001A1864 /* NavigationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationConfigurator.swift; sourceTree = "<group>"; };
+		9AC2D2FE2B32DD84001A1864 /* NavigationBarColorModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarColorModifier.swift; sourceTree = "<group>"; };
+		9AC2D3012B32DDDA001A1864 /* NavigationBarTransparentStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarTransparentStyle.swift; sourceTree = "<group>"; };
 		9ADC1EBC2B2749D90027B82B /* TransactionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionData.swift; sourceTree = "<group>"; };
 		9ADC1EBF2B274E340027B82B /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		9ADC1EC32B275B270027B82B /* TransactionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailView.swift; sourceTree = "<group>"; };
@@ -861,6 +867,7 @@
 				3BA2DB122AE6A21800187D86 /* AppNavigationView.swift */,
 				3BA2DB0E2AE6A1F800187D86 /* AppScreen.swift */,
 				3BA2DB102AE6A20000187D86 /* AppTabView.swift */,
+				9AC2D3002B32DDB5001A1864 /* NavigationBar */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -1102,6 +1109,16 @@
 				9AAAA8C82B28C24E00C515ED /* BonusView.swift */,
 			);
 			path = Bonus;
+			sourceTree = "<group>";
+		};
+		9AC2D3002B32DDB5001A1864 /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				9AC2D2FE2B32DD84001A1864 /* NavigationBarColorModifier.swift */,
+				9AC2D2FC2B32DCC6001A1864 /* NavigationConfigurator.swift */,
+				9AC2D3012B32DDDA001A1864 /* NavigationBarTransparentStyle.swift */,
+			);
+			path = NavigationBar;
 			sourceTree = "<group>";
 		};
 		9ADC1EBB2B2749C70027B82B /* Model */ = {
@@ -1476,6 +1493,7 @@
 				3B65A4802B19D82D006B6890 /* TwoFactorAuthenticationView.swift in Sources */,
 				3BDE7B1A2AD94E06009A88DF /* FuelTypeButtonsGroup.swift in Sources */,
 				3BA2DB002AE676FD00187D86 /* GasStationListItemView.swift in Sources */,
+				9AC2D2FF2B32DD84001A1864 /* NavigationBarColorModifier.swift in Sources */,
 				3BAE60582AD59239006EA9DD /* OnboardingPageViewModel.swift in Sources */,
 				3BA2DB1D2AE6ABC300187D86 /* GasStationListSection.swift in Sources */,
 				3BA2DAFE2AE6758300187D86 /* GasStationListViewModel.swift in Sources */,
@@ -1549,6 +1567,7 @@
 				3B0CFF942B26FE9F00EFC3ED /* FollowModeButton.swift in Sources */,
 				3B7370BA2AD52F8C00E9118B /* OnboardingPageView.swift in Sources */,
 				3BDE7B0D2AD82EDB009A88DF /* UserManager.swift in Sources */,
+				9AC2D3022B32DDDA001A1864 /* NavigationBarTransparentStyle.swift in Sources */,
 				3B9D64332B28B37300191700 /* MKCoordinateRegion+ZoomLevel.swift in Sources */,
 				3B6E0B7F2B2203F1001F4FE9 /* MapViewModel.swift in Sources */,
 				3BA2DB112AE6A20000187D86 /* AppTabView.swift in Sources */,
@@ -1602,6 +1621,7 @@
 				3BA2DB062AE6783E00187D86 /* FuelPrice.swift in Sources */,
 				3BCF49F42ADFCA06005C20DC /* View+Extension.swift in Sources */,
 				9A00F2352B14E6360050C7FA /* OpeningHourInfo.swift in Sources */,
+				9AC2D2FD2B32DCC6001A1864 /* NavigationConfigurator.swift in Sources */,
 				3B6E0B792B21FC28001F4FE9 /* MapNavigationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

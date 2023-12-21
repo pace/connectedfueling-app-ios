@@ -7,6 +7,7 @@ struct BonusView: View {
                 .resizable()
                 .scaledToFit()
         }
+        .navigationTitle("Bonuuuss")
     }
 }
 

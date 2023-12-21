@@ -71,7 +71,6 @@ private extension WalletViewModel {
               title: L10n.walletTransactionsTitle,
               action: .detail(destination: AnyView(
                 TransactionListView(viewModel: .init())
-                    .navigationTitle(L10n.walletTransactionsTitle)
               )))
     }
 
