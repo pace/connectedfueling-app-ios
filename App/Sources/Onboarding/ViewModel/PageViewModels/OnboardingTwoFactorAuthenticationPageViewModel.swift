@@ -85,7 +85,7 @@ class OnboardingTwoFactorAuthenticationPageViewModel: OnboardingPageViewModel {
             switch result {
             case .success(let didSetPIN):
                 guard didSetPIN else {
-                    NSLog("[OnboardingTwoFactorAuthenticationPageViewModel] Failed setting PIN")
+                    CofuLogger.e("[OnboardingTwoFactorAuthenticationPageViewModel] Failed setting PIN")
                     self?.alert = AppAlert.genericError
                     return
                 }
@@ -93,7 +93,7 @@ class OnboardingTwoFactorAuthenticationPageViewModel: OnboardingPageViewModel {
                 self?.finishOnboardingPage()
 
             case .failure(let error):
-                NSLog("[OnboardingTwoFactorAuthenticationPageViewModel] Failed setting pin with \(error)")
+                CofuLogger.e("[OnboardingTwoFactorAuthenticationPageViewModel] Failed setting pin with \(error)")
                 self?.alert = AppAlert.genericError
             }
         }
@@ -111,7 +111,7 @@ class OnboardingTwoFactorAuthenticationPageViewModel: OnboardingPageViewModel {
             switch result {
             case .success(let isEnabled):
                 guard isEnabled else {
-                    NSLog("[OnboardingTwoFactorAuthenticationPageViewModel] Failed enabling biometric authentication")
+                    CofuLogger.e("[OnboardingTwoFactorAuthenticationPageViewModel] Failed enabling biometric authentication")
                     self?.alert = AppAlert.genericError
                     return
                 }
@@ -119,7 +119,7 @@ class OnboardingTwoFactorAuthenticationPageViewModel: OnboardingPageViewModel {
                 self?.finishOnboardingPage()
 
             case .failure(let error):
-                NSLog("[OnboardingTwoFactorAuthenticationPageViewModel] Failed enabling biometric authentication with error \(error)")
+                CofuLogger.e("[OnboardingTwoFactorAuthenticationPageViewModel] Failed enabling biometric authentication with error \(error)")
 
                 guard otp == nil else {
                     self?.alert = AppAlert.genericError
@@ -138,7 +138,7 @@ class OnboardingTwoFactorAuthenticationPageViewModel: OnboardingPageViewModel {
             switch result {
             case .success(let didSendMailOTP):
                 guard didSendMailOTP else {
-                    NSLog("[OnboardingTwoFactorAuthenticationPageViewModel] Failed sending mail OTP")
+                    CofuLogger.e("[OnboardingTwoFactorAuthenticationPageViewModel] Failed sending mail OTP")
                     self?.alert = AppAlert.genericError
                     return
                 }
@@ -152,7 +152,7 @@ class OnboardingTwoFactorAuthenticationPageViewModel: OnboardingPageViewModel {
                 }
 
             case .failure(let error):
-                NSLog("[OnboardingTwoFactorAuthenticationPageViewModel] Failed sending mail OTP with \(error)")
+                CofuLogger.e("[OnboardingTwoFactorAuthenticationPageViewModel] Failed sending mail OTP with \(error)")
                 self?.alert = AppAlert.genericError
             }
         }

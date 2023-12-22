@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BDC0CD42B35877200BD341F /* CofuLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDC0CD32B35877200BD341F /* CofuLogger.swift */; };
 		16E730131166C556AA0708EF /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2EB20D5198AC7E6603D98D72 /* Settings.bundle */; };
 		1867B8D8BE2B8499106AC9E1 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B5B4A6AE57364F8FC6B771 /* Assets.swift */; };
 		3B0CE03F2B0236AF00929445 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B0CE0312B0236AF00929445 /* Localizable.strings */; };
@@ -194,6 +195,7 @@
 		0B05D7D828B4FF4A00445C74 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0B05D7D928B4FF4A00445C74 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0B05D7DA28B4FF4A00445C74 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0BDC0CD32B35877200BD341F /* CofuLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CofuLogger.swift; sourceTree = "<group>"; };
 		0DDED74D77EA34B1E82D66CC /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		0DE070BD08140DF741A4FC14 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		2EB20D5198AC7E6603D98D72 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = wrapper.cfbundle; path = Settings.bundle; sourceTree = "<group>"; };
@@ -422,6 +424,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0BDC0CD22B3582A800BD341F /* Logging */ = {
+			isa = PBXGroup;
+			children = (
+				0BDC0CD32B35877200BD341F /* CofuLogger.swift */,
+			);
+			path = Logging;
+			sourceTree = "<group>";
+		};
 		1399D4047B4917F08ED83A24 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -1028,6 +1038,7 @@
 				3B819DB42B063ED200B4803A /* FuelTypeSelection */,
 				3BB47E662B31D7E8007D8842 /* GasStations */,
 				3B7370C12AD53A0800E9118B /* Helpers */,
+				0BDC0CD22B3582A800BD341F /* Logging */,
 				3BAE606D2AD7CBA6006EA9DD /* Managers */,
 				3B6E0B772B21FC1C001F4FE9 /* Map */,
 				3BA2DB162AE6A27700187D86 /* Menu */,
@@ -1590,6 +1601,7 @@
 				3B819DBB2B063F3000B4803A /* FuelTypeSelectionViewModel.swift in Sources */,
 				3B55852C2B189053009E300B /* SingleDigitTextFieldOld.swift in Sources */,
 				3B5A1C8E2B163E7800EA5754 /* OnboardingLegalPageViewModel.swift in Sources */,
+				0BDC0CD42B35877200BD341F /* CofuLogger.swift in Sources */,
 				9A00F2412B1A1FCE0050C7FA /* RoundedCorner.swift in Sources */,
 				3BDE7B182AD931C0009A88DF /* TextInputField.swift in Sources */,
 				3B0CFFA02B27476800EFC3ED /* MapTopAnnotationView.swift in Sources */,

@@ -6,7 +6,7 @@ class MenuViewModel: ObservableObject {
 
     private let crashReportingManager: CrashReportingManager
 
-    init(crashReportingManager: CrashReportingManager = .init()) {
+    init(crashReportingManager: CrashReportingManager = .shared) {
         self.crashReportingManager = crashReportingManager
 
         listItems = [
@@ -56,7 +56,7 @@ class MenuViewModel: ObservableObject {
     }
 
     private func logError(_ message: String) {
-        NSLog(message)
+        CofuLogger.e(message)
         crashReportingManager.sendEvent(level: .warning, message: message, parameters: nil)
     }
 }

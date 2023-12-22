@@ -109,14 +109,14 @@ class TransactionListViewModel: ObservableObject {
         switch response {
         case .success(let result):
             guard let transactions = result.success?.data else {
-                NSLog("[TransactionListViewModel] Failed fetching user transactions - invalid data.")
+                CofuLogger.e("[TransactionListViewModel] Failed fetching user transactions - invalid data.")
                 return nil
             }
 
             return transactions
 
         case .failure(let error):
-            NSLog("[TransactionListViewModel] Failed fetching user transactions with error \(error).")
+            CofuLogger.e("[TransactionListViewModel] Failed fetching user transactions with error \(error).")
             return nil
         }
     }

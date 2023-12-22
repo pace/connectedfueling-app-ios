@@ -46,7 +46,7 @@ class OnboardingPaymentMethodsPageViewModel: OnboardingPageViewModel {
             return hasPaymentMethods
 
         case .failure(let error):
-            NSLog("[OnboardingPaymentMethodsPageViewModel] Failed checking payment methods with error \(error)")
+            CofuLogger.e("[OnboardingPaymentMethodsPageViewModel] Failed checking payment methods with error \(error)")
             alert = AppAlert.genericError
             return false
         }

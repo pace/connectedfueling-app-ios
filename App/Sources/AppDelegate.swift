@@ -55,7 +55,7 @@ private extension AppDelegate {
     }
 
     func setupCrashReporting() {
-        CrashReportingManager().setup()
+        CrashReportingManager.shared.setup()
     }
 
     func refreshSessionIfNeeded() {

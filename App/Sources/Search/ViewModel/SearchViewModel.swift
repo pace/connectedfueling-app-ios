@@ -47,13 +47,13 @@ class SearchViewModel: NSObject, ObservableObject {
         let search = MKLocalSearch(request: request)
         search.start { [weak self] response, error in
             if let error {
-                NSLog("[SearchViewModel] Search failed with error \(error)")
+                CofuLogger.e("[SearchViewModel] Search failed with error \(error)")
                 return
             }
 
             guard let response = response,
                   let searchItemCoordinate = response.mapItems.first?.placemark.location?.coordinate else {
-                NSLog("[SearchViewModel] Search response invalid")
+                CofuLogger.w("[SearchViewModel] Search response invalid")
                 return
             }
 
@@ -68,6 +68,6 @@ extension SearchViewModel: MKLocalSearchCompleterDelegate {
     }
 
     func completer(_ completer: MKLocalSearchCompleter, didFailWithError error: Error) {
-        NSLog("[SearchViewModel] Search completer did fail with error \(error)")
+        CofuLogger.e("[SearchViewModel] Search completer did fail with error \(error)")
     }
 }

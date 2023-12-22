@@ -40,7 +40,7 @@ class OnboardingLegalPageViewModel: OnboardingPageViewModel {
         }
 
         guard let htmlFileName else {
-            NSLog("[OnboardingLegalPageViewModel] Failed handling link for url \(url)")
+            CofuLogger.e("[OnboardingLegalPageViewModel] Failed handling link for url \(url)")
             return .handled
         }
 
