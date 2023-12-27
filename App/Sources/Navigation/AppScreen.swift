@@ -20,13 +20,13 @@ extension AppScreen {
     }
 
     @ViewBuilder
-    var destination: some View {
+    func destination(analyticsManager: AnalyticsManager) -> some View {
         switch self {
         case .map:
-            MapNavigationView()
+            MapNavigationView(analyticsManager: analyticsManager)
 
         case .gasStationList:
-            GasStationListNavigationView()
+            GasStationListNavigationView(analyticsManager: analyticsManager)
 
         case .wallet:
             WalletNavigationView()

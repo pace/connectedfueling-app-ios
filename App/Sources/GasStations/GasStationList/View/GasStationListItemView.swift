@@ -20,7 +20,7 @@ struct GasStationListItemView: View {
         VStack(alignment: .leading, spacing: 0) {
             ZStack {
                 info
-                NavigationLink(destination: GasStationDetailView(viewModel: .init(gasStation: viewModel.gasStation)) ) {
+                NavigationLink(destination: GasStationDetailView(viewModel: .init(gasStation: viewModel.gasStation, analyticsManager: viewModel.analyticsManager))) {
                     EmptyView()
                 }
                 .opacity(0)

@@ -3,8 +3,11 @@ import SwiftUI
 struct GasStationListView: View {
     @ObservedObject private var viewModel: GasStationListViewModel
 
-    init(viewModel: GasStationListViewModel = .init()) {
+    private let analyticsManager: AnalyticsManager
+
+    init(viewModel: GasStationListViewModel = .init(), analyticsManager: AnalyticsManager = .init()) {
         self.viewModel = viewModel
+        self.analyticsManager = analyticsManager
     }
 
     var body: some View {
@@ -72,7 +75,7 @@ struct GasStationListView: View {
     private func list(of stations: [GasStation]) -> some View {
         List {
             ForEach(stations, id: \.self) { gasStation in
-                GasStationListItemView(viewModel: .init(gasStation: gasStation))
+                GasStationListItemView(viewModel: .init(gasStation: gasStation, analyticsManager: analyticsManager))
             }
             .listRowInsets(.init(top: 0, leading: 25, bottom: 10, trailing: 25))
             .listRowSeparator(.hidden)

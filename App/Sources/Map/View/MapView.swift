@@ -2,7 +2,11 @@ import MapKit
 import SwiftUI
 
 struct MapView: View {
-    @StateObject private var viewModel: MapViewModel = .init()
+    @StateObject private var viewModel: MapViewModel
+
+    init(analyticsManager: AnalyticsManager = .init()) {
+        self._viewModel = .init(wrappedValue: .init(poiManager: .init(analyticsManager: analyticsManager)))
+    }
 
     var body: some View {
         map

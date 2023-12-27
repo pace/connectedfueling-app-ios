@@ -4,6 +4,13 @@ import Foundation
 import PACECloudSDK
 
 struct POIManager {
+
+    let analyticsManager: AnalyticsManager?
+
+    init(analyticsManager: AnalyticsManager? = nil) {
+        self.analyticsManager = analyticsManager
+    }
+
     func fetchCofuStations(at location: CLLocation) async -> Result<[GasStation], Error> {
         let result = await POIKit.requestCofuGasStations(center: location, radius: Constants.GasStation.cofuStationRadius)
         let selectedFuelType = fuelType
@@ -27,6 +34,10 @@ struct POIManager {
                 let gasStations: [GasStation] = await group.reduce(into: []) {
                     guard let gasStation = $1 else { return }
                     $0.append(gasStation)
+                }
+
+                if gasStations.contains(where: { $0.isNearby }) {
+                    analyticsManager?.logEvent(AnalyticEvents.StationNearbyEvent())
                 }
 
                 return gasStations
