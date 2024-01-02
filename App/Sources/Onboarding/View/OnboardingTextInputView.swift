@@ -1,16 +1,11 @@
 import SwiftUI
 
 struct OnboardingTextInputView: View {
-    private enum FocusedField: Hashable {
-        case input
-    }
-
     @Environment(\.dismiss) private var dismiss
     @ObservedObject private var viewModel: OnboardingTextInputViewModel
-    @State private var input: String = ""
     @State private var isNextPagePresented: Bool = false
 
-    @FocusState private var focusedField: FocusedField?
+    @State private var input: String = ""
 
     init(viewModel: OnboardingTextInputViewModel) {
         self.viewModel = viewModel
@@ -20,12 +15,6 @@ struct OnboardingTextInputView: View {
         content
             .alert(item: $viewModel.alert) { alert in
                 alert
-            }
-            .onAppear {
-                focusedField = .input
-            }
-            .onDisappear {
-                focusedField = nil
             }
     }
 
@@ -40,13 +29,12 @@ struct OnboardingTextInputView: View {
                 .font(.system(size: 16, weight: .regular))
                 .padding(.horizontal, Constants.View.defaultDescriptionLabelPadding)
                 .padding(.top, .paddingXXL)
-            TextInputField(isSecure: viewModel.isInputSecure, text: $input)
+            SingleDigitsTextField(digits: viewModel.numberOfDigitsRequired, text: $input)
                 .onChange(of: input) { newInput in
                     viewModel.onEditingChanged(of: newInput)
                 }
-                .focused($focusedField, equals: .input)
-                .keyboardType(.numberPad)
-                .padding(.top, .paddingM)
+                .frame(height: 50)
+                .padding(.top, .paddingS)
             TextLabel(viewModel.warningText, textColor: .genericRed)
                 .font(.system(size: 12, weight: .regular))
                 .padding(.horizontal, Constants.View.defaultTitleLabelPadding)
