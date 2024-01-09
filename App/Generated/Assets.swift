@@ -35,6 +35,7 @@ internal enum Asset {
   internal enum Images {
     internal static let closeIcon = ImageAsset(name: "CloseIcon")
     internal static let arrowsOutward = ImageAsset(name: "arrows_outward")
+    internal static let brandIcon = ImageAsset(name: "brand_icon")
     internal static let fuelPump = ImageAsset(name: "FuelPump")
     internal static let gasStationLogo = ImageAsset(name: "GasStationLogo")
     internal static let navigation = ImageAsset(name: "Navigation")
@@ -51,9 +52,9 @@ internal enum Asset {
     internal static let imprintIcon = ImageAsset(name: "imprint_icon")
     internal static let menuTabIcon = ImageAsset(name: "menu_tab_icon")
     internal static let termsIcon = ImageAsset(name: "terms_icon")
-    internal static let brandIcon = ImageAsset(name: "brand_icon")
     internal static let errorIcon = ImageAsset(name: "error_icon")
     internal static let noGasStationsIcon = ImageAsset(name: "no_gas_stations_icon")
+    internal static let secondaryHeaderIcon = ImageAsset(name: "secondary_header_icon")
     internal static let onboardingAnalyticsIcon = ImageAsset(name: "onboarding_analytics_icon")
     internal static let onboardingBiometryIcon = ImageAsset(name: "onboarding_biometry_icon")
     internal static let onboardingFuelTypeIcon = ImageAsset(name: "onboarding_fuel_type_icon")

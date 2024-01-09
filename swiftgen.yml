@@ -1,5 +1,5 @@
 strings:
-  inputs: ${PROJECT_DIR}/App/Resources/en.lproj/Localizable.strings
+  inputs: ${PROJECT_DIR}/App/Resources/Strings/en.lproj/Localizable.strings
   outputs:
     - templateName: structured-swift4
       output: ${PROJECT_DIR}/App/Generated/Strings.swift

@@ -5,7 +5,6 @@ extension ConfigurationManager {
         let clientId: String
         let primaryBrandingColorHex: String
         let secondaryBrandingColorHex: String
-        let highlightColorHex: String
         let isAnalyticsEnabled: Bool
 
         private(set) var onboardingStyle: OnboardingStyle = .secondary
@@ -23,10 +22,6 @@ extension ConfigurationManager {
 
         var secondaryBrandingColor: Color {
             .init(hex: secondaryBrandingColorHex)
-        }
-
-        var highlightColor: Color {
-            .init(hex: highlightColorHex)
         }
 
         var textButtonsColor: Color {
@@ -48,11 +43,17 @@ extension ConfigurationManager.Configuration {
     }
 
     struct MenuEntry: Decodable {
-        let menuItems: [MenuItem]
+        let menuEntryId: MenuEntryId
     }
 }
 
 extension ConfigurationManager.Configuration.MenuEntry {
+    struct MenuEntryId: Decodable {
+        let menuItems: [MenuItem]
+    }
+}
+
+extension ConfigurationManager.Configuration.MenuEntry.MenuEntryId {
     struct MenuItem: Decodable {
         let name: String
         let url: String
@@ -65,7 +66,6 @@ extension ConfigurationManager.Configuration {
         case clientId = "client_id"
         case primaryBrandingColorHex = "primary_branding_color"
         case secondaryBrandingColorHex = "secondary_branding_color"
-        case highlightColorHex = "highlight_color"
         case isAnalyticsEnabled = "analytics_enabled"
         case onboardingStyle = "onboarding_style"
         case gasStationListStyle = "gas_station_list_style"
@@ -80,11 +80,17 @@ extension ConfigurationManager.Configuration {
 
 extension ConfigurationManager.Configuration.MenuEntry {
     enum CodingKeys: String, CodingKey {
+        case menuEntryId = "menu_entries_id"
+    }
+}
+
+extension ConfigurationManager.Configuration.MenuEntry.MenuEntryId {
+    enum CodingKeys: String, CodingKey {
         case menuItems = "menu_entry"
     }
 }
 
-extension ConfigurationManager.Configuration.MenuEntry.MenuItem {
+extension ConfigurationManager.Configuration.MenuEntry.MenuEntryId.MenuItem {
     enum CodingKeys: String, CodingKey {
         case name, url
         case languageCode = "languages_code"
