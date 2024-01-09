@@ -21,7 +21,7 @@
 		3B55852E2B189EA6009E300B /* SingleDigitTextFieldGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B55852D2B189EA6009E300B /* SingleDigitTextFieldGroupViewModel.swift */; };
 		3B5585302B189EAD009E300B /* SingleDigitTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B55852F2B189EAD009E300B /* SingleDigitTextField.swift */; };
 		3B5585322B189EB5009E300B /* SingleDigitTextFieldGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5585312B189EB5009E300B /* SingleDigitTextFieldGroup.swift */; };
-		3B5585422B18D3EA009E300B /* analytics.html in Resources */ = {isa = PBXBuildFile; fileRef = 3B5585402B18D3EA009E300B /* analytics.html */; };
+		3B5585422B18D3EA009E300B /* usage_analysis.html in Resources */ = {isa = PBXBuildFile; fileRef = 3B5585402B18D3EA009E300B /* usage_analysis.html */; };
 		3B5880D12B0CA7DE0057CDC5 /* Image+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5880D02B0CA7DE0057CDC5 /* Image+Extension.swift */; };
 		3B5A1C8A2B15FC6C00EA5754 /* NavigationBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5A1C892B15FC6C00EA5754 /* NavigationBarStyle.swift */; };
 		3B5A1C8E2B163E7800EA5754 /* OnboardingLegalPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5A1C8D2B163E7800EA5754 /* OnboardingLegalPageViewModel.swift */; };
@@ -46,7 +46,7 @@
 		3B6D84E92B1096A500701DEE /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D84E82B1096A500701DEE /* MenuViewModel.swift */; };
 		3B6D84ED2B10A17200701DEE /* SystemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D84EC2B10A17200701DEE /* SystemManager.swift */; };
 		3B6D84EF2B10B01600701DEE /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D84EE2B10B01600701DEE /* WebView.swift */; };
-		3B6D84F22B10CBF600701DEE /* terms.html in Resources */ = {isa = PBXBuildFile; fileRef = 3B6D84F02B10CBF600701DEE /* terms.html */; };
+		3B6D84F22B10CBF600701DEE /* usage_terms.html in Resources */ = {isa = PBXBuildFile; fileRef = 3B6D84F02B10CBF600701DEE /* usage_terms.html */; };
 		3B6D85182B10D1E200701DEE /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D85172B10D1E200701DEE /* SafariView.swift */; };
 		3B6E0B792B21FC28001F4FE9 /* MapNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6E0B782B21FC28001F4FE9 /* MapNavigationView.swift */; };
 		3B6E0B7B2B21FC2E001F4FE9 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6E0B7A2B21FC2E001F4FE9 /* MapView.swift */; };
@@ -160,7 +160,7 @@
 		9ADC1EC62B275B8E0027B82B /* TransactionDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC1EC52B275B8E0027B82B /* TransactionDetailViewModel.swift */; };
 		9ADF34852B2748CB00134E1D /* TransactionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADF34842B2748CB00134E1D /* TransactionListView.swift */; };
 		9ADF34872B2748E800134E1D /* TransactionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADF34862B2748E800134E1D /* TransactionListViewModel.swift */; };
-		C56CD44226BD40CE004E61FB /* privacy.html in Resources */ = {isa = PBXBuildFile; fileRef = C56CD44426BD40CE004E61FB /* privacy.html */; };
+		C56CD44226BD40CE004E61FB /* privacy_statement.html in Resources */ = {isa = PBXBuildFile; fileRef = C56CD44426BD40CE004E61FB /* privacy_statement.html */; };
 		C56DF9B9268F5A320074DBC8 /* PACECloudSDK in Frameworks */ = {isa = PBXBuildFile; productRef = C56DF9B8268F5A320074DBC8 /* PACECloudSDK */; };
 		E030BF2168C66E50D306EC54 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DDED74D77EA34B1E82D66CC /* Colors.xcassets */; };
 		E33384C29B0186910E12EEA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92EDCAEA5155B139A67EC72 /* AppDelegate.swift */; };
@@ -210,18 +210,18 @@
 		3B55852D2B189EA6009E300B /* SingleDigitTextFieldGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleDigitTextFieldGroupViewModel.swift; sourceTree = "<group>"; };
 		3B55852F2B189EAD009E300B /* SingleDigitTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleDigitTextField.swift; sourceTree = "<group>"; };
 		3B5585312B189EB5009E300B /* SingleDigitTextFieldGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleDigitTextFieldGroup.swift; sourceTree = "<group>"; };
-		3B5585412B18D3EA009E300B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = de; path = de.lproj/analytics.html; sourceTree = "<group>"; };
-		3B5585432B18D3F1009E300B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = en; path = en.lproj/analytics.html; sourceTree = "<group>"; };
-		3B5585442B18D3F5009E300B /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = cs; path = cs.lproj/analytics.html; sourceTree = "<group>"; };
-		3B5585452B18D3F6009E300B /* da */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = da; path = da.lproj/analytics.html; sourceTree = "<group>"; };
-		3B5585462B18D3F7009E300B /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = nl; path = nl.lproj/analytics.html; sourceTree = "<group>"; };
-		3B5585472B18D3F8009E300B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = fr; path = fr.lproj/analytics.html; sourceTree = "<group>"; };
-		3B5585482B18D3F8009E300B /* it */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = it; path = it.lproj/analytics.html; sourceTree = "<group>"; };
-		3B5585492B18D3F9009E300B /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = pl; path = pl.lproj/analytics.html; sourceTree = "<group>"; };
-		3B55854A2B18D3FA009E300B /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = pt; path = pt.lproj/analytics.html; sourceTree = "<group>"; };
-		3B55854B2B18D3FB009E300B /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = ro; path = ro.lproj/analytics.html; sourceTree = "<group>"; };
-		3B55854C2B18D3FB009E300B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = ru; path = ru.lproj/analytics.html; sourceTree = "<group>"; };
-		3B55854D2B18D3FC009E300B /* es */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = es; path = es.lproj/analytics.html; sourceTree = "<group>"; };
+		3B5585412B18D3EA009E300B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = de; path = de.lproj/usage_analysis.html; sourceTree = "<group>"; };
+		3B5585432B18D3F1009E300B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = en; path = en.lproj/usage_analysis.html; sourceTree = "<group>"; };
+		3B5585442B18D3F5009E300B /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = cs; path = cs.lproj/usage_analysis.html; sourceTree = "<group>"; };
+		3B5585452B18D3F6009E300B /* da */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = da; path = da.lproj/usage_analysis.html; sourceTree = "<group>"; };
+		3B5585462B18D3F7009E300B /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = nl; path = nl.lproj/usage_analysis.html; sourceTree = "<group>"; };
+		3B5585472B18D3F8009E300B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = fr; path = fr.lproj/usage_analysis.html; sourceTree = "<group>"; };
+		3B5585482B18D3F8009E300B /* it */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = it; path = it.lproj/usage_analysis.html; sourceTree = "<group>"; };
+		3B5585492B18D3F9009E300B /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = pl; path = pl.lproj/usage_analysis.html; sourceTree = "<group>"; };
+		3B55854A2B18D3FA009E300B /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = pt; path = pt.lproj/usage_analysis.html; sourceTree = "<group>"; };
+		3B55854B2B18D3FB009E300B /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = ro; path = ro.lproj/usage_analysis.html; sourceTree = "<group>"; };
+		3B55854C2B18D3FB009E300B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = ru; path = ru.lproj/usage_analysis.html; sourceTree = "<group>"; };
+		3B55854D2B18D3FC009E300B /* es */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = es; path = es.lproj/usage_analysis.html; sourceTree = "<group>"; };
 		3B5880CF2B0C93890057CDC5 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3B5880D02B0CA7DE0057CDC5 /* Image+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extension.swift"; sourceTree = "<group>"; };
 		3B5A1C892B15FC6C00EA5754 /* NavigationBarStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarStyle.swift; sourceTree = "<group>"; };
@@ -247,28 +247,28 @@
 		3B6D84E82B1096A500701DEE /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		3B6D84EC2B10A17200701DEE /* SystemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemManager.swift; sourceTree = "<group>"; };
 		3B6D84EE2B10B01600701DEE /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
-		3B6D84F12B10CBF600701DEE /* de */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = de; path = de.lproj/terms.html; sourceTree = "<group>"; };
-		3B6D84F32B10CC0200701DEE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = en; path = en.lproj/terms.html; sourceTree = "<group>"; };
-		3B6D84F92B10CD8900701DEE /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = cs; path = cs.lproj/privacy.html; sourceTree = "<group>"; };
-		3B6D84FA2B10CD8900701DEE /* da */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = da; path = da.lproj/privacy.html; sourceTree = "<group>"; };
-		3B6D84FB2B10CD8A00701DEE /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = nl; path = nl.lproj/privacy.html; sourceTree = "<group>"; };
-		3B6D84FC2B10CD8B00701DEE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = fr; path = fr.lproj/privacy.html; sourceTree = "<group>"; };
-		3B6D84FD2B10CDA300701DEE /* it */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = it; path = it.lproj/privacy.html; sourceTree = "<group>"; };
-		3B6D84FE2B10CDA400701DEE /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = pl; path = pl.lproj/privacy.html; sourceTree = "<group>"; };
-		3B6D84FF2B10CDA500701DEE /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = pt; path = pt.lproj/privacy.html; sourceTree = "<group>"; };
-		3B6D85002B10CDA600701DEE /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = ro; path = ro.lproj/privacy.html; sourceTree = "<group>"; };
-		3B6D85012B10CDA700701DEE /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = ru; path = ru.lproj/privacy.html; sourceTree = "<group>"; };
-		3B6D85022B10CDA800701DEE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = es; path = es.lproj/privacy.html; sourceTree = "<group>"; };
-		3B6D850D2B10CDBB00701DEE /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = cs; path = cs.lproj/terms.html; sourceTree = "<group>"; };
-		3B6D850E2B10CDBC00701DEE /* da */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = da; path = da.lproj/terms.html; sourceTree = "<group>"; };
-		3B6D850F2B10CDBD00701DEE /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = nl; path = nl.lproj/terms.html; sourceTree = "<group>"; };
-		3B6D85102B10CDBD00701DEE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = fr; path = fr.lproj/terms.html; sourceTree = "<group>"; };
-		3B6D85112B10CDBE00701DEE /* it */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = it; path = it.lproj/terms.html; sourceTree = "<group>"; };
-		3B6D85122B10CDBF00701DEE /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = pl; path = pl.lproj/terms.html; sourceTree = "<group>"; };
-		3B6D85132B10CDBF00701DEE /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = pt; path = pt.lproj/terms.html; sourceTree = "<group>"; };
-		3B6D85142B10CDC000701DEE /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = ro; path = ro.lproj/terms.html; sourceTree = "<group>"; };
-		3B6D85152B10CDC000701DEE /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = ru; path = ru.lproj/terms.html; sourceTree = "<group>"; };
-		3B6D85162B10CDC100701DEE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = es; path = es.lproj/terms.html; sourceTree = "<group>"; };
+		3B6D84F12B10CBF600701DEE /* de */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = de; path = de.lproj/usage_terms.html; sourceTree = "<group>"; };
+		3B6D84F32B10CC0200701DEE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = en; path = en.lproj/usage_terms.html; sourceTree = "<group>"; };
+		3B6D84F92B10CD8900701DEE /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = cs; path = cs.lproj/privacy_statement.html; sourceTree = "<group>"; };
+		3B6D84FA2B10CD8900701DEE /* da */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = da; path = da.lproj/privacy_statement.html; sourceTree = "<group>"; };
+		3B6D84FB2B10CD8A00701DEE /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = nl; path = nl.lproj/privacy_statement.html; sourceTree = "<group>"; };
+		3B6D84FC2B10CD8B00701DEE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = fr; path = fr.lproj/privacy_statement.html; sourceTree = "<group>"; };
+		3B6D84FD2B10CDA300701DEE /* it */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = it; path = it.lproj/privacy_statement.html; sourceTree = "<group>"; };
+		3B6D84FE2B10CDA400701DEE /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = pl; path = pl.lproj/privacy_statement.html; sourceTree = "<group>"; };
+		3B6D84FF2B10CDA500701DEE /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = pt; path = pt.lproj/privacy_statement.html; sourceTree = "<group>"; };
+		3B6D85002B10CDA600701DEE /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = ro; path = ro.lproj/privacy_statement.html; sourceTree = "<group>"; };
+		3B6D85012B10CDA700701DEE /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = ru; path = ru.lproj/privacy_statement.html; sourceTree = "<group>"; };
+		3B6D85022B10CDA800701DEE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = es; path = es.lproj/privacy_statement.html; sourceTree = "<group>"; };
+		3B6D850D2B10CDBB00701DEE /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = cs; path = cs.lproj/usage_terms.html; sourceTree = "<group>"; };
+		3B6D850E2B10CDBC00701DEE /* da */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = da; path = da.lproj/usage_terms.html; sourceTree = "<group>"; };
+		3B6D850F2B10CDBD00701DEE /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = nl; path = nl.lproj/usage_terms.html; sourceTree = "<group>"; };
+		3B6D85102B10CDBD00701DEE /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = fr; path = fr.lproj/usage_terms.html; sourceTree = "<group>"; };
+		3B6D85112B10CDBE00701DEE /* it */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = it; path = it.lproj/usage_terms.html; sourceTree = "<group>"; };
+		3B6D85122B10CDBF00701DEE /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = pl; path = pl.lproj/usage_terms.html; sourceTree = "<group>"; };
+		3B6D85132B10CDBF00701DEE /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = pt; path = pt.lproj/usage_terms.html; sourceTree = "<group>"; };
+		3B6D85142B10CDC000701DEE /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = ro; path = ro.lproj/usage_terms.html; sourceTree = "<group>"; };
+		3B6D85152B10CDC000701DEE /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = ru; path = ru.lproj/usage_terms.html; sourceTree = "<group>"; };
+		3B6D85162B10CDC100701DEE /* es */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = es; path = es.lproj/usage_terms.html; sourceTree = "<group>"; };
 		3B6D85172B10D1E200701DEE /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		3B6E0B782B21FC28001F4FE9 /* MapNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNavigationView.swift; sourceTree = "<group>"; };
 		3B6E0B7A2B21FC2E001F4FE9 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -372,7 +372,7 @@
 		3BE4E9112AFCD54B00AC5EE9 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		59988E381C75C4CDBC33748A /* AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTests.swift; sourceTree = "<group>"; };
 		59DD955527AC752031111001 /* AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTests.swift; sourceTree = "<group>"; };
-		628262D4B9E8434A78957688 /* Tests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		628262D4B9E8434A78957688 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EBB5E3649A1F3948609542F /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		72B5B4A6AE57364F8FC6B771 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		8C72B31A918630C1450DD690 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -401,11 +401,11 @@
 		9ADC1EC52B275B8E0027B82B /* TransactionDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailViewModel.swift; sourceTree = "<group>"; };
 		9ADF34842B2748CB00134E1D /* TransactionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListView.swift; sourceTree = "<group>"; };
 		9ADF34862B2748E800134E1D /* TransactionListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionListViewModel.swift; sourceTree = "<group>"; };
-		9C1CE9993B510A7FDB08F21C /* UITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9C1CE9993B510A7FDB08F21C /* UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A21D1F58961E1C012B58255C /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A92EDCAEA5155B139A67EC72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C56CD44326BD40CE004E61FB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = en; path = en.lproj/privacy.html; sourceTree = "<group>"; };
-		C56CD44526BD40D3004E61FB /* de */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = de; path = de.lproj/privacy.html; sourceTree = "<group>"; };
+		C56CD44326BD40CE004E61FB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = en; path = en.lproj/privacy_statement.html; sourceTree = "<group>"; };
+		C56CD44526BD40D3004E61FB /* de */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = de; path = de.lproj/privacy_statement.html; sourceTree = "<group>"; };
 		D52FFF13B15D7803BD36A33C /* App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = App.entitlements; sourceTree = "<group>"; };
 		DD29D196A5B54C54AB31A3B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -623,9 +623,9 @@
 			isa = PBXGroup;
 			children = (
 				3B963D1C2B3340D300905EFE /* imprint.html */,
-				3B5585402B18D3EA009E300B /* analytics.html */,
-				3B6D84F02B10CBF600701DEE /* terms.html */,
-				C56CD44426BD40CE004E61FB /* privacy.html */,
+				C56CD44426BD40CE004E61FB /* privacy_statement.html */,
+				3B5585402B18D3EA009E300B /* usage_analysis.html */,
+				3B6D84F02B10CBF600701DEE /* usage_terms.html */,
 			);
 			path = Legal;
 			sourceTree = "<group>";
@@ -1308,11 +1308,7 @@
 				LastUpgradeCheck = 1500;
 				ORGANIZATIONNAME = "PACE Telematics GmbH";
 				TargetAttributes = {
-					1F9108D316EA6D15BCD171CD = {
-						DevelopmentTeam = DB7EUU9D79;
-					};
 					F4118F72D883495538C964FA = {
-						DevelopmentTeam = DB7EUU9D79;
 						TestTargetID = 681C549D90A628A940E4663A;
 					};
 				};
@@ -1358,13 +1354,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				E030BF2168C66E50D306EC54 /* Colors.xcassets in Resources */,
-				3B5585422B18D3EA009E300B /* analytics.html in Resources */,
+				3B5585422B18D3EA009E300B /* usage_analysis.html in Resources */,
 				3BE4E90D2AFCD4D800AC5EE9 /* configuration.json in Resources */,
 				3B963D2E2B33417800905EFE /* InfoPlist.strings in Resources */,
 				3B0CE03F2B0236AF00929445 /* Localizable.strings in Resources */,
 				EE1D11878D72875C2EBE4BD8 /* Images.xcassets in Resources */,
-				C56CD44226BD40CE004E61FB /* privacy.html in Resources */,
-				3B6D84F22B10CBF600701DEE /* terms.html in Resources */,
+				C56CD44226BD40CE004E61FB /* privacy_statement.html in Resources */,
+				3B6D84F22B10CBF600701DEE /* usage_terms.html in Resources */,
 				3B784BDF2AFA1CC6006CBD4A /* GoogleService-Info.plist in Resources */,
 				3B963D1E2B3340D300905EFE /* imprint.html in Resources */,
 				16E730131166C556AA0708EF /* Settings.bundle in Resources */,
@@ -1674,7 +1670,7 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		3B5585402B18D3EA009E300B /* analytics.html */ = {
+		3B5585402B18D3EA009E300B /* usage_analysis.html */ = {
 			isa = PBXVariantGroup;
 			children = (
 				3B5585412B18D3EA009E300B /* de */,
@@ -1690,10 +1686,10 @@
 				3B55854C2B18D3FB009E300B /* ru */,
 				3B55854D2B18D3FC009E300B /* es */,
 			);
-			name = analytics.html;
+			name = usage_analysis.html;
 			sourceTree = "<group>";
 		};
-		3B6D84F02B10CBF600701DEE /* terms.html */ = {
+		3B6D84F02B10CBF600701DEE /* usage_terms.html */ = {
 			isa = PBXVariantGroup;
 			children = (
 				3B6D84F12B10CBF600701DEE /* de */,
@@ -1709,7 +1705,7 @@
 				3B6D85152B10CDC000701DEE /* ru */,
 				3B6D85162B10CDC100701DEE /* es */,
 			);
-			name = terms.html;
+			name = usage_terms.html;
 			sourceTree = "<group>";
 		};
 		3B963D1C2B3340D300905EFE /* imprint.html */ = {
@@ -1740,7 +1736,7 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		C56CD44426BD40CE004E61FB /* privacy.html */ = {
+		C56CD44426BD40CE004E61FB /* privacy_statement.html */ = {
 			isa = PBXVariantGroup;
 			children = (
 				C56CD44326BD40CE004E61FB /* en */,
@@ -1756,7 +1752,7 @@
 				3B6D85012B10CDA700701DEE /* ru */,
 				3B6D85022B10CDA800701DEE /* es */,
 			);
-			name = privacy.html;
+			name = privacy_statement.html;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1849,6 +1845,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				DEVELOPMENT_TEAM = 8T694MPXAZ;
 				INFOPLIST_FILE = Tests/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1857,7 +1855,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = car.pace.Tests;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/App.app/App";
 			};
 			name = Sandbox;
@@ -1866,6 +1867,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 8T694MPXAZ;
 				INFOPLIST_FILE = UITests/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1874,7 +1876,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = car.pace.UITests;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_TARGET_NAME = App;
 			};
 			name = Sandbox;
@@ -1959,6 +1964,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 8T694MPXAZ;
 				INFOPLIST_FILE = UITests/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1967,7 +1973,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = car.pace.UITests;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_TARGET_NAME = App;
 			};
 			name = Production;
@@ -1976,6 +1985,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				DEVELOPMENT_TEAM = 8T694MPXAZ;
 				INFOPLIST_FILE = Tests/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1984,7 +1995,10 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = car.pace.Tests;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/App.app/App";
 			};
 			name = Production;

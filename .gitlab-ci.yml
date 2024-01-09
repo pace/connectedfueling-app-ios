@@ -83,7 +83,7 @@ build_review:
   extends: .base_template
   stage: build
   script:
-    - bundle exec fastlane build_cofu_app --env sandbox
+    - bundle exec fastlane build_cofu_app_for_merge_request --env sandbox
   <<: *only_merge_requests
   except:
     refs:

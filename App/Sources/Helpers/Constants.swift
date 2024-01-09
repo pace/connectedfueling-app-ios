@@ -41,10 +41,10 @@ enum Constants {
 
     enum File {
         static let configuration: String = "configuration"
-        static let termsOfUse: String = "terms"
-        static let dataPrivacy: String = "privacy"
+        static let termsOfUse: String = "usage_terms"
+        static let dataPrivacy: String = "privacy_statement"
         static let imprint: String = "imprint"
-        static let analytics: String = "analytics"
+        static let analytics: String = "usage_analysis"
     }
 
     enum Onboarding {

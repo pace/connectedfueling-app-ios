@@ -2,7 +2,6 @@
     "client_id": "connected-fueling-app-ios",
     "primary_branding_color": "#00CCF0",
     "secondary_branding_color": "#00CCF0",
-    "highlight_color": "#00CCF0",
     "onboarding_style": "primary",
     "gas_station_list_style": "primary",
     "analytics_enabled": true,
@@ -10,5 +9,5 @@
     "map_enabled": true,
     "vehicle_integration_enabled": false,
     "hide_prices": false,
-    "menu_entry": []
+    "menu_entries": []
 }

@@ -2,6 +2,7 @@ import os
 import argparse
 import json
 import subprocess
+import shutil
 from sys import exit
 
 parser = argparse.ArgumentParser(description='Builds app from configuration')
@@ -27,7 +28,6 @@ def load_configuration_from_file():
 
   for file in os.listdir(args.configuration_directory):
     path = os.path.join(args.configuration_directory, file)
-    print(path)
 
     if os.path.isdir(path) and file == 'assets':
       assets_path = path
@@ -42,10 +42,10 @@ def replace_images():
 
   images = [
     (app_icon, 'AppIcon.appiconset/Icon.png'),
-    ('ios_onboarding_header_image.pdf', 'Onboarding/onboarding_primary_header_icon.imageset/onboarding_header.pdf'),
-    ('ios_list_header_image.pdf', 'GasStationList/gas_station_list_primary_header_icon.imageset/gas_station_list_header.pdf'),
-    ('ios_fallback_header_image.pdf', 'Miscellaneous/secondary_header_icon.imageset/secondary_header.pdf'),
-    ('ios_detail_view_brand_icon.pdf', 'Detail/brand_icon.imageset/brand_icon.pdf')
+    ('onboarding_header_image_ios.pdf', 'Onboarding/onboarding_primary_header_icon.imageset/onboarding_header.pdf'),
+    ('list_header_image_ios.pdf', 'GasStationList/gas_station_list_primary_header_icon.imageset/gas_station_list_header.pdf'),
+    ('fallback_header_image_ios.pdf', 'Miscellaneous/secondary_header_icon.imageset/secondary_header.pdf'),
+    ('detail_view_brand_icon_ios.pdf', 'Detail/brand_icon.imageset/brand_icon.pdf')
   ]
 
   for image in images:
@@ -70,12 +70,13 @@ def replace_keychain():
 def replace_google_services():
   analytics_enabled = configuration['analytics_enabled']
   crashlytics_enabled = configuration['crashlytics_enabled']
+  google_services_plist_path = "../App/Resources/GoogleService-Info.plist"
 
   if analytics_enabled is False and crashlytics_enabled is False:
-    os.remove("../App/Resources/GoogleService-Info.plist") 
+    os.remove(google_services_plist_path) 
     print("✅ Analytics and Crashlytics are disabled. Successfully removed google services file") 
   else:
-    os.replace(get_asset_path('firebase_ios.keychain'), "../App/Resources/GoogleService-Info.plist")
+    os.replace(get_asset_path('firebase_config_ios.plist'), google_services_plist_path)
     print("✅ Successfully replaced google services file")
 
 def replace_legal_documents():
@@ -95,7 +96,7 @@ def replace_legal_documents():
     ('ru', 'en-US')
   ]
 
-  legal_documents = ['imprint', 'privacy', 'terms', 'analytics']
+  legal_documents = ['imprint', 'privacy_statement', 'usage_terms', 'usage_analysis']
 
   for language in languages:
     for document in legal_documents:
@@ -104,17 +105,17 @@ def replace_legal_documents():
       asset_output_path = f"../App/Resources/Legal/{language[0]}.lproj/{document}.html"
       
       if os.path.exists(asset_input_path):
-        os.replace(asset_input_path, asset_output_path)
+        shutil.copyfile(asset_input_path, asset_output_path)
       else:
-        print("⚠️ Document does not exist. Falling back to use English document")
+        print(f"⚠️ Document {asset_name} does not exist. Falling back to use English document")
 
         fallback_asset_name = f"{document}_en-US.html"
-        fallback_asset_input_path = get_asset_path(asset_name)
+        fallback_asset_input_path = get_asset_path(fallback_asset_name)
 
         if os.path.exists(fallback_asset_input_path):
-          os.replace(fallback_asset_input_path, asset_output_path)
+          shutil.copyfile(fallback_asset_input_path, asset_output_path)
         else:
-          print("‼️ Error occurred while falling back to English document: File does not exist.")
+          print(f"‼️ Error occurred while falling back to English document: File {fallback_asset_name} does not exist.")
           exit(1)
   
   print("✅ Successfully replaced legal documents")
@@ -129,20 +130,17 @@ def replace_runtime_configuration():
     'map_enabled',
     'vehicle_integration_enabled',
     'hide_prices',
-    'menu_entry'
+    'menu_entries'
   ]
-
-  onboarding_header_image_key = 'onboarding_header_image'
-  list_header_image_key = 'list_header_image'
 
   runtimeConfig = {}
 
   for key in keys:
-    if key in configuration and configuration[key] is not None:
-      runtimeConfig[key] = configuration[key]
+    if configuration.get(key) is not None:
+      runtimeConfig[key] = configuration.get(key)
 
-  runtimeConfig['onboarding_style'] = os.path.exists(get_asset_path('onboarding_header_image')) ? 'primary' : 'secondary'
-  runtimeConfig['gas_station_list_style'] = os.path.exists(get_asset_path('list_header_image')) ? 'primary' : 'secondary'
+  runtimeConfig['onboarding_style'] = 'primary' if os.path.exists(get_asset_path('onboarding_header_image_ios.pdf')) else 'secondary'
+  runtimeConfig['gas_station_list_style'] = 'primary' if os.path.exists(get_asset_path('list_header_image_ios.pdf')) else 'secondary'
 
   with open("../App/Resources/configuration.json", 'w+') as file:
     json.dump(runtimeConfig, file, ensure_ascii=False, indent=4)
@@ -153,6 +151,9 @@ def get_asset_path(file_name):
   return path
 
 def configure_build_settings():
+  sentry_dsn = configuration.get('sentry_dsn_ios') or ""
+  idp_hint = configuration.get('default_idp') or ""
+
   cwd = os.getcwd()
   os.chdir('..')
   
@@ -162,19 +163,21 @@ def configure_build_settings():
     'fastlane', 
     'configure_build_settings',
     f"app_name:{configuration['app_name']}",
-    f"app_identifier:{configuration['application_id']}",
+    f"app_identifier:{configuration['application_id_ios']}",
     f"analytics_enabled:{configuration['analytics_enabled']}",
     f"crashlytics_enabled:{configuration['crashlytics_enabled']}",
     f"sentry_enabled:{configuration['sentry_enabled']}",
-    f"sentry_dsn:{configuration['sentry_dsn']}",
+    f"sentry_dsn:{sentry_dsn}",
     f"client_id:{configuration['client_id']}",
-    f"idp_hint:{configuration['idp_hint']}"
+    f"idp_hint:{idp_hint}"
   ])
   
   os.chdir(cwd)
   print("✅ Successfully configured build settings")
 
 def build_app():
+  sentry_project_name = configuration.get('sentry_project_name_ios') or ""
+  
   cwd = os.getcwd()
   os.chdir('..')
   
@@ -183,13 +186,15 @@ def build_app():
     'exec', 
     'fastlane', 
     'build_cofu_app_from_configuration',
-    f"team_id:{configuration['team_id']}",
-    f"app_identifier:{configuration['application_id']}",
+    f"team_id:{configuration['ios_team_id']}",
+    f"app_identifier:{configuration['application_id_ios']}",
+    f"keychain_password:{configuration['ios_keychain_password']}",
+    f"sentry_enabled:{configuration['sentry_enabled']}",
+    f"sentry_project_name:{sentry_project_name}"
   ])
   
   os.chdir(cwd)
-  print("✅ Successfully built app")
 
 print("🚀 Start building app from configuration")
 build_cofu_app_from_configuration()
-print("🏁 Successfully finished app configuration")
+print("🏁 Successfully finished building app from configuration")

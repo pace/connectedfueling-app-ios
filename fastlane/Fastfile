@@ -9,21 +9,130 @@ platform :ios do
   version_number = ENV['VERSION_NAME']
   build_number = ENV['BUILD_NUMBER']
 
-  before_all do
+  before_all do |lane|
     clear_derived_data
 
-    create_keychain(
-      name: ENV['MATCH_KEYCHAIN_NAME'],
-      password: ENV['MATCH_KEYCHAIN_PASSWORD'],
-      unlock: true,
-      timeout: 3600,
-      add_to_search_list: true,
-      verbose: true
+    # Keychain handling for merge request lanes
+    if [:build_cofu_app_for_merge_request].include?(lane)
+      create_keychain(
+        name: ENV['MATCH_KEYCHAIN_NAME'],
+        password: ENV['MATCH_KEYCHAIN_PASSWORD'],
+        unlock: true,
+        timeout: 3600,
+        add_to_search_list: true,
+        verbose: true
+      )
+    end
+  end
+
+  after_all do |lane|
+    # Keychain handling for merge request lanes
+    if [:build_cofu_app_for_merge_request].include?(lane)
+      delete_keychain(name: ENV['MATCH_KEYCHAIN_NAME'])
+    end
+
+    # Handling for configured whitelabel app
+    if [:build_cofu_app_from_configuration, :publish_cofu_app_from_configuration].include?(lane)
+      copy_artifacts(
+        keep_original: false,
+        target_path: 'artifacts',
+        artifacts: ['*.cer', '*.mobileprovision', '*.ipa'],
+        fail_on_missing: true
+      )
+      copy_artifacts(
+        keep_original: false,
+        target_path: 'dsyms',
+        artifacts: ['*.dSYM.zip'],
+        fail_on_missing: true
+      )
+    end
+  end
+  
+  ##################################
+  ##################################
+  # 🆗 Lanes for merge requests 🆗 #
+  ##################################
+  ##################################
+
+  desc "Builds the default app for a merge request pipeline"
+  lane :build_cofu_app_for_merge_request do 
+    build_application(
+      is_merge_request_build: true,
+      team_id: ENV['COMPANY_TEAM_ID'],
+      app_identifier: 'car.pace.cofu'
     )
   end
 
-  after_all do
-    delete_keychain(name: ENV['MATCH_KEYCHAIN_NAME'])
+  desc 'Run unit tests'
+  lane :test do
+    scan(
+      scheme: 'App Unit Tests',
+      app_identifier: 'car.pace.cofu',
+      configuration: ENVIRONMENT,
+      reset_simulator: true,
+      force_quit_simulator: true,
+      prelaunch_simulator: true,
+      reinstall_app: true,
+      disable_concurrent_testing: true
+    )
+  end
+
+  #########################################
+  #########################################
+  # 🚀 Configured whitelabel app lanes 🚀 #
+  #########################################
+  #########################################
+
+  # Branded whitelabel build lane
+  desc 'Builds the app from a configuration'
+  lane :build_cofu_app_from_configuration do |options|
+    keychain_password = options[:keychain_password]
+    
+    unlock_keychain(
+      path: "./App/Resources/keychain.keychain",
+      password: keychain_password,
+      add_to_search_list: :replace
+    )
+    
+    build_application(
+      is_merge_request_build: false,
+      team_id: options['team_id'],
+      app_identifier: options['app_identifier']
+    )
+
+    sentry_enabled = options[:sentry_enabled]
+
+    if sentry_enabled
+      sentry_upload_dsym(
+        auth_token: ENV["SENTRY_AUTH_TOKEN"],
+        org_slug: 'pace',
+        project_slug: options[:sentry_project_name],
+        url: 'https://sentry.pace.cloud'
+      )
+    end
+  end
+
+  desc 'Publishes the configured app on TestFlight'
+  lane :publish_cofu_app_from_configuration do |options|
+    team_id = options[:team_id]
+    app_identifier = options[:app_identifier]
+    test_groups = options[:test_groups]
+    whats_new = options[:whats_new]
+
+    upload_to_testflight(
+      app_identifier: app_identifier,
+      team_id: team_id,
+      ipa: 'artifacts/App.ipa',
+      distribute_external: true,
+      groups: test_groups,
+      reject_build_waiting_for_review: true,
+      skip_waiting_for_build_processing: true,
+      localized_build_info: {
+        'default': {
+          whats_new: whats_new
+        }
+      }
+    )
   end
 
   desc 'Configure build settings'
@@ -36,10 +145,10 @@ platform :ios do
     analytics_enabled = options[:analytics_enabled]
     crashlytics_enabled = options[:crashlytics_enabled]
     sentry_enabled = options[:sentry_enabled]
-    sentry_dsn = sentry_enabled == 'true' ? options[:sentry_dsn] : ""
+    sentry_dsn = sentry_enabled ? options[:sentry_dsn] : ""
 
     client_id = options[:client_id]
-    idp_hint = options[:default_idp]
+    idp_hint = options[:idp_hint]
     redirect_uri = "#{client_id}-app://callback"
     url_scheme = "pace.#{SecureRandom.uuid}"
 
@@ -70,15 +179,15 @@ platform :ios do
     environment_uppercase = ENVIRONMENT.upcase
     preprocessor_flags = [environment_uppercase]
 
-    if analytics_enabled == 'true'
+    if analytics_enabled
       preprocessor_flags.append('ANALYTICS')
     end
 
-    if crashlytics_enabled == 'true'
+    if crashlytics_enabled
       preprocessor_flags.append('CRASHLYTICS')
     end
 
-    if sentry_enabled == 'true'
+    if sentry_enabled
       preprocessor_flags.append('SENTRY')
     end
 
@@ -97,53 +206,15 @@ platform :ios do
     end
   end
 
-  desc 'Returns the build settings for the specified environment and target'
-  private_lane :get_build_settings do |options|
-    project = options[:project]
-    target = options[:target]
-    
-    main_target = project.targets.select { |t| t.name == target }.first
-
-    if main_target
-      puts 'Found target'
-      puts "Config: #{ENVIRONMENT}"
-      configuration = main_target.build_configurations.select { |config| config.name == ENVIRONMENT }.first
-
-      configuration.build_settings # Last line defines return value
-    end
-  end
-
-  desc 'Run unit tests'
-  lane :test do
-    scan(
-      scheme: 'App Unit Tests',
-      configuration: ENVIRONMENT,
-      reset_simulator: true,
-      force_quit_simulator: true,
-      prelaunch_simulator: true,
-      reinstall_app: true,
-      disable_concurrent_testing: true
-    )
-  end
-
-  desc 'Builds the app from a configuration'
-  lane :build_cofu_app_from_configuration do |options|
-    build_application(
-      team_id: options['team_id'],
-      app_identifier: options['app_identifier']
-    )
-  end
-
-  desc "Builds the app with the default configuration"
-  lane :build_cofu_app do 
-    build_application(
-      team_id: ENV['COMPANY_TEAM_ID'],
-      app_identifier: 'car.pace.cofu'
-    )
-  end
+  #################
+  #################
+  # 🛠️ Helpers 🛠️ #
+  #################
+  #################
 
   desc "Builds the app"
   private_lane :build_application do |options|
+    is_merge_request_build = options[:is_merge_request_build]
     team_id = options[:team_id]
     app_identifier = options[:app_identifier]
 
@@ -154,34 +225,39 @@ platform :ios do
     info_plist_path = 'App/Resources/InfoPlist/Info.plist'
 
     ## Repair code signing
-    disable_automatic_code_signing(
-      path: PROJECT_PATH,
-      team_id: team_id
-    )
+    disable_automatic_code_signing(path: PROJECT_PATH, team_id: team_id)
 
-    match(
-      type: signing_type,
-      team_id: team_id,
-      keychain_name: ENV['MATCH_KEYCHAIN_NAME'],
-      keychain_password: ENV['MATCH_KEYCHAIN_PASSWORD'],
-      app_identifier: app_identifier,
-      verbose: true
-    )
+    if is_merge_request_build
+      match(
+        type: signing_type,
+        team_id: team_id,
+        keychain_name: ENV['MATCH_KEYCHAIN_NAME'],
+        keychain_password: ENV['MATCH_KEYCHAIN_PASSWORD'],
+        app_identifier: app_identifier,
+        verbose: true
+      )
+    else
+      sigh(
+        app_identifier: app_identifier,
+        force: false,
+        team_id: team_id
+      )
+    end
+
+    profile_path = is_merge_request_build ? ENV["sigh_car.pace.cofu_#{signing_type}_profile-path"] : "./AppStore_#{app_identifier}.mobileprovision"
+    profile_name = is_merge_request_build ? ENV["sigh_car.pace.cofu_#{signing_type}_profile-name"] : "#{app_identifier} AppStore"
 
     update_project_provisioning(
       xcodeproj: PROJECT_PATH,
       target_filter: 'App',
-      profile: ENV["sigh_car.pace.cofu_#{signing_type}_profile-path"],
+      profile: profile_path,
       build_configuration: ENVIRONMENT
     )
 
     set_info_plist_value(path: info_plist_path, key: 'CFBundleShortVersionString', value: version_number)
     set_info_plist_value(path: info_plist_path, key: 'CFBundleVersion', value: build_number)
 
-    update_signing(
-      target: 'App',
-      team_id: team_id
-    )
+    update_signing(target: 'App', team_id: team_id)
 
     gym(
       clean: true,
@@ -197,7 +273,7 @@ platform :ios do
         uploadBitcode: false,
         uploadSymbols: true,
         provisioningProfiles: {
-          app_identifier => ENV["sigh_car.pace.cofu_#{signing_type}_profile-name"]
+          app_identifier => profile_name
         }
       }
     )
@@ -224,48 +300,19 @@ platform :ios do
     end
   end
 
-  lane :publish do
-    upload_to_testflight(
-      distribute_external: true,
-      groups: ['Jamit Labs', 'Partners'],
-      changelog: 'Have Fun Testing'
-    )
-  end
+  desc 'Returns the build settings for the specified environment and target'
+  private_lane :get_build_settings do |options|
+    project = options[:project]
+    target = options[:target]
+    
+    main_target = project.targets.select { |t| t.name == target }.first
 
-  desc 'Submit the latest uploaded version to Apple\'s app review'
-  lane :submit_review do
-    deliver(
-      reset_ratings: false,
-      submit_for_review: false,
-      automatic_release: false,
-      phased_release: true,
-      force: true, # Skip HTMl report verification
-      skip_screenshots: false,
-      overwrite_screenshots: true,
-      ignore_language_directory_validation: true,
-      app_version: version_number,
-      build_number: build_number,
-      skip_binary_upload: true,
-      skip_metadata: false,
-      metadata_path: "./fastlane/metadata",
-      submission_information: {
-        add_id_info_uses_idfa: false,
-        add_id_info_limits_tracking: true,
-        add_id_info_serves_ads: false,
-        add_id_info_tracks_action: true,
-        add_id_info_tracks_install: true,
-        content_rights_has_rights: true,
-        content_rights_contains_third_party_content: true,
-        export_compliance_platform: 'ios',
-        export_compliance_compliance_required: false,
-        export_compliance_encryption_updated: false,
-        export_compliance_app_type: nil,
-        export_compliance_uses_encryption: false,
-        export_compliance_is_exempt: false,
-        export_compliance_contains_third_party_cryptography: false,
-        export_compliance_contains_proprietary_cryptography: false,
-        export_compliance_available_on_french_store: false
-      }
-    )
+    if main_target
+      puts 'Found target'
+      puts "Config: #{ENVIRONMENT}"
+      configuration = main_target.build_configurations.select { |config| config.name == ENVIRONMENT }.first
+
+      configuration.build_settings # Last line defines return value
+    end
   end
 end
