@@ -56,7 +56,7 @@ enum Constants {
 
 extension Constants {
     static let currentEnvironment: PACECloudSDK.Environment = {
-        #if DEVELOPMENT
+        #if SANDBOX
         return .sandbox
         #else
         return .production

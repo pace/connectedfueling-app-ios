@@ -1,8 +1,9 @@
+require 'securerandom'
+
 default_platform(:ios)
 
 PROJECT_PATH = 'ConnectedFueling.xcodeproj'
-TEAM_ID = ENV['COMPANY_TEAM_ID']
-APP_IDENTIFIER = 'car.pace.cofu'
+ENVIRONMENT = ENV['ENVIRONMENT']
 
 platform :ios do
   version_number = ENV['VERSION_NAME']
@@ -25,11 +26,98 @@ platform :ios do
     delete_keychain(name: ENV['MATCH_KEYCHAIN_NAME'])
   end
 
+  desc 'Configure build settings'
+  lane :configure_build_settings do |options|
+    info_plist_path = 'App/Resources/InfoPlist/Info.plist'
+
+    app_name = options[:app_name]
+    app_identifier = options[:app_identifier]
+    
+    analytics_enabled = options[:analytics_enabled]
+    crashlytics_enabled = options[:crashlytics_enabled]
+    sentry_enabled = options[:sentry_enabled]
+    sentry_dsn = sentry_enabled == 'true' ? options[:sentry_dsn] : ""
+
+    client_id = options[:client_id]
+    idp_hint = options[:default_idp]
+    redirect_uri = "#{client_id}-app://callback"
+    url_scheme = "pace.#{SecureRandom.uuid}"
+
+    set_info_plist_value(path: info_plist_path, key: "CFBundleName", value: app_name)
+    update_app_identifier(xcodeproj: PROJECT_PATH, plist_path: info_plist_path, app_identifier: app_identifier)
+
+    set_preprocessor_flags(analytics_enabled: analytics_enabled, crashlytics_enabled: crashlytics_enabled, sentry_enabled: sentry_enabled)
+    set_info_plist_value(path: info_plist_path, key: "SentryDSN", value: sentry_dsn)
+
+    set_info_plist_value(path: info_plist_path, key: "PACECloudSDKIDKitSetup", subkey: "OIDConfigurationIDPHint", value: idp_hint)
+    set_info_plist_value(path: info_plist_path, key: "PACECloudSDKIDKitSetup", subkey: "OIDConfigurationRedirectURI", value: redirect_uri)
+
+    update_plist(
+      plist_path: info_plist_path,
+      block: proc do |plist|
+        urlScheme = plist["CFBundleURLTypes"].find{ |scheme| scheme["CFBundleURLName"] == "ConnectedFuelingApp" }
+        urlScheme[:CFBundleURLSchemes] = [url_scheme]
+      end
+    )
+  end
+
+  desc 'Sets the preprocessor flags for the current configuration'
+  private_lane :set_preprocessor_flags do |options|
+    analytics_enabled = options[:analytics_enabled]
+    crashlytics_enabled = options[:crashlytics_enabled]
+    sentry_enabled = options[:sentry_enabled]
+
+    environment_uppercase = ENVIRONMENT.upcase
+    preprocessor_flags = [environment_uppercase]
+
+    if analytics_enabled == 'true'
+      preprocessor_flags.append('ANALYTICS')
+    end
+
+    if crashlytics_enabled == 'true'
+      preprocessor_flags.append('CRASHLYTICS')
+    end
+
+    if sentry_enabled == 'true'
+      preprocessor_flags.append('SENTRY')
+    end
+
+    Dir.chdir('..') do
+      project = Xcodeproj::Project.open(PROJECT_PATH)
+
+      build_settings = get_build_settings(project: project, target: 'App')
+
+      if build_settings
+        build_settings["SWIFT_ACTIVE_COMPILATION_CONDITIONS"] = preprocessor_flags
+        project.save
+        puts 'Successfully set preprocessor flags'
+      else
+        puts 'Failed setting preprocessor flags'
+      end
+    end
+  end
+
+  desc 'Returns the build settings for the specified environment and target'
+  private_lane :get_build_settings do |options|
+    project = options[:project]
+    target = options[:target]
+    
+    main_target = project.targets.select { |t| t.name == target }.first
+
+    if main_target
+      puts 'Found target'
+      puts "Config: #{ENVIRONMENT}"
+      configuration = main_target.build_configurations.select { |config| config.name == ENVIRONMENT }.first
+
+      configuration.build_settings # Last line defines return value
+    end
+  end
+
   desc 'Run unit tests'
   lane :test do
     scan(
       scheme: 'App Unit Tests',
-      configuration: 'Development',
+      configuration: ENVIRONMENT,
       reset_simulator: true,
       force_quit_simulator: true,
       prelaunch_simulator: true,
@@ -38,37 +126,45 @@ platform :ios do
     )
   end
 
-  desc 'Build development app'
-  lane :build_development do
-    build_cofu_app(config: 'Development')
+  desc 'Builds the app from a configuration'
+  lane :build_cofu_app_from_configuration do |options|
+    build_application(
+      team_id: options['team_id'],
+      app_identifier: options['app_identifier']
+    )
   end
 
-  desc 'Build development app'
-  lane :build_beta do
-    build_cofu_app(config: 'Production')
+  desc "Builds the app with the default configuration"
+  lane :build_cofu_app do 
+    build_application(
+      team_id: ENV['COMPANY_TEAM_ID'],
+      app_identifier: 'car.pace.cofu'
+    )
   end
 
-  desc "Push a new beta build to TestFlight"
-  private_lane :build_cofu_app do |options|
+  desc "Builds the app"
+  private_lane :build_application do |options|
+    team_id = options[:team_id]
+    app_identifier = options[:app_identifier]
+
     verify_xcode
 
-    config = options[:config]
-    signing_type = config == 'Development' ? 'development' : 'appstore'
-    export_method = config == 'Development' ? 'development' : 'app-store'
-    info_plist_path = 'App/SupportingFiles/Info.plist'
+    signing_type = ENVIRONMENT == 'Sandbox' ? 'development' : 'appstore'
+    export_method = ENVIRONMENT == 'Sandbox' ? 'development' : 'app-store'
+    info_plist_path = 'App/Resources/InfoPlist/Info.plist'
 
     ## Repair code signing
     disable_automatic_code_signing(
       path: PROJECT_PATH,
-      team_id: TEAM_ID
+      team_id: team_id
     )
 
     match(
       type: signing_type,
-      team_id: TEAM_ID,
+      team_id: team_id,
       keychain_name: ENV['MATCH_KEYCHAIN_NAME'],
       keychain_password: ENV['MATCH_KEYCHAIN_PASSWORD'],
-      app_identifier: APP_IDENTIFIER,
+      app_identifier: app_identifier,
       verbose: true
     )
 
@@ -76,7 +172,7 @@ platform :ios do
       xcodeproj: PROJECT_PATH,
       target_filter: 'App',
       profile: ENV["sigh_car.pace.cofu_#{signing_type}_profile-path"],
-      build_configuration: config
+      build_configuration: ENVIRONMENT
     )
 
     set_info_plist_value(path: info_plist_path, key: 'CFBundleShortVersionString', value: version_number)
@@ -84,16 +180,15 @@ platform :ios do
 
     update_signing(
       target: 'App',
-      config: config,
-      team_id: TEAM_ID
+      team_id: team_id
     )
 
     gym(
       clean: true,
       export_method: export_method,
       scheme: 'App',
-      export_team_id: TEAM_ID,
-      configuration: config,
+      export_team_id: team_id,
+      configuration: ENVIRONMENT,
       include_bitcode: false,
       include_symbols: true,
       export_options: {
@@ -102,38 +197,30 @@ platform :ios do
         uploadBitcode: false,
         uploadSymbols: true,
         provisioningProfiles: {
-          APP_IDENTIFIER => ENV["sigh_car.pace.cofu_#{signing_type}_profile-name"]
+          app_identifier => ENV["sigh_car.pace.cofu_#{signing_type}_profile-name"]
         }
       }
     )
   end
 
-  lane :update_signing do |options|
-    environment = options[:config]
-    signing_identity = environment == 'Development' ? 'Apple Development' : 'iPhone Distribution'
-
+  private_lane :update_signing do |options|
+    signing_identity = ENVIRONMENT == 'Sandbox' ? 'Apple Development' : 'iPhone Distribution'
+    
     Dir.chdir('..') do
-      project_path = PROJECT_PATH
-      project = Xcodeproj::Project.open(project_path)
-      puts options[:target]
-      puts project.targets
-      main_target = project.targets.select { |target| target.name == options[:target] }.first
+      project = Xcodeproj::Project.open(PROJECT_PATH)
 
-      if main_target
-        puts 'Found target'
-        puts "Environment: #{environment}"
-        configuration = main_target.build_configurations.select { |config| config.name == environment }.first
+      build_settings = get_build_settings(project: project, target: options[:target])
 
-        if configuration
-            puts 'Found configuration'
-            sdk = configuration.build_settings['SDKROOT'] || 'iphoneos'
-            configuration.build_settings["CODE_SIGN_IDENTITY[sdk=#{sdk}*]"] = signing_identity
-            configuration.build_settings["DEVELOPMENT_TEAM[sdk=#{sdk}*]"] = options[:team_id]
-            configuration.build_settings["PROVISIONING_PROFILE_SPECIFIER[sdk=#{sdk}*]"] = configuration.build_settings['PROVISIONING_PROFILE_SPECIFIER'] || 'ERROR'
-        end
-
+      if build_settings
+        sdk = build_settings['SDKROOT'] || 'iphoneos'
+        build_settings["CODE_SIGN_IDENTITY[sdk=#{sdk}*]"] = signing_identity
+        build_settings["DEVELOPMENT_TEAM[sdk=#{sdk}*]"] = options[:team_id]
+        build_settings["PROVISIONING_PROFILE_SPECIFIER[sdk=#{sdk}*]"] = build_settings['PROVISIONING_PROFILE_SPECIFIER'] || 'ERROR'
         project.save
-      end
+        puts 'Successfully updated signing'
+      else
+        puts 'Failed updating signing'
+      end   
     end
   end
 

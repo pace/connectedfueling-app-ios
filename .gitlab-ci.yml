@@ -71,7 +71,7 @@ unit_test:
   extends: .base_template
   stage: test
   script:
-    - bundle exec fastlane test
+    - bundle exec fastlane test --env sandbox
   allow_failure: false
   <<: *only_merge_requests
   except:
@@ -83,7 +83,7 @@ build_review:
   extends: .base_template
   stage: build
   script:
-    - bundle exec fastlane build_development
+    - bundle exec fastlane build_cofu_app --env sandbox
   <<: *only_merge_requests
   except:
     refs:
@@ -134,7 +134,7 @@ build_testflight_app:
   only:
     - tags
   script:
-    - bundle exec fastlane build_beta
+    - bundle exec fastlane build_cofu_app
   artifacts:
     name: "$(git show -s --format=%ct $CI_COMMIT_SHA)-beta"
     paths:

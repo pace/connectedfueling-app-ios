@@ -23,10 +23,10 @@ class MenuViewModel: ObservableObject {
 
         let languageCode = SystemManager.languageCode
         let customListItems: [ListItem] = menuEntries.compactMap { menuEntry in
-            let menuItems = menuEntry.menuItems
+            let menuItems = menuEntry.menuEntryId.menuItems
 
-            guard let menuItem = menuItems.first(where: { $0.languageCode == languageCode }) ??
-                    menuItems.first(where: { $0.languageCode == Constants.fallbackLanguageCode })
+            guard let menuItem = menuItems.first(where: { $0.languageCode.hasPrefix(languageCode) }) ??
+                    menuItems.first(where: { $0.languageCode.hasPrefix(Constants.fallbackLanguageCode) })
             else {
                 let errorMessage = "[MenuViewModel] Couldn't find menu entry neither for language \(languageCode) nor for fallback language 'en'."
                 logError(errorMessage)

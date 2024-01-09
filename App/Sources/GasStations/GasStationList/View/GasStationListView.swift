@@ -95,7 +95,7 @@ struct GasStationListView: View {
 
         case .secondary:
             GasStationListView()
-                .addNavigationBar(style: .centeredIcon(icon: .brandIcon))
+                .addNavigationBar(style: .centeredIcon(icon: .secondaryHeaderIcon))
         }
     }
 }
@@ -109,7 +109,7 @@ struct GasStationListView: View {
 
         case .secondary:
             GasStationListView(viewModel: .init(stations: []))
-                .addNavigationBar(style: .centeredIcon(icon: .brandIcon))
+                .addNavigationBar(style: .centeredIcon(icon: .secondaryHeaderIcon))
         }
     }
 }
@@ -363,7 +363,7 @@ struct GasStationListView: View {
                           lastUpdated: Date(),
                           openingHours: [])
             ]))
-            .addNavigationBar(style: .centeredIcon(icon: .brandIcon))
+            .addNavigationBar(style: .centeredIcon(icon: .secondaryHeaderIcon))
         }
     }
 }
