@@ -15,7 +15,6 @@ class WalletViewModel: ObservableObject {
         self.userManager = userManager
 
         listItems = [
-            bonusItemList,
             paymentMethodsListItem,
             transactionsListItem
         ]
@@ -50,14 +49,6 @@ class WalletViewModel: ObservableObject {
 }
 
 private extension WalletViewModel {
-    var bonusItemList: ListItem {
-        .init(icon: .walletBonusIcon,
-              title: L10n.walletBonusTitle,
-              action: .detail(destination: AnyView(
-                BonusView()
-              )))
-    }
-
     var paymentMethodsListItem: ListItem {
         .init(icon: .walletTabIcon,
               title: L10n.walletPaymentMethodsTitle,

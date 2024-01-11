@@ -148,7 +148,6 @@
 		9A00F23C2B162BA00050C7FA /* OpeningHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A00F23B2B162BA00050C7FA /* OpeningHours.swift */; };
 		9A00F23E2B162BC70050C7FA /* OpeningHour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A00F23D2B162BC70050C7FA /* OpeningHour.swift */; };
 		9A00F2412B1A1FCE0050C7FA /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A00F2402B1A1FCE0050C7FA /* RoundedCorner.swift */; };
-		9AAAA8C92B28C24E00C515ED /* BonusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAAA8C82B28C24E00C515ED /* BonusView.swift */; };
 		9AAAA8D02B29F6C900C515ED /* ShareObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAAA8CF2B29F6C900C515ED /* ShareObject.swift */; };
 		9AAAA8D22B2B4EC600C515ED /* PriceUnavailableCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAAA8D12B2B4EC500C515ED /* PriceUnavailableCardView.swift */; };
 		9AC2D2FD2B32DCC6001A1864 /* NavigationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC2D2FC2B32DCC6001A1864 /* NavigationConfigurator.swift */; };
@@ -389,7 +388,6 @@
 		9A00F23B2B162BA00050C7FA /* OpeningHours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningHours.swift; sourceTree = "<group>"; };
 		9A00F23D2B162BC70050C7FA /* OpeningHour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningHour.swift; sourceTree = "<group>"; };
 		9A00F2402B1A1FCE0050C7FA /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
-		9AAAA8C82B28C24E00C515ED /* BonusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusView.swift; sourceTree = "<group>"; };
 		9AAAA8CF2B29F6C900C515ED /* ShareObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareObject.swift; sourceTree = "<group>"; };
 		9AAAA8D12B2B4EC500C515ED /* PriceUnavailableCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceUnavailableCardView.swift; sourceTree = "<group>"; };
 		9AC2D2FC2B32DCC6001A1864 /* NavigationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationConfigurator.swift; sourceTree = "<group>"; };
@@ -798,7 +796,6 @@
 		3B9562EA2B05FFFF00AD4184 /* Wallet */ = {
 			isa = PBXGroup;
 			children = (
-				9AAAA8C72B28C23700C515ED /* Bonus */,
 				9ADC1EBE2B274D4C0027B82B /* TransactionDetail */,
 				9ADF34812B27487300134E1D /* TransactionList */,
 				3B9562EB2B06001300AD4184 /* View */,
@@ -1098,14 +1095,6 @@
 				9A00F2302B0FA3220050C7FA /* OpeningHoursRow.swift */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		9AAAA8C72B28C23700C515ED /* Bonus */ = {
-			isa = PBXGroup;
-			children = (
-				9AAAA8C82B28C24E00C515ED /* BonusView.swift */,
-			);
-			path = Bonus;
 			sourceTree = "<group>";
 		};
 		9AC2D3002B32DDB5001A1864 /* NavigationBar */ = {
@@ -1509,7 +1498,6 @@
 				9A00F22D2B0E59720050C7FA /* PriceCardView.swift in Sources */,
 				3BA2DB1A2AE6A29300187D86 /* OnboardingNavigationView.swift in Sources */,
 				3B6D85182B10D1E200701DEE /* SafariView.swift in Sources */,
-				9AAAA8C92B28C24E00C515ED /* BonusView.swift in Sources */,
 				3BDE7B382ADD3468009A88DF /* AppManager.swift in Sources */,
 				3BA2DB242AE7B5E200187D86 /* POIManager.swift in Sources */,
 				9AAAA8D22B2B4EC600C515ED /* PriceUnavailableCardView.swift in Sources */,

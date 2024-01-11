@@ -3,7 +3,7 @@ import SwiftUI
 struct GasStationListEmptyView: View {
     var body: some View {
         VStack(spacing: 0) {
-            Image(.noResults)
+            Image(.gasStationListNoResults)
             Group {
                 TextLabel(L10n.Dashboard.EmptyView.title, alignment: .center)
                     .font(.system(size: 20, weight: .medium))
