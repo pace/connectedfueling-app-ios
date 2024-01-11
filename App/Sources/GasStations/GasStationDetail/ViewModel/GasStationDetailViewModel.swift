@@ -23,11 +23,16 @@ class GasStationDetailViewModel: GasStationItemViewModel {
         }
     }
 
+    let style: ConfigurationManager.Configuration.DetailViewStyle
+
     private(set) var openingHourRows: [OpeningHourInfo] = []
     private let poiManager: POIManager
 
-    init(gasStation: GasStation, poiManager: POIManager = .init()) {
+    init(gasStation: GasStation, 
+         poiManager: POIManager = .init(),
+         configuration: ConfigurationManager.Configuration = ConfigurationManager.configuration) {
         self.poiManager = poiManager
+        self.style = configuration.detailViewStyle
 
         super.init(gasStation: gasStation)
 

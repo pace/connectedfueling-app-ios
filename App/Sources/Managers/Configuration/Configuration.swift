@@ -9,6 +9,7 @@ extension ConfigurationManager {
 
         private(set) var onboardingStyle: OnboardingStyle = .secondary
         private(set) var gasStationListStyle: GasStationListStyle = .secondary
+        private(set) var detailViewStyle: DetailViewStyle = .secondary
         private(set) var textButtonsColorHex: String?
         private(set) var isNativeFuelCardManagementEnabled: Bool = true
         private(set) var isMapEnabled: Bool = false
@@ -42,6 +43,11 @@ extension ConfigurationManager.Configuration {
         case secondary
     }
 
+    enum DetailViewStyle: String, Decodable {
+        case primary
+        case secondary
+    }
+
     struct MenuEntry: Decodable {
         let menuEntryId: MenuEntryId
     }
@@ -69,6 +75,7 @@ extension ConfigurationManager.Configuration {
         case isAnalyticsEnabled = "analytics_enabled"
         case onboardingStyle = "onboarding_style"
         case gasStationListStyle = "gas_station_list_style"
+        case detailViewStyle = "detail_view_style"
         case textButtonsColorHex = "text_buttons_color"
         case isNativeFuelCardManagementEnabled = "native_fuelcard_management_enabled"
         case isMapEnabled = "map_enabled"

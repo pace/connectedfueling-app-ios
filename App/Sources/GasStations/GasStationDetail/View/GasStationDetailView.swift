@@ -74,7 +74,9 @@ struct GasStationDetailView: View {
                     }
                 }
                 Spacer()
-                Image(.brandIcon)
+                if viewModel.style == .primary {
+                    Image(.brandIcon)
+                }
             }
             closeDisclaimer
                 .padding(.top, .paddingXXXS)
