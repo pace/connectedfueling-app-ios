@@ -19,13 +19,13 @@ class OnboardingAnalyticsPageViewModel: OnboardingPageViewModel {
     override func setupPageActions() {
         pageActions = [
             .init(title: L10n.commonUseAccept, action: { [weak self] in
-                NSLog("[OnboardingAnalyticsPageViewModel] Did accept app tracking")
+                CofuLogger.i("[OnboardingAnalyticsPageViewModel] Did accept app tracking")
 
                 UserDefaults.isAnalyticsAllowed = true
                 self?.finishOnboardingPage()
             }),
             .init(title: L10n.commonUseDecline, action: { [weak self] in
-                NSLog("[OnboardingAnalyticsPageViewModel] Did decline app tracking")
+                CofuLogger.i("[OnboardingAnalyticsPageViewModel] Did decline app tracking")
 
                 self?.finishOnboardingPage()
             })

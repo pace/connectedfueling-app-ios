@@ -44,7 +44,7 @@ class OnboardingAuthorizationPageViewModel: OnboardingPageViewModel {
             switch result {
             case .success(let accessToken):
                 guard accessToken != nil else {
-                    NSLog("[OnboardingViewModel] Failed authentication - invalid token")
+                    CofuLogger.e("[OnboardingViewModel] Failed authentication - invalid token")
                     self?.alert = AppAlert.genericError
                     return
                 }
@@ -54,7 +54,7 @@ class OnboardingAuthorizationPageViewModel: OnboardingPageViewModel {
             case .failure(let error):
                 if let error = error as? IDKit.IDKitError,
                    case .authorizationCanceled = error {} else {
-                       NSLog("[OnboardingViewModel] Failed authentication with error \(error)")
+                       CofuLogger.e("[OnboardingViewModel] Failed authentication with error \(error)")
                        self?.alert = AppAlert.genericError
                 }
             }

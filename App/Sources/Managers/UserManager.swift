@@ -90,7 +90,7 @@ extension UserManager {
             return .success(accessToken)
 
         case .failure(let error):
-            NSLog("[UserManager] Failed token refresh with error \(error).")
+            CofuLogger.e("[UserManager] Failed token refresh with error \(error).")
 
             if case .failedTokenRefresh = error {
                 reset()
@@ -108,11 +108,11 @@ extension UserManager {
 
         switch await IDKit.resetSession() {
         case .success:
-            NSLog("[UserManager] Successfully logged out user")
+            CofuLogger.i("[UserManager] Successfully logged out user")
             return .success(())
 
         case .failure(let error):
-            NSLog("[UserManager] Failed ending remote session with \(error). User session will still be terminated.")
+            CofuLogger.e("[UserManager] Failed ending remote session with \(error). User session will still be terminated.")
             return .failure(error)
         }
     }

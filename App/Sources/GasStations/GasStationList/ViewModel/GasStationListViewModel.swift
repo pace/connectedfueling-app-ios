@@ -47,7 +47,7 @@ class GasStationListViewModel: ObservableObject {
                 self?.updateSections(with: sortedCofuStations)
 
             case.failure(let error):
-                NSLog("[GasStationListViewModel] Failed fetching cofu stations with error \(error)")
+                CofuLogger.e("[GasStationListViewModel] Failed fetching cofu stations with error \(error)")
                 self?.handleError(error)
             }
         }

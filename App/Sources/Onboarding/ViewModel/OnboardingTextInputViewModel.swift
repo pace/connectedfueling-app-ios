@@ -117,15 +117,15 @@ class OnboardingTextInputViewModel: ObservableObject, Identifiable {
             switch result {
             case .success(let didSendMailOTP):
                 guard didSendMailOTP else {
-                    NSLog("[OnboardingTextInputViewModel] Failed sending mail OTP")
+                    CofuLogger.e("[OnboardingTextInputViewModel] Failed sending mail OTP")
                     self?.alert = AppAlert.genericError
                     return
                 }
 
-                NSLog("[OnboardingTextInputViewModel] Successfully sent mail OTP")
+                CofuLogger.i("[OnboardingTextInputViewModel] Successfully sent mail OTP")
 
             case .failure(let error):
-                NSLog("[OnboardingTextInputViewModel] Failed sending mail OTP with \(error)")
+                CofuLogger.e("[OnboardingTextInputViewModel] Failed sending mail OTP with \(error)")
                 self?.alert = AppAlert.genericError
             }
         }

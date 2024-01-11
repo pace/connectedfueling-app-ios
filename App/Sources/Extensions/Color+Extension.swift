@@ -5,7 +5,6 @@ extension Color {
     static let primaryTint = ConfigurationManager.configuration.primaryBrandingColor
     static let primaryTintLight = ConfigurationManager.configuration.primaryBrandingColor.opacity(0.2)
     static let secondaryTint = ConfigurationManager.configuration.secondaryBrandingColor
-    static let highlight = ConfigurationManager.configuration.highlightColor
     static let textButtons = ConfigurationManager.configuration.textButtonsColor
 
     static let genericBlack = Color("generic_black")

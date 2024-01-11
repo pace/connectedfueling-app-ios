@@ -25,7 +25,7 @@ class TwoFactorAuthenticationViewModel: ObservableObject {
             switch result {
             case .success(let didSetPIN):
                 guard didSetPIN else {
-                    NSLog("[TwoFactorAuthenticationViewModel] Failed setting PIN")
+                    CofuLogger.e("[TwoFactorAuthenticationViewModel] Failed setting PIN")
                     self?.alert = AppAlert.genericError
                     return
                 }
@@ -33,7 +33,7 @@ class TwoFactorAuthenticationViewModel: ObservableObject {
                 self?.alert = AppAlert.confirmation(title: L10n.walletTwoFactorAuthenticationPinSetupSuccessful)
 
             case .failure(let error):
-                NSLog("[TwoFactorAuthenticationViewModel] Failed setting pin with \(error)")
+                CofuLogger.e("[TwoFactorAuthenticationViewModel] Failed setting pin with \(error)")
                 self?.alert = AppAlert.genericError
             }
         }
@@ -46,7 +46,7 @@ class TwoFactorAuthenticationViewModel: ObservableObject {
         switch result {
         case .success(let didSendMailOTP):
             guard didSendMailOTP else {
-                NSLog("[TwoFactorAuthenticationViewModel] Failed sending mail OTP")
+                CofuLogger.e("[TwoFactorAuthenticationViewModel] Failed sending mail OTP")
                 alert = AppAlert.genericError
                 return false
             }
@@ -54,7 +54,7 @@ class TwoFactorAuthenticationViewModel: ObservableObject {
             return true
 
         case .failure(let error):
-            NSLog("[TwoFactorAuthenticationViewModel] Failed sending mail OTP with \(error)")
+            CofuLogger.e("[TwoFactorAuthenticationViewModel] Failed sending mail OTP with \(error)")
             alert = AppAlert.genericError
             return false
         }
@@ -67,7 +67,7 @@ class TwoFactorAuthenticationViewModel: ObservableObject {
         switch result {
         case .success(let isEnabled):
             guard isEnabled else {
-                NSLog("[TwoFactorAuthenticationViewModel] Failed enabling biometric authentication")
+                CofuLogger.e("[TwoFactorAuthenticationViewModel] Failed enabling biometric authentication")
                 alert = AppAlert.genericError
                 return false
             }
@@ -76,7 +76,7 @@ class TwoFactorAuthenticationViewModel: ObservableObject {
             return true
 
         case .failure(let error):
-            NSLog("[TwoFactorAuthenticationViewModel] Failed enabling biometric authentication with error \(error)")
+            CofuLogger.e("[TwoFactorAuthenticationViewModel] Failed enabling biometric authentication with error \(error)")
             alert = AppAlert.genericError
             return false
         }

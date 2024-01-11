@@ -4,7 +4,9 @@ struct CrashReportingManager: CrashReportingService {
     private var crashlyticsService: CrashReportingService?
     private var sentryService: CrashReportingService?
 
-    init() {
+    static let shared: CrashReportingManager = .init()
+
+    private init() {
         #if CRASHLYTICS
         crashlyticsService = CrashlyticsService()
         #endif

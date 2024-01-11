@@ -35,7 +35,7 @@ class MapViewModel: ObservableObject {
                 self?.annotations = cofuStations.map(GasStationAnnotation.init)
 
             case .failure(let error):
-                NSLog("[MapViewModel] Failed fetching cofu stations with error \(error)")
+                CofuLogger.e("[MapViewModel] Failed fetching cofu stations with error \(error)")
             }
         }
     }

@@ -30,7 +30,7 @@ class PaymentMethodsViewModel: ObservableObject {
                 self?.paymentMethodViewModels = paymentMethods.map { .init(paymentMethod: $0, delegate: self) }
 
             case .failure(let error):
-                NSLog("[PaymentMethodsViewModel] Failed fetching payment methods with error \(error)")
+                CofuLogger.e("[PaymentMethodsViewModel] Failed fetching payment methods with error \(error)")
                 self?.error = .init(title: "Oops, something went wrong",
                                     description: "Please try again",
                                     retryAction: .init(title: "Try again", action: { [weak self] in
