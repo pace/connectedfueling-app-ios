@@ -128,45 +128,35 @@ release_schedule:
   tags:
     - docker
 
-build_testflight_app:
-  extends: .base_template
+load_apps:
+  image: python:3.8
   stage: build
   only:
     - tags
   script:
-    - bundle exec fastlane build_cofu_app
+    - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@${CI_SERVER_HOST}/pace/mobile/common.git tmp/common
+    - pip3 install -r tmp/common/scripts/whitelabel-app/requirements.txt
+    - python3 tmp/common/scripts/whitelabel-app/generate_build_apps_yaml.py --directus-base-url $DIRECTUS_BASE_URL --access-token $DIRECTUS_ACCESS_TOKEN
   artifacts:
-    name: "$(git show -s --format=%ct $CI_COMMIT_SHA)-beta"
     paths:
-      - App.ipa
-    expire_in: 1 weeks
+      - build-apps.yml
   except:
     variables:
       - $CI_COMMIT_TAG !~ /^connectedfueling-app-/
+  tags:
+    - docker
 
-publish_testflight_app:
-  extends: .base_template
-  stage: publish
+build_apps:
+  stage: build
   only:
     - tags
-  script:
-    - bundle exec fastlane publish
+  trigger:
+    include:
+      - artifact: build-apps.yml
+        job: load_apps
   except:
     variables:
       - $CI_COMMIT_TAG !~ /^connectedfueling-app-/
-
-submit:
-  extends: .base_template
-  stage: publish
-  needs: ["publish_testflight_app"]
-  only:
-    - tags
-  script:
-    - bundle exec fastlane submit_review --verbose
-  except:
-    variables:
-      - $CI_COMMIT_TAG !~ /^connectedfueling-app-/
-  when: manual
 
 ### Merge main into release (triggers GitHub mirroring)
 trigger_github_mirroring:

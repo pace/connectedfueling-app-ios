@@ -1,0 +1,76 @@
+spec:
+  inputs:
+    app-name:
+      type: string
+      default: "connectedfueling-app"
+    app-id:
+      type: string
+---
+
+stages:
+  - config
+  - build
+  - publish
+
+before_script:
+  - bundle install || true
+  - git fetch --prune --prune-tags
+  - echo "Latest tag to be used as build and version number"
+  - export LATEST_TAG=$(git describe --tags --abbrev=0 --match "connectedfueling-app-*")
+  - export TAG_NUMBER=${LATEST_TAG##connectedfueling-app-v} # Get content after connectedfueling-app-v
+  - export VERSION_NAME=${TAG_NUMBER%.*} # Get content before last .
+  - export BUILD_NUMBER=${TAG_NUMBER##*.} # Get content after last .
+
+.runner_tags:
+  tags:
+    - ios
+
+.base_template:
+  extends: .runner_tags
+  interruptible: true
+
+"$[[ inputs.app-name ]]-fetch_config":
+  image: python:3.7
+  stage: config
+  only:
+    - tags
+  script:
+    - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@${CI_SERVER_HOST}/pace/mobile/common.git tmp/common
+    - python3 tmp/common/scripts/whitelabel-app/fetch_configuration.py --whitelabel-app-id $[[ inputs.app-id ]] --platform ios --configuration-base-url $DIRECTUS_BASE_URL --access-token $DIRECTUS_ACCESS_TOKEN
+  artifacts:
+    name: App configuration
+    expire_in: 1 weeks
+    paths:
+      - configuration
+  except:
+    variables:
+      - $CI_COMMIT_TAG !~ /^connectedfueling-app-/
+
+"$[[ inputs.app-name ]]-build_testflight_app":
+  extends: .base_template
+  stage: build
+  only:
+    - tags
+  script:
+    - cd scripts
+    - python3 build_cofu_app_from_configuration.py --configuration-directory ../configuration
+  artifacts:
+    name: $(git show -s --format=%ct $CI_COMMIT_SHA)-beta
+    paths:
+      - App.ipa
+    expire_in: 1 weeks
+  except:
+    variables:
+      - $CI_COMMIT_TAG !~ /^connectedfueling-app-/
+
+"$[[ inputs.app-name ]]-publish_testflight_app":
+  extends: .base_template
+  stage: publish
+  only:
+    - tags
+  script:
+    - cd scripts
+    - python3 publish_cofu_app_from_configuration.py --configuration-directory ../configuration
+  except:
+    variables:
+      - $CI_COMMIT_TAG !~ /^connectedfueling-app-/
