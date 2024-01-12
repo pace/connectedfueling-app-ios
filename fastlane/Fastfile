@@ -96,8 +96,8 @@ platform :ios do
     
     build_application(
       is_merge_request_build: false,
-      team_id: options['team_id'],
-      app_identifier: options['app_identifier']
+      team_id: options[:team_id],
+      app_identifier: options[:app_identifier]
     )
 
     sentry_enabled = options[:sentry_enabled]
