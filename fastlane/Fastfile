@@ -11,26 +11,9 @@ platform :ios do
 
   before_all do |lane|
     clear_derived_data
-
-    # Keychain handling for merge request lanes
-    if [:build_cofu_app_for_merge_request].include?(lane)
-      create_keychain(
-        name: ENV['MATCH_KEYCHAIN_NAME'],
-        password: ENV['MATCH_KEYCHAIN_PASSWORD'],
-        unlock: true,
-        timeout: 3600,
-        add_to_search_list: true,
-        verbose: true
-      )
-    end
   end
 
   after_all do |lane|
-    # Keychain handling for merge request lanes
-    if [:build_cofu_app_for_merge_request].include?(lane)
-      delete_keychain(name: ENV['MATCH_KEYCHAIN_NAME'])
-    end
-
     # Handling for configured whitelabel app
     if [:build_cofu_app_from_configuration, :publish_cofu_app_from_configuration].include?(lane)
       copy_artifacts(
@@ -55,12 +38,25 @@ platform :ios do
   ##################################
 
   desc "Builds the default app for a merge request pipeline"
-  lane :build_cofu_app_for_merge_request do 
+  lane :build_cofu_app_for_merge_request do
+    # Create temporary keychain for match
+    create_keychain(
+      name: ENV['MATCH_KEYCHAIN_NAME'],
+      password: ENV['MATCH_KEYCHAIN_PASSWORD'],
+      unlock: true,
+      timeout: 3600,
+      add_to_search_list: true,
+      verbose: true
+    )
+
     build_application(
-      is_merge_request_build: true,
+      uses_match: true,
       team_id: ENV['COMPANY_TEAM_ID'],
       app_identifier: 'car.pace.cofu'
     )
+
+    # Delete temporary match keychain
+    delete_keychain(name: ENV['MATCH_KEYCHAIN_NAME'])
   end
 
   desc 'Run unit tests'
@@ -83,22 +79,45 @@ platform :ios do
   #########################################
   #########################################
 
-  # Branded whitelabel build lane
+  # Configured whitelabel app build lane
   desc 'Builds the app from a configuration'
   lane :build_cofu_app_from_configuration do |options|
-    keychain_password = options[:keychain_password]
+    is_default_whitelabel_app = options[:app_identifier] == 'car.pace.cofu'
     
-    unlock_keychain(
-      path: "./App/Resources/keychain.keychain",
-      password: keychain_password,
-      add_to_search_list: :replace
-    )
+    # Workaround until sigh is working for default whitelabel app
+    # If default whitelabel app -> use match
+    # Use sigh otherwise
+    if is_default_whitelabel_app
+      create_keychain(
+        name: ENV['MATCH_KEYCHAIN_NAME'],
+        password: ENV['MATCH_KEYCHAIN_PASSWORD'],
+        unlock: true,
+        timeout: 3600,
+        add_to_search_list: true,
+        verbose: true
+      )
+    else
+      unlock_keychain(
+        path: "./App/Resources/keychain.keychain",
+        password: options[:keychain_password],
+        add_to_search_list: :replace,
+        set_default: true # Sigh will look for a certificate in the default keychain. Set this keychain to default temporarily
+      )
+    end
     
     build_application(
-      is_merge_request_build: false,
-      team_id: options['team_id'],
-      app_identifier: options['app_identifier']
+      uses_match: is_default_whitelabel_app,
+      team_id: options[:team_id],
+      app_identifier: options[:app_identifier]
     )
+
+    if is_default_whitelabel_app
+      # Delete temporary match keychain
+      delete_keychain(name: ENV['MATCH_KEYCHAIN_NAME'])
+    else
+      # Set default keychain back to `login`
+      sh("security", "default-keychain", "-s", "/Users/pace/Library/Keychains/login.keychain-db")
+    end
 
     sentry_enabled = options[:sentry_enabled]
 
@@ -114,14 +133,14 @@ platform :ios do
 
   desc 'Publishes the configured app on TestFlight'
   lane :publish_cofu_app_from_configuration do |options|
-    team_id = options[:team_id]
+    asc_team_id = options[:asc_team_id]
     app_identifier = options[:app_identifier]
     test_groups = options[:test_groups]
     whats_new = options[:whats_new]
 
     upload_to_testflight(
       app_identifier: app_identifier,
-      team_id: team_id,
+      team_id: asc_team_id,
       ipa: 'artifacts/App.ipa',
       distribute_external: true,
       groups: test_groups,
@@ -149,14 +168,13 @@ platform :ios do
 
     client_id = options[:client_id]
     idp_hint = options[:idp_hint]
-    redirect_uri = "#{client_id}-app://callback"
+    redirect_uri = "#{client_id}://callback"
     url_scheme = "pace.#{SecureRandom.uuid}"
 
     set_info_plist_value(path: info_plist_path, key: "CFBundleName", value: app_name)
     update_app_identifier(xcodeproj: PROJECT_PATH, plist_path: info_plist_path, app_identifier: app_identifier)
 
     set_preprocessor_flags(analytics_enabled: analytics_enabled, crashlytics_enabled: crashlytics_enabled, sentry_enabled: sentry_enabled)
-    set_info_plist_value(path: info_plist_path, key: "SentryDSN", value: sentry_dsn)
 
     set_info_plist_value(path: info_plist_path, key: "PACECloudSDKIDKitSetup", subkey: "OIDConfigurationIDPHint", value: idp_hint)
     set_info_plist_value(path: info_plist_path, key: "PACECloudSDKIDKitSetup", subkey: "OIDConfigurationRedirectURI", value: redirect_uri)
@@ -168,6 +186,13 @@ platform :ios do
         urlScheme[:CFBundleURLSchemes] = [url_scheme]
       end
     )
+
+    if sentry_enabled
+      set_info_plist_value(path: info_plist_path, key: "SentryDSN", value: sentry_dsn)
+    else
+      puts 'Removing SentryDSN entry from Info.plist'
+      sh(command: "/usr/libexec/PlistBuddy -c 'Delete :SentryDSN' ../App/Resources/InfoPlist/Info.plist")
+    end
   end
 
   desc 'Sets the preprocessor flags for the current configuration'
@@ -214,7 +239,7 @@ platform :ios do
 
   desc "Builds the app"
   private_lane :build_application do |options|
-    is_merge_request_build = options[:is_merge_request_build]
+    uses_match = options[:uses_match]
     team_id = options[:team_id]
     app_identifier = options[:app_identifier]
 
@@ -227,7 +252,7 @@ platform :ios do
     ## Repair code signing
     disable_automatic_code_signing(path: PROJECT_PATH, team_id: team_id)
 
-    if is_merge_request_build
+    if uses_match
       match(
         type: signing_type,
         team_id: team_id,
@@ -244,8 +269,8 @@ platform :ios do
       )
     end
 
-    profile_path = is_merge_request_build ? ENV["sigh_car.pace.cofu_#{signing_type}_profile-path"] : "./AppStore_#{app_identifier}.mobileprovision"
-    profile_name = is_merge_request_build ? ENV["sigh_car.pace.cofu_#{signing_type}_profile-name"] : "#{app_identifier} AppStore"
+    profile_path = uses_match ? ENV["sigh_car.pace.cofu_#{signing_type}_profile-path"] : "./AppStore_#{app_identifier}.mobileprovision"
+    profile_name = uses_match ? ENV["sigh_car.pace.cofu_#{signing_type}_profile-name"] : "#{app_identifier} AppStore"
 
     update_project_provisioning(
       xcodeproj: PROJECT_PATH,
