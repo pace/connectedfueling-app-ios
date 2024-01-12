@@ -141,6 +141,7 @@ def replace_runtime_configuration():
 
   runtimeConfig['onboarding_style'] = 'primary' if os.path.exists(get_asset_path('onboarding_header_image_ios.pdf')) else 'secondary'
   runtimeConfig['gas_station_list_style'] = 'primary' if os.path.exists(get_asset_path('list_header_image_ios.pdf')) else 'secondary'
+  runtimeConfig['detail_view_style'] = 'primary' if os.path.exists(get_asset_path('detail_view_brand_icon_ios.pdf')) else 'secondary'
 
   with open("../App/Resources/configuration.json", 'w+') as file:
     json.dump(runtimeConfig, file, ensure_ascii=False, indent=4)

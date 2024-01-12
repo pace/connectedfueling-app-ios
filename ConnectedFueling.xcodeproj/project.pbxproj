@@ -15,6 +15,7 @@
 		3B0CFF9B2B27434E00EFC3ED /* MapAnnotationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0CFF9A2B27434E00EFC3ED /* MapAnnotationViewModel.swift */; };
 		3B0CFF9E2B27475C00EFC3ED /* MapBottomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0CFF9D2B27475C00EFC3ED /* MapBottomAnnotationView.swift */; };
 		3B0CFFA02B27476800EFC3ED /* MapTopAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0CFF9F2B27476800EFC3ED /* MapTopAnnotationView.swift */; };
+		3B3F641A2B50339B00D94BAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B3F64192B50339B00D94BAA /* LaunchScreen.storyboard */; };
 		3B4616C72ADE932D00DF57A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4616C62ADE932D00DF57A1 /* ContentView.swift */; };
 		3B4616CD2ADECDBC00DF57A1 /* OnboardingTextInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4616CC2ADECDBC00DF57A1 /* OnboardingTextInputViewModel.swift */; };
 		3B55852C2B189053009E300B /* SingleDigitTextFieldOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B55852B2B189053009E300B /* SingleDigitTextFieldOld.swift */; };
@@ -203,6 +204,7 @@
 		3B0CFF9A2B27434E00EFC3ED /* MapAnnotationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotationViewModel.swift; sourceTree = "<group>"; };
 		3B0CFF9D2B27475C00EFC3ED /* MapBottomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBottomAnnotationView.swift; sourceTree = "<group>"; };
 		3B0CFF9F2B27476800EFC3ED /* MapTopAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTopAnnotationView.swift; sourceTree = "<group>"; };
+		3B3F64192B50339B00D94BAA /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B4616C62ADE932D00DF57A1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3B4616CC2ADECDBC00DF57A1 /* OnboardingTextInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTextInputViewModel.swift; sourceTree = "<group>"; };
 		3B55852B2B189053009E300B /* SingleDigitTextFieldOld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleDigitTextFieldOld.swift; sourceTree = "<group>"; };
@@ -1031,6 +1033,7 @@
 				A92EDCAEA5155B139A67EC72 /* AppDelegate.swift */,
 				3BDE7B302ADD336B009A88DF /* ConnectedFuelingApp.swift */,
 				3B4616C62ADE932D00DF57A1 /* ContentView.swift */,
+				3B3F64192B50339B00D94BAA /* LaunchScreen.storyboard */,
 				3B7370C82AD566E500E9118B /* Extensions */,
 				3B819DB42B063ED200B4803A /* FuelTypeSelection */,
 				3BB47E662B31D7E8007D8842 /* GasStations */,
@@ -1348,6 +1351,7 @@
 				3B963D2E2B33417800905EFE /* InfoPlist.strings in Resources */,
 				3B0CE03F2B0236AF00929445 /* Localizable.strings in Resources */,
 				EE1D11878D72875C2EBE4BD8 /* Images.xcassets in Resources */,
+				3B3F641A2B50339B00D94BAA /* LaunchScreen.storyboard in Resources */,
 				C56CD44226BD40CE004E61FB /* privacy_statement.html in Resources */,
 				3B6D84F22B10CBF600701DEE /* usage_terms.html in Resources */,
 				3B784BDF2AFA1CC6006CBD4A /* GoogleService-Info.plist in Resources */,

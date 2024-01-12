@@ -4,6 +4,7 @@
     "secondary_branding_color": "#00CCF0",
     "onboarding_style": "primary",
     "gas_station_list_style": "primary",
+    "detail_view_style": "primary",
     "analytics_enabled": true,
     "native_fuelcard_management_enabled": true,
     "map_enabled": true,
