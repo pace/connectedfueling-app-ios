@@ -31,6 +31,11 @@ platform :ios do
       delete_keychain(name: ENV['MATCH_KEYCHAIN_NAME'])
     end
 
+    # Keychain handling for merge request lanes
+    if [:build_cofu_app_from_configuration].include?(lane)
+      delete_keychain(name: 'keychain')
+    end
+
     # Handling for configured whitelabel app
     if [:build_cofu_app_from_configuration, :publish_cofu_app_from_configuration].include?(lane)
       copy_artifacts(
@@ -96,8 +101,8 @@ platform :ios do
     
     build_application(
       is_merge_request_build: false,
-      team_id: options['team_id'],
-      app_identifier: options['app_identifier']
+      team_id: options[:team_id],
+      app_identifier: options[:app_identifier]
     )
 
     sentry_enabled = options[:sentry_enabled]
