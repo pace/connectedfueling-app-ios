@@ -89,7 +89,7 @@ def replace_legal_documents():
     ('es', 'en-US'),
     ('fr', 'fr-FR'),
     ('it', 'en-US'),
-    ('nl', 'en-US'),
+    ('nl', 'nl'),
     ('pl', 'en-US'),
     ('pt', 'en-US'),
     ('ro', 'en-US'),
@@ -158,7 +158,7 @@ def configure_build_settings():
   cwd = os.getcwd()
   os.chdir('..')
   
-  subprocess.run([
+  process = subprocess.run([
     'bundle', 
     'exec', 
     'fastlane', 
@@ -172,6 +172,9 @@ def configure_build_settings():
     f"client_id:{configuration['client_id']}",
     f"idp_hint:{idp_hint}"
   ])
+
+  if process.returncode != 0:
+    exit(1)  
   
   os.chdir(cwd)
   print("✅ Successfully configured build settings")
@@ -182,7 +185,7 @@ def build_app():
   cwd = os.getcwd()
   os.chdir('..')
   
-  subprocess.run([
+  process = subprocess.run([
     'bundle', 
     'exec', 
     'fastlane', 
@@ -193,6 +196,9 @@ def build_app():
     f"sentry_enabled:{configuration['sentry_enabled']}",
     f"sentry_project_name:{sentry_project_name}"
   ])
+
+  if process.returncode != 0:
+    exit(1)
   
   os.chdir(cwd)
 
