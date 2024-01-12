@@ -129,7 +129,7 @@ release_schedule:
     - docker
 
 load_apps:
-  image: python:3.8
+  image: python:3.7
   stage: build
   only:
     - tags
