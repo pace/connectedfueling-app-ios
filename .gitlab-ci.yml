@@ -7,8 +7,8 @@ before_script:
   - bundle install || true
   - git fetch --prune --prune-tags
   - echo "Latest tag to be used as build and version number"
-  - export LATEST_TAG=$(git describe --tags --abbrev=0 --match "connectedfueling-app-*")
-  - export TAG_NUMBER=${LATEST_TAG##connectedfueling-app-v} # Get content after connectedfueling-app-v
+  - export LATEST_TAG=$(git describe --tags --abbrev=0 --match "test-connectedfueling-app-*")
+  - export TAG_NUMBER=${LATEST_TAG##test-connectedfueling-app-v} # Get content after connectedfueling-app-v
   - export VERSION_NAME=${TAG_NUMBER%.*} # Get content before last .
   - export BUILD_NUMBER=${TAG_NUMBER##*.} # Get content after last .
   - echo "Building version $VERSION_NAME with build number $BUILD_NUMBER"
@@ -124,7 +124,7 @@ release_schedule:
   dependencies: []
   needs: []
   variables:
-    TAG_PREFIX: "connectedfueling-app-"
+    TAG_PREFIX: "test-connectedfueling-app-"
   tags:
     - docker
 
@@ -142,7 +142,7 @@ load_apps:
       - build-apps.yml
   except:
     variables:
-      - $CI_COMMIT_TAG !~ /^connectedfueling-app-/
+      - $CI_COMMIT_TAG !~ /^test-connectedfueling-app-/
   tags:
     - docker
 
@@ -156,16 +156,4 @@ build_apps:
         job: load_apps
   except:
     variables:
-      - $CI_COMMIT_TAG !~ /^connectedfueling-app-/
-
-### Merge main into release (triggers GitHub mirroring)
-trigger_github_mirroring:
-  extends: .base_template
-  stage: publish
-  before_script: []
-  after_script: []
-  script:
-    - ./scripts/trigger_github_mirroring.sh
-  rules:
-    - if: $SCHEDULED_JOB == "connectedfueling-app-github-mirroring"
-    - if: $SCHEDULED_JOB == "connectedfueling-app-testflight"
+      - $CI_COMMIT_TAG !~ /^test-connectedfueling-app-/
