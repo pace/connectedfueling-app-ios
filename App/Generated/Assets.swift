@@ -37,6 +37,7 @@ internal enum Asset {
     internal static let brandIcon = ImageAsset(name: "brand_icon")
     internal static let gasStationListNoResults = ImageAsset(name: "gas_station_list_no_results")
     internal static let gasStationListPrimaryHeaderIcon = ImageAsset(name: "gas_station_list_primary_header_icon")
+    internal static let cancel = ImageAsset(name: "cancel")
     internal static let mapFollowModeIcon = ImageAsset(name: "map_follow_mode_icon")
     internal static let mapFollowModeNoneIcon = ImageAsset(name: "map_follow_mode_none_icon")
     internal static let mapSearchIcon = ImageAsset(name: "map_search_icon")

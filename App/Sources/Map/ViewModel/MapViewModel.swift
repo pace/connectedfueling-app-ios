@@ -1,12 +1,19 @@
 import MapKit
 import SwiftUI
 
-class MapViewModel: ObservableObject {
+@MainActor
+class MapViewModel: NSObject, ObservableObject {
     @Published var region: MKCoordinateRegion
     @Published var trackingMode: MapUserTrackingMode = .follow
     @Published var annotations: [GasStationAnnotation] = []
     @Published var isTopAnnotationHidden: Bool = false
-    @Published var isSearchViewPresented: Bool = false
+    @Published var isSearchViewPresented: Bool = false {
+        didSet {
+            if isSearchViewPresented {
+                trackingMode = .none
+            }
+        }
+    }
 
     private var currentLocation: CLLocation?
     private var previousLocation: CLLocation?
@@ -15,10 +22,20 @@ class MapViewModel: ObservableObject {
 
     private let poiManager: POIManager
 
+    // Search
+    @Published var searchResults: [MKLocalSearchCompletion] = []
+    private let completer: MKLocalSearchCompleter
+
     init(poiManager: POIManager = .init()) {
         self.poiManager = poiManager
         self.region = .init(center: .init(latitude: 0, longitude: 0),
                             span: .init(latitudeDelta: 0, longitudeDelta: 0))
+        self.completer = MKLocalSearchCompleter()
+
+        super.init()
+
+        completer.delegate = self
+        completer.region = region
     }
 
     func didChangeRegion(_ region: MKCoordinateRegion) {
@@ -41,9 +58,64 @@ class MapViewModel: ObservableObject {
     }
 
     func didTriggerSearch(at coordinate: CLLocationCoordinate2D) {
-        trackingMode = .none
-        region = .init(center: coordinate,
-                       span: .init(latitudeDelta: Constants.Map.mapSpanDelta, longitudeDelta: Constants.Map.mapSpanDelta))
-        isSearchViewPresented = false
+            self.trackingMode = .none
+            self.region = .init(center: coordinate,
+                           span: .init(latitudeDelta: Constants.Map.mapSpanDelta, longitudeDelta: Constants.Map.mapSpanDelta))
+            self.isSearchViewPresented = false
+    }
+}
+
+// MARK: - Search
+
+extension MapViewModel {
+    func completeSearch(for text: String) {
+        if text.isEmpty {
+            searchResults = []
+            return
+        }
+
+        completer.cancel()
+        completer.queryFragment = text
+    }
+
+    func search(for text: String) {
+        let searchRequest = MKLocalSearch.Request()
+        searchRequest.naturalLanguageQuery = text
+        searchRequest.region = region
+        search(for: searchRequest)
+    }
+
+    func search(for searchCompletion: MKLocalSearchCompletion) {
+        let searchRequest = MKLocalSearch.Request(completion: searchCompletion)
+        searchRequest.region = region
+        search(for: searchRequest)
+    }
+
+    private func search(for request: MKLocalSearch.Request) {
+        let search = MKLocalSearch(request: request)
+        search.start { [weak self] response, error in
+            if let error {
+                CofuLogger.e("[MapViewModel] Search failed with error \(error)")
+                return
+            }
+
+            guard let response = response,
+                  let searchItemCoordinate = response.mapItems.first?.placemark.location?.coordinate else {
+                CofuLogger.w("[MapViewModel] Search response invalid")
+                return
+            }
+
+            self?.didTriggerSearch(at: searchItemCoordinate)
+        }
+    }
+}
+
+extension MapViewModel: MKLocalSearchCompleterDelegate {
+    func completerDidUpdateResults(_ completer: MKLocalSearchCompleter) {
+        searchResults = Array(completer.results.prefix(5))
+    }
+
+    func completer(_ completer: MKLocalSearchCompleter, didFailWithError error: Error) {
+        CofuLogger.e("[MapViewModel] Search completer did fail with error \(error)")
     }
 }
