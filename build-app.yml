@@ -16,8 +16,8 @@ before_script:
   - bundle install || true
   - git fetch --prune --prune-tags
   - echo "Latest tag to be used as build and version number"
-  - export LATEST_TAG=$(git describe --tags --abbrev=0 --match "test-connectedfueling-app-*")
-  - export TAG_NUMBER=${LATEST_TAG##test-connectedfueling-app-v} # Get content after connectedfueling-app-v
+  - export LATEST_TAG=$(git describe --tags --abbrev=0 --match "connectedfueling-app-*")
+  - export TAG_NUMBER=${LATEST_TAG##connectedfueling-app-v} # Get content after connectedfueling-app-v
   - export VERSION_NAME=${TAG_NUMBER%.*} # Get content before last .
   - export BUILD_NUMBER=${TAG_NUMBER##*.} # Get content after last .
 
@@ -44,7 +44,7 @@ before_script:
       - configuration
   except:
     variables:
-      - $CI_COMMIT_TAG !~ /^test-connectedfueling-app-/
+      - $CI_COMMIT_TAG !~ /^connectedfueling-app-/
 
 "$[[ inputs.app-name ]]-build_testflight_app":
   extends: .base_template
@@ -61,7 +61,7 @@ before_script:
     expire_in: 1 weeks
   except:
     variables:
-      - $CI_COMMIT_TAG !~ /^test-connectedfueling-app-/
+      - $CI_COMMIT_TAG !~ /^connectedfueling-app-/
 
 "$[[ inputs.app-name ]]-publish_testflight_app":
   extends: .base_template
@@ -73,4 +73,4 @@ before_script:
     - python3 publish_cofu_app_from_configuration.py --configuration-directory ../configuration
   except:
     variables:
-      - $CI_COMMIT_TAG !~ /^test-connectedfueling-app-/
+      - $CI_COMMIT_TAG !~ /^connectedfueling-app-/
