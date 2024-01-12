@@ -11,26 +11,9 @@ platform :ios do
 
   before_all do |lane|
     clear_derived_data
-
-    # Keychain handling for merge request lanes
-    if [:build_cofu_app_for_merge_request].include?(lane)
-      create_keychain(
-        name: ENV['MATCH_KEYCHAIN_NAME'],
-        password: ENV['MATCH_KEYCHAIN_PASSWORD'],
-        unlock: true,
-        timeout: 3600,
-        add_to_search_list: true,
-        verbose: true
-      )
-    end
   end
 
   after_all do |lane|
-    # Keychain handling for merge request lanes
-    if [:build_cofu_app_for_merge_request].include?(lane)
-      delete_keychain(name: ENV['MATCH_KEYCHAIN_NAME'])
-    end
-
     # Handling for configured whitelabel app
     if [:build_cofu_app_from_configuration, :publish_cofu_app_from_configuration].include?(lane)
       copy_artifacts(
@@ -55,12 +38,25 @@ platform :ios do
   ##################################
 
   desc "Builds the default app for a merge request pipeline"
-  lane :build_cofu_app_for_merge_request do 
+  lane :build_cofu_app_for_merge_request do
+    # Create temporary keychain for match
+    create_keychain(
+      name: ENV['MATCH_KEYCHAIN_NAME'],
+      password: ENV['MATCH_KEYCHAIN_PASSWORD'],
+      unlock: true,
+      timeout: 3600,
+      add_to_search_list: true,
+      verbose: true
+    )
+
     build_application(
       is_merge_request_build: true,
       team_id: ENV['COMPANY_TEAM_ID'],
       app_identifier: 'car.pace.cofu'
     )
+
+    # Delete temporary match keychain
+    delete_keychain(name: ENV['MATCH_KEYCHAIN_NAME'])
   end
 
   desc 'Run unit tests'
@@ -83,22 +79,27 @@ platform :ios do
   #########################################
   #########################################
 
-  # Branded whitelabel build lane
+  # Configured whitelabel app build lane
   desc 'Builds the app from a configuration'
   lane :build_cofu_app_from_configuration do |options|
-    keychain_password = options[:keychain_password]
-    
     unlock_keychain(
       path: "./App/Resources/keychain.keychain",
-      password: keychain_password,
-      add_to_search_list: :replace
+      password: options[:keychain_password],
+      add_to_search_list: :replace,
+      set_default: true # Sigh will look for a certificate in the default keychain. Set this keychain to default temporarily
     )
     
     build_application(
       is_merge_request_build: false,
-      team_id: options['team_id'],
-      app_identifier: options['app_identifier']
+      team_id: options[:team_id],
+      app_identifier: options[:app_identifier]
     )
+
+    # Set default keychain back to `login`
+    sh("security", "default-keychain", "-s", "/Users/pace/Library/Keychains/login.keychain-db")
+    
+    # Delete temporary keychain for configuration
+    delete_keychain(name: 'keychain')
 
     sentry_enabled = options[:sentry_enabled]
 
