@@ -18,10 +18,6 @@
 		3B3F641A2B50339B00D94BAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B3F64192B50339B00D94BAA /* LaunchScreen.storyboard */; };
 		3B4616C72ADE932D00DF57A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4616C62ADE932D00DF57A1 /* ContentView.swift */; };
 		3B4616CD2ADECDBC00DF57A1 /* OnboardingTextInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4616CC2ADECDBC00DF57A1 /* OnboardingTextInputViewModel.swift */; };
-		3B55852C2B189053009E300B /* SingleDigitTextFieldOld.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B55852B2B189053009E300B /* SingleDigitTextFieldOld.swift */; };
-		3B55852E2B189EA6009E300B /* SingleDigitTextFieldGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B55852D2B189EA6009E300B /* SingleDigitTextFieldGroupViewModel.swift */; };
-		3B5585302B189EAD009E300B /* SingleDigitTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B55852F2B189EAD009E300B /* SingleDigitTextField.swift */; };
-		3B5585322B189EB5009E300B /* SingleDigitTextFieldGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5585312B189EB5009E300B /* SingleDigitTextFieldGroup.swift */; };
 		3B5585422B18D3EA009E300B /* usage_analysis.html in Resources */ = {isa = PBXBuildFile; fileRef = 3B5585402B18D3EA009E300B /* usage_analysis.html */; };
 		3B5880D12B0CA7DE0057CDC5 /* Image+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5880D02B0CA7DE0057CDC5 /* Image+Extension.swift */; };
 		3B5A1C8A2B15FC6C00EA5754 /* NavigationBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5A1C892B15FC6C00EA5754 /* NavigationBarStyle.swift */; };
@@ -149,6 +145,7 @@
 		9A00F23C2B162BA00050C7FA /* OpeningHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A00F23B2B162BA00050C7FA /* OpeningHours.swift */; };
 		9A00F23E2B162BC70050C7FA /* OpeningHour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A00F23D2B162BC70050C7FA /* OpeningHour.swift */; };
 		9A00F2412B1A1FCE0050C7FA /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A00F2402B1A1FCE0050C7FA /* RoundedCorner.swift */; };
+		9A2D3DC72B4D6FF400AE8F8F /* SingleDigitsTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A2D3DC62B4D6FF400AE8F8F /* SingleDigitsTextField.swift */; };
 		9AAAA8D02B29F6C900C515ED /* ShareObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAAA8CF2B29F6C900C515ED /* ShareObject.swift */; };
 		9AAAA8D22B2B4EC600C515ED /* PriceUnavailableCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AAAA8D12B2B4EC500C515ED /* PriceUnavailableCardView.swift */; };
 		9AC2D2FD2B32DCC6001A1864 /* NavigationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC2D2FC2B32DCC6001A1864 /* NavigationConfigurator.swift */; };
@@ -207,10 +204,6 @@
 		3B3F64192B50339B00D94BAA /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B4616C62ADE932D00DF57A1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3B4616CC2ADECDBC00DF57A1 /* OnboardingTextInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTextInputViewModel.swift; sourceTree = "<group>"; };
-		3B55852B2B189053009E300B /* SingleDigitTextFieldOld.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleDigitTextFieldOld.swift; sourceTree = "<group>"; };
-		3B55852D2B189EA6009E300B /* SingleDigitTextFieldGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleDigitTextFieldGroupViewModel.swift; sourceTree = "<group>"; };
-		3B55852F2B189EAD009E300B /* SingleDigitTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleDigitTextField.swift; sourceTree = "<group>"; };
-		3B5585312B189EB5009E300B /* SingleDigitTextFieldGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleDigitTextFieldGroup.swift; sourceTree = "<group>"; };
 		3B5585412B18D3EA009E300B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = de; path = de.lproj/usage_analysis.html; sourceTree = "<group>"; };
 		3B5585432B18D3F1009E300B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = en; path = en.lproj/usage_analysis.html; sourceTree = "<group>"; };
 		3B5585442B18D3F5009E300B /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = cs; path = cs.lproj/usage_analysis.html; sourceTree = "<group>"; };
@@ -390,6 +383,7 @@
 		9A00F23B2B162BA00050C7FA /* OpeningHours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningHours.swift; sourceTree = "<group>"; };
 		9A00F23D2B162BC70050C7FA /* OpeningHour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpeningHour.swift; sourceTree = "<group>"; };
 		9A00F2402B1A1FCE0050C7FA /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		9A2D3DC62B4D6FF400AE8F8F /* SingleDigitsTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleDigitsTextField.swift; sourceTree = "<group>"; };
 		9AAAA8CF2B29F6C900C515ED /* ShareObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareObject.swift; sourceTree = "<group>"; };
 		9AAAA8D12B2B4EC500C515ED /* PriceUnavailableCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceUnavailableCardView.swift; sourceTree = "<group>"; };
 		9AC2D2FC2B32DCC6001A1864 /* NavigationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationConfigurator.swift; sourceTree = "<group>"; };
@@ -517,28 +511,9 @@
 		3B5585282B188C82009E300B /* TextField */ = {
 			isa = PBXGroup;
 			children = (
-				3B5585342B18A0DD009E300B /* View */,
-				3B5585332B18A0D3009E300B /* ViewModel */,
+				9A2D3DC62B4D6FF400AE8F8F /* SingleDigitsTextField.swift */,
 			);
 			path = TextField;
-			sourceTree = "<group>";
-		};
-		3B5585332B18A0D3009E300B /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				3B55852D2B189EA6009E300B /* SingleDigitTextFieldGroupViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		3B5585342B18A0DD009E300B /* View */ = {
-			isa = PBXGroup;
-			children = (
-				3B55852B2B189053009E300B /* SingleDigitTextFieldOld.swift */,
-				3B55852F2B189EAD009E300B /* SingleDigitTextField.swift */,
-				3B5585312B189EB5009E300B /* SingleDigitTextFieldGroup.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		3B618A222B29967E00563E73 /* Search */ = {
@@ -1474,7 +1449,6 @@
 				3BAE60732AD7CBC4006EA9DD /* ActionButton.swift in Sources */,
 				3B618A282B2996D800563E73 /* SearchView.swift in Sources */,
 				3B77644D2AF91B7400BE185B /* CrashReportingService.swift in Sources */,
-				3B5585322B189EB5009E300B /* SingleDigitTextFieldGroup.swift in Sources */,
 				3B65A4802B19D82D006B6890 /* TwoFactorAuthenticationView.swift in Sources */,
 				3BDE7B1A2AD94E06009A88DF /* FuelTypeButtonsGroup.swift in Sources */,
 				3BA2DB002AE676FD00187D86 /* GasStationListItemView.swift in Sources */,
@@ -1507,7 +1481,6 @@
 				9AAAA8D22B2B4EC600C515ED /* PriceUnavailableCardView.swift in Sources */,
 				9A00F23C2B162BA00050C7FA /* OpeningHours.swift in Sources */,
 				3B6277352B0768C300528A1F /* AppError.swift in Sources */,
-				3B5585302B189EAD009E300B /* SingleDigitTextField.swift in Sources */,
 				3B819DCA2B06660C00B4803A /* PaymentMethodsListView.swift in Sources */,
 				3B7764542AF91C4800BE185B /* CrashlyticsService.swift in Sources */,
 				3BAE60672AD68116006EA9DD /* OnboardingPageAction.swift in Sources */,
@@ -1556,6 +1529,7 @@
 				3B6E0B7F2B2203F1001F4FE9 /* MapViewModel.swift in Sources */,
 				3BA2DB112AE6A20000187D86 /* AppTabView.swift in Sources */,
 				3BA2DB132AE6A21800187D86 /* AppNavigationView.swift in Sources */,
+				9A2D3DC72B4D6FF400AE8F8F /* SingleDigitsTextField.swift in Sources */,
 				3BAE605B2AD677B7006EA9DD /* Constants.swift in Sources */,
 				3B65A4882B1A08EC006B6890 /* Switch.swift in Sources */,
 				3BDE7B142AD83D06009A88DF /* LoadingSpinner.swift in Sources */,
@@ -1581,13 +1555,11 @@
 				9A00F22B2B0E56320050C7FA /* DistanceTagView.swift in Sources */,
 				3B819DCE2B06699900B4803A /* PaymentMethod.swift in Sources */,
 				3BDE7B2B2ADD1C0F009A88DF /* OnboardingViewModel.swift in Sources */,
-				3B55852E2B189EA6009E300B /* SingleDigitTextFieldGroupViewModel.swift in Sources */,
 				3BDE7B4A2ADD7DC7009A88DF /* OnboardingTextInputType.swift in Sources */,
 				3BA2DB022AE6776C00187D86 /* GasStationListItemViewModel.swift in Sources */,
 				3BA2DB0C2AE69BF200187D86 /* NSLocale+Extension.swift in Sources */,
 				9A00F2382B14EC930050C7FA /* PriceCardData.swift in Sources */,
 				3B819DBB2B063F3000B4803A /* FuelTypeSelectionViewModel.swift in Sources */,
-				3B55852C2B189053009E300B /* SingleDigitTextFieldOld.swift in Sources */,
 				3B5A1C8E2B163E7800EA5754 /* OnboardingLegalPageViewModel.swift in Sources */,
 				0BDC0CD42B35877200BD341F /* CofuLogger.swift in Sources */,
 				9A00F2412B1A1FCE0050C7FA /* RoundedCorner.swift in Sources */,
