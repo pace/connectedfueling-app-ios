@@ -7,8 +7,8 @@ before_script:
   - bundle install || true
   - git fetch --prune --prune-tags
   - echo "Latest tag to be used as build and version number"
-  - export LATEST_TAG=$(git describe --tags --abbrev=0 --match "connectedfueling-app-*")
-  - export TAG_NUMBER=${LATEST_TAG##connectedfueling-app-v} # Get content after connectedfueling-app-v
+  - export LATEST_TAG=$(git describe --tags --abbrev=0 --match "test-connectedfueling-app-*")
+  - export TAG_NUMBER=${LATEST_TAG##test-connectedfueling-app-v} # Get content after connectedfueling-app-v
   - export VERSION_NAME=${TAG_NUMBER%.*} # Get content before last .
   - export BUILD_NUMBER=${TAG_NUMBER##*.} # Get content after last .
   - echo "Building version $VERSION_NAME with build number $BUILD_NUMBER"
@@ -110,7 +110,7 @@ release_schedule:
     - export BUILD_NUMBER=$(TZ=Etc/Utc date "+%Y%m%d%H")
     - export VERSION_NAME=$(TZ=Etc/Utc date "+%y.%V.%u")
     - export CUSTOM_TAG_NAME="${TAG_PREFIX}v${VERSION_NAME}.${BUILD_NUMBER}"
-    - export CUSTOM_BRANCH_NAME="main"
+    - export CUSTOM_BRANCH_NAME="58-get-pipeline-to-work"
     - echo "Creating tag with tag name:" $CUSTOM_TAG_NAME
     - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@git.pace.cloud/pace/mobile/common.git tmp/common
     - cd tmp/common/scripts/release
@@ -124,17 +124,19 @@ release_schedule:
   dependencies: []
   needs: []
   variables:
-    TAG_PREFIX: "connectedfueling-app-"
+    TAG_PREFIX: "test-connectedfueling-app-"
   tags:
     - docker
 
 load_apps:
   image: python:3.8
   stage: build
+  before_script: []
+  after_script: []
   only:
     - tags
   script:
-    - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@${CI_SERVER_HOST}/pace/mobile/common.git tmp/common
+    - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@${CI_SERVER_HOST}/pace/mobile/common.git -b "Adjust-generate-build-apps-yaml" tmp/common
     - pip3 install -r tmp/common/scripts/whitelabel-app/requirements.txt
     - python3 tmp/common/scripts/whitelabel-app/generate_build_apps_yaml.py --directus-base-url $DIRECTUS_BASE_URL --access-token $DIRECTUS_ACCESS_TOKEN
   artifacts:
@@ -142,12 +144,13 @@ load_apps:
       - build-apps.yml
   except:
     variables:
-      - $CI_COMMIT_TAG !~ /^connectedfueling-app-/
+      - $CI_COMMIT_TAG !~ /^test-connectedfueling-app-/
   tags:
     - docker
 
 build_apps:
   stage: build
+  needs: ["load_apps"]
   only:
     - tags
   trigger:
@@ -156,4 +159,16 @@ build_apps:
         job: load_apps
   except:
     variables:
-      - $CI_COMMIT_TAG !~ /^connectedfueling-app-/
+      - $CI_COMMIT_TAG !~ /^test-connectedfueling-app-/
+
+### Merge main into release (triggers GitHub mirroring)
+trigger_github_mirroring:
+  extends: .base_template
+  stage: publish
+  before_script: []
+  after_script: []
+  script:
+    - ./scripts/trigger_github_mirroring.sh
+  rules:
+    - if: $SCHEDULED_JOB == "connectedfueling-app-github-mirroring"
+    # - if: $SCHEDULED_JOB == "connectedfueling-app-testflight"
