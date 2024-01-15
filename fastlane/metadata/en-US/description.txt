@@ -1,1 +1,0 @@
-Use this app to test mobile payments at Connected Fueling stations.
