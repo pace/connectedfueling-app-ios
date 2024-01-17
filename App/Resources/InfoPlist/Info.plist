@@ -46,7 +46,7 @@
 		<key>OIDConfigurationIDPHint</key>
 		<string></string>
 		<key>OIDConfigurationRedirectURI</key>
-		<string>cofu-app://callback</string>
+		<string>pace-whitelabel-app://callback</string>
 	</dict>
 	<key>SentryDSN</key>
 	<string>https://581d11342efa4adcb392c568eaa71ca3@sentry.pace.cloud/276</string>
