@@ -1,7 +1,11 @@
 import SwiftUI
 
 class OnboardingAnalyticsPageViewModel: OnboardingPageViewModel {
-    init(style: ConfigurationManager.Configuration.OnboardingStyle) {
+    let analyticsManager: AnalyticsManager
+
+    init(style: ConfigurationManager.Configuration.OnboardingStyle,
+         analyticsManager: AnalyticsManager) {
+        self.analyticsManager = analyticsManager
         let description = L10n.onboardingTrackingDescription
         let appTracking = L10n.onboardingTrackingAppTracking
 
@@ -22,14 +26,23 @@ class OnboardingAnalyticsPageViewModel: OnboardingPageViewModel {
                 CofuLogger.i("[OnboardingAnalyticsPageViewModel] Did accept app tracking")
 
                 UserDefaults.isAnalyticsAllowed = true
+                self?.analyticsManager.updateActivationState()
+                self?.sendAppInstalledEvent()
                 self?.finishOnboardingPage()
             }),
             .init(title: L10n.commonUseDecline, action: { [weak self] in
                 CofuLogger.i("[OnboardingAnalyticsPageViewModel] Did decline app tracking")
 
+                self?.analyticsManager.updateActivationState()
                 self?.finishOnboardingPage()
             })
         ]
+    }
+
+    func sendAppInstalledEvent() {
+        guard !UserDefaults.firstStart else { return }
+        analyticsManager.logEvent(AnalyticEvents.AppInstalledEvent())
+        UserDefaults.firstStart = true
     }
 
     override func handleLinks(_ url: URL) -> OpenURLAction.Result {

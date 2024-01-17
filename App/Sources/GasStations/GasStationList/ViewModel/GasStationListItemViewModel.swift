@@ -38,10 +38,12 @@ class GasStationListItemViewModel: GasStationItemViewModel {
 
     private let poiManager: POIManager
 
-    init(gasStation: GasStation, poiManager: POIManager = .init()) {
+    init(gasStation: GasStation,
+         poiManager: POIManager = .init(),
+         analyticsManager: AnalyticsManager = .init()) {
         self.poiManager = poiManager
 
-        super.init(gasStation: gasStation)
+        super.init(gasStation: gasStation, analyticsManager: analyticsManager)
 
         poiManager
             .formattedPricePublisher(gasStation: gasStation,

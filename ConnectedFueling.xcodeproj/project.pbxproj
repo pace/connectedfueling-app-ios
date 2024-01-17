@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B3A9B992B3C37260065CA5A /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3A9B982B3C37260065CA5A /* FirebaseService.swift */; };
+		0B3A9B9B2B3C37AB0065CA5A /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3A9B9A2B3C37AB0065CA5A /* AnalyticsManager.swift */; };
+		0B3A9B9D2B3C37FC0065CA5A /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3A9B9C2B3C37FC0065CA5A /* AnalyticsService.swift */; };
+		0B3A9B9F2B3D74670065CA5A /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 0B3A9B9E2B3D74670065CA5A /* FirebaseAnalytics */; };
+		0B3A9BA32B3DA4F60065CA5A /* AnalyticEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3A9BA22B3DA4F60065CA5A /* AnalyticEvents.swift */; };
 		0BDC0CD42B35877200BD341F /* CofuLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDC0CD32B35877200BD341F /* CofuLogger.swift */; };
 		16E730131166C556AA0708EF /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2EB20D5198AC7E6603D98D72 /* Settings.bundle */; };
 		1867B8D8BE2B8499106AC9E1 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B5B4A6AE57364F8FC6B771 /* Assets.swift */; };
@@ -192,6 +197,10 @@
 		0B05D7D828B4FF4A00445C74 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0B05D7D928B4FF4A00445C74 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0B05D7DA28B4FF4A00445C74 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0B3A9B982B3C37260065CA5A /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
+		0B3A9B9A2B3C37AB0065CA5A /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
+		0B3A9B9C2B3C37FC0065CA5A /* AnalyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
+		0B3A9BA22B3DA4F60065CA5A /* AnalyticEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticEvents.swift; sourceTree = "<group>"; };
 		0BDC0CD32B35877200BD341F /* CofuLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CofuLogger.swift; sourceTree = "<group>"; };
 		0DDED74D77EA34B1E82D66CC /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		0DE070BD08140DF741A4FC14 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -411,6 +420,7 @@
 			files = (
 				C56DF9B9268F5A320074DBC8 /* PACECloudSDK in Frameworks */,
 				3B7764582AF91FFD00BE185B /* Sentry in Frameworks */,
+				0B3A9B9F2B3D74670065CA5A /* FirebaseAnalytics in Frameworks */,
 				3B77645B2AF922F700BE185B /* FirebaseCrashlytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,6 +428,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B3A9B962B3C25BF0065CA5A /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				0B3A9B972B3C37180065CA5A /* Services */,
+				0B3A9BA22B3DA4F60065CA5A /* AnalyticEvents.swift */,
+				0B3A9B9C2B3C37FC0065CA5A /* AnalyticsService.swift */,
+				0B3A9B9A2B3C37AB0065CA5A /* AnalyticsManager.swift */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
+		0B3A9B972B3C37180065CA5A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0B3A9B982B3C37260065CA5A /* FirebaseService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		0BDC0CD22B3582A800BD341F /* Logging */ = {
 			isa = PBXGroup;
 			children = (
@@ -913,6 +942,7 @@
 		3BAE606D2AD7CBA6006EA9DD /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				0B3A9B962B3C25BF0065CA5A /* Analytics */,
 				3BE4E9102AFCD54000AC5EE9 /* Configuration */,
 				3B7764492AF91B1500BE185B /* CrashReporting */,
 				3BDE7B372ADD3468009A88DF /* AppManager.swift */,
@@ -1244,6 +1274,7 @@
 				C56DF9B8268F5A320074DBC8 /* PACECloudSDK */,
 				3B7764572AF91FFD00BE185B /* Sentry */,
 				3B77645A2AF922F700BE185B /* FirebaseCrashlytics */,
+				0B3A9B9E2B3D74670065CA5A /* FirebaseAnalytics */,
 			);
 			productName = App;
 			productReference = A21D1F58961E1C012B58255C /* App.app */;
@@ -1451,6 +1482,7 @@
 				3B77644D2AF91B7400BE185B /* CrashReportingService.swift in Sources */,
 				3B65A4802B19D82D006B6890 /* TwoFactorAuthenticationView.swift in Sources */,
 				3BDE7B1A2AD94E06009A88DF /* FuelTypeButtonsGroup.swift in Sources */,
+				0B3A9BA32B3DA4F60065CA5A /* AnalyticEvents.swift in Sources */,
 				3BA2DB002AE676FD00187D86 /* GasStationListItemView.swift in Sources */,
 				9AC2D2FF2B32DD84001A1864 /* NavigationBarColorModifier.swift in Sources */,
 				3BAE60582AD59239006EA9DD /* OnboardingPageViewModel.swift in Sources */,
@@ -1476,6 +1508,7 @@
 				9A00F22D2B0E59720050C7FA /* PriceCardView.swift in Sources */,
 				3BA2DB1A2AE6A29300187D86 /* OnboardingNavigationView.swift in Sources */,
 				3B6D85182B10D1E200701DEE /* SafariView.swift in Sources */,
+				0B3A9B9B2B3C37AB0065CA5A /* AnalyticsManager.swift in Sources */,
 				3BDE7B382ADD3468009A88DF /* AppManager.swift in Sources */,
 				3BA2DB242AE7B5E200187D86 /* POIManager.swift in Sources */,
 				9AAAA8D22B2B4EC600C515ED /* PriceUnavailableCardView.swift in Sources */,
@@ -1484,6 +1517,7 @@
 				3B819DCA2B06660C00B4803A /* PaymentMethodsListView.swift in Sources */,
 				3B7764542AF91C4800BE185B /* CrashlyticsService.swift in Sources */,
 				3BAE60672AD68116006EA9DD /* OnboardingPageAction.swift in Sources */,
+				0B3A9B992B3C37260065CA5A /* FirebaseService.swift in Sources */,
 				3BA2DB222AE7A75E00187D86 /* GasStationListEmptyView.swift in Sources */,
 				3B6254E42B0FA5C9008FAB25 /* ListItem.swift in Sources */,
 				3BDE7B2D2ADD1E30009A88DF /* Array+Extension.swift in Sources */,
@@ -1548,6 +1582,7 @@
 				9A00F2312B0FA3220050C7FA /* OpeningHoursRow.swift in Sources */,
 				3BE4E9122AFCD54B00AC5EE9 /* Configuration.swift in Sources */,
 				3BD94C942B0B704400CE6676 /* PKPaymentNetwork+Extension.swift in Sources */,
+				0B3A9B9D2B3C37FC0065CA5A /* AnalyticsService.swift in Sources */,
 				3B7764522AF91C4100BE185B /* SentryService.swift in Sources */,
 				3BA2DAF92AE6755100187D86 /* GasStationListView.swift in Sources */,
 				3B6254E02B0F9FF8008FAB25 /* ListView.swift in Sources */,
@@ -1919,7 +1954,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = car.pace.cofu;
 				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "PRODUCTION CRASHLYTICS SENTRY";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "PRODUCTION CRASHLYTICS SENTRY ANALYTICS";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Production;
@@ -2036,6 +2071,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0B3A9B9E2B3D74670065CA5A /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3B7764592AF922F700BE185B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
 		3B7764572AF91FFD00BE185B /* Sentry */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 3B7764562AF91FFD00BE185B /* XCRemoteSwiftPackageReference "sentry-cocoa" */;

@@ -3,14 +3,17 @@ import SwiftUI
 struct AppTabView: View {
     @Binding private var selection: AppScreen
 
-    init(selection: Binding<AppScreen>) {
+    let analyticsManager: AnalyticsManager
+
+    init(selection: Binding<AppScreen>, analyticsManager: AnalyticsManager = .init()) {
         self._selection = selection
+        self.analyticsManager = analyticsManager
     }
 
     var body: some View {
         TabView(selection: $selection) {
             ForEach(appScreens) { screen in
-                screen.destination
+                screen.destination(analyticsManager: analyticsManager)
                     .tag(screen)
                     .tabItem {
                         screen.label

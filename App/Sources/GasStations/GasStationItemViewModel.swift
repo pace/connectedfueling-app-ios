@@ -6,6 +6,8 @@ class GasStationItemViewModel: ObservableObject {
     @Published var fuelingUrlString: String?
     @Published var gasStation: GasStation
 
+    let analyticsManager: AnalyticsManager
+
     var showPrices: Bool {
         !ConfigurationManager.configuration.hidePrices
     }
@@ -74,9 +76,10 @@ class GasStationItemViewModel: ObservableObject {
         return formatter
     }()
 
-    init(gasStation: GasStation) {
+    init(gasStation: GasStation, analyticsManager: AnalyticsManager = .init()) {
         self.gasStation = gasStation
         self.priceFormatter = PriceNumberFormatter(with: gasStation.prices.first?.format ?? Constants.GasStation.priceFormatFallback)
+        self.analyticsManager = analyticsManager
     }
 
     func didTapActionButton() {
@@ -88,10 +91,12 @@ class GasStationItemViewModel: ObservableObject {
     }
 
     func startFueling() {
+        analyticsManager.logEvent(AnalyticEvents.FuelingStartedEvent())
         fuelingUrlString = PACECloudSDK.URL.fueling(id: gasStation.id).absoluteString
     }
 
     func startNavigation() {
+        analyticsManager.logEvent(AnalyticEvents.StationNavigationUsedEvent())
         let coordinate: CLLocationCoordinate2D = gasStation.location.coordinate
         let placemark: MKPlacemark = MKPlacemark(coordinate: coordinate)
         let item = MKMapItem(placemark: placemark)

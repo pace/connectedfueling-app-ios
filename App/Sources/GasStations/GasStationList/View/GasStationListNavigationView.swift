@@ -1,14 +1,20 @@
 import SwiftUI
 
 struct GasStationListNavigationView: View {
+    let analyticsManager: AnalyticsManager
+    
+    init(analyticsManager: AnalyticsManager = .init()) {
+        self.analyticsManager = analyticsManager
+    }
+
     var body: some View {
         AppNavigationView {
             switch ConfigurationManager.configuration.gasStationListStyle {
             case .primary:
-                GasStationListView()
+                GasStationListView(viewModel: .init(poiManager: .init(analyticsManager: analyticsManager)), analyticsManager: analyticsManager)
 
             case .secondary:
-                GasStationListView()
+                GasStationListView(viewModel: .init(poiManager: .init(analyticsManager: analyticsManager)), analyticsManager: analyticsManager)
                     .addNavigationBar(style: .centeredIcon(icon: .secondaryHeaderIcon), backgroundColor: .primaryTint)
             }
         }

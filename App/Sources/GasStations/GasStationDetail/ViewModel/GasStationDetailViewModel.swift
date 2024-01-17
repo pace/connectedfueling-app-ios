@@ -30,11 +30,12 @@ class GasStationDetailViewModel: GasStationItemViewModel {
 
     init(gasStation: GasStation, 
          poiManager: POIManager = .init(),
-         configuration: ConfigurationManager.Configuration = ConfigurationManager.configuration) {
+         configuration: ConfigurationManager.Configuration = ConfigurationManager.configuration, 
+         analyticsManager: AnalyticsManager = .init()) {
         self.poiManager = poiManager
         self.style = configuration.detailViewStyle
 
-        super.init(gasStation: gasStation)
+        super.init(gasStation: gasStation, analyticsManager: analyticsManager)
 
         self.openingHourRows = parseGasStationOpeningHours()
     }

@@ -3,10 +3,13 @@ import SwiftUI
 
 class OnboardingAuthorizationPageViewModel: OnboardingPageViewModel {
     private var userManager: UserManager
+    private var analyticsManager: AnalyticsManager
 
     init(style: ConfigurationManager.Configuration.OnboardingStyle,
-         userManager: UserManager = .init()) {
+         userManager: UserManager = .init(),
+         analyticsManager: AnalyticsManager = .init()) {
         self.userManager = userManager
+        self.analyticsManager = analyticsManager
 
         super.init(style: style,
                    image: .onboardingSignInIcon,
@@ -49,6 +52,7 @@ class OnboardingAuthorizationPageViewModel: OnboardingPageViewModel {
                     return
                 }
 
+                self?.analyticsManager.logEvent(AnalyticEvents.UserSignedInEvent())
                 self?.finishOnboardingPage()
 
             case .failure(let error):

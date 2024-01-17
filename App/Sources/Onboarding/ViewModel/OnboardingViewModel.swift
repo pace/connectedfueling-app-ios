@@ -7,19 +7,20 @@ class OnboardingViewModel: ObservableObject {
 
     private let style: ConfigurationManager.Configuration.OnboardingStyle
 
-    init(configuration: ConfigurationManager.Configuration = ConfigurationManager.configuration) {
+    init(configuration: ConfigurationManager.Configuration = ConfigurationManager.configuration,
+         analyticsManager: AnalyticsManager = .init()) {
         self.style = configuration.onboardingStyle
 
         pageViewModels = [
             OnboardingLegalPageViewModel(style: style),
             OnboardingLocationPermissionPageViewModel(style: style),
-            OnboardingAuthorizationPageViewModel(style: style),
+            OnboardingAuthorizationPageViewModel(style: style, analyticsManager: analyticsManager),
             OnboardingTwoFactorAuthenticationPageViewModel(style: style),
             OnboardingPaymentMethodsPageViewModel(style: style)
         ]
 
         if configuration.isAnalyticsEnabled {
-            pageViewModels.insert(OnboardingAnalyticsPageViewModel(style: style), at: 1)
+            pageViewModels.insert(OnboardingAnalyticsPageViewModel(style: style, analyticsManager: analyticsManager), at: 1)
         }
 
         if !configuration.hidePrices {

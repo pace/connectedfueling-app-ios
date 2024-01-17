@@ -3,6 +3,8 @@ import SwiftUI
 import UIKit
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    let analyticsManager = AnalyticsManager()
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         setup()
         return true
@@ -14,11 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 private extension AppDelegate {
+
     func setup() {
         MigrationManager.migrate()
 
         setupPACECloudSDK()
         setupCrashReporting()
+        setupAnalytics()
 
         setupNavigationBar()
         setupTabBar()
@@ -31,7 +35,9 @@ private extension AppDelegate {
             with: .init(
                 apiKey: "connected-fueling-app",
                 clientId: ConfigurationManager.configuration.clientId,
-                environment: Constants.currentEnvironment
+                environment: Constants.currentEnvironment,
+                logLevel: .debug,
+                persistLogs: false
             )
         )
     }
@@ -56,6 +62,10 @@ private extension AppDelegate {
 
     func setupCrashReporting() {
         CrashReportingManager.shared.setup()
+    }
+
+    func setupAnalytics() {
+        analyticsManager.setup()
     }
 
     func refreshSessionIfNeeded() {

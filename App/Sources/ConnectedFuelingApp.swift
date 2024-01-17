@@ -7,7 +7,7 @@ struct ConnectedFuelingApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(analyticsManager: appDelegate.analyticsManager)
         }
     }
 }

@@ -88,6 +88,10 @@ All of our Templates are stored in a template catalog which can be found [here](
 To generate a module from a template you have to run `generamba gen MODULE_NAME TEMPLATE_NAME`.
 To update the templates to their newest versions run `generamba template install`. Attention: This will delete the template folder and replace it with a new one with only the templates referenced in the Rambafile in it. Make sure to backup template adjustments or custom templates if you do this.
 
+## Analytics
+
+Analytic events are generated using [SNACK](https://git.pace.cloud/pace/mobile/common/#api-code-generation). The generated events are under [App/Sources/Managers/Analytics/AnalyticEvents.swift](App/Sources/Managers/Analytics/AnalyticEvents.swift). The definition files can be found in the [Common](https://git.pace.cloud/pace/mobile/common/-/blob/master/definition/cofu/events/v1/events.yaml) repo.
+
 ## License
 
 This project is licensed under the terms of the MIT license. See the [LICENSE](/LICENSE) file.

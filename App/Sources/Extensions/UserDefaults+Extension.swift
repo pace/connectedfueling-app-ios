@@ -4,6 +4,7 @@ extension UserDefaults {
     enum Key {
         static let isOnboardingCompleted: String = "isOnboardingCompleted"
 
+        fileprivate static let firstStart: String = "firstStart"
         fileprivate static let migrationVersion: String = "migrationVersion"
         fileprivate static let fuelType: String = "fuelType"
         fileprivate static let isAnalyticsAllowed: String = "isAnalyticsAllowed"
@@ -11,6 +12,12 @@ extension UserDefaults {
 }
 
 extension UserDefaults {
+
+    class var firstStart: Bool {
+        get { UserDefaults.standard.bool(forKey: Key.firstStart) }
+        set { UserDefaults.standard.set(newValue, forKey: Key.firstStart) }
+    }
+
     class var migrationVersion: Int {
         get { UserDefaults.standard.integer(forKey: Key.migrationVersion) }
         set { UserDefaults.standard.set(newValue, forKey: Key.migrationVersion) }

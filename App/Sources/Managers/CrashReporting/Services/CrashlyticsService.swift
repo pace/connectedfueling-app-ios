@@ -6,6 +6,7 @@ import Foundation
 extension CrashReportingManager {
     struct CrashlyticsService: CrashReportingService {
         func setup() {
+            guard FirebaseApp.app() == nil else { return }
             FirebaseApp.configure()
         }
 
