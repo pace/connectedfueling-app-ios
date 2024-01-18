@@ -138,9 +138,11 @@ platform :ios do
     test_groups = options[:test_groups]
     whats_new = options[:whats_new]
 
+    asc_team_id = app_identifier == 'car.pace.cofu' ? '117967473' : '1215523'
+
     upload_to_testflight(
       app_identifier: app_identifier,
-      team_id: team_id,
+      team_id: asc_team_id,
       ipa: 'artifacts/App.ipa',
       distribute_external: true,
       groups: test_groups,
