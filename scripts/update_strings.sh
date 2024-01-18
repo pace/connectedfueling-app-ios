@@ -22,7 +22,7 @@ if [[ $1 == "info-plist" ]]; then
       "include_tags": ["info-plist"],
       "format": "strings",
       "original_filenames": false,
-      "bundle_structure": "../App/SupportingFiles/%LANG_ISO%.lproj/InfoPlist.%FORMAT%"
+      "bundle_structure": "../App/Resources/InfoPlist/%LANG_ISO%.lproj/InfoPlist.%FORMAT%"
     }
   '
   COMMIT_MSG='Update InfoPlist.strings'
@@ -41,7 +41,7 @@ else
       "export_empty_as": "empty",
       "indentation": "2sp",
       "original_filenames": false,
-      "bundle_structure": "../App/Resources/%LANG_ISO%.lproj/Localizable.%FORMAT%"
+      "bundle_structure": "../App/Resources/Strings/%LANG_ISO%.lproj/Localizable.%FORMAT%"
     }
   '
   COMMIT_MSG='Update app strings'

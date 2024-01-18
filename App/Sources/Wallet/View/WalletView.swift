@@ -6,10 +6,10 @@ struct WalletView: View {
     var body: some View {
         VStack(spacing: 0) {
             WalletAccountView(viewModel: viewModel)
-                .padding(.top, 10)
-                .padding(.horizontal, 20)
+                .padding(.top, .paddingXS)
+                .padding(.horizontal, .paddingM)
             ListView(listItems: viewModel.listItems)
-                .padding(.top, 10)
+                .padding(.top, .paddingL)
             Spacer()
         }
     }

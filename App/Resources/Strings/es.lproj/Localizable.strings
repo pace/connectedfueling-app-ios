@@ -3,7 +3,7 @@
 "DASHBOARD.EMPTY_VIEW.TITLE" = "Lamentablemente no hay gasolineras cerca de usted";
 "DASHBOARD.LOADING_VIEW.DESCRIPTION" = "Buscaremos las gasolineras más cercanas en su zona. Esto puede llevar un momento.";
 "DASHBOARD.LOADING_VIEW.TITLE" = "Buscar gasolineras...";
-"DASHBOARD.LOGOUT.CONFIRM.ACTION.LOGOUT" = "REGISTRO";
+"DASHBOARD.LOGOUT.CONFIRM.ACTION.LOGOUT" = "Registro";
 "DASHBOARD.LOGOUT.CONFIRM.DESCRIPTION" = "Sus datos siguen almacenados en su cuenta PACE-ID.";
 "DASHBOARD.LOGOUT.CONFIRM.TITLE" = "¿Realmente quieres firmar la salida?";
 "DASHBOARD.SECTIONS.NEAREST_GAS_STATION" = "Gasolinera más cercana";
@@ -37,6 +37,8 @@
 "actions_and_coupons_section_title" = "Promociones y cupones";
 "alert_location_permission_description" = "Para mostrarte la gasolinera más cercana, necesitamos acceder a tu ubicación actual.";
 "alert_location_permission_title" = "Ubicación no divulgada";
+"analytics_accepted_text" = "Análisis de la utilización activado";
+"analytics_declined_text" = "Análisis de la utilización desactivado";
 "closed_label" = "CERRADO";
 "common_pay_here_now" = "Pague aquí ahora";
 "common_start_fueling" = "Empezar a repostar";
@@ -85,7 +87,6 @@
 "gas_station_opening_hours_not_available" = "El horario de apertura no está disponible actualmente.";
 "gas_station_opening_hours_title" = "Horarios de apertura";
 "gas_stations_near_you_section_title" = "Gasolineras cercanas";
-"gasstation_closes_in" = "La gasolinera cierra a las %s";
 "general_error_title" = "Carga fallida";
 "good_day_message" = "¡Hola!";
 "good_evening_message" = "¡Buenas noches!";
@@ -93,6 +94,7 @@
 "list_price_not_available" = "Precio no disponible";
 "list_tab_label" = "Lista";
 "map_tab_label" = "Mapa";
+"menu_items_analytics" = "Análisis de la utilización";
 "more_tab_label" = "Más";
 "onboarding_authentication_action" = "Conectarse o registrarse";
 "onboarding_authentication_description" = "Para realizar un pago sencillo con la aplicación, debe registrarse o iniciar sesión con su identificación PACE existente.";

@@ -3,7 +3,7 @@
 "DASHBOARD.EMPTY_VIEW.TITLE" = "Leider keine Tankstellen in deiner Nähe";
 "DASHBOARD.LOADING_VIEW.DESCRIPTION" = "Wir suchen die nächstgelegenen Tankstellen in deiner Nähe. Dies kann einen Moment dauern.";
 "DASHBOARD.LOADING_VIEW.TITLE" = "Suche Tankstellen...";
-"DASHBOARD.LOGOUT.CONFIRM.ACTION.LOGOUT" = "ABMELDEN";
+"DASHBOARD.LOGOUT.CONFIRM.ACTION.LOGOUT" = "Abmelden";
 "DASHBOARD.LOGOUT.CONFIRM.DESCRIPTION" = "Deine Daten sind weiterhin in deinem PACE-ID Account gespeichert.";
 "DASHBOARD.LOGOUT.CONFIRM.TITLE" = "Willst du dich wirklich abmelden?";
 "DASHBOARD.SECTIONS.NEAREST_GAS_STATION" = "Nächstgelegene Tankstelle";
@@ -37,6 +37,8 @@
 "actions_and_coupons_section_title" = "Aktionen & Coupons";
 "alert_location_permission_description" = "Um dir die nächstgelegene Tankstelle anzuzeigen, brauchen wir Zugriff auf deinen aktuellen Standort.";
 "alert_location_permission_title" = "Standort nicht freigegeben";
+"analytics_accepted_text" = "Nutzungsanalyse aktiviert";
+"analytics_declined_text" = "Nutzungsanalyse deaktiviert";
 "closed_label" = "GESCHLOSSEN";
 "common_pay_here_now" = "Jetzt hier bezahlen!";
 "common_start_fueling" = "Tankvorgang starten";
@@ -85,7 +87,6 @@
 "gas_station_opening_hours_not_available" = "Öffnungszeiten sind leider nicht verfügbar.";
 "gas_station_opening_hours_title" = "Öffnungszeiten";
 "gas_stations_near_you_section_title" = "Tankstellen in deiner Nähe";
-"gasstation_closes_in" = "Tankstelle schließt um %s  Uhr";
 "general_error_title" = "Laden fehlgeschlagen";
 "good_day_message" = "Guten Tag!";
 "good_evening_message" = "Guten Abend!";
@@ -93,6 +94,7 @@
 "list_price_not_available" = "Preis nicht verfügbar";
 "list_tab_label" = "Liste";
 "map_tab_label" = "Karte";
+"menu_items_analytics" = "Nutzungsanalyse";
 "more_tab_label" = "Mehr";
 "onboarding_authentication_action" = "Anmelden oder registrieren";
 "onboarding_authentication_description" = "Für die einfache Zahlung mit der App musst du dich registrieren oder mit deiner vorhandenen PACE-ID anmelden.";

@@ -43,6 +43,7 @@
 		3B65A4842B19D8D8006B6890 /* TwoFactorAuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B65A4832B19D8D8006B6890 /* TwoFactorAuthenticationViewModel.swift */; };
 		3B65A4862B1A03FA006B6890 /* ListItemIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B65A4852B1A03FA006B6890 /* ListItemIconView.swift */; };
 		3B65A4882B1A08EC006B6890 /* Switch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B65A4872B1A08EC006B6890 /* Switch.swift */; };
+		3B68C1272B5E9617009FA16E /* MenuAnalyticsStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B68C1262B5E9617009FA16E /* MenuAnalyticsStateView.swift */; };
 		3B6D84E92B1096A500701DEE /* MenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D84E82B1096A500701DEE /* MenuViewModel.swift */; };
 		3B6D84ED2B10A17200701DEE /* SystemManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D84EC2B10A17200701DEE /* SystemManager.swift */; };
 		3B6D84EF2B10B01600701DEE /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6D84EE2B10B01600701DEE /* WebView.swift */; };
@@ -52,6 +53,9 @@
 		3B6E0B7B2B21FC2E001F4FE9 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6E0B7A2B21FC2E001F4FE9 /* MapView.swift */; };
 		3B6E0B7F2B2203F1001F4FE9 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6E0B7E2B2203F1001F4FE9 /* MapViewModel.swift */; };
 		3B6E0B812B220C52001F4FE9 /* GasStationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6E0B802B220C52001F4FE9 /* GasStationAnnotation.swift */; };
+		3B700A552B59330D000B11CC /* MenuAnalyticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B700A542B59330D000B11CC /* MenuAnalyticsView.swift */; };
+		3B700A582B59339A000B11CC /* MenuAnalyticsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B700A572B59339A000B11CC /* MenuAnalyticsViewModel.swift */; };
+		3B700A5B2B593569000B11CC /* L10n+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B700A5A2B593569000B11CC /* L10n+Extension.swift */; };
 		3B7370BA2AD52F8C00E9118B /* OnboardingPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7370B92AD52F8C00E9118B /* OnboardingPageView.swift */; };
 		3B7370C32AD53A0E00E9118B /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7370C22AD53A0E00E9118B /* AppView.swift */; };
 		3B7370CA2AD566F300E9118B /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7370C92AD566F300E9118B /* Color+Extension.swift */; };
@@ -244,6 +248,7 @@
 		3B65A4832B19D8D8006B6890 /* TwoFactorAuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoFactorAuthenticationViewModel.swift; sourceTree = "<group>"; };
 		3B65A4852B1A03FA006B6890 /* ListItemIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemIconView.swift; sourceTree = "<group>"; };
 		3B65A4872B1A08EC006B6890 /* Switch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Switch.swift; sourceTree = "<group>"; };
+		3B68C1262B5E9617009FA16E /* MenuAnalyticsStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuAnalyticsStateView.swift; sourceTree = "<group>"; };
 		3B6D84E82B1096A500701DEE /* MenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewModel.swift; sourceTree = "<group>"; };
 		3B6D84EC2B10A17200701DEE /* SystemManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemManager.swift; sourceTree = "<group>"; };
 		3B6D84EE2B10B01600701DEE /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
@@ -274,6 +279,9 @@
 		3B6E0B7A2B21FC2E001F4FE9 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		3B6E0B7E2B2203F1001F4FE9 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		3B6E0B802B220C52001F4FE9 /* GasStationAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasStationAnnotation.swift; sourceTree = "<group>"; };
+		3B700A542B59330D000B11CC /* MenuAnalyticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuAnalyticsView.swift; sourceTree = "<group>"; };
+		3B700A572B59339A000B11CC /* MenuAnalyticsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuAnalyticsViewModel.swift; sourceTree = "<group>"; };
+		3B700A5A2B593569000B11CC /* L10n+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "L10n+Extension.swift"; sourceTree = "<group>"; };
 		3B7370A72AD41A5300E9118B /* App Unit Tests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "App Unit Tests.xctestplan"; sourceTree = "<group>"; };
 		3B7370B92AD52F8C00E9118B /* OnboardingPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageView.swift; sourceTree = "<group>"; };
 		3B7370C22AD53A0E00E9118B /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
@@ -644,6 +652,16 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		3B700A592B593424000B11CC /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				3B68C1262B5E9617009FA16E /* MenuAnalyticsStateView.swift */,
+				3B700A542B59330D000B11CC /* MenuAnalyticsView.swift */,
+				3B700A572B59339A000B11CC /* MenuAnalyticsViewModel.swift */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
 		3B7370A82AD43EA200E9118B /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -687,6 +705,7 @@
 				3BDE7B2C2ADD1E30009A88DF /* Array+Extension.swift */,
 				3B7370C92AD566F300E9118B /* Color+Extension.swift */,
 				3B5880D02B0CA7DE0057CDC5 /* Image+Extension.swift */,
+				3B700A5A2B593569000B11CC /* L10n+Extension.swift */,
 				3B9D64322B28B37300191700 /* MKCoordinateRegion+ZoomLevel.swift */,
 				3BA2DB0B2AE69BF200187D86 /* NSLocale+Extension.swift */,
 				3BD94C932B0B704400CE6676 /* PKPaymentNetwork+Extension.swift */,
@@ -854,6 +873,7 @@
 		3BA2DB162AE6A27700187D86 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				3B700A592B593424000B11CC /* Analytics */,
 				3B6254DA2B0F9BBF008FAB25 /* View */,
 				3B6254DB2B0F9BC4008FAB25 /* ViewModel */,
 			);
@@ -1469,6 +1489,7 @@
 				3B5A1C8A2B15FC6C00EA5754 /* NavigationBarStyle.swift in Sources */,
 				3BA2DB182AE6A28000187D86 /* MenuNavigationView.swift in Sources */,
 				3B819DC82B06655000B4803A /* PaymentMethodsView.swift in Sources */,
+				3B700A582B59339A000B11CC /* MenuAnalyticsViewModel.swift in Sources */,
 				3BB47E682B31D7F9007D8842 /* GasStationItemViewModel.swift in Sources */,
 				9A00F23E2B162BC70050C7FA /* OpeningHour.swift in Sources */,
 				3BAE60752AD7CBCB006EA9DD /* TextLabel.swift in Sources */,
@@ -1484,7 +1505,9 @@
 				3BA2DB242AE7B5E200187D86 /* POIManager.swift in Sources */,
 				9AAAA8D22B2B4EC600C515ED /* PriceUnavailableCardView.swift in Sources */,
 				9A00F23C2B162BA00050C7FA /* OpeningHours.swift in Sources */,
+				3B68C1272B5E9617009FA16E /* MenuAnalyticsStateView.swift in Sources */,
 				3B6277352B0768C300528A1F /* AppError.swift in Sources */,
+				3B700A552B59330D000B11CC /* MenuAnalyticsView.swift in Sources */,
 				3B819DCA2B06660C00B4803A /* PaymentMethodsListView.swift in Sources */,
 				3B7764542AF91C4800BE185B /* CrashlyticsService.swift in Sources */,
 				3BAE60672AD68116006EA9DD /* OnboardingPageAction.swift in Sources */,
@@ -1493,6 +1516,7 @@
 				3B6254E42B0FA5C9008FAB25 /* ListItem.swift in Sources */,
 				3BDE7B2D2ADD1E30009A88DF /* Array+Extension.swift in Sources */,
 				9ADC1EBD2B2749D90027B82B /* TransactionData.swift in Sources */,
+				3B700A5B2B593569000B11CC /* L10n+Extension.swift in Sources */,
 				3BDE7B312ADD336B009A88DF /* ConnectedFuelingApp.swift in Sources */,
 				3B819DCC2B06664E00B4803A /* PaymentMethodsListItemView.swift in Sources */,
 				3B6277372B07748B00528A1F /* DisclosureIndicator.swift in Sources */,

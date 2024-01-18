@@ -3,7 +3,7 @@
 "DASHBOARD.EMPTY_VIEW.TITLE" = "Desværre ingen benzinstationer i nærheden af dig";
 "DASHBOARD.LOADING_VIEW.DESCRIPTION" = "Vi søger efter de nærmeste tankstationer i dit område. Det kan tage et øjeblik.";
 "DASHBOARD.LOADING_VIEW.TITLE" = "Søger på tankstationer...";
-"DASHBOARD.LOGOUT.CONFIRM.ACTION.LOGOUT" = "LOGOUT";
+"DASHBOARD.LOGOUT.CONFIRM.ACTION.LOGOUT" = "Logout";
 "DASHBOARD.LOGOUT.CONFIRM.DESCRIPTION" = "Dine data vil stadig være gemt på din PACE-ID-konto.";
 "DASHBOARD.LOGOUT.CONFIRM.TITLE" = "Ønsker du virkelig at logge ud?";
 "DASHBOARD.SECTIONS.NEAREST_GAS_STATION" = "Nærmeste tankstation";
@@ -37,6 +37,8 @@
 "actions_and_coupons_section_title" = "Kampagner og kuponer";
 "alert_location_permission_description" = "For at vise dig den nærmeste tankstation skal vi have adgang til din aktuelle position.";
 "alert_location_permission_title" = "Tilladelse til placering ikke givet";
+"analytics_accepted_text" = "Analyse af udnyttelse aktiveret";
+"analytics_declined_text" = "Analyse af udnyttelse deaktiveret";
 "closed_label" = "LUKKET";
 "common_pay_here_now" = "Betal her og nu!";
 "common_start_fueling" = "Start tankning";
@@ -85,7 +87,6 @@
 "gas_station_opening_hours_not_available" = "Åbningstider er ikke tilgængelige i øjeblikket.";
 "gas_station_opening_hours_title" = "Åbningstider";
 "gas_stations_near_you_section_title" = "Tankstationer nær dig";
-"gasstation_closes_in" = "Tankstationen lukker kl. %s";
 "general_error_title" = "Indlæsning mislykkedes";
 "good_day_message" = "Hej med jer!";
 "good_evening_message" = "Godaften!";
@@ -93,6 +94,7 @@
 "list_price_not_available" = "Pris ikke tilgængelig";
 "list_tab_label" = "Liste";
 "map_tab_label" = "Kort";
+"menu_items_analytics" = "Analyse af udnyttelse";
 "more_tab_label" = "Mere";
 "onboarding_authentication_action" = "Log ind eller registrer dig";
 "onboarding_authentication_description" = "For at foretage en simpel betaling med appen skal du registrere dig eller logge ind med dit eksisterende PACE-ID.";

@@ -6,18 +6,11 @@ class OnboardingAnalyticsPageViewModel: OnboardingPageViewModel {
     init(style: ConfigurationManager.Configuration.OnboardingStyle,
          analyticsManager: AnalyticsManager) {
         self.analyticsManager = analyticsManager
-        let description = L10n.onboardingTrackingDescription
-        let appTracking = L10n.onboardingTrackingAppTracking
-
-        let appTrackingMarkdown = "[\(appTracking)](\(Constants.Onboarding.analyticsURL))"
-
-        let descriptionMarkdown = description
-            .replacingOccurrences(of: appTracking, with: appTrackingMarkdown)
 
         super.init(style: style,
                    image: .onboardingAnalyticsIcon,
                    title: L10n.onboardingTrackingTitle,
-                   description: descriptionMarkdown)
+                   description: L10n.onboardingTrackingDescriptionMarkdown)
     }
 
     override func setupPageActions() {
@@ -33,6 +26,7 @@ class OnboardingAnalyticsPageViewModel: OnboardingPageViewModel {
             .init(title: L10n.commonUseDecline, action: { [weak self] in
                 CofuLogger.i("[OnboardingAnalyticsPageViewModel] Did decline app tracking")
 
+                UserDefaults.isAnalyticsAllowed = false
                 self?.analyticsManager.updateActivationState()
                 self?.finishOnboardingPage()
             })

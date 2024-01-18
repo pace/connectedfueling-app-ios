@@ -16,6 +16,10 @@ internal enum L10n {
   internal static let alertLocationPermissionDescription = L10n.tr("Localizable", "alert_location_permission_description", fallback: "To show you the nearest gas station, we need access to your current location.")
   /// Location permission not granted
   internal static let alertLocationPermissionTitle = L10n.tr("Localizable", "alert_location_permission_title", fallback: "Location permission not granted")
+  /// Usage analysis activated
+  internal static let analyticsAcceptedText = L10n.tr("Localizable", "analytics_accepted_text", fallback: "Usage analysis activated")
+  /// Usage analysis deactivated
+  internal static let analyticsDeclinedText = L10n.tr("Localizable", "analytics_declined_text", fallback: "Usage analysis deactivated")
   /// CLOSED
   internal static let closedLabel = L10n.tr("Localizable", "closed_label", fallback: "CLOSED")
   /// Pay here now!
@@ -122,10 +126,6 @@ internal enum L10n {
   internal static let gasStationOpeningHoursTitle = L10n.tr("Localizable", "gas_station_opening_hours_title", fallback: "Opening hours")
   /// Petrol stations near you
   internal static let gasStationsNearYouSectionTitle = L10n.tr("Localizable", "gas_stations_near_you_section_title", fallback: "Petrol stations near you")
-  /// Petrol station closes at %s
-  internal static func gasstationClosesIn(_ p1: UnsafePointer<CChar>) -> String {
-    return L10n.tr("Localizable", "gasstation_closes_in", p1, fallback: "Petrol station closes at %s")
-  }
   /// Loading failed
   internal static let generalErrorTitle = L10n.tr("Localizable", "general_error_title", fallback: "Loading failed")
   /// Good afternoon!
@@ -140,6 +140,8 @@ internal enum L10n {
   internal static let listTabLabel = L10n.tr("Localizable", "list_tab_label", fallback: "List")
   /// Map
   internal static let mapTabLabel = L10n.tr("Localizable", "map_tab_label", fallback: "Map")
+  /// Usage analysis
+  internal static let menuItemsAnalytics = L10n.tr("Localizable", "menu_items_analytics", fallback: "Usage analysis")
   /// More
   internal static let moreTabLabel = L10n.tr("Localizable", "more_tab_label", fallback: "More")
   /// Log in or register
@@ -318,8 +320,8 @@ internal enum L10n {
         /// Do you really want to logout?
         internal static let title = L10n.tr("Localizable", "DASHBOARD.LOGOUT.CONFIRM.TITLE", fallback: "Do you really want to logout?")
         internal enum Action {
-          /// LOGOUT
-          internal static let logout = L10n.tr("Localizable", "DASHBOARD.LOGOUT.CONFIRM.ACTION.LOGOUT", fallback: "LOGOUT")
+          /// Logout
+          internal static let logout = L10n.tr("Localizable", "DASHBOARD.LOGOUT.CONFIRM.ACTION.LOGOUT", fallback: "Logout")
         }
       }
     }
