@@ -3,7 +3,7 @@
 "DASHBOARD.EMPTY_VIEW.TITLE" = "Unfortunately no gas stations near you";
 "DASHBOARD.LOADING_VIEW.DESCRIPTION" = "We are searching for the nearest gas stations in your area. This may take a moment.";
 "DASHBOARD.LOADING_VIEW.TITLE" = "Searching gas stations...";
-"DASHBOARD.LOGOUT.CONFIRM.ACTION.LOGOUT" = "LOGOUT";
+"DASHBOARD.LOGOUT.CONFIRM.ACTION.LOGOUT" = "Logout";
 "DASHBOARD.LOGOUT.CONFIRM.DESCRIPTION" = "Your data will still be saved in your PACE-ID account.";
 "DASHBOARD.LOGOUT.CONFIRM.TITLE" = "Do you really want to logout?";
 "DASHBOARD.SECTIONS.NEAREST_GAS_STATION" = "Nearest gas station";
@@ -37,6 +37,8 @@
 "actions_and_coupons_section_title" = "Promotions & Coupons";
 "alert_location_permission_description" = "To show you the nearest gas station, we need access to your current location.";
 "alert_location_permission_title" = "Location permission not granted";
+"analytics_accepted_text" = "Usage analysis activated";
+"analytics_declined_text" = "Usage analysis deactivated";
 "closed_label" = "CLOSED";
 "common_pay_here_now" = "Pay here now!";
 "common_start_fueling" = "Start fueling";
@@ -85,7 +87,6 @@
 "gas_station_opening_hours_not_available" = "Opening hours are currently not available.";
 "gas_station_opening_hours_title" = "Opening hours";
 "gas_stations_near_you_section_title" = "Petrol stations near you";
-"gasstation_closes_in" = "Petrol station closes at %s";
 "general_error_title" = "Loading failed";
 "good_day_message" = "Good afternoon!";
 "good_evening_message" = "Good evening!";
@@ -93,6 +94,7 @@
 "list_price_not_available" = "Price not available";
 "list_tab_label" = "List";
 "map_tab_label" = "Map";
+"menu_items_analytics" = "Usage analysis";
 "more_tab_label" = "More";
 "onboarding_authentication_action" = "Log in or register";
 "onboarding_authentication_description" = "For easy payment with the app you have to register or login with your existing PACE-ID.";

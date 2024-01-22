@@ -37,6 +37,8 @@
 "actions_and_coupons_section_title" = "Акции и купоны";
 "alert_location_permission_description" = "Чтобы показать вам ближайшую заправочную станцию, нам необходим доступ к вашему текущему местоположению.";
 "alert_location_permission_title" = "Местонахождение не разглашается";
+"analytics_accepted_text" = "Анализ использования активирован";
+"analytics_declined_text" = "Анализ использования деактивирован";
 "closed_label" = "ЗАКРЫТО";
 "common_pay_here_now" = "Оплатите здесь и сейчас!";
 "common_start_fueling" = "Начните заправляться";
@@ -85,7 +87,6 @@
 "gas_station_opening_hours_not_available" = "Часы работы в настоящее время не указаны.";
 "gas_station_opening_hours_title" = "Часы работы";
 "gas_stations_near_you_section_title" = "Автозаправочные станции рядом с вами";
-"gasstation_closes_in" = "Заправочная станция закрывается в %s";
 "general_error_title" = "Загрузка не удалась";
 "good_day_message" = "Здравствуйте!";
 "good_evening_message" = "Добрый вечер!";
@@ -93,6 +94,7 @@
 "list_price_not_available" = "Цена недоступна";
 "list_tab_label" = "Список";
 "map_tab_label" = "Карта";
+"menu_items_analytics" = "Анализ использования";
 "more_tab_label" = "Подробнее";
 "onboarding_authentication_action" = "Войдите или зарегистрируйтесь";
 "onboarding_authentication_description" = "Чтобы совершить простой платеж с помощью приложения, вам нужно зарегистрироваться или войти в систему с помощью существующего идентификатора PACE.";

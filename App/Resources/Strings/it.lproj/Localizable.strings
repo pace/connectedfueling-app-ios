@@ -3,7 +3,7 @@
 "DASHBOARD.EMPTY_VIEW.TITLE" = "Purtroppo non ci sono stazioni di servizio nelle vostre vicinanze";
 "DASHBOARD.LOADING_VIEW.DESCRIPTION" = "Cercheremo le stazioni di servizio più vicine alla vostra zona. L'operazione potrebbe richiedere un attimo.";
 "DASHBOARD.LOADING_VIEW.TITLE" = "Ricerca stazioni di servizio...";
-"DASHBOARD.LOGOUT.CONFIRM.ACTION.LOGOUT" = "REGISTRAZIONE";
+"DASHBOARD.LOGOUT.CONFIRM.ACTION.LOGOUT" = "Registrazione";
 "DASHBOARD.LOGOUT.CONFIRM.DESCRIPTION" = "I vostri dati sono ancora memorizzati nel vostro account PACE-ID.";
 "DASHBOARD.LOGOUT.CONFIRM.TITLE" = "Vuoi davvero firmare per uscire?";
 "DASHBOARD.SECTIONS.NEAREST_GAS_STATION" = "Stazione di servizio più vicina";
@@ -37,6 +37,8 @@
 "actions_and_coupons_section_title" = "Promozioni e coupon";
 "alert_location_permission_description" = "Per mostrarvi la stazione di servizio più vicina, abbiamo bisogno di accedere alla vostra posizione attuale.";
 "alert_location_permission_title" = "Posizione non resa nota";
+"analytics_accepted_text" = "Analisi dell'utilizzo attivato";
+"analytics_declined_text" = "Analisi dell'utilizzo disattivato";
 "closed_label" = "CHIUSO";
 "common_pay_here_now" = "Pagate qui ora!";
 "common_start_fueling" = "Inizia a fare rifornimento";
@@ -85,7 +87,6 @@
 "gas_station_opening_hours_not_available" = "Gli orari di apertura non sono attualmente disponibili.";
 "gas_station_opening_hours_title" = "Orari di apertura";
 "gas_stations_near_you_section_title" = "Le stazioni di servizio più vicine a voi";
-"gasstation_closes_in" = "La stazione di servizio chiude al %s";
 "general_error_title" = "Caricamento non riuscito";
 "good_day_message" = "Ciao!";
 "good_evening_message" = "Buona sera!";
@@ -93,6 +94,7 @@
 "list_price_not_available" = "Prezzo non disponibile";
 "list_tab_label" = "Elenco";
 "map_tab_label" = "Mappa";
+"menu_items_analytics" = "Analisi dell'utilizzo";
 "more_tab_label" = "Più";
 "onboarding_authentication_action" = "Accedi o registrati";
 "onboarding_authentication_description" = "Per effettuare un semplice pagamento con l'app, è necessario registrarsi o accedere con il proprio ID PACE.";

@@ -6,14 +6,21 @@ class MenuViewModel: ObservableObject {
 
     private let crashReportingManager: CrashReportingManager
 
-    init(crashReportingManager: CrashReportingManager = .shared) {
+    init(crashReportingManager: CrashReportingManager = .shared,
+         configuration: ConfigurationManager.Configuration = ConfigurationManager.configuration) {
         self.crashReportingManager = crashReportingManager
 
-        listItems = [
+        var listItems: [ListItem] = [
             termsListItem,
             dataPrivacyListItem,
             imprintListItem
         ]
+
+        if configuration.isAnalyticsEnabled {
+            listItems.append(analyticsListItem)
+        }
+
+        self.listItems = listItems
 
         addCustomMenuEntries()
     }
@@ -83,6 +90,15 @@ private extension MenuViewModel {
               title: L10n.Menu.Items.imprint,
               action: .presentedContent(AnyView(
                 WebView(htmlString: loadLegalHtmlString(fileName: Constants.File.imprint))
+              )))
+    }
+
+    var analyticsListItem: ListItem {
+        .init(icon: .analyticsIcon,
+              title: L10n.menuItemsAnalytics,
+              action: .detail(destination: AnyView(
+                MenuAnalyticsView()
+                    .navigationTitle(L10n.menuItemsAnalytics)
               )))
     }
 }

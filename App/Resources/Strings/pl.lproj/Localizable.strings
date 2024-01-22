@@ -3,7 +3,7 @@
 "DASHBOARD.EMPTY_VIEW.TITLE" = "Niestety w pobliżu nie ma stacji benzynowych";
 "DASHBOARD.LOADING_VIEW.DESCRIPTION" = "Wyszukamy najbliższe stacje benzynowe w Twojej okolicy. Może to zająć chwilę.";
 "DASHBOARD.LOADING_VIEW.TITLE" = "Wyszukaj stacje benzynowe...";
-"DASHBOARD.LOGOUT.CONFIRM.ACTION.LOGOUT" = "REGISTER";
+"DASHBOARD.LOGOUT.CONFIRM.ACTION.LOGOUT" = "Register";
 "DASHBOARD.LOGOUT.CONFIRM.DESCRIPTION" = "Twoje dane są nadal przechowywane na koncie PACE-ID.";
 "DASHBOARD.LOGOUT.CONFIRM.TITLE" = "Czy naprawdę chcesz się wypisać?";
 "DASHBOARD.SECTIONS.NEAREST_GAS_STATION" = "Najbliższa stacja benzynowa";
@@ -37,6 +37,8 @@
 "actions_and_coupons_section_title" = "Promocje i kupony";
 "alert_location_permission_description" = "Aby pokazać Ci najbliższą stację benzynową, potrzebujemy dostępu do Twojej aktualnej lokalizacji.";
 "alert_location_permission_title" = "Lokalizacja nie została ujawniona";
+"analytics_accepted_text" = "Analiza wykorzystania aktywowany";
+"analytics_declined_text" = "Analiza wykorzystania dezaktywowany";
 "closed_label" = "ZAMKNIĘTE";
 "common_pay_here_now" = "Zapłać tutaj teraz!";
 "common_start_fueling" = "Rozpoczęcie tankowania";
@@ -85,7 +87,6 @@
 "gas_station_opening_hours_not_available" = "Godziny otwarcia nie są obecnie dostępne.";
 "gas_station_opening_hours_title" = "Godziny otwarcia";
 "gas_stations_near_you_section_title" = "Stacje benzynowe w pobliżu";
-"gasstation_closes_in" = "Stacja benzynowa zostaje zamknięta o godzinie %s";
 "general_error_title" = "Ładowanie nie powiodło się";
 "good_day_message" = "Cześć!";
 "good_evening_message" = "Dobry wieczór!";
@@ -93,6 +94,7 @@
 "list_price_not_available" = "Cena niedostępna";
 "list_tab_label" = "Lista";
 "map_tab_label" = "Mapa";
+"menu_items_analytics" = "Analiza wykorzystania";
 "more_tab_label" = "Więcej";
 "onboarding_authentication_action" = "Zaloguj się lub zarejestruj";
 "onboarding_authentication_description" = "Aby dokonać prostej płatności za pomocą aplikacji, należy się zarejestrować lub zalogować przy użyciu istniejącego identyfikatora PACE ID.";

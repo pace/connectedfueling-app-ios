@@ -86,7 +86,7 @@ struct GasStationListItemView: View {
                 Image(.errorIcon)
                     .frame(width: 24, height: 24)
                     .foregroundColor(Color.genericRed)
-                TextLabel(L10n.gasstationClosesIn(closingTimeToday), textColor: Color.genericRed)
+                TextLabel(L10n.gasStationClosesSoonHint(closingTimeToday), textColor: Color.genericRed)
                     .font(.system(size: 14, weight: .bold))
                 Spacer()
             }

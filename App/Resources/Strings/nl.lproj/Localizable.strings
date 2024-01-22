@@ -3,7 +3,7 @@
 "DASHBOARD.EMPTY_VIEW.TITLE" = "Helaas geen tankstations bij jou in de buurt";
 "DASHBOARD.LOADING_VIEW.DESCRIPTION" = "Wij zoeken de dichtstbijzijnde benzinestations in uw buurt. Dit kan even duren.";
 "DASHBOARD.LOADING_VIEW.TITLE" = "Zoek benzinestations...";
-"DASHBOARD.LOGOUT.CONFIRM.ACTION.LOGOUT" = "REGISTER";
+"DASHBOARD.LOGOUT.CONFIRM.ACTION.LOGOUT" = "Register";
 "DASHBOARD.LOGOUT.CONFIRM.DESCRIPTION" = "Uw gegevens worden nog steeds opgeslagen in uw PACE-ID account.";
 "DASHBOARD.LOGOUT.CONFIRM.TITLE" = "Wil je je echt afmelden?";
 "DASHBOARD.SECTIONS.NEAREST_GAS_STATION" = "Dichtstbijzijnde benzinestation";
@@ -37,6 +37,8 @@
 "actions_and_coupons_section_title" = "Promoties en kortingsbonnen";
 "alert_location_permission_description" = "Om u het dichtstbijzijnde tankstation te tonen, hebben we toegang nodig tot uw huidige locatie.";
 "alert_location_permission_title" = "Locatie niet vrijgegeven";
+"analytics_accepted_text" = "Gebruiksanalyse geactiveerd";
+"analytics_declined_text" = "Gebruiksanalyse gedeactiveerd";
 "closed_label" = "GESLOTEN";
 "common_pay_here_now" = "Betaal nu hier!";
 "common_start_fueling" = "Begin met tanken";
@@ -85,7 +87,6 @@
 "gas_station_opening_hours_not_available" = "De openingstijden zijn momenteel niet bekend.";
 "gas_station_opening_hours_title" = "Openingstijden";
 "gas_stations_near_you_section_title" = "Tankstations bij jou in de buurt";
-"gasstation_closes_in" = "Benzinestation sluit om %s";
 "general_error_title" = "Laden mislukt";
 "good_day_message" = "Hallo!";
 "good_evening_message" = "Goedenavond!";
@@ -93,6 +94,7 @@
 "list_price_not_available" = "Prijs niet beschikbaar";
 "list_tab_label" = "Lijst";
 "map_tab_label" = "Kaart";
+"menu_items_analytics" = "Gebruiksanalyse";
 "more_tab_label" = "Meer";
 "onboarding_authentication_action" = "Inloggen of registreren";
 "onboarding_authentication_description" = "Om een eenvoudige betaling met de app te doen, moet je je registreren of inloggen met je bestaande PACE ID.";

@@ -3,7 +3,7 @@
 "DASHBOARD.EMPTY_VIEW.TITLE" = "Bohužel ve vaší blízkosti nejsou žádné čerpací stanice";
 "DASHBOARD.LOADING_VIEW.DESCRIPTION" = "Vyhledáme nejbližší čerpací stanice ve vaší oblasti. To může chvíli trvat.";
 "DASHBOARD.LOADING_VIEW.TITLE" = "Hledání čerpacích stanic...";
-"DASHBOARD.LOGOUT.CONFIRM.ACTION.LOGOUT" = "REGISTRACE";
+"DASHBOARD.LOGOUT.CONFIRM.ACTION.LOGOUT" = "Registrace";
 "DASHBOARD.LOGOUT.CONFIRM.DESCRIPTION" = "Vaše údaje jsou stále uloženy na vašem účtu PACE-ID.";
 "DASHBOARD.LOGOUT.CONFIRM.TITLE" = "Opravdu se chcete odhlásit?";
 "DASHBOARD.SECTIONS.NEAREST_GAS_STATION" = "Nejbližší čerpací stanice";
@@ -37,6 +37,8 @@
 "actions_and_coupons_section_title" = "Propagační akce a kupóny";
 "alert_location_permission_description" = "Abychom vám mohli ukázat nejbližší čerpací stanici, potřebujeme přístup k vaší aktuální poloze.";
 "alert_location_permission_title" = "Umístění nezveřejněno";
+"analytics_accepted_text" = "Analýza využití aktivováno";
+"analytics_declined_text" = "Analýza využití deaktivováno";
 "closed_label" = "UZAVŘENO";
 "common_pay_here_now" = "Zaplaťte zde hned!";
 "common_start_fueling" = "Zahájení tankování";
@@ -85,7 +87,6 @@
 "gas_station_opening_hours_not_available" = "Otevírací doba není v současné době k dispozici.";
 "gas_station_opening_hours_title" = "Otevírací doba";
 "gas_stations_near_you_section_title" = "Čerpací stanice ve vašem okolí";
-"gasstation_closes_in" = "Čerpací stanice se zavírá v %s";
 "general_error_title" = "Načítání se nezdařilo";
 "good_day_message" = "Dobrý den!";
 "good_evening_message" = "Dobrý večer!";
@@ -93,6 +94,7 @@
 "list_price_not_available" = "Cena není k dispozici";
 "list_tab_label" = "Seznam";
 "map_tab_label" = "Mapa";
+"menu_items_analytics" = "Analýza využití";
 "more_tab_label" = "Více";
 "onboarding_authentication_action" = "Přihlaste se nebo se zaregistrujte";
 "onboarding_authentication_description" = "Chcete-li provést jednoduchou platbu pomocí aplikace, musíte se zaregistrovat nebo přihlásit pomocí svého stávajícího PACE ID.";

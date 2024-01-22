@@ -3,7 +3,7 @@
 "DASHBOARD.EMPTY_VIEW.TITLE" = "Infelizmente não há estações de serviço perto de si";
 "DASHBOARD.LOADING_VIEW.DESCRIPTION" = "Procuraremos as estações de serviço mais próximas na sua área. Isto pode demorar um momento.";
 "DASHBOARD.LOADING_VIEW.TITLE" = "Pesquisar postos de gasolina...";
-"DASHBOARD.LOGOUT.CONFIRM.ACTION.LOGOUT" = "INSCREVA-SE";
+"DASHBOARD.LOGOUT.CONFIRM.ACTION.LOGOUT" = "Inscreva-se";
 "DASHBOARD.LOGOUT.CONFIRM.DESCRIPTION" = "Os seus dados ainda são armazenados na sua conta PACE-ID.";
 "DASHBOARD.LOGOUT.CONFIRM.TITLE" = "Quer mesmo assinar a saída?";
 "DASHBOARD.SECTIONS.NEAREST_GAS_STATION" = "Estação de serviço mais próxima";
@@ -37,6 +37,8 @@
 "actions_and_coupons_section_title" = "Promoções e cupões";
 "alert_location_permission_description" = "Para lhe mostrar a estação de serviço mais próxima, precisamos de ter acesso à sua localização actual.";
 "alert_location_permission_title" = "Localização não libertada";
+"analytics_accepted_text" = "Análise de utilização ativado";
+"analytics_declined_text" = "Análise de utilização desativado";
 "closed_label" = "FECHADO";
 "common_pay_here_now" = "Pague aqui agora!";
 "common_start_fueling" = "Começar a abastecer";
@@ -85,7 +87,6 @@
 "gas_station_opening_hours_not_available" = "O horário de abertura não está actualmente disponível.";
 "gas_station_opening_hours_title" = "Horário de abertura";
 "gas_stations_near_you_section_title" = "Estações de serviço perto de si";
-"gasstation_closes_in" = "A bomba de gasolina fecha a %s";
 "general_error_title" = "Falha no carregamento";
 "good_day_message" = "Olá!";
 "good_evening_message" = "Boa noite!";
@@ -93,6 +94,7 @@
 "list_price_not_available" = "Preço não disponível";
 "list_tab_label" = "Lista";
 "map_tab_label" = "Mapa";
+"menu_items_analytics" = "Análise de utilização";
 "more_tab_label" = "Mais";
 "onboarding_authentication_action" = "Iniciar sessão ou registar-se";
 "onboarding_authentication_description" = "Para efetuar um pagamento simples com a aplicação, é necessário registar-se ou iniciar sessão com o seu ID PACE existente.";
