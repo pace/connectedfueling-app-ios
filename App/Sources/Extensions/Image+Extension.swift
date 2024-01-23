@@ -17,4 +17,5 @@ extension Image {
     static let onboardingPaymentMethodIcon: Image = .init("onboarding_payment_method_icon")
     static let onboardingSignInIcon: Image = .init("onboarding_sign_in_icon")
     static let onboardingAnalyticsIcon: Image = .init("onboarding_analytics_icon")
+    static let onboardingNotificationIcon: Image = .init("onboarding_notification_icon")
 }

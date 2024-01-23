@@ -32,7 +32,7 @@ extension AppScreen {
             WalletNavigationView()
 
         case .menu:
-            MenuNavigationView()
+            MenuNavigationView(analyticsManager: analyticsManager)
         }
     }
 

@@ -11,17 +11,21 @@ class OnboardingViewModel: ObservableObject {
          analyticsManager: AnalyticsManager = .init()) {
         self.style = configuration.onboardingStyle
 
-        pageViewModels = [
-            OnboardingLegalPageViewModel(style: style),
+        pageViewModels = [OnboardingLegalPageViewModel(style: style)]
+
+        if configuration.isAnalyticsEnabled {
+            pageViewModels.append(contentsOf: [
+                OnboardingAnalyticsPageViewModel(style: style, analyticsManager: analyticsManager),
+                OnboardingNotificationPermissionPageViewModel(style: style)
+            ])
+        }
+
+        pageViewModels.append(contentsOf: [
             OnboardingLocationPermissionPageViewModel(style: style),
             OnboardingAuthorizationPageViewModel(style: style, analyticsManager: analyticsManager),
             OnboardingTwoFactorAuthenticationPageViewModel(style: style),
             OnboardingPaymentMethodsPageViewModel(style: style)
-        ]
-
-        if configuration.isAnalyticsEnabled {
-            pageViewModels.insert(OnboardingAnalyticsPageViewModel(style: style, analyticsManager: analyticsManager), at: 1)
-        }
+        ])
 
         if !configuration.hidePrices {
             pageViewModels.append(

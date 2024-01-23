@@ -13,10 +13,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
         PACECloudSDK.shared.application(open: url)
     }
+
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        CofuLogger.e("[AppDelegate] Unable to register for remote notifications: \(error)")
+    }
+
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        CofuLogger.i("[AppDelegate] Successfully registered for remote notifications")
+    }
 }
 
 private extension AppDelegate {
-
     func setup() {
         MigrationManager.migrate()
 
