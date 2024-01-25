@@ -22,16 +22,9 @@ class OnboardingLocationPermissionPageViewModel: OnboardingPageViewModel {
         ]
     }
 
-    // TODO: - Update
-    /**
-     
-    In case we actually want to skip steps
-
     override func isPageAlreadyCompleted() async -> Bool {
-        await self?.locationManager.currentLocationPermissionStatus() == .authorized
+        await locationManager.currentLocationPermissionStatus() == .authorized
     }
-
-     */
 
     private func requestLocationPermission() {
         Task { @MainActor [weak self] in
