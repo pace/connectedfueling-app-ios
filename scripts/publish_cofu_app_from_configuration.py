@@ -2,6 +2,7 @@ import os
 import argparse
 import json
 import subprocess
+from sys import exit
 
 parser = argparse.ArgumentParser(description='Publishes app from configuration')
 parser.add_argument('--configuration-directory', action='store', help='Directory containing configuration files', required=True)
@@ -30,16 +31,19 @@ def publish_app():
   cwd = os.getcwd()
   os.chdir('..')
   
-  subprocess.run([
+  process = subprocess.run([
     'bundle', 
     'exec', 
     'fastlane', 
     'publish_cofu_app_from_configuration',
-    f"team_id:{configuration['ios_team_id']}",
+    f"asc_team_id:{configuration['ios_asc_team_id']}",
     f"app_identifier:{configuration['application_id_ios']}",
     f"test_groups:{test_groups}",
-    f"whats_new:\"$(git log $(git describe --abbrev=0 --tags $(git rev-list --tags --max-count=2))..@ --no-merges --pretty=format:"%s" -- . | while read line; do echo "- $line"; done)\""
+    f"whats_new:\"$(git log $(git describe --abbrev=0 --tags $(git rev-list --tags --max-count=2))..@ --no-merges --pretty=format:\"%s\" -- . | while read line; do echo \"- $line\"; done)\""
   ])
+
+  if process.returncode != 0:
+    exit(1)
   
   os.chdir(cwd)
   print("✅ Successfully trigger publishing of app")
