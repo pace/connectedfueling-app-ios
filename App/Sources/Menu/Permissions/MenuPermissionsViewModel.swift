@@ -46,8 +46,7 @@ class MenuPermissionsViewModel: ObservableObject {
             case (.denied, true):
                 self.alert = AppAlert.notificationPermissionDeniedError
 
-            case (.authorized, true), (.notDetermined, false), (.denied, false):
-                // These cases won't occur
+            default:
                 break
             }
         }
@@ -68,8 +67,10 @@ class MenuPermissionsViewModel: ObservableObject {
         case (.denied, true):
             alert = AppAlert.locationPermissionDeniedError
 
-        case (.authorized, true), (.notDetermined, false), (.denied, false):
-            // These cases won't occur
+        case (.disabled, true):
+            alert = AppAlert.locationServicesDisabledError
+
+        default:
             break
         }
     }

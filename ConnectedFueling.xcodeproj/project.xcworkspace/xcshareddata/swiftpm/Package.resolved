@@ -21,10 +21,10 @@
     {
       "identity" : "cloud-sdk-ios",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/pace/cloud-sdk-ios",
+      "location" : "https://github.com/pace/cloud-sdk-ios/",
       "state" : {
-        "revision" : "d530e5eda65f120afa6bdf18acefcd1e582c2653",
-        "version" : "20.0.0"
+        "revision" : "2c822c69646cbfa04dd102ac2aa53c3b6aae096c",
+        "version" : "21.0.0"
       }
     },
     {

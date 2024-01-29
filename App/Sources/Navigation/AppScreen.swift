@@ -1,8 +1,8 @@
 import SwiftUI
 
 enum AppScreen: CaseIterable, Identifiable {
-    case map
     case gasStationList
+    case map
     case wallet
     case menu
 

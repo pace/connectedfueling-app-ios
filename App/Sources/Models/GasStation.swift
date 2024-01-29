@@ -1,3 +1,4 @@
+import Combine
 import CoreLocation
 import PACECloudSDK
 
@@ -28,8 +29,10 @@ class GasStation: Hashable, Comparable {
     }
 
     var isNearby: Bool {
-        distanceInKilometers ?? 0 < Constants.Distance.formattingThresholdForMetersPrecision - Constants.Distance.roundingThreshold
+        distanceInKilometers ?? .infinity < Constants.Distance.formattingThresholdForMetersPrecision - Constants.Distance.roundingThreshold
     }
+
+    @Published var currentPrice: FuelPrice?
 
     init(id: String,
          name: String,
@@ -51,6 +54,14 @@ class GasStation: Hashable, Comparable {
         self.prices = prices
         self.lastUpdated = lastUpdated
         self.openingHours = openingHours
+
+        POIManager().selectedFuelTypePublisher
+            .map { [weak self] selectedFuelType in
+                guard let self = self else { return nil }
+                return self.lowestPrice(for: selectedFuelType.keys)
+            }
+            .eraseToAnyPublisher()
+            .assign(to: &$currentPrice)
     }
 
     func lowestPrice(for fuelTypeKeys: [String]) -> FuelPrice? {

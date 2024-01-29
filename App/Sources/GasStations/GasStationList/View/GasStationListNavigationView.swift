@@ -2,7 +2,7 @@ import SwiftUI
 
 struct GasStationListNavigationView: View {
     let analyticsManager: AnalyticsManager
-    
+
     init(analyticsManager: AnalyticsManager = .init()) {
         self.analyticsManager = analyticsManager
     }
@@ -11,10 +11,10 @@ struct GasStationListNavigationView: View {
         AppNavigationView {
             switch ConfigurationManager.configuration.gasStationListStyle {
             case .primary:
-                GasStationListView(viewModel: .init(poiManager: .init(analyticsManager: analyticsManager)), analyticsManager: analyticsManager)
+                GasStationListView(viewModel: .init(analyticsManager: analyticsManager), analyticsManager: analyticsManager)
 
             case .secondary:
-                GasStationListView(viewModel: .init(poiManager: .init(analyticsManager: analyticsManager)), analyticsManager: analyticsManager)
+                GasStationListView(viewModel: .init(analyticsManager: analyticsManager), analyticsManager: analyticsManager)
                     .addNavigationBar(style: .centeredIcon(icon: .secondaryHeaderIcon), backgroundColor: .primaryTint)
             }
         }

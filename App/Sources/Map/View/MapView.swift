@@ -4,8 +4,9 @@ import SwiftUI
 struct MapView: View {
     @StateObject private var viewModel: MapViewModel
 
-    init(analyticsManager: AnalyticsManager = .init()) {
-        self._viewModel = .init(wrappedValue: .init(poiManager: .init(analyticsManager: analyticsManager)))
+    init(analyticsManager: AnalyticsManager = .init(), onShowAlert: @escaping (_ alert: Alert) -> Void) {
+        self._viewModel = .init(wrappedValue: .init(analyticsManager: analyticsManager,
+                                                    onShowAlert: onShowAlert))
     }
 
     @State private var searchText: String = ""
@@ -17,10 +18,15 @@ struct MapView: View {
                 search
             }
             .overlay(alignment: .bottomTrailing) {
-                FollowModeButton(trackingMode: $viewModel.trackingMode)
-                    .padding([.bottom, .trailing], .paddingM)
+                FollowModeButton(trackingMode: $viewModel.trackingMode, locationPermissionStatus: $viewModel.locationPermissionStatus, errorMessage: $viewModel.errorMessage) {
+                    viewModel.showLocationPermissionAlert()
+                }
+                    .padding([.bottom, .trailing])
             }
             .ignoresSafeArea(.keyboard) // Prevents view from moving upward when keyboard in search view appears
+            .onAppear {
+                viewModel.onAppear()
+            }
     }
 
     @ViewBuilder
@@ -31,6 +37,7 @@ struct MapView: View {
             annotationItems: viewModel.annotations) { annotation in
             MapAnnotation(coordinate: annotation.coordinate) {
                 MapAnnotationView(viewModel: .init(annotation: annotation), isTopAnnotationViewHidden: $viewModel.isTopAnnotationHidden)
+                    .id(annotation.id)
             }
         }
             .accentColor(.primaryTint)
@@ -42,7 +49,7 @@ struct MapView: View {
                 viewModel.isSearchViewPresented = false
             }
             .onChange(of: viewModel.region) { _ in
-                viewModel.isSearchViewPresented = false
+                viewModel.isSearchViewPresented = false // set this here because of the debounce in onReceive
             }
     }
 
@@ -67,7 +74,7 @@ struct MapView: View {
         .background(Color.genericWhite)
         .cornerRadius(viewModel.isSearchViewPresented ? .cornerRadius : 60)
         .padding()
-            .addShadow()
+        .addShadow()
     }
 
     @ViewBuilder

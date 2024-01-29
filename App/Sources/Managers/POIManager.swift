@@ -1,20 +1,25 @@
 import Combine
 import CoreLocation
 import Foundation
+import MapKit
 import PACECloudSDK
 
 struct POIManager {
+    func fetchCofuStations(at boundingBox: POIKit.BoundingBox, for userLocation: CLLocation?) async -> Result<[GasStation], Error> {
+        let result = await POIKit.requestCofuGasStations(boundingBox: boundingBox)
 
-    let analyticsManager: AnalyticsManager?
-
-    init(analyticsManager: AnalyticsManager? = nil) {
-        self.analyticsManager = analyticsManager
+        return await handleFetchCofuStationsResult(result, at: userLocation)
     }
 
     func fetchCofuStations(at location: CLLocation) async -> Result<[GasStation], Error> {
         let result = await POIKit.requestCofuGasStations(center: location, radius: Constants.GasStation.cofuStationRadius)
-        let selectedFuelType = fuelType
 
+        return await handleFetchCofuStationsResult(result, at: location)
+    }
+
+    private func handleFetchCofuStationsResult(_ result: Result<[POIKit.GasStation], POIKit.POIKitAPIError>,
+                                               at location: CLLocation?) async -> Result<[GasStation], Error> {
+        let selectedFuelType = fuelType
         switch result {
         case let .success(poiStations):
             let gasStations = await withTaskGroup(of: GasStation?.self, returning: [GasStation].self) { group in
@@ -34,10 +39,6 @@ struct POIManager {
                 let gasStations: [GasStation] = await group.reduce(into: []) {
                     guard let gasStation = $1 else { return }
                     $0.append(gasStation)
-                }
-
-                if gasStations.contains(where: { $0.isNearby }) {
-                    analyticsManager?.logEvent(AnalyticEvents.StationNearbyEvent())
                 }
 
                 return gasStations
@@ -76,7 +77,7 @@ extension POIManager {
         selectedFuelTypePublisher
             .map { selectedFuelType in
                 guard let price = gasStation.lowestPrice(for: selectedFuelType.keys) else { return nil }
-                return formatPrice(price: price,
+                return self.formatPrice(price: price,
                                    priceFormatter: priceFormatter)
             }
             .eraseToAnyPublisher()
@@ -94,12 +95,15 @@ extension POIManager {
 }
 
 private extension POIManager {
-    func makeGasStation(for station: POIKit.GasStation, selectedFuelType: FuelType?, location: CLLocation, isConnectedFuelingEnabled: Bool) -> GasStation? {
+    func makeGasStation(for station: POIKit.GasStation, selectedFuelType: FuelType?, location: CLLocation?, isConnectedFuelingEnabled: Bool) -> GasStation? {
         guard let stationId = station.id,
               let coordinate = station.coordinate else { return nil }
 
         let stationLocation = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
-        let distanceInKilometers = location.distance(from: stationLocation) / 1_000
+        var distanceInKilometers: Double?
+        if let location = location {
+            distanceInKilometers = location.distance(from: stationLocation) / 1_000
+        }
 
         let priceFormat = station.priceFormat ?? Constants.GasStation.priceFormatFallback
         let currency = station.currency
