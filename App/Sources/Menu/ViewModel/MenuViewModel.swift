@@ -5,10 +5,13 @@ class MenuViewModel: ObservableObject {
     @Published private(set) var listItems: [ListItem] = []
 
     private let crashReportingManager: CrashReportingManager
+    private let analyticsManager: AnalyticsManager
 
     init(crashReportingManager: CrashReportingManager = .shared,
+         analyticsManager: AnalyticsManager,
          configuration: ConfigurationManager.Configuration = ConfigurationManager.configuration) {
         self.crashReportingManager = crashReportingManager
+        self.analyticsManager = analyticsManager
 
         var listItems: [ListItem] = [
             termsListItem,
@@ -97,7 +100,7 @@ private extension MenuViewModel {
         .init(icon: .analyticsIcon,
               title: L10n.menuItemsAnalytics,
               action: .detail(destination: AnyView(
-                MenuAnalyticsView()
+                MenuAnalyticsView(analyticsManager: analyticsManager)
                     .navigationTitle(L10n.menuItemsAnalytics)
               )))
     }

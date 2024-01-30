@@ -2,7 +2,7 @@
 
 import Foundation
 
-class AnalyticsManager: AnalyticsService {
+class AnalyticsManager: ObservableObject, AnalyticsService {
     private var firebaseService: AnalyticsService?
 
     init() {

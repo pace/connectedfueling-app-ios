@@ -8,7 +8,10 @@ class MenuAnalyticsViewModel: ObservableObject {
     let title: String
     let description: String
 
-    init() {
+    private let analyticsManager: AnalyticsManager
+
+    init(analyticsManager: AnalyticsManager) {
+        self.analyticsManager = analyticsManager
         self.analyticsIcon = .onboardingAnalyticsIcon
         self.title = L10n.onboardingTrackingTitle
         self.description = L10n.onboardingTrackingDescriptionMarkdown
@@ -18,6 +21,7 @@ class MenuAnalyticsViewModel: ObservableObject {
     func didTapAnalyticsConsent() {
         isAnalyticsAllowed.toggle()
         UserDefaults.isAnalyticsAllowed = isAnalyticsAllowed
+        analyticsManager.updateActivationState()
 
         if isAnalyticsAllowed {
             CofuLogger.i("[MenuAnalyticsViewModel] Did accept app tracking")

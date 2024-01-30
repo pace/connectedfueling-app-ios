@@ -80,6 +80,16 @@
             ReferencedContainer = "container:ConnectedFueling.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <CommandLineArguments>
+         <CommandLineArgument
+            argument = "-FIRDebugEnabled"
+            isEnabled = "NO">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "-FIRAnalyticsDebugEnabled"
+            isEnabled = "NO">
+         </CommandLineArgument>
+      </CommandLineArguments>
       <LocationScenarioReference
          identifier = "../../../../../../Library/Developer/Xcode/DerivedData/ConnectedFueling-hhupyevlelshfkfkybrhjwhmudik/SourcePackages/checkouts/cloud-sdk-ios/ExampleApp/PACECloudSDKExample/Utils/GPX/PACE.gpx"
          referenceType = "0">

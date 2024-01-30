@@ -1,7 +1,11 @@
 import SwiftUI
 
 struct MenuAnalyticsView: View {
-    @StateObject private var viewModel: MenuAnalyticsViewModel = .init()
+    @StateObject private var viewModel: MenuAnalyticsViewModel
+
+    init(analyticsManager: AnalyticsManager) {
+        self._viewModel = .init(wrappedValue: .init(analyticsManager: analyticsManager))
+    }
 
     var body: some View {
         content
@@ -40,5 +44,5 @@ struct MenuAnalyticsView: View {
 }
 
 #Preview {
-    MenuAnalyticsView()
+    MenuAnalyticsView(analyticsManager: .init())
 }

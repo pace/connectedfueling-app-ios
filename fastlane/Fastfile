@@ -193,6 +193,11 @@ platform :ios do
       puts 'Removing SentryDSN entry from Info.plist'
       sh(command: "/usr/libexec/PlistBuddy -c 'Delete :SentryDSN' ../App/Resources/InfoPlist/Info.plist")
     end
+
+    if !analytics_enabled
+      puts 'Removing push notification entitlement'
+      sh(command: "/usr/libexec/PlistBuddy -c 'Delete :aps-environment' ../App/Resources/App.entitlements")
+    end
   end
 
   desc 'Sets the preprocessor flags for the current configuration'

@@ -1,6 +1,6 @@
 import Foundation
 
-struct CrashReportingManager: CrashReportingService {
+class CrashReportingManager: CrashReportingService {
     private var crashlyticsService: CrashReportingService?
     private var sentryService: CrashReportingService?
 

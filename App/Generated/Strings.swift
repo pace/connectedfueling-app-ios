@@ -176,20 +176,24 @@ internal enum L10n {
   internal static let onboardingLegalTermsOfUse = L10n.tr("Localizable", "onboarding_legal_terms_of_use", fallback: "terms of use")
   /// Before we continue
   internal static let onboardingLegalTitle = L10n.tr("Localizable", "onboarding_legal_title", fallback: "Before we continue")
+  /// Allow location access
+  internal static let onboardingLocationPermissionAction = L10n.tr("Localizable", "onboarding_location_permission_action", fallback: "Allow location access")
+  /// To show you the closest gas station, we need access to your precise location.
+  internal static let onboardingLocationPermissionDescription = L10n.tr("Localizable", "onboarding_location_permission_description", fallback: "To show you the closest gas station, we need access to your precise location.")
+  /// Gas stations near you
+  internal static let onboardingLocationPermissionTitle = L10n.tr("Localizable", "onboarding_location_permission_title", fallback: "Gas stations near you")
   /// Login failed. Without an account, paying your fuel with your smartphone is not possible.
   internal static let onboardingLoginUnsuccessful = L10n.tr("Localizable", "onboarding_login_unsuccessful", fallback: "Login failed. Without an account, paying your fuel with your smartphone is not possible.")
+  /// We inform you via push notification about gas stations in your area and general news.
+  internal static let onboardingNotificationPermissionDescription = L10n.tr("Localizable", "onboarding_notification_permission_description", fallback: "We inform you via push notification about gas stations in your area and general news.")
+  /// Allow notifications
+  internal static let onboardingNotificationPermissionTitle = L10n.tr("Localizable", "onboarding_notification_permission_title", fallback: "Allow notifications")
   /// Add payment method
   internal static let onboardingPaymentMethodAction = L10n.tr("Localizable", "onboarding_payment_method_action", fallback: "Add payment method")
   /// Select a payment method to start your first refueling.
   internal static let onboardingPaymentMethodDescription = L10n.tr("Localizable", "onboarding_payment_method_description", fallback: "Select a payment method to start your first refueling.")
   /// Payment method
   internal static let onboardingPaymentMethodTitle = L10n.tr("Localizable", "onboarding_payment_method_title", fallback: "Payment method")
-  /// Allow location access
-  internal static let onboardingPermissionAction = L10n.tr("Localizable", "onboarding_permission_action", fallback: "Allow location access")
-  /// To show you the closest gas station, we need access to your precise location.
-  internal static let onboardingPermissionDescription = L10n.tr("Localizable", "onboarding_permission_description", fallback: "To show you the closest gas station, we need access to your precise location.")
-  /// Gas stations near you
-  internal static let onboardingPermissionTitle = L10n.tr("Localizable", "onboarding_permission_title", fallback: "Gas stations near you")
   /// The PIN must be a 4-digit number.
   internal static let onboardingPinErrorInvalidLength = L10n.tr("Localizable", "onboarding_pin_error_invalid_length", fallback: "The PIN must be a 4-digit number.")
   /// The PINs do not match. Try again.

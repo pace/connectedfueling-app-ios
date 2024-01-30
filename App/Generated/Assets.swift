@@ -58,6 +58,7 @@ internal enum Asset {
     internal static let onboardingFuelTypeIcon = ImageAsset(name: "onboarding_fuel_type_icon")
     internal static let onboardingLegalIcon = ImageAsset(name: "onboarding_legal_icon")
     internal static let onboardingLocationIcon = ImageAsset(name: "onboarding_location_icon")
+    internal static let onboardingNotificationIcon = ImageAsset(name: "onboarding_notification_icon")
     internal static let onboardingPaymentMethodIcon = ImageAsset(name: "onboarding_payment_method_icon")
     internal static let onboardingPrimaryHeaderIcon = ImageAsset(name: "onboarding_primary_header_icon")
     internal static let onboardingSignInIcon = ImageAsset(name: "onboarding_sign_in_icon")

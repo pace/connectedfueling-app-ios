@@ -96,14 +96,8 @@ extension LocationManager: CLLocationManagerDelegate {
     }
 }
 
-extension LocationManager {
-    enum PermissionStatus {
-        case notDetermined
-        case denied
-        case authorized
-    }
-
-    private class Delegate {
+private extension LocationManager {
+    class Delegate {
         weak var receiver: LocationManagerDelegate?
 
         init(receiver: LocationManagerDelegate) {
