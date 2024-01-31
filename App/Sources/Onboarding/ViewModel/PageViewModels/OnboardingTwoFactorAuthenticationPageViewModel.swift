@@ -3,6 +3,7 @@ import SwiftUI
 // swiftlint:disable type_name
 class OnboardingTwoFactorAuthenticationPageViewModel: OnboardingPageViewModel {
     private let userManager: UserManager
+    private let paymentManager: PaymentManager
     private var configuredTwoFactorAuthenticationMethods: Set<UserManager.TwoFactorAuthenticationMethod> = []
 
     private var isRequestRunning: Bool = false {
@@ -13,8 +14,10 @@ class OnboardingTwoFactorAuthenticationPageViewModel: OnboardingPageViewModel {
     }
 
     init(style: ConfigurationManager.Configuration.OnboardingStyle,
-         userManager: UserManager = .init()) {
+         userManager: UserManager = .init(),
+         paymentManager: PaymentManager = .init()) {
         self.userManager = userManager
+        self.paymentManager = paymentManager
 
         super.init(style: style,
                    image: .onboardingBiometryIcon,
@@ -28,6 +31,10 @@ class OnboardingTwoFactorAuthenticationPageViewModel: OnboardingPageViewModel {
     override func viewWillAppear(_ view: some View) {
         super.viewWillAppear(view)
         determineTwoFactorAuthenticationConfiguration()
+    }
+
+    override func isPageAlreadyCompleted() async -> Bool {
+        await !paymentManager.is2FANeededForPayments()
     }
 
     private func determineTwoFactorAuthenticationConfiguration() {

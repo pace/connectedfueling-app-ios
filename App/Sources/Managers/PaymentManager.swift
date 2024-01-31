@@ -72,6 +72,28 @@ struct PaymentManager {
         }
     }
 
+    func is2FANeededForPayments() async -> Bool {
+        let request = PayAPI.PaymentMethodKinds.GetPaymentMethodKinds.Request(additionalData: true)
+        let response = await API.Pay.client.makeRequest(request)
+
+        switch response.result {
+        case .success(let result):
+            guard let paymentMethodKinds = result.success?.data else {
+                CofuLogger.e("[PaymentManager] Failed checking if 2FA is needed for payments. Invalid data.")
+                return false
+            }
+
+            let is2FANeeded = paymentMethodKinds.contains(where: { $0.twoFactor == true })
+            UserDefaults.is2FANeededForPayments = is2FANeeded
+            return is2FANeeded
+
+        case .failure(let error):
+            CofuLogger.e("[PaymentManager] Failed checking if 2FA is needed for payments with error \(error)")
+            UserDefaults.is2FANeededForPayments = true // Set `is2FANeededForPayments` to true for the setup to be shown in the wallet
+            return false
+        }
+    }
+
     private func paymentMethodIconCDNUrlString(href: String) -> String? {
         guard let url = URL(string: href),
               let cdnBaseURL = URL(string: API.CDN.client.baseURL)

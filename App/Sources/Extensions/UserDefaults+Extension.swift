@@ -8,6 +8,7 @@ extension UserDefaults {
         fileprivate static let migrationVersion: String = "migrationVersion"
         fileprivate static let fuelType: String = "fuelType"
         fileprivate static let isAnalyticsAllowed: String = "isAnalyticsAllowed"
+        fileprivate static let is2FANeededForPayments: String = "is2FANeededForPayments"
     }
 }
 
@@ -36,6 +37,11 @@ extension UserDefaults {
     class var isAnalyticsAllowed: Bool {
         get { UserDefaults.standard.bool(forKey: Key.isAnalyticsAllowed) }
         set { UserDefaults.standard.set(newValue, forKey: Key.isAnalyticsAllowed) }
+    }
+
+    class var is2FANeededForPayments: Bool {
+        get { UserDefaults.standard.bool(forKey: Key.is2FANeededForPayments) }
+        set { UserDefaults.standard.set(newValue, forKey: Key.is2FANeededForPayments) }
     }
 }
 
