@@ -10,11 +10,19 @@ class WalletViewModel: ObservableObject {
     }
 
     private let userManager: UserManager
+    private let paymentManager: PaymentManager
 
-    init(userManager: UserManager = .init(), configuration: ConfigurationManager.Configuration = ConfigurationManager.configuration) {
+    init(userManager: UserManager = .init(),
+         paymentManager: PaymentManager = .init(),
+         configuration: ConfigurationManager.Configuration = ConfigurationManager.configuration) {
         self.userManager = userManager
+        self.paymentManager = paymentManager
 
-        listItems = [
+        determineListItems(with: configuration)
+    }
+
+    private func determineListItems(with configuration: ConfigurationManager.Configuration) {
+        var listItems: [ListItem] = [
             paymentMethodsListItem,
             transactionsListItem
         ]
@@ -23,10 +31,12 @@ class WalletViewModel: ObservableObject {
             listItems.append(fuelTypeSelectionListItem)
         }
 
-        listItems += [
-            twoFactorAuthenticationListItem,
-            accountDeletionListItem
-        ]
+        if UserDefaults.is2FANeededForPayments {
+            listItems.append(twoFactorAuthenticationListItem)
+        }
+
+        listItems.append(accountDeletionListItem)
+        self.listItems = listItems
     }
 
     private func logout() {

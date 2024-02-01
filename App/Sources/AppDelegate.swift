@@ -34,7 +34,7 @@ private extension AppDelegate {
         setupNavigationBar()
         setupTabBar()
 
-        refreshSessionIfNeeded()
+        setupSession()
     }
 
     func setupPACECloudSDK() {
@@ -75,11 +75,12 @@ private extension AppDelegate {
         analyticsManager.setup()
     }
 
-    func refreshSessionIfNeeded() {
+    func setupSession() {
         guard UserDefaults.isOnboardingCompleted else { return }
 
         Task {
             await UserManager().refresh()
+            _ = await PaymentManager().is2FANeededForPayments()
         }
     }
 }
