@@ -110,7 +110,7 @@ release_schedule:
     - export BUILD_NUMBER=$(TZ=Etc/Utc date "+%Y%m%d%H")
     - export VERSION_NAME=$(TZ=Etc/Utc date "+%y.%V.%u")
     - export CUSTOM_TAG_NAME="${TAG_PREFIX}v${VERSION_NAME}.${BUILD_NUMBER}"
-    - export CUSTOM_BRANCH_NAME="58-get-pipeline-to-work"
+    - export CUSTOM_BRANCH_NAME="Rewrite-cofu-app"
     - echo "Creating tag with tag name:" $CUSTOM_TAG_NAME
     - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@git.pace.cloud/pace/mobile/common.git tmp/common
     - cd tmp/common/scripts/release
