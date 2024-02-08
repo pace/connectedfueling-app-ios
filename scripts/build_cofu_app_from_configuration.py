@@ -54,7 +54,7 @@ def replace_images():
     image_output_path = image[1]
 
     if os.path.exists(image_input_path):
-      os.replace(image_input_path, f"../App/Resources/Images.xcassets/{image_output_path}")
+      shutil.copyfile(image_input_path, f"../App/Resources/Images.xcassets/{image_output_path}")
     elif image_name == app_icon:
       print(f"‼️ Error occurred while replacing {image_name}. File does not exist.")
       exit(1)
