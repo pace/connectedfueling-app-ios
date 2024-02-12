@@ -13,9 +13,15 @@ internal enum L10n {
   /// Promotions & Coupons
   internal static let actionsAndCouponsSectionTitle = L10n.tr("Localizable", "actions_and_coupons_section_title", fallback: "Promotions & Coupons")
   /// To show you the nearest gas station, we need access to your current location.
-  internal static let alertLocationPermissionDescription = L10n.tr("Localizable", "alert_location_permission_description", fallback: "To show you the nearest gas station, we need access to your current location.")
-  /// Location permission not granted
-  internal static let alertLocationPermissionTitle = L10n.tr("Localizable", "alert_location_permission_title", fallback: "Location permission not granted")
+  internal static let alertLocationPermissionDeniedDescription = L10n.tr("Localizable", "alert_location_permission_denied_description", fallback: "To show you the nearest gas station, we need access to your current location.")
+  /// Please grant location access in the settings.
+  internal static let alertLocationPermissionDeniedTitle = L10n.tr("Localizable", "alert_location_permission_denied_title", fallback: "Please grant location access in the settings.")
+  /// You cannot use mobile payment without location access.
+  internal static let alertLocationPermissionDisabledTitle = L10n.tr("Localizable", "alert_location_permission_disabled_title", fallback: "You cannot use mobile payment without location access.")
+  /// Please grant notification permission in the settings.
+  internal static let alertNotificationPermissionDeniedTitle = L10n.tr("Localizable", "alert_notification_permission_denied_title", fallback: "Please grant notification permission in the settings.")
+  /// Without notification permission, we cannot inform you about the latest features and deals.
+  internal static let alertNotificationPermissionDisabledTitle = L10n.tr("Localizable", "alert_notification_permission_disabled_title", fallback: "Without notification permission, we cannot inform you about the latest features and deals.")
   /// Usage analysis activated
   internal static let analyticsAcceptedText = L10n.tr("Localizable", "analytics_accepted_text", fallback: "Usage analysis activated")
   /// Usage analysis deactivated
@@ -52,6 +58,8 @@ internal enum L10n {
   internal static let commonUseNetworkError = L10n.tr("Localizable", "common_use_network_error", fallback: "Connection to the Internet failed. Try again later.")
   /// Next
   internal static let commonUseNext = L10n.tr("Localizable", "common_use_next", fallback: "Next")
+  /// OK
+  internal static let commonUseOk = L10n.tr("Localizable", "common_use_ok", fallback: "OK")
   /// Fuel pump
   internal static let commonUsePump = L10n.tr("Localizable", "common_use_pump", fallback: "Fuel pump")
   /// Try again
@@ -142,6 +150,16 @@ internal enum L10n {
   internal static let mapTabLabel = L10n.tr("Localizable", "map_tab_label", fallback: "Map")
   /// Usage analysis
   internal static let menuItemsAnalytics = L10n.tr("Localizable", "menu_items_analytics", fallback: "Usage analysis")
+  /// Permissions
+  internal static let menuItemsPermissions = L10n.tr("Localizable", "menu_items_permissions", fallback: "Permissions")
+  /// To see the nearest gas station, we need access to your precise location.
+  internal static let menuPermissionsLocationDescription = L10n.tr("Localizable", "menu_permissions_location_description", fallback: "To see the nearest gas station, we need access to your precise location.")
+  /// Location
+  internal static let menuPermissionsLocationTitle = L10n.tr("Localizable", "menu_permissions_location_title", fallback: "Location")
+  /// We inform you via push notification about gas stations in your area and general news.
+  internal static let menuPermissionsNotificationsDescription = L10n.tr("Localizable", "menu_permissions_notifications_description", fallback: "We inform you via push notification about gas stations in your area and general news.")
+  /// Notifications
+  internal static let menuPermissionsNotificationsTitle = L10n.tr("Localizable", "menu_permissions_notifications_title", fallback: "Notifications")
   /// More
   internal static let moreTabLabel = L10n.tr("Localizable", "more_tab_label", fallback: "More")
   /// Log in or register
@@ -286,6 +304,12 @@ internal enum L10n {
   internal static let walletTabLabel = L10n.tr("Localizable", "wallet_tab_label", fallback: "Wallet")
   /// Transactions
   internal static let walletTransactionsTitle = L10n.tr("Localizable", "wallet_transactions_title", fallback: "Transactions")
+  /// Without biometric authentication, every payment can only be authorized with your PACE PIN or your password.
+  internal static let walletTwoFactorAuthenticationBiometryDisableText = L10n.tr("Localizable", "wallet_two_factor_authentication_biometry_disable_text", fallback: "Without biometric authentication, every payment can only be authorized with your PACE PIN or your password.")
+  /// Really deactivate biometric authentication?
+  internal static let walletTwoFactorAuthenticationBiometryDisableTitle = L10n.tr("Localizable", "wallet_two_factor_authentication_biometry_disable_title", fallback: "Really deactivate biometric authentication?")
+  /// Error recognizing fingerprint
+  internal static let walletTwoFactorAuthenticationBiometryError = L10n.tr("Localizable", "wallet_two_factor_authentication_biometry_error", fallback: "Error recognizing fingerprint")
   /// Biometrics successfully set up
   internal static let walletTwoFactorAuthenticationBiometrySetupSuccessful = L10n.tr("Localizable", "wallet_two_factor_authentication_biometry_setup_successful", fallback: "Biometrics successfully set up")
   /// Biometrics
@@ -296,6 +320,8 @@ internal enum L10n {
   internal static let walletTwoFactorAuthenticationPinTitle = L10n.tr("Localizable", "wallet_two_factor_authentication_pin_title", fallback: "Set PIN")
   /// Authorisation
   internal static let walletTwoFactorAuthenticationTitle = L10n.tr("Localizable", "wallet_two_factor_authentication_title", fallback: "Authorisation")
+  /// Zoom in to find gas stations
+  internal static let zoomInNote = L10n.tr("Localizable", "zoom_in_note", fallback: "Zoom in to find gas stations")
   internal enum Alert {
     internal enum LocationPermission {
       internal enum Actions {

@@ -35,8 +35,11 @@
 "PRICE.NOT_AVAILABLE" = "n. v.";
 "SHARE_TITLE" = "Teilen";
 "actions_and_coupons_section_title" = "Aktionen & Coupons";
-"alert_location_permission_description" = "Um dir die nächstgelegene Tankstelle anzuzeigen, brauchen wir Zugriff auf deinen aktuellen Standort.";
-"alert_location_permission_title" = "Standort nicht freigegeben";
+"alert_location_permission_denied_description" = "Um dir die nächstgelegene Tankstelle anzuzeigen, brauchen wir Zugriff auf deinen aktuellen Standort.";
+"alert_location_permission_denied_title" = "Bitte erteile die Standort-Freigabe in den Einstellungen.";
+"alert_location_permission_disabled_title" = "Ohne Standort-Freigabe kannst du das mobile Bezahlen nicht nutzen.";
+"alert_notification_permission_denied_title" = "Bitte erteile die Benachrichtungs-Freigabe in den Einstellungen.";
+"alert_notification_permission_disabled_title" = "Ohne Benachrichtigungs-Freigabe, können wir dich nicht über neueste Funktionen und Angebote informieren.";
 "analytics_accepted_text" = "Nutzungsanalyse aktiviert";
 "analytics_declined_text" = "Nutzungsanalyse deaktiviert";
 "closed_label" = "GESCHLOSSEN";
@@ -55,6 +58,7 @@
 "common_use_monday" = "Montag";
 "common_use_network_error" = "Verbindung zum Internet fehlgeschlagen. Versuche es später erneut.";
 "common_use_next" = "Weiter";
+"common_use_ok" = "OK";
 "common_use_pump" = "Zapfsäule";
 "common_use_retry" = "Erneut versuchen";
 "common_use_saturday" = "Samstag";
@@ -95,6 +99,11 @@
 "list_tab_label" = "Liste";
 "map_tab_label" = "Karte";
 "menu_items_analytics" = "Nutzungsanalyse";
+"menu_items_permissions" = "Berechtigungen";
+"menu_permissions_location_description" = "Um die nächstgelegene Tankstelle zu sehen, benötigen wir Zugriff auf deinen genauen Standort.";
+"menu_permissions_location_title" = "Standortfreigabe";
+"menu_permissions_notifications_description" = "Wir informieren dich per Push-Benachrichtigung über Tankstellen in deiner Nähe und allgemeine Neuigkeiten.";
+"menu_permissions_notifications_title" = "Benachrichtigungen";
 "more_tab_label" = "Mehr";
 "onboarding_authentication_action" = "Anmelden oder registrieren";
 "onboarding_authentication_description" = "Für die einfache Zahlung mit der App musst du dich registrieren oder mit deiner vorhandenen PACE-ID anmelden.";
@@ -166,8 +175,12 @@
 "wallet_payment_methods_title" = "Bezahlmethoden & Tankkarten";
 "wallet_tab_label" = "Wallet";
 "wallet_transactions_title" = "Transaktionen";
+"wallet_two_factor_authentication_biometry_disable_text" = "Ohne biometrische Authentifizierung können Bezahlungen ausschließlich mit deiner PACE-PIN oder deinem Passwort autorisiert werden.";
+"wallet_two_factor_authentication_biometry_disable_title" = "Biometrische Authentifizierung wirklich deaktivieren?";
+"wallet_two_factor_authentication_biometry_error" = "Fehler beim Erkennen des Fingerabdrucks";
 "wallet_two_factor_authentication_biometry_setup_successful" = "Biometrie erfolgreich eingerichtet";
 "wallet_two_factor_authentication_biometry_title" = "Biometrie";
 "wallet_two_factor_authentication_pin_setup_successful" = "PIN erfolgreich gesetzt";
 "wallet_two_factor_authentication_pin_title" = "PIN setzen";
 "wallet_two_factor_authentication_title" = "Autorisierungsverfahren";
+"zoom_in_note" = "Vergrößern, um Tankstellen zu finden";

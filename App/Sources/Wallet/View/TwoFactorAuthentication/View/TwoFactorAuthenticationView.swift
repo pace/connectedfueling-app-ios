@@ -67,9 +67,8 @@ private extension TwoFactorAuthenticationView {
                 TextLabel(L10n.walletTwoFactorAuthenticationBiometryTitle)
                     .font(.system(size: 16, weight: .bold))
                 Spacer()
-                Switch(isOn: viewModel.initialIsBiometryAuthenticationEnabled) { newValue in
-                    await viewModel.didTapBiometricAuthenticationToggle(newValue: newValue)
-                }
+                Switch(isOn: viewModel.isBiometricAuthenticationEnabled,
+                       onTap: viewModel.didTapBiometricAuthenticationToggle)
             }
         }
     }

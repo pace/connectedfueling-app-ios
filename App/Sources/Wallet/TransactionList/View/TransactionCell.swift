@@ -26,7 +26,7 @@ struct TransactionCell: View {
                 Spacer()
             }
             HStack {
-                Image(.localGasStation)
+                Image(.walletLocalGasStation)
                     .resizable()
                     .foregroundColor(.genericGrey)
                     .frame(width: 16, height: 16)

@@ -6,9 +6,38 @@ enum AppAlert {
               message: Text(L10n.commonUseRetry))
     }
 
-    static var locationPermissionError: Alert {
-        Alert(title: Text(L10n.alertLocationPermissionTitle),
-              message: Text(L10n.alertLocationPermissionDescription),
+    static var locationPermissionDeniedError: Alert {
+        Alert(title: Text(L10n.alertLocationPermissionDeniedTitle),
+              primaryButton: .default(Text(L10n.Alert.LocationPermission.Actions.openSettings),
+                                      action: {
+            guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
+            UIApplication.shared.open(url)
+        }),
+              secondaryButton: .cancel())
+    }
+
+    static var disableLocationPermission: Alert {
+        Alert(title: Text(L10n.alertLocationPermissionDisabledTitle),
+              primaryButton: .default(Text(L10n.Alert.LocationPermission.Actions.openSettings),
+                                      action: {
+            guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
+            UIApplication.shared.open(url)
+        }),
+              secondaryButton: .cancel())
+    }
+
+    static var notificationPermissionDeniedError: Alert {
+        Alert(title: Text(L10n.alertNotificationPermissionDeniedTitle),
+              primaryButton: .default(Text(L10n.Alert.LocationPermission.Actions.openSettings),
+                                      action: {
+            guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
+            UIApplication.shared.open(url)
+        }),
+              secondaryButton: .cancel())
+    }
+
+    static var disableNotificationPermission: Alert {
+        Alert(title: Text(L10n.alertNotificationPermissionDisabledTitle),
               primaryButton: .default(Text(L10n.Alert.LocationPermission.Actions.openSettings),
                                       action: {
             guard let url = URL(string: UIApplication.openSettingsURLString) else { return }

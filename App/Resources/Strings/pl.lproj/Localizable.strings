@@ -35,8 +35,11 @@
 "PRICE.NOT_AVAILABLE" = "n. v.";
 "SHARE_TITLE" = "Udział";
 "actions_and_coupons_section_title" = "Promocje i kupony";
-"alert_location_permission_description" = "Aby pokazać Ci najbliższą stację benzynową, potrzebujemy dostępu do Twojej aktualnej lokalizacji.";
-"alert_location_permission_title" = "Lokalizacja nie została ujawniona";
+"alert_location_permission_denied_description" = "Aby pokazać Ci najbliższą stację benzynową, potrzebujemy dostępu do Twojej aktualnej lokalizacji.";
+"alert_location_permission_denied_title" = "Należy zatwierdzić lokalizację w ustawieniach.";
+"alert_location_permission_disabled_title" = "Nie można korzystać z płatności mobilnych bez zatwierdzenia lokalizacji.";
+"alert_notification_permission_denied_title" = "Zezwól na odblokowanie powiadomień w ustawieniach.";
+"alert_notification_permission_disabled_title" = "Bez zgody na powiadomienie nie możemy informować o najnowszych funkcjach i ofertach.";
 "analytics_accepted_text" = "Analiza wykorzystania aktywowany";
 "analytics_declined_text" = "Analiza wykorzystania dezaktywowany";
 "closed_label" = "ZAMKNIĘTE";
@@ -55,6 +58,7 @@
 "common_use_monday" = "Poniedziałek";
 "common_use_network_error" = "Połączenie z Internetem nie powiodło się. Spróbuj ponownie później.";
 "common_use_next" = "Następny";
+"common_use_ok" = "OK";
 "common_use_pump" = "Pompa benzynowa";
 "common_use_retry" = "Spróbuj ponownie";
 "common_use_saturday" = "Sobota";
@@ -95,6 +99,11 @@
 "list_tab_label" = "Lista";
 "map_tab_label" = "Mapa";
 "menu_items_analytics" = "Analiza wykorzystania";
+"menu_items_permissions" = "Uprawnienia";
+"menu_permissions_location_description" = "Aby zobaczyć najbliższą stację benzynową, potrzebujemy dostępu do dokładnej lokalizacji użytkownika.";
+"menu_permissions_location_title" = "Lokalizacja";
+"menu_permissions_notifications_description" = "Informujemy Cię za pomocą powiadomień push o stacjach benzynowych w Twojej okolicy i ogólnych wiadomościach.";
+"menu_permissions_notifications_title" = "Powiadomienia";
 "more_tab_label" = "Więcej";
 "onboarding_authentication_action" = "Zaloguj się lub zarejestruj";
 "onboarding_authentication_description" = "Aby dokonać prostej płatności za pomocą aplikacji, należy się zarejestrować lub zalogować przy użyciu istniejącego identyfikatora PACE ID.";
@@ -166,8 +175,12 @@
 "wallet_payment_methods_title" = "Metody płatności i karty paliwowe";
 "wallet_tab_label" = "Portfel";
 "wallet_transactions_title" = "Transakcje";
+"wallet_two_factor_authentication_biometry_disable_text" = "Bez uwierzytelniania biometrycznego płatności można autoryzować wyłącznie za pomocą kodu PIN PACE lub hasła.";
+"wallet_two_factor_authentication_biometry_disable_title" = "Czy naprawdę dezaktywujesz uwierzytelnianie biometryczne?";
+"wallet_two_factor_authentication_biometry_error" = "Błąd podczas rozpoznawania odcisku palca";
 "wallet_two_factor_authentication_biometry_setup_successful" = "Pomyślna konfiguracja danych biometrycznych";
 "wallet_two_factor_authentication_biometry_title" = "Biometria";
 "wallet_two_factor_authentication_pin_setup_successful" = "Pomyślne ustawienie kodu PIN";
 "wallet_two_factor_authentication_pin_title" = "Ustaw PIN";
 "wallet_two_factor_authentication_title" = "Procedura autoryzacji";
+"zoom_in_note" = "Powiększ, aby znaleźć stacje benzynowe";

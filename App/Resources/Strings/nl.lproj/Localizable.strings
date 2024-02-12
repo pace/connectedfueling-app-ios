@@ -35,8 +35,11 @@
 "PRICE.NOT_AVAILABLE" = "n. v.";
 "SHARE_TITLE" = "Deel";
 "actions_and_coupons_section_title" = "Promoties en kortingsbonnen";
-"alert_location_permission_description" = "Om u het dichtstbijzijnde tankstation te tonen, hebben we toegang nodig tot uw huidige locatie.";
-"alert_location_permission_title" = "Locatie niet vrijgegeven";
+"alert_location_permission_denied_description" = "Om u het dichtstbijzijnde tankstation te tonen, hebben we toegang nodig tot uw huidige locatie.";
+"alert_location_permission_denied_title" = "Geef de locatie toestemming in de instellingen.";
+"alert_location_permission_disabled_title" = "Je kunt mobiele betaling niet gebruiken zonder goedkeuring van de locatie.";
+"alert_notification_permission_denied_title" = "Autoriseer de vrijgave van meldingen in de instellingen.";
+"alert_notification_permission_disabled_title" = "Zonder goedkeuring van de melding kunnen we je niet informeren over de nieuwste functies en aanbiedingen.";
 "analytics_accepted_text" = "Gebruiksanalyse geactiveerd";
 "analytics_declined_text" = "Gebruiksanalyse gedeactiveerd";
 "closed_label" = "GESLOTEN";
@@ -55,6 +58,7 @@
 "common_use_monday" = "Maandag";
 "common_use_network_error" = "Verbinding met internet mislukt. Probeer het later opnieuw.";
 "common_use_next" = "Volgende";
+"common_use_ok" = "OK";
 "common_use_pump" = "Benzinepomp";
 "common_use_retry" = "Probeer het nog eens.";
 "common_use_saturday" = "Zaterdag";
@@ -95,6 +99,11 @@
 "list_tab_label" = "Lijst";
 "map_tab_label" = "Kaart";
 "menu_items_analytics" = "Gebruiksanalyse";
+"menu_items_permissions" = "Toestemmingen";
+"menu_permissions_location_description" = "Om het dichtstbijzijnde tankstation te zien, hebben we toegang tot je exacte locatie nodig.";
+"menu_permissions_location_title" = "Locatie";
+"menu_permissions_notifications_description" = "We informeren je via pushmeldingen over tankstations bij jou in de buurt en algemeen nieuws.";
+"menu_permissions_notifications_title" = "Meldingen";
 "more_tab_label" = "Meer";
 "onboarding_authentication_action" = "Inloggen of registreren";
 "onboarding_authentication_description" = "Om een eenvoudige betaling met de app te doen, moet je je registreren of inloggen met je bestaande PACE ID.";
@@ -166,8 +175,12 @@
 "wallet_payment_methods_title" = "Betaalmethoden & tankkaarten";
 "wallet_tab_label" = "Portemonnee";
 "wallet_transactions_title" = "Transacties";
+"wallet_two_factor_authentication_biometry_disable_text" = "Zonder biometrische verificatie kunnen betalingen alleen worden geautoriseerd met uw PACE PIN of uw wachtwoord.";
+"wallet_two_factor_authentication_biometry_disable_title" = "Deactiveer je echt biometrische verificatie?";
+"wallet_two_factor_authentication_biometry_error" = "Fout bij het herkennen van de vingerafdruk";
 "wallet_two_factor_authentication_biometry_setup_successful" = "Biometrie succesvol opgezet";
 "wallet_two_factor_authentication_biometry_title" = "Biometrie";
 "wallet_two_factor_authentication_pin_setup_successful" = "PIN succesvol ingesteld";
 "wallet_two_factor_authentication_pin_title" = "PIN instellen";
 "wallet_two_factor_authentication_title" = "Autorisatieprocedure";
+"zoom_in_note" = "Inzoomen om tankstations te vinden";

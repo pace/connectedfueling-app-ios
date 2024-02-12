@@ -9,6 +9,12 @@ protocol LocationManagerDelegate: AnyObject {
 class LocationManager: NSObject {
     static let shared: LocationManager = .init()
 
+    var currentLocationPermissionStatus: PermissionStatus {
+        let status = locationManager.authorizationStatus
+        let mappedStatus = makeLocationPermissionStatus(for: status)
+        return mappedStatus
+    }
+
     private var delegates: [Delegate] = []
 
     private let locationManager: CLLocationManager
@@ -34,12 +40,6 @@ class LocationManager: NSObject {
 
     func unsubscribe(_ subscriber: LocationManagerDelegate) {
         delegates.removeAll(where: { $0.receiver === subscriber })
-    }
-
-    func currentLocationPermissionStatus() async -> PermissionStatus {
-        let status = locationManager.authorizationStatus
-        let mappedStatus = makeLocationPermissionStatus(for: status)
-        return mappedStatus
     }
 
     func requestLocationPermission(completion: @escaping (PermissionStatus) -> Void) {

@@ -75,7 +75,7 @@ struct GasStationDetailView: View {
                 }
                 Spacer()
                 if viewModel.style == .primary {
-                    Image(.brandIcon)
+                    Image(.detailBrandIcon)
                 }
             }
             closeDisclaimer

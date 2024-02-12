@@ -23,6 +23,8 @@ class MenuViewModel: ObservableObject {
             listItems.append(analyticsListItem)
         }
 
+        listItems.append(permissionsListItem)
+
         self.listItems = listItems
 
         addCustomMenuEntries()
@@ -49,7 +51,7 @@ class MenuViewModel: ObservableObject {
                 return nil
             }
 
-            let listItem: ListItem = .init(icon: .externalSiteIcon,
+            let listItem: ListItem = .init(icon: .menuExternalSiteIcon,
                                            title: menuItem.name,
                                            action: .presentedContent(AnyView(
                                             SafariView(url: url)
@@ -73,7 +75,7 @@ class MenuViewModel: ObservableObject {
 
 private extension MenuViewModel {
     var termsListItem: ListItem {
-        .init(icon: .termsIcon,
+        .init(icon: .menuTermsIcon,
               title: L10n.Menu.Items.terms,
               action: .presentedContent(AnyView(
                 WebView(htmlString: loadLegalHtmlString(fileName: Constants.File.termsOfUse))
@@ -81,7 +83,7 @@ private extension MenuViewModel {
     }
 
     var dataPrivacyListItem: ListItem {
-        .init(icon: .dataPrivacyIcon,
+        .init(icon: .menuDataPrivacyIcon,
               title: L10n.Menu.Items.privacy,
               action: .presentedContent(AnyView(
                 WebView(htmlString: loadLegalHtmlString(fileName: Constants.File.dataPrivacy))
@@ -89,7 +91,7 @@ private extension MenuViewModel {
     }
 
     var imprintListItem: ListItem {
-        .init(icon: .imprintIcon,
+        .init(icon: .menuImprintIcon,
               title: L10n.Menu.Items.imprint,
               action: .presentedContent(AnyView(
                 WebView(htmlString: loadLegalHtmlString(fileName: Constants.File.imprint))
@@ -97,11 +99,20 @@ private extension MenuViewModel {
     }
 
     var analyticsListItem: ListItem {
-        .init(icon: .analyticsIcon,
+        .init(icon: .menuAnalyticsIcon,
               title: L10n.menuItemsAnalytics,
               action: .detail(destination: AnyView(
                 MenuAnalyticsView(analyticsManager: analyticsManager)
                     .navigationTitle(L10n.menuItemsAnalytics)
+              )))
+    }
+
+    var permissionsListItem: ListItem {
+        .init(icon: .menuPermissionsIcon,
+              title: L10n.menuItemsPermissions,
+              action: .detail(destination: AnyView(
+                MenuPermissionsView()
+                    .navigationTitle(L10n.menuItemsPermissions)
               )))
     }
 }

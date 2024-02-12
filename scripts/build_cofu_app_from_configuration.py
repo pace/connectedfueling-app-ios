@@ -45,7 +45,7 @@ def replace_images():
     ('onboarding_header_image_ios.pdf', 'Onboarding/onboarding_primary_header_icon.imageset/onboarding_header.pdf'),
     ('list_header_image_ios.pdf', 'GasStationList/gas_station_list_primary_header_icon.imageset/gas_station_list_header.pdf'),
     ('fallback_header_image_ios.pdf', 'Miscellaneous/secondary_header_icon.imageset/secondary_header.pdf'),
-    ('detail_view_brand_icon_ios.pdf', 'Detail/brand_icon.imageset/brand_icon.pdf')
+    ('detail_view_brand_icon_ios.pdf', 'Detail/detail_brand_icon.imageset/brand_icon.pdf')
   ]
 
   for image in images:

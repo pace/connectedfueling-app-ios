@@ -35,8 +35,11 @@
 "PRICE.NOT_AVAILABLE" = "n. v.";
 "SHARE_TITLE" = "Compartilhar";
 "actions_and_coupons_section_title" = "Promoções e cupões";
-"alert_location_permission_description" = "Para lhe mostrar a estação de serviço mais próxima, precisamos de ter acesso à sua localização actual.";
-"alert_location_permission_title" = "Localização não libertada";
+"alert_location_permission_denied_description" = "Para lhe mostrar a estação de serviço mais próxima, precisamos de ter acesso à sua localização actual.";
+"alert_location_permission_denied_title" = "Autorize a localização nas definições.";
+"alert_location_permission_disabled_title" = "Não é possível utilizar o pagamento móvel sem a aprovação do local.";
+"alert_notification_permission_denied_title" = "Autorize a libertação da notificação nas definições.";
+"alert_notification_permission_disabled_title" = "Sem a aprovação da notificação, não podemos informá-lo sobre as últimas funcionalidades e ofertas.";
 "analytics_accepted_text" = "Análise de utilização ativado";
 "analytics_declined_text" = "Análise de utilização desativado";
 "closed_label" = "FECHADO";
@@ -55,6 +58,7 @@
 "common_use_monday" = "Segunda-feira";
 "common_use_network_error" = "A ligação à Internet falhou. Tente novamente mais tarde.";
 "common_use_next" = "Próximo";
+"common_use_ok" = "OK";
 "common_use_pump" = "Bomba de gasolina";
 "common_use_retry" = "Tente novamente";
 "common_use_saturday" = "Sábado";
@@ -95,6 +99,11 @@
 "list_tab_label" = "Lista";
 "map_tab_label" = "Mapa";
 "menu_items_analytics" = "Análise de utilização";
+"menu_items_permissions" = "Permissões";
+"menu_permissions_location_description" = "Para ver a estação de serviço mais próxima, precisamos de ter acesso à sua localização exacta.";
+"menu_permissions_location_title" = "Localização";
+"menu_permissions_notifications_description" = "Informamo-lo, através de notificações push, sobre as bombas de gasolina da sua área e notícias gerais.";
+"menu_permissions_notifications_title" = "Notificações";
 "more_tab_label" = "Mais";
 "onboarding_authentication_action" = "Iniciar sessão ou registar-se";
 "onboarding_authentication_description" = "Para efetuar um pagamento simples com a aplicação, é necessário registar-se ou iniciar sessão com o seu ID PACE existente.";
@@ -166,8 +175,12 @@
 "wallet_payment_methods_title" = "Métodos de pagamento e cartões de combustível";
 "wallet_tab_label" = "Carteira";
 "wallet_transactions_title" = "Transacções";
+"wallet_two_factor_authentication_biometry_disable_text" = "Sem a autenticação biométrica, os pagamentos só podem ser autorizados com o seu PIN PACE ou a sua palavra-passe.";
+"wallet_two_factor_authentication_biometry_disable_title" = "Desactiva-se realmente a autenticação biométrica?";
+"wallet_two_factor_authentication_biometry_error" = "Erro no reconhecimento da impressão digital";
 "wallet_two_factor_authentication_biometry_setup_successful" = "Biometria instalada com sucesso";
 "wallet_two_factor_authentication_biometry_title" = "Biometria";
 "wallet_two_factor_authentication_pin_setup_successful" = "PIN definido com êxito";
 "wallet_two_factor_authentication_pin_title" = "Definir PIN";
 "wallet_two_factor_authentication_title" = "Procedimento de autorização";
+"zoom_in_note" = "Ampliar para encontrar estações de serviço";

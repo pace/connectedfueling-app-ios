@@ -35,8 +35,11 @@
 "PRICE.NOT_AVAILABLE" = "n. v.";
 "SHARE_TITLE" = "Podíl";
 "actions_and_coupons_section_title" = "Propagační akce a kupóny";
-"alert_location_permission_description" = "Abychom vám mohli ukázat nejbližší čerpací stanici, potřebujeme přístup k vaší aktuální poloze.";
-"alert_location_permission_title" = "Umístění nezveřejněno";
+"alert_location_permission_denied_description" = "Abychom vám mohli ukázat nejbližší čerpací stanici, potřebujeme přístup k vaší aktuální poloze.";
+"alert_location_permission_denied_title" = "Autorizujte umístění v nastavení.";
+"alert_location_permission_disabled_title" = "Mobilní platbu nelze použít bez schválení polohy.";
+"alert_notification_permission_denied_title" = "Povolte uvolnění oznámení v nastavení.";
+"alert_notification_permission_disabled_title" = "Bez schválení oznámení vás nemůžeme informovat o nejnovějších funkcích a nabídkách.";
 "analytics_accepted_text" = "Analýza využití aktivováno";
 "analytics_declined_text" = "Analýza využití deaktivováno";
 "closed_label" = "UZAVŘENO";
@@ -55,6 +58,7 @@
 "common_use_monday" = "Pondělí";
 "common_use_network_error" = "Připojení k internetu se nezdařilo. Zkuste to později.";
 "common_use_next" = "Další";
+"common_use_ok" = "OK";
 "common_use_pump" = "Benzínové čerpadlo";
 "common_use_retry" = "Zkuste to znovu";
 "common_use_saturday" = "Sobota";
@@ -95,6 +99,11 @@
 "list_tab_label" = "Seznam";
 "map_tab_label" = "Mapa";
 "menu_items_analytics" = "Analýza využití";
+"menu_items_permissions" = "Oprávnění";
+"menu_permissions_location_description" = "Pro zobrazení nejbližší čerpací stanice potřebujeme přístup k vaší přesné poloze.";
+"menu_permissions_location_title" = "Umístění";
+"menu_permissions_notifications_description" = "Pomocí push notifikací vás informujeme o čerpacích stanicích ve vašem okolí a o obecných novinkách.";
+"menu_permissions_notifications_title" = "Oznámení";
 "more_tab_label" = "Více";
 "onboarding_authentication_action" = "Přihlaste se nebo se zaregistrujte";
 "onboarding_authentication_description" = "Chcete-li provést jednoduchou platbu pomocí aplikace, musíte se zaregistrovat nebo přihlásit pomocí svého stávajícího PACE ID.";
@@ -166,8 +175,12 @@
 "wallet_payment_methods_title" = "Platební metody a palivové karty";
 "wallet_tab_label" = "Peněženka";
 "wallet_transactions_title" = "Transakce";
+"wallet_two_factor_authentication_biometry_disable_text" = "Bez biometrického ověření lze platby autorizovat pouze pomocí kódu PIN PACE nebo hesla.";
+"wallet_two_factor_authentication_biometry_disable_title" = "Opravdu deaktivujete biometrické ověřování?";
+"wallet_two_factor_authentication_biometry_error" = "Chyba při rozpoznávání otisku prstu";
 "wallet_two_factor_authentication_biometry_setup_successful" = "Úspěšné nastavení biometrických údajů";
 "wallet_two_factor_authentication_biometry_title" = "Biometrické údaje";
 "wallet_two_factor_authentication_pin_setup_successful" = "Úspěšné nastavení kódu PIN";
 "wallet_two_factor_authentication_pin_title" = "Nastavení kódu PIN";
 "wallet_two_factor_authentication_title" = "Autorizační postup";
+"zoom_in_note" = "Přiblížení čerpacích stanic";

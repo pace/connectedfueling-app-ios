@@ -35,8 +35,11 @@
 "PRICE.NOT_AVAILABLE" = "n. v.";
 "SHARE_TITLE" = "Acțiune";
 "actions_and_coupons_section_title" = "Promoții și cupoane";
-"alert_location_permission_description" = "Pentru a vă arăta cea mai apropiată benzinărie, avem nevoie de acces la locația dvs. actuală.";
-"alert_location_permission_title" = "Locația nu a fost publicată";
+"alert_location_permission_denied_description" = "Pentru a vă arăta cea mai apropiată benzinărie, avem nevoie de acces la locația dvs. actuală.";
+"alert_location_permission_denied_title" = "Vă rugăm să autorizați locația în setări.";
+"alert_location_permission_disabled_title" = "Nu puteți utiliza plata cu telefonul mobil fără aprobarea locației.";
+"alert_notification_permission_denied_title" = "Vă rugăm să autorizați eliberarea notificării în setări.";
+"alert_notification_permission_disabled_title" = "Fără aprobarea notificării, nu vă putem informa cu privire la cele mai recente caracteristici și oferte.";
 "analytics_accepted_text" = "Analiza utilizării activat";
 "analytics_declined_text" = "Analiza utilizării dezactivat";
 "closed_label" = "ÎNCHIS";
@@ -55,6 +58,7 @@
 "common_use_monday" = "Luni";
 "common_use_network_error" = "Conexiunea la Internet a eșuat. Încercați din nou mai târziu.";
 "common_use_next" = "Următorul";
+"common_use_ok" = "OK";
 "common_use_pump" = "Pompă de benzină";
 "common_use_retry" = "Încearcă din nou";
 "common_use_saturday" = "Sâmbătă";
@@ -95,6 +99,11 @@
 "list_tab_label" = "Lista";
 "map_tab_label" = "Hartă";
 "menu_items_analytics" = "Analiza utilizării";
+"menu_items_permissions" = "Permisiuni";
+"menu_permissions_location_description" = "Pentru a vedea cea mai apropiată stație de benzină, avem nevoie de acces la locația dvs. exactă.";
+"menu_permissions_location_title" = "Locație";
+"menu_permissions_notifications_description" = "Vă informăm prin notificare push despre benzinăriile din zona dumneavoastră și despre știrile generale.";
+"menu_permissions_notifications_title" = "Notificări";
 "more_tab_label" = "Mai mult";
 "onboarding_authentication_action" = "Autentificați-vă sau înregistrați-vă";
 "onboarding_authentication_description" = "Pentru a efectua o plată simplă cu ajutorul aplicației, trebuie să vă înregistrați sau să vă conectați cu ID-ul PACE existent.";
@@ -166,8 +175,12 @@
 "wallet_payment_methods_title" = "Metode de plată și carduri de combustibil";
 "wallet_tab_label" = "Portofel";
 "wallet_transactions_title" = "Tranzacții";
+"wallet_two_factor_authentication_biometry_disable_text" = "Fără autentificarea biometrică, plățile pot fi autorizate doar cu PIN-ul sau parola dumneavoastră PACE.";
+"wallet_two_factor_authentication_biometry_disable_title" = "Chiar dezactivați autentificarea biometrică?";
+"wallet_two_factor_authentication_biometry_error" = "Eroare la recunoașterea amprentei digitale";
 "wallet_two_factor_authentication_biometry_setup_successful" = "Biometrie instalată cu succes";
 "wallet_two_factor_authentication_biometry_title" = "Biometrie";
 "wallet_two_factor_authentication_pin_setup_successful" = "PIN setat cu succes";
 "wallet_two_factor_authentication_pin_title" = "Setați PIN-ul";
 "wallet_two_factor_authentication_title" = "Procedura de autorizare";
+"zoom_in_note" = "Mărește imaginea pentru a găsi benzinării";

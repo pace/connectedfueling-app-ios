@@ -35,8 +35,11 @@
 "PRICE.NOT_AVAILABLE" = "n. a.";
 "SHARE_TITLE" = "Del";
 "actions_and_coupons_section_title" = "Kampagner og kuponer";
-"alert_location_permission_description" = "For at vise dig den nærmeste tankstation skal vi have adgang til din aktuelle position.";
-"alert_location_permission_title" = "Tilladelse til placering ikke givet";
+"alert_location_permission_denied_description" = "For at vise dig den nærmeste tankstation skal vi have adgang til din aktuelle position.";
+"alert_location_permission_denied_title" = "Godkend placeringen i indstillingerne.";
+"alert_location_permission_disabled_title" = "Du kan ikke bruge mobilbetaling uden lokationsgodkendelse.";
+"alert_notification_permission_denied_title" = "Godkend venligst udgivelsen af notifikationer i indstillingerne.";
+"alert_notification_permission_disabled_title" = "Uden godkendelse af notifikationen kan vi ikke informere dig om de nyeste funktioner og tilbud.";
 "analytics_accepted_text" = "Analyse af udnyttelse aktiveret";
 "analytics_declined_text" = "Analyse af udnyttelse deaktiveret";
 "closed_label" = "LUKKET";
@@ -55,6 +58,7 @@
 "common_use_monday" = "Mandag";
 "common_use_network_error" = "Forbindelsen til internettet mislykkedes. Prøv igen senere.";
 "common_use_next" = "Næste";
+"common_use_ok" = "OK";
 "common_use_pump" = "Benzinpumpe";
 "common_use_retry" = "Prøv igen";
 "common_use_saturday" = "Lørdag";
@@ -95,6 +99,11 @@
 "list_tab_label" = "Liste";
 "map_tab_label" = "Kort";
 "menu_items_analytics" = "Analyse af udnyttelse";
+"menu_items_permissions" = "Tilladelser";
+"menu_permissions_location_description" = "For at se den nærmeste tankstation skal vi have adgang til din nøjagtige placering.";
+"menu_permissions_location_title" = "Placering";
+"menu_permissions_notifications_description" = "Vi informerer dig via push-notifikationer om tankstationer i dit område og generelle nyheder.";
+"menu_permissions_notifications_title" = "Meddelelser";
 "more_tab_label" = "Mere";
 "onboarding_authentication_action" = "Log ind eller registrer dig";
 "onboarding_authentication_description" = "For at foretage en simpel betaling med appen skal du registrere dig eller logge ind med dit eksisterende PACE-ID.";
@@ -166,8 +175,12 @@
 "wallet_payment_methods_title" = "Betalingsmetoder og brændstofkort";
 "wallet_tab_label" = "Pung";
 "wallet_transactions_title" = "Transaktioner";
+"wallet_two_factor_authentication_biometry_disable_text" = "Uden biometrisk autentificering kan betalinger kun godkendes med din PACE PIN-kode eller din adgangskode.";
+"wallet_two_factor_authentication_biometry_disable_title" = "Deaktiverer du virkelig biometrisk autentificering?";
+"wallet_two_factor_authentication_biometry_error" = "Fejl ved genkendelse af fingeraftryk";
 "wallet_two_factor_authentication_biometry_setup_successful" = "Biometri er sat op med succes";
 "wallet_two_factor_authentication_biometry_title" = "Biometri";
 "wallet_two_factor_authentication_pin_setup_successful" = "PIN-kode indstillet korrekt";
 "wallet_two_factor_authentication_pin_title" = "Indstil PIN-kode";
 "wallet_two_factor_authentication_title" = "Godkendelsesprocedure";
+"zoom_in_note" = "Zoom ind for at finde benzinstationer";

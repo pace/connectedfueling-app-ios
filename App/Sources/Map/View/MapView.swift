@@ -123,7 +123,7 @@ struct MapView: View {
                 searchText = ""
             }
         }, label: {
-            Image(.cancel)
+            Image(.mapCancel)
                 .frame(width: 24, height: 24)
         })
         .padding(.trailing, .paddingXS)
