@@ -20,15 +20,16 @@ struct LoadingView: View {
             LoadingSpinner()
             TextLabel(title)
                 .font(.system(size: 20, weight: .bold))
-                .padding(.top, 15)
+                .padding(.top, .paddingS)
             if let description {
-                TextLabel(description, textColor: .genericGrey)
+                TextLabel(description)
                     .font(.system(size: 16))
-                    .padding(.top, 15)
+                    .padding(.horizontal, .paddingM)
+                    .padding(.top, .paddingS)
             }
         }
         .frame(minWidth: 0, maxWidth: .infinity)
-        .padding(.all, 15)
+        .padding(.all, .paddingS)
     }
 }
 

@@ -11,14 +11,6 @@ struct GasStationListView: View {
     }
 
     var body: some View {
-        content
-            .alert(item: $viewModel.alert) { alert in
-                alert
-            }
-    }
-
-    @ViewBuilder
-    private var content: some View {
         switch viewModel.style {
         case .primary:
             viewContent
@@ -33,24 +25,22 @@ struct GasStationListView: View {
     private var viewContent: some View {
         VStack(spacing: 0) {
             headerContent
-                .padding(.bottom, 10)
-            if let stations = viewModel.stations {
-                if stations.isEmpty {
-                    Spacer()
-                    emptyView
-                    Spacer()
-                } else {
+                .padding(.bottom, .paddingM)
+            if let error = viewModel.error {
+                errorView(with: error)
+                    .onAppear {
+                        viewModel.viewWillAppear()
+                    }
+            } else if let stations = viewModel.stations {
                     list(of: stations)
-                }
             } else {
-                Spacer()
                 loadingView
                     .onAppear {
                         viewModel.viewWillAppear()
                     }
-                Spacer()
             }
         }
+        .background(Color.lightGrey)
     }
 
     @ViewBuilder
@@ -84,8 +74,22 @@ struct GasStationListView: View {
         .listStyle(.plain)
     }
 
+    @ViewBuilder
     private var loadingView: some View {
-        LoadingSpinner()
+        VStack {
+            LoadingView(title: L10n.Dashboard.LoadingView.title, description: L10n.Dashboard.LoadingView.description)
+                .padding(.horizontal, .paddingM)
+            Spacer()
+        }
+    }
+
+    @ViewBuilder
+    private func errorView(with error: AppError) -> some View {
+        VStack {
+            ErrorView(error)
+                .padding(.horizontal, .paddingM)
+            Spacer()
+        }
     }
 }
 

@@ -4,7 +4,7 @@ import SwiftUI
 
 class GasStationListViewModel: ObservableObject {
     @Published var stations: [GasStation]?
-    @Published var alert: Alert?
+    @Published var error: AppError?
 
     private var currentLocation: CLLocation?
     private var previousLocation: CLLocation?
@@ -27,6 +27,11 @@ class GasStationListViewModel: ObservableObject {
     }
 
     func viewWillAppear() {
+        guard locationManager.currentLocationPermissionStatus == .authorized else {
+            error = .locationError
+            return
+        }
+
         locationManager.startUpdatingLocation()
     }
 
@@ -37,7 +42,7 @@ class GasStationListViewModel: ObservableObject {
 
     private func fetchCofuStations(at location: CLLocation) {
         Task { @MainActor [weak self] in
-            self?.alert = nil
+            self?.error = nil
 
             guard let result = await self?.poiManager.fetchCofuStations(at: location) else { return }
 
@@ -55,6 +60,11 @@ class GasStationListViewModel: ObservableObject {
 
     private func updateSections(with cofuStations: [GasStation]) {
         self.stations = cofuStations
+        if cofuStations.isEmpty {
+            error = .emptyError
+        } else {
+            error = nil
+        }
     }
 
     private func handleError(_ error: Error) {
@@ -65,19 +75,28 @@ class GasStationListViewModel: ObservableObject {
                 break
 
             case .networkError:
-                alert = AppAlert.networkError(retryAction: reloadCofuStations)
+                self.error = generalError()
 
             default:
-                alert = AppAlert.genericError
+                self.error = generalError()
             }
 
         case let clError as CLError:
             guard clError.code == .denied else { break }
-            alert = AppAlert.locationPermissionDeniedError
+            self.error = AppError.locationError
 
         default:
-            alert = AppAlert.genericError
+            self.error = generalError()
         }
+    }
+
+    func generalError() -> AppError {
+        .init(title: L10n.generalErrorTitle,
+              description: L10n.Home.loadingFailedText,
+              retryAction: .init(title: L10n.commonUseRetry,
+                                 action: { [weak self] in
+            self?.reloadCofuStations()
+        }))
     }
 }
 
@@ -87,7 +106,7 @@ extension GasStationListViewModel: LocationManagerDelegate {
         currentLocation = location
 
         let isUpdateRequired = previousLocation.flatMap { $0.distance(from: location) >= Constants.GasStation.updateDistanceThresholdInMeters } ?? true
-        guard isUpdateRequired else { return }
+        guard isUpdateRequired || error != nil else { return }
 
         previousLocation = location
         fetchCofuStations(at: location)
