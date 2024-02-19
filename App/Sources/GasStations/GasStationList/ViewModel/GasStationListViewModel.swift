@@ -73,7 +73,7 @@ class GasStationListViewModel: ObservableObject {
 
         case let clError as CLError:
             guard clError.code == .denied else { break }
-            alert = AppAlert.locationPermissionError
+            alert = AppAlert.locationPermissionDeniedError
 
         default:
             alert = AppAlert.genericError

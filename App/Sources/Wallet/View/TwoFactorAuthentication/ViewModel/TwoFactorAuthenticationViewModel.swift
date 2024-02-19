@@ -4,8 +4,7 @@ import SwiftUI
 class TwoFactorAuthenticationViewModel: ObservableObject {
     @Published var alert: Alert?
     @Published var inputViewModel: OnboardingTextInputViewModel?
-
-    let initialIsBiometryAuthenticationEnabled: Bool
+    @Published var isBiometricAuthenticationEnabled: Bool
 
     var isBiometricAuthenticationSupported: Bool {
         userManager.isBiometricAuthenticationSupported
@@ -15,7 +14,11 @@ class TwoFactorAuthenticationViewModel: ObservableObject {
 
     init(userManager: UserManager = .init()) {
         self.userManager = userManager
-        self.initialIsBiometryAuthenticationEnabled = userManager.isBiometricAuthenticationEnabled
+        self.isBiometricAuthenticationEnabled = userManager.isBiometricAuthenticationEnabled
+    }
+
+    private func refreshBiometryStatus() {
+        isBiometricAuthenticationEnabled = userManager.isBiometricAuthenticationEnabled
     }
 
     private func setPIN(_ pin: String, otp: String) {
@@ -92,36 +95,31 @@ class TwoFactorAuthenticationViewModel: ObservableObject {
         }
     }
 
-    @MainActor
-    func didTapBiometricAuthenticationToggle(newValue: Bool) async -> Bool {
-        guard newValue != userManager.isBiometricAuthenticationEnabled else { return newValue }
+    func didTapBiometricAuthenticationToggle(newValue: Bool) {
+        guard newValue != isBiometricAuthenticationEnabled else { return }
 
         if newValue {
-            guard await requestMailOTPForBiometry() else { return false }
+            Task { @MainActor [weak self] in
+                guard await self?.requestMailOTPForBiometry() == true else { return }
 
-            return await withCheckedContinuation { [weak self] continuation in
                 self?.inputViewModel = .init(type: .biometryOTP) { [weak self] response in
                     if case .biometry(let otp) = response {
                         Task { @MainActor [weak self] in
                             let isSuccessful = await self?.requestTwoFactorAuthenticationWithBiometry(otp: otp) ?? false
-                            continuation.resume(returning: isSuccessful)
+                            self?.refreshBiometryStatus()
                         }
                     } else {
-                        continuation.resume(returning: false)
+                        self?.refreshBiometryStatus()
                     }
 
                     self?.inputViewModel = nil
                 }
             }
         } else {
-            return await withCheckedContinuation { [weak self] continuation in
-                self?.alert = AppAlert.disabledBiometricAuthentication(disableAction: { [weak self] in
-                    self?.userManager.disableBiometricAuthentication()
-                    continuation.resume(returning: false)
-                }, cancelAction: {
-                    continuation.resume(returning: true)
-                })
-            }
+            alert = AppAlert.disabledBiometricAuthentication(disableAction: { [weak self] in
+                self?.userManager.disableBiometricAuthentication()
+                self?.refreshBiometryStatus()
+            }, cancelAction: {})
         }
     }
 }

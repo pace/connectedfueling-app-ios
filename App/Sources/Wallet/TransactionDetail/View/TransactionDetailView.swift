@@ -18,7 +18,7 @@ struct TransactionDetailView: View {
         ZStack {
             Color.primaryTintLight
             VStack {
-                Image(.localGasStation)
+                Image(.walletLocalGasStation)
                     .resizable()
                     .foregroundColor(.genericGrey)
                     .frame(width: 24, height: 24)
@@ -86,7 +86,7 @@ struct TransactionDetailView: View {
                     .onTapGesture {
                         showShareSheet(image: image)
                     }
-                Image(.arrowUpwardAlt)
+                Image(.walletArrowUpwardAlt)
                     .resizable()
                     .frame(width: 24, height: 24)
                     .foregroundColor(.genericGrey)

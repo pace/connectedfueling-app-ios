@@ -35,8 +35,11 @@
 "PRICE.NOT_AVAILABLE" = "н. в.";
 "SHARE_TITLE" = "Делиться";
 "actions_and_coupons_section_title" = "Акции и купоны";
-"alert_location_permission_description" = "Чтобы показать вам ближайшую заправочную станцию, нам необходим доступ к вашему текущему местоположению.";
-"alert_location_permission_title" = "Местонахождение не разглашается";
+"alert_location_permission_denied_description" = "Чтобы показать вам ближайшую заправочную станцию, нам необходим доступ к вашему текущему местоположению.";
+"alert_location_permission_denied_title" = "Пожалуйста, авторизуйте местоположение в настройках.";
+"alert_location_permission_disabled_title" = "Вы не можете использовать мобильный платеж без одобрения местоположения.";
+"alert_notification_permission_denied_title" = "Разрешите выпуск уведомлений в настройках.";
+"alert_notification_permission_disabled_title" = "Без подтверждения уведомления мы не сможем информировать вас о новейших функциях и предложениях.";
 "analytics_accepted_text" = "Анализ использования активирован";
 "analytics_declined_text" = "Анализ использования деактивирован";
 "closed_label" = "ЗАКРЫТО";
@@ -55,6 +58,7 @@
 "common_use_monday" = "Понедельник";
 "common_use_network_error" = "Не удалось подключиться к Интернету. Повторите попытку позже.";
 "common_use_next" = "Следующий";
+"common_use_ok" = "OK";
 "common_use_pump" = "Бензоколонка";
 "common_use_retry" = "Попробуйте еще раз";
 "common_use_saturday" = "Суббота";
@@ -95,6 +99,11 @@
 "list_tab_label" = "Список";
 "map_tab_label" = "Карта";
 "menu_items_analytics" = "Анализ использования";
+"menu_items_permissions" = "Разрешения";
+"menu_permissions_location_description" = "Чтобы увидеть ближайшую заправочную станцию, нам нужен доступ к вашему точному местоположению.";
+"menu_permissions_location_title" = "Местонахождение";
+"menu_permissions_notifications_description" = "Мы информируем вас с помощью push-уведомлений о заправочных станциях в вашем районе и общих новостях.";
+"menu_permissions_notifications_title" = "Уведомления";
 "more_tab_label" = "Подробнее";
 "onboarding_authentication_action" = "Войдите или зарегистрируйтесь";
 "onboarding_authentication_description" = "Чтобы совершить простой платеж с помощью приложения, вам нужно зарегистрироваться или войти в систему с помощью существующего идентификатора PACE.";
@@ -166,8 +175,12 @@
 "wallet_payment_methods_title" = "Способы оплаты и топливные карты";
 "wallet_tab_label" = "Бумажник";
 "wallet_transactions_title" = "Транзакции";
+"wallet_two_factor_authentication_biometry_disable_text" = "Без биометрической аутентификации платежи могут быть авторизованы только с помощью PACE PIN-кода или пароля.";
+"wallet_two_factor_authentication_biometry_disable_title" = "Действительно ли вы отключите биометрическую аутентификацию?";
+"wallet_two_factor_authentication_biometry_error" = "Ошибка при распознавании отпечатка пальца";
 "wallet_two_factor_authentication_biometry_setup_successful" = "Биометрия успешно установлена";
 "wallet_two_factor_authentication_biometry_title" = "Биометрия";
 "wallet_two_factor_authentication_pin_setup_successful" = "PIN-код установлен успешно";
 "wallet_two_factor_authentication_pin_title" = "Установите PIN-код";
 "wallet_two_factor_authentication_title" = "Процедура авторизации";
+"zoom_in_note" = "Увеличьте масштаб, чтобы найти заправочные станции";

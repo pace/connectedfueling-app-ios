@@ -35,8 +35,11 @@
 "PRICE.NOT_AVAILABLE" = "n. a.";
 "SHARE_TITLE" = "Share";
 "actions_and_coupons_section_title" = "Promotions & Coupons";
-"alert_location_permission_description" = "To show you the nearest gas station, we need access to your current location.";
-"alert_location_permission_title" = "Location permission not granted";
+"alert_location_permission_denied_description" = "To show you the nearest gas station, we need access to your current location.";
+"alert_location_permission_denied_title" = "Please grant location access in the settings.";
+"alert_location_permission_disabled_title" = "You cannot use mobile payment without location access.";
+"alert_notification_permission_denied_title" = "Please grant notification permission in the settings.";
+"alert_notification_permission_disabled_title" = "Without notification permission, we cannot inform you about the latest features and deals.";
 "analytics_accepted_text" = "Usage analysis activated";
 "analytics_declined_text" = "Usage analysis deactivated";
 "closed_label" = "CLOSED";
@@ -55,6 +58,7 @@
 "common_use_monday" = "Monday";
 "common_use_network_error" = "Connection to the Internet failed. Try again later.";
 "common_use_next" = "Next";
+"common_use_ok" = "OK";
 "common_use_pump" = "Fuel pump";
 "common_use_retry" = "Try again";
 "common_use_saturday" = "Saturday";
@@ -95,6 +99,11 @@
 "list_tab_label" = "List";
 "map_tab_label" = "Map";
 "menu_items_analytics" = "Usage analysis";
+"menu_items_permissions" = "Permissions";
+"menu_permissions_location_description" = "To see the nearest gas station, we need access to your precise location.";
+"menu_permissions_location_title" = "Location";
+"menu_permissions_notifications_description" = "We inform you via push notification about gas stations in your area and general news.";
+"menu_permissions_notifications_title" = "Notifications";
 "more_tab_label" = "More";
 "onboarding_authentication_action" = "Log in or register";
 "onboarding_authentication_description" = "For easy payment with the app you have to register or login with your existing PACE-ID.";
@@ -166,8 +175,12 @@
 "wallet_payment_methods_title" = "Payment methods & fuel cards";
 "wallet_tab_label" = "Wallet";
 "wallet_transactions_title" = "Transactions";
+"wallet_two_factor_authentication_biometry_disable_text" = "Without biometric authentication, every payment can only be authorized with your PACE PIN or your password.";
+"wallet_two_factor_authentication_biometry_disable_title" = "Really deactivate biometric authentication?";
+"wallet_two_factor_authentication_biometry_error" = "Error recognizing fingerprint";
 "wallet_two_factor_authentication_biometry_setup_successful" = "Biometrics successfully set up";
 "wallet_two_factor_authentication_biometry_title" = "Biometrics";
 "wallet_two_factor_authentication_pin_setup_successful" = "PIN set successfully";
 "wallet_two_factor_authentication_pin_title" = "Set PIN";
 "wallet_two_factor_authentication_title" = "Authorisation";
+"zoom_in_note" = "Zoom in to find gas stations";

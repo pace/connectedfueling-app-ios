@@ -9,7 +9,7 @@ struct MenuAnalyticsStateView: View {
 
     var body: some View {
         HStack(spacing: 5) {
-            Image(isAnalyticsAllowed ? .checkIcon : .blockIcon)
+            Image(isAnalyticsAllowed ? .menuAnalyticsCheckIcon : .menuAnalyticsBlockIcon)
                 .renderingMode(.template)
                 .resizable()
                 .scaledToFit()

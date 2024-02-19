@@ -19,11 +19,14 @@
 		3B0CFF9B2B27434E00EFC3ED /* MapAnnotationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0CFF9A2B27434E00EFC3ED /* MapAnnotationViewModel.swift */; };
 		3B0CFF9E2B27475C00EFC3ED /* MapBottomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0CFF9D2B27475C00EFC3ED /* MapBottomAnnotationView.swift */; };
 		3B0CFFA02B27476800EFC3ED /* MapTopAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0CFF9F2B27476800EFC3ED /* MapTopAnnotationView.swift */; };
+		3B3CFD532B7A60BB00314626 /* MenuPermissionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3CFD522B7A60BB00314626 /* MenuPermissionsView.swift */; };
+		3B3CFD552B7A60C700314626 /* MenuPermissionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3CFD542B7A60C700314626 /* MenuPermissionsViewModel.swift */; };
 		3B3F641A2B50339B00D94BAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B3F64192B50339B00D94BAA /* LaunchScreen.storyboard */; };
 		3B4616C72ADE932D00DF57A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4616C62ADE932D00DF57A1 /* ContentView.swift */; };
 		3B4616CD2ADECDBC00DF57A1 /* OnboardingTextInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4616CC2ADECDBC00DF57A1 /* OnboardingTextInputViewModel.swift */; };
 		3B5585422B18D3EA009E300B /* usage_analysis.html in Resources */ = {isa = PBXBuildFile; fileRef = 3B5585402B18D3EA009E300B /* usage_analysis.html */; };
 		3B5880D12B0CA7DE0057CDC5 /* Image+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5880D02B0CA7DE0057CDC5 /* Image+Extension.swift */; };
+		3B5A0AE22B7B656C00F4E268 /* MenuPermissionsListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5A0AE12B7B656C00F4E268 /* MenuPermissionsListItemView.swift */; };
 		3B5A1C8A2B15FC6C00EA5754 /* NavigationBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5A1C892B15FC6C00EA5754 /* NavigationBarStyle.swift */; };
 		3B5A1C8E2B163E7800EA5754 /* OnboardingLegalPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5A1C8D2B163E7800EA5754 /* OnboardingLegalPageViewModel.swift */; };
 		3B5A1C902B163F0D00EA5754 /* OnboardingAnalyticsPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5A1C8F2B163F0D00EA5754 /* OnboardingAnalyticsPageViewModel.swift */; };
@@ -218,6 +221,8 @@
 		3B0CFF9A2B27434E00EFC3ED /* MapAnnotationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotationViewModel.swift; sourceTree = "<group>"; };
 		3B0CFF9D2B27475C00EFC3ED /* MapBottomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapBottomAnnotationView.swift; sourceTree = "<group>"; };
 		3B0CFF9F2B27476800EFC3ED /* MapTopAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTopAnnotationView.swift; sourceTree = "<group>"; };
+		3B3CFD522B7A60BB00314626 /* MenuPermissionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPermissionsView.swift; sourceTree = "<group>"; };
+		3B3CFD542B7A60C700314626 /* MenuPermissionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPermissionsViewModel.swift; sourceTree = "<group>"; };
 		3B3F64192B50339B00D94BAA /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B4616C62ADE932D00DF57A1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3B4616CC2ADECDBC00DF57A1 /* OnboardingTextInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTextInputViewModel.swift; sourceTree = "<group>"; };
@@ -235,6 +240,7 @@
 		3B55854D2B18D3FC009E300B /* es */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = es; path = es.lproj/usage_analysis.html; sourceTree = "<group>"; };
 		3B5880CF2B0C93890057CDC5 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3B5880D02B0CA7DE0057CDC5 /* Image+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extension.swift"; sourceTree = "<group>"; };
+		3B5A0AE12B7B656C00F4E268 /* MenuPermissionsListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPermissionsListItemView.swift; sourceTree = "<group>"; };
 		3B5A1C892B15FC6C00EA5754 /* NavigationBarStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarStyle.swift; sourceTree = "<group>"; };
 		3B5A1C8D2B163E7800EA5754 /* OnboardingLegalPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLegalPageViewModel.swift; sourceTree = "<group>"; };
 		3B5A1C8F2B163F0D00EA5754 /* OnboardingAnalyticsPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingAnalyticsPageViewModel.swift; sourceTree = "<group>"; };
@@ -551,6 +557,16 @@
 				3B0CFF9D2B27475C00EFC3ED /* MapBottomAnnotationView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		3B3CFD512B7A60A200314626 /* Permissions */ = {
+			isa = PBXGroup;
+			children = (
+				3B5A0AE12B7B656C00F4E268 /* MenuPermissionsListItemView.swift */,
+				3B3CFD522B7A60BB00314626 /* MenuPermissionsView.swift */,
+				3B3CFD542B7A60C700314626 /* MenuPermissionsViewModel.swift */,
+			);
+			path = Permissions;
 			sourceTree = "<group>";
 		};
 		3B5585282B188C82009E300B /* TextField */ = {
@@ -884,6 +900,7 @@
 			isa = PBXGroup;
 			children = (
 				3B700A592B593424000B11CC /* Analytics */,
+				3B3CFD512B7A60A200314626 /* Permissions */,
 				3B6254DA2B0F9BBF008FAB25 /* View */,
 				3B6254DB2B0F9BC4008FAB25 /* ViewModel */,
 			);
@@ -1498,6 +1515,7 @@
 				3B819DC82B06655000B4803A /* PaymentMethodsView.swift in Sources */,
 				3B700A582B59339A000B11CC /* MenuAnalyticsViewModel.swift in Sources */,
 				3BB47E682B31D7F9007D8842 /* GasStationItemViewModel.swift in Sources */,
+				3B3CFD552B7A60C700314626 /* MenuPermissionsViewModel.swift in Sources */,
 				9A00F23E2B162BC70050C7FA /* OpeningHour.swift in Sources */,
 				3BCD5F332B5FFF3500C67CF5 /* OnboardingNotificationPermissionPageViewModel.swift in Sources */,
 				3BAE60752AD7CBCB006EA9DD /* TextLabel.swift in Sources */,
@@ -1584,6 +1602,7 @@
 				3B6D84E92B1096A500701DEE /* MenuViewModel.swift in Sources */,
 				3B819DC62B06654300B4803A /* PaymentMethodViewModel.swift in Sources */,
 				9ADF34852B2748CB00134E1D /* TransactionListView.swift in Sources */,
+				3B5A0AE22B7B656C00F4E268 /* MenuPermissionsListItemView.swift in Sources */,
 				3BE2C5AE2B060BD9002B0421 /* WalletAccountView.swift in Sources */,
 				9A00F2312B0FA3220050C7FA /* OpeningHoursRow.swift in Sources */,
 				3BE4E9122AFCD54B00AC5EE9 /* Configuration.swift in Sources */,
@@ -1610,6 +1629,7 @@
 				3B819DB72B063F0400B4803A /* FuelTypeSelectionView.swift in Sources */,
 				9AAAA8D02B29F6C900C515ED /* ShareObject.swift in Sources */,
 				3B6D84ED2B10A17200701DEE /* SystemManager.swift in Sources */,
+				3B3CFD532B7A60BB00314626 /* MenuPermissionsView.swift in Sources */,
 				3B6254E22B0F9FFD008FAB25 /* ListItemView.swift in Sources */,
 				3BA6C4622B23205C00A109F5 /* MapAnnotationView.swift in Sources */,
 				3B5DDF3E2B305B0600C8E5DE /* UserDefaults+Extension.swift in Sources */,
