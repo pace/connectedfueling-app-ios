@@ -16,24 +16,26 @@ struct ErrorView: View {
     private var content: some View {
         VStack(spacing: 0) {
             icon
-                .foregroundStyle(Color.red)
+                .foregroundStyle(Color.genericRed)
                 .frame(width: 40, height: 40)
             TextLabel(error.title)
                 .font(.system(size: 20, weight: .bold))
-                .padding(.top, 15)
+                .padding(.top, .paddingXXS)
+                .padding(.horizontal, .paddingM)
             if let description = error.description {
-                TextLabel(description, textColor: .genericGrey)
+                TextLabel(description)
                     .font(.system(size: 16))
-                    .padding(.top, 15)
+                    .padding(.top, .paddingXXS)
+                    .padding(.horizontal, .paddingS)
             }
             if let retryAction = error.retryAction {
                 ActionButton(title: retryAction.title,
                              action: retryAction.action)
-                .padding(.top, 15)
+                .padding(.top, .paddingXS)
             }
         }
         .frame(minWidth: 0, maxWidth: .infinity)
-        .padding(.all, 15)
+        .padding(.all, .paddingS)
     }
 
     @ViewBuilder
@@ -41,9 +43,13 @@ struct ErrorView: View {
         switch error.icon {
         case .imageResource(let imageResource):
             Image(imageResource)
+                .resizable()
+                .scaledToFit()
 
         case .image(let image):
             image
+                .resizable()
+                .scaledToFit()
         }
     }
 }

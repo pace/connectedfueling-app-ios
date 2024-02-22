@@ -1,19 +1,8 @@
 {
   "images" : [
     {
-      "filename" : "local_gas_station.png",
-      "idiom" : "universal",
-      "scale" : "1x"
-    },
-    {
-      "filename" : "local_gas_station@2x.png",
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "filename" : "local_gas_station@3x.png",
-      "idiom" : "universal",
-      "scale" : "3x"
+      "filename" : "no_gas_stations_icon.pdf",
+      "idiom" : "universal"
     }
   ],
   "info" : {

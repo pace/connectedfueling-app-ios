@@ -41,7 +41,7 @@ struct DistanceTagView: View {
 
     var body: some View {
         HStack {
-            Image("arrows_outward")
+            Image("detail_arrows_outward")
                 .renderingMode(.template)
                 .resizable()
                 .scaledToFit()
