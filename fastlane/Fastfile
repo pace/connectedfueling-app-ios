@@ -119,9 +119,9 @@ platform :ios do
       sh("security", "default-keychain", "-s", "/Users/pace/Library/Keychains/login.keychain-db")
     end
 
-    sentry_enabled = options[:sentry_enabled]
+    sentry_enabled = options[:sentry_enabled].downcase
 
-    if sentry_enabled
+    if sentry_enabled == 'true'
       sentry_upload_dsym(
         auth_token: ENV["SENTRY_AUTH_TOKEN"],
         org_slug: 'pace',
@@ -161,9 +161,9 @@ platform :ios do
     app_name = options[:app_name]
     app_identifier = options[:app_identifier]
     
-    analytics_enabled = options[:analytics_enabled]
-    crashlytics_enabled = options[:crashlytics_enabled]
-    sentry_enabled = options[:sentry_enabled]
+    analytics_enabled = options[:analytics_enabled].downcase
+    crashlytics_enabled = options[:crashlytics_enabled].downcase
+    sentry_enabled = options[:sentry_enabled].downcase
     sentry_dsn = sentry_enabled ? options[:sentry_dsn] : ""
 
     client_id = options[:client_id]
@@ -187,14 +187,14 @@ platform :ios do
       end
     )
 
-    if sentry_enabled
+    if sentry_enabled == 'true'
       set_info_plist_value(path: info_plist_path, key: "SentryDSN", value: sentry_dsn)
     else
       puts 'Removing SentryDSN entry from Info.plist'
       sh(command: "/usr/libexec/PlistBuddy -c 'Delete :SentryDSN' ../App/Resources/InfoPlist/Info.plist")
     end
 
-    if !analytics_enabled
+    if analytics_enabled == 'false'
       puts 'Removing push notification entitlement'
       sh(command: "/usr/libexec/PlistBuddy -c 'Delete :aps-environment' ../App/Resources/App.entitlements")
     end
@@ -209,15 +209,15 @@ platform :ios do
     environment_uppercase = ENVIRONMENT.upcase
     preprocessor_flags = [environment_uppercase]
 
-    if analytics_enabled
+    if analytics_enabled == 'true'
       preprocessor_flags.append('ANALYTICS')
     end
 
-    if crashlytics_enabled
+    if crashlytics_enabled == 'true'
       preprocessor_flags.append('CRASHLYTICS')
     end
 
-    if sentry_enabled
+    if sentry_enabled == 'true'
       preprocessor_flags.append('SENTRY')
     end
 
