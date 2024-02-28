@@ -72,10 +72,7 @@ def replace_google_services():
   crashlytics_enabled = configuration['crashlytics_enabled']
   google_services_plist_path = "../App/Resources/GoogleService-Info.plist"
 
-  if analytics_enabled is False and crashlytics_enabled is False:
-    os.remove(google_services_plist_path) 
-    print("✅ Analytics and Crashlytics are disabled. Successfully removed google services file") 
-  else:
+  if analytics_enabled is True or crashlytics_enabled is True:
     os.replace(get_asset_path('firebase_config_ios.plist'), google_services_plist_path)
     print("✅ Successfully replaced google services file")
 
