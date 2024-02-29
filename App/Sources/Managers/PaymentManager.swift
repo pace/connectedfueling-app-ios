@@ -73,24 +73,59 @@ struct PaymentManager {
     }
 
     func is2FANeededForPayments() async -> Bool {
-        let request = PayAPI.PaymentMethodKinds.GetPaymentMethodKinds.Request(additionalData: true)
-        let response = await API.Pay.client.makeRequest(request)
+        let result = await paymentMethodKinds()
 
-        switch response.result {
-        case .success(let result):
-            guard let paymentMethodKinds = result.success?.data else {
-                CofuLogger.e("[PaymentManager] Failed checking if 2FA is needed for payments. Invalid data.")
-                return false
-            }
-
+        switch result {
+        case .success(let paymentMethodKinds):
             let is2FANeeded = paymentMethodKinds.contains(where: { $0.twoFactor == true })
             UserDefaults.is2FANeededForPayments = is2FANeeded
             return is2FANeeded
 
         case .failure(let error):
             CofuLogger.e("[PaymentManager] Failed checking if 2FA is needed for payments with error \(error)")
-            UserDefaults.is2FANeededForPayments = true // Set `is2FANeededForPayments` to true for the setup to be shown in the wallet
+
+            // Set `is2FANeededForPayments` to true for the setup to be shown in the wallet in case we couldn't fetch the actual value
+            UserDefaults.is2FANeededForPayments = true
+
             return false
+        }
+    }
+
+    func isNativePaymentMethodOnboardingEnabled() async -> Bool {
+        let result = await paymentMethodKinds()
+
+        switch result {
+        case .success(let paymentMethodKinds):
+            let isNativePaymentMethodOnboardingEnabled = paymentMethodKinds.contains(where: { !($0.implicit ?? false) })
+            UserDefaults.isNativePaymentMethodOnboardingEnabled = isNativePaymentMethodOnboardingEnabled
+            return isNativePaymentMethodOnboardingEnabled
+
+        case .failure(let error):
+            CofuLogger.e("[PaymentManager] Failed checking if native payment method onboarding is enabled with error \(error)")
+
+            // Set `isNativePaymentMethodOnboardingEnabled` to true for the setup to be shown in the wallet in case we couldn't fetch the actual value
+            UserDefaults.isNativePaymentMethodOnboardingEnabled = true
+
+            return false
+        }
+    }
+
+    private func paymentMethodKinds() async -> Result<PCPayPaymentMethodKinds, APIClientError> {
+        let request = PayAPI.PaymentMethodKinds.GetPaymentMethodKinds.Request(additionalData: true)
+        let response = await API.Pay.client.makeRequest(request)
+
+        switch response.result {
+        case .success(let result):
+            guard let paymentMethodKinds = result.success?.data else {
+                CofuLogger.e("[PaymentManager] Failed fetching payment method kinds. Invalid data.")
+                return .failure(.invalidDataError)
+            }
+
+            return .success(paymentMethodKinds)
+
+        case .failure(let error):
+            CofuLogger.e("[PaymentManager] Failed fetching payment method kinds with error \(error)")
+            return .failure(error)
         }
     }
 

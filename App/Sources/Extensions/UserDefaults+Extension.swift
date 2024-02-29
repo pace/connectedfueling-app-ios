@@ -9,6 +9,7 @@ extension UserDefaults {
         fileprivate static let fuelType: String = "fuelType"
         fileprivate static let isAnalyticsAllowed: String = "isAnalyticsAllowed"
         fileprivate static let is2FANeededForPayments: String = "is2FANeededForPayments"
+        fileprivate static let isNativePaymentMethodOnboardingEnabled: String = "isNativePaymentMethodOnboardingEnabled"
     }
 }
 
@@ -42,6 +43,11 @@ extension UserDefaults {
     class var is2FANeededForPayments: Bool {
         get { UserDefaults.standard.bool(forKey: Key.is2FANeededForPayments) }
         set { UserDefaults.standard.set(newValue, forKey: Key.is2FANeededForPayments) }
+    }
+
+    class var isNativePaymentMethodOnboardingEnabled: Bool {
+        get { UserDefaults.standard.bool(forKey: Key.isNativePaymentMethodOnboardingEnabled) }
+        set { UserDefaults.standard.set(newValue, forKey: Key.isNativePaymentMethodOnboardingEnabled) }
     }
 }
 
