@@ -142,6 +142,18 @@ internal enum L10n {
   internal static let goodEveningMessage = L10n.tr("Localizable", "good_evening_message", fallback: "Good evening!")
   /// Good morning!
   internal static let goodMorningMessage = L10n.tr("Localizable", "good_morning_message", fallback: "Good morning!")
+  /// To continue, you must agree to the updated privacy policy.
+  internal static let legalUpdatePrivacyDescription = L10n.tr("Localizable", "legal_update_privacy_description", fallback: "To continue, you must agree to the updated privacy policy.")
+  /// The privacy policy has changed
+  internal static let legalUpdatePrivacyTitle = L10n.tr("Localizable", "legal_update_privacy_title", fallback: "The privacy policy has changed")
+  /// To continue, you must agree to the updated terms of use.
+  internal static let legalUpdateTermsDescription = L10n.tr("Localizable", "legal_update_terms_description", fallback: "To continue, you must agree to the updated terms of use.")
+  /// The terms of use have changed
+  internal static let legalUpdateTermsTitle = L10n.tr("Localizable", "legal_update_terms_title", fallback: "The terms of use have changed")
+  /// Agree to the updated usage analysis so that we can further optimize this app for you.
+  internal static let legalUpdateTrackingDescription = L10n.tr("Localizable", "legal_update_tracking_description", fallback: "Agree to the updated usage analysis so that we can further optimize this app for you.")
+  /// The usage analysis has changed
+  internal static let legalUpdateTrackingTitle = L10n.tr("Localizable", "legal_update_tracking_title", fallback: "The usage analysis has changed")
   /// Price not available
   internal static let listPriceNotAvailable = L10n.tr("Localizable", "list_price_not_available", fallback: "Price not available")
   /// List
@@ -162,6 +174,8 @@ internal enum L10n {
   internal static let menuPermissionsNotificationsTitle = L10n.tr("Localizable", "menu_permissions_notifications_title", fallback: "Notifications")
   /// More
   internal static let moreTabLabel = L10n.tr("Localizable", "more_tab_label", fallback: "More")
+  /// Do you want to allow notifications?
+  internal static let notificationPermissionRequestTitle = L10n.tr("Localizable", "notification_permission_request_title", fallback: "Do you want to allow notifications?")
   /// Log in or register
   internal static let onboardingAuthenticationAction = L10n.tr("Localizable", "onboarding_authentication_action", fallback: "Log in or register")
   /// For easy payment with the app you have to register or login with your existing PACE-ID.

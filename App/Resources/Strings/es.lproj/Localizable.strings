@@ -95,6 +95,12 @@
 "good_day_message" = "¡Hola!";
 "good_evening_message" = "¡Buenas noches!";
 "good_morning_message" = "¡Buenos días!";
+"legal_update_privacy_description" = "Para continuar, debe aceptar la actualización de política de privacidad.";
+"legal_update_privacy_title" = "La normativa sobre protección de datos ha cambiado";
+"legal_update_terms_description" = "Para continuar, debe aceptar la actualización de condiciones de uso.";
+"legal_update_terms_title" = "Las condiciones de uso han cambiado";
+"legal_update_tracking_description" = "Acepta la actualización de análisis de uso para que podamos seguir optimizando esta aplicación para ti.";
+"legal_update_tracking_title" = "El análisis de uso ha cambiado";
 "list_price_not_available" = "Precio no disponible";
 "list_tab_label" = "Lista";
 "map_tab_label" = "Mapa";
@@ -105,6 +111,7 @@
 "menu_permissions_notifications_description" = "Le informamos mediante notificaciones push sobre las gasolineras de su zona y noticias generales.";
 "menu_permissions_notifications_title" = "Notificaciones";
 "more_tab_label" = "Más";
+"notification_permission_request_title" = "¿Desea permitir notificaciones?";
 "onboarding_authentication_action" = "Conectarse o registrarse";
 "onboarding_authentication_description" = "Para realizar un pago sencillo con la aplicación, debe registrarse o iniciar sesión con su identificación PACE existente.";
 "onboarding_authentication_title" = "Perfil de la tienda";

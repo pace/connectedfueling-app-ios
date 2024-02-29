@@ -95,6 +95,12 @@
 "good_day_message" = "Hej med jer!";
 "good_evening_message" = "Godaften!";
 "good_morning_message" = "Godmorgen!";
+"legal_update_privacy_description" = "For at fortsætte skal du acceptere den opdaterede privatlivspolitikken.";
+"legal_update_privacy_title" = "Databeskyttelsesreglerne har ændret sig";
+"legal_update_terms_description" = "For at fortsætte skal du acceptere den opdaterede brugsbetingelserne.";
+"legal_update_terms_title" = "Betingelserne for brug er ændret";
+"legal_update_tracking_description" = "Accepter den opdaterede brugsanalysen, så vi kan fortsætte med at optimere denne app til dig.";
+"legal_update_tracking_title" = "Brugsanalysen har ændret sig";
 "list_price_not_available" = "Pris ikke tilgængelig";
 "list_tab_label" = "Liste";
 "map_tab_label" = "Kort";
@@ -105,6 +111,7 @@
 "menu_permissions_notifications_description" = "Vi informerer dig via push-notifikationer om tankstationer i dit område og generelle nyheder.";
 "menu_permissions_notifications_title" = "Meddelelser";
 "more_tab_label" = "Mere";
+"notification_permission_request_title" = "Vil du tillade notifikationer?";
 "onboarding_authentication_action" = "Log ind eller registrer dig";
 "onboarding_authentication_description" = "For at foretage en simpel betaling med appen skal du registrere dig eller logge ind med dit eksisterende PACE-ID.";
 "onboarding_authentication_title" = "Butiksprofil";

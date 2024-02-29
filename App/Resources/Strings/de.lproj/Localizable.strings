@@ -39,7 +39,7 @@
 "alert_location_permission_denied_title" = "Bitte erteile die Standort-Freigabe in den Einstellungen.";
 "alert_location_permission_disabled_title" = "Ohne Standort-Freigabe kannst du das mobile Bezahlen nicht nutzen.";
 "alert_notification_permission_denied_title" = "Bitte erteile die Benachrichtungs-Freigabe in den Einstellungen.";
-"alert_notification_permission_disabled_title" = "Ohne Benachrichtigungs-Freigabe, können wir dich nicht über neueste Funktionen und Angebote informieren.";
+"alert_notification_permission_disabled_title" = "Ohne Benachrichtigungs-Freigabe können wir dich nicht über neueste Funktionen und Angebote informieren.";
 "analytics_accepted_text" = "Nutzungsanalyse aktiviert";
 "analytics_declined_text" = "Nutzungsanalyse deaktiviert";
 "closed_label" = "GESCHLOSSEN";
@@ -95,6 +95,12 @@
 "good_day_message" = "Guten Tag!";
 "good_evening_message" = "Guten Abend!";
 "good_morning_message" = "Guten Morgen!";
+"legal_update_privacy_description" = "Um fortfahren zu können, musst du den aktualisierten Datenschutzbestimmungen zustimmen.";
+"legal_update_privacy_title" = "Die Datenschutzbestimmungen haben sich geändert";
+"legal_update_terms_description" = "Um fortfahren zu können, musst du den aktualisierten Nutzungsbedingungen zustimmen.";
+"legal_update_terms_title" = "Die Nutzungsbedingungen haben sich geändert";
+"legal_update_tracking_description" = "Stimme der aktualisierten Nutzungsanalyse zu, damit wir diese App weiter für dich optimieren können.";
+"legal_update_tracking_title" = "Die Nutzungsanalyse hat sich geändert";
 "list_price_not_available" = "Preis nicht verfügbar";
 "list_tab_label" = "Liste";
 "map_tab_label" = "Karte";
@@ -105,6 +111,7 @@
 "menu_permissions_notifications_description" = "Wir informieren dich per Push-Benachrichtigung über Tankstellen in deiner Nähe und allgemeine Neuigkeiten.";
 "menu_permissions_notifications_title" = "Benachrichtigungen";
 "more_tab_label" = "Mehr";
+"notification_permission_request_title" = "Möchtest du Benachrichtigungen erlauben?";
 "onboarding_authentication_action" = "Anmelden oder registrieren";
 "onboarding_authentication_description" = "Für die einfache Zahlung mit der App musst du dich registrieren oder mit deiner vorhandenen PACE-ID anmelden.";
 "onboarding_authentication_title" = "Profil hinterlegen";

@@ -1,27 +1,23 @@
 import SwiftUI
 
 class OnboardingLegalPageViewModel: OnboardingPageViewModel {
-    init(style: ConfigurationManager.Configuration.OnboardingStyle) {
-        let description = L10n.onboardingLegalDescription
-        let termsOfUse = L10n.onboardingLegalTermsOfUse
-        let dataPrivacy = L10n.onboardingLegalDataPrivacy
 
-        let termsOfUseMarkdown = "[\(termsOfUse)](\(Constants.Onboarding.termsOfUseURL))"
-        let dataPrivacyMarkdown = "[\(dataPrivacy)](\(Constants.Onboarding.dataPrivacyURL))"
+    let legalManager: LegalManager
 
-        let descriptionMarkdown = description
-            .replacingOccurrences(of: termsOfUse, with: termsOfUseMarkdown)
-            .replacingOccurrences(of: dataPrivacy, with: dataPrivacyMarkdown)
+    init(style: ConfigurationManager.Configuration.OnboardingStyle, legalManager: LegalManager = .init()) {
+        self.legalManager = legalManager
 
         super.init(style: style,
                    image: .onboardingLegalIcon,
                    title: L10n.onboardingLegalTitle,
-                   description: descriptionMarkdown)
+                   description: L10n.onboardingLegalDescriptionMarkdown)
     }
 
     override func setupPageActions() {
         pageActions = [
             .init(title: L10n.commonUseAccept, action: { [weak self] in
+                self?.legalManager.accept(.terms, for: SystemManager.languageCode)
+                self?.legalManager.accept(.dataPrivacy, for: SystemManager.languageCode)
                 self?.finishOnboardingPage()
             })
         ]
@@ -30,10 +26,10 @@ class OnboardingLegalPageViewModel: OnboardingPageViewModel {
     override func handleLinks(_ url: URL) -> OpenURLAction.Result {
         let htmlFileName: String? = switch url.absoluteString {
         case Constants.Onboarding.termsOfUseURL:
-            Constants.File.termsOfUse
+            LegalManager.Kind.terms.fileName
 
         case Constants.Onboarding.dataPrivacyURL:
-            Constants.File.dataPrivacy
+            LegalManager.Kind.dataPrivacy.fileName
 
         default:
             nil
@@ -44,7 +40,7 @@ class OnboardingLegalPageViewModel: OnboardingPageViewModel {
             return .handled
         }
 
-        webView = WebView(htmlString: SystemManager.loadHTMLFromBundle(fileName: htmlFileName))
+        webView = WebView(htmlString: SystemManager.loadHTMLFromBundle(fileName: htmlFileName, for: SystemManager.languageCode))
         return .handled
     }
 }

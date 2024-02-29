@@ -9,9 +9,12 @@ class MenuAnalyticsViewModel: ObservableObject {
     let description: String
 
     private let analyticsManager: AnalyticsManager
+    private let legalManager: LegalManager
 
-    init(analyticsManager: AnalyticsManager) {
+    init(analyticsManager: AnalyticsManager,
+         legalManager: LegalManager = .init()) {
         self.analyticsManager = analyticsManager
+        self.legalManager = legalManager
         self.analyticsIcon = .onboardingAnalyticsIcon
         self.title = L10n.onboardingTrackingTitle
         self.description = L10n.onboardingTrackingDescriptionMarkdown
@@ -24,6 +27,7 @@ class MenuAnalyticsViewModel: ObservableObject {
         analyticsManager.updateActivationState()
 
         if isAnalyticsAllowed {
+            legalManager.accept(.tracking)
             CofuLogger.i("[MenuAnalyticsViewModel] Did accept app tracking")
         } else {
             CofuLogger.i("[MenuAnalyticsViewModel] Did decline app tracking")

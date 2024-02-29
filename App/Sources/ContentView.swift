@@ -4,14 +4,19 @@ struct ContentView: View {
     @Environment(\.scenePhase) var scenePhase
 
     @State private var selection: AppScreen = .gasStationList
+    @State private var legalUpdatedPages: LegalUpdateViewModel.LegalUpdatePages?
     @AppStorage(UserDefaults.Key.isOnboardingCompleted) private var isOnboardingCompleted: Bool = false
 
     private let appManager: AppManager
     private let analyticsManager: AnalyticsManager
     private let locationManager: LocationManager
+    private let legalManager: LegalManager
 
-    init(analyticsManager: AnalyticsManager, locationManager: LocationManager = .shared) {
+    init(analyticsManager: AnalyticsManager,
+         locationManager: LocationManager = .shared,
+         legalManager: LegalManager = .init()) {
         self.analyticsManager = analyticsManager
+        self.legalManager = legalManager
         self.appManager = .init(analyticsManager: analyticsManager)
         self.locationManager = locationManager
     }
@@ -23,6 +28,46 @@ struct ContentView: View {
                 analyticsManager.logEvent(AnalyticEvents.AppOpenedEvent())
 
                 checkLocationStatus()
+            }
+            .task {
+                let legalDocumentsStatus = await legalManager.checkForUpdates()
+
+                guard let legalDocumentsStatus = legalDocumentsStatus else {
+                    legalUpdatedPages = nil
+                    return
+                }
+
+                var pages: LegalUpdateViewModel.LegalUpdatePages = []
+
+                if legalDocumentsStatus.terms == .changed {
+                    pages.insert(.terms)
+                } else if legalDocumentsStatus.terms == .new {
+                    legalManager.accept(.terms)
+                }
+
+                if legalDocumentsStatus.dataPrivacy == .changed {
+                    pages.insert(.dataPrivacy)
+                } else if legalDocumentsStatus.dataPrivacy == .new {
+                    legalManager.accept(.dataPrivacy)
+                }
+
+                if legalDocumentsStatus.tracking == .new
+                    || legalDocumentsStatus.tracking == .changed {
+                    pages.insert(.tracking)
+                }
+
+                guard !pages.isEmpty else {
+                    legalUpdatedPages = nil
+                    return
+                }
+
+                legalUpdatedPages = pages
+
+            }
+            .fullScreenCover(item: $legalUpdatedPages) { pages in
+                LegalUpdateView(pages: pages, analyticsManager: analyticsManager) {
+                    legalUpdatedPages = nil
+                }
             }
     }
 

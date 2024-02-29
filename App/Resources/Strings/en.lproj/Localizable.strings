@@ -95,6 +95,12 @@
 "good_day_message" = "Good afternoon!";
 "good_evening_message" = "Good evening!";
 "good_morning_message" = "Good morning!";
+"legal_update_privacy_description" = "To continue, you must agree to the updated privacy policy.";
+"legal_update_privacy_title" = "The privacy policy has changed";
+"legal_update_terms_description" = "To continue, you must agree to the updated terms of use.";
+"legal_update_terms_title" = "The terms of use have changed";
+"legal_update_tracking_description" = "Agree to the updated usage analysis so that we can further optimize this app for you.";
+"legal_update_tracking_title" = "The usage analysis has changed";
 "list_price_not_available" = "Price not available";
 "list_tab_label" = "List";
 "map_tab_label" = "Map";
@@ -105,6 +111,7 @@
 "menu_permissions_notifications_description" = "We inform you via push notification about gas stations in your area and general news.";
 "menu_permissions_notifications_title" = "Notifications";
 "more_tab_label" = "More";
+"notification_permission_request_title" = "Do you want to allow notifications?";
 "onboarding_authentication_action" = "Log in or register";
 "onboarding_authentication_description" = "For easy payment with the app you have to register or login with your existing PACE-ID.";
 "onboarding_authentication_title" = "Add profile";

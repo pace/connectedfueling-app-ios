@@ -2,10 +2,13 @@ import SwiftUI
 
 class OnboardingAnalyticsPageViewModel: OnboardingPageViewModel {
     let analyticsManager: AnalyticsManager
+    let legalManager: LegalManager
 
     init(style: ConfigurationManager.Configuration.OnboardingStyle,
-         analyticsManager: AnalyticsManager) {
+         analyticsManager: AnalyticsManager,
+         legalManager: LegalManager = .init()) {
         self.analyticsManager = analyticsManager
+        self.legalManager = legalManager
 
         super.init(style: style,
                    image: .onboardingAnalyticsIcon,
@@ -19,6 +22,8 @@ class OnboardingAnalyticsPageViewModel: OnboardingPageViewModel {
                 CofuLogger.i("[OnboardingAnalyticsPageViewModel] Did accept app tracking")
 
                 UserDefaults.isAnalyticsAllowed = true
+                UserDefaults.didAskForAnalytics = true
+                self?.legalManager.accept(.tracking, for: SystemManager.languageCode)
                 self?.analyticsManager.updateActivationState()
                 self?.sendAppInstalledEvent()
                 self?.finishOnboardingPage()
@@ -27,6 +32,7 @@ class OnboardingAnalyticsPageViewModel: OnboardingPageViewModel {
                 CofuLogger.i("[OnboardingAnalyticsPageViewModel] Did decline app tracking")
 
                 UserDefaults.isAnalyticsAllowed = false
+                UserDefaults.didAskForAnalytics = true
                 self?.analyticsManager.updateActivationState()
                 self?.finishOnboardingPage()
             })
@@ -42,7 +48,7 @@ class OnboardingAnalyticsPageViewModel: OnboardingPageViewModel {
     override func handleLinks(_ url: URL) -> OpenURLAction.Result {
         switch url.absoluteString {
         case Constants.Onboarding.analyticsURL:
-            webView = WebView(htmlString: SystemManager.loadHTMLFromBundle(fileName: Constants.File.analytics))
+            webView = WebView(htmlString: SystemManager.loadHTMLFromBundle(fileName: LegalManager.Kind.tracking.fileName, for: SystemManager.languageCode))
 
         default:
             break

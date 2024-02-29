@@ -95,6 +95,12 @@
 "good_day_message" = "Olá!";
 "good_evening_message" = "Boa noite!";
 "good_morning_message" = "Bom dia!";
+"legal_update_privacy_description" = "Para continuar, tem de aceitar o política de privacidade atualizado.";
+"legal_update_privacy_title" = "Os regulamentos de proteção de dados foram alterados";
+"legal_update_terms_description" = "Para continuar, tem de aceitar o termos de utilização atualizado.";
+"legal_update_terms_title" = "As condições de utilização foram alteradas";
+"legal_update_tracking_description" = "Aceite a atualização de análise de utilização para que possamos continuar a otimizar esta aplicação para si.";
+"legal_update_tracking_title" = "A análise de utilização foi alterada";
 "list_price_not_available" = "Preço não disponível";
 "list_tab_label" = "Lista";
 "map_tab_label" = "Mapa";
@@ -105,6 +111,7 @@
 "menu_permissions_notifications_description" = "Informamo-lo, através de notificações push, sobre as bombas de gasolina da sua área e notícias gerais.";
 "menu_permissions_notifications_title" = "Notificações";
 "more_tab_label" = "Mais";
+"notification_permission_request_title" = "Pretende permitir notificações?";
 "onboarding_authentication_action" = "Iniciar sessão ou registar-se";
 "onboarding_authentication_description" = "Para efetuar um pagamento simples com a aplicação, é necessário registar-se ou iniciar sessão com o seu ID PACE existente.";
 "onboarding_authentication_title" = "Perfil da loja";

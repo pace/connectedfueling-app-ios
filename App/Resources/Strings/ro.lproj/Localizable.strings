@@ -95,6 +95,12 @@
 "good_day_message" = "Bună!";
 "good_evening_message" = "Bună seara!";
 "good_morning_message" = "Bună dimineața!";
+"legal_update_privacy_description" = "Pentru a continua, trebuie să fiți de acord cu actualizarea politica de confidențialitate.";
+"legal_update_privacy_title" = "S-au schimbat reglementările privind protecția datelor";
+"legal_update_terms_description" = "Pentru a continua, trebuie să fiți de acord cu actualizarea termenii de utilizare.";
+"legal_update_terms_title" = "Condițiile de utilizare s-au schimbat";
+"legal_update_tracking_description" = "Sunteți de acord cu actualizarea analiza de utilizare, astfel încât să putem continua să optimizăm această aplicație pentru dumneavoastră.";
+"legal_update_tracking_title" = "Analiza utilizării s-a schimbat";
 "list_price_not_available" = "Prețul nu este disponibil";
 "list_tab_label" = "Lista";
 "map_tab_label" = "Hartă";
@@ -105,6 +111,7 @@
 "menu_permissions_notifications_description" = "Vă informăm prin notificare push despre benzinăriile din zona dumneavoastră și despre știrile generale.";
 "menu_permissions_notifications_title" = "Notificări";
 "more_tab_label" = "Mai mult";
+"notification_permission_request_title" = "Doriți să permiteți notificări?";
 "onboarding_authentication_action" = "Autentificați-vă sau înregistrați-vă";
 "onboarding_authentication_description" = "Pentru a efectua o plată simplă cu ajutorul aplicației, trebuie să vă înregistrați sau să vă conectați cu ID-ul PACE existent.";
 "onboarding_authentication_title" = "Profilul magazinului";

@@ -95,6 +95,12 @@
 "good_day_message" = "Здравствуйте!";
 "good_evening_message" = "Добрый вечер!";
 "good_morning_message" = "Доброе утро!";
+"legal_update_privacy_description" = "Чтобы продолжить, вы должны согласиться с обновленным политику конфиденциальности.";
+"legal_update_privacy_title" = "Изменились правила защиты данных";
+"legal_update_terms_description" = "Чтобы продолжить, вы должны согласиться с обновленным условиями использования.";
+"legal_update_terms_title" = "Условия использования изменились";
+"legal_update_tracking_description" = "Согласитесь с обновленным анализ использования, чтобы мы могли продолжать оптимизировать это приложение для вас.";
+"legal_update_tracking_title" = "Анализ использования изменился";
 "list_price_not_available" = "Цена недоступна";
 "list_tab_label" = "Список";
 "map_tab_label" = "Карта";
@@ -105,6 +111,7 @@
 "menu_permissions_notifications_description" = "Мы информируем вас с помощью push-уведомлений о заправочных станциях в вашем районе и общих новостях.";
 "menu_permissions_notifications_title" = "Уведомления";
 "more_tab_label" = "Подробнее";
+"notification_permission_request_title" = "Хотите ли вы разрешить уведомления?";
 "onboarding_authentication_action" = "Войдите или зарегистрируйтесь";
 "onboarding_authentication_description" = "Чтобы совершить простой платеж с помощью приложения, вам нужно зарегистрироваться или войти в систему с помощью существующего идентификатора PACE.";
 "onboarding_authentication_title" = "Профиль магазина";
