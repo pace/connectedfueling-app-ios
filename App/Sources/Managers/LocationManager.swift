@@ -4,6 +4,7 @@ import Foundation
 protocol LocationManagerDelegate: AnyObject {
     func didUpdateLocations(locations: [CLLocation])
     func didFail(with error: Error)
+    func didChangePermissionStatus(newStatus: PermissionStatus)
 }
 
 class LocationManager: NSObject {
@@ -20,7 +21,7 @@ class LocationManager: NSObject {
     private let locationManager: CLLocationManager
     private var locationPermissionCallback: ((PermissionStatus) -> Void)?
 
-    private var latestLocations: [CLLocation] = []
+    var latestLocations: [CLLocation] = []
 
     private override init() {
         self.locationManager = .init()
@@ -84,6 +85,7 @@ extension LocationManager: CLLocationManagerDelegate {
         let newStatus = makeLocationPermissionStatus(for: manager.authorizationStatus)
         locationPermissionCallback?(newStatus)
         locationPermissionCallback = nil
+        delegates.forEach { $0.receiver?.didChangePermissionStatus(newStatus: newStatus) }
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

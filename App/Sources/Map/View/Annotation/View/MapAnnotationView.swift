@@ -4,6 +4,9 @@ struct MapAnnotationView: View {
     @ObservedObject private var viewModel: MapAnnotationViewModel
     @Binding private var isTopAnnotationViewHidden: Bool
 
+    private let smallTopAnnotationOffset: CGFloat = -20.0
+    private let normalTopAnnotationOffset: CGFloat = -35.0
+
     init(viewModel: MapAnnotationViewModel, isTopAnnotationViewHidden: Binding<Bool>) {
         self.viewModel = viewModel
         self._isTopAnnotationViewHidden = isTopAnnotationViewHidden
@@ -17,16 +20,18 @@ struct MapAnnotationView: View {
 
     @ViewBuilder
     private var content: some View {
-        ZStack(alignment: .bottom) {
+        ZStack {
             MapBottomAnnotationView(viewModel: viewModel)
-                .padding(.bottom, -10)
-            MapTopAnnotationView(viewModel: viewModel, isHidden: $isTopAnnotationViewHidden)
+            if !isTopAnnotationViewHidden {
+                MapTopAnnotationView(viewModel: viewModel)
+                    .offset(x: 0, y: viewModel.usesSmallHeight ? smallTopAnnotationOffset : normalTopAnnotationOffset)
+            }
         }
     }
 }
 
 #Preview {
-    VStack(spacing: 10) {
+    VStack(spacing: 30) {
         MapAnnotationView(viewModel: .init(annotation: .init(gasStation: .init(id: "",
                                                                                name: "Tankstelle",
                                                                                addressLines: [],

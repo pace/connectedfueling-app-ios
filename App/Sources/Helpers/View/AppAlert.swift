@@ -46,6 +46,17 @@ enum AppAlert {
               secondaryButton: .cancel())
     }
 
+    static var locationServicesDisabledError: Alert {
+        Alert(title: Text(L10n.LocationDialog.disabledTitle),
+              message: Text(L10n.LocationDialog.disabledText),
+              primaryButton: .default(Text(L10n.Alert.LocationPermission.Actions.openSettings),
+                                      action: {
+            guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
+            UIApplication.shared.open(url)
+        }),
+              secondaryButton: .cancel())
+    }
+
     static func networkError(retryAction: @escaping () -> Void) -> Alert {
         Alert(title: Text(L10n.commonUseNetworkError),
               primaryButton: .default(Text(L10n.commonUseRetry),

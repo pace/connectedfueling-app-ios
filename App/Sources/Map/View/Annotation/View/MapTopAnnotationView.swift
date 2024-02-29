@@ -2,15 +2,13 @@ import SwiftUI
 
 struct MapTopAnnotationView: View {
     @ObservedObject private var viewModel: MapAnnotationViewModel
-    @Binding private var isHidden: Bool
 
     private let annotationHeight: CGFloat
     private let annotationVerticalOffset: CGFloat
 
-    init(viewModel: MapAnnotationViewModel, isHidden: Binding<Bool>) {
+    init(viewModel: MapAnnotationViewModel) {
         self.viewModel = viewModel
-        self._isHidden = isHidden
-        self.annotationHeight = viewModel.usesSmallHeight ? 35 : 65
+        self.annotationHeight = viewModel.usesSmallHeight ? 38 : 65
         self.annotationVerticalOffset = viewModel.usesSmallHeight ? -5 : -3
     }
 
@@ -35,7 +33,6 @@ struct MapTopAnnotationView: View {
         .frame(width: 100, height: annotationHeight)
         .offset(.init(width: 0, height: annotationVerticalOffset))
         .background(tailShape)
-        .opacity(isHidden ? 0 : 1)
     }
 
     @ViewBuilder
@@ -107,8 +104,7 @@ private extension MapTopAnnotationView {
                                                                                               format: "d.dds")
                                                                                       ],
                                                                                       lastUpdated: nil,
-                                                                                      openingHours: []))),
-                                 isHidden: .constant(false))
+                                                                                      openingHours: []))))
             MapTopAnnotationView(viewModel: .init(annotation: .init(gasStation: .init(id: "",
                                                                                       name: "Tankstelle",
                                                                                       addressLines: [],
@@ -128,8 +124,7 @@ private extension MapTopAnnotationView {
                                                                                         .init(days: [.sunday],
                                                                                               hours: [.init(from: "2", to: "3")],
                                                                                               rule: .open)
-                                                                                      ]))),
-                                 isHidden: .constant(false))
+                                                                                      ]))))
         }
     }
 }

@@ -11,17 +11,20 @@ class GasStationListViewModel: ObservableObject {
 
     private let poiManager: POIManager
     private let locationManager: LocationManager
+    private let analyticsManager: AnalyticsManager
 
     let style: ConfigurationManager.Configuration.GasStationListStyle
 
     init(configuration: ConfigurationManager.Configuration = ConfigurationManager.configuration,
          stations: [GasStation]? = nil,
          poiManager: POIManager = .init(),
+         analyticsManager: AnalyticsManager = .init(),
          locationManager: LocationManager = .shared) {
         self.style = configuration.gasStationListStyle
         self.stations = stations
         self.poiManager = poiManager
         self.locationManager = locationManager
+        self.analyticsManager = analyticsManager
 
         self.locationManager.subscribe(self)
     }
@@ -48,6 +51,10 @@ class GasStationListViewModel: ObservableObject {
 
             switch result {
             case .success(let cofuStations):
+                if cofuStations.contains(where: { $0.isNearby }) {
+                    self?.analyticsManager.logEvent(AnalyticEvents.StationNearbyEvent())
+                }
+                
                 let sortedCofuStations = cofuStations.sorted()
                 self?.updateSections(with: sortedCofuStations)
 
@@ -116,4 +123,6 @@ extension GasStationListViewModel: LocationManagerDelegate {
         guard let clError = error as? CLError, clError.code == .denied else { return }
         handleError(error)
     }
+
+    func didChangePermissionStatus(newStatus: PermissionStatus) {}
 }

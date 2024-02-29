@@ -36,11 +36,14 @@ class OnboardingLocationPermissionPageViewModel: OnboardingPageViewModel {
                 self?.finishOnboardingPage()
             }
 
+        case .disabled:
+            self.alert = AppAlert.locationServicesDisabledError
+
         case .denied:
-            alert = AppAlert.locationPermissionDeniedError
+            self.alert = AppAlert.locationPermissionDeniedError
 
         case .authorized:
-            finishOnboardingPage()
+            self.finishOnboardingPage()
         }
     }
 }

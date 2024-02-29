@@ -1,16 +1,21 @@
 import SwiftUI
 
 struct MapNavigationView: View {
-
-    let analyticsManager: AnalyticsManager
+    @StateObject var viewModel: MapNavigationViewModel = .init()
+    @StateObject var analyticsManager: AnalyticsManager
 
     init(analyticsManager: AnalyticsManager = .init()) {
-        self.analyticsManager = analyticsManager
+        self._analyticsManager = .init(wrappedValue: analyticsManager)
     }
 
     var body: some View {
         AppNavigationView {
-            MapView(analyticsManager: analyticsManager)
+            MapView(analyticsManager: analyticsManager) { alert in
+                viewModel.showAlert(alert)
+            }
+        }
+        .alert(item: $viewModel.alert) { alert in
+            alert
         }
     }
 }
