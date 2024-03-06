@@ -36,11 +36,14 @@ struct PaymentMethodsView: View {
     private var paymentMethodsList: some View {
         VStack(spacing: 0) {
             PaymentMethodsListView(viewModel: viewModel)
-            Spacer()
-            ActionButton(title: L10n.paymentMethodsAddButton, style: .secondary) {
-                viewModel.showPaymentApp()
+            
+            if viewModel.isNativePaymentMethodOnboardingEnabled {
+                Spacer()
+                ActionButton(title: L10n.paymentMethodsAddButton, style: .secondary) {
+                    viewModel.showPaymentApp()
+                }
+                .padding(.horizontal, 20)
             }
-            .padding(.horizontal, 20)
         }
         .padding(.bottom, 10)
         .sheet(item: $viewModel.paymentAppUrlString) { urlString in

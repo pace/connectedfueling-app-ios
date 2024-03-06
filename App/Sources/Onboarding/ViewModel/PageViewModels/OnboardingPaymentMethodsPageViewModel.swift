@@ -30,7 +30,9 @@ class OnboardingPaymentMethodsPageViewModel: OnboardingPageViewModel {
     }
 
     override func isPageAlreadyCompleted() async -> Bool {
-        await hasPaymentMethods()
+        let hasPaymentMethods = await hasPaymentMethods()
+        let isNativePaymentMethodOnboardingEnabled = await paymentManager.isNativePaymentMethodOnboardingEnabled()
+        return hasPaymentMethods || !isNativePaymentMethodOnboardingEnabled
     }
 
     override func didDismissAppView() {

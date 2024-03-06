@@ -80,7 +80,10 @@ private extension AppDelegate {
 
         Task {
             await UserManager().refresh()
-            _ = await PaymentManager().is2FANeededForPayments()
+
+            let paymentManager = PaymentManager()
+            _ = await paymentManager.is2FANeededForPayments()
+            _ = await paymentManager.isNativePaymentMethodOnboardingEnabled()
         }
     }
 }

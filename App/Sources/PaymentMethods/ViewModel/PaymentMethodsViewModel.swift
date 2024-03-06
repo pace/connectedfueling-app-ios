@@ -5,6 +5,7 @@ class PaymentMethodsViewModel: ObservableObject {
     @Published private(set) var error: AppError?
     @Published private(set) var paymentMethodViewModels: [PaymentMethodViewModel] = []
     @Published var paymentAppUrlString: String?
+    private(set) var isNativePaymentMethodOnboardingEnabled: Bool
 
     let emptyPaymentMethodsError: AppError = .init(title: L10n.paymentMethodsEmptyTitle,
                                                    description: L10n.paymentMethodsEmptyDescription,
@@ -14,6 +15,7 @@ class PaymentMethodsViewModel: ObservableObject {
 
     init(paymentManager: PaymentManager = .init()) {
         self.paymentManager = paymentManager
+        self.isNativePaymentMethodOnboardingEnabled = UserDefaults.isNativePaymentMethodOnboardingEnabled
     }
 
     func fetchPaymentMethods() {
