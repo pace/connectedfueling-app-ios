@@ -11,8 +11,8 @@ struct MenuAnalyticsView: View {
         content
             .environment(\.openURL, OpenURLAction(handler: viewModel.handleLinks))
             .sheet(isPresented: $viewModel.isPresentingAnalytics) {
-                WebView(htmlString: SystemManager.loadHTMLFromBundle(fileName: LegalManager.Kind.tracking.fileName,
-                                                                     for: LegalManager.Kind.tracking.acceptedLanguage ?? SystemManager.languageCode))
+                WebView(htmlString: SystemManager.loadHTMLFromBundle(fileName: ConsentManager.Kind.tracking.fileName,
+                                                                     for: ConsentManager.Kind.tracking.acceptedLanguage ?? SystemManager.languageCode))
             }
     }
 

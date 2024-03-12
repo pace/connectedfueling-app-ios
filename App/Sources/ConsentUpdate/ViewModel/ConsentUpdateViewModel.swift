@@ -1,8 +1,8 @@
 import SwiftUI
 
-class LegalUpdateViewModel: ObservableObject {
+class ConsentUpdateViewModel: ObservableObject {
 
-    struct LegalUpdatePages: OptionSet, Identifiable {
+    struct ConsentUpdatePages: OptionSet, Identifiable {
         let id: Int
         let rawValue: UInt
 
@@ -11,19 +11,20 @@ class LegalUpdateViewModel: ObservableObject {
             self.rawValue = rawValue
         }
 
-        static let terms = LegalUpdatePages(rawValue: 1 << 0)
-        static let dataPrivacy = LegalUpdatePages(rawValue: 1 << 1)
-        static let tracking = LegalUpdatePages(rawValue: 1 << 2)
+        static let terms = ConsentUpdatePages(rawValue: 1 << 0)
+        static let dataPrivacy = ConsentUpdatePages(rawValue: 1 << 1)
+        static let tracking = ConsentUpdatePages(rawValue: 1 << 2)
+        static let notifications = ConsentUpdatePages(rawValue: 1 << 3)
     }
 
     @Published var currentPage: Int = 0
 
-    var pageViewModels: [LegalUpdatePageViewModel]
+    var pageViewModels: [ConsentUpdatePageViewModel]
     var dismiss: (() -> Void)?
 
-    init(pages: LegalUpdatePages,
+    init(pages: ConsentUpdatePages,
          analyticsManager: AnalyticsManager = .init()) {
-        var viewModels: [LegalUpdatePageViewModel] = []
+        var viewModels: [ConsentUpdatePageViewModel] = []
 
         if pages.contains(.terms) {
             viewModels.append(TermsUpdatePageViewModel())
@@ -37,6 +38,10 @@ class LegalUpdateViewModel: ObservableObject {
             viewModels.append(TrackingUpdatePageViewModel(analyticsManager: analyticsManager))
         }
 
+        if pages.contains(.notifications) {
+            viewModels.append(NotificationConsentPageViewModel())
+        }
+
         pageViewModels = viewModels
 
         setupDelegates()
@@ -44,7 +49,7 @@ class LegalUpdateViewModel: ObservableObject {
 
     private func setupDelegates() {
         pageViewModels.forEach {
-            $0.legalUpdateViewModel = self
+            $0.consentUpdateViewModel = self
         }
     }
 

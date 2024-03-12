@@ -4,21 +4,24 @@ struct ContentView: View {
     @Environment(\.scenePhase) var scenePhase
 
     @State private var selection: AppScreen = .gasStationList
-    @State private var legalUpdatedPages: LegalUpdateViewModel.LegalUpdatePages?
+    @State private var consentUpdatedPages: ConsentUpdateViewModel.ConsentUpdatePages?
     @AppStorage(UserDefaults.Key.isOnboardingCompleted) private var isOnboardingCompleted: Bool = false
 
     private let appManager: AppManager
     private let analyticsManager: AnalyticsManager
     private let locationManager: LocationManager
-    private let legalManager: LegalManager
+    private let consentManager: ConsentManager
+    private let notificationManager: NotificationManager
 
     init(analyticsManager: AnalyticsManager,
          locationManager: LocationManager = .shared,
-         legalManager: LegalManager = .init()) {
+         consentManager: ConsentManager = .init(),
+         notificationManager: NotificationManager = .init()) {
         self.analyticsManager = analyticsManager
-        self.legalManager = legalManager
+        self.consentManager = consentManager
         self.appManager = .init(analyticsManager: analyticsManager)
         self.locationManager = locationManager
+        self.notificationManager = notificationManager
     }
 
     var body: some View {
@@ -30,43 +33,27 @@ struct ContentView: View {
                 checkLocationStatus()
             }
             .task {
-                let legalDocumentsStatus = await legalManager.checkForUpdates()
+                var pages = await consentUpdatePages()
 
-                guard let legalDocumentsStatus = legalDocumentsStatus else {
-                    legalUpdatedPages = nil
-                    return
-                }
+                let currentNotificationPermissionStatus = await notificationManager.currentNotificationPermissionStatus()
 
-                var pages: LegalUpdateViewModel.LegalUpdatePages = []
-
-                if legalDocumentsStatus.terms == .changed {
-                    pages.insert(.terms)
-                } else if legalDocumentsStatus.terms == .new {
-                    legalManager.accept(.terms)
-                }
-
-                if legalDocumentsStatus.dataPrivacy == .changed {
-                    pages.insert(.dataPrivacy)
-                } else if legalDocumentsStatus.dataPrivacy == .new {
-                    legalManager.accept(.dataPrivacy)
-                }
-
-                if legalDocumentsStatus.tracking == .new
-                    || legalDocumentsStatus.tracking == .changed {
-                    pages.insert(.tracking)
+                if isOnboardingCompleted
+                    && ConfigurationManager.configuration.isAnalyticsEnabled
+                    && currentNotificationPermissionStatus == .notDetermined {
+                    pages.insert(.notifications)
                 }
 
                 guard !pages.isEmpty else {
-                    legalUpdatedPages = nil
+                    consentUpdatedPages = nil
                     return
                 }
 
-                legalUpdatedPages = pages
+                consentUpdatedPages = pages
 
             }
-            .fullScreenCover(item: $legalUpdatedPages) { pages in
-                LegalUpdateView(pages: pages, analyticsManager: analyticsManager) {
-                    legalUpdatedPages = nil
+            .fullScreenCover(item: $consentUpdatedPages) { pages in
+                ConsentUpdateView(pages: pages, analyticsManager: analyticsManager) {
+                    consentUpdatedPages = nil
                 }
             }
     }
@@ -102,5 +89,33 @@ struct ContentView: View {
         locationManager.requestLocationPermission { permissionStatus in
             CofuLogger.i("Location permission status: \(permissionStatus)")
         }
+    }
+
+    private func consentUpdatePages() async -> ConsentUpdateViewModel.ConsentUpdatePages {
+        var pages: ConsentUpdateViewModel.ConsentUpdatePages = []
+        var consentStatuses = await consentManager.checkForUpdates()
+
+        guard let consentStatuses = consentStatuses else {
+            return pages
+        }
+
+        if consentStatuses.terms == .changed {
+            pages.insert(.terms)
+        } else if consentStatuses.terms == .new {
+            consentManager.accept(.terms)
+        }
+
+        if consentStatuses.dataPrivacy == .changed {
+            pages.insert(.dataPrivacy)
+        } else if consentStatuses.dataPrivacy == .new {
+            consentManager.accept(.dataPrivacy)
+        }
+
+        if consentStatuses.tracking == .new
+            || consentStatuses.tracking == .changed {
+            pages.insert(.tracking)
+        }
+
+        return pages
     }
 }

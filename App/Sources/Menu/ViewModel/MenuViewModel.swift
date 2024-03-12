@@ -63,8 +63,8 @@ class MenuViewModel: ObservableObject {
         self.listItems += customListItems
     }
 
-    private func loadLegalHtmlString(kind: LegalManager.Kind) -> String {
-        SystemManager.loadHTMLFromBundle(fileName: kind.fileName, for: kind.acceptedLanguage ?? SystemManager.languageCode)
+    private func loadLegalHtmlString(kind: ConsentManager.Kind) -> String {
+        return SystemManager.loadHTMLFromBundle(fileName: kind.fileName, for: kind.acceptedLanguage ?? SystemManager.languageCode)
     }
 
     private func loadImprintHtmlString() -> String {
