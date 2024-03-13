@@ -24,7 +24,7 @@ class OnboardingPaymentMethodsPageViewModel: OnboardingPageViewModel {
     override func setupPageActions() {
         pageActions = [
             .init(title: L10n.onboardingPaymentMethodAction, action: { [weak self] in
-                self?.appUrlString = PACECloudSDK.URL.payment.absoluteString
+                self?.appUrlString = Constants.URL.paymentMethodCreation
             })
         ]
     }
