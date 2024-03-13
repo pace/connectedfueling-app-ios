@@ -95,6 +95,12 @@
 "good_day_message" = "Dobrý den!";
 "good_evening_message" = "Dobrý večer!";
 "good_morning_message" = "Dobré ráno!";
+"legal_update_privacy_description" = "Chcete-li pokračovat, musíte souhlasit s aktualizovanými stránkami zásady ochrany osobních údajů.";
+"legal_update_privacy_title" = "Změnily se předpisy o ochraně údajů";
+"legal_update_terms_description" = "Chcete-li pokračovat, musíte souhlasit s aktualizovanými stránkami podmínkami používání.";
+"legal_update_terms_title" = "Podmínky používání se změnily";
+"legal_update_tracking_description" = "Souhlasíte s aktualizovanou stránkou analýzu používání, abychom pro vás mohli tuto aplikaci nadále optimalizovat.";
+"legal_update_tracking_title" = "Analýza použití se změnila";
 "list_price_not_available" = "Cena není k dispozici";
 "list_tab_label" = "Seznam";
 "map_tab_label" = "Mapa";
@@ -105,6 +111,7 @@
 "menu_permissions_notifications_description" = "Pomocí push notifikací vás informujeme o čerpacích stanicích ve vašem okolí a o obecných novinkách.";
 "menu_permissions_notifications_title" = "Oznámení";
 "more_tab_label" = "Více";
+"notification_permission_request_title" = "Chcete povolit oznámení?";
 "onboarding_authentication_action" = "Přihlaste se nebo se zaregistrujte";
 "onboarding_authentication_description" = "Chcete-li provést jednoduchou platbu pomocí aplikace, musíte se zaregistrovat nebo přihlásit pomocí svého stávajícího PACE ID.";
 "onboarding_authentication_title" = "Profil obchodu";

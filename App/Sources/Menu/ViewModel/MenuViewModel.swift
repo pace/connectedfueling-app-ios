@@ -63,8 +63,12 @@ class MenuViewModel: ObservableObject {
         self.listItems += customListItems
     }
 
-    private func loadLegalHtmlString(fileName: String) -> String {
-        SystemManager.loadHTMLFromBundle(fileName: fileName)
+    private func loadLegalHtmlString(kind: LegalManager.Kind) -> String {
+        SystemManager.loadHTMLFromBundle(fileName: kind.fileName, for: kind.acceptedLanguage ?? SystemManager.languageCode)
+    }
+
+    private func loadImprintHtmlString() -> String {
+        SystemManager.loadHTMLFromBundle(fileName: Constants.File.imprint)
     }
 
     private func logError(_ message: String) {
@@ -78,7 +82,7 @@ private extension MenuViewModel {
         .init(icon: .menuTermsIcon,
               title: L10n.Menu.Items.terms,
               action: .presentedContent(AnyView(
-                WebView(htmlString: loadLegalHtmlString(fileName: Constants.File.termsOfUse))
+                WebView(htmlString: loadLegalHtmlString(kind: .terms))
               )))
     }
 
@@ -86,7 +90,7 @@ private extension MenuViewModel {
         .init(icon: .menuDataPrivacyIcon,
               title: L10n.Menu.Items.privacy,
               action: .presentedContent(AnyView(
-                WebView(htmlString: loadLegalHtmlString(fileName: Constants.File.dataPrivacy))
+                WebView(htmlString: loadLegalHtmlString(kind: .dataPrivacy))
               )))
     }
 
@@ -94,7 +98,7 @@ private extension MenuViewModel {
         .init(icon: .menuImprintIcon,
               title: L10n.Menu.Items.imprint,
               action: .presentedContent(AnyView(
-                WebView(htmlString: loadLegalHtmlString(fileName: Constants.File.imprint))
+                WebView(htmlString: loadImprintHtmlString())
               )))
     }
 

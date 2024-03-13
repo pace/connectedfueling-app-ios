@@ -95,6 +95,12 @@
 "good_day_message" = "Ciao!";
 "good_evening_message" = "Buona sera!";
 "good_morning_message" = "Buongiorno!";
+"legal_update_privacy_description" = "Per continuare, è necessario accettare il sito l'informativa sulla privacy aggiornato.";
+"legal_update_privacy_title" = "Le norme sulla protezione dei dati sono cambiate";
+"legal_update_terms_description" = "Per continuare, è necessario accettare il sito condizioni di utilizzo aggiornato.";
+"legal_update_terms_title" = "Le condizioni di utilizzo sono cambiate";
+"legal_update_tracking_description" = "Accettate l'aggiornamento di l'analisi dell'utilizzo in modo che possiamo continuare a ottimizzare l'applicazione per voi.";
+"legal_update_tracking_title" = "L'analisi dell'utilizzo è cambiata";
 "list_price_not_available" = "Prezzo non disponibile";
 "list_tab_label" = "Elenco";
 "map_tab_label" = "Mappa";
@@ -105,6 +111,7 @@
 "menu_permissions_notifications_description" = "Vi informiamo tramite notifica push sulle stazioni di servizio nella vostra zona e sulle notizie generali.";
 "menu_permissions_notifications_title" = "Notifiche";
 "more_tab_label" = "Più";
+"notification_permission_request_title" = "Si desidera consentire le notifiche?";
 "onboarding_authentication_action" = "Accedi o registrati";
 "onboarding_authentication_description" = "Per effettuare un semplice pagamento con l'app, è necessario registrarsi o accedere con il proprio ID PACE.";
 "onboarding_authentication_title" = "Profilo del negozio";

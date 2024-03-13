@@ -9,11 +9,21 @@
 /* Begin PBXBuildFile section */
 		0B3463CE2B6289A600DACFB3 /* PACECloudSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 0B3463CD2B6289A600DACFB3 /* PACECloudSDK */; };
 		0B3463D12B62974700DACFB3 /* CLLocationCoordinate2D+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3463D02B62974700DACFB3 /* CLLocationCoordinate2D+Extension.swift */; };
+		0B25AE782B95C0F20087B575 /* LegalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B25AE772B95C0F20087B575 /* LegalManager.swift */; };
+		0B25AE7B2B99DF440087B575 /* LegalUpdateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B25AE7A2B99DF440087B575 /* LegalUpdateView.swift */; };
+		0B25AE7F2B99E12E0087B575 /* LegalUpdateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B25AE7E2B99E12E0087B575 /* LegalUpdateViewModel.swift */; };
+		0B25AE812B99E22F0087B575 /* LegalUpdatePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B25AE802B99E22F0087B575 /* LegalUpdatePageView.swift */; };
+		0B25AE832B99E23A0087B575 /* LegalUpdatePagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B25AE822B99E23A0087B575 /* LegalUpdatePagerView.swift */; };
+		0B25AE852B99E7DD0087B575 /* LegalUpdatePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B25AE842B99E7DD0087B575 /* LegalUpdatePageViewModel.swift */; };
+		0B25AE882B99F2D20087B575 /* TermsUpdatePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B25AE872B99F2D20087B575 /* TermsUpdatePageViewModel.swift */; };
+		0B25AE8A2B99F2FD0087B575 /* DataPrivacyUpdatePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B25AE892B99F2FD0087B575 /* DataPrivacyUpdatePageViewModel.swift */; };
+		0B25AE8C2B99F3080087B575 /* TrackingUpdatePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B25AE8B2B99F3080087B575 /* TrackingUpdatePageViewModel.swift */; };
 		0B3A9B992B3C37260065CA5A /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3A9B982B3C37260065CA5A /* FirebaseService.swift */; };
 		0B3A9B9B2B3C37AB0065CA5A /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3A9B9A2B3C37AB0065CA5A /* AnalyticsManager.swift */; };
 		0B3A9B9D2B3C37FC0065CA5A /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3A9B9C2B3C37FC0065CA5A /* AnalyticsService.swift */; };
 		0B3A9BA32B3DA4F60065CA5A /* AnalyticEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3A9BA22B3DA4F60065CA5A /* AnalyticEvents.swift */; };
 		0BB100CE2B90794900C85177 /* MapNavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB100CD2B90794900C85177 /* MapNavigationViewModel.swift */; };
+		0B860D342B7E546A0032432F /* MD5+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B860D332B7E546A0032432F /* MD5+String.swift */; };
 		0BDC0CD42B35877200BD341F /* CofuLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDC0CD32B35877200BD341F /* CofuLogger.swift */; };
 		16E730131166C556AA0708EF /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2EB20D5198AC7E6603D98D72 /* Settings.bundle */; };
 		1867B8D8BE2B8499106AC9E1 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B5B4A6AE57364F8FC6B771 /* Assets.swift */; };
@@ -210,11 +220,21 @@
 		0B05D7D928B4FF4A00445C74 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0B05D7DA28B4FF4A00445C74 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0B3463D02B62974700DACFB3 /* CLLocationCoordinate2D+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Extension.swift"; sourceTree = "<group>"; };
+		0B25AE772B95C0F20087B575 /* LegalManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalManager.swift; sourceTree = "<group>"; };
+		0B25AE7A2B99DF440087B575 /* LegalUpdateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalUpdateView.swift; sourceTree = "<group>"; };
+		0B25AE7E2B99E12E0087B575 /* LegalUpdateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalUpdateViewModel.swift; sourceTree = "<group>"; };
+		0B25AE802B99E22F0087B575 /* LegalUpdatePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalUpdatePageView.swift; sourceTree = "<group>"; };
+		0B25AE822B99E23A0087B575 /* LegalUpdatePagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalUpdatePagerView.swift; sourceTree = "<group>"; };
+		0B25AE842B99E7DD0087B575 /* LegalUpdatePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalUpdatePageViewModel.swift; sourceTree = "<group>"; };
+		0B25AE872B99F2D20087B575 /* TermsUpdatePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsUpdatePageViewModel.swift; sourceTree = "<group>"; };
+		0B25AE892B99F2FD0087B575 /* DataPrivacyUpdatePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPrivacyUpdatePageViewModel.swift; sourceTree = "<group>"; };
+		0B25AE8B2B99F3080087B575 /* TrackingUpdatePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingUpdatePageViewModel.swift; sourceTree = "<group>"; };
 		0B3A9B982B3C37260065CA5A /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		0B3A9B9A2B3C37AB0065CA5A /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
 		0B3A9B9C2B3C37FC0065CA5A /* AnalyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
 		0B3A9BA22B3DA4F60065CA5A /* AnalyticEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnalyticEvents.swift; sourceTree = "<group>"; };
 		0BB100CD2B90794900C85177 /* MapNavigationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNavigationViewModel.swift; sourceTree = "<group>"; };
+		0B860D332B7E546A0032432F /* MD5+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MD5+String.swift"; sourceTree = "<group>"; };
 		0BDC0CD32B35877200BD341F /* CofuLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CofuLogger.swift; sourceTree = "<group>"; };
 		0DDED74D77EA34B1E82D66CC /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		0DE070BD08140DF741A4FC14 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -452,6 +472,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B25AE792B99DF100087B575 /* LegalUpdate */ = {
+			isa = PBXGroup;
+			children = (
+				0B25AE7D2B99E02F0087B575 /* ViewModel */,
+				0B25AE7C2B99E0210087B575 /* View */,
+			);
+			path = LegalUpdate;
+			sourceTree = "<group>";
+		};
+		0B25AE7C2B99E0210087B575 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0B25AE7A2B99DF440087B575 /* LegalUpdateView.swift */,
+				0B25AE802B99E22F0087B575 /* LegalUpdatePageView.swift */,
+				0B25AE822B99E23A0087B575 /* LegalUpdatePagerView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0B25AE7D2B99E02F0087B575 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0B25AE862B99EA070087B575 /* PageViewModels */,
+				0B25AE7E2B99E12E0087B575 /* LegalUpdateViewModel.swift */,
+				0B25AE842B99E7DD0087B575 /* LegalUpdatePageViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0B25AE862B99EA070087B575 /* PageViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				0B25AE872B99F2D20087B575 /* TermsUpdatePageViewModel.swift */,
+				0B25AE892B99F2FD0087B575 /* DataPrivacyUpdatePageViewModel.swift */,
+				0B25AE8B2B99F3080087B575 /* TrackingUpdatePageViewModel.swift */,
+			);
+			path = PageViewModels;
+			sourceTree = "<group>";
+		};
 		0B3A9B962B3C25BF0065CA5A /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
@@ -743,6 +802,7 @@
 				3BCF49F32ADFCA06005C20DC /* View+Extension.swift */,
 				9A1B8B4B2B5AA59C0009B3B9 /* MapKit+Extensions.swift */,
 				0B3463D02B62974700DACFB3 /* CLLocationCoordinate2D+Extension.swift */,
+				0B860D332B7E546A0032432F /* MD5+String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -977,6 +1037,7 @@
 				3BA2DB232AE7B5E200187D86 /* POIManager.swift */,
 				3BDE7B0C2AD82EDB009A88DF /* UserManager.swift */,
 				3B6D84EC2B10A17200701DEE /* SystemManager.swift */,
+				0B25AE772B95C0F20087B575 /* LegalManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -1069,6 +1130,7 @@
 				3BA2DB0D2AE6A1EC00187D86 /* Navigation */,
 				3B7370A82AD43EA200E9118B /* Onboarding */,
 				3B819DB52B063EE100B4803A /* PaymentMethods */,
+				0B25AE792B99DF100087B575 /* LegalUpdate */,
 				3B9562EA2B05FFFF00AD4184 /* Wallet */,
 			);
 			path = Sources;
@@ -1506,6 +1568,7 @@
 				9AC2D2FF2B32DD84001A1864 /* NavigationBarColorModifier.swift in Sources */,
 				3BAE60582AD59239006EA9DD /* OnboardingPageViewModel.swift in Sources */,
 				0BB100CE2B90794900C85177 /* MapNavigationViewModel.swift in Sources */,
+				0B25AE782B95C0F20087B575 /* LegalManager.swift in Sources */,
 				3BA2DB1D2AE6ABC300187D86 /* GasStationListSection.swift in Sources */,
 				3BA2DAFE2AE6758300187D86 /* GasStationListViewModel.swift in Sources */,
 				9ADF34872B2748E800134E1D /* TransactionListViewModel.swift in Sources */,
@@ -1534,6 +1597,7 @@
 				3BA2DB242AE7B5E200187D86 /* POIManager.swift in Sources */,
 				9AAAA8D22B2B4EC600C515ED /* PriceUnavailableCardView.swift in Sources */,
 				9A00F23C2B162BA00050C7FA /* OpeningHours.swift in Sources */,
+				0B25AE7B2B99DF440087B575 /* LegalUpdateView.swift in Sources */,
 				3B68C1272B5E9617009FA16E /* MenuAnalyticsStateView.swift in Sources */,
 				3B6277352B0768C300528A1F /* AppError.swift in Sources */,
 				3B700A552B59330D000B11CC /* MenuAnalyticsView.swift in Sources */,
@@ -1566,8 +1630,10 @@
 				3B4616CD2ADECDBC00DF57A1 /* OnboardingTextInputViewModel.swift in Sources */,
 				3BE4E90F2AFCD53A00AC5EE9 /* ConfigurationManager.swift in Sources */,
 				3BD94C902B0B533800CE6676 /* MigrationManager.swift in Sources */,
+				0B25AE852B99E7DD0087B575 /* LegalUpdatePageViewModel.swift in Sources */,
 				9A1B8B4C2B5AA59C0009B3B9 /* MapKit+Extensions.swift in Sources */,
 				3BAE60772AD7CD5E006EA9DD /* LocationManager.swift in Sources */,
+				0B25AE8C2B99F3080087B575 /* TrackingUpdatePageViewModel.swift in Sources */,
 				3B6D84EF2B10B01600701DEE /* WebView.swift in Sources */,
 				3B5880D12B0CA7DE0057CDC5 /* Image+Extension.swift in Sources */,
 				3BCF80AE2B629C4F00FEB235 /* PermissionStatus.swift in Sources */,
@@ -1597,9 +1663,11 @@
 				3BA2DB042AE677CA00187D86 /* GasStation.swift in Sources */,
 				3B65A4862B1A03FA006B6890 /* ListItemIconView.swift in Sources */,
 				3B6277322B0750C300528A1F /* BackgroundContainer.swift in Sources */,
+				0B25AE812B99E22F0087B575 /* LegalUpdatePageView.swift in Sources */,
 				3B6254D72B0F5DCC008FAB25 /* Style.swift in Sources */,
 				3B6277302B07506600528A1F /* ErrorView.swift in Sources */,
 				3BDE7B232ADD1422009A88DF /* OnboardingTwoFactorAuthenticationPageViewModel.swift in Sources */,
+				0B25AE832B99E23A0087B575 /* LegalUpdatePagerView.swift in Sources */,
 				3BAE607F2AD80ADE006EA9DD /* String+Extension.swift in Sources */,
 				9A00F22F2B0F978A0050C7FA /* PriceCardStack.swift in Sources */,
 				3B6D84E92B1096A500701DEE /* MenuViewModel.swift in Sources */,
@@ -1611,6 +1679,7 @@
 				3BE4E9122AFCD54B00AC5EE9 /* Configuration.swift in Sources */,
 				3BD94C942B0B704400CE6676 /* PKPaymentNetwork+Extension.swift in Sources */,
 				0B3A9B9D2B3C37FC0065CA5A /* AnalyticsService.swift in Sources */,
+				0B860D342B7E546A0032432F /* MD5+String.swift in Sources */,
 				3B7764522AF91C4100BE185B /* SentryService.swift in Sources */,
 				3BA2DAF92AE6755100187D86 /* GasStationListView.swift in Sources */,
 				3B6254E02B0F9FF8008FAB25 /* ListView.swift in Sources */,
@@ -1621,6 +1690,7 @@
 				3BDE7B4A2ADD7DC7009A88DF /* OnboardingTextInputType.swift in Sources */,
 				3BA2DB022AE6776C00187D86 /* GasStationListItemViewModel.swift in Sources */,
 				3BA2DB0C2AE69BF200187D86 /* NSLocale+Extension.swift in Sources */,
+				0B25AE8A2B99F2FD0087B575 /* DataPrivacyUpdatePageViewModel.swift in Sources */,
 				9A00F2382B14EC930050C7FA /* PriceCardData.swift in Sources */,
 				3B819DBB2B063F3000B4803A /* FuelTypeSelectionViewModel.swift in Sources */,
 				3B5A1C8E2B163E7800EA5754 /* OnboardingLegalPageViewModel.swift in Sources */,
@@ -1630,6 +1700,7 @@
 				3B0CFFA02B27476800EFC3ED /* MapTopAnnotationView.swift in Sources */,
 				3B6E0B7B2B21FC2E001F4FE9 /* MapView.swift in Sources */,
 				3B819DB72B063F0400B4803A /* FuelTypeSelectionView.swift in Sources */,
+				0B25AE882B99F2D20087B575 /* TermsUpdatePageViewModel.swift in Sources */,
 				9AAAA8D02B29F6C900C515ED /* ShareObject.swift in Sources */,
 				3B6D84ED2B10A17200701DEE /* SystemManager.swift in Sources */,
 				3B3CFD532B7A60BB00314626 /* MenuPermissionsView.swift in Sources */,
@@ -1641,6 +1712,7 @@
 				3B62772E2B074CE300528A1F /* LoadingView.swift in Sources */,
 				3B5A1C902B163F0D00EA5754 /* OnboardingAnalyticsPageViewModel.swift in Sources */,
 				3BA2DB062AE6783E00187D86 /* FuelPrice.swift in Sources */,
+				0B25AE7F2B99E12E0087B575 /* LegalUpdateViewModel.swift in Sources */,
 				3BCF49F42ADFCA06005C20DC /* View+Extension.swift in Sources */,
 				9A00F2352B14E6360050C7FA /* OpeningHourInfo.swift in Sources */,
 				9AC2D2FD2B32DCC6001A1864 /* NavigationConfigurator.swift in Sources */,

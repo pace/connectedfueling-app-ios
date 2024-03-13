@@ -95,6 +95,12 @@
 "good_day_message" = "Cześć!";
 "good_evening_message" = "Dobry wieczór!";
 "good_morning_message" = "Dzień dobry!";
+"legal_update_privacy_description" = "Aby kontynuować, należy wyrazić zgodę na aktualizację strony politykę prywatności.";
+"legal_update_privacy_title" = "Przepisy dotyczące ochrony danych uległy zmianie";
+"legal_update_terms_description" = "Aby kontynuować, należy wyrazić zgodę na aktualizację strony warunkami użytkowania.";
+"legal_update_terms_title" = "Warunki użytkowania uległy zmianie";
+"legal_update_tracking_description" = "Wyraź zgodę na aktualizację analizę użytkowania, abyśmy mogli nadal optymalizować tę aplikację dla Ciebie.";
+"legal_update_tracking_title" = "Analiza użytkowania uległa zmianie";
 "list_price_not_available" = "Cena niedostępna";
 "list_tab_label" = "Lista";
 "map_tab_label" = "Mapa";
@@ -105,6 +111,7 @@
 "menu_permissions_notifications_description" = "Informujemy Cię za pomocą powiadomień push o stacjach benzynowych w Twojej okolicy i ogólnych wiadomościach.";
 "menu_permissions_notifications_title" = "Powiadomienia";
 "more_tab_label" = "Więcej";
+"notification_permission_request_title" = "Czy chcesz zezwolić na powiadomienia?";
 "onboarding_authentication_action" = "Zaloguj się lub zarejestruj";
 "onboarding_authentication_description" = "Aby dokonać prostej płatności za pomocą aplikacji, należy się zarejestrować lub zalogować przy użyciu istniejącego identyfikatora PACE ID.";
 "onboarding_authentication_title" = "Profil sklepu";

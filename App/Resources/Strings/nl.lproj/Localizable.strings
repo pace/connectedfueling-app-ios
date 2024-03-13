@@ -95,6 +95,12 @@
 "good_day_message" = "Hallo!";
 "good_evening_message" = "Goedenavond!";
 "good_morning_message" = "Goedemorgen!";
+"legal_update_privacy_description" = "Om verder te gaan, moet je akkoord gaan met de bijgewerkte privacybeleid.";
+"legal_update_privacy_title" = "De regels voor gegevensbescherming zijn veranderd";
+"legal_update_terms_description" = "Om verder te gaan, moet je akkoord gaan met de bijgewerkte gebruiksvoorwaarden.";
+"legal_update_terms_title" = "De gebruiksvoorwaarden zijn gewijzigd";
+"legal_update_tracking_description" = "Ga akkoord met de bijgewerkte gebruiksanalyse zodat we deze app voor jou kunnen blijven optimaliseren.";
+"legal_update_tracking_title" = "De gebruiksanalyse is veranderd";
 "list_price_not_available" = "Prijs niet beschikbaar";
 "list_tab_label" = "Lijst";
 "map_tab_label" = "Kaart";
@@ -105,6 +111,7 @@
 "menu_permissions_notifications_description" = "We informeren je via pushmeldingen over tankstations bij jou in de buurt en algemeen nieuws.";
 "menu_permissions_notifications_title" = "Meldingen";
 "more_tab_label" = "Meer";
+"notification_permission_request_title" = "Wil je meldingen toestaan?";
 "onboarding_authentication_action" = "Inloggen of registreren";
 "onboarding_authentication_description" = "Om een eenvoudige betaling met de app te doen, moet je je registreren of inloggen met je bestaande PACE ID.";
 "onboarding_authentication_title" = "Winkelprofiel";
