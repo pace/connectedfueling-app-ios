@@ -36,7 +36,7 @@ struct PaymentMethodsView: View {
     private var paymentMethodsList: some View {
         VStack(spacing: 0) {
             PaymentMethodsListView(viewModel: viewModel)
-            
+
             if viewModel.isNativePaymentMethodOnboardingEnabled {
                 Spacer()
                 ActionButton(title: L10n.paymentMethodsAddButton, style: .secondary) {

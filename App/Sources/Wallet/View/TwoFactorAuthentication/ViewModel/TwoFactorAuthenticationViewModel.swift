@@ -105,7 +105,7 @@ class TwoFactorAuthenticationViewModel: ObservableObject {
                 self?.inputViewModel = .init(type: .biometryOTP) { [weak self] response in
                     if case .biometry(let otp) = response {
                         Task { @MainActor [weak self] in
-                            let isSuccessful = await self?.requestTwoFactorAuthenticationWithBiometry(otp: otp) ?? false
+                            _ = await self?.requestTwoFactorAuthenticationWithBiometry(otp: otp) ?? false
                             self?.refreshBiometryStatus()
                         }
                     } else {

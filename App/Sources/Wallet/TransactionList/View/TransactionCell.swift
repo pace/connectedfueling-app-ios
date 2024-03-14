@@ -40,7 +40,7 @@ struct TransactionCell: View {
 
     @ViewBuilder
     private var price: some View {
-        PriceCardView(title: viewModel.fuelType, 
+        PriceCardView(title: viewModel.fuelType,
                       priceText: viewModel.attributedPrice)
     }
 }

@@ -55,7 +55,7 @@ struct PaymentMethodsListItemView: View {
         PaymentMethodsListItemView(viewModel: .init(paymentMethod: .init(id: "",
                                                                          kind: "applepay",
                                                                          identificationString: "user@pace.car",
-                                                                         alias: "Alias", 
+                                                                         alias: "Alias",
                                                                          iconUrlString: nil),
                                                     delegate: nil))
     }

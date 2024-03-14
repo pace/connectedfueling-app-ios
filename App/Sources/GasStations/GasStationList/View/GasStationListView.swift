@@ -207,7 +207,7 @@ struct GasStationListView: View {
                           openingHours: [
                             .init(days: [.monday, .tuesday, .wednesday, .thursday, .friday, .saturday, .sunday],
                                   hours: [.init(from: "3", to: "22")],
-                                  rule: .open),
+                                  rule: .open)
                           ]),
                     .init(id: "id-1",
                           name: "MobyPay 3436",

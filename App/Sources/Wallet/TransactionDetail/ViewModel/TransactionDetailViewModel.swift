@@ -41,11 +41,21 @@ class TransactionDetailViewModel: ObservableObject, Identifiable {
 
     private let priceFormatter: PriceNumberFormatter
 
-    init(userManager: UserManager = .init(), transactionId: String,
-         day: String, date: String, time: String, brand: String,
-         address: String, price: Double, amount: Decimal,
-         fuelType: String, pricePerUnit: Decimal, paymentMethod: String,
-         pump: Int, currency: String, unit: String) {
+    init(userManager: UserManager = .init(),
+         transactionId: String,
+         day: String,
+         date: String,
+         time: String,
+         brand: String,
+         address: String,
+         price: Double,
+         amount: Decimal,
+         fuelType: String,
+         pricePerUnit: Decimal,
+         paymentMethod: String,
+         pump: Int,
+         currency: String,
+         unit: String) {
         self.userManager = userManager
         self.priceFormatter = PriceNumberFormatter(with: "d.dd")
 

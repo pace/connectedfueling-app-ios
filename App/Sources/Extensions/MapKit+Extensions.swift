@@ -27,9 +27,10 @@ extension MKCoordinateRegion {
         let rightLongitude = normalizeLongitude(centerLongitude + longitudeDelta / 2.0)
         let leftLongitude = normalizeLongitude(centerLongitude - longitudeDelta / 2.0)
 
-        return .init(point1: .init(latitude: topLatitude, longitude: rightLongitude), 
+        return .init(point1: .init(latitude: topLatitude, longitude: rightLongitude),
                      point2: .init(latitude: bottomLatitude, longitude: leftLongitude),
-                     center: self.center, padding: padding)
+                     center: self.center,
+                     padding: padding)
     }
 
     private func clampLatitude(_ latitude: CLLocationDegrees) -> CLLocationDegrees {
