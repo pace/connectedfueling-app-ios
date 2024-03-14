@@ -1514,7 +1514,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which license-plist > /dev/null; then\n    if [ $CONFIGURATION = \"Development\" ]; then\n        license-plist --output-path $PRODUCT_NAME/Resources/Settings.bundle --package-path $PROJECT_FILE_PATH/project.xcworkspace/xcshareddata/swiftpm/Package.swift --add-version-numbers #--fail-if-missing-license \n    fi\nelse\n    echo \"warning: license-plist not installed, follow installation instructions from https://github.com/mono0926/LicensePlist\"\nfi\n\n";
+			shellScript = "$SRCROOT/scripts/license-plist --output-path $PRODUCT_NAME/Resources/Settings.bundle --package-path $PROJECT_FILE_PATH/project.xcworkspace/xcshareddata/swiftpm/Package.swift --add-version-numbers --fail-if-missing-license\n\n";
 		};
 		9768C99DBF9A7EC06DC52AF8 /* SwiftGen */ = {
 			isa = PBXShellScriptBuildPhase;
