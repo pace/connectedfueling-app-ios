@@ -1,8 +1,8 @@
 import Foundation
+import UserNotifications
 
-struct LegalManager {
-
-    enum Kind {
+struct ConsentManager {
+    enum Kind: String {
         case terms
         case dataPrivacy
         case tracking
@@ -33,6 +33,7 @@ struct LegalManager {
             }
         }
 
+        /// File name is nil for push notifications
         var fileName: String {
             switch self {
             case .terms:
@@ -47,23 +48,23 @@ struct LegalManager {
         }
     }
 
-    enum DocumentStatus {
-        /// Document hash was never stored and is completely new
+    enum ConsentStatus {
+        /// Consent was never requested
         case new
-        /// Document hash changed since last acceptance
+        /// Consent document changed after last acceptance
         case changed
-        /// Document hash is unchanged
+        /// Consent document is unchanged
         case unchanged
-        /// Document was never accepted (only for tracking)
+        /// Consent is not accepted (only for tracking & push notification)
         case notAccepted
         /// The feature is disabled
         case disabled
     }
 
-    struct LegalDocumentsStatus {
-        var terms: DocumentStatus
-        var dataPrivacy: DocumentStatus
-        var tracking: DocumentStatus
+    struct ConsentStatuses {
+        var terms: ConsentStatus
+        var dataPrivacy: ConsentStatus
+        var tracking: ConsentStatus
     }
 
     var configuration: ConfigurationManager.Configuration
@@ -75,7 +76,7 @@ struct LegalManager {
     // MARK: Check for updates
     /// Check whether terms, data privacy or tracking documents have changed.
     /// Returns nil when called before onboarding is complete.
-    func checkForUpdates() async -> LegalDocumentsStatus? {
+    func checkForUpdates() async -> ConsentStatuses? {
         guard UserDefaults.isOnboardingCompleted else {
             return nil
         }
@@ -86,7 +87,7 @@ struct LegalManager {
         return await .init(terms: termsChange, dataPrivacy: dataPrivacyChange, tracking: trackingChange)
     }
 
-    private func checkForUpdate(_ termsKind: Kind) async -> DocumentStatus {
+    private func checkForUpdate(_ termsKind: Kind) async -> ConsentStatus {
         if termsKind == .tracking {
             if !configuration.isAnalyticsEnabled {
                 return .disabled

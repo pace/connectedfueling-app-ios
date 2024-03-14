@@ -1,10 +1,10 @@
 import SwiftUI
 
-struct LegalUpdatePageView: View {
+struct ConsentUpdatePageView: View {
 
-    @ObservedObject private var viewModel: LegalUpdatePageViewModel
+    @ObservedObject private var viewModel: ConsentUpdatePageViewModel
 
-    init(viewModel: LegalUpdatePageViewModel) {
+    init(viewModel: ConsentUpdatePageViewModel) {
         self.viewModel = viewModel
     }
 
@@ -57,5 +57,5 @@ struct LegalUpdatePageView: View {
 }
 
 #Preview {
-    LegalUpdatePageView(viewModel: TermsUpdatePageViewModel())
+    ConsentUpdatePageView(viewModel: TermsUpdatePageViewModel())
 }

@@ -2,11 +2,11 @@ import SwiftUI
 
 class OnboardingAnalyticsPageViewModel: OnboardingPageViewModel {
     let analyticsManager: AnalyticsManager
-    let legalManager: LegalManager
+    let legalManager: ConsentManager
 
     init(style: ConfigurationManager.Configuration.OnboardingStyle,
          analyticsManager: AnalyticsManager,
-         legalManager: LegalManager = .init()) {
+         legalManager: ConsentManager = .init()) {
         self.analyticsManager = analyticsManager
         self.legalManager = legalManager
 
@@ -48,7 +48,7 @@ class OnboardingAnalyticsPageViewModel: OnboardingPageViewModel {
     override func handleLinks(_ url: URL) -> OpenURLAction.Result {
         switch url.absoluteString {
         case Constants.Onboarding.analyticsURL:
-            webView = WebView(htmlString: SystemManager.loadHTMLFromBundle(fileName: LegalManager.Kind.tracking.fileName, for: SystemManager.languageCode))
+            webView = WebView(htmlString: SystemManager.loadHTMLFromBundle(fileName: ConsentManager.Kind.tracking.fileName, for: SystemManager.languageCode))
 
         default:
             break

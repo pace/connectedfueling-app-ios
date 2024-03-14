@@ -2,9 +2,9 @@ import SwiftUI
 
 class OnboardingLegalPageViewModel: OnboardingPageViewModel {
 
-    let legalManager: LegalManager
+    let legalManager: ConsentManager
 
-    init(style: ConfigurationManager.Configuration.OnboardingStyle, legalManager: LegalManager = .init()) {
+    init(style: ConfigurationManager.Configuration.OnboardingStyle, legalManager: ConsentManager = .init()) {
         self.legalManager = legalManager
 
         super.init(style: style,
@@ -26,10 +26,10 @@ class OnboardingLegalPageViewModel: OnboardingPageViewModel {
     override func handleLinks(_ url: URL) -> OpenURLAction.Result {
         let htmlFileName: String? = switch url.absoluteString {
         case Constants.Onboarding.termsOfUseURL:
-            LegalManager.Kind.terms.fileName
+            ConsentManager.Kind.terms.fileName
 
         case Constants.Onboarding.dataPrivacyURL:
-            LegalManager.Kind.dataPrivacy.fileName
+            ConsentManager.Kind.dataPrivacy.fileName
 
         default:
             nil

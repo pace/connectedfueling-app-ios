@@ -1,6 +1,6 @@
 import SwiftUI
 
-class LegalUpdatePageViewModel: ObservableObject, Identifiable {
+class ConsentUpdatePageViewModel: ObservableObject, Identifiable {
     let title: String
     let description: String
 
@@ -8,7 +8,7 @@ class LegalUpdatePageViewModel: ObservableObject, Identifiable {
 
     @Published var webView: WebView?
 
-    weak var legalUpdateViewModel: LegalUpdateViewModel?
+    weak var consentUpdateViewModel: ConsentUpdateViewModel?
 
     private(set) var rootView: (any View)?
 
@@ -29,7 +29,7 @@ class LegalUpdatePageViewModel: ObservableObject, Identifiable {
         rootView = view
     }
 
-    func finishLegalUpdatePage() {
-        legalUpdateViewModel?.nextPage()
+    func finishConsentUpdatePage() {
+        consentUpdateViewModel?.nextPage()
     }
 }

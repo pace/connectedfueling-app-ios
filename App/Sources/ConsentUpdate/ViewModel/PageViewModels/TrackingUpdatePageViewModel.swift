@@ -1,12 +1,12 @@
 import SwiftUI
 
-class TrackingUpdatePageViewModel: LegalUpdatePageViewModel {
+class TrackingUpdatePageViewModel: ConsentUpdatePageViewModel {
     let analyticsManager: AnalyticsManager
-    let legalManager: LegalManager
+    let consentManager: ConsentManager
 
-    init(legalManager: LegalManager = .init(),
+    init(consentManager: ConsentManager = .init(),
          analyticsManager: AnalyticsManager) {
-        self.legalManager = legalManager
+        self.consentManager = consentManager
         self.analyticsManager = analyticsManager
 
         super.init(title: L10n.legalUpdateTrackingTitle,
@@ -20,9 +20,9 @@ class TrackingUpdatePageViewModel: LegalUpdatePageViewModel {
 
                 UserDefaults.isAnalyticsAllowed = true
                 UserDefaults.didAskForAnalytics = true
-                self?.legalManager.accept(.tracking, for: LegalManager.Kind.tracking.acceptedLanguage ?? SystemManager.languageCode)
+                self?.consentManager.accept(.tracking, for: ConsentManager.Kind.tracking.acceptedLanguage ?? SystemManager.languageCode)
                 self?.analyticsManager.updateActivationState()
-                self?.finishLegalUpdatePage()
+                self?.finishConsentUpdatePage()
             }),
             .init(title: L10n.commonUseDecline, action: { [weak self] in
                 CofuLogger.i("[TrackingUpdatePageViewModel] Did decline app tracking")
@@ -30,7 +30,7 @@ class TrackingUpdatePageViewModel: LegalUpdatePageViewModel {
                 UserDefaults.isAnalyticsAllowed = false
                 UserDefaults.didAskForAnalytics = true
                 self?.analyticsManager.updateActivationState()
-                self?.finishLegalUpdatePage()
+                self?.finishConsentUpdatePage()
             })
         ]
     }
@@ -38,8 +38,8 @@ class TrackingUpdatePageViewModel: LegalUpdatePageViewModel {
     override func handleLinks(_ url: URL) -> OpenURLAction.Result {
         switch url.absoluteString {
         case Constants.Onboarding.analyticsURL:
-            webView = WebView(htmlString: SystemManager.loadHTMLFromBundle(fileName: LegalManager.Kind.tracking.fileName,
-                                                                           for: LegalManager.Kind.tracking.acceptedLanguage ?? SystemManager.languageCode))
+            webView = WebView(htmlString: SystemManager.loadHTMLFromBundle(fileName: ConsentManager.Kind.tracking.fileName,
+                                                                           for: ConsentManager.Kind.tracking.acceptedLanguage ?? SystemManager.languageCode))
 
         default:
             break
