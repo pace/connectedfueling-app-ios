@@ -54,6 +54,8 @@
 "common_use_confirm" = "Bestätigen";
 "common_use_deactivate" = "Deaktivieren";
 "common_use_decline" = "Ablehnen";
+"common_use_error_description" = "Bitte versuche es erneut";
+"common_use_error_title" = "Ups, etwas ist schiefgelaufen";
 "common_use_friday" = "Freitag";
 "common_use_monday" = "Montag";
 "common_use_network_error" = "Verbindung zum Internet fehlgeschlagen. Versuche es später erneut.";
@@ -170,8 +172,10 @@
 "payment_methods_loading_title" = "Lade Bezahlmethoden und Tankkarten...";
 "search_title" = "Orte suchen";
 "transactions_details_title" = "Transaktionsdetails";
-"transactions_empty_title" = "Noch keine Transaktionen";
+"transactions_empty_description" = "Nach deiner ersten Zahlung mit der App werden deine Transaktionen hier angezeigt";
+"transactions_empty_title" = "Du hast noch keine Transaktionen";
 "transactions_last_transaction_title" = "Deine letzte Transaktion";
+"transactions_loading_title" = "Lade Transaktionen";
 "transactions_receipt_title" = "Beleg";
 "transactions_station_details_title" = "Stationsdetails";
 "transactions_tap_on_receipt_title" = "Tippe auf den Beleg, um ihn zu speichern";

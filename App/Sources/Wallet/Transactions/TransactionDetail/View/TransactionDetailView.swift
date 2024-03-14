@@ -5,32 +5,34 @@ struct TransactionDetailView: View {
 
     var body: some View {
         ScrollView {
-            info
-            price
-            method
-            receipt
+            VStack(spacing: .paddingM) {
+                info
+                if viewModel.showPrices {
+                    price
+                }
+                method
+                receipt
+            }
         }
-        .onAppear(perform: viewModel.detailWillAppear)
+        .onAppear {
+            viewModel.loadReceipt()
+        }
     }
 
     @ViewBuilder
     private var info: some View {
         ZStack {
             Color.primaryTintLight
-            VStack {
+            VStack(spacing: 0) {
                 Image(.walletLocalGasStation)
-                    .resizable()
+                    .renderingMode(.template)
                     .foregroundColor(.genericGrey)
-                    .frame(width: 24, height: 24)
-                    .padding(.vertical, .paddingXS)
+                    .padding(.bottom, .paddingXS)
                 TextLabel(viewModel.brand)
                     .font(.system(size: 20, weight: .bold))
-                    .padding(.bottom, 1)
                 TextLabel(viewModel.address)
                     .font(.system(size: 16))
-                    .padding(.bottom, 1)
-//                TextLabel(L10n.transactionsStationDetailsTitle, textColor: .primaryTint) // TODO: String
-//                    .padding(.bottom, .paddingXS)
+                    .padding(.bottom, .paddingM)
                 TextLabel("\(viewModel.day), \(viewModel.date) · \(viewModel.time)")
                 TextLabel("\(L10n.commonUsePump) \(viewModel.pump)")
             }
@@ -40,21 +42,21 @@ struct TransactionDetailView: View {
 
     @ViewBuilder
     private var price: some View {
-            ZStack {
-                Color.lightGrey
-                    .cornerRadius(8)
-                HStack {
-                    VStack {
-                        TextLabel("\(viewModel.amount) \(viewModel.unit) \(viewModel.fuelType)")
-                        TextLabel("\(viewModel.pricePerUnit) \(viewModel.currency)/\(viewModel.unit)")
-                    }
-                    Spacer()
-                    TextLabel(viewModel.attributedPrice)
-                        .font(.system(size: 24, weight: .bold))
+        ZStack {
+            Color.lightGrey
+                .cornerRadius(8)
+            HStack {
+                VStack(alignment: .leading) {
+                    TextLabel("\(viewModel.amount) \(viewModel.unit) \(viewModel.fuelType)")
+                    TextLabel("\(viewModel.pricePerUnit) \(viewModel.currency)/\(viewModel.unit)")
                 }
-                .padding(.paddingXS)
+                Spacer()
+                TextLabel(viewModel.attributedPrice)
+                    .font(.system(size: 24, weight: .bold))
             }
-        .padding(.paddingM)
+            .padding(.paddingS)
+        }
+        .padding(.horizontal, .paddingM)
     }
 
     @ViewBuilder
@@ -69,22 +71,21 @@ struct TransactionDetailView: View {
                 TextLabel(email, textColor: .primary)
             }
         }
-        .padding(.bottom, .paddingS)
     }
 
     @ViewBuilder
     private var receipt: some View {
         if viewModel.isLoading {
             LoadingSpinner()
-        } else if let image = viewModel.image {
+        } else if let receiptData = viewModel.receiptData {
             VStack {
-                Image(uiImage: image)
+                Image(uiImage: receiptData.image)
                     .resizable()
                     .scaledToFit()
                     .border(Color.genericBlack)
                     .padding(.paddingM)
                     .onTapGesture {
-                        showShareSheet(image: image)
+                        showShareSheet(data: receiptData.pdf)
                     }
                 Image(.walletArrowUpwardAlt)
                     .resizable()
@@ -95,15 +96,15 @@ struct TransactionDetailView: View {
                     .multilineTextAlignment(.center)
                     .padding(.bottom, .paddingL)
             }
+            .padding(.horizontal, .paddingM)
         }
     }
 
-    func showShareSheet(image: UIImage) {
+    func showShareSheet(data: Data) {
         DispatchQueue.main.async {
-            let shareObject = ShareObject(shareData: image, customTitle: L10n.transactionsReceiptTitle)
-
+            let shareObject = ShareObject(shareData: data, customTitle: L10n.transactionsReceiptTitle)
             let activityVC = UIActivityViewController(activityItems: [shareObject], applicationActivities: nil)
-            UIApplication.shared.windows.first?.rootViewController?.present(activityVC, animated: true, completion: nil)
+            UIApplication.shared.windows.first?.rootViewController?.present(activityVC, animated: true)
         }
     }
 }

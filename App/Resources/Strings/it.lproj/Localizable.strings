@@ -54,6 +54,8 @@
 "common_use_confirm" = "Confermare";
 "common_use_deactivate" = "Disattivare";
 "common_use_decline" = "Rifiuta";
+"common_use_error_description" = "Si prega di riprovare";
+"common_use_error_title" = "Ops, qualcosa è andato storto";
 "common_use_friday" = "Venerdì";
 "common_use_monday" = "Lunedì";
 "common_use_network_error" = "La connessione a Internet non è riuscita. Riprovare più tardi.";
@@ -170,8 +172,10 @@
 "payment_methods_loading_title" = "Caricamento dei metodi di pagamento e delle carte carburante...";
 "search_title" = "Ricerca di località";
 "transactions_details_title" = "Dettagli della transazione";
-"transactions_empty_title" = "Nessuna transazione ancora";
+"transactions_empty_description" = "Dopo il primo pagamento con l'app, le vostre transazioni saranno visualizzate qui";
+"transactions_empty_title" = "Non ci sono ancora transazioni";
 "transactions_last_transaction_title" = "L'ultima transazione";
+"transactions_loading_title" = "Transazioni di carico";
 "transactions_receipt_title" = "Ricevuta";
 "transactions_station_details_title" = "Dettagli della stazione";
 "transactions_tap_on_receipt_title" = "Toccare la ricevuta per salvarla";

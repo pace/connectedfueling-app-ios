@@ -54,6 +54,8 @@
 "common_use_confirm" = "Подтвердите";
 "common_use_deactivate" = "Деактивировать";
 "common_use_decline" = "Снижение";
+"common_use_error_description" = "Пожалуйста, попробуйте еще раз";
+"common_use_error_title" = "Упс, что-то пошло не так";
 "common_use_friday" = "Пятница";
 "common_use_monday" = "Понедельник";
 "common_use_network_error" = "Не удалось подключиться к Интернету. Повторите попытку позже.";
@@ -170,8 +172,10 @@
 "payment_methods_loading_title" = "Загрузка способов оплаты и топливных карт...";
 "search_title" = "Места поиска";
 "transactions_details_title" = "Детали сделки";
-"transactions_empty_title" = "Транзакций пока нет";
+"transactions_empty_description" = "После первого платежа с помощью приложения ваши транзакции будут отображаться здесь";
+"transactions_empty_title" = "У вас еще нет транзакций";
 "transactions_last_transaction_title" = "Ваша последняя транзакция";
+"transactions_loading_title" = "Транзакции загрузки";
 "transactions_receipt_title" = "Квитанция";
 "transactions_station_details_title" = "Информация о станции";
 "transactions_tap_on_receipt_title" = "Нажмите на квитанцию, чтобы сохранить ее";

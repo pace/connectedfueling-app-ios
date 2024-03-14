@@ -4,8 +4,7 @@ import SwiftUI
 
 class TransactionDetailViewModel: ObservableObject, Identifiable {
     @Published var isLoading: Bool = true
-
-    @Published var image: UIImage?
+    @Published var receiptData: TransactionReceiptData?
 
     let transactionId: String
     let day: String
@@ -27,7 +26,10 @@ class TransactionDetailViewModel: ObservableObject, Identifiable {
         userManager.email
     }
 
+    let showPrices: Bool
+
     private let userManager: UserManager
+    private let paymentManager: PaymentManager
 
     var attributedPrice: AttributedString {
         let currencySymbol = NSLocale.symbol(for: currency)
@@ -41,8 +43,7 @@ class TransactionDetailViewModel: ObservableObject, Identifiable {
 
     private let priceFormatter: PriceNumberFormatter
 
-    init(userManager: UserManager = .init(),
-         transactionId: String,
+    init(transactionId: String,
          day: String,
          date: String,
          time: String,
@@ -55,10 +56,10 @@ class TransactionDetailViewModel: ObservableObject, Identifiable {
          paymentMethod: String,
          pump: Int,
          currency: String,
-         unit: String) {
-        self.userManager = userManager
-        self.priceFormatter = PriceNumberFormatter(with: "d.dd")
-
+         unit: String,
+         userManager: UserManager = .init(),
+         paymentManager: PaymentManager = .init(),
+         configuration: ConfigurationManager.Configuration = ConfigurationManager.configuration) {
         self.transactionId = transactionId
         self.day = day
         self.date = date
@@ -73,40 +74,35 @@ class TransactionDetailViewModel: ObservableObject, Identifiable {
         self.pump = pump
         self.currency = currency
         self.unit = unit
+        self.userManager = userManager
+        self.paymentManager = paymentManager
+        self.showPrices = !configuration.hidePrices
+        self.priceFormatter = PriceNumberFormatter(with: "d.dd")
     }
 
-    func detailWillAppear() {
-        loadReceipt()
-    }
+    func loadReceipt() {
+        guard receiptData == nil else { return }
 
-    private func loadReceipt() {
-        if image == nil {
-            Task { @MainActor in
-                isLoading = true
-
-                let result = await self.receipt()
-
-                if case let .success(response) = result {
-                    guard let imageData = response.success,
-                          let uiImage = UIImage(data: imageData) else { return }
-                    self.image = uiImage
-                }
-
-                isLoading = false
+        Task { @MainActor [weak self] in
+            defer {
+                self?.isLoading = false
             }
+
+            self?.isLoading = true
+
+            guard let self else { return }
+
+            async let imageResult = await self.paymentManager.receipt(transactionId: self.transactionId, format: .png)
+            async let pdfResult = await self.paymentManager.receipt(transactionId: self.transactionId, format: .pdf)
+
+            guard case .success(let imageData) = await imageResult,
+                  case .success(let pdfData) = await pdfResult,
+                  let uiImage: UIImage = .init(data: imageData) else {
+                CofuLogger.e("[TransactionDetailViewModel] Failed loading receipt")
+                return
+            }
+
+            self.receiptData = .init(image: uiImage, pdf: pdfData)
         }
-    }
-
-    private func receipt() async -> APIResult<PayAPI.PaymentTransactions.GetReceipt.Response> {
-        let options = PayAPI.PaymentTransactions.GetReceipt.Request.Options(transactionID: transactionId)
-        let request = PayAPI.PaymentTransactions.GetReceipt.Request(options: options)
-
-        let response = await makeRequest(request)
-
-        return response.result
-    }
-
-    private func makeRequest<T: APIResponseValue>(_ request: PayAPIRequest<T>) async -> PayAPIResponse<T> {
-       await API.Pay.client.makeRequest(request)
     }
 }

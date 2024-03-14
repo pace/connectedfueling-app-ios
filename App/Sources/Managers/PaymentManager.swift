@@ -72,6 +72,51 @@ struct PaymentManager {
         }
     }
 
+    func transactions() async -> Result<[PCPayTransaction], Error> {
+        let options = PayAPI.PaymentTransactions.ListTransactions.Request.Options(sort: .createdAtDescending)
+        let request = PayAPI.PaymentTransactions.ListTransactions.Request(options: options)
+        let response = await API.Pay.client.makeRequest(request)
+
+        switch response.result {
+        case .success(let result):
+            guard let transactions = result.success?.data else {
+                return .failure(APIClientError.invalidDataError)
+            }
+
+            return .success(transactions)
+
+        case let .failure(error):
+            return .failure(error)
+        }
+    }
+
+    func receipt(transactionId: String, format: PayAPI.PaymentTransactions.GetReceiptByFormat.PCPayFileFormat) async -> Result<Data, Error> {
+        let options = PayAPI.PaymentTransactions.GetReceiptByFormat.Request.Options(transactionID: transactionId, fileFormat: format)
+
+        let contentType: PayAPI.PaymentTransactions.GetReceiptByFormat.Request.GetReceiptByFormatAcceptHeader = switch format {
+        case .png:
+            .image_png
+
+        case .pdf:
+            .application_pdf
+        }
+
+        let request = PayAPI.PaymentTransactions.GetReceiptByFormat.Request(options: options, responseContentType: contentType)
+        let response = await API.Pay.client.makeRequest(request)
+
+        switch response.result {
+        case .success(let result):
+            guard let receiptData = result.success else {
+                return .failure(APIClientError.invalidDataError)
+            }
+
+            return .success(receiptData)
+
+        case let .failure(error):
+            return .failure(error)
+        }
+    }
+
     func is2FANeededForPayments() async -> Bool {
         let result = await paymentMethodKinds()
 

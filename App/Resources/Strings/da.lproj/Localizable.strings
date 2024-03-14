@@ -54,6 +54,8 @@
 "common_use_confirm" = "Bekræft";
 "common_use_deactivate" = "Deaktiver";
 "common_use_decline" = "Nedgang";
+"common_use_error_description" = "Prøv venligst igen";
+"common_use_error_title" = "Ups, noget gik galt";
 "common_use_friday" = "Fredag";
 "common_use_monday" = "Mandag";
 "common_use_network_error" = "Forbindelsen til internettet mislykkedes. Prøv igen senere.";
@@ -170,8 +172,10 @@
 "payment_methods_loading_title" = "Indlæsning af betalingsmetoder og brændstofkort...";
 "search_title" = "Søg efter steder";
 "transactions_details_title" = "Detaljer om transaktionen";
-"transactions_empty_title" = "Ingen transaktioner endnu";
+"transactions_empty_description" = "Efter din første betaling med appen vil dine transaktioner blive vist her";
+"transactions_empty_title" = "Du har ikke nogen transaktioner endnu";
 "transactions_last_transaction_title" = "Din sidste transaktion";
+"transactions_loading_title" = "Indlæs transaktioner";
 "transactions_receipt_title" = "Kvittering";
 "transactions_station_details_title" = "Detaljer om stationen";
 "transactions_tap_on_receipt_title" = "Tryk på kvitteringen for at gemme den";

@@ -54,6 +54,8 @@
 "common_use_confirm" = "Confirmer";
 "common_use_deactivate" = "Désactiver";
 "common_use_decline" = "Décliner";
+"common_use_error_description" = "Veuillez réessayer";
+"common_use_error_title" = "Oups, quelque chose s'est mal passé";
 "common_use_friday" = "Vendredi";
 "common_use_monday" = "Lundi";
 "common_use_network_error" = "Échec de la connexion à Internet. Réessaie plus tard.";
@@ -170,8 +172,10 @@
 "payment_methods_loading_title" = "Chargement des moyens de paiement et des cartes de carburant...";
 "search_title" = "Chercher des lieux";
 "transactions_details_title" = "Détails de la transaction";
-"transactions_empty_title" = "Pas encore de transactions";
+"transactions_empty_description" = "Après ton premier paiement avec l'application, tes transactions s'affichent ici";
+"transactions_empty_title" = "Tu n'as pas encore de transactions";
 "transactions_last_transaction_title" = "Ta dernière transaction";
+"transactions_loading_title" = "Charger des transactions";
 "transactions_receipt_title" = "Document";
 "transactions_station_details_title" = "Détails de la station";
 "transactions_tap_on_receipt_title" = "Tape sur le document pour l'enregistrer";

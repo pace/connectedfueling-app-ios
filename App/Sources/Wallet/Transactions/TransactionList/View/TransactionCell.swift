@@ -4,36 +4,33 @@ struct TransactionCell: View {
     @ObservedObject var viewModel: TransactionDetailViewModel
 
     var body: some View {
-        HStack {
+        HStack(alignment: .center) {
             info
-            price
+            Spacer()
+            if viewModel.showPrices {
+                price
+            }
         }
     }
 
     @ViewBuilder
     private var info: some View {
-        VStack {
+        VStack(alignment: .leading, spacing: 0) {
             if viewModel.isLatest {
-                HStack {
-                    TextLabel(L10n.transactionsLastTransactionTitle, textColor: .primaryTint)
-                        .font(.system(size: 14, weight: .bold))
-                    Spacer()
-                }
+                TextLabel(L10n.transactionsLastTransactionTitle, textColor: .primaryTint)
+                    .font(.system(size: 14, weight: .bold))
+                    .padding(.bottom, .paddingXXXS)
             }
-            HStack {
-                TextLabel("\(viewModel.date) · \(viewModel.time)")
-                    .font(.system(size: 16, weight: .bold))
-                Spacer()
-            }
-            HStack {
+            TextLabel("\(viewModel.date) · \(viewModel.time)")
+                .font(.system(size: 16, weight: .bold))
+                .padding(.bottom, .paddingXXXS)
+            HStack(spacing: 0) {
                 Image(.walletLocalGasStation)
                     .resizable()
                     .foregroundColor(.genericGrey)
                     .frame(width: 16, height: 16)
                 TextLabel(viewModel.brand, textColor: .genericGrey)
                     .font(.system(size: 14))
-
-                Spacer()
             }
         }
     }
@@ -42,6 +39,7 @@ struct TransactionCell: View {
     private var price: some View {
         PriceCardView(title: viewModel.fuelType,
                       priceText: viewModel.attributedPrice)
+        .padding(.vertical, .paddingXXS)
     }
 }
 
@@ -67,7 +65,7 @@ struct TransactionCell: View {
                                          time: "09:35 Uhr",
                                          brand: "Gasolina Stationa",
                                          address: "Haid-Und-Neu Straße 18, 76137 Karlsruhe",
-                                         price: 47.53,
+                                         price: 470.53,
                                          amount: 25.85,
                                          fuelType: "Super",
                                          pricePerUnit: 1.839,
@@ -76,4 +74,5 @@ struct TransactionCell: View {
                                          currency: "EUR",
                                          unit: "Liter"))
     }
+    .listStyle(.plain)
 }

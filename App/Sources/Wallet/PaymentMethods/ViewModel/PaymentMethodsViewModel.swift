@@ -9,7 +9,7 @@ class PaymentMethodsViewModel: ObservableObject {
 
     let emptyPaymentMethodsError: AppError = .init(title: L10n.paymentMethodsEmptyTitle,
                                                    description: L10n.paymentMethodsEmptyDescription,
-                                                   icon: .image(.paymentMethodIcon))
+                                                   icon: .image(.walletTabIcon.renderingMode(.template)))
 
     private let paymentManager: PaymentManager
 
@@ -33,9 +33,9 @@ class PaymentMethodsViewModel: ObservableObject {
 
             case .failure(let error):
                 CofuLogger.e("[PaymentMethodsViewModel] Failed fetching payment methods with error \(error)")
-                self?.error = .init(title: "Oops, something went wrong",
-                                    description: "Please try again",
-                                    retryAction: .init(title: "Try again", action: { [weak self] in
+                self?.error = .init(title: L10n.commonUseErrorTitle,
+                                    description: L10n.commonUseErrorDescription,
+                                    retryAction: .init(title: L10n.commonUseRetry, action: { [weak self] in
                     self?.fetchPaymentMethods()
                 }))
             }

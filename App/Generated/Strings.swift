@@ -50,6 +50,10 @@ internal enum L10n {
   internal static let commonUseDeactivate = L10n.tr("Localizable", "common_use_deactivate", fallback: "Deactivate")
   /// Decline
   internal static let commonUseDecline = L10n.tr("Localizable", "common_use_decline", fallback: "Decline")
+  /// Please try again
+  internal static let commonUseErrorDescription = L10n.tr("Localizable", "common_use_error_description", fallback: "Please try again")
+  /// Oops, something went wrong
+  internal static let commonUseErrorTitle = L10n.tr("Localizable", "common_use_error_title", fallback: "Oops, something went wrong")
   /// Friday
   internal static let commonUseFriday = L10n.tr("Localizable", "common_use_friday", fallback: "Friday")
   /// Monday
@@ -294,10 +298,14 @@ internal enum L10n {
   internal static let shareTitle = L10n.tr("Localizable", "SHARE_TITLE", fallback: "Share")
   /// Transaction details
   internal static let transactionsDetailsTitle = L10n.tr("Localizable", "transactions_details_title", fallback: "Transaction details")
-  /// No transactions yet
-  internal static let transactionsEmptyTitle = L10n.tr("Localizable", "transactions_empty_title", fallback: "No transactions yet")
+  /// After your first payment with the app, your transactions will appear here
+  internal static let transactionsEmptyDescription = L10n.tr("Localizable", "transactions_empty_description", fallback: "After your first payment with the app, your transactions will appear here")
+  /// You don't have any transactions yet
+  internal static let transactionsEmptyTitle = L10n.tr("Localizable", "transactions_empty_title", fallback: "You don't have any transactions yet")
   /// Your last transaction
   internal static let transactionsLastTransactionTitle = L10n.tr("Localizable", "transactions_last_transaction_title", fallback: "Your last transaction")
+  /// Load transactions
+  internal static let transactionsLoadingTitle = L10n.tr("Localizable", "transactions_loading_title", fallback: "Load transactions")
   /// Receipt
   internal static let transactionsReceiptTitle = L10n.tr("Localizable", "transactions_receipt_title", fallback: "Receipt")
   /// Station details

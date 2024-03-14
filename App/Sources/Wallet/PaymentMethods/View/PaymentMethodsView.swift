@@ -29,20 +29,20 @@ struct PaymentMethodsView: View {
                         description: L10n.paymentMethodsLoadingDescription)
             Spacer()
         }
-        .padding([.top, .horizontal], 20)
+        .padding([.top, .horizontal], .paddingM)
     }
 
     @ViewBuilder
     private var paymentMethodsList: some View {
         VStack(spacing: 0) {
             PaymentMethodsListView(viewModel: viewModel)
+            Spacer()
 
             if viewModel.isNativePaymentMethodOnboardingEnabled {
-                Spacer()
                 ActionButton(title: L10n.paymentMethodsAddButton, style: .secondary) {
                     viewModel.showPaymentApp()
                 }
-                .padding(.horizontal, 20)
+                .padding(.horizontal, .paddingM)
             }
         }
         .padding(.bottom, 10)
@@ -59,7 +59,7 @@ struct PaymentMethodsView: View {
             ErrorView(error)
             Spacer()
         }
-        .padding([.top, .horizontal], 20)
+        .padding([.top, .horizontal], .paddingM)
     }
 }
 
