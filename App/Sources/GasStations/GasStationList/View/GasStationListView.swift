@@ -57,11 +57,6 @@ struct GasStationListView: View {
     }
 
     @ViewBuilder
-    private var emptyView: some View {
-        GasStationListEmptyView()
-    }
-
-    @ViewBuilder
     private func list(of stations: [GasStation]) -> some View {
         List {
             ForEach(stations, id: \.self) { gasStation in

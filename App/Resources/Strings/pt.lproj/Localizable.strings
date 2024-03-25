@@ -54,6 +54,8 @@
 "common_use_confirm" = "Confirmar";
 "common_use_deactivate" = "Desativar";
 "common_use_decline" = "Declínio";
+"common_use_error_description" = "Tente novamente";
+"common_use_error_title" = "Oops, algo correu mal";
 "common_use_friday" = "Sexta-feira";
 "common_use_monday" = "Segunda-feira";
 "common_use_network_error" = "A ligação à Internet falhou. Tente novamente mais tarde.";
@@ -170,8 +172,10 @@
 "payment_methods_loading_title" = "Carregamento de métodos de pagamento e cartões de combustível...";
 "search_title" = "Locais de pesquisa";
 "transactions_details_title" = "Detalhes da transação";
-"transactions_empty_title" = "Ainda não há transacções";
+"transactions_empty_description" = "Após o seu primeiro pagamento com a aplicação, as suas transacções serão apresentadas aqui";
+"transactions_empty_title" = "Ainda não tem nenhuma transação";
 "transactions_last_transaction_title" = "A sua última transação";
+"transactions_loading_title" = "Carregar transacções";
 "transactions_receipt_title" = "Recibo";
 "transactions_station_details_title" = "Detalhes da estação";
 "transactions_tap_on_receipt_title" = "Toque no recibo para o guardar";

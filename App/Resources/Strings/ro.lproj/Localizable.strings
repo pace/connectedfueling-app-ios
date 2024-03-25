@@ -54,6 +54,8 @@
 "common_use_confirm" = "Confirmați";
 "common_use_deactivate" = "Dezactivați";
 "common_use_decline" = "Declin";
+"common_use_error_description" = "Vă rugăm să încercați din nou";
+"common_use_error_title" = "Oops, ceva a mers prost";
 "common_use_friday" = "Vineri";
 "common_use_monday" = "Luni";
 "common_use_network_error" = "Conexiunea la Internet a eșuat. Încercați din nou mai târziu.";
@@ -170,8 +172,10 @@
 "payment_methods_loading_title" = "Încărcarea metodelor de plată și a cardurilor de combustibil...";
 "search_title" = "Căutați locații";
 "transactions_details_title" = "Detaliile tranzacției";
-"transactions_empty_title" = "Nu există încă tranzacții";
+"transactions_empty_description" = "După prima ta plată cu aplicația, tranzacțiile tale vor fi afișate aici";
+"transactions_empty_title" = "Nu aveți încă nicio tranzacție";
 "transactions_last_transaction_title" = "Ultima dvs. tranzacție";
+"transactions_loading_title" = "Încărcați tranzacții";
 "transactions_receipt_title" = "Chitanță";
 "transactions_station_details_title" = "Detalii despre stație";
 "transactions_tap_on_receipt_title" = "Apăsați pe chitanță pentru a o salva";

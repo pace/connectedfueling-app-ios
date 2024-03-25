@@ -2,7 +2,7 @@ import SwiftUI
 
 enum AppAlert {
     static var genericError: Alert {
-        Alert(title: Text("Oops, something went wrong"), // TODO: - Localized String
+        Alert(title: Text(L10n.commonUseErrorTitle),
               message: Text(L10n.commonUseRetry))
     }
 

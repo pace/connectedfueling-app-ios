@@ -2,7 +2,6 @@ import LinkPresentation
 import UIKit
 
 class ShareObject: NSObject, UIActivityItemSource {
-
     private let shareData: Any
     private let mailSubject: String?
     private let customTitle: String?

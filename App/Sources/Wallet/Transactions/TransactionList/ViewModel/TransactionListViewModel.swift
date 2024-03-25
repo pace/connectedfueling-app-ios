@@ -2,47 +2,64 @@ import Foundation
 import PACECloudSDK
 
 class TransactionListViewModel: ObservableObject {
-    @Published var transactions: [TransactionDetailViewModel] = []
+    @Published private(set) var transactions: [TransactionDetailViewModel] = []
+    @Published private(set) var isLoading: Bool = true
+    @Published private(set) var error: AppError?
 
-    @Published var isLoading: Bool = true
+    let emptyTransactionsError: AppError = .init(title: L10n.transactionsEmptyTitle,
+                                                 description: L10n.transactionsEmptyDescription,
+                                                 icon: .image(.transactionIcon.renderingMode(.template)))
 
-    let dateFormatter: DateFormatter = {
+    private let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .short
         return formatter
     }()
 
-    let dayFormatter: DateFormatter = {
+    private let dayFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "EEEE"
         return formatter
     }()
 
-    let timeFormatter: DateFormatter = {
+    private let timeFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.timeStyle = .short
         return formatter
     }()
 
-    init() {
-        loadTransactions()
+    private let paymentManager: PaymentManager
+
+    init(paymentManager: PaymentManager = .init()) {
+        self.paymentManager = paymentManager
+
+        fetchTransactions()
     }
 
-    private func loadTransactions() {
-        Task { @MainActor in
-            isLoading = true
-            guard let transactionsData = await fetchUserTransactions() else {
-                isLoading = false
-                return
+    func fetchTransactions() {
+        Task { @MainActor [weak self] in
+            defer {
+                self?.isLoading = false
             }
 
-            transactions = transactionsData.compactMap { createDetailViewModel(with: $0) }
+            self?.isLoading = true
 
-            if let first = transactions.first {
-                first.isLatest = true
+            guard let result = await self?.paymentManager.transactions() else { return }
+
+            switch result {
+            case .success(let transactions):
+                let transactionsViewModels = transactions.compactMap { self?.createDetailViewModel(with: $0) }
+                transactionsViewModels.first?.isLatest = true
+                self?.transactions = transactionsViewModels
+
+            case .failure(let error):
+                CofuLogger.e("[TransactionListViewModel] Failed fetching payment methods with error \(error)")
+                self?.error = .init(title: L10n.commonUseErrorTitle,
+                                    description: L10n.commonUseErrorDescription,
+                                    retryAction: .init(title: L10n.commonUseRetry, action: { [weak self] in
+                    self?.fetchTransactions()
+                }))
             }
-
-            isLoading = false
         }
     }
 
@@ -101,42 +118,5 @@ class TransactionListViewModel: ObservableObject {
                      pump: pump,
                      currency: currency,
                      unit: unit)
-    }
-
-    private func fetchUserTransactions() async -> PCPayTransactions? {
-        let response = await transactions()
-
-        switch response {
-        case .success(let result):
-            guard let transactions = result.success?.data else {
-                CofuLogger.e("[TransactionListViewModel] Failed fetching user transactions - invalid data.")
-                return nil
-            }
-
-            return transactions
-
-        case .failure(let error):
-            CofuLogger.e("[TransactionListViewModel] Failed fetching user transactions with error \(error).")
-            return nil
-        }
-    }
-
-    private func transactions() async -> APIResult<PayAPI.PaymentTransactions.ListTransactions.Response> {
-        let options = PayAPI.PaymentTransactions.ListTransactions.Request.Options(sort: .createdAtDescending)
-        let request = PayAPI.PaymentTransactions.ListTransactions.Request(options: options)
-
-        let response = await makeRequest(request)
-
-        if response.urlResponse?.statusCode == HttpStatusCode.unauthorized.rawValue {
-//            NSLog("[APIControl.Pay] Failed refreshing the session. Will reset and attempt a new sign in...")
-//            PaceIDControl.shared.renewSession()
-            return .failure(.invalidDataError)
-        } else {
-            return response.result
-        }
-    }
-
-    private func makeRequest<T: APIResponseValue>(_ request: PayAPIRequest<T>) async -> PayAPIResponse<T> {
-       await API.Pay.client.makeRequest(request)
     }
 }
