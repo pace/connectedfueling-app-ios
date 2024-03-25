@@ -38,6 +38,7 @@
 		3B3F641A2B50339B00D94BAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B3F64192B50339B00D94BAA /* LaunchScreen.storyboard */; };
 		3B4616C72ADE932D00DF57A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4616C62ADE932D00DF57A1 /* ContentView.swift */; };
 		3B4616CD2ADECDBC00DF57A1 /* OnboardingTextInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4616CC2ADECDBC00DF57A1 /* OnboardingTextInputViewModel.swift */; };
+		3B5420882BA2E7C7002613D8 /* AppDelegate+PushNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5420872BA2E7C7002613D8 /* AppDelegate+PushNotifications.swift */; };
 		3B5585422B18D3EA009E300B /* usage_analysis.html in Resources */ = {isa = PBXBuildFile; fileRef = 3B5585402B18D3EA009E300B /* usage_analysis.html */; };
 		3B5880D12B0CA7DE0057CDC5 /* Image+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5880D02B0CA7DE0057CDC5 /* Image+Extension.swift */; };
 		3B5A0AE22B7B656C00F4E268 /* MenuPermissionsListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5A0AE12B7B656C00F4E268 /* MenuPermissionsListItemView.swift */; };
@@ -251,6 +252,7 @@
 		3B3F64192B50339B00D94BAA /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3B4616C62ADE932D00DF57A1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3B4616CC2ADECDBC00DF57A1 /* OnboardingTextInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTextInputViewModel.swift; sourceTree = "<group>"; };
+		3B5420872BA2E7C7002613D8 /* AppDelegate+PushNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+PushNotifications.swift"; sourceTree = "<group>"; };
 		3B5585412B18D3EA009E300B /* de */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = de; path = de.lproj/usage_analysis.html; sourceTree = "<group>"; };
 		3B5585432B18D3F1009E300B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = en; path = en.lproj/usage_analysis.html; sourceTree = "<group>"; };
 		3B5585442B18D3F5009E300B /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = cs; path = cs.lproj/usage_analysis.html; sourceTree = "<group>"; };
@@ -1118,6 +1120,7 @@
 			isa = PBXGroup;
 			children = (
 				A92EDCAEA5155B139A67EC72 /* AppDelegate.swift */,
+				3B5420872BA2E7C7002613D8 /* AppDelegate+PushNotifications.swift */,
 				3BDE7B302ADD336B009A88DF /* ConnectedFuelingApp.swift */,
 				3B4616C62ADE932D00DF57A1 /* ContentView.swift */,
 				3B3F64192B50339B00D94BAA /* LaunchScreen.storyboard */,
@@ -1456,6 +1459,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		3B784BE02AFA1D7D006CBD4A /* Crashlytics */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -1479,6 +1483,7 @@
 		};
 		408EC6CF6DADB1BFD9EEB89B /* SwiftGen Version Check */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -1497,6 +1502,7 @@
 		};
 		790BB8E894854A0060A4E881 /* Create license settings page */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -1511,10 +1517,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which license-plist > /dev/null; then\n    if [ $CONFIGURATION = \"Development\" ]; then\n        license-plist --output-path $PRODUCT_NAME/Resources/Settings.bundle --package-path $PROJECT_FILE_PATH/project.xcworkspace/xcshareddata/swiftpm/Package.swift --add-version-numbers #--fail-if-missing-license \n    fi\nelse\n    echo \"warning: license-plist not installed, follow installation instructions from https://github.com/mono0926/LicensePlist\"\nfi\n\n";
+			shellScript = "$SRCROOT/scripts/license-plist --output-path $PRODUCT_NAME/Resources/Settings.bundle --package-path $PROJECT_FILE_PATH/project.xcworkspace/xcshareddata/swiftpm/Package.swift --add-version-numbers --fail-if-missing-license\n\n";
 		};
 		9768C99DBF9A7EC06DC52AF8 /* SwiftGen */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -1673,6 +1680,7 @@
 				3BDE7B232ADD1422009A88DF /* OnboardingTwoFactorAuthenticationPageViewModel.swift in Sources */,
 				0B25AE832B99E23A0087B575 /* ConsentUpdatePagerView.swift in Sources */,
 				3BAE607F2AD80ADE006EA9DD /* String+Extension.swift in Sources */,
+				3B5420882BA2E7C7002613D8 /* AppDelegate+PushNotifications.swift in Sources */,
 				9A00F22F2B0F978A0050C7FA /* PriceCardStack.swift in Sources */,
 				3B6D84E92B1096A500701DEE /* MenuViewModel.swift in Sources */,
 				3B819DC62B06654300B4803A /* PaymentMethodViewModel.swift in Sources */,

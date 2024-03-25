@@ -43,6 +43,7 @@ extension Color {
         self = .init(red: rgbValues.r, green: rgbValues.g, blue: rgbValues.b)
     }
 
+    // swiftlint:disable:next large_tuple
     static func rgbValues(hex: String) -> (r: CGFloat, g: CGFloat, b: CGFloat) {
         let r, g, b: CGFloat
 

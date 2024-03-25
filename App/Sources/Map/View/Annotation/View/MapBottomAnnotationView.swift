@@ -2,7 +2,7 @@ import SwiftUI
 
 struct MapBottomAnnotationView: View {
     @ObservedObject private var viewModel: MapAnnotationViewModel
-    
+
     private let outerCircleSize: CGFloat = 15
 
     init(viewModel: MapAnnotationViewModel) {

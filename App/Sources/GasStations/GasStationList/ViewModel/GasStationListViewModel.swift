@@ -54,7 +54,7 @@ class GasStationListViewModel: ObservableObject {
                 if cofuStations.contains(where: { $0.isNearby }) {
                     self?.analyticsManager.logEvent(AnalyticEvents.StationNearbyEvent())
                 }
-                
+
                 let sortedCofuStations = cofuStations.sorted()
                 self?.updateSections(with: sortedCofuStations)
 

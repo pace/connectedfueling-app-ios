@@ -1,17 +1,67 @@
-name: AppAuth-iOS, nameSpecified: AppAuth, owner: pace, version: 1.5.0
+name: abseil-cpp-binary, nameSpecified: abseil, owner: google, version: 1.2022062300.0, source: https://github.com/google/abseil-cpp-binary
 
-name: Base32, nameSpecified: Base32, owner: pace, version: 1.2.0
+name: AppAuth-iOS, nameSpecified: AppAuth, owner: pace, version: 1.5.0, source: https://github.com/pace/AppAuth-iOS
 
-name: cloud-sdk-ios, nameSpecified: PACECloudSDK, owner: pace, version: 8.0.0
+name: cloud-sdk-ios, nameSpecified: PACECloudSDK, owner: pace, version: 21.0.0, source: https://github.com/pace/cloud-sdk-ios
 
-name: JamitFoundation, nameSpecified: JamitFoundation, owner: JamitLabs, version: 
+name: firebase-ios-sdk, nameSpecified: Firebase, owner: firebase, version: 10.17.0, source: https://github.com/firebase/firebase-ios-sdk
 
-name: JLCoordinator, nameSpecified: JLCoordinator, owner: JamitLabs, version: 1.1.0
+name: GoogleAppMeasurement, nameSpecified: GoogleAppMeasurement, owner: google, version: 10.17.0, source: https://github.com/google/GoogleAppMeasurement
 
-name: OneTimePassword, nameSpecified: OneTimePassword, owner: pace, version: 3.3.1
+name: GoogleDataTransport, nameSpecified: GoogleDataTransport, owner: google, version: 9.2.5, source: https://github.com/google/GoogleDataTransport
 
-name: swift-protobuf, nameSpecified: SwiftProtobuf, owner: apple, version: 1.15.0
+name: GoogleUtilities, nameSpecified: GoogleUtilities, owner: google, version: 7.11.6, source: https://github.com/google/GoogleUtilities
+
+name: grpc-binary, nameSpecified: gRPC, owner: google, version: 1.49.1, source: https://github.com/google/grpc-binary
+
+name: gtm-session-fetcher, nameSpecified: gtm-session-fetcher, owner: google, version: 3.1.1, source: https://github.com/google/gtm-session-fetcher
+
+name: interop-ios-for-google-sdks, nameSpecified: InteropForGoogle, owner: google, version: 100.0.0, source: https://github.com/google/interop-ios-for-google-sdks
+
+name: Japx, nameSpecified: Japx, owner: pace, version: 5.0.0, source: https://github.com/pace/Japx
+
+name: leveldb, nameSpecified: leveldb, owner: firebase, version: 1.22.2, source: https://github.com/firebase/leveldb
+
+name: nanopb, nameSpecified: nanopb, owner: firebase, version: 2.30909.0, source: https://github.com/firebase/nanopb
+
+name: promises, nameSpecified: Promises, owner: google, version: 2.3.1, source: https://github.com/google/promises
+
+name: sentry-cocoa, nameSpecified: Sentry, owner: getsentry, version: 8.15.0, source: https://github.com/getsentry/sentry-cocoa
+
+name: swift-protobuf, nameSpecified: SwiftProtobuf, owner: apple, version: 1.22.0, source: https://github.com/apple/swift-protobuf
+
+name: abseil-cpp-binary, nameSpecified: abseil, owner: google, version: 1.2022062300.0, source: https://github.com/google/abseil-cpp-binary
+
+name: AppAuth-iOS, nameSpecified: AppAuth, owner: pace, version: 1.5.0, source: https://github.com/pace/AppAuth-iOS
+
+name: cloud-sdk-ios, nameSpecified: PACECloudSDK, owner: pace, version: 21.0.0, source: https://github.com/pace/cloud-sdk-ios
+
+name: firebase-ios-sdk, nameSpecified: Firebase, owner: firebase, version: 10.17.0, source: https://github.com/firebase/firebase-ios-sdk
+
+name: GoogleAppMeasurement, nameSpecified: GoogleAppMeasurement, owner: google, version: 10.17.0, source: https://github.com/google/GoogleAppMeasurement
+
+name: GoogleDataTransport, nameSpecified: GoogleDataTransport, owner: google, version: 9.2.5, source: https://github.com/google/GoogleDataTransport
+
+name: GoogleUtilities, nameSpecified: GoogleUtilities, owner: google, version: 7.11.6, source: https://github.com/google/GoogleUtilities
+
+name: grpc-binary, nameSpecified: gRPC, owner: google, version: 1.49.1, source: https://github.com/google/grpc-binary
+
+name: gtm-session-fetcher, nameSpecified: gtm-session-fetcher, owner: google, version: 3.1.1, source: https://github.com/google/gtm-session-fetcher
+
+name: interop-ios-for-google-sdks, nameSpecified: InteropForGoogle, owner: google, version: 100.0.0, source: https://github.com/google/interop-ios-for-google-sdks
+
+name: Japx, nameSpecified: Japx, owner: pace, version: 5.0.0, source: https://github.com/pace/Japx
+
+name: leveldb, nameSpecified: leveldb, owner: firebase, version: 1.22.2, source: https://github.com/firebase/leveldb
+
+name: nanopb, nameSpecified: nanopb, owner: firebase, version: 2.30909.0, source: https://github.com/firebase/nanopb
+
+name: promises, nameSpecified: Promises, owner: google, version: 2.3.1, source: https://github.com/google/promises
+
+name: sentry-cocoa, nameSpecified: Sentry, owner: getsentry, version: 8.15.0, source: https://github.com/getsentry/sentry-cocoa
+
+name: swift-protobuf, nameSpecified: SwiftProtobuf, owner: apple, version: 1.22.0, source: https://github.com/apple/swift-protobuf
 
 add-version-numbers: true
 
-LicensePlist Version: 3.0.5
+LicensePlist Version: 3.25.1

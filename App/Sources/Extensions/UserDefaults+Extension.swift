@@ -56,7 +56,7 @@ extension UserDefaults {
         get { UserDefaults.standard.bool(forKey: Key.is2FANeededForPayments) }
         set { UserDefaults.standard.set(newValue, forKey: Key.is2FANeededForPayments) }
     }
-    
+
     class var isNativePaymentMethodOnboardingEnabled: Bool {
         get { UserDefaults.standard.bool(forKey: Key.isNativePaymentMethodOnboardingEnabled) }
         set { UserDefaults.standard.set(newValue, forKey: Key.isNativePaymentMethodOnboardingEnabled) }

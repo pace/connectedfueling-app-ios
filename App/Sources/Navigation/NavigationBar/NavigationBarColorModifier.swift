@@ -1,5 +1,3 @@
-// Copyright © 2023 PACE Telematics GmbH. All rights reserved.
-
 import SwiftUI
 
 struct NavigationBarColorModifier<Background>: ViewModifier where Background: View {

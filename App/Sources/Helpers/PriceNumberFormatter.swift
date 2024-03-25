@@ -45,7 +45,7 @@ class PriceNumberFormatter: NumberFormatter {
 
         let localizedPrice = L10n.currencyFormat(formattedString, currencySymbol)
 
-        guard usesSuperscript else { return  addAttributes(to: localizedPrice) }
+        guard usesSuperscript else { return addAttributes(to: localizedPrice) }
 
         let superscriptString = addSuperscriptToLastDigit(of: localizedPrice)
         return superscriptString

@@ -284,9 +284,9 @@ extension MapViewModel: MKLocalSearchCompleterDelegate {
 
 extension MapViewModel: LocationManagerDelegate {
     func didUpdateLocations(locations: [CLLocation]) {}
-    
+
     func didFail(with error: Error) {}
-    
+
     func didChangePermissionStatus(newStatus: PermissionStatus) {
         locationPermissionStatus = newStatus
         checkForLocationError(newStatus)
