@@ -52,6 +52,10 @@ enum Constants {
         static let dataPrivacyURL: String = "data_privacy"
         static let analyticsURL: String = "analytics"
     }
+
+    enum URL {
+        static let paymentMethodCreation: String = "\(PACECloudSDK.URL.payment.absoluteString)/payment-create?redirect_uri=\(AppKit.Constants.appCloseRedirectUri)"
+    }
 }
 
 extension Constants {

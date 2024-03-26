@@ -7,10 +7,6 @@ struct PaymentManager {
         PKPaymentAuthorizationViewController.canMakePayments(usingNetworks: PKPaymentNetwork.supportedPaymentNetworks)
     }
 
-    var paymentAppUrlString: String {
-        PACECloudSDK.URL.payment.absoluteString
-    }
-
     func paymentMethodUrlString(for id: String, kind: String) -> String {
         let paymentMethodId = kind == Constants.applePayKind ? Constants.applePayKind : "\(id)"
         let urlString = "\(PACECloudSDK.URL.payment.absoluteString)/payment-method/\(paymentMethodId)?redirect_uri=\(AppKit.Constants.appCloseRedirectUri)"
