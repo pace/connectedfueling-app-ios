@@ -4,15 +4,6 @@ struct PaymentMethodsView: View {
     @StateObject private var viewModel: PaymentMethodsViewModel = .init()
 
     var body: some View {
-        content
-            .navigationTitle(L10n.walletPaymentMethodsTitle)
-            .onAppear {
-                viewModel.fetchPaymentMethods()
-            }
-    }
-
-    @ViewBuilder
-    private var content: some View {
         if viewModel.isLoading {
             loadingView
         } else if let error = viewModel.error {
