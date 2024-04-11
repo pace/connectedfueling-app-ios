@@ -354,8 +354,8 @@ internal enum L10n {
   }
   internal enum Dashboard {
     internal enum EmptyView {
-      /// No gas stations where found nearby your location.
-      internal static let description = L10n.tr("Localizable", "DASHBOARD.EMPTY_VIEW.DESCRIPTION", fallback: "No gas stations where found nearby your location.")
+      /// No gas stations were found nearby your location.
+      internal static let description = L10n.tr("Localizable", "DASHBOARD.EMPTY_VIEW.DESCRIPTION", fallback: "No gas stations were found nearby your location.")
       /// Unfortunately no gas stations near you
       internal static let title = L10n.tr("Localizable", "DASHBOARD.EMPTY_VIEW.TITLE", fallback: "Unfortunately no gas stations near you")
     }
