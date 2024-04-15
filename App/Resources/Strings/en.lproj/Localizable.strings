@@ -1,5 +1,5 @@
 "ALERT.LOCATION_PERMISSION.ACTIONS.OPEN_SETTINGS" = "Open settings";
-"DASHBOARD.EMPTY_VIEW.DESCRIPTION" = "No gas stations where found nearby your location.";
+"DASHBOARD.EMPTY_VIEW.DESCRIPTION" = "No gas stations were found nearby your location.";
 "DASHBOARD.EMPTY_VIEW.TITLE" = "Unfortunately no gas stations near you";
 "DASHBOARD.LOADING_VIEW.DESCRIPTION" = "We are searching for the nearest gas stations in your area. This may take a moment.";
 "DASHBOARD.LOADING_VIEW.TITLE" = "Searching gas stations...";
