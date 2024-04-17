@@ -135,7 +135,7 @@ platform :ios do
   lane :publish_cofu_app_from_configuration do |options|
     asc_team_id = options[:asc_team_id]
     app_identifier = options[:app_identifier]
-    test_groups = options[:test_groups]
+    test_groups = options[:test_groups].split(',')
     whats_new = options[:whats_new]
 
     upload_to_testflight(
