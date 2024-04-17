@@ -26,7 +26,7 @@ def load_configuration_from_file():
         print("✅ Successfully loaded configuration from file")
 
 def publish_app():
-  test_groups = configuration.get('ios_app_review_test_groups') or []
+  test_groups = ",".join(configuration.get("ios_app_review_test_groups")) or []
   
   cwd = os.getcwd()
   os.chdir('..')
