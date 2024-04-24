@@ -48,6 +48,7 @@
 "common_start_navigation" = "Începeți navigarea";
 "common_use_accept" = "Accept";
 "common_use_are_you_sure" = "Ești sigur?";
+"common_use_attention" = "Atenție";
 "common_use_back" = "Înapoi";
 "common_use_cancel" = "Anulează";
 "common_use_close" = "Închideți";
@@ -74,6 +75,7 @@
 "currency_format" = "%2$@%1$@";
 "fuel_group_diesel" = "Diesel";
 "fuel_group_petrol" = "Benzină";
+"fueling_legal_warning_description" = "Legislația națională interzice utilizarea telefoanelor inteligente în zona de staționare. Vă rugăm să vă asigurați că vă folosiți telefonul doar în vehiculul dumneavoastră.";
 "fueling_tab_label" = "Realimentare cu combustibil";
 "gas_station_closed_hint" = "Benzinăria este în prezent închisă.";
 "gas_station_closes_soon_hint" = "Benzinăria se închide la %s";

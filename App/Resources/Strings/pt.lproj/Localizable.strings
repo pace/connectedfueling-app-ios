@@ -48,6 +48,7 @@
 "common_start_navigation" = "Iniciar navegação";
 "common_use_accept" = "Aceitar";
 "common_use_are_you_sure" = "Tens a certeza?";
+"common_use_attention" = "Atenção";
 "common_use_back" = "Voltar";
 "common_use_cancel" = "Cancelar";
 "common_use_close" = "Fechar";
@@ -74,6 +75,7 @@
 "currency_format" = "%2$@%1$@";
 "fuel_group_diesel" = "Diesel";
 "fuel_group_petrol" = "Gasolina";
+"fueling_legal_warning_description" = "A legislação nacional proíbe a utilização de telemóveis no pátio. Por favor, certifique-se de que utiliza o seu telemóvel apenas no seu veículo.";
 "fueling_tab_label" = "Reabastecimento";
 "gas_station_closed_hint" = "A estação de serviço está actualmente encerrada.";
 "gas_station_closes_soon_hint" = "A bomba de gasolina fecha a %s";

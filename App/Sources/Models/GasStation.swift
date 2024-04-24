@@ -12,6 +12,7 @@ class GasStation: Hashable, Comparable {
     let isConnectedFuelingEnabled: Bool
     let prices: [FuelPrice]
     let lastUpdated: Date?
+    let country: String?
 
     /// opening / operating hours
     let openingHours: [OpeningHours]
@@ -43,7 +44,8 @@ class GasStation: Hashable, Comparable {
          isConnectedFuelingEnabled: Bool,
          prices: [FuelPrice],
          lastUpdated: Date?,
-         openingHours: [OpeningHours]) {
+         openingHours: [OpeningHours],
+         country: String?) {
         self.id = id
         self.name = name
         self.addressLines = addressLines
@@ -54,6 +56,7 @@ class GasStation: Hashable, Comparable {
         self.prices = prices
         self.lastUpdated = lastUpdated
         self.openingHours = openingHours
+        self.country = country
 
         POIManager().selectedFuelTypePublisher
             .map { [weak self] selectedFuelType in

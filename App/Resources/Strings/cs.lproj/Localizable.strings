@@ -48,6 +48,7 @@
 "common_start_navigation" = "Spuštění navigace";
 "common_use_accept" = "Akceptovat";
 "common_use_are_you_sure" = "Jste si jistý?";
+"common_use_attention" = "Pozor";
 "common_use_back" = "Zpět";
 "common_use_cancel" = "Zrušit";
 "common_use_close" = "Zavřít";
@@ -74,6 +75,7 @@
 "currency_format" = "%2$@%1$@";
 "fuel_group_diesel" = "Diesel";
 "fuel_group_petrol" = "Benzín";
+"fueling_legal_warning_description" = "Vnitrostátní zákony zakazují používání chytrých telefonů na parkovišti. Dbejte na to, abyste telefon používali pouze ve vozidle.";
 "fueling_tab_label" = "Doplňování paliva";
 "gas_station_closed_hint" = "Čerpací stanice je v současné době uzavřena.";
 "gas_station_closes_soon_hint" = "Čerpací stanice se zavírá v %s";

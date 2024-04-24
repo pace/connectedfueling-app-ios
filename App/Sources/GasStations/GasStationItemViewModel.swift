@@ -3,6 +3,18 @@ import MapKit
 import PACECloudSDK
 
 class GasStationItemViewModel: ObservableObject {
+    enum FuelingPrecondition {
+        case frenchStation
+
+        var description: String {
+            switch self {
+            case .frenchStation:
+                L10n.fuelingLegalWarningDescription
+            }
+        }
+    }
+
+    @Published var showFuelingPreconditionAlert: Bool = false
     @Published var fuelingUrlString: String?
     @Published var gasStation: GasStation
 
@@ -76,6 +88,9 @@ class GasStationItemViewModel: ObservableObject {
         return formatter
     }()
 
+    var fuelingPrecondition: FuelingPrecondition?
+    var fuelingPreconditionAction: (() -> Void)?
+
     init(gasStation: GasStation, analyticsManager: AnalyticsManager = .init()) {
         self.gasStation = gasStation
         self.priceFormatter = PriceNumberFormatter(with: gasStation.prices.first?.format ?? Constants.GasStation.priceFormatFallback)
@@ -90,17 +105,42 @@ class GasStationItemViewModel: ObservableObject {
         }
     }
 
-    func startFueling() {
+    func dismissFuelingPreConditionAlert() {
+        showFuelingPreconditionAlert = false
+        fuelingPrecondition = nil
+        fuelingPreconditionAction = nil
+    }
+
+    private func startFueling() {
+        guard checkFuelingPreConditions() else { return }
+        startFuelingProcess()
+    }
+
+    private func startFuelingProcess() {
         analyticsManager.logEvent(AnalyticEvents.FuelingStartedEvent())
         fuelingUrlString = PACECloudSDK.URL.fueling(id: gasStation.id).absoluteString
     }
 
-    func startNavigation() {
+    private func startNavigation() {
         analyticsManager.logEvent(AnalyticEvents.StationNavigationUsedEvent())
         let coordinate: CLLocationCoordinate2D = gasStation.location.coordinate
         let placemark: MKPlacemark = MKPlacemark(coordinate: coordinate)
         let item = MKMapItem(placemark: placemark)
         item.name = gasStation.name
         item.openInMaps(launchOptions: nil)
+    }
+
+    private func checkFuelingPreConditions() -> Bool {
+        if gasStation.country == "FR" {
+            showFuelingPreconditionAlert = true
+            fuelingPrecondition = .frenchStation
+            fuelingPreconditionAction = { [weak self] in
+                self?.dismissFuelingPreConditionAlert()
+                self?.startFuelingProcess()
+            }
+            return false
+        }
+
+        return true
     }
 }

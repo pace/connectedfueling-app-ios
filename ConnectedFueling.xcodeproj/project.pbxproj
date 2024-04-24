@@ -25,6 +25,7 @@
 		0B860D342B7E546A0032432F /* MD5+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B860D332B7E546A0032432F /* MD5+String.swift */; };
 		0BA2D7EE2BA19D6700EE63A7 /* NotificationConsentPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA2D7ED2BA19D6700EE63A7 /* NotificationConsentPageViewModel.swift */; };
 		0BB100CE2B90794900C85177 /* MapNavigationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB100CD2B90794900C85177 /* MapNavigationViewModel.swift */; };
+		0BC9FF0F2BD93750005ED94D /* POIKit.GasStation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC9FF0E2BD93750005ED94D /* POIKit.GasStation+Extension.swift */; };
 		0BDC0CD42B35877200BD341F /* CofuLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDC0CD32B35877200BD341F /* CofuLogger.swift */; };
 		16E730131166C556AA0708EF /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2EB20D5198AC7E6603D98D72 /* Settings.bundle */; };
 		1867B8D8BE2B8499106AC9E1 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B5B4A6AE57364F8FC6B771 /* Assets.swift */; };
@@ -238,6 +239,7 @@
 		0B860D332B7E546A0032432F /* MD5+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MD5+String.swift"; sourceTree = "<group>"; };
 		0BA2D7ED2BA19D6700EE63A7 /* NotificationConsentPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationConsentPageViewModel.swift; sourceTree = "<group>"; };
 		0BB100CD2B90794900C85177 /* MapNavigationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNavigationViewModel.swift; sourceTree = "<group>"; };
+		0BC9FF0E2BD93750005ED94D /* POIKit.GasStation+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "POIKit.GasStation+Extension.swift"; sourceTree = "<group>"; };
 		0BDC0CD32B35877200BD341F /* CofuLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CofuLogger.swift; sourceTree = "<group>"; };
 		0DDED74D77EA34B1E82D66CC /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		0DE070BD08140DF741A4FC14 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -824,6 +826,7 @@
 				9A1B8B4B2B5AA59C0009B3B9 /* MapKit+Extensions.swift */,
 				0B3463D02B62974700DACFB3 /* CLLocationCoordinate2D+Extension.swift */,
 				0B860D332B7E546A0032432F /* MD5+String.swift */,
+				0BC9FF0E2BD93750005ED94D /* POIKit.GasStation+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1638,6 +1641,7 @@
 				9ADC1EC42B275B270027B82B /* TransactionDetailView.swift in Sources */,
 				3BDE7B212ADD13E3009A88DF /* OnboardingAuthorizationPageViewModel.swift in Sources */,
 				3BA2DB0F2AE6A1F800187D86 /* AppScreen.swift in Sources */,
+				0BC9FF0F2BD93750005ED94D /* POIKit.GasStation+Extension.swift in Sources */,
 				3BAE606C2AD6E93D006EA9DD /* FuelTypeButton.swift in Sources */,
 				3B6E0B812B220C52001F4FE9 /* GasStationAnnotation.swift in Sources */,
 				3BCF49F82AE0079C005C20DC /* PINInputValidator.swift in Sources */,

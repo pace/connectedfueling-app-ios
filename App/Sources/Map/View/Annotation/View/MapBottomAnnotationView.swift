@@ -41,5 +41,6 @@ struct MapBottomAnnotationView: View {
                                                                                           format: "d.dds")
                                                                                  ],
                                                                                  lastUpdated: nil,
-                                                                                 openingHours: []))))
+                                                                                 openingHours: [],
+                                                                                 country: "DE"))))
 }

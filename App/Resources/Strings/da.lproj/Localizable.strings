@@ -48,6 +48,7 @@
 "common_start_navigation" = "Start navigation";
 "common_use_accept" = "Acceptere";
 "common_use_are_you_sure" = "Er du sikker?";
+"common_use_attention" = "Opmærksomhed";
 "common_use_back" = "Tilbage";
 "common_use_cancel" = "Annuller";
 "common_use_close" = "Luk";
@@ -74,6 +75,7 @@
 "currency_format" = "%2$@%1$@";
 "fuel_group_diesel" = "Diesel";
 "fuel_group_petrol" = "Benzin";
+"fueling_legal_warning_description" = "National lovgivning forbyder brug af smartphones på forpladsen. Sørg for, at du kun bruger din telefon i din bil.";
 "fueling_tab_label" = "Påfyldning af brændstof";
 "gas_station_closed_hint" = "Tankstationen er i øjeblikket lukket.";
 "gas_station_closes_soon_hint" = "Tankstationen lukker kl. %s";
