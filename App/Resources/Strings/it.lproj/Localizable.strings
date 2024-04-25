@@ -48,6 +48,7 @@
 "common_start_navigation" = "Inizia la navigazione";
 "common_use_accept" = "Accettare";
 "common_use_are_you_sure" = "Sei sicuro?";
+"common_use_attention" = "Attenzione";
 "common_use_back" = "Indietro";
 "common_use_cancel" = "Cancella";
 "common_use_close" = "Chiudere";
@@ -74,6 +75,7 @@
 "currency_format" = "%2$@%1$@";
 "fuel_group_diesel" = "Diesel";
 "fuel_group_petrol" = "Benzina";
+"fueling_legal_warning_description" = "La legge nazionale vieta l'uso di smartphone sul piazzale. Vi preghiamo di utilizzare il telefono solo nel vostro veicolo.";
 "fueling_tab_label" = "Rifornimento di carburante";
 "gas_station_closed_hint" = "La stazione di servizio è attualmente chiusa.";
 "gas_station_closes_soon_hint" = "La stazione di servizio chiude al %s";

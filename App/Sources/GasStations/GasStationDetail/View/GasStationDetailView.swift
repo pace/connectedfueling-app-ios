@@ -24,6 +24,20 @@ struct GasStationDetailView: View {
             .sheet(item: $viewModel.fuelingUrlString) { fuelingUrlString in
                 AppView(urlString: fuelingUrlString, isModalInPresentation: true)
             }
+            .alert(
+                L10n.commonUseAttention,
+                isPresented: $viewModel.showFuelingPreconditionAlert) {
+                    Button(role: .cancel) {
+                        viewModel.dismissFuelingPreConditionAlert()
+                    } label: {
+                        Text(L10n.commonUseCancel)
+                    }
+                    Button(L10n.commonUseConfirm) {
+                        viewModel.fuelingPreconditionAction?()
+                    }
+                } message: {
+                    Text(viewModel.fuelingPrecondition?.description ?? "")
+                }
     }
 
     @ViewBuilder
@@ -241,7 +255,8 @@ struct GasStationDetailView: View {
                                                                 .init(days: [.saturday, .sunday],
                                                                       hours: [.init(from: "10", to: "16")],
                                                                       rule: .open)
-                                                            ])))
+                                                            ],
+                                                            country: "DE")))
     .ignoresSafeArea()
 }
 
@@ -270,7 +285,8 @@ struct GasStationDetailView: View {
                                                                 .init(days: [.monday, .tuesday, .wednesday, .thursday, .friday, .saturday, .sunday],
                                                                       hours: [.init(from: "3", to: "22")],
                                                                       rule: .open)
-                                                            ])))
+                                                            ], 
+                                                            country: "DE")))
 }
 
 // MARK: - No prices & closed
@@ -289,7 +305,8 @@ struct GasStationDetailView: View {
                                                                 .init(days: [.monday, .tuesday, .wednesday, .thursday, .friday, .saturday, .sunday],
                                                                       hours: [.init(from: "3", to: "22")],
                                                                       rule: .closed)
-                                                            ])))
+                                                            ],
+                                                            country: "DE")))
 }
 
 // MARK: - No prices & No opening hours
@@ -304,5 +321,6 @@ struct GasStationDetailView: View {
                                                             isConnectedFuelingEnabled: true,
                                                             prices: [],
                                                             lastUpdated: Date(),
-                                                            openingHours: [])))
+                                                            openingHours: [],
+                                                            country: "DE")))
 }

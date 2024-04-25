@@ -121,7 +121,8 @@ private extension POIManager {
                      isConnectedFuelingEnabled: isConnectedFuelingEnabled,
                      prices: prices,
                      lastUpdated: station.lastUpdated,
-                     openingHours: openingHours)
+                     openingHours: openingHours,
+                     country: station.country)
     }
 
     func makeFuelPrice(for price: PCPOIFuelPrice, currency: String?, priceFormat: String) -> FuelPrice? {

@@ -47,7 +47,8 @@ struct MapAnnotationView: View {
                                                                                       format: "d.dds")
                                                                                ],
                                                                                lastUpdated: nil,
-                                                                               openingHours: []))),
+                                                                               openingHours: [],
+                                                                               country: "DE"))),
                           isTopAnnotationViewHidden: .constant(false))
         MapAnnotationView(viewModel: .init(annotation: .init(gasStation: .init(id: "",
                                                                                name: "Tankstelle",
@@ -68,7 +69,8 @@ struct MapAnnotationView: View {
                                                                                 .init(days: [.sunday],
                                                                                       hours: [.init(from: "2", to: "3")],
                                                                                       rule: .open)
-                                                                               ]))),
+                                                                               ],
+                                                                               country: "DE"))),
                           isTopAnnotationViewHidden: .constant(false))
         MapAnnotationView(viewModel: .init(annotation: .init(gasStation: .init(id: "",
                                                                                name: "Tankstelle",
@@ -89,7 +91,8 @@ struct MapAnnotationView: View {
                                                                                 .init(days: [.sunday],
                                                                                       hours: [.init(from: "2", to: "3")],
                                                                                       rule: .open)
-                                                                               ]))),
+                                                                               ],
+                                                                               country: "DE"))),
                           isTopAnnotationViewHidden: .constant(true))
     }
 }

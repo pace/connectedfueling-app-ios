@@ -48,6 +48,7 @@
 "common_start_navigation" = "Start navigatie";
 "common_use_accept" = "Aanvaarden";
 "common_use_are_you_sure" = "Weet je het zeker?";
+"common_use_attention" = "Attentie";
 "common_use_back" = "Terug";
 "common_use_cancel" = "Annuleren";
 "common_use_close" = "Sluit";
@@ -74,6 +75,7 @@
 "currency_format" = "%2$@%1$@";
 "fuel_group_diesel" = "Diesel";
 "fuel_group_petrol" = "Benzine";
+"fueling_legal_warning_description" = "De nationale wetgeving verbiedt het gebruik van smartphones op het voorplein. Zorg ervoor dat u uw telefoon alleen in uw voertuig gebruikt.";
 "fueling_tab_label" = "Bijtanken";
 "gas_station_closed_hint" = "Het tankstation is momenteel gesloten.";
 "gas_station_closes_soon_hint" = "Tankstation sluit om %s";

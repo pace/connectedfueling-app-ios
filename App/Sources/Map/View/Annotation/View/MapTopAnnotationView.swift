@@ -104,7 +104,8 @@ private extension MapTopAnnotationView {
                                                                                               format: "d.dds")
                                                                                       ],
                                                                                       lastUpdated: nil,
-                                                                                      openingHours: []))))
+                                                                                      openingHours: [],
+                                                                                      country: "DE"))))
             MapTopAnnotationView(viewModel: .init(annotation: .init(gasStation: .init(id: "",
                                                                                       name: "Tankstelle",
                                                                                       addressLines: [],
@@ -124,7 +125,8 @@ private extension MapTopAnnotationView {
                                                                                         .init(days: [.sunday],
                                                                                               hours: [.init(from: "2", to: "3")],
                                                                                               rule: .open)
-                                                                                      ]))))
+                                                                                      ],
+                                                                                      country: "DE"))))
         }
     }
 }

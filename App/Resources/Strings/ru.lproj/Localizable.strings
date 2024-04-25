@@ -48,6 +48,7 @@
 "common_start_navigation" = "Начать навигацию";
 "common_use_accept" = "Принимать";
 "common_use_are_you_sure" = "Вы уверены?";
+"common_use_attention" = "Внимание";
 "common_use_back" = "Назад";
 "common_use_cancel" = "Отмена";
 "common_use_close" = "Закрыть";
@@ -74,6 +75,7 @@
 "currency_format" = "%2$@%1$@";
 "fuel_group_diesel" = "Дизель";
 "fuel_group_petrol" = "Бензин";
+"fueling_legal_warning_description" = "Национальное законодательство запрещает использование смартфонов на территории автосалона. Пожалуйста, убедитесь, что вы пользуетесь телефоном только в своем автомобиле.";
 "fueling_tab_label" = "Заправка";
 "gas_station_closed_hint" = "В настоящее время автозаправочная станция закрыта.";
 "gas_station_closes_soon_hint" = "Заправочная станция закрывается в %s";

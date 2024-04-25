@@ -13,6 +13,20 @@ struct GasStationListItemView: View {
             .sheet(item: $viewModel.fuelingUrlString) { fuelingUrlString in
                 AppView(urlString: fuelingUrlString, isModalInPresentation: true)
             }
+            .alert(
+                L10n.commonUseAttention,
+                isPresented: $viewModel.showFuelingPreconditionAlert) {
+                    Button(role: .cancel) {
+                        viewModel.dismissFuelingPreConditionAlert()
+                    } label: {
+                        Text(L10n.commonUseCancel)
+                    }
+                    Button(L10n.commonUseConfirm) {
+                        viewModel.fuelingPreconditionAction?()
+                    }
+                } message: {
+                    Text(viewModel.fuelingPrecondition?.description ?? "")
+                }
     }
 
     @ViewBuilder
@@ -175,7 +189,8 @@ struct GasStationListItemView: View {
                                                                     .init(days: [.saturday, .sunday],
                                                                           hours: [.init(from: "10", to: "16")],
                                                                           rule: .open)
-                                                                  ])))
+                                                                  ],
+                                                                  country: "DE")))
         GasStationListItemView(viewModel: .init(gasStation: .init(id: "id",
                                                                   name: "MobyPay 3435",
                                                                   addressLines: [
@@ -193,7 +208,8 @@ struct GasStationListItemView: View {
                                                                           format: "d.dds")
                                                                   ],
                                                                   lastUpdated: Date(),
-                                                                  openingHours: [])))
+                                                                  openingHours: [],
+                                                                  country: "DE")))
         GasStationListItemView(viewModel: .init(gasStation: .init(id: "id",
                                                                   name: "MobyPay 3435",
                                                                   addressLines: [
@@ -211,7 +227,8 @@ struct GasStationListItemView: View {
                                                                           format: "d.dds")
                                                                   ],
                                                                   lastUpdated: Date(),
-                                                                  openingHours: [])))
+                                                                  openingHours: [],
+                                                                  country: "DE")))
     }
     .padding(.paddingM)
 }

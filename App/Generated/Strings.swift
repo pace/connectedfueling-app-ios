@@ -38,6 +38,8 @@ internal enum L10n {
   internal static let commonUseAccept = L10n.tr("Localizable", "common_use_accept", fallback: "Accept")
   /// Are you sure?
   internal static let commonUseAreYouSure = L10n.tr("Localizable", "common_use_are_you_sure", fallback: "Are you sure?")
+  /// Attention
+  internal static let commonUseAttention = L10n.tr("Localizable", "common_use_attention", fallback: "Attention")
   /// Back
   internal static let commonUseBack = L10n.tr("Localizable", "common_use_back", fallback: "Back")
   /// Cancel
@@ -94,6 +96,8 @@ internal enum L10n {
   internal static let fuelGroupPetrol = L10n.tr("Localizable", "fuel_group_petrol", fallback: "Petrol")
   /// What fuel prices should we show you?
   internal static let fuelTypeSelection = L10n.tr("Localizable", "FUEL_TYPE_SELECTION", fallback: "What fuel prices should we show you?")
+  /// National law prohibits the use of smartphones on the forecourt. Please ensure that you only use your phone in your vehicle.
+  internal static let fuelingLegalWarningDescription = L10n.tr("Localizable", "fueling_legal_warning_description", fallback: "National law prohibits the use of smartphones on the forecourt. Please ensure that you only use your phone in your vehicle.")
   /// Fueling
   internal static let fuelingTabLabel = L10n.tr("Localizable", "fueling_tab_label", fallback: "Fueling")
   /// The gas station is currently closed.

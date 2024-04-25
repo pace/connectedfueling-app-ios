@@ -36,6 +36,7 @@ struct ActionButton: View {
                     .frame(maxWidth: .infinity, minHeight: 50)
                     .foregroundStyle(foregroundColor)
                     .font(.system(size: 16, weight: .bold))
+                    .contentShape(Rectangle())
             }
         }
         .frame(maxWidth: .infinity, minHeight: 50)
