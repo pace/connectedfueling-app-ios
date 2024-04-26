@@ -36,6 +36,22 @@
 		</dict>
 		<dict>
 			<key>File</key>
+			<string>com.mono0926.LicensePlist/CollectionConcurrencyKit</string>
+			<key>Title</key>
+			<string>CollectionConcurrencyKit (0.2.0)</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/CryptoSwift</string>
+			<key>Title</key>
+			<string>CryptoSwift (1.8.2)</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
 			<string>com.mono0926.LicensePlist/firebase-ios-sdk</string>
 			<key>Title</key>
 			<string>Firebase (10.17.0)</string>
@@ -132,9 +148,65 @@
 		</dict>
 		<dict>
 			<key>File</key>
+			<string>com.mono0926.LicensePlist/SourceKitten</string>
+			<key>Title</key>
+			<string>SourceKitten (0.34.1)</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/swift-argument-parser</string>
+			<key>Title</key>
+			<string>swift-argument-parser (1.2.3)</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
 			<string>com.mono0926.LicensePlist/swift-protobuf</string>
 			<key>Title</key>
 			<string>SwiftProtobuf (1.22.0)</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/swift-syntax</string>
+			<key>Title</key>
+			<string>swift-syntax (509.0.2)</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/SwiftLint</string>
+			<key>Title</key>
+			<string>SwiftLint (0.54.0)</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/SwiftyTextTable</string>
+			<key>Title</key>
+			<string>SwiftyTextTable (0.9.0)</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/SWXMLHash</string>
+			<key>Title</key>
+			<string>SWXMLHash (7.0.2)</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/Yams</string>
+			<key>Title</key>
+			<string>Yams (5.1.2)</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>

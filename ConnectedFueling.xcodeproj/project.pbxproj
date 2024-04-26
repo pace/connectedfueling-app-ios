@@ -1353,7 +1353,6 @@
 			buildPhases = (
 				408EC6CF6DADB1BFD9EEB89B /* SwiftGen Version Check */,
 				9768C99DBF9A7EC06DC52AF8 /* SwiftGen */,
-				CB5C213273134017EFD8721F /* SwiftLint */,
 				61C5FAADDDB97DE33C6A85C3 /* Sources */,
 				790BB8E894854A0060A4E881 /* Create license settings page */,
 				73C63974CF6FCE513F940481 /* Resources */,
@@ -1363,6 +1362,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				0B61CA472BDBC70C00CE30E2 /* PBXTargetDependency */,
 			);
 			name = App;
 			packageProductDependencies = (
@@ -1432,6 +1432,7 @@
 				3B7764562AF91FFD00BE185B /* XCRemoteSwiftPackageReference "sentry-cocoa" */,
 				3B7764592AF922F700BE185B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				0B3463CC2B6289A600DACFB3 /* XCRemoteSwiftPackageReference "cloud-sdk-ios" */,
+				0B61CA452BDBC6FE00CE30E2 /* XCRemoteSwiftPackageReference "SwiftLint" */,
 			);
 			projectDirPath = "";
 			projectRoot = "";
@@ -1547,25 +1548,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Default homebrew directory on m1\nif test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\n\nexport PATH\n\nif which swiftgen > /dev/null; then\n    swiftgen config run --config swiftgen.yml\nelse\n    echo \"warning: SwiftGen not installed, download it from https://github.com/SwiftGen/SwiftGen\"\nfi\n\n";
-		};
-		CB5C213273134017EFD8721F /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Default homebrew directory on m1\nif test -d \"/opt/homebrew/bin/\"; then\n  PATH=\"/opt/homebrew/bin/:${PATH}\"\nfi\n\nexport PATH\n\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1761,6 +1743,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0B61CA472BDBC70C00CE30E2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 0B61CA462BDBC70C00CE30E2 /* SwiftLintPlugin */;
+		};
 		A8714802DF555EE28E37181F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 681C549D90A628A940E4663A /* App */;
@@ -2180,6 +2166,14 @@
 				version = 21.0.0;
 			};
 		};
+		0B61CA452BDBC6FE00CE30E2 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/SwiftLint.git";
+			requirement = {
+				kind = exactVersion;
+				version = 0.54.0;
+			};
+		};
 		3B7764562AF91FFD00BE185B /* XCRemoteSwiftPackageReference "sentry-cocoa" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/getsentry/sentry-cocoa";
@@ -2203,6 +2197,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0B3463CC2B6289A600DACFB3 /* XCRemoteSwiftPackageReference "cloud-sdk-ios" */;
 			productName = PACECloudSDK;
+		};
+		0B61CA462BDBC70C00CE30E2 /* SwiftLintPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0B61CA452BDBC6FE00CE30E2 /* XCRemoteSwiftPackageReference "SwiftLint" */;
+			productName = "plugin:SwiftLintPlugin";
 		};
 		3B7764572AF91FFD00BE185B /* Sentry */ = {
 			isa = XCSwiftPackageProductDependency;

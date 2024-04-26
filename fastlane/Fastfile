@@ -69,7 +69,8 @@ platform :ios do
       force_quit_simulator: true,
       prelaunch_simulator: true,
       reinstall_app: true,
-      disable_concurrent_testing: true
+      disable_concurrent_testing: true,
+      xcargs: "-skipPackagePluginValidation -skipMacroValidation"
     )
   end
 
@@ -305,7 +306,8 @@ platform :ios do
         provisioningProfiles: {
           app_identifier => profile_name
         }
-      }
+      },
+      xcargs: "-skipPackagePluginValidation -skipMacroValidation"
     )
   end
 
