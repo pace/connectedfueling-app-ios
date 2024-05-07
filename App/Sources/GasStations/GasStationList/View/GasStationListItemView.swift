@@ -10,9 +10,6 @@ struct GasStationListItemView: View {
     var body: some View {
         content
             .background(BackgroundContainer())
-            .sheet(item: $viewModel.fuelingUrlString) { fuelingUrlString in
-                AppView(urlString: fuelingUrlString, isModalInPresentation: true)
-            }
             .alert(
                 L10n.commonUseAttention,
                 isPresented: $viewModel.showFuelingPreconditionAlert) {
@@ -162,7 +159,8 @@ struct GasStationListItemView: View {
 
 #Preview {
     VStack(spacing: .paddingM) {
-        GasStationListItemView(viewModel: .init(gasStation: .init(id: "id",
+        GasStationListItemView(viewModel: .init(listViewModel: .init(),
+                                                gasStation: .init(id: "id",
                                                                   name: "MobyPay 3435",
                                                                   addressLines: [
                                                                     "Gerwigstraße 2",
@@ -191,7 +189,8 @@ struct GasStationListItemView: View {
                                                                           rule: .open)
                                                                   ],
                                                                   country: "DE")))
-        GasStationListItemView(viewModel: .init(gasStation: .init(id: "id",
+        GasStationListItemView(viewModel: .init(listViewModel: .init(),
+                                                gasStation: .init(id: "id",
                                                                   name: "MobyPay 3435",
                                                                   addressLines: [
                                                                     "Gerwigstraße 2",
@@ -210,7 +209,8 @@ struct GasStationListItemView: View {
                                                                   lastUpdated: Date(),
                                                                   openingHours: [],
                                                                   country: "DE")))
-        GasStationListItemView(viewModel: .init(gasStation: .init(id: "id",
+        GasStationListItemView(viewModel: .init(listViewModel: .init(),
+                                                gasStation: .init(id: "id",
                                                                   name: "MobyPay 3435",
                                                                   addressLines: [
                                                                     "So-Very-Long-Road-I-Cant-Believe-It 111",

@@ -5,6 +5,7 @@ import SwiftUI
 class GasStationListViewModel: ObservableObject {
     @Published var stations: [GasStation]?
     @Published var error: AppError?
+    @Published var selectedFuelingUrlString: String?
 
     private var currentLocation: CLLocation?
     private var previousLocation: CLLocation?

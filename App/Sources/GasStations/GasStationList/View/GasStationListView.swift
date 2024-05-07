@@ -41,6 +41,9 @@ struct GasStationListView: View {
             }
         }
         .background(Color.lightGrey)
+        .sheet(item: $viewModel.selectedFuelingUrlString) { selectedFuelingUrlString in
+            AppView(urlString: selectedFuelingUrlString, isModalInPresentation: true)
+        }
     }
 
     @ViewBuilder
@@ -60,7 +63,9 @@ struct GasStationListView: View {
     private func list(of stations: [GasStation]) -> some View {
         List {
             ForEach(stations, id: \.self) { gasStation in
-                GasStationListItemView(viewModel: .init(gasStation: gasStation, analyticsManager: analyticsManager))
+                GasStationListItemView(viewModel: .init(listViewModel: viewModel,
+                                                        gasStation: gasStation,
+                                                        analyticsManager: analyticsManager))
             }
             .listRowInsets(.init(top: 0, leading: 25, bottom: 10, trailing: 25))
             .listRowSeparator(.hidden)

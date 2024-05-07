@@ -1,3 +1,4 @@
+import Combine
 import Foundation
 
 class GasStationListItemViewModel: GasStationItemViewModel {
@@ -36,11 +37,16 @@ class GasStationListItemViewModel: GasStationItemViewModel {
         poiManager.fuelType.localizedTitle
     }
 
+    private var cancellables: Set<AnyCancellable> = []
+
+    private let listViewModel: GasStationListViewModel
     private let poiManager: POIManager
 
-    init(gasStation: GasStation,
+    init(listViewModel: GasStationListViewModel,
+         gasStation: GasStation,
          poiManager: POIManager = .init(),
          analyticsManager: AnalyticsManager = .init()) {
+        self.listViewModel = listViewModel
         self.poiManager = poiManager
 
         super.init(gasStation: gasStation, analyticsManager: analyticsManager)
@@ -52,5 +58,11 @@ class GasStationListItemViewModel: GasStationItemViewModel {
                 formattedPrice ?? .init(L10n.listPriceNotAvailable)
             }
             .assign(to: &$formattedPrice)
+
+        $fuelingUrlString
+            .compactMap { $0 }
+            .removeDuplicates()
+            .assign(to: \.selectedFuelingUrlString, on: listViewModel)
+            .store(in: &cancellables)
     }
 }
