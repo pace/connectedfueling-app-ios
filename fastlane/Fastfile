@@ -1,16 +1,45 @@
+require 'securerandom'
+
 default_platform(:ios)
 
 PROJECT_PATH = 'ConnectedFueling.xcodeproj'
-TEAM_ID = ENV['COMPANY_TEAM_ID']
-APP_IDENTIFIER = 'car.pace.cofu'
+ENVIRONMENT = ENV['ENVIRONMENT']
 
 platform :ios do
   version_number = ENV['VERSION_NAME']
   build_number = ENV['BUILD_NUMBER']
 
-  before_all do
+  before_all do |lane|
     clear_derived_data
+  end
 
+  after_all do |lane|
+    # Handling for configured whitelabel app
+    if [:build_cofu_app_from_configuration, :publish_cofu_app_from_configuration].include?(lane)
+      copy_artifacts(
+        keep_original: false,
+        target_path: 'artifacts',
+        artifacts: ['*.cer', '*.mobileprovision', '*.ipa'],
+        fail_on_missing: true
+      )
+      copy_artifacts(
+        keep_original: false,
+        target_path: 'dsyms',
+        artifacts: ['*.dSYM.zip'],
+        fail_on_missing: true
+      )
+    end
+  end
+  
+  ##################################
+  ##################################
+  # 🆗 Lanes for merge requests 🆗 #
+  ##################################
+  ##################################
+
+  desc "Builds the default app for a merge request pipeline"
+  lane :build_cofu_app_for_merge_request do
+    # Create temporary keychain for match
     create_keychain(
       name: ENV['MATCH_KEYCHAIN_NAME'],
       password: ENV['MATCH_KEYCHAIN_PASSWORD'],
@@ -19,9 +48,14 @@ platform :ios do
       add_to_search_list: true,
       verbose: true
     )
-  end
 
-  after_all do
+    build_application(
+      uses_match: true,
+      team_id: ENV['COMPANY_TEAM_ID'],
+      app_identifier: 'car.pace.cofu'
+    )
+
+    # Delete temporary match keychain
     delete_keychain(name: ENV['MATCH_KEYCHAIN_NAME'])
   end
 
@@ -29,71 +63,239 @@ platform :ios do
   lane :test do
     scan(
       scheme: 'App Unit Tests',
-      configuration: 'Development',
+      app_identifier: 'car.pace.cofu',
+      configuration: ENVIRONMENT,
       reset_simulator: true,
       force_quit_simulator: true,
       prelaunch_simulator: true,
       reinstall_app: true,
-      disable_concurrent_testing: true
+      disable_concurrent_testing: true,
+      xcargs: "-skipPackagePluginValidation -skipMacroValidation"
     )
   end
 
-  desc 'Build development app'
-  lane :build_development do
-    build_cofu_app(config: 'Development')
+  #########################################
+  #########################################
+  # 🚀 Configured whitelabel app lanes 🚀 #
+  #########################################
+  #########################################
+
+  # Configured whitelabel app build lane
+  desc 'Builds the app from a configuration'
+  lane :build_cofu_app_from_configuration do |options|
+    is_default_whitelabel_app = options[:app_identifier] == 'car.pace.cofu'
+    
+    # Workaround until sigh is working for default whitelabel app
+    # If default whitelabel app -> use match
+    # Use sigh otherwise
+    if is_default_whitelabel_app
+      create_keychain(
+        name: ENV['MATCH_KEYCHAIN_NAME'],
+        password: ENV['MATCH_KEYCHAIN_PASSWORD'],
+        unlock: true,
+        timeout: 3600,
+        add_to_search_list: true,
+        verbose: true
+      )
+    else
+      unlock_keychain(
+        path: "./App/Resources/keychain.keychain",
+        password: options[:keychain_password],
+        add_to_search_list: :replace,
+        set_default: true # Sigh will look for a certificate in the default keychain. Set this keychain to default temporarily
+      )
+    end
+    
+    build_application(
+      uses_match: is_default_whitelabel_app,
+      team_id: options[:team_id],
+      app_identifier: options[:app_identifier]
+    )
+
+    if is_default_whitelabel_app
+      # Delete temporary match keychain
+      delete_keychain(name: ENV['MATCH_KEYCHAIN_NAME'])
+    else
+      # Set default keychain back to `login`
+      sh("security", "default-keychain", "-s", "/Users/pace/Library/Keychains/login.keychain-db")
+    end
+
+    sentry_enabled = options[:sentry_enabled].downcase
+
+    if sentry_enabled == 'true'
+      sentry_upload_dsym(
+        auth_token: ENV["SENTRY_AUTH_TOKEN"],
+        org_slug: 'pace',
+        project_slug: options[:sentry_project_name],
+        url: 'https://sentry.pace.cloud'
+      )
+    end
   end
 
-  desc 'Build development app'
-  lane :build_beta do
-    build_cofu_app(config: 'Production')
+  desc 'Publishes the configured app on TestFlight'
+  lane :publish_cofu_app_from_configuration do |options|
+    asc_team_id = options[:asc_team_id]
+    app_identifier = options[:app_identifier]
+    test_groups = options[:test_groups].split(',')
+    whats_new = options[:whats_new]
+
+    upload_to_testflight(
+      app_identifier: app_identifier,
+      team_id: asc_team_id,
+      ipa: 'artifacts/App.ipa',
+      distribute_external: true,
+      groups: test_groups,
+      reject_build_waiting_for_review: true,
+      skip_waiting_for_build_processing: true,
+      localized_build_info: {
+        'default': {
+          whats_new: whats_new
+        }
+      }
+    )
   end
 
-  desc "Push a new beta build to TestFlight"
-  private_lane :build_cofu_app do |options|
+  desc 'Configure build settings'
+  lane :configure_build_settings do |options|
+    info_plist_path = 'App/Resources/InfoPlist/Info.plist'
+
+    app_name = options[:app_name]
+    app_identifier = options[:app_identifier]
+    
+    analytics_enabled = options[:analytics_enabled].downcase
+    crashlytics_enabled = options[:crashlytics_enabled].downcase
+    sentry_enabled = options[:sentry_enabled].downcase
+    sentry_dsn = sentry_enabled ? options[:sentry_dsn] : ""
+
+    client_id = options[:client_id]
+    idp_hint = options[:idp_hint]
+    redirect_uri = "#{client_id}://callback"
+    url_scheme = "pace.#{SecureRandom.uuid}"
+
+    set_info_plist_value(path: info_plist_path, key: "CFBundleName", value: app_name)
+    update_app_identifier(xcodeproj: PROJECT_PATH, plist_path: info_plist_path, app_identifier: app_identifier)
+
+    set_preprocessor_flags(analytics_enabled: analytics_enabled, crashlytics_enabled: crashlytics_enabled, sentry_enabled: sentry_enabled)
+
+    set_info_plist_value(path: info_plist_path, key: "PACECloudSDKIDKitSetup", subkey: "OIDConfigurationIDPHint", value: idp_hint)
+    set_info_plist_value(path: info_plist_path, key: "PACECloudSDKIDKitSetup", subkey: "OIDConfigurationRedirectURI", value: redirect_uri)
+
+    update_plist(
+      plist_path: info_plist_path,
+      block: proc do |plist|
+        urlScheme = plist["CFBundleURLTypes"].find{ |scheme| scheme["CFBundleURLName"] == "ConnectedFuelingApp" }
+        urlScheme[:CFBundleURLSchemes] = [url_scheme]
+      end
+    )
+
+    if sentry_enabled == 'true'
+      set_info_plist_value(path: info_plist_path, key: "SentryDSN", value: sentry_dsn)
+    else
+      puts 'Removing SentryDSN entry from Info.plist'
+      sh(command: "/usr/libexec/PlistBuddy -c 'Delete :SentryDSN' ../App/Resources/InfoPlist/Info.plist")
+    end
+
+    if analytics_enabled == 'false'
+      puts 'Removing push notification entitlement'
+      sh(command: "/usr/libexec/PlistBuddy -c 'Delete :aps-environment' ../App/Resources/App.entitlements")
+    end
+  end
+
+  desc 'Sets the preprocessor flags for the current configuration'
+  private_lane :set_preprocessor_flags do |options|
+    analytics_enabled = options[:analytics_enabled]
+    crashlytics_enabled = options[:crashlytics_enabled]
+    sentry_enabled = options[:sentry_enabled]
+
+    environment_uppercase = ENVIRONMENT.upcase
+    preprocessor_flags = [environment_uppercase]
+
+    if analytics_enabled == 'true'
+      preprocessor_flags.append('ANALYTICS')
+    end
+
+    if crashlytics_enabled == 'true'
+      preprocessor_flags.append('CRASHLYTICS')
+    end
+
+    if sentry_enabled == 'true'
+      preprocessor_flags.append('SENTRY')
+    end
+
+    Dir.chdir('..') do
+      project = Xcodeproj::Project.open(PROJECT_PATH)
+
+      build_settings = get_build_settings(project: project, target: 'App')
+
+      if build_settings
+        build_settings["SWIFT_ACTIVE_COMPILATION_CONDITIONS"] = preprocessor_flags
+        project.save
+        puts 'Successfully set preprocessor flags'
+      else
+        puts 'Failed setting preprocessor flags'
+      end
+    end
+  end
+
+  #################
+  #################
+  # 🛠️ Helpers 🛠️ #
+  #################
+  #################
+
+  desc "Builds the app"
+  private_lane :build_application do |options|
+    uses_match = options[:uses_match]
+    team_id = options[:team_id]
+    app_identifier = options[:app_identifier]
+
     verify_xcode
 
-    config = options[:config]
-    signing_type = config == 'Development' ? 'development' : 'appstore'
-    export_method = config == 'Development' ? 'development' : 'app-store'
-    info_plist_path = 'App/SupportingFiles/Info.plist'
+    signing_type = ENVIRONMENT == 'Sandbox' ? 'development' : 'appstore'
+    export_method = ENVIRONMENT == 'Sandbox' ? 'development' : 'app-store'
+    info_plist_path = 'App/Resources/InfoPlist/Info.plist'
 
     ## Repair code signing
-    disable_automatic_code_signing(
-      path: PROJECT_PATH,
-      team_id: TEAM_ID
-    )
+    disable_automatic_code_signing(path: PROJECT_PATH, team_id: team_id)
 
-    match(
-      type: signing_type,
-      team_id: TEAM_ID,
-      keychain_name: ENV['MATCH_KEYCHAIN_NAME'],
-      keychain_password: ENV['MATCH_KEYCHAIN_PASSWORD'],
-      app_identifier: APP_IDENTIFIER,
-      verbose: true
-    )
+    if uses_match
+      match(
+        type: signing_type,
+        team_id: team_id,
+        keychain_name: ENV['MATCH_KEYCHAIN_NAME'],
+        keychain_password: ENV['MATCH_KEYCHAIN_PASSWORD'],
+        app_identifier: app_identifier,
+        verbose: true
+      )
+    else
+      sigh(
+        app_identifier: app_identifier,
+        force: false,
+        team_id: team_id
+      )
+    end
+
+    profile_path = uses_match ? ENV["sigh_car.pace.cofu_#{signing_type}_profile-path"] : "./AppStore_#{app_identifier}.mobileprovision"
+    profile_name = uses_match ? ENV["sigh_car.pace.cofu_#{signing_type}_profile-name"] : "#{app_identifier} AppStore"
 
     update_project_provisioning(
       xcodeproj: PROJECT_PATH,
       target_filter: 'App',
-      profile: ENV["sigh_car.pace.cofu_#{signing_type}_profile-path"],
-      build_configuration: config
+      profile: profile_path,
+      build_configuration: ENVIRONMENT
     )
 
     set_info_plist_value(path: info_plist_path, key: 'CFBundleShortVersionString', value: version_number)
     set_info_plist_value(path: info_plist_path, key: 'CFBundleVersion', value: build_number)
 
-    update_signing(
-      target: 'App',
-      config: config,
-      team_id: TEAM_ID
-    )
+    update_signing(target: 'App', team_id: team_id)
 
     gym(
       clean: true,
       export_method: export_method,
       scheme: 'App',
-      export_team_id: TEAM_ID,
-      configuration: config,
+      export_team_id: team_id,
+      configuration: ENVIRONMENT,
       include_bitcode: false,
       include_symbols: true,
       export_options: {
@@ -102,83 +304,47 @@ platform :ios do
         uploadBitcode: false,
         uploadSymbols: true,
         provisioningProfiles: {
-          APP_IDENTIFIER => ENV["sigh_car.pace.cofu_#{signing_type}_profile-name"]
+          app_identifier => profile_name
         }
-      }
+      },
+      xcargs: "-skipPackagePluginValidation -skipMacroValidation"
     )
   end
 
-  lane :update_signing do |options|
-    environment = options[:config]
-    signing_identity = environment == 'Development' ? 'Apple Development' : 'iPhone Distribution'
-
+  private_lane :update_signing do |options|
+    signing_identity = ENVIRONMENT == 'Sandbox' ? 'Apple Development' : 'iPhone Distribution'
+    
     Dir.chdir('..') do
-      project_path = PROJECT_PATH
-      project = Xcodeproj::Project.open(project_path)
-      puts options[:target]
-      puts project.targets
-      main_target = project.targets.select { |target| target.name == options[:target] }.first
+      project = Xcodeproj::Project.open(PROJECT_PATH)
 
-      if main_target
-        puts 'Found target'
-        puts "Environment: #{environment}"
-        configuration = main_target.build_configurations.select { |config| config.name == environment }.first
+      build_settings = get_build_settings(project: project, target: options[:target])
 
-        if configuration
-            puts 'Found configuration'
-            sdk = configuration.build_settings['SDKROOT'] || 'iphoneos'
-            configuration.build_settings["CODE_SIGN_IDENTITY[sdk=#{sdk}*]"] = signing_identity
-            configuration.build_settings["DEVELOPMENT_TEAM[sdk=#{sdk}*]"] = options[:team_id]
-            configuration.build_settings["PROVISIONING_PROFILE_SPECIFIER[sdk=#{sdk}*]"] = configuration.build_settings['PROVISIONING_PROFILE_SPECIFIER'] || 'ERROR'
-        end
-
+      if build_settings
+        sdk = build_settings['SDKROOT'] || 'iphoneos'
+        build_settings["CODE_SIGN_IDENTITY[sdk=#{sdk}*]"] = signing_identity
+        build_settings["DEVELOPMENT_TEAM[sdk=#{sdk}*]"] = options[:team_id]
+        build_settings["PROVISIONING_PROFILE_SPECIFIER[sdk=#{sdk}*]"] = build_settings['PROVISIONING_PROFILE_SPECIFIER'] || 'ERROR'
         project.save
-      end
+        puts 'Successfully updated signing'
+      else
+        puts 'Failed updating signing'
+      end   
     end
   end
 
-  lane :publish do
-    upload_to_testflight(
-      distribute_external: true,
-      groups: ['Jamit Labs', 'Partners'],
-      changelog: 'Have Fun Testing'
-    )
-  end
+  desc 'Returns the build settings for the specified environment and target'
+  private_lane :get_build_settings do |options|
+    project = options[:project]
+    target = options[:target]
+    
+    main_target = project.targets.select { |t| t.name == target }.first
 
-  desc 'Submit the latest uploaded version to Apple\'s app review'
-  lane :submit_review do
-    deliver(
-      reset_ratings: false,
-      submit_for_review: false,
-      automatic_release: false,
-      phased_release: true,
-      force: true, # Skip HTMl report verification
-      skip_screenshots: false,
-      overwrite_screenshots: true,
-      ignore_language_directory_validation: true,
-      app_version: version_number,
-      build_number: build_number,
-      skip_binary_upload: true,
-      skip_metadata: false,
-      metadata_path: "./fastlane/metadata",
-      submission_information: {
-        add_id_info_uses_idfa: false,
-        add_id_info_limits_tracking: true,
-        add_id_info_serves_ads: false,
-        add_id_info_tracks_action: true,
-        add_id_info_tracks_install: true,
-        content_rights_has_rights: true,
-        content_rights_contains_third_party_content: true,
-        export_compliance_platform: 'ios',
-        export_compliance_compliance_required: false,
-        export_compliance_encryption_updated: false,
-        export_compliance_app_type: nil,
-        export_compliance_uses_encryption: false,
-        export_compliance_is_exempt: false,
-        export_compliance_contains_third_party_cryptography: false,
-        export_compliance_contains_proprietary_cryptography: false,
-        export_compliance_available_on_french_store: false
-      }
-    )
+    if main_target
+      puts 'Found target'
+      puts "Config: #{ENVIRONMENT}"
+      configuration = main_target.build_configurations.select { |config| config.name == ENVIRONMENT }.first
+
+      configuration.build_settings # Last line defines return value
+    end
   end
 end

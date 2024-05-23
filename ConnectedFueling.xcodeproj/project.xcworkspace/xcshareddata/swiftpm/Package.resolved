@@ -1,61 +1,231 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "AppAuth",
-        "repositoryURL": "https://github.com/pace/AppAuth-iOS",
-        "state": {
-          "branch": null,
-          "revision": "e191b1beadf3041259652e6e464eaceff16e5fbb",
-          "version": "1.5.0"
-        }
-      },
-      {
-        "package": "PACECloudSDK",
-        "repositoryURL": "https://github.com/pace/cloud-sdk-ios",
-        "state": {
-          "branch": null,
-          "revision": "8b17bda21231d35d40096e1134694a25be28f932",
-          "version": "18.0.0"
-        }
-      },
-      {
-        "package": "JamitFoundation",
-        "repositoryURL": "https://github.com/JamitLabs/JamitFoundation.git",
-        "state": {
-          "branch": "feature/border-style",
-          "revision": "ffae09ef964ed3e38e5b9b238bef5c24b7acf0a3",
-          "version": null
-        }
-      },
-      {
-        "package": "Japx",
-        "repositoryURL": "https://github.com/pace/Japx",
-        "state": {
-          "branch": null,
-          "revision": "06fe392a1ecc05d0158d505d06899f0a9133030f",
-          "version": "5.0.0"
-        }
-      },
-      {
-        "package": "JLCoordinator",
-        "repositoryURL": "https://github.com/JamitLabs/JLCoordinator.git",
-        "state": {
-          "branch": null,
-          "revision": "7c495ab7dde143ca2c3bb0ae32247da2cf8c01ad",
-          "version": "1.1.0"
-        }
-      },
-      {
-        "package": "SwiftProtobuf",
-        "repositoryURL": "https://github.com/apple/swift-protobuf.git",
-        "state": {
-          "branch": null,
-          "revision": "f25867a208f459d3c5a06935dceb9083b11cd539",
-          "version": "1.22.0"
-        }
+  "originHash" : "5ec39aa3b6b9bf4983c58d0a35fc34b5d678bd12def2e68af7a3c220ff56ec7e",
+  "pins" : [
+    {
+      "identity" : "abseil-cpp-binary",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/google/abseil-cpp-binary.git",
+      "state" : {
+        "revision" : "bfc0b6f81adc06ce5121eb23f628473638d67c5c",
+        "version" : "1.2022062300.0"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "appauth-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pace/AppAuth-iOS",
+      "state" : {
+        "revision" : "e191b1beadf3041259652e6e464eaceff16e5fbb",
+        "version" : "1.5.0"
+      }
+    },
+    {
+      "identity" : "cloud-sdk-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pace/cloud-sdk-ios/",
+      "state" : {
+        "revision" : "e82d11e6b3963d8582ebf2a6e751205d19e1a767",
+        "version" : "21.0.0"
+      }
+    },
+    {
+      "identity" : "collectionconcurrencykit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/JohnSundell/CollectionConcurrencyKit.git",
+      "state" : {
+        "revision" : "b4f23e24b5a1bff301efc5e70871083ca029ff95",
+        "version" : "0.2.0"
+      }
+    },
+    {
+      "identity" : "cryptoswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/krzyzanowskim/CryptoSwift.git",
+      "state" : {
+        "revision" : "c9c3df6ab812de32bae61fc0cd1bf6d45170ebf0",
+        "version" : "1.8.2"
+      }
+    },
+    {
+      "identity" : "firebase-ios-sdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/firebase/firebase-ios-sdk.git",
+      "state" : {
+        "revision" : "8872dbd7d947acf757abab933da10e83c1842280",
+        "version" : "10.17.0"
+      }
+    },
+    {
+      "identity" : "googleappmeasurement",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/google/GoogleAppMeasurement.git",
+      "state" : {
+        "revision" : "6b332152355c372ace9966d8ee76ed191f97025e",
+        "version" : "10.17.0"
+      }
+    },
+    {
+      "identity" : "googledatatransport",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/google/GoogleDataTransport.git",
+      "state" : {
+        "revision" : "aae45a320fd0d11811820335b1eabc8753902a40",
+        "version" : "9.2.5"
+      }
+    },
+    {
+      "identity" : "googleutilities",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/google/GoogleUtilities.git",
+      "state" : {
+        "revision" : "1cd556b33550982ec17f80e358253d905e756f0f",
+        "version" : "7.11.6"
+      }
+    },
+    {
+      "identity" : "grpc-binary",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/google/grpc-binary.git",
+      "state" : {
+        "revision" : "a673bc2937fbe886dd1f99c401b01b6d977a9c98",
+        "version" : "1.49.1"
+      }
+    },
+    {
+      "identity" : "gtm-session-fetcher",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/google/gtm-session-fetcher.git",
+      "state" : {
+        "revision" : "d415594121c9e8a4f9d79cecee0965cf35e74dbd",
+        "version" : "3.1.1"
+      }
+    },
+    {
+      "identity" : "interop-ios-for-google-sdks",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/google/interop-ios-for-google-sdks.git",
+      "state" : {
+        "revision" : "2d12673670417654f08f5f90fdd62926dc3a2648",
+        "version" : "100.0.0"
+      }
+    },
+    {
+      "identity" : "japx",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pace/Japx",
+      "state" : {
+        "revision" : "06fe392a1ecc05d0158d505d06899f0a9133030f",
+        "version" : "5.0.0"
+      }
+    },
+    {
+      "identity" : "leveldb",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/firebase/leveldb.git",
+      "state" : {
+        "revision" : "0706abcc6b0bd9cedfbb015ba840e4a780b5159b",
+        "version" : "1.22.2"
+      }
+    },
+    {
+      "identity" : "nanopb",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/firebase/nanopb.git",
+      "state" : {
+        "revision" : "819d0a2173aff699fb8c364b6fb906f7cdb1a692",
+        "version" : "2.30909.0"
+      }
+    },
+    {
+      "identity" : "promises",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/google/promises.git",
+      "state" : {
+        "revision" : "e70e889c0196c76d22759eb50d6a0270ca9f1d9e",
+        "version" : "2.3.1"
+      }
+    },
+    {
+      "identity" : "sentry-cocoa",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/getsentry/sentry-cocoa",
+      "state" : {
+        "revision" : "02aa06fed7de6fbf28e74b3831f7a5bf276638eb",
+        "version" : "8.15.0"
+      }
+    },
+    {
+      "identity" : "sourcekitten",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jpsim/SourceKitten.git",
+      "state" : {
+        "revision" : "b6dc09ee51dfb0c66e042d2328c017483a1a5d56",
+        "version" : "0.34.1"
+      }
+    },
+    {
+      "identity" : "swift-argument-parser",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-argument-parser.git",
+      "state" : {
+        "revision" : "8f4d2753f0e4778c76d5f05ad16c74f707390531",
+        "version" : "1.2.3"
+      }
+    },
+    {
+      "identity" : "swift-protobuf",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-protobuf.git",
+      "state" : {
+        "revision" : "f25867a208f459d3c5a06935dceb9083b11cd539",
+        "version" : "1.22.0"
+      }
+    },
+    {
+      "identity" : "swift-syntax",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-syntax.git",
+      "state" : {
+        "revision" : "6ad4ea24b01559dde0773e3d091f1b9e36175036",
+        "version" : "509.0.2"
+      }
+    },
+    {
+      "identity" : "swiftlint",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/realm/SwiftLint.git",
+      "state" : {
+        "revision" : "f17a4f9dfb6a6afb0408426354e4180daaf49cee",
+        "version" : "0.54.0"
+      }
+    },
+    {
+      "identity" : "swiftytexttable",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/scottrhoyt/SwiftyTextTable.git",
+      "state" : {
+        "revision" : "c6df6cf533d120716bff38f8ff9885e1ce2a4ac3",
+        "version" : "0.9.0"
+      }
+    },
+    {
+      "identity" : "swxmlhash",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/drmohundro/SWXMLHash.git",
+      "state" : {
+        "revision" : "a853604c9e9a83ad9954c7e3d2a565273982471f",
+        "version" : "7.0.2"
+      }
+    },
+    {
+      "identity" : "yams",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jpsim/Yams.git",
+      "state" : {
+        "revision" : "9234124cff5e22e178988c18d8b95a8ae8007f76",
+        "version" : "5.1.2"
+      }
+    }
+  ],
+  "version" : 2
 }
