@@ -1,4 +1,1 @@
-app_identifier("car.pace.cofu")
 apple_id(ENV["ASC_APPLE_ID"])
-itc_team_id(ENV["ASC_TEAM_ID"]) # App Store Connect Team ID
-team_id(ENV["COMPANY_TEAM_ID"]) # Developer Portal Team ID

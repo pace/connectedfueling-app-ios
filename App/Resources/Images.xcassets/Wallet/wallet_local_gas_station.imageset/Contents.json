@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "local_gas_station.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

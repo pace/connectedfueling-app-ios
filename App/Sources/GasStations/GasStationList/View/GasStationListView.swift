@@ -1,0 +1,384 @@
+import SwiftUI
+
+struct GasStationListView: View {
+    @ObservedObject private var viewModel: GasStationListViewModel
+
+    private let analyticsManager: AnalyticsManager
+
+    init(viewModel: GasStationListViewModel = .init(), analyticsManager: AnalyticsManager = .init()) {
+        self.viewModel = viewModel
+        self.analyticsManager = analyticsManager
+    }
+
+    var body: some View {
+        switch viewModel.style {
+        case .primary:
+            viewContent
+                .edgesIgnoringSafeArea(.top)
+
+        case .secondary:
+            viewContent
+        }
+    }
+
+    @ViewBuilder
+    private var viewContent: some View {
+        VStack(spacing: 0) {
+            headerContent
+                .padding(.bottom, .paddingM)
+            if let error = viewModel.error {
+                errorView(with: error)
+                    .onAppear {
+                        viewModel.viewWillAppear()
+                    }
+            } else if let stations = viewModel.stations {
+                    list(of: stations)
+            } else {
+                loadingView
+                    .onAppear {
+                        viewModel.viewWillAppear()
+                    }
+            }
+        }
+        .background(Color.lightGrey)
+        .sheet(item: $viewModel.selectedFuelingUrlString) { selectedFuelingUrlString in
+            AppView(urlString: selectedFuelingUrlString, isModalInPresentation: true)
+        }
+    }
+
+    @ViewBuilder
+    private var headerContent: some View {
+        if viewModel.style == .primary {
+            Image(.gasStationListPrimaryHeaderIcon)
+                .resizable()
+                .scaledToFill()
+                .frame(maxWidth: .infinity, maxHeight: 200, alignment: .bottom)
+        } else {
+            Spacer()
+                .frame(height: 2)
+        }
+    }
+
+    @ViewBuilder
+    private func list(of stations: [GasStation]) -> some View {
+        List {
+            ForEach(stations, id: \.self) { gasStation in
+                GasStationListItemView(viewModel: .init(listViewModel: viewModel,
+                                                        gasStation: gasStation,
+                                                        analyticsManager: analyticsManager))
+            }
+            .listRowInsets(.init(top: 0, leading: 25, bottom: 10, trailing: 25))
+            .listRowSeparator(.hidden)
+            .listRowBackground(Color.clear)
+        }
+        .listStyle(.plain)
+    }
+
+    @ViewBuilder
+    private var loadingView: some View {
+        VStack {
+            LoadingView(title: L10n.Dashboard.LoadingView.title, description: L10n.Dashboard.LoadingView.description)
+                .padding(.horizontal, .paddingM)
+            Spacer()
+        }
+    }
+
+    @ViewBuilder
+    private func errorView(with error: AppError) -> some View {
+        VStack {
+            ErrorView(error)
+                .padding(.horizontal, .paddingM)
+            Spacer()
+        }
+    }
+}
+
+// MARK: - Loading state
+#Preview {
+    AppNavigationView {
+        switch ConfigurationManager.configuration.gasStationListStyle {
+        case .primary:
+            GasStationListView()
+
+        case .secondary:
+            GasStationListView()
+                .addNavigationBar(style: .centeredIcon(icon: .secondaryHeaderIcon))
+        }
+    }
+}
+
+// MARK: - Empty state
+#Preview {
+    AppNavigationView {
+        switch ConfigurationManager.configuration.gasStationListStyle {
+        case .primary:
+            GasStationListView(viewModel: .init(stations: []))
+
+        case .secondary:
+            GasStationListView(viewModel: .init(stations: []))
+                .addNavigationBar(style: .centeredIcon(icon: .secondaryHeaderIcon))
+        }
+    }
+}
+
+// MARK: - Populated state
+#Preview {
+    AppNavigationView {
+        switch ConfigurationManager.configuration.gasStationListStyle {
+        case .primary:
+            GasStationListView(viewModel: .init(stations: [
+                    .init(id: "id",
+                          name: "MobyPay 3435",
+                          addressLines: [
+                            "Gerwigstraße 1",
+                            "76131 Karlsruhe"
+                          ],
+                          distanceInKilometers: 0.134,
+                          location: .init(latitude: 49.013573, longitude: 8.419447),
+                          paymentMethods: [],
+                          isConnectedFuelingEnabled: true,
+                          prices: [
+                            .init(value: 1.889,
+                                  fuelType: .diesel,
+                                  currency: "EUR",
+                                  format: "d.dds"),
+                            .init(value: 1.789,
+                                  fuelType: .ron95e5,
+                                  currency: "EUR",
+                                  format: "d.dds")
+                          ],
+                          lastUpdated: Date(),
+                          openingHours: [.init(days: [.monday, .tuesday],
+                                               hours: [.init(from: "8", to: "17")],
+                                               rule: .open),
+                                         .init(days: [.wednesday, .thursday, .friday],
+                                               hours: [.init(from: "9", to: "19")],
+                                               rule: .open),
+                                         .init(days: [.saturday, .sunday],
+                                               hours: [.init(from: "10", to: "16")],
+                                               rule: .open)],
+                          country: "DE"),
+                    .init(id: "id3",
+                          name: "Tanke Danke",
+                          addressLines: ["Address line 1", "Address line 2"],
+                          distanceInKilometers: 0.234,
+                          location: .init(latitude: 49.012233, longitude: 8.427348),
+                          paymentMethods: [],
+                          isConnectedFuelingEnabled: false,
+                          prices: [
+                            .init(value: 1.789,
+                                  fuelType: .ron95e5,
+                                  currency: "EUR",
+                                  format: "d.dds"),
+                            .init(value: 1.339,
+                                  fuelType: .ron95e10,
+                                  currency: "EUR",
+                                  format: "d.dds")
+                          ],
+                          lastUpdated: Date(),
+                          openingHours: [
+                            .init(days: [.monday, .tuesday],
+                                  hours: [.init(from: "8", to: "15:30")],
+                                  rule: .open),
+                            .init(days: [.wednesday, .thursday, .friday],
+                                  hours: [.init(from: "9", to: "19")],
+                                  rule: .open),
+                            .init(days: [.saturday, .sunday],
+                                  hours: [.init(from: "10", to: "16")],
+                                  rule: .open)
+                          ],
+                          country: "DE"),
+                    .init(id: "id2",
+                          name: "Tanke Danke",
+                          addressLines: ["Address line 1", "Address line 2"],
+                          distanceInKilometers: 0.234,
+                          location: .init(latitude: 49.012233, longitude: 8.427348),
+                          paymentMethods: [],
+                          isConnectedFuelingEnabled: true,
+                          prices: [
+                            .init(value: 1.789,
+                                  fuelType: .ron95e5,
+                                  currency: "EUR",
+                                  format: "d.dds"),
+                            .init(value: 1.339,
+                                  fuelType: .ron95e10,
+                                  currency: "EUR",
+                                  format: "d.dds")
+                          ],
+                          lastUpdated: Date(),
+                          openingHours: [
+                            .init(days: [.monday, .tuesday, .wednesday, .thursday, .friday, .saturday, .sunday],
+                                  hours: [.init(from: "3", to: "22")],
+                                  rule: .open)
+                          ],
+                          country: "DE"),
+                    .init(id: "id-1",
+                          name: "MobyPay 3436",
+                          addressLines: [
+                            "Gerwigstraße 2",
+                            "76131 Karlsruhe"
+                          ],
+                          distanceInKilometers: 0.234,
+                          location: .init(latitude: 49.013573, longitude: 8.419447),
+                          paymentMethods: [],
+                          isConnectedFuelingEnabled: true,
+                          prices: [
+                            .init(value: 1.889,
+                                  fuelType: .diesel,
+                                  currency: "EUR",
+                                  format: "d.dds"),
+                            .init(value: 1.789,
+                                  fuelType: .ron95e5,
+                                  currency: "EUR",
+                                  format: "d.dds"),
+                            .init(value: 1.789,
+                                  fuelType: .ron98e5,
+                                  currency: "EUR",
+                                  format: "d.dds"),
+                            .init(value: 1.759,
+                                  fuelType: .ron100,
+                                  currency: "EUR",
+                                  format: "d.dds"),
+                            .init(value: 1.789,
+                                  fuelType: .dieselGtl,
+                                  currency: "EUR",
+                                  format: "d.dds"),
+                            .init(value: 1.989,
+                                  fuelType: .premiumPetrol,
+                                  currency: "EUR",
+                                  format: "d.dds"),
+                            .init(value: 1.339,
+                                  fuelType: .ron95e10,
+                                  currency: "EUR",
+                                  format: "d.dds")
+                          ],
+                          lastUpdated: Date(),
+                          openingHours: [.init(days: [.monday, .tuesday],
+                                               hours: [.init(from: "8", to: "17")],
+                                               rule: .open),
+                                         .init(days: [.wednesday, .thursday, .friday],
+                                               hours: [.init(from: "9", to: "19")],
+                                               rule: .open),
+                                         .init(days: [.saturday, .sunday],
+                                               hours: [.init(from: "10", to: "16")],
+                                               rule: .open)],
+                          country: "DE"),
+                    .init(id: "id-2",
+                          name: "MobyPay 3437",
+                          addressLines: [
+                            "Gerwigstraße 3",
+                            "76131 Karlsruhe"
+                          ],
+                          distanceInKilometers: 0.334,
+                          location: .init(latitude: 49.013573, longitude: 8.419447),
+                          paymentMethods: [],
+                          isConnectedFuelingEnabled: false,
+                          prices: [],
+                          lastUpdated: Date(),
+                          openingHours: [],
+                          country: "DE")
+            ]))
+
+        case .secondary:
+            GasStationListView(viewModel: .init(stations: [
+                    .init(id: "id",
+                          name: "MobyPay 3435",
+                          addressLines: [
+                            "Gerwigstraße 1",
+                            "76131 Karlsruhe"
+                          ],
+                          distanceInKilometers: 0.134,
+                          location: .init(latitude: 49.013573, longitude: 8.419447),
+                          paymentMethods: [],
+                          isConnectedFuelingEnabled: true,
+                          prices: [
+                            .init(value: 1.889,
+                                  fuelType: .diesel,
+                                  currency: "EUR",
+                                  format: "d.dds"),
+                            .init(value: 1.789,
+                                  fuelType: .ron95e5,
+                                  currency: "EUR",
+                                  format: "d.dds")
+                          ],
+                          lastUpdated: Date(),
+                          openingHours: [.init(days: [.monday, .tuesday],
+                                               hours: [.init(from: "8", to: "17")],
+                                               rule: .open),
+                                         .init(days: [.wednesday, .thursday, .friday],
+                                               hours: [.init(from: "9", to: "19")],
+                                               rule: .open),
+                                         .init(days: [.saturday, .sunday],
+                                               hours: [.init(from: "10", to: "16")],
+                                               rule: .open)],
+                          country: "DE"),
+                    .init(id: "id-1",
+                          name: "MobyPay 3436",
+                          addressLines: [
+                            "Gerwigstraße 2",
+                            "76131 Karlsruhe"
+                          ],
+                          distanceInKilometers: 0.234,
+                          location: .init(latitude: 49.013573, longitude: 8.419447),
+                          paymentMethods: [],
+                          isConnectedFuelingEnabled: true,
+                          prices: [
+                            .init(value: 1.889,
+                                  fuelType: .diesel,
+                                  currency: "EUR",
+                                  format: "d.dds"),
+                            .init(value: 1.789,
+                                  fuelType: .ron95e5,
+                                  currency: "EUR",
+                                  format: "d.dds"),
+                            .init(value: 1.789,
+                                  fuelType: .ron98e5,
+                                  currency: "EUR",
+                                  format: "d.dds"),
+                            .init(value: 1.759,
+                                  fuelType: .ron100,
+                                  currency: "EUR",
+                                  format: "d.dds"),
+                            .init(value: 1.789,
+                                  fuelType: .dieselGtl,
+                                  currency: "EUR",
+                                  format: "d.dds"),
+                            .init(value: 1.989,
+                                  fuelType: .premiumPetrol,
+                                  currency: "EUR",
+                                  format: "d.dds"),
+                            .init(value: 1.339,
+                                  fuelType: .ron95e10,
+                                  currency: "EUR",
+                                  format: "d.dds")
+                          ],
+                          lastUpdated: Date(),
+                          openingHours: [.init(days: [.monday, .tuesday],
+                                               hours: [.init(from: "8", to: "17")],
+                                               rule: .open),
+                                         .init(days: [.wednesday, .thursday, .friday],
+                                               hours: [.init(from: "9", to: "19")],
+                                               rule: .open),
+                                         .init(days: [.saturday, .sunday],
+                                               hours: [.init(from: "10", to: "16")],
+                                               rule: .open)],
+                          country: "DE"),
+                    .init(id: "id-2",
+                          name: "MobyPay 3437",
+                          addressLines: [
+                            "Gerwigstraße 3",
+                            "76131 Karlsruhe"
+                          ],
+                          distanceInKilometers: 0.334,
+                          location: .init(latitude: 49.013573, longitude: 8.419447),
+                          paymentMethods: [],
+                          isConnectedFuelingEnabled: false,
+                          prices: [],
+                          lastUpdated: Date(),
+                          openingHours: [],
+                          country: "DE")
+            ]))
+            .addNavigationBar(style: .centeredIcon(icon: .secondaryHeaderIcon))
+        }
+    }
+}

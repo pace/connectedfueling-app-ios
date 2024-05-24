@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "icon=receipt_long.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
