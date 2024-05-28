@@ -1,7 +1,8 @@
 import PACECloudSDK
 import SwiftUI
+import WebKit
 
-class MenuViewModel: ObservableObject {
+class MenuViewModel: NSObject, ObservableObject {
     @Published private(set) var listItems: [ListItem] = []
 
     private let crashReportingManager: CrashReportingManager
@@ -12,6 +13,8 @@ class MenuViewModel: ObservableObject {
          configuration: ConfigurationManager.Configuration = ConfigurationManager.configuration) {
         self.crashReportingManager = crashReportingManager
         self.analyticsManager = analyticsManager
+
+        super.init()
 
         var listItems: [ListItem] = [
             termsListItem,
@@ -45,19 +48,28 @@ class MenuViewModel: ObservableObject {
                 return nil
             }
 
-            guard let url = URL(string: menuItem.url) else {
-                let errorMessage = "[MenuViewModel] URL string \(menuItem.url) of menu item \(menuItem.name) for language \(menuItem.languageCode) is not a valid URL."
+            if menuItem.hasHtml {
+                let listItem: ListItem = .init(icon: .menuExternalSiteIcon,
+                                               title: menuItem.name,
+                                               action: .presentedContent(AnyView(
+                                                    WebView(htmlString: loadCustomHtmlString(withName: menuEntry.menuEntryId.id ),
+                                                            delegate: self)
+                                               )))
+                return listItem
+            } else if let urlString = menuItem.url,
+                      let url = URL(string: urlString) {
+                let listItem: ListItem = .init(icon: .menuExternalSiteIcon,
+                                               title: menuItem.name,
+                                               action: .presentedContent(AnyView(
+                                                SafariView(url: url)
+                                                    .ignoresSafeArea()
+                                               )))
+                return listItem
+            } else {
+                let errorMessage = "[MenuViewModel] No HTML string and URL string \(menuItem.url) of menu item \(menuItem.name) for language \(menuItem.languageCode) is not a valid URL."
                 logError(errorMessage)
                 return nil
             }
-
-            let listItem: ListItem = .init(icon: .menuExternalSiteIcon,
-                                           title: menuItem.name,
-                                           action: .presentedContent(AnyView(
-                                            SafariView(url: url)
-                                                .ignoresSafeArea()
-                                           )))
-            return listItem
         }
 
         self.listItems += customListItems
@@ -69,6 +81,10 @@ class MenuViewModel: ObservableObject {
 
     private func loadImprintHtmlString() -> String {
         SystemManager.loadHTMLFromBundle(fileName: Constants.File.imprint)
+    }
+
+    private func loadCustomHtmlString(withName name: String) -> String {
+        SystemManager.loadHTMLFromBundle(fileName: name, inDirectory: "CustomMenuHtmlEntries/\(SystemManager.languageCode)")
     }
 
     private func logError(_ message: String) {
@@ -118,5 +134,19 @@ private extension MenuViewModel {
                 MenuPermissionsView()
                     .navigationTitle(L10n.menuItemsPermissions)
               )))
+    }
+}
+
+extension MenuViewModel: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction) async -> WKNavigationActionPolicy {
+        guard let url = navigationAction.request.url else {
+            return .allow
+        }
+
+        DispatchQueue.main.async {
+            UIApplication.shared.open(url)
+        }
+
+        return .allow
     }
 }

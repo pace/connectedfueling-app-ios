@@ -183,6 +183,7 @@
 		9AC2D2FD2B32DCC6001A1864 /* NavigationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC2D2FC2B32DCC6001A1864 /* NavigationConfigurator.swift */; };
 		9AC2D2FF2B32DD84001A1864 /* NavigationBarColorModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC2D2FE2B32DD84001A1864 /* NavigationBarColorModifier.swift */; };
 		9AC2D3022B32DDDA001A1864 /* NavigationBarTransparentStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC2D3012B32DDDA001A1864 /* NavigationBarTransparentStyle.swift */; };
+		9AC7BFAA2C0F00CF002280E4 /* CustomMenuHtmlEntries in Resources */ = {isa = PBXBuildFile; fileRef = 9AC7BFA92C0F00CF002280E4 /* CustomMenuHtmlEntries */; };
 		9ADC1EC02B274E340027B82B /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC1EBF2B274E340027B82B /* TransactionCell.swift */; };
 		9ADC1EC42B275B270027B82B /* TransactionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC1EC32B275B270027B82B /* TransactionDetailView.swift */; };
 		9ADC1EC62B275B8E0027B82B /* TransactionDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC1EC52B275B8E0027B82B /* TransactionDetailViewModel.swift */; };
@@ -446,6 +447,7 @@
 		9AC2D2FC2B32DCC6001A1864 /* NavigationConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationConfigurator.swift; sourceTree = "<group>"; };
 		9AC2D2FE2B32DD84001A1864 /* NavigationBarColorModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarColorModifier.swift; sourceTree = "<group>"; };
 		9AC2D3012B32DDDA001A1864 /* NavigationBarTransparentStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarTransparentStyle.swift; sourceTree = "<group>"; };
+		9AC7BFA92C0F00CF002280E4 /* CustomMenuHtmlEntries */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CustomMenuHtmlEntries; sourceTree = "<group>"; };
 		9ADC1EBF2B274E340027B82B /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		9ADC1EC32B275B270027B82B /* TransactionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailView.swift; sourceTree = "<group>"; };
 		9ADC1EC52B275B8E0027B82B /* TransactionDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailViewModel.swift; sourceTree = "<group>"; };
@@ -1289,6 +1291,7 @@
 		C6801568A82DC5EB61A0FAD9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9AC7BFA92C0F00CF002280E4 /* CustomMenuHtmlEntries */,
 				3B6D84F62B10CD7300701DEE /* Legal */,
 				3B0CE02B2B0236AF00929445 /* InfoPlist */,
 				3B0CE0302B0236AF00929445 /* Strings */,
@@ -1461,6 +1464,7 @@
 				3B6D84F22B10CBF600701DEE /* usage_terms.html in Resources */,
 				3B784BDF2AFA1CC6006CBD4A /* GoogleService-Info.plist in Resources */,
 				3B963D1E2B3340D300905EFE /* imprint.html in Resources */,
+				9AC7BFAA2C0F00CF002280E4 /* CustomMenuHtmlEntries in Resources */,
 				16E730131166C556AA0708EF /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
