@@ -40,6 +40,17 @@ enum SystemManager {
         }
     }
 
+    static func loadHTMLFromBundle(fileName: String, inDirectory: String) -> String {
+        let filePath = filePathInBundle(fileName: fileName, fileExtension: "html", inDirectory: inDirectory)
+
+        do {
+            let htmlString = try String(contentsOfFile: filePath, encoding: .utf8)
+            return htmlString
+        } catch {
+            fatalError("[SystemManager] Failed loading html \(fileName) from bundle with error \(error)")
+        }
+    }
+
     static func loadHTMLHashFromBundle(fileName: String, for locale: String) -> String {
         let url = urlInBundle(fileName: fileName, fileExtension: "html", locale: locale)
 
@@ -52,8 +63,8 @@ enum SystemManager {
         }
     }
 
-    private static func filePathInBundle(fileName: String, fileExtension: String) -> String {
-        guard let filePath = Bundle.main.path(forResource: fileName, ofType: fileExtension) else {
+    private static func filePathInBundle(fileName: String, fileExtension: String, inDirectory: String? = nil) -> String {
+        guard let filePath = Bundle.main.path(forResource: fileName, ofType: fileExtension, inDirectory: inDirectory) else {
             fatalError("[SystemManager] Could not find file in Bundle: \(fileName).\(fileExtension)")
         }
 

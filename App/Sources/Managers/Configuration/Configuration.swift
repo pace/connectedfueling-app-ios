@@ -55,6 +55,7 @@ extension ConfigurationManager.Configuration {
 
 extension ConfigurationManager.Configuration.MenuEntry {
     struct MenuEntryId: Decodable {
+        let id: String
         let menuItems: [MenuItem]
     }
 }
@@ -62,8 +63,37 @@ extension ConfigurationManager.Configuration.MenuEntry {
 extension ConfigurationManager.Configuration.MenuEntry.MenuEntryId {
     struct MenuItem: Decodable {
         let name: String
-        let url: String
+        let url: String?
+        let html: HTML?
         let languageCode: String
+
+        var hasHtml: Bool {
+            html != nil
+        }
+
+        init(name: String,
+             url: String?,
+             html: HTML?,
+             languageCode: String) {
+            self.name = name
+            self.url = url
+            self.html = html
+            self.languageCode = languageCode
+        }
+
+        init(from decoder: any Decoder) throws {
+            let values = try decoder.container(keyedBy: CodingKeys.self)
+            self.name = try values.decode(String.self, forKey: .name)
+            self.url = try values.decodeIfPresent(String.self, forKey: .url)
+            self.html = try values.decodeIfPresent(ConfigurationManager.Configuration.MenuEntry.MenuEntryId.MenuItem.HTML.self, forKey: .html)
+            self.languageCode = try values.decode(String.self, forKey: .languageCode)
+        }
+    }
+}
+
+extension ConfigurationManager.Configuration.MenuEntry.MenuEntryId.MenuItem {
+    struct HTML: Decodable {
+        let id: String
     }
 }
 
@@ -93,13 +123,14 @@ extension ConfigurationManager.Configuration.MenuEntry {
 
 extension ConfigurationManager.Configuration.MenuEntry.MenuEntryId {
     enum CodingKeys: String, CodingKey {
+        case id
         case menuItems = "menu_entry"
     }
 }
 
 extension ConfigurationManager.Configuration.MenuEntry.MenuEntryId.MenuItem {
     enum CodingKeys: String, CodingKey {
-        case name, url
+        case name, url, html
         case languageCode = "languages_code"
     }
 }

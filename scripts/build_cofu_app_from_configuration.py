@@ -17,6 +17,7 @@ def build_cofu_app_from_configuration():
   replace_images()
   replace_keychain()
   replace_google_services()
+  replace_custom_HTML_menu_entries()
   replace_legal_documents()
   replace_runtime_configuration()
   configure_build_settings()
@@ -75,6 +76,66 @@ def replace_google_services():
   if analytics_enabled is True or crashlytics_enabled is True:
     os.replace(get_asset_path('firebase_config_ios.plist'), google_services_plist_path)
     print("✅ Successfully replaced google services file")
+
+def replace_custom_HTML_menu_entries():
+    # Create tuple of supported languages in project and the ones in Directus
+  languages = [
+    ('cs', 'en-US'),
+    ('da', 'en-US'),
+    ('de', 'de-DE'),
+    ('en', 'en-US'),
+    ('es', 'en-US'),
+    ('fr', 'fr-FR'),
+    ('it', 'en-US'),
+    ('nl', 'nl'),
+    ('pl', 'en-US'),
+    ('pt', 'en-US'),
+    ('ro', 'en-US'),
+    ('ru', 'en-US')
+  ]
+
+  ids = get_HTML_menu_ids(configuration['menu_entries'])
+
+  os.makedirs('../App/Resources/CustomMenuHtmlEntries', exist_ok=True)
+
+  for language in languages:
+    os.makedirs(f"../App/Resources/CustomMenuHtmlEntries/{language[0]}", exist_ok=True)
+
+    for id in ids:
+      asset_name = f"{id}_{language[1]}.html"
+      asset_input_path = get_asset_path(asset_name)
+      asset_output_path = f"../App/Resources/CustomMenuHtmlEntries/{language[0]}/{id}.html"
+      
+      if os.path.exists(asset_input_path):
+        shutil.copy(asset_input_path, asset_output_path)
+      else:
+        print(f"⚠️ HTML {asset_name} does not exist. Falling back to use English HTML")
+
+        fallback_asset_name = f"{id}_en-US.html"
+        fallback_asset_input_path = get_asset_path(fallback_asset_name)
+
+        if os.path.exists(fallback_asset_input_path):
+          shutil.copy(fallback_asset_input_path, asset_output_path)
+        else:
+          print(f"‼️ Error occurred while falling back to English HTML: File {fallback_asset_name} does not exist.")
+          exit(1)
+  
+  print("✅ Successfully replaced menu entries")
+
+def get_HTML_menu_ids(entries):
+  html_entries = filter(is_HTML_entry, entries)
+  return list(map(extract_id, html_entries))
+
+def is_HTML_entry(entry):
+  isHtml = False
+  items = entry['menu_entries_id']['menu_entry']
+  for item in items:
+    if item['html'] is not None:
+      isHtml = True
+  return isHtml
+
+def extract_id(entry):
+  return entry['menu_entries_id']['id']
 
 def replace_legal_documents():
   # Create tuple of supported languages in project and the ones in Directus
