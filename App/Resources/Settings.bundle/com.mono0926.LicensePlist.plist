@@ -14,7 +14,15 @@
 			<key>File</key>
 			<string>com.mono0926.LicensePlist/abseil-cpp-binary</string>
 			<key>Title</key>
-			<string>abseil (1.2022062300.0)</string>
+			<string>abseil (1.2024011601.1)</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
+			<string>com.mono0926.LicensePlist/app-check</string>
+			<key>Title</key>
+			<string>AppCheck (10.19.1)</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
@@ -54,7 +62,7 @@
 			<key>File</key>
 			<string>com.mono0926.LicensePlist/firebase-ios-sdk</string>
 			<key>Title</key>
-			<string>Firebase (10.17.0)</string>
+			<string>Firebase (10.27.0)</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
@@ -62,7 +70,7 @@
 			<key>File</key>
 			<string>com.mono0926.LicensePlist/GoogleAppMeasurement</string>
 			<key>Title</key>
-			<string>GoogleAppMeasurement (10.17.0)</string>
+			<string>GoogleAppMeasurement (10.27.0)</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
@@ -70,7 +78,7 @@
 			<key>File</key>
 			<string>com.mono0926.LicensePlist/GoogleDataTransport</string>
 			<key>Title</key>
-			<string>GoogleDataTransport (9.2.5)</string>
+			<string>GoogleDataTransport (9.4.0)</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
@@ -78,7 +86,7 @@
 			<key>File</key>
 			<string>com.mono0926.LicensePlist/GoogleUtilities</string>
 			<key>Title</key>
-			<string>GoogleUtilities (7.11.6)</string>
+			<string>GoogleUtilities (7.13.3)</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>
@@ -86,7 +94,7 @@
 			<key>File</key>
 			<string>com.mono0926.LicensePlist/grpc-binary</string>
 			<key>Title</key>
-			<string>gRPC (1.49.1)</string>
+			<string>gRPC (1.62.2)</string>
 			<key>Type</key>
 			<string>PSChildPaneSpecifier</string>
 		</dict>

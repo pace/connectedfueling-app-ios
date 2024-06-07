@@ -1,4 +1,6 @@
-name: abseil-cpp-binary, nameSpecified: abseil, owner: google, version: 1.2022062300.0, source: https://github.com/google/abseil-cpp-binary
+name: abseil-cpp-binary, nameSpecified: abseil, owner: google, version: 1.2024011601.1, source: https://github.com/google/abseil-cpp-binary
+
+name: app-check, nameSpecified: AppCheck, owner: google, version: 10.19.1, source: https://github.com/google/app-check
 
 name: AppAuth-iOS, nameSpecified: AppAuth, owner: pace, version: 1.5.0, source: https://github.com/pace/AppAuth-iOS
 
@@ -8,15 +10,15 @@ name: CollectionConcurrencyKit, nameSpecified: CollectionConcurrencyKit, owner: 
 
 name: CryptoSwift, nameSpecified: CryptoSwift, owner: krzyzanowskim, version: 1.8.2, source: https://github.com/krzyzanowskim/CryptoSwift
 
-name: firebase-ios-sdk, nameSpecified: Firebase, owner: firebase, version: 10.17.0, source: https://github.com/firebase/firebase-ios-sdk
+name: firebase-ios-sdk, nameSpecified: Firebase, owner: firebase, version: 10.27.0, source: https://github.com/firebase/firebase-ios-sdk
 
-name: GoogleAppMeasurement, nameSpecified: GoogleAppMeasurement, owner: google, version: 10.17.0, source: https://github.com/google/GoogleAppMeasurement
+name: GoogleAppMeasurement, nameSpecified: GoogleAppMeasurement, owner: google, version: 10.27.0, source: https://github.com/google/GoogleAppMeasurement
 
-name: GoogleDataTransport, nameSpecified: GoogleDataTransport, owner: google, version: 9.2.5, source: https://github.com/google/GoogleDataTransport
+name: GoogleDataTransport, nameSpecified: GoogleDataTransport, owner: google, version: 9.4.0, source: https://github.com/google/GoogleDataTransport
 
-name: GoogleUtilities, nameSpecified: GoogleUtilities, owner: google, version: 7.11.6, source: https://github.com/google/GoogleUtilities
+name: GoogleUtilities, nameSpecified: GoogleUtilities, owner: google, version: 7.13.3, source: https://github.com/google/GoogleUtilities
 
-name: grpc-binary, nameSpecified: gRPC, owner: google, version: 1.49.1, source: https://github.com/google/grpc-binary
+name: grpc-binary, nameSpecified: gRPC, owner: google, version: 1.62.2, source: https://github.com/google/grpc-binary
 
 name: gtm-session-fetcher, nameSpecified: gtm-session-fetcher, owner: google, version: 3.1.1, source: https://github.com/google/gtm-session-fetcher
 
@@ -48,7 +50,9 @@ name: SWXMLHash, nameSpecified: SWXMLHash, owner: drmohundro, version: 7.0.2, so
 
 name: Yams, nameSpecified: Yams, owner: jpsim, version: 5.1.2, source: https://github.com/jpsim/Yams
 
-name: abseil-cpp-binary, nameSpecified: abseil, owner: google, version: 1.2022062300.0, source: https://github.com/google/abseil-cpp-binary
+name: abseil-cpp-binary, nameSpecified: abseil, owner: google, version: 1.2024011601.1, source: https://github.com/google/abseil-cpp-binary
+
+name: app-check, nameSpecified: AppCheck, owner: google, version: 10.19.1, source: https://github.com/google/app-check
 
 name: AppAuth-iOS, nameSpecified: AppAuth, owner: pace, version: 1.5.0, source: https://github.com/pace/AppAuth-iOS
 
@@ -58,15 +62,15 @@ name: CollectionConcurrencyKit, nameSpecified: CollectionConcurrencyKit, owner: 
 
 name: CryptoSwift, nameSpecified: CryptoSwift, owner: krzyzanowskim, version: 1.8.2, source: https://github.com/krzyzanowskim/CryptoSwift
 
-name: firebase-ios-sdk, nameSpecified: Firebase, owner: firebase, version: 10.17.0, source: https://github.com/firebase/firebase-ios-sdk
+name: firebase-ios-sdk, nameSpecified: Firebase, owner: firebase, version: 10.27.0, source: https://github.com/firebase/firebase-ios-sdk
 
-name: GoogleAppMeasurement, nameSpecified: GoogleAppMeasurement, owner: google, version: 10.17.0, source: https://github.com/google/GoogleAppMeasurement
+name: GoogleAppMeasurement, nameSpecified: GoogleAppMeasurement, owner: google, version: 10.27.0, source: https://github.com/google/GoogleAppMeasurement
 
-name: GoogleDataTransport, nameSpecified: GoogleDataTransport, owner: google, version: 9.2.5, source: https://github.com/google/GoogleDataTransport
+name: GoogleDataTransport, nameSpecified: GoogleDataTransport, owner: google, version: 9.4.0, source: https://github.com/google/GoogleDataTransport
 
-name: GoogleUtilities, nameSpecified: GoogleUtilities, owner: google, version: 7.11.6, source: https://github.com/google/GoogleUtilities
+name: GoogleUtilities, nameSpecified: GoogleUtilities, owner: google, version: 7.13.3, source: https://github.com/google/GoogleUtilities
 
-name: grpc-binary, nameSpecified: gRPC, owner: google, version: 1.49.1, source: https://github.com/google/grpc-binary
+name: grpc-binary, nameSpecified: gRPC, owner: google, version: 1.62.2, source: https://github.com/google/grpc-binary
 
 name: gtm-session-fetcher, nameSpecified: gtm-session-fetcher, owner: google, version: 3.1.1, source: https://github.com/google/gtm-session-fetcher
 
