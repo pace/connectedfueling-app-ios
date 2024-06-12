@@ -116,12 +116,42 @@ release_schedule:
     - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@git.pace.cloud/pace/mobile/common.git tmp/common
     - cd tmp/common/scripts/release
     - yarn install
-    - node --unhandled-rejections=strict create.js 
+    - node --unhandled-rejections=strict create.js
   only:
     refs:
       - schedules
     variables:
       - $SCHEDULED_JOB == "connectedfueling-app-testflight"
+  dependencies: []
+  needs: []
+  variables:
+    TAG_PREFIX: "connectedfueling-app-"
+  tags:
+    - docker
+
+empty_release_schedule:
+  image: node:latest
+  stage: publish
+  before_script: []
+  after_script: []
+  script:
+    - if $(eval $CONDITION); then echo "Releasing..."; else echo "Nothing to do"; exit 0; fi
+    - echo "Current time to be used as new build and version number"
+    - export BUILD_NUMBER=$(TZ=Etc/Utc date "+%Y%m%d%H")
+    - export VERSION_NAME=$(TZ=Etc/Utc date "+%y.%V.%u")
+    - export CUSTOM_TAG_NAME="${TAG_PREFIX}v${VERSION_NAME}.${BUILD_NUMBER}"
+    - export CUSTOM_BRANCH_NAME="main"
+    - export EMPTY_RELEASE="true"
+    - echo "Creating tag with tag name:" $CUSTOM_TAG_NAME
+    - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@git.pace.cloud/pace/mobile/common.git tmp/common
+    - cd tmp/common/scripts/release
+    - yarn install
+    - node --unhandled-rejections=strict create.js
+  only:
+    refs:
+      - schedules
+    variables:
+      - $SCHEDULED_JOB == "connectedfueling-app-testflight-empty"
   dependencies: []
   needs: []
   variables:
