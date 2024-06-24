@@ -4,6 +4,9 @@
 
 - [Style Guide](#style-guide)
   - [Table Of Contents](#table-of-contents)
+  - [Architecture](#architecture)
+    - [Model-View-ViewModel (MVVM)](#model-view-viewmodel-mvvm)
+    - [Managers and Services](#managers-and-services)
   - [Source File Basics \& Structure](#source-file-basics--structure)
     - [File Names](#file-names)
     - [File Headers](#file-headers)
@@ -35,6 +38,25 @@
   - [Localization](#localization)
   - [Theming](#theming)
 
+## Architecture
+
+### Model-View-ViewModel (MVVM)
+As the main design pattern the App uses Model-View-ViewModel (MVVM). The goal is to separate the concerns of user interface logic (View) from the business logic (Model) by introducing an intermediary component called ViewModel.
+
+Every feature therefore consists of the following components:
+
+- `ViewModel`: A feature consists of one ViewModel. The naming for the ViewModels is as follows: `{NameOfFeature}ViewModel`. The ViewModels are hold and observed by the corresponding View.
+
+- `View`: A feature can consist of multiple views but has one view which holds these views as subviews. The naming for views is as follows: `{NameOfFeature}View`. The main view takes in the needed dependencies and initializes the corresponding `ViewModel` with these dependencies.
+
+While ViewModels and Views are unique to a feature, models are mostly used app-wide and therefore are not a required part of each feature. When used solely in one feature they will be added to the feature folder inside the `model` subfolder. Models, while having to be named meaningfully, do not follow a specific naming convention.
+
+### Managers and Services
+
+Managers and Services are placed in the `Managers` folder. These are, where applicable, modeled as `structs` or `enums`. This is according to the [Apple guidelines](https://developer.apple.com/documentation/swift/choosing-between-structures-and-classes#Choose-Structures-by-Default). When needing to control identity or app-wide state, managers are modeled as singleton `classes`.
+
+Where needed the managers and services are injected through `Dependency Injection`.
+
 ## Source File Basics & Structure
 
 ### File Names
@@ -49,7 +71,7 @@ File headers describing the contents of a source file are discouraged, including
 
 ### Import Statements
 
-A source file imports exactly the top-level modules that it needs; nothing more and nothing less. 
+A source file imports exactly the top-level modules that it needs; nothing more and nothing less.
 
 It is encouraged to only import whole modules instead of individual declarations and submodules, since it's the prevailing style (based on official examples).
 
@@ -296,7 +318,7 @@ enum Constants {
 
 struct Constants {
   private init() {}
-  
+
   static let gasStationsRequestRadius = 10_000
 }
 ```
