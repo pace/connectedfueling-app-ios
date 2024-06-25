@@ -30,7 +30,7 @@ platform :ios do
       )
     end
   end
-  
+
   ##################################
   ##################################
   # 🆗 Lanes for merge requests 🆗 #
@@ -84,7 +84,7 @@ platform :ios do
   desc 'Builds the app from a configuration'
   lane :build_cofu_app_from_configuration do |options|
     is_default_whitelabel_app = options[:app_identifier] == 'car.pace.cofu'
-    
+
     # Workaround until sigh is working for default whitelabel app
     # If default whitelabel app -> use match
     # Use sigh otherwise
@@ -105,7 +105,7 @@ platform :ios do
         set_default: true # Sigh will look for a certificate in the default keychain. Set this keychain to default temporarily
       )
     end
-    
+
     build_application(
       uses_match: is_default_whitelabel_app,
       team_id: options[:team_id],
@@ -146,7 +146,6 @@ platform :ios do
       distribute_external: true,
       groups: test_groups,
       reject_build_waiting_for_review: true,
-      skip_waiting_for_build_processing: true,
       localized_build_info: {
         'default': {
           whats_new: whats_new
@@ -161,7 +160,7 @@ platform :ios do
 
     app_name = options[:app_name]
     app_identifier = options[:app_identifier]
-    
+
     analytics_enabled = options[:analytics_enabled].downcase
     crashlytics_enabled = options[:crashlytics_enabled].downcase
     sentry_enabled = options[:sentry_enabled].downcase
@@ -313,7 +312,7 @@ platform :ios do
 
   private_lane :update_signing do |options|
     signing_identity = ENVIRONMENT == 'Sandbox' ? 'Apple Development' : 'iPhone Distribution'
-    
+
     Dir.chdir('..') do
       project = Xcodeproj::Project.open(PROJECT_PATH)
 
@@ -328,7 +327,7 @@ platform :ios do
         puts 'Successfully updated signing'
       else
         puts 'Failed updating signing'
-      end   
+      end
     end
   end
 
@@ -336,7 +335,7 @@ platform :ios do
   private_lane :get_build_settings do |options|
     project = options[:project]
     target = options[:target]
-    
+
     main_target = project.targets.select { |t| t.name == target }.first
 
     if main_target
