@@ -36,7 +36,7 @@ before_script:
     - tags
   script:
     - git clone https://gitlab-ci-token:${CI_JOB_TOKEN}@${CI_SERVER_HOST}/pace/mobile/common.git tmp/common
-    - python3 tmp/common/scripts/whitelabel-app/fetch_configuration.py --whitelabel-app-id $[[ inputs.app-id ]] --platform ios --configuration-base-url $DIRECTUS_BASE_URL --access-token $DIRECTUS_ACCESS_TOKEN
+    - python3 tmp/common/scripts/whitelabel-app/fetch_configuration.py --whitelabel-app-id $[[ inputs.app-id ]] --platform ios --configuration-base-url $DIRECTUS_BASE_URL --access-token=${DIRECTUS_ACCESS_TOKEN}
   artifacts:
     name: App configuration
     expire_in: 1 weeks
