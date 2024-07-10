@@ -48,7 +48,8 @@ struct MapAnnotationView: View {
                                                                                ],
                                                                                lastUpdated: nil,
                                                                                openingHours: [],
-                                                                               country: "DE"))),
+                                                                               country: "DE",
+                                                                               fuelingURL: nil))),
                           isTopAnnotationViewHidden: .constant(false))
         MapAnnotationView(viewModel: .init(annotation: .init(gasStation: .init(id: "",
                                                                                name: "Tankstelle",
@@ -70,7 +71,8 @@ struct MapAnnotationView: View {
                                                                                       hours: [.init(from: "2", to: "3")],
                                                                                       rule: .open)
                                                                                ],
-                                                                               country: "DE"))),
+                                                                               country: "DE",
+                                                                               fuelingURL: nil))),
                           isTopAnnotationViewHidden: .constant(false))
         MapAnnotationView(viewModel: .init(annotation: .init(gasStation: .init(id: "",
                                                                                name: "Tankstelle",
@@ -92,7 +94,8 @@ struct MapAnnotationView: View {
                                                                                       hours: [.init(from: "2", to: "3")],
                                                                                       rule: .open)
                                                                                ],
-                                                                               country: "DE"))),
+                                                                               country: "DE", 
+                                                                               fuelingURL: nil))),
                           isTopAnnotationViewHidden: .constant(true))
     }
 }

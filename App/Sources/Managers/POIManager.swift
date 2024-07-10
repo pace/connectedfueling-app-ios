@@ -105,6 +105,7 @@ private extension POIManager {
             distanceInKilometers = location.distance(from: stationLocation) / 1_000
         }
 
+        let fuelingURL = station.cofuGasStation?.fuelingURLs.first
         let priceFormat = station.priceFormat ?? Constants.GasStation.priceFormatFallback
         let currency = station.currency
         let prices: [FuelPrice] = station.prices.compactMap {
@@ -122,7 +123,8 @@ private extension POIManager {
                      prices: prices,
                      lastUpdated: station.lastUpdated,
                      openingHours: openingHours,
-                     country: station.country)
+                     country: station.country,
+                     fuelingURL: fuelingURL)
     }
 
     func makeFuelPrice(for price: PCPOIFuelPrice, currency: String?, priceFormat: String) -> FuelPrice? {

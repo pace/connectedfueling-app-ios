@@ -188,7 +188,8 @@ struct GasStationListItemView: View {
                                                                           hours: [.init(from: "10", to: "16")],
                                                                           rule: .open)
                                                                   ],
-                                                                  country: "DE")))
+                                                                  country: "DE", 
+                                                                  fuelingURL: nil)))
         GasStationListItemView(viewModel: .init(listViewModel: .init(),
                                                 gasStation: .init(id: "id",
                                                                   name: "MobyPay 3435",
@@ -208,7 +209,8 @@ struct GasStationListItemView: View {
                                                                   ],
                                                                   lastUpdated: Date(),
                                                                   openingHours: [],
-                                                                  country: "DE")))
+                                                                  country: "DE", 
+                                                                  fuelingURL: nil)))
         GasStationListItemView(viewModel: .init(listViewModel: .init(),
                                                 gasStation: .init(id: "id",
                                                                   name: "MobyPay 3435",
@@ -228,7 +230,8 @@ struct GasStationListItemView: View {
                                                                   ],
                                                                   lastUpdated: Date(),
                                                                   openingHours: [],
-                                                                  country: "DE")))
+                                                                  country: "DE", 
+                                                                  fuelingURL: nil)))
     }
     .padding(.paddingM)
 }
