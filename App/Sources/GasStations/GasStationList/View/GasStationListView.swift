@@ -157,7 +157,8 @@ struct GasStationListView: View {
                                          .init(days: [.saturday, .sunday],
                                                hours: [.init(from: "10", to: "16")],
                                                rule: .open)],
-                          country: "DE"),
+                          country: "DE",
+                          fuelingURL: nil),
                     .init(id: "id3",
                           name: "Tanke Danke",
                           addressLines: ["Address line 1", "Address line 2"],
@@ -187,7 +188,8 @@ struct GasStationListView: View {
                                   hours: [.init(from: "10", to: "16")],
                                   rule: .open)
                           ],
-                          country: "DE"),
+                          country: "DE", 
+                          fuelingURL: nil),
                     .init(id: "id2",
                           name: "Tanke Danke",
                           addressLines: ["Address line 1", "Address line 2"],
@@ -211,7 +213,8 @@ struct GasStationListView: View {
                                   hours: [.init(from: "3", to: "22")],
                                   rule: .open)
                           ],
-                          country: "DE"),
+                          country: "DE", 
+                          fuelingURL: nil),
                     .init(id: "id-1",
                           name: "MobyPay 3436",
                           addressLines: [
@@ -262,7 +265,8 @@ struct GasStationListView: View {
                                          .init(days: [.saturday, .sunday],
                                                hours: [.init(from: "10", to: "16")],
                                                rule: .open)],
-                          country: "DE"),
+                          country: "DE", 
+                          fuelingURL: nil),
                     .init(id: "id-2",
                           name: "MobyPay 3437",
                           addressLines: [
@@ -276,7 +280,8 @@ struct GasStationListView: View {
                           prices: [],
                           lastUpdated: Date(),
                           openingHours: [],
-                          country: "DE")
+                          country: "DE",
+                          fuelingURL: nil)
             ]))
 
         case .secondary:
@@ -311,7 +316,8 @@ struct GasStationListView: View {
                                          .init(days: [.saturday, .sunday],
                                                hours: [.init(from: "10", to: "16")],
                                                rule: .open)],
-                          country: "DE"),
+                          country: "DE",
+                          fuelingURL: nil),
                     .init(id: "id-1",
                           name: "MobyPay 3436",
                           addressLines: [
@@ -362,7 +368,8 @@ struct GasStationListView: View {
                                          .init(days: [.saturday, .sunday],
                                                hours: [.init(from: "10", to: "16")],
                                                rule: .open)],
-                          country: "DE"),
+                          country: "DE",
+                          fuelingURL: nil),
                     .init(id: "id-2",
                           name: "MobyPay 3437",
                           addressLines: [
@@ -376,7 +383,8 @@ struct GasStationListView: View {
                           prices: [],
                           lastUpdated: Date(),
                           openingHours: [],
-                          country: "DE")
+                          country: "DE",
+                          fuelingURL: nil)
             ]))
             .addNavigationBar(style: .centeredIcon(icon: .secondaryHeaderIcon))
         }

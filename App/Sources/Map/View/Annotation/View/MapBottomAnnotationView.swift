@@ -42,5 +42,6 @@ struct MapBottomAnnotationView: View {
                                                                                  ],
                                                                                  lastUpdated: nil,
                                                                                  openingHours: [],
-                                                                                 country: "DE"))))
+                                                                                 country: "DE",
+                                                                                 fuelingURL: nil))))
 }

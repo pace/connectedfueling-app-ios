@@ -118,7 +118,12 @@ class GasStationItemViewModel: ObservableObject {
 
     private func startFuelingProcess() {
         analyticsManager.logEvent(AnalyticEvents.FuelingStartedEvent())
-        fuelingUrlString = PACECloudSDK.URL.fueling(id: gasStation.id).absoluteString
+        if let fuelingURL = gasStation.fuelingURL {
+            let stationFuelingURL = fuelingURL + "?r=\(gasStation.id)"
+            fuelingUrlString = stationFuelingURL
+        } else {
+            fuelingUrlString = PACECloudSDK.URL.fueling(id: gasStation.id).absoluteString
+        }
     }
 
     private func startNavigation() {

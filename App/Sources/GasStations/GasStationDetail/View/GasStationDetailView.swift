@@ -256,7 +256,8 @@ struct GasStationDetailView: View {
                                                                       hours: [.init(from: "10", to: "16")],
                                                                       rule: .open)
                                                             ],
-                                                            country: "DE")))
+                                                            country: "DE",
+                                                            fuelingURL: nil)))
     .ignoresSafeArea()
 }
 
@@ -286,7 +287,8 @@ struct GasStationDetailView: View {
                                                                       hours: [.init(from: "3", to: "22")],
                                                                       rule: .open)
                                                             ], 
-                                                            country: "DE")))
+                                                            country: "DE", 
+                                                            fuelingURL: nil)))
 }
 
 // MARK: - No prices & closed
@@ -306,7 +308,8 @@ struct GasStationDetailView: View {
                                                                       hours: [.init(from: "3", to: "22")],
                                                                       rule: .closed)
                                                             ],
-                                                            country: "DE")))
+                                                            country: "DE",
+                                                            fuelingURL: nil)))
 }
 
 // MARK: - No prices & No opening hours
@@ -322,5 +325,6 @@ struct GasStationDetailView: View {
                                                             prices: [],
                                                             lastUpdated: Date(),
                                                             openingHours: [],
-                                                            country: "DE")))
+                                                            country: "DE",
+                                                            fuelingURL: nil)))
 }
