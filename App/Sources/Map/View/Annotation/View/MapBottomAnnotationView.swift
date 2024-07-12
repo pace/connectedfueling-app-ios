@@ -29,7 +29,7 @@ struct MapBottomAnnotationView: View {
     MapBottomAnnotationView(viewModel: .init(annotation: .init(gasStation: .init(id: "",
                                                                                  name: "Tankstelle",
                                                                                  addressLines: [],
-                                                                                 distanceInKilometers: nil,
+                                                                                 distance: nil,
                                                                                  location: .init(latitude: 0,
                                                                                                  longitude: 0),
                                                                                  paymentMethods: [],

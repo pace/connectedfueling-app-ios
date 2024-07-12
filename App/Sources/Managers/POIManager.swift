@@ -22,26 +22,15 @@ struct POIManager {
         let selectedFuelType = fuelType
         switch result {
         case let .success(poiStations):
-            let gasStations = await withTaskGroup(of: GasStation?.self, returning: [GasStation].self) { group in
-                for poiStation in poiStations where poiStation.isConnectedFuelingAvailable {
-                    guard let poiStationId = poiStation.id else { continue }
+            var gasStations: [GasStation] = []
 
-                    group.addTask {
-                        let isPoiInRange = await POIKit.isPoiInRange(id: poiStationId)
-                        let gasStation = self.makeGasStation(for: poiStation,
-                                                             selectedFuelType: selectedFuelType,
-                                                             location: location,
-                                                             isConnectedFuelingEnabled: isPoiInRange)
-                        return gasStation
-                    }
-                }
+            for poiStation in poiStations where poiStation.isConnectedFuelingAvailable {
+                guard let poiStationId = poiStation.id,
+                      let gasStation = self.makeGasStation(for: poiStation,
+                                                           selectedFuelType: selectedFuelType,
+                                                           location: location) else { continue }
 
-                let gasStations: [GasStation] = await group.reduce(into: []) {
-                    guard let gasStation = $1 else { return }
-                    $0.append(gasStation)
-                }
-
-                return gasStations
+                gasStations.append(gasStation)
             }
 
             return .success(gasStations)
@@ -95,14 +84,17 @@ extension POIManager {
 }
 
 private extension POIManager {
-    func makeGasStation(for station: POIKit.GasStation, selectedFuelType: FuelType?, location: CLLocation?, isConnectedFuelingEnabled: Bool) -> GasStation? {
+    func makeGasStation(for station: POIKit.GasStation, selectedFuelType: FuelType?, location: CLLocation?) -> GasStation? {
         guard let stationId = station.id,
               let coordinate = station.coordinate else { return nil }
 
         let stationLocation = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
-        var distanceInKilometers: Double?
+        var cofuEnabled = false
+        var distance: Double?
         if let location = location {
-            distanceInKilometers = location.distance(from: stationLocation) / 1_000
+            let distanceToPoi = location.distance(from: stationLocation)
+            distance = distanceToPoi
+            cofuEnabled = distanceToPoi < Constants.Distance.cofuDistanceThreshold
         }
 
         let fuelingURL = station.cofuGasStation?.fuelingURLs.first
@@ -116,10 +108,10 @@ private extension POIManager {
         return .init(id: stationId,
                      name: station.stationName ?? L10n.gasStationDefaultName,
                      addressLines: station.address.flatMap(makeAddressLines) ?? [],
-                     distanceInKilometers: distanceInKilometers,
+                     distance: distance,
                      location: stationLocation,
                      paymentMethods: station.cofuPaymentMethods,
-                     isConnectedFuelingEnabled: isConnectedFuelingEnabled,
+                     isConnectedFuelingEnabled: cofuEnabled,
                      prices: prices,
                      lastUpdated: station.lastUpdated,
                      openingHours: openingHours,

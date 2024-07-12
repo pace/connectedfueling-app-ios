@@ -56,15 +56,15 @@ class GasStationItemViewModel: ObservableObject {
     }
 
     private var formattedDistance: String {
-        let distance = gasStation.distanceInKilometers ?? 0
-        let distanceMeasurement = Measurement<UnitLength>(value: distance, unit: .kilometers)
+        let distance = gasStation.distance ?? 0
+        let distanceMeasurement = Measurement<UnitLength>(value: distance, unit: .meters)
 
         if distance < Constants.Distance.formattingThresholdForMetersPrecision - Constants.Distance.roundingThreshold {
-            return decimalDistanceFormatter.string(from: distanceMeasurement.converted(to: .meters))
-        } else if distance < Constants.Distance.formattingThresholdInKm - Constants.Distance.roundingThreshold {
-            return singleFractionDistanceFormatter.string(from: distanceMeasurement)
-        } else {
             return decimalDistanceFormatter.string(from: distanceMeasurement)
+        } else if distance < Constants.Distance.formattingThresholdForKm - Constants.Distance.roundingThreshold {
+            return singleFractionDistanceFormatter.string(from: distanceMeasurement.converted(to: .kilometers))
+        } else {
+            return decimalDistanceFormatter.string(from: distanceMeasurement.converted(to: .kilometers))
         }
     }
 

@@ -133,7 +133,7 @@ struct GasStationListView: View {
                             "Gerwigstraße 1",
                             "76131 Karlsruhe"
                           ],
-                          distanceInKilometers: 0.134,
+                          distance: 134,
                           location: .init(latitude: 49.013573, longitude: 8.419447),
                           paymentMethods: [],
                           isConnectedFuelingEnabled: true,
@@ -162,7 +162,7 @@ struct GasStationListView: View {
                     .init(id: "id3",
                           name: "Tanke Danke",
                           addressLines: ["Address line 1", "Address line 2"],
-                          distanceInKilometers: 0.234,
+                          distance: 234,
                           location: .init(latitude: 49.012233, longitude: 8.427348),
                           paymentMethods: [],
                           isConnectedFuelingEnabled: false,
@@ -193,7 +193,7 @@ struct GasStationListView: View {
                     .init(id: "id2",
                           name: "Tanke Danke",
                           addressLines: ["Address line 1", "Address line 2"],
-                          distanceInKilometers: 0.234,
+                          distance: 234,
                           location: .init(latitude: 49.012233, longitude: 8.427348),
                           paymentMethods: [],
                           isConnectedFuelingEnabled: true,
@@ -221,7 +221,7 @@ struct GasStationListView: View {
                             "Gerwigstraße 2",
                             "76131 Karlsruhe"
                           ],
-                          distanceInKilometers: 0.234,
+                          distance: 234,
                           location: .init(latitude: 49.013573, longitude: 8.419447),
                           paymentMethods: [],
                           isConnectedFuelingEnabled: true,
@@ -273,7 +273,7 @@ struct GasStationListView: View {
                             "Gerwigstraße 3",
                             "76131 Karlsruhe"
                           ],
-                          distanceInKilometers: 0.334,
+                          distance: 334,
                           location: .init(latitude: 49.013573, longitude: 8.419447),
                           paymentMethods: [],
                           isConnectedFuelingEnabled: false,
@@ -292,7 +292,7 @@ struct GasStationListView: View {
                             "Gerwigstraße 1",
                             "76131 Karlsruhe"
                           ],
-                          distanceInKilometers: 0.134,
+                          distance: 0.134,
                           location: .init(latitude: 49.013573, longitude: 8.419447),
                           paymentMethods: [],
                           isConnectedFuelingEnabled: true,
@@ -324,7 +324,7 @@ struct GasStationListView: View {
                             "Gerwigstraße 2",
                             "76131 Karlsruhe"
                           ],
-                          distanceInKilometers: 0.234,
+                          distance: 0.234,
                           location: .init(latitude: 49.013573, longitude: 8.419447),
                           paymentMethods: [],
                           isConnectedFuelingEnabled: true,
@@ -376,7 +376,7 @@ struct GasStationListView: View {
                             "Gerwigstraße 3",
                             "76131 Karlsruhe"
                           ],
-                          distanceInKilometers: 0.334,
+                          distance: 0.334,
                           location: .init(latitude: 49.013573, longitude: 8.419447),
                           paymentMethods: [],
                           isConnectedFuelingEnabled: false,

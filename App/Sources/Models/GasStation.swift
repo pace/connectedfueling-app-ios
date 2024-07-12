@@ -6,7 +6,7 @@ class GasStation: Hashable, Comparable {
     let id: String
     let name: String
     let addressLines: [String]
-    let distanceInKilometers: Double?
+    let distance: Double?
     let location: CLLocation
     let paymentMethods: [String]
     let isConnectedFuelingEnabled: Bool
@@ -31,7 +31,7 @@ class GasStation: Hashable, Comparable {
     }
 
     var isNearby: Bool {
-        distanceInKilometers ?? .infinity < Constants.Distance.formattingThresholdForMetersPrecision - Constants.Distance.roundingThreshold
+        distance ?? .infinity < Constants.Distance.cofuDistanceThreshold
     }
 
     @Published var currentPrice: FuelPrice?
@@ -39,7 +39,7 @@ class GasStation: Hashable, Comparable {
     init(id: String,
          name: String,
          addressLines: [String],
-         distanceInKilometers: Double?,
+         distance: Double?,
          location: CLLocation,
          paymentMethods: [String],
          isConnectedFuelingEnabled: Bool,
@@ -51,7 +51,7 @@ class GasStation: Hashable, Comparable {
         self.id = id
         self.name = name
         self.addressLines = addressLines
-        self.distanceInKilometers = distanceInKilometers
+        self.distance = distance
         self.location = location
         self.paymentMethods = paymentMethods
         self.isConnectedFuelingEnabled = isConnectedFuelingEnabled
@@ -85,8 +85,8 @@ class GasStation: Hashable, Comparable {
     }
 
     static func < (lhs: GasStation, rhs: GasStation) -> Bool {
-        guard let lhsDistance = lhs.distanceInKilometers,
-              let rhsDistance = rhs.distanceInKilometers else { return false }
+        guard let lhsDistance = lhs.distance,
+              let rhsDistance = rhs.distance else { return false }
 
         return lhsDistance < rhsDistance
     }
