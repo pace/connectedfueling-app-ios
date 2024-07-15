@@ -15,9 +15,10 @@ enum Constants {
     }
 
     enum Distance {
-        static let formattingThresholdForMetersPrecision: Double = 1.0
-        static let formattingThresholdInKm: Double = 10.0
-        static let roundingThreshold: Double = 0.05
+        static let formattingThresholdForMetersPrecision: Double = 1000.0 // m
+        static let formattingThresholdForKm: Double = 10000.0 // m
+        static let roundingThreshold: Double = 50 // m
+        static let cofuDistanceThreshold: Double = 250 // m
     }
 
     enum GasStation {

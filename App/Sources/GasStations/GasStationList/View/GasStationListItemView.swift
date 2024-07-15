@@ -166,7 +166,7 @@ struct GasStationListItemView: View {
                                                                     "Gerwigstraße 2",
                                                                     "76131 Karlsruhe"
                                                                   ],
-                                                                  distanceInKilometers: 0.234,
+                                                                  distance: 234,
                                                                   location: .init(latitude: 0, longitude: 0),
                                                                   paymentMethods: [],
                                                                   isConnectedFuelingEnabled: true,
@@ -197,7 +197,7 @@ struct GasStationListItemView: View {
                                                                     "Gerwigstraße 2",
                                                                     "76131 Karlsruhe"
                                                                   ],
-                                                                  distanceInKilometers: 0.234,
+                                                                  distance: 0.234,
                                                                   location: .init(latitude: 0, longitude: 0),
                                                                   paymentMethods: [],
                                                                   isConnectedFuelingEnabled: false,
@@ -218,7 +218,7 @@ struct GasStationListItemView: View {
                                                                     "So-Very-Long-Road-I-Cant-Believe-It 111",
                                                                     "76131 Karlsruhe"
                                                                   ],
-                                                                  distanceInKilometers: 0.234,
+                                                                  distance: 0.234,
                                                                   location: .init(latitude: 0, longitude: 0),
                                                                   paymentMethods: [],
                                                                   isConnectedFuelingEnabled: false,
