@@ -30,6 +30,12 @@ def publish_app():
   
   cwd = os.getcwd()
   os.chdir('..')
+
+  changelogProcess = subprocess.run('git log $(git describe --abbrev=0 --tags $(git rev-list --tags --max-count=2))..@ --no-merges --pretty=format:"%s" -- . | while read line; do echo "- $line"; done', shell=True , capture_output=True, text=True)
+  if changelogProcess.returncode != 0:
+    exit(1)
+
+  changelog = changelogProcess.stdout
   
   process = subprocess.run([
     'bundle', 
@@ -39,7 +45,7 @@ def publish_app():
     f"asc_team_id:{configuration['ios_asc_team_id']}",
     f"app_identifier:{configuration['application_id_ios']}",
     f"test_groups:{test_groups}",
-    f"whats_new:\"$(git log $(git describe --abbrev=0 --tags $(git rev-list --tags --max-count=2))..@ --no-merges --pretty=format:\"%s\" -- . | while read line; do echo \"- $line\"; done)\""
+    f"whats_new:{changelog}"
   ])
 
   if process.returncode != 0:
