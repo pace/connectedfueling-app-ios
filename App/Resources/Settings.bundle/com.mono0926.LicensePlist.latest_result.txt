@@ -32,7 +32,7 @@ name: nanopb, nameSpecified: nanopb, owner: firebase, version: 2.30909.0, source
 
 name: promises, nameSpecified: Promises, owner: google, version: 2.3.1, source: https://github.com/google/promises
 
-name: sentry-cocoa, nameSpecified: Sentry, owner: getsentry, version: 8.15.0, source: https://github.com/getsentry/sentry-cocoa
+name: sentry-cocoa, nameSpecified: Sentry, owner: getsentry, version: 8.36.0, source: https://github.com/getsentry/sentry-cocoa
 
 name: SourceKitten, nameSpecified: SourceKitten, owner: jpsim, version: 0.34.1, source: https://github.com/jpsim/SourceKitten
 
@@ -84,7 +84,7 @@ name: nanopb, nameSpecified: nanopb, owner: firebase, version: 2.30909.0, source
 
 name: promises, nameSpecified: Promises, owner: google, version: 2.3.1, source: https://github.com/google/promises
 
-name: sentry-cocoa, nameSpecified: Sentry, owner: getsentry, version: 8.15.0, source: https://github.com/getsentry/sentry-cocoa
+name: sentry-cocoa, nameSpecified: Sentry, owner: getsentry, version: 8.36.0, source: https://github.com/getsentry/sentry-cocoa
 
 name: SourceKitten, nameSpecified: SourceKitten, owner: jpsim, version: 0.34.1, source: https://github.com/jpsim/SourceKitten
 
