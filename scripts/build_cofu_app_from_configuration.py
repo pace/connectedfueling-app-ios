@@ -80,18 +80,18 @@ def replace_google_services():
 def replace_custom_HTML_menu_entries():
     # Create tuple of supported languages in project and the ones in Directus
   languages = [
-    ('cs', 'en-US'),
+    ('cs', 'cs'),
     ('da', 'en-US'),
     ('de', 'de-DE'),
     ('en', 'en-US'),
-    ('es', 'en-US'),
+    ('es', 'es-ES'),
     ('fr', 'fr-FR'),
-    ('it', 'en-US'),
-    ('nl', 'nl'),
-    ('pl', 'en-US'),
-    ('pt', 'en-US'),
-    ('ro', 'en-US'),
-    ('ru', 'en-US')
+    ('it', 'it-IT'),
+    ('nl', 'nl-NL'),
+    ('pl', 'pl'),
+    ('pt', 'pt-PT'),
+    ('ro', 'ro'),
+    ('ru', 'ru')
   ]
 
   ids = get_HTML_menu_ids(configuration['menu_entries'])
@@ -140,18 +140,18 @@ def extract_id(entry):
 def replace_legal_documents():
   # Create tuple of supported languages in project and the ones in Directus
   languages = [
-    ('cs', 'en-US'),
+    ('cs', 'cs'),
     ('da', 'en-US'),
     ('de', 'de-DE'),
     ('en', 'en-US'),
-    ('es', 'en-US'),
+    ('es', 'es-ES'),
     ('fr', 'fr-FR'),
-    ('it', 'en-US'),
-    ('nl', 'nl'),
-    ('pl', 'en-US'),
-    ('pt', 'en-US'),
-    ('ro', 'en-US'),
-    ('ru', 'en-US')
+    ('it', 'it-IT'),
+    ('nl', 'nl-NL'),
+    ('pl', 'pl'),
+    ('pt', 'pt-PT'),
+    ('ro', 'ro'),
+    ('ru', 'ru')
   ]
 
   legal_documents = ['imprint', 'privacy_statement', 'usage_terms', 'usage_analysis']
