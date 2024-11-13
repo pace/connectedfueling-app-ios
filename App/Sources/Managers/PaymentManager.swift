@@ -137,7 +137,7 @@ struct PaymentManager {
 
         switch result {
         case .success(let paymentMethodKinds):
-            let isNativePaymentMethodOnboardingEnabled = paymentMethodKinds.contains(where: { !($0.implicit ?? false) })
+            let isNativePaymentMethodOnboardingEnabled = paymentMethodKinds.contains(where: { !($0.managed ?? false) && !($0.implicit ?? false) })
             UserDefaults.isNativePaymentMethodOnboardingEnabled = isNativePaymentMethodOnboardingEnabled
             return isNativePaymentMethodOnboardingEnabled
 

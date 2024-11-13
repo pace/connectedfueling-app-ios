@@ -12,8 +12,8 @@ import Foundation
 internal enum L10n {
   /// Promotions & Coupons
   internal static let actionsAndCouponsSectionTitle = L10n.tr("Localizable", "actions_and_coupons_section_title", fallback: "Promotions & Coupons")
-  /// To show you the nearest gas station, we need access to your current location.
-  internal static let alertLocationPermissionDeniedDescription = L10n.tr("Localizable", "alert_location_permission_denied_description", fallback: "To show you the nearest gas station, we need access to your current location.")
+  /// To show you the nearest filling station, we need access to your current location.
+  internal static let alertLocationPermissionDeniedDescription = L10n.tr("Localizable", "alert_location_permission_denied_description", fallback: "To show you the nearest filling station, we need access to your current location.")
   /// Please grant location access in the settings.
   internal static let alertLocationPermissionDeniedTitle = L10n.tr("Localizable", "alert_location_permission_denied_title", fallback: "Please grant location access in the settings.")
   /// You cannot use mobile payment without location access.
@@ -100,16 +100,16 @@ internal enum L10n {
   internal static let fuelingLegalWarningDescription = L10n.tr("Localizable", "fueling_legal_warning_description", fallback: "National law prohibits the use of smartphones on the forecourt. Please ensure that you only use your phone in your vehicle.")
   /// Fueling
   internal static let fuelingTabLabel = L10n.tr("Localizable", "fueling_tab_label", fallback: "Fueling")
-  /// The gas station is currently closed.
-  internal static let gasStationClosedHint = L10n.tr("Localizable", "gas_station_closed_hint", fallback: "The gas station is currently closed.")
+  /// The filling station is currently closed.
+  internal static let gasStationClosedHint = L10n.tr("Localizable", "gas_station_closed_hint", fallback: "The filling station is currently closed.")
   /// Petrol station closes at %s
   internal static func gasStationClosesSoonHint(_ p1: UnsafePointer<CChar>) -> String {
     return L10n.tr("Localizable", "gas_station_closes_soon_hint", p1, fallback: "Petrol station closes at %s")
   }
-  /// Gas station
-  internal static let gasStationDefaultName = L10n.tr("Localizable", "gas_station_default_name", fallback: "Gas station")
-  /// The gas station data could not be loaded. Check your connection!
-  internal static let gasStationErrorDescription = L10n.tr("Localizable", "gas_station_error_description", fallback: "The gas station data could not be loaded. Check your connection!")
+  /// Filling station
+  internal static let gasStationDefaultName = L10n.tr("Localizable", "gas_station_default_name", fallback: "Filling station")
+  /// The filling station data could not be loaded. Check your connection!
+  internal static let gasStationErrorDescription = L10n.tr("Localizable", "gas_station_error_description", fallback: "The filling station data could not be loaded. Check your connection!")
   /// Fuel prices are unfortunately not available.
   internal static let gasStationFuelPricesNotAvailable = L10n.tr("Localizable", "gas_station_fuel_prices_not_available", fallback: "Fuel prices are unfortunately not available.")
   /// Fuel prices
@@ -118,10 +118,10 @@ internal enum L10n {
   internal static func gasStationLastUpdated(_ p1: UnsafePointer<CChar>) -> String {
     return L10n.tr("Localizable", "gas_station_last_updated", p1, fallback: "Last price change %s")
   }
-  /// We are loading the gas station data. Please wait a moment.
-  internal static let gasStationLoadingDescription = L10n.tr("Localizable", "gas_station_loading_description", fallback: "We are loading the gas station data. Please wait a moment.")
-  /// Loading gas station data...
-  internal static let gasStationLoadingTitle = L10n.tr("Localizable", "gas_station_loading_title", fallback: "Loading gas station data...")
+  /// We are loading the filling station data. Please wait a moment.
+  internal static let gasStationLoadingDescription = L10n.tr("Localizable", "gas_station_loading_description", fallback: "We are loading the filling station data. Please wait a moment.")
+  /// Loading filling station data...
+  internal static let gasStationLoadingTitle = L10n.tr("Localizable", "gas_station_loading_title", fallback: "Loading filling station data...")
   /// %s away
   internal static func gasStationLocationAway(_ p1: UnsafePointer<CChar>) -> String {
     return L10n.tr("Localizable", "gas_station_location_away", p1, fallback: "%s away")
@@ -172,12 +172,12 @@ internal enum L10n {
   internal static let menuItemsAnalytics = L10n.tr("Localizable", "menu_items_analytics", fallback: "Usage analysis")
   /// Permissions
   internal static let menuItemsPermissions = L10n.tr("Localizable", "menu_items_permissions", fallback: "Permissions")
-  /// To see the nearest gas station, we need access to your precise location.
-  internal static let menuPermissionsLocationDescription = L10n.tr("Localizable", "menu_permissions_location_description", fallback: "To see the nearest gas station, we need access to your precise location.")
+  /// To see the nearest filling station, we need access to your precise location.
+  internal static let menuPermissionsLocationDescription = L10n.tr("Localizable", "menu_permissions_location_description", fallback: "To see the nearest filling station, we need access to your precise location.")
   /// Location
   internal static let menuPermissionsLocationTitle = L10n.tr("Localizable", "menu_permissions_location_title", fallback: "Location")
-  /// We inform you via push notification about gas stations in your area and general news.
-  internal static let menuPermissionsNotificationsDescription = L10n.tr("Localizable", "menu_permissions_notifications_description", fallback: "We inform you via push notification about gas stations in your area and general news.")
+  /// We inform you via push notification about filling stations in your area and general news.
+  internal static let menuPermissionsNotificationsDescription = L10n.tr("Localizable", "menu_permissions_notifications_description", fallback: "We inform you via push notification about filling stations in your area and general news.")
   /// Notifications
   internal static let menuPermissionsNotificationsTitle = L10n.tr("Localizable", "menu_permissions_notifications_title", fallback: "Notifications")
   /// More
@@ -218,14 +218,14 @@ internal enum L10n {
   internal static let onboardingLegalTitle = L10n.tr("Localizable", "onboarding_legal_title", fallback: "Before we continue")
   /// Allow location access
   internal static let onboardingLocationPermissionAction = L10n.tr("Localizable", "onboarding_location_permission_action", fallback: "Allow location access")
-  /// To show you the closest gas station, we need access to your precise location.
-  internal static let onboardingLocationPermissionDescription = L10n.tr("Localizable", "onboarding_location_permission_description", fallback: "To show you the closest gas station, we need access to your precise location.")
-  /// Gas stations near you
-  internal static let onboardingLocationPermissionTitle = L10n.tr("Localizable", "onboarding_location_permission_title", fallback: "Gas stations near you")
+  /// To show you the closest filling station, we need access to your precise location.
+  internal static let onboardingLocationPermissionDescription = L10n.tr("Localizable", "onboarding_location_permission_description", fallback: "To show you the closest filling station, we need access to your precise location.")
+  /// Filling stations near you
+  internal static let onboardingLocationPermissionTitle = L10n.tr("Localizable", "onboarding_location_permission_title", fallback: "Filling stations near you")
   /// Login failed. Without an account, paying your fuel with your smartphone is not possible.
   internal static let onboardingLoginUnsuccessful = L10n.tr("Localizable", "onboarding_login_unsuccessful", fallback: "Login failed. Without an account, paying your fuel with your smartphone is not possible.")
-  /// We inform you via push notification about gas stations in your area and general news.
-  internal static let onboardingNotificationPermissionDescription = L10n.tr("Localizable", "onboarding_notification_permission_description", fallback: "We inform you via push notification about gas stations in your area and general news.")
+  /// We inform you via push notification about filling stations in your area and general news.
+  internal static let onboardingNotificationPermissionDescription = L10n.tr("Localizable", "onboarding_notification_permission_description", fallback: "We inform you via push notification about filling stations in your area and general news.")
   /// Allow notifications
   internal static let onboardingNotificationPermissionTitle = L10n.tr("Localizable", "onboarding_notification_permission_title", fallback: "Allow notifications")
   /// Add payment method
@@ -346,8 +346,8 @@ internal enum L10n {
   internal static let walletTwoFactorAuthenticationPinTitle = L10n.tr("Localizable", "wallet_two_factor_authentication_pin_title", fallback: "Set PIN")
   /// Authorisation
   internal static let walletTwoFactorAuthenticationTitle = L10n.tr("Localizable", "wallet_two_factor_authentication_title", fallback: "Authorisation")
-  /// Zoom in to find gas stations
-  internal static let zoomInNote = L10n.tr("Localizable", "zoom_in_note", fallback: "Zoom in to find gas stations")
+  /// Zoom in to find filling stations
+  internal static let zoomInNote = L10n.tr("Localizable", "zoom_in_note", fallback: "Zoom in to find filling stations")
   internal enum Alert {
     internal enum LocationPermission {
       internal enum Actions {
@@ -358,16 +358,16 @@ internal enum L10n {
   }
   internal enum Dashboard {
     internal enum EmptyView {
-      /// No gas stations were found nearby your location.
-      internal static let description = L10n.tr("Localizable", "DASHBOARD.EMPTY_VIEW.DESCRIPTION", fallback: "No gas stations were found nearby your location.")
-      /// Unfortunately no gas stations near you
-      internal static let title = L10n.tr("Localizable", "DASHBOARD.EMPTY_VIEW.TITLE", fallback: "Unfortunately no gas stations near you")
+      /// No filling stations were found nearby your location.
+      internal static let description = L10n.tr("Localizable", "DASHBOARD.EMPTY_VIEW.DESCRIPTION", fallback: "No filling stations were found nearby your location.")
+      /// Unfortunately no filling stations near you
+      internal static let title = L10n.tr("Localizable", "DASHBOARD.EMPTY_VIEW.TITLE", fallback: "Unfortunately no filling stations near you")
     }
     internal enum LoadingView {
-      /// We are searching for the nearest gas stations in your area. This may take a moment.
-      internal static let description = L10n.tr("Localizable", "DASHBOARD.LOADING_VIEW.DESCRIPTION", fallback: "We are searching for the nearest gas stations in your area. This may take a moment.")
-      /// Searching gas stations...
-      internal static let title = L10n.tr("Localizable", "DASHBOARD.LOADING_VIEW.TITLE", fallback: "Searching gas stations...")
+      /// We are searching for the nearest filling stations in your area. This may take a moment.
+      internal static let description = L10n.tr("Localizable", "DASHBOARD.LOADING_VIEW.DESCRIPTION", fallback: "We are searching for the nearest filling stations in your area. This may take a moment.")
+      /// Searching filling stations...
+      internal static let title = L10n.tr("Localizable", "DASHBOARD.LOADING_VIEW.TITLE", fallback: "Searching filling stations...")
     }
     internal enum Logout {
       internal enum Confirm {
@@ -382,10 +382,10 @@ internal enum L10n {
       }
     }
     internal enum Sections {
-      /// Nearest gas station
-      internal static let nearestGasStation = L10n.tr("Localizable", "DASHBOARD.SECTIONS.NEAREST_GAS_STATION", fallback: "Nearest gas station")
-      /// Other gas stations
-      internal static let otherGasStations = L10n.tr("Localizable", "DASHBOARD.SECTIONS.OTHER_GAS_STATIONS", fallback: "Other gas stations")
+      /// Nearest filling station
+      internal static let nearestGasStation = L10n.tr("Localizable", "DASHBOARD.SECTIONS.NEAREST_GAS_STATION", fallback: "Nearest filling station")
+      /// Other filling stations
+      internal static let otherGasStations = L10n.tr("Localizable", "DASHBOARD.SECTIONS.OTHER_GAS_STATIONS", fallback: "Other filling stations")
     }
   }
   internal enum FuelType {
@@ -405,22 +405,22 @@ internal enum L10n {
     }
   }
   internal enum Home {
-    /// Gas stations could not be loaded. Check your connection!
-    internal static let loadingFailedText = L10n.tr("Localizable", "HOME.LOADING_FAILED_TEXT", fallback: "Gas stations could not be loaded. Check your connection!")
+    /// Filling stations could not be loaded. Check your connection!
+    internal static let loadingFailedText = L10n.tr("Localizable", "HOME.LOADING_FAILED_TEXT", fallback: "Filling stations could not be loaded. Check your connection!")
     /// We are currently locating you. This might take a moment.
     internal static let lookingForLocationText = L10n.tr("Localizable", "HOME.LOOKING_FOR_LOCATION_TEXT", fallback: "We are currently locating you. This might take a moment.")
     /// Looking for location…
     internal static let lookingForLocationTitle = L10n.tr("Localizable", "HOME.LOOKING_FOR_LOCATION_TITLE", fallback: "Looking for location…")
-    /// For this gas station and your fuel type there are currently no prices available.
-    internal static let priceNotAvailableDescription = L10n.tr("Localizable", "HOME.PRICE_NOT_AVAILABLE_DESCRIPTION", fallback: "For this gas station and your fuel type there are currently no prices available.")
+    /// For this filling station and your fuel type there are currently no prices available.
+    internal static let priceNotAvailableDescription = L10n.tr("Localizable", "HOME.PRICE_NOT_AVAILABLE_DESCRIPTION", fallback: "For this filling station and your fuel type there are currently no prices available.")
   }
   internal enum LocationDialog {
     /// To show you petrol stations near you, location services must be enabled.
     internal static let disabledText = L10n.tr("Localizable", "LOCATION_DIALOG.DISABLED_TEXT", fallback: "To show you petrol stations near you, location services must be enabled.")
     /// Location services disabled
     internal static let disabledTitle = L10n.tr("Localizable", "LOCATION_DIALOG.DISABLED_TITLE", fallback: "Location services disabled")
-    /// To show you the nearest gas station, we need access to your current location.
-    internal static let permissionDeniedText = L10n.tr("Localizable", "LOCATION_DIALOG.PERMISSION_DENIED_TEXT", fallback: "To show you the nearest gas station, we need access to your current location.")
+    /// To show you the nearest filling station, we need access to your current location.
+    internal static let permissionDeniedText = L10n.tr("Localizable", "LOCATION_DIALOG.PERMISSION_DENIED_TEXT", fallback: "To show you the nearest filling station, we need access to your current location.")
     /// Location permission not granted
     internal static let permissionDeniedTitle = L10n.tr("Localizable", "LOCATION_DIALOG.PERMISSION_DENIED_TITLE", fallback: "Location permission not granted")
   }
