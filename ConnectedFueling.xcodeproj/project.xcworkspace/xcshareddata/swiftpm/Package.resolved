@@ -33,8 +33,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/pace/cloud-sdk-ios/",
       "state" : {
-        "revision" : "e82d11e6b3963d8582ebf2a6e751205d19e1a767",
-        "version" : "21.0.0"
+        "revision" : "199f001f4a8c45091903f38638117166d680ccfb",
+        "version" : "24.0.1"
       }
     },
     {

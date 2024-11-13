@@ -4,7 +4,7 @@ name: app-check, nameSpecified: AppCheck, owner: google, version: 10.19.1, sourc
 
 name: AppAuth-iOS, nameSpecified: AppAuth, owner: pace, version: 1.5.0, source: https://github.com/pace/AppAuth-iOS
 
-name: cloud-sdk-ios, nameSpecified: PACECloudSDK, owner: pace, version: 21.0.0, source: https://github.com/pace/cloud-sdk-ios
+name: cloud-sdk-ios, nameSpecified: PACECloudSDK, owner: pace, version: 24.0.1, source: https://github.com/pace/cloud-sdk-ios
 
 name: CollectionConcurrencyKit, nameSpecified: CollectionConcurrencyKit, owner: JohnSundell, version: 0.2.0, source: https://github.com/JohnSundell/CollectionConcurrencyKit
 
@@ -56,7 +56,7 @@ name: app-check, nameSpecified: AppCheck, owner: google, version: 10.19.1, sourc
 
 name: AppAuth-iOS, nameSpecified: AppAuth, owner: pace, version: 1.5.0, source: https://github.com/pace/AppAuth-iOS
 
-name: cloud-sdk-ios, nameSpecified: PACECloudSDK, owner: pace, version: 21.0.0, source: https://github.com/pace/cloud-sdk-ios
+name: cloud-sdk-ios, nameSpecified: PACECloudSDK, owner: pace, version: 24.0.1, source: https://github.com/pace/cloud-sdk-ios
 
 name: CollectionConcurrencyKit, nameSpecified: CollectionConcurrencyKit, owner: JohnSundell, version: 0.2.0, source: https://github.com/JohnSundell/CollectionConcurrencyKit
 
