@@ -23,7 +23,7 @@ class OnboardingLocationPermissionPageViewModel: OnboardingPageViewModel {
     }
 
     override func isPageAlreadyCompleted() async -> Bool {
-        locationManager.currentLocationPermissionStatus == .authorized
+        locationManager.currentLocationPermissionStatus != .notDetermined
     }
 
     private func requestLocationPermission() {
@@ -31,18 +31,11 @@ class OnboardingLocationPermissionPageViewModel: OnboardingPageViewModel {
 
         switch currentStatus {
         case .notDetermined:
-            locationManager.requestLocationPermission { [weak self] status in
-                guard status == .authorized else { return }
+            locationManager.requestLocationPermission { [weak self] _ in
                 self?.finishOnboardingPage()
             }
 
-        case .disabled:
-            self.alert = AppAlert.locationServicesDisabledError
-
-        case .denied:
-            self.alert = AppAlert.locationPermissionDeniedError
-
-        case .authorized:
+        default:
             self.finishOnboardingPage()
         }
     }
