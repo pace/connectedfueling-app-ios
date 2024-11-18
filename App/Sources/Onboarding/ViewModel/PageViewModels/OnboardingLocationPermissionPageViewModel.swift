@@ -16,7 +16,7 @@ class OnboardingLocationPermissionPageViewModel: OnboardingPageViewModel {
 
     override func setupPageActions() {
         pageActions = [
-            .init(title: L10n.onboardingLocationPermissionAction, action: { [weak self] in
+            .init(title: L10n.commonUseNext, action: { [weak self] in
                 self?.requestLocationPermission()
             })
         ]
