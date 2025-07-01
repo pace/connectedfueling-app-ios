@@ -2,7 +2,7 @@ import Foundation
 import PACECloudSDK
 import SwiftUI
 
-class TransactionDetailViewModel: ObservableObject, Identifiable {
+class TransactionDetailViewModel: ObservableObject, Equatable, Identifiable {
     @Published var isLoading: Bool = true
     @Published var receiptData: TransactionReceiptData?
 
@@ -104,5 +104,9 @@ class TransactionDetailViewModel: ObservableObject, Identifiable {
 
             self.receiptData = .init(image: uiImage, pdf: pdfData)
         }
+    }
+
+    static func == (lhs: TransactionDetailViewModel, rhs: TransactionDetailViewModel) -> Bool {
+        lhs.transactionId == rhs.transactionId
     }
 }
