@@ -1,0 +1,8 @@
+configuration('Sandbox')
+disable_concurrent_testing(true)
+reset_simulator(false)
+force_quit_simulator(false)
+parallel_testing(false)
+reinstall_app(true)
+prelaunch_simulator(true)
+device('iPhone SE (3rd generation) (18.2)')

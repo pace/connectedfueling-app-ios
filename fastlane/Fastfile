@@ -4,14 +4,11 @@ default_platform(:ios)
 
 PROJECT_PATH = 'ConnectedFueling.xcodeproj'
 ENVIRONMENT = ENV['ENVIRONMENT']
+BUILD_ARGS = "-skipPackagePluginValidation -skipMacroValidation"
 
 platform :ios do
   version_number = ENV['VERSION_NAME']
   build_number = ENV['BUILD_NUMBER']
-
-  before_all do |lane|
-    clear_derived_data
-  end
 
   after_all do |lane|
     # Handling for configured whitelabel app
@@ -64,13 +61,7 @@ platform :ios do
     scan(
       scheme: 'App Unit Tests',
       app_identifier: 'car.pace.cofu',
-      configuration: ENVIRONMENT,
-      reset_simulator: true,
-      force_quit_simulator: true,
-      prelaunch_simulator: true,
-      reinstall_app: true,
-      disable_concurrent_testing: true,
-      xcargs: "-skipPackagePluginValidation -skipMacroValidation"
+      xcargs: BUILD_ARGS
     )
   end
 
@@ -306,7 +297,7 @@ platform :ios do
           app_identifier => profile_name
         }
       },
-      xcargs: "-skipPackagePluginValidation -skipMacroValidation"
+      xcargs: BUILD_ARGS
     )
   end
 
