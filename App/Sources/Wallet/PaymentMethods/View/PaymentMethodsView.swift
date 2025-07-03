@@ -4,12 +4,14 @@ struct PaymentMethodsView: View {
     @StateObject private var viewModel: PaymentMethodsViewModel = .init()
 
     var body: some View {
-        if viewModel.isLoading {
-            loadingView
-        } else if let error = viewModel.error {
-            errorView(with: error)
-        } else {
-            paymentMethodsList
+        VStack {
+            if viewModel.isLoading {
+                loadingView
+            } else if let error = viewModel.error {
+                errorView(with: error)
+            } else {
+                paymentMethodsList
+            }
         }
     }
 

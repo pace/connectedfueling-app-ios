@@ -4,8 +4,9 @@ struct TransactionListView: View {
     @StateObject var viewModel: TransactionListViewModel = .init()
 
     var body: some View {
-        content
-            .navigationTitle(L10n.walletTransactionsTitle)
+        VStack {
+            content
+        }
     }
 
     @ViewBuilder
