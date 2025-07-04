@@ -4,21 +4,42 @@ struct TransactionListView: View {
     @StateObject var viewModel: TransactionListViewModel = .init()
 
     var body: some View {
-        VStack {
+        ScrollView {
             content
+                .navigationTitle(L10n.walletTransactionsTitle)
+                .refreshable(action: viewModel.refresh)
         }
     }
 
     @ViewBuilder
     private var content: some View {
-        if viewModel.isLoading {
+        switch viewModel.state {
+        case .initialLoading:
             loadingView
-        } else if let error = viewModel.error {
+
+        case .hasNextPage(let transactions),
+                .loadingNextPage(let transactions):
+            transactionList(with: transactions, hasNextPage: true)
+
+        case .loadedAllPages(let transactions):
+            transactionList(with: transactions, hasNextPage: false)
+
+        case .failure(let transactions, _) where transactions != nil:
+            if let transactions {
+                transactionList(with: transactions, hasNextPage: false)
+            } else if let error = viewModel.error {
+                errorView(with: error)
+            }
+
+        default:
+            let error = viewModel.error ?? .init(title: L10n.commonUseErrorTitle,
+                                                 description: L10n.commonUseErrorDescription,
+                                                 retryAction: .init(title: L10n.commonUseRetry, action: {
+                Task {
+                    await viewModel.refresh()
+                }
+            }))
             errorView(with: error)
-        } else if viewModel.transactions.isEmpty {
-            emptyView
-        } else {
-            transactionsList
         }
     }
 
@@ -41,13 +62,13 @@ struct TransactionListView: View {
     }
 
     @ViewBuilder
-    private var transactionsList: some View {
-        List(viewModel.transactions) { transaction in
-            NavigationLink(destination: destination(for: transaction)) {
-                TransactionCell(viewModel: transaction)
-            }
-        }
-        .listStyle(.plain)
+    private func transactionList(with transactions: [TransactionDetailViewModel],
+                                 hasNextPage: Bool) -> some View {
+        TransactionList(transactions: transactions,
+                        hasNextPage: hasNextPage,
+                        showBusinessBadge: false,
+                        onLoadNextPage: { viewModel.loadNextPageIfNeeded() })
+        .padding(.horizontal)
     }
 
     @ViewBuilder

@@ -2,9 +2,21 @@ import Foundation
 import PACECloudSDK
 
 class TransactionListViewModel: ObservableObject {
-    @Published private(set) var transactions: [TransactionDetailViewModel] = []
+    private let pageSize = 25
+
+    private var currentPage = 0
+    private var lastPageLength: Int?
+
+    private var hasNextPage: Bool {
+        lastPageLength == pageSize
+    }
+
+    private var transactions: [TransactionDetailViewModel]?
+
     @Published private(set) var isLoading: Bool = true
     @Published private(set) var error: AppError?
+
+    @Published var state: PaginatedUIState<[TransactionDetailViewModel]> = .initialLoading
 
     let emptyTransactionsError: AppError = .init(title: L10n.transactionsEmptyTitle,
                                                  description: L10n.transactionsEmptyDescription,
@@ -33,34 +45,70 @@ class TransactionListViewModel: ObservableObject {
     init(paymentManager: PaymentManager = .init()) {
         self.paymentManager = paymentManager
 
-        fetchTransactions()
+        Task {
+            await loadTransactions(currentPage)
+        }
     }
 
-    func fetchTransactions() {
-        Task { @MainActor [weak self] in
-            defer {
-                self?.isLoading = false
-            }
+    @Sendable func refresh() async {
+        currentPage = 0
+        await loadTransactions(currentPage, reset: true)
+    }
 
-            self?.isLoading = true
+    func loadNextPageIfNeeded() {
+        guard !state.isLoading, let transactions, hasNextPage else { return }
 
-            guard let result = await self?.paymentManager.transactions() else { return }
-
-            switch result {
-            case .success(let transactions):
-                let transactionsViewModels = transactions.compactMap { self?.createDetailViewModel(with: $0) }
-                transactionsViewModels.first?.isLatest = true
-                self?.transactions = transactionsViewModels
-
-            case .failure(let error):
-                CofuLogger.e("[TransactionListViewModel] Failed fetching payment methods with error \(error)")
-                self?.error = .init(title: L10n.commonUseErrorTitle,
-                                    description: L10n.commonUseErrorDescription,
-                                    retryAction: .init(title: L10n.commonUseRetry, action: { [weak self] in
-                    self?.fetchTransactions()
-                }))
-            }
+        currentPage += 1
+        state = .loadingNextPage(transactions)
+        Task { @MainActor in
+            await loadTransactions(currentPage)
         }
+    }
+
+    @MainActor
+    private func loadTransactions(_ page: Int, reset: Bool = false) async {
+        let result = await paymentManager.transactions(page: page, pageSize: pageSize)
+
+        switch result {
+        case .success(let apiTransactions):
+            let listItems: [TransactionDetailViewModel] = apiTransactions.compactMap { createDetailViewModel(with: $0) }
+
+            lastPageLength = listItems.count
+
+            if !reset && transactions != nil {
+                transactions?.append(contentsOf: listItems)
+            } else {
+                transactions = listItems
+            }
+
+            transactions?.first?.isLatest = true
+
+            guard let transactions else {
+                CofuLogger.e("[TransactionListViewModel] No transactions")
+                return
+            }
+
+            if hasNextPage {
+                state = .hasNextPage(transactions)
+            } else {
+                state = .loadedAllPages(transactions)
+            }
+
+        case .failure(let error):
+            CofuLogger.e("[TransactionListViewModel] Failed fetching payment methods with error \(error)")
+            state = .failure(transactions, nil)
+            setError()
+        }
+    }
+
+    func setError() {
+        self.error = .init(title: L10n.commonUseErrorTitle,
+                           description: L10n.commonUseErrorDescription,
+                           retryAction: .init(title: L10n.commonUseRetry, action: { [weak self] in
+            Task {
+                await self?.refresh()
+            }
+        }))
     }
 
     private func createDetailViewModel(with transactionData: PCPayTransaction) -> TransactionDetailViewModel? {

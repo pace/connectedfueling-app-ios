@@ -189,6 +189,8 @@
 		9ADC1EC62B275B8E0027B82B /* TransactionDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADC1EC52B275B8E0027B82B /* TransactionDetailViewModel.swift */; };
 		9ADF34852B2748CB00134E1D /* TransactionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADF34842B2748CB00134E1D /* TransactionListView.swift */; };
 		9ADF34872B2748E800134E1D /* TransactionListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADF34862B2748E800134E1D /* TransactionListViewModel.swift */; };
+		C33A10F12E13C3DF0079DCA8 /* TransactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33A10F02E13C3D70079DCA8 /* TransactionList.swift */; };
+		C33A10F42E155EF30079DCA8 /* PaginatedUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C33A10F32E155EEB0079DCA8 /* PaginatedUIState.swift */; };
 		C56CD44226BD40CE004E61FB /* privacy_statement.html in Resources */ = {isa = PBXBuildFile; fileRef = C56CD44426BD40CE004E61FB /* privacy_statement.html */; };
 		E030BF2168C66E50D306EC54 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DDED74D77EA34B1E82D66CC /* Colors.xcassets */; };
 		E33384C29B0186910E12EEA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92EDCAEA5155B139A67EC72 /* AppDelegate.swift */; };
@@ -456,6 +458,8 @@
 		9C1CE9993B510A7FDB08F21C /* UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A21D1F58961E1C012B58255C /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A92EDCAEA5155B139A67EC72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C33A10F02E13C3D70079DCA8 /* TransactionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionList.swift; sourceTree = "<group>"; };
+		C33A10F32E155EEB0079DCA8 /* PaginatedUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaginatedUIState.swift; sourceTree = "<group>"; };
 		C56CD44326BD40CE004E61FB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = en; path = en.lproj/privacy_statement.html; sourceTree = "<group>"; };
 		C56CD44526BD40D3004E61FB /* de */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = de; path = de.lproj/privacy_statement.html; sourceTree = "<group>"; };
 		D52FFF13B15D7803BD36A33C /* App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = App.entitlements; sourceTree = "<group>"; };
@@ -1248,6 +1252,7 @@
 		9ADF34812B27487300134E1D /* TransactionList */ = {
 			isa = PBXGroup;
 			children = (
+				C33A10F22E155EE60079DCA8 /* Model */,
 				9ADF34832B27489100134E1D /* ViewModel */,
 				9ADF34822B27488400134E1D /* View */,
 			);
@@ -1257,6 +1262,7 @@
 		9ADF34822B27488400134E1D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C33A10F02E13C3D70079DCA8 /* TransactionList.swift */,
 				9ADF34842B2748CB00134E1D /* TransactionListView.swift */,
 				9ADC1EBF2B274E340027B82B /* TransactionCell.swift */,
 			);
@@ -1269,6 +1275,14 @@
 				9ADF34862B2748E800134E1D /* TransactionListViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C33A10F22E155EE60079DCA8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C33A10F32E155EEB0079DCA8 /* PaginatedUIState.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		C4DFB02345F5F4B89FF8794C /* App */ = {
@@ -1657,6 +1671,7 @@
 				3B4616C72ADE932D00DF57A1 /* ContentView.swift in Sources */,
 				3B0CFF942B26FE9F00EFC3ED /* FollowModeButton.swift in Sources */,
 				3B7370BA2AD52F8C00E9118B /* OnboardingPageView.swift in Sources */,
+				C33A10F42E155EF30079DCA8 /* PaginatedUIState.swift in Sources */,
 				3BDE7B0D2AD82EDB009A88DF /* UserManager.swift in Sources */,
 				9AC2D3022B32DDDA001A1864 /* NavigationBarTransparentStyle.swift in Sources */,
 				3B9D64332B28B37300191700 /* MKCoordinateRegion+ZoomLevel.swift in Sources */,
@@ -1664,6 +1679,7 @@
 				3BA2DB112AE6A20000187D86 /* AppTabView.swift in Sources */,
 				3BA2DB132AE6A21800187D86 /* AppNavigationView.swift in Sources */,
 				9A2D3DC72B4D6FF400AE8F8F /* SingleDigitsTextField.swift in Sources */,
+				C33A10F12E13C3DF0079DCA8 /* TransactionList.swift in Sources */,
 				3BAE605B2AD677B7006EA9DD /* Constants.swift in Sources */,
 				3B65A4882B1A08EC006B6890 /* Switch.swift in Sources */,
 				3BDE7B142AD83D06009A88DF /* LoadingSpinner.swift in Sources */,

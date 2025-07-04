@@ -68,9 +68,13 @@ struct PaymentManager {
         }
     }
 
-    func transactions() async -> Result<[PCPayTransaction], Error> {
-        let options = PayAPI.PaymentTransactions.ListTransactions.Request.Options(sort: .createdAtDescending)
+    func transactions(page: Int, pageSize: Int) async -> Result<[PCPayTransaction], Error> {
+        let options = PayAPI.PaymentTransactions.ListTransactions.Request.Options(
+            pagenumber: page,
+            pagesize: pageSize,
+            sort: .createdAtDescending)
         let request = PayAPI.PaymentTransactions.ListTransactions.Request(options: options)
+
         let response = await API.Pay.client.makeRequest(request)
 
         switch response.result {
