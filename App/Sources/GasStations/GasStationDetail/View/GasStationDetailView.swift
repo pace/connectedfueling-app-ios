@@ -125,7 +125,7 @@ struct GasStationDetailView: View {
         VStack {
             ForEach(viewModel.gasStation.addressLines) { line in
                 HStack {
-                    TextLabel(line)
+                    TextLabel(line, alignment: .leading)
                         .font(.system(size: 16))
                     Spacer()
                 }
