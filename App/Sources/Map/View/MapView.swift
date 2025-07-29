@@ -35,7 +35,7 @@ struct MapView: View {
             showsUserLocation: true,
             userTrackingMode: $viewModel.trackingMode,
             annotationItems: viewModel.annotations) { annotation in
-            MapAnnotation(coordinate: annotation.coordinate) {
+            MapAnnotation(coordinate: annotation.coordinate, anchorPoint: CGPoint(x: 0.5, y: 1.0)) {
                 MapAnnotationView(viewModel: .init(annotation: annotation), isTopAnnotationViewHidden: $viewModel.isTopAnnotationHidden)
                     .id(annotation.id)
             }
