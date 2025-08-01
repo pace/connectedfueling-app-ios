@@ -1,7 +1,7 @@
 import SwiftUI
 
-extension Alert: Identifiable {
-    public var id: UUID {
-        .init()
+extension Alert: @retroactive Identifiable {
+    public var id: String {
+        String(describing: self)
     }
 }
