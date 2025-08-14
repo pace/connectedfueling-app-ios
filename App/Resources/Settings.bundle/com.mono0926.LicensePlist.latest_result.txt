@@ -4,7 +4,7 @@ name: app-check, nameSpecified: AppCheck, owner: google, version: 11.2.0, source
 
 name: AppAuth-iOS, nameSpecified: AppAuth, owner: pace, version: 1.5.0, source: https://github.com/pace/AppAuth-iOS
 
-name: cloud-sdk-ios, nameSpecified: PACECloudSDK, owner: pace, version: 25.1.1, source: https://github.com/pace/cloud-sdk-ios
+name: cloud-sdk-ios, nameSpecified: PACECloudSDK, owner: pace, version: 25.2.0, source: https://github.com/pace/cloud-sdk-ios
 
 name: CollectionConcurrencyKit, nameSpecified: CollectionConcurrencyKit, owner: JohnSundell, version: 0.2.0, source: https://github.com/JohnSundell/CollectionConcurrencyKit
 
@@ -30,7 +30,7 @@ name: interop-ios-for-google-sdks, nameSpecified: InteropForGoogle, owner: googl
 
 name: Japx, nameSpecified: Japx, owner: pace, version: 5.0.0, source: https://github.com/pace/Japx
 
-name: leveldb, nameSpecified: leveldb, owner: firebase, version: 1.22.2, source: https://github.com/firebase/leveldb
+name: leveldb, nameSpecified: leveldb, owner: firebase, version: 1.22.5, source: https://github.com/firebase/leveldb
 
 name: nanopb, nameSpecified: nanopb, owner: firebase, version: 2.30910.0, source: https://github.com/firebase/nanopb
 
@@ -46,7 +46,7 @@ name: swift-atomics, nameSpecified: swift-atomics, owner: apple, version: 1.3.0,
 
 name: swift-collections, nameSpecified: swift-collections, owner: apple, version: 1.3.0, source: https://github.com/apple/swift-collections
 
-name: swift-nio, nameSpecified: swift-nio, owner: apple, version: 2.86.2, source: https://github.com/apple/swift-nio
+name: swift-nio, nameSpecified: swift-nio, owner: apple, version: 2.91.0, source: https://github.com/apple/swift-nio
 
 name: swift-protobuf, nameSpecified: SwiftProtobuf, owner: apple, version: 1.22.0, source: https://github.com/apple/swift-protobuf
 
@@ -68,7 +68,7 @@ name: app-check, nameSpecified: AppCheck, owner: google, version: 11.2.0, source
 
 name: AppAuth-iOS, nameSpecified: AppAuth, owner: pace, version: 1.5.0, source: https://github.com/pace/AppAuth-iOS
 
-name: cloud-sdk-ios, nameSpecified: PACECloudSDK, owner: pace, version: 25.1.1, source: https://github.com/pace/cloud-sdk-ios
+name: cloud-sdk-ios, nameSpecified: PACECloudSDK, owner: pace, version: 25.2.0, source: https://github.com/pace/cloud-sdk-ios
 
 name: CollectionConcurrencyKit, nameSpecified: CollectionConcurrencyKit, owner: JohnSundell, version: 0.2.0, source: https://github.com/JohnSundell/CollectionConcurrencyKit
 
@@ -94,7 +94,7 @@ name: interop-ios-for-google-sdks, nameSpecified: InteropForGoogle, owner: googl
 
 name: Japx, nameSpecified: Japx, owner: pace, version: 5.0.0, source: https://github.com/pace/Japx
 
-name: leveldb, nameSpecified: leveldb, owner: firebase, version: 1.22.2, source: https://github.com/firebase/leveldb
+name: leveldb, nameSpecified: leveldb, owner: firebase, version: 1.22.5, source: https://github.com/firebase/leveldb
 
 name: nanopb, nameSpecified: nanopb, owner: firebase, version: 2.30910.0, source: https://github.com/firebase/nanopb
 
@@ -110,7 +110,7 @@ name: swift-atomics, nameSpecified: swift-atomics, owner: apple, version: 1.3.0,
 
 name: swift-collections, nameSpecified: swift-collections, owner: apple, version: 1.3.0, source: https://github.com/apple/swift-collections
 
-name: swift-nio, nameSpecified: swift-nio, owner: apple, version: 2.86.2, source: https://github.com/apple/swift-nio
+name: swift-nio, nameSpecified: swift-nio, owner: apple, version: 2.91.0, source: https://github.com/apple/swift-nio
 
 name: swift-protobuf, nameSpecified: SwiftProtobuf, owner: apple, version: 1.22.0, source: https://github.com/apple/swift-protobuf
 

@@ -63,6 +63,8 @@ extension Constants {
     static let currentEnvironment: PACECloudSDK.Environment = {
         #if SANDBOX
         return .sandbox
+        #elseif DEVELOPMENT
+        return .development
         #else
         return .production
         #endif

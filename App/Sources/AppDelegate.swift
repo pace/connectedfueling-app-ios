@@ -43,15 +43,39 @@ private extension AppDelegate {
     #endif
 
     func setupPACECloudSDK() {
+        
+        
         PACECloudSDK.shared.setup(
             with: .init(
                 apiKey: "connected-fueling-app",
                 clientId: ConfigurationManager.configuration.clientId,
                 environment: Constants.currentEnvironment,
+                customOIDConfiguration: getOIDConfiguration(),
                 logLevel: .debug,
                 persistLogs: false
             )
         )
+    }
+    
+    func getOIDConfiguration() -> IDKit.OIDConfiguration? {
+        var exchangeConfig: IDKit.TokenExchangeConfiguration?
+        if let tokenExchange = ConfigurationManager.configuration.tokenExchange {
+            exchangeConfig = IDKit.TokenExchangeConfiguration(exchangeClientID: tokenExchange.clientId,
+                                                              exchangeIssuerID: tokenExchange.issuerId,
+                                                              exchangeClientSecret: tokenExchange.clientSecret)
+        }
+        
+        var oidConfig: IDKit.OIDConfiguration?
+        if let externalOIDC = ConfigurationManager.configuration.externalOIDC {
+            oidConfig = IDKit.OIDConfiguration(authorizationEndpoint: externalOIDC.authEndpoint,
+                                               tokenEndpoint: externalOIDC.tokenEndpoint,
+                                               endSessionEndpoint: externalOIDC.endSessionEndpoint,
+                                               clientId: ConfigurationManager.configuration.clientId,
+                                               clientSecret: externalOIDC.clientSecret,
+                                               redirectUri: externalOIDC.redirectUri,
+                                               tokenExchangeConfig: exchangeConfig)
+        }
+        return oidConfig
     }
 
     func setupNavigationBar() {

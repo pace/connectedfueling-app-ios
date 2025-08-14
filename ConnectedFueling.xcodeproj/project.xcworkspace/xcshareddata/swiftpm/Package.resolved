@@ -1,5 +1,5 @@
 {
-  "originHash" : "5ec39aa3b6b9bf4983c58d0a35fc34b5d678bd12def2e68af7a3c220ff56ec7e",
+  "originHash" : "e2c67a1f098eaf7e90ccbf8909d23774f7d64a7b093a9b0b2c4d86ea7d5b6d84",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -31,10 +31,10 @@
     {
       "identity" : "cloud-sdk-ios",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/pace/cloud-sdk-ios/",
+      "location" : "https://github.com/pace/cloud-sdk-ios",
       "state" : {
-        "revision" : "9e2da7105aebe921d192ddaf948ea1f06daf89ea",
-        "version" : "25.1.1"
+        "revision" : "eae83e4000b739c8a9560f46075735f677a16095",
+        "version" : "25.2.0"
       }
     },
     {
@@ -150,8 +150,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/leveldb.git",
       "state" : {
-        "revision" : "0706abcc6b0bd9cedfbb015ba840e4a780b5159b",
-        "version" : "1.22.2"
+        "revision" : "a0bc79961d7be727d258d33d5a6b2f1023270ba1",
+        "version" : "1.22.5"
       }
     },
     {
@@ -222,8 +222,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-nio.git",
       "state" : {
-        "revision" : "a18bddb0acf7a40d982b2f128ce73ce4ee31f352",
-        "version" : "2.86.2"
+        "revision" : "663ddc80f2081c8f22e417cbac5f80270a93795e",
+        "version" : "2.91.0"
       }
     },
     {

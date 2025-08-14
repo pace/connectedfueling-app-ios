@@ -95,7 +95,7 @@ private extension WalletViewModel {
         .init(icon: .walletAccountDeletionIcon,
               title: L10n.walletAccountDeletionTitle,
               action: .presentedContent(AnyView(
-                AppView(urlString: PACECloudSDK.URL.paceID.absoluteString, completion: checkAccountDeletion)
+                AppView(urlString: ConfigurationManager.configuration.externalOIDC?.accountDeletionUrl ?? PACECloudSDK.URL.paceID.absoluteString, completion: checkAccountDeletion)
               )))
     }
 }

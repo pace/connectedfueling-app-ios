@@ -16,7 +16,6 @@
 		0B25AE882B99F2D20087B575 /* TermsUpdatePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B25AE872B99F2D20087B575 /* TermsUpdatePageViewModel.swift */; };
 		0B25AE8A2B99F2FD0087B575 /* DataPrivacyUpdatePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B25AE892B99F2FD0087B575 /* DataPrivacyUpdatePageViewModel.swift */; };
 		0B25AE8C2B99F3080087B575 /* TrackingUpdatePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B25AE8B2B99F3080087B575 /* TrackingUpdatePageViewModel.swift */; };
-		0B3463CE2B6289A600DACFB3 /* PACECloudSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 0B3463CD2B6289A600DACFB3 /* PACECloudSDK */; };
 		0B3463D12B62974700DACFB3 /* CLLocationCoordinate2D+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3463D02B62974700DACFB3 /* CLLocationCoordinate2D+Extension.swift */; };
 		0B3A9B992B3C37260065CA5A /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3A9B982B3C37260065CA5A /* FirebaseService.swift */; };
 		0B3A9B9B2B3C37AB0065CA5A /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3A9B9A2B3C37AB0065CA5A /* AnalyticsManager.swift */; };
@@ -207,6 +206,7 @@
 		F2BCB94A2E68513A00A962B8 /* MapUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BCB9462E68513A00A962B8 /* MapUITest.swift */; };
 		F2BCB94B2E68513A00A962B8 /* MenuUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BCB9472E68513A00A962B8 /* MenuUITest.swift */; };
 		F2BCB94D2E68549C00A962B8 /* TestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BCB94C2E68549C00A962B8 /* TestBase.swift */; };
+		F2D4973A2EBCEB2F0076ADBC /* PACECloudSDK in Frameworks */ = {isa = PBXBuildFile; productRef = F2D497392EBCEB2F0076ADBC /* PACECloudSDK */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -492,11 +492,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2D4973A2EBCEB2F0076ADBC /* PACECloudSDK in Frameworks */,
 				CD7F7F5E2E9E554C00A530E2 /* FirebaseAnalytics in Frameworks */,
 				CD7F7F602E9E555700A530E2 /* FirebaseInAppMessaging-Beta in Frameworks */,
 				3BCD5F222B5FA4D100C67CF5 /* FirebaseMessaging in Frameworks */,
 				3B7764582AF91FFD00BE185B /* Sentry in Frameworks */,
-				0B3463CE2B6289A600DACFB3 /* PACECloudSDK in Frameworks */,
 				3B77645B2AF922F700BE185B /* FirebaseCrashlytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1417,9 +1417,10 @@
 				3B7764572AF91FFD00BE185B /* Sentry */,
 				3B77645A2AF922F700BE185B /* FirebaseCrashlytics */,
 				3BCD5F212B5FA4D100C67CF5 /* FirebaseMessaging */,
-				0B3463CD2B6289A600DACFB3 /* PACECloudSDK */,
 				CD7F7F5D2E9E554C00A530E2 /* FirebaseAnalytics */,
 				CD7F7F5F2E9E555700A530E2 /* FirebaseInAppMessaging-Beta */,
+				F21241D82EBC861A0055CDC0 /* PACECloudSDK */,
+				F2D497392EBCEB2F0076ADBC /* PACECloudSDK */,
 			);
 			productName = App;
 			productReference = A21D1F58961E1C012B58255C /* App.app */;
@@ -1479,8 +1480,8 @@
 			packageReferences = (
 				3B7764562AF91FFD00BE185B /* XCRemoteSwiftPackageReference "sentry-cocoa" */,
 				3B7764592AF922F700BE185B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				0B3463CC2B6289A600DACFB3 /* XCRemoteSwiftPackageReference "cloud-sdk-ios" */,
 				0B61CA452BDBC6FE00CE30E2 /* XCRemoteSwiftPackageReference "SwiftLint" */,
+				F2D497382EBCEB2F0076ADBC /* XCRemoteSwiftPackageReference "cloud-sdk-ios" */,
 			);
 			projectDirPath = "";
 			projectRoot = "";
@@ -2176,6 +2177,134 @@
 			};
 			name = Production;
 		};
+		F21241DA2EBC8D580055CDC0 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 8T694MPXAZ;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Development;
+		};
+		F21241DB2EBC8D580055CDC0 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = App/Resources/App.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				INFOPLIST_FILE = App/Resources/InfoPlist/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = car.pace.cofu;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEVELOPMENT CRASHLYTICS SENTRY ANALYTICS";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Development;
+		};
+		F21241DC2EBC8D580055CDC0 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				INFOPLIST_FILE = Tests/SupportingFiles/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = car.pace.Tests;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/App.app/App";
+			};
+			name = Development;
+		};
+		F21241DD2EBC8D580055CDC0 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = UITests/SupportingFiles/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = car.pace.UITests;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = App;
+			};
+			name = Development;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -2183,6 +2312,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3B0CE0452B025FE400929445 /* Sandbox */,
+				F21241DD2EBC8D580055CDC0 /* Development */,
 				74EF328DC845D7650DF157F0 /* Production */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -2192,6 +2322,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3B0CE0422B025FE400929445 /* Sandbox */,
+				F21241DA2EBC8D580055CDC0 /* Development */,
 				3E56B1501493BA46716A66B9 /* Production */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -2201,6 +2332,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3B0CE0432B025FE400929445 /* Sandbox */,
+				F21241DB2EBC8D580055CDC0 /* Development */,
 				5EECB617668450DD28870A07 /* Production */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -2210,6 +2342,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3B0CE0442B025FE400929445 /* Sandbox */,
+				F21241DC2EBC8D580055CDC0 /* Development */,
 				90B183FA4450A2249A9DA7AB /* Production */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -2218,14 +2351,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0B3463CC2B6289A600DACFB3 /* XCRemoteSwiftPackageReference "cloud-sdk-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pace/cloud-sdk-ios";
-			requirement = {
-				kind = exactVersion;
-				version = 25.1.1;
-			};
-		};
 		0B61CA452BDBC6FE00CE30E2 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/SwiftLint.git";
@@ -2250,14 +2375,17 @@
 				version = 12.4.0;
 			};
 		};
+		F2D497382EBCEB2F0076ADBC /* XCRemoteSwiftPackageReference "cloud-sdk-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pace/cloud-sdk-ios";
+			requirement = {
+				kind = exactVersion;
+				version = 25.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0B3463CD2B6289A600DACFB3 /* PACECloudSDK */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 0B3463CC2B6289A600DACFB3 /* XCRemoteSwiftPackageReference "cloud-sdk-ios" */;
-			productName = PACECloudSDK;
-		};
 		0B61CA462BDBC70C00CE30E2 /* SwiftLintPlugin */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0B61CA452BDBC6FE00CE30E2 /* XCRemoteSwiftPackageReference "SwiftLint" */;
@@ -2287,6 +2415,15 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 3B7764592AF922F700BE185B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseInAppMessaging-Beta";
+		};
+		F21241D82EBC861A0055CDC0 /* PACECloudSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PACECloudSDK;
+		};
+		F2D497392EBCEB2F0076ADBC /* PACECloudSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2D497382EBCEB2F0076ADBC /* XCRemoteSwiftPackageReference "cloud-sdk-ios" */;
+			productName = PACECloudSDK;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
