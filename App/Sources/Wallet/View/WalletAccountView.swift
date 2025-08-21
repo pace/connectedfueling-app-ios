@@ -25,10 +25,11 @@ struct WalletAccountView: View {
                 TextLabel(L10n.walletHeaderText, textColor: .genericGrey)
                     .font(.system(size: 14))
                 if let email = viewModel.email {
-                    Text(verbatim: email)
+                    Text(verbatim: email.contains("privaterelay.appleid") == true ? L10n.walletHeaderLoggedInAppleID : email)
                         .foregroundStyle(Color.genericBlack)
                         .font(.system(size: 16, weight: .bold))
                         .multilineTextAlignment(.center)
+                        .lineLimit(1)
                 }
                 Button(action: {
                     viewModel.didTapLogout()
