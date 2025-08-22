@@ -300,14 +300,24 @@ internal enum L10n {
   internal static let searchTitle = L10n.tr("Localizable", "search_title", fallback: "Search places")
   /// Share
   internal static let shareTitle = L10n.tr("Localizable", "SHARE_TITLE", fallback: "Share")
+  /// The transaction details could not be loaded. Check your connection!
+  internal static let transactionsDetailsErrorDescription = L10n.tr("Localizable", "transactions_details_error_description", fallback: "The transaction details could not be loaded. Check your connection!")
+  /// We are loading the transaction details. Please wait a moment.
+  internal static let transactionsDetailsLoadingDescription = L10n.tr("Localizable", "transactions_details_loading_description", fallback: "We are loading the transaction details. Please wait a moment.")
+  /// Load transaction details...
+  internal static let transactionsDetailsLoadingTitle = L10n.tr("Localizable", "transactions_details_loading_title", fallback: "Load transaction details...")
   /// Transaction details
   internal static let transactionsDetailsTitle = L10n.tr("Localizable", "transactions_details_title", fallback: "Transaction details")
   /// After your first payment with the app, your transactions will appear here
   internal static let transactionsEmptyDescription = L10n.tr("Localizable", "transactions_empty_description", fallback: "After your first payment with the app, your transactions will appear here")
   /// You don't have any transactions yet
   internal static let transactionsEmptyTitle = L10n.tr("Localizable", "transactions_empty_title", fallback: "You don't have any transactions yet")
+  /// Your transactions could not be loaded. Check your connection!
+  internal static let transactionsErrorDescription = L10n.tr("Localizable", "transactions_error_description", fallback: "Your transactions could not be loaded. Check your connection!")
   /// Your last transaction
   internal static let transactionsLastTransactionTitle = L10n.tr("Localizable", "transactions_last_transaction_title", fallback: "Your last transaction")
+  /// We are loading your transactions. Please wait a moment.
+  internal static let transactionsLoadingDescription = L10n.tr("Localizable", "transactions_loading_description", fallback: "We are loading your transactions. Please wait a moment.")
   /// Load transactions
   internal static let transactionsLoadingTitle = L10n.tr("Localizable", "transactions_loading_title", fallback: "Load transactions")
   /// Receipt
@@ -346,6 +356,8 @@ internal enum L10n {
   internal static let walletTwoFactorAuthenticationPinTitle = L10n.tr("Localizable", "wallet_two_factor_authentication_pin_title", fallback: "Set PIN")
   /// Authorisation
   internal static let walletTwoFactorAuthenticationTitle = L10n.tr("Localizable", "wallet_two_factor_authentication_title", fallback: "Authorisation")
+  /// Logged in with Apple ID
+  internal static let walletHeaderLoggedInAppleID = L10n.tr("Localizable", "walletHeaderLoggedInAppleID", fallback: "Logged in with Apple ID")
   /// Zoom in to find filling stations
   internal static let zoomInNote = L10n.tr("Localizable", "zoom_in_note", fallback: "Zoom in to find filling stations")
   internal enum Alert {
