@@ -22,7 +22,12 @@ struct TransactionListView: View {
             transactionList(with: transactions, hasNextPage: true)
 
         case .loadedAllPages(let transactions):
-            transactionList(with: transactions, hasNextPage: false)
+            if transactions.isEmpty {
+                let appError = AppError(title: L10n.transactionsEmptyTitle, description: L10n.transactionsEmptyDescription, icon: .imageResource(.noTransactionsIcon))
+                errorView(with: appError)
+            } else {
+                transactionList(with: transactions, hasNextPage: false)
+            }
 
         case .failure(let transactions, _) where transactions != nil:
             if let transactions {
