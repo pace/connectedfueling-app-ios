@@ -11,14 +11,15 @@ class OnboardingLocationPermissionPageViewModel: OnboardingPageViewModel {
         super.init(style: style,
                    image: .onboardingLocationIcon,
                    title: L10n.onboardingLocationPermissionTitle,
-                   description: L10n.onboardingLocationPermissionDescription)
+                   description: L10n.onboardingLocationPermissionDescription,
+                   accessibilityString: AccessibilityIdentifiers.onboardingLocationPermissionTitle)
     }
 
     override func setupPageActions() {
         pageActions = [
             .init(title: L10n.commonUseNext, action: { [weak self] in
                 self?.requestLocationPermission()
-            })
+            }, accessibilityString: AccessibilityIdentifiers.commonUseNext)
         ]
     }
 

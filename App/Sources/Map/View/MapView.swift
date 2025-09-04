@@ -27,6 +27,8 @@ struct MapView: View {
             .onAppear {
                 viewModel.onAppear()
             }
+            .accessibilityElement(children: .ignore)
+            .accessibilityIdentifier(AccessibilityIdentifiers.mapView)
     }
 
     @ViewBuilder

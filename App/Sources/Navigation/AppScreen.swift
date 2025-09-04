@@ -17,6 +17,23 @@ extension AppScreen {
         } icon: {
             image
         }
+        .accessibilityIdentifier(accessibilityLabel)
+    }
+    
+    private var accessibilityLabel: String {
+        switch self {
+        case .map:
+            AccessibilityIdentifiers.mapTabBarItem
+
+        case .gasStationList:
+            AccessibilityIdentifiers.gasStationListTabBarItem
+
+        case .wallet:
+            AccessibilityIdentifiers.walletTabBarItem
+
+        case .menu:
+            AccessibilityIdentifiers.menuTabBarItem
+        }
     }
 
     @ViewBuilder

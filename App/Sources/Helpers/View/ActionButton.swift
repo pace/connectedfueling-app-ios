@@ -12,6 +12,7 @@ struct ActionButton: View {
     private let title: String
     private let style: Style
     private let action: () -> Void
+    private let accessibilityString: String
 
     private let disabledOpacity: CGFloat = 0.4
 
@@ -19,11 +20,13 @@ struct ActionButton: View {
          style: Style = .primary,
          isLoading: Binding<Bool> = .constant(false),
          isDisabled: Binding<Bool> = .constant(false),
+         accessibilityString: String = "",
          action: @escaping () -> Void) {
         self.title = title
         self.style = style
         self._isLoading = isLoading
         self._isDisabled = isDisabled
+        self.accessibilityString = accessibilityString
         self.action = action
     }
 
@@ -41,6 +44,7 @@ struct ActionButton: View {
         }
         .frame(maxWidth: .infinity, minHeight: 50)
         .background(backgroundColor)
+        .accessibilityIdentifier(self.accessibilityString)
         .disabled(isDisabled)
         .cornerRadius(.cornerRadius)
         .overlay(

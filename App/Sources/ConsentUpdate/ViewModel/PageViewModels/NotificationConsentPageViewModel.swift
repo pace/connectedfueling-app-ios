@@ -6,14 +6,15 @@ class NotificationConsentPageViewModel: ConsentUpdatePageViewModel {
     init(notificationManager: NotificationManager = .init()) {
         self.notificationManager = notificationManager
         super.init(title: L10n.notificationPermissionRequestTitle,
-                   description: L10n.onboardingNotificationPermissionDescription)
+                   description: L10n.onboardingNotificationPermissionDescription,
+                   accessibilityString: AccessibilityIdentifiers.notificationPermissionRequestTitle)
     }
 
     override func setupPageActions() {
         pageActions = [
             .init(title: L10n.commonUseNext, action: { [weak self] in
                 self?.requestNotificationPermission()
-            })
+            }, accessibilityString: AccessibilityIdentifiers.commonUseNext)
         ]
     }
 

@@ -12,6 +12,8 @@ struct WalletView: View {
                 .padding(.top, .paddingL)
             Spacer()
         }
+        .accessibilityElement(children: .ignore)
+        .accessibilityIdentifier(AccessibilityIdentifiers.walletView)
     }
 }
 

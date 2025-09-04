@@ -64,6 +64,7 @@ struct OnboardingPageView: View {
                     .font(.system(size: 20, weight: .bold))
                     .padding(.top, .paddingL)
                     .padding(.horizontal, .paddingM)
+                    .accessibilityIdentifier(viewModel.accessibilityString)
                 TextLabel(viewModel.description, alignment: .center)
                     .font(.system(size: 16, weight: .regular))
                     .padding([.horizontal, .top], .paddingM)
@@ -113,6 +114,7 @@ struct OnboardingPageView: View {
                              style: pageAction == viewModel.pageActions.first ? .primary : .secondary,
                              isLoading: $viewModel.isActionLoading,
                              isDisabled: $viewModel.isActionDisabled,
+                             accessibilityString: pageAction.accessibilityString,
                              action: pageAction.action)
                 .padding(.horizontal, .paddingM)
             }
