@@ -1,0 +1,24 @@
+{
+  "configurations" : [
+    {
+      "id" : "767CCD61-7AF7-490B-A392-94AE38AE8173",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testExecutionOrdering" : "random"
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:ConnectedFueling.xcodeproj",
+        "identifier" : "F4118F72D883495538C964FA",
+        "name" : "UITests"
+      }
+    }
+  ],
+  "version" : 1
+}

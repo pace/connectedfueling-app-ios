@@ -10,7 +10,8 @@ class TrackingUpdatePageViewModel: ConsentUpdatePageViewModel {
         self.analyticsManager = analyticsManager
 
         super.init(title: L10n.legalUpdateTrackingTitle,
-                   description: L10n.trackingUpdateDescriptionMarkdown)
+                   description: L10n.trackingUpdateDescriptionMarkdown,
+                   accessibilityString: AccessibilityIdentifiers.legalUpdateTrackingTitle)
     }
 
     override func setupPageActions() {
@@ -23,7 +24,7 @@ class TrackingUpdatePageViewModel: ConsentUpdatePageViewModel {
                 self?.consentManager.accept(.tracking, for: ConsentManager.Kind.tracking.acceptedLanguage ?? SystemManager.languageCode)
                 self?.analyticsManager.updateActivationState()
                 self?.finishConsentUpdatePage()
-            }),
+            }, accessibilityString: AccessibilityIdentifiers.commonUseAccept),
             .init(title: L10n.commonUseDecline, action: { [weak self] in
                 CofuLogger.i("[TrackingUpdatePageViewModel] Did decline app tracking")
 

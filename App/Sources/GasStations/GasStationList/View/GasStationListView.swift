@@ -40,6 +40,8 @@ struct GasStationListView: View {
                     }
             }
         }
+        .accessibilityElement(children: .ignore)
+        .accessibilityIdentifier(AccessibilityIdentifiers.gasStationListView)
         .background(Color.lightGrey)
         .sheet(item: $viewModel.selectedFuelingUrlString) { selectedFuelingUrlString in
             AppView(urlString: selectedFuelingUrlString, isModalInPresentation: true)

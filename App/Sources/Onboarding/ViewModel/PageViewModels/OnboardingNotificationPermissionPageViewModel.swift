@@ -11,14 +11,15 @@ class OnboardingNotificationPermissionPageViewModel: OnboardingPageViewModel {
         super.init(style: style,
                    image: .onboardingNotificationIcon,
                    title: L10n.onboardingNotificationPermissionTitle,
-                   description: L10n.onboardingNotificationPermissionDescription)
+                   description: L10n.onboardingNotificationPermissionDescription,
+                   accessibilityString: AccessibilityIdentifiers.onboardingNotificationPermissionTitle)
     }
 
     override func setupPageActions() {
         pageActions = [
             .init(title: L10n.commonUseNext, action: { [weak self] in
                 self?.requestNotificationPermission()
-            })
+            }, accessibilityString: AccessibilityIdentifiers.commonUseNext)
         ]
     }
 

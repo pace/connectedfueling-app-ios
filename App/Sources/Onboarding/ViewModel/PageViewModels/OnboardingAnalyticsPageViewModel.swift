@@ -27,7 +27,7 @@ class OnboardingAnalyticsPageViewModel: OnboardingPageViewModel {
                 self?.analyticsManager.updateActivationState()
                 self?.sendAppInstalledEvent()
                 self?.finishOnboardingPage()
-            }),
+            }, accessibilityString: AccessibilityIdentifiers.commonUseAccept),
             .init(title: L10n.commonUseDecline, action: { [weak self] in
                 CofuLogger.i("[OnboardingAnalyticsPageViewModel] Did decline app tracking")
 

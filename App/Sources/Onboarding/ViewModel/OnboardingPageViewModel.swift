@@ -5,6 +5,7 @@ class OnboardingPageViewModel: ObservableObject, Identifiable {
     let image: Image
     let title: String
     let description: String
+    let accessibilityString: String
 
     var isCheckingNextPages: Bool = false {
         didSet {
@@ -32,13 +33,14 @@ class OnboardingPageViewModel: ObservableObject, Identifiable {
          image: Image,
          title: String,
          description: String,
+         accessibilityString: String = "",
          pageActions: [OnboardingPageAction] = []) {
         self.style = style
         self.image = image.renderingMode(.template)
         self.title = title
         self.description = description
         self.pageActions = pageActions
-
+        self.accessibilityString = accessibilityString
         setupPageActions()
     }
 

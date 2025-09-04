@@ -11,6 +11,8 @@ struct MenuView: View {
         VStack(spacing: 0) {
             ListView(listItems: viewModel.listItems)
         }
+        .accessibilityElement(children: .ignore)
+        .accessibilityIdentifier(AccessibilityIdentifiers.menuView)
     }
 }
 

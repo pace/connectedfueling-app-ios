@@ -19,7 +19,7 @@ class OnboardingLegalPageViewModel: OnboardingPageViewModel {
                 self?.legalManager.accept(.terms, for: SystemManager.languageCode)
                 self?.legalManager.accept(.dataPrivacy, for: SystemManager.languageCode)
                 self?.finishOnboardingPage()
-            })
+            }, accessibilityString: AccessibilityIdentifiers.commonUseAccept)
         ]
     }
 

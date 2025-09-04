@@ -17,6 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 private extension AppDelegate {
     func setup() {
+        #if SANDBOX
+        setupLauchParameters()
+        #endif
         MigrationManager.migrate()
 
         setupPACECloudSDK()
@@ -28,6 +31,16 @@ private extension AppDelegate {
 
         setupSession()
     }
+    
+    #if SANDBOX
+    func setupLauchParameters() {
+        if CommandLine.arguments.contains(LaunchArguments.skipOnboarding) {
+            UserDefaults.isOnboardingCompleted = true
+        } else if CommandLine.arguments.contains(LaunchArguments.launchOnboarding) {
+            UserDefaults.isOnboardingCompleted = false
+        }
+    }
+    #endif
 
     func setupPACECloudSDK() {
         PACECloudSDK.shared.setup(

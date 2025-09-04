@@ -3,6 +3,7 @@ import SwiftUI
 class ConsentUpdatePageViewModel: ObservableObject, Identifiable {
     let title: String
     let description: String
+    let accessibilityString: String
 
     @Published var pageActions: [OnboardingPageAction]
 
@@ -14,9 +15,11 @@ class ConsentUpdatePageViewModel: ObservableObject, Identifiable {
 
     init(title: String,
          description: String,
+         accessibilityString: String = "",
          pageActions: [OnboardingPageAction] = []) {
         self.title = title
         self.description = description
+        self.accessibilityString = accessibilityString
         self.pageActions = pageActions
 
         setupPageActions()

@@ -35,6 +35,7 @@ struct ConsentUpdatePageView: View {
                     .font(.system(size: 20, weight: .bold))
                     .padding(.top, .paddingM)
                     .padding(.horizontal, .paddingM)
+                    .accessibilityIdentifier(viewModel.accessibilityString)
                 TextLabel(viewModel.description, alignment: .center)
                     .font(.system(size: 16, weight: .regular))
                     .padding([.horizontal, .top], .paddingM)
@@ -51,6 +52,7 @@ struct ConsentUpdatePageView: View {
                              style: pageAction == viewModel.pageActions.first ? .primary : .secondary,
                              action: pageAction.action)
                 .padding(.horizontal, .paddingM)
+                .accessibilityIdentifier(pageAction.accessibilityString)
             }
         }
     }

@@ -22,7 +22,7 @@ class OnboardingAuthorizationPageViewModel: OnboardingPageViewModel {
             .init(title: L10n.onboardingAuthenticationAction, action: { [weak self] in
                 guard let rootView = self?.rootView else { return }
                 self?.authorize(rootView: rootView)
-            })
+            }, accessibilityString: AccessibilityIdentifiers.onboardingAuthenticationAction)
         ]
     }
 
