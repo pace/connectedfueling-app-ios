@@ -78,6 +78,17 @@ unit_test:
     variables:
       - $CI_COMMIT_MESSAGE =~ /WIP/
 
+### UI Tests
+ui_tests:
+  extends: .base_template
+  stage: test
+  script:
+    - bundle exec fastlane ui_tests --env sandbox
+  <<: *only_merge_requests
+  except:
+    variables:
+      - $CI_COMMIT_MESSAGE =~ /WIP/
+
 ### Review
 build_review:
   extends: .base_template
