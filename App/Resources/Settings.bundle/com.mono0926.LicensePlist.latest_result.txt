@@ -1,106 +1,130 @@
-name: abseil-cpp-binary, nameSpecified: abseil, owner: google, version: 1.2024011601.1, source: https://github.com/google/abseil-cpp-binary
+name: abseil-cpp-binary, nameSpecified: abseil, owner: google, version: 1.2024072200.0, source: https://github.com/google/abseil-cpp-binary
 
-name: app-check, nameSpecified: AppCheck, owner: google, version: 10.19.1, source: https://github.com/google/app-check
+name: app-check, nameSpecified: AppCheck, owner: google, version: 11.2.0, source: https://github.com/google/app-check
 
 name: AppAuth-iOS, nameSpecified: AppAuth, owner: pace, version: 1.5.0, source: https://github.com/pace/AppAuth-iOS
 
-name: cloud-sdk-ios, nameSpecified: PACECloudSDK, owner: pace, version: 25.0.0, source: https://github.com/pace/cloud-sdk-ios
+name: cloud-sdk-ios, nameSpecified: PACECloudSDK, owner: pace, version: 25.1.1, source: https://github.com/pace/cloud-sdk-ios
 
 name: CollectionConcurrencyKit, nameSpecified: CollectionConcurrencyKit, owner: JohnSundell, version: 0.2.0, source: https://github.com/JohnSundell/CollectionConcurrencyKit
 
-name: CryptoSwift, nameSpecified: CryptoSwift, owner: krzyzanowskim, version: 1.8.4, source: https://github.com/krzyzanowskim/CryptoSwift
+name: CryptoSwift, nameSpecified: CryptoSwift, owner: krzyzanowskim, version: 1.9.0, source: https://github.com/krzyzanowskim/CryptoSwift
 
-name: firebase-ios-sdk, nameSpecified: Firebase, owner: firebase, version: 10.27.0, source: https://github.com/firebase/firebase-ios-sdk
+name: firebase-ios-sdk, nameSpecified: Firebase, owner: firebase, version: 12.4.0, source: https://github.com/firebase/firebase-ios-sdk
 
-name: GoogleAppMeasurement, nameSpecified: GoogleAppMeasurement, owner: google, version: 10.27.0, source: https://github.com/google/GoogleAppMeasurement
+name: google-ads-on-device-conversion-ios-sdk, nameSpecified: GoogleAdsOnDeviceConversion, owner: googleads, version: 3.1.0, source: https://github.com/googleads/google-ads-on-device-conversion-ios-sdk
 
-name: GoogleDataTransport, nameSpecified: GoogleDataTransport, owner: google, version: 9.4.0, source: https://github.com/google/GoogleDataTransport
+name: GoogleAppMeasurement, nameSpecified: GoogleAppMeasurement, owner: google, version: 12.4.0, source: https://github.com/google/GoogleAppMeasurement
 
-name: GoogleUtilities, nameSpecified: GoogleUtilities, owner: google, version: 7.13.3, source: https://github.com/google/GoogleUtilities
+name: GoogleDataTransport, nameSpecified: GoogleDataTransport, owner: google, version: 10.1.0, source: https://github.com/google/GoogleDataTransport
 
-name: grpc-binary, nameSpecified: gRPC, owner: google, version: 1.62.2, source: https://github.com/google/grpc-binary
+name: GoogleUtilities, nameSpecified: GoogleUtilities, owner: google, version: 8.1.0, source: https://github.com/google/GoogleUtilities
 
-name: gtm-session-fetcher, nameSpecified: gtm-session-fetcher, owner: google, version: 3.1.1, source: https://github.com/google/gtm-session-fetcher
+name: grpc-binary, nameSpecified: gRPC, owner: google, version: 1.69.1, source: https://github.com/google/grpc-binary
 
-name: interop-ios-for-google-sdks, nameSpecified: InteropForGoogle, owner: google, version: 100.0.0, source: https://github.com/google/interop-ios-for-google-sdks
+name: gtm-session-fetcher, nameSpecified: gtm-session-fetcher, owner: google, version: 5.0.0, source: https://github.com/google/gtm-session-fetcher
+
+name: IkigaJSON, nameSpecified: IkigaJSON, owner: Ikiga, version: 2.3.2, source: https://github.com/Ikiga/IkigaJSON
+
+name: interop-ios-for-google-sdks, nameSpecified: InteropForGoogle, owner: google, version: 101.0.0, source: https://github.com/google/interop-ios-for-google-sdks
 
 name: Japx, nameSpecified: Japx, owner: pace, version: 5.0.0, source: https://github.com/pace/Japx
 
 name: leveldb, nameSpecified: leveldb, owner: firebase, version: 1.22.2, source: https://github.com/firebase/leveldb
 
-name: nanopb, nameSpecified: nanopb, owner: firebase, version: 2.30909.0, source: https://github.com/firebase/nanopb
+name: nanopb, nameSpecified: nanopb, owner: firebase, version: 2.30910.0, source: https://github.com/firebase/nanopb
 
-name: promises, nameSpecified: Promises, owner: google, version: 2.3.1, source: https://github.com/google/promises
+name: promises, nameSpecified: Promises, owner: google, version: 2.4.0, source: https://github.com/google/promises
 
-name: sentry-cocoa, nameSpecified: Sentry, owner: getsentry, version: 8.36.0, source: https://github.com/getsentry/sentry-cocoa
+name: sentry-cocoa, nameSpecified: Sentry, owner: getsentry, version: 8.56.2, source: https://github.com/getsentry/sentry-cocoa
 
-name: SourceKitten, nameSpecified: SourceKitten, owner: jpsim, version: 0.35.0, source: https://github.com/jpsim/SourceKitten
+name: SourceKitten, nameSpecified: SourceKitten, owner: jpsim, version: 0.37.2, source: https://github.com/jpsim/SourceKitten
 
-name: swift-argument-parser, nameSpecified: swift-argument-parser, owner: apple, version: 1.2.3, source: https://github.com/apple/swift-argument-parser
+name: swift-argument-parser, nameSpecified: swift-argument-parser, owner: apple, version: 1.6.2, source: https://github.com/apple/swift-argument-parser
+
+name: swift-atomics, nameSpecified: swift-atomics, owner: apple, version: 1.3.0, source: https://github.com/apple/swift-atomics
+
+name: swift-collections, nameSpecified: swift-collections, owner: apple, version: 1.3.0, source: https://github.com/apple/swift-collections
+
+name: swift-nio, nameSpecified: swift-nio, owner: apple, version: 2.86.2, source: https://github.com/apple/swift-nio
 
 name: swift-protobuf, nameSpecified: SwiftProtobuf, owner: apple, version: 1.22.0, source: https://github.com/apple/swift-protobuf
 
-name: swift-syntax, nameSpecified: swift-syntax, owner: swiftlang, version: 600.0.0, source: https://github.com/swiftlang/swift-syntax
+name: swift-syntax, nameSpecified: swift-syntax, owner: swiftlang, version: 603.0.0-prerelease-2025-09-15, source: https://github.com/swiftlang/swift-syntax
 
-name: SwiftLint, nameSpecified: SwiftLint, owner: realm, version: 0.58.2, source: https://github.com/realm/SwiftLint
+name: swift-system, nameSpecified: swift-system, owner: apple, version: 1.6.3, source: https://github.com/apple/swift-system
+
+name: SwiftLint, nameSpecified: SwiftLint, owner: realm, version: 0.62.1, source: https://github.com/realm/SwiftLint
 
 name: SwiftyTextTable, nameSpecified: SwiftyTextTable, owner: scottrhoyt, version: 0.9.0, source: https://github.com/scottrhoyt/SwiftyTextTable
 
 name: SWXMLHash, nameSpecified: SWXMLHash, owner: drmohundro, version: 7.0.2, source: https://github.com/drmohundro/SWXMLHash
 
-name: Yams, nameSpecified: Yams, owner: jpsim, version: 5.1.2, source: https://github.com/jpsim/Yams
+name: Yams, nameSpecified: Yams, owner: jpsim, version: 6.2.0, source: https://github.com/jpsim/Yams
 
-name: abseil-cpp-binary, nameSpecified: abseil, owner: google, version: 1.2024011601.1, source: https://github.com/google/abseil-cpp-binary
+name: abseil-cpp-binary, nameSpecified: abseil, owner: google, version: 1.2024072200.0, source: https://github.com/google/abseil-cpp-binary
 
-name: app-check, nameSpecified: AppCheck, owner: google, version: 10.19.1, source: https://github.com/google/app-check
+name: app-check, nameSpecified: AppCheck, owner: google, version: 11.2.0, source: https://github.com/google/app-check
 
 name: AppAuth-iOS, nameSpecified: AppAuth, owner: pace, version: 1.5.0, source: https://github.com/pace/AppAuth-iOS
 
-name: cloud-sdk-ios, nameSpecified: PACECloudSDK, owner: pace, version: 25.0.0, source: https://github.com/pace/cloud-sdk-ios
+name: cloud-sdk-ios, nameSpecified: PACECloudSDK, owner: pace, version: 25.1.1, source: https://github.com/pace/cloud-sdk-ios
 
 name: CollectionConcurrencyKit, nameSpecified: CollectionConcurrencyKit, owner: JohnSundell, version: 0.2.0, source: https://github.com/JohnSundell/CollectionConcurrencyKit
 
-name: CryptoSwift, nameSpecified: CryptoSwift, owner: krzyzanowskim, version: 1.8.4, source: https://github.com/krzyzanowskim/CryptoSwift
+name: CryptoSwift, nameSpecified: CryptoSwift, owner: krzyzanowskim, version: 1.9.0, source: https://github.com/krzyzanowskim/CryptoSwift
 
-name: firebase-ios-sdk, nameSpecified: Firebase, owner: firebase, version: 10.27.0, source: https://github.com/firebase/firebase-ios-sdk
+name: firebase-ios-sdk, nameSpecified: Firebase, owner: firebase, version: 12.4.0, source: https://github.com/firebase/firebase-ios-sdk
 
-name: GoogleAppMeasurement, nameSpecified: GoogleAppMeasurement, owner: google, version: 10.27.0, source: https://github.com/google/GoogleAppMeasurement
+name: google-ads-on-device-conversion-ios-sdk, nameSpecified: GoogleAdsOnDeviceConversion, owner: googleads, version: 3.1.0, source: https://github.com/googleads/google-ads-on-device-conversion-ios-sdk
 
-name: GoogleDataTransport, nameSpecified: GoogleDataTransport, owner: google, version: 9.4.0, source: https://github.com/google/GoogleDataTransport
+name: GoogleAppMeasurement, nameSpecified: GoogleAppMeasurement, owner: google, version: 12.4.0, source: https://github.com/google/GoogleAppMeasurement
 
-name: GoogleUtilities, nameSpecified: GoogleUtilities, owner: google, version: 7.13.3, source: https://github.com/google/GoogleUtilities
+name: GoogleDataTransport, nameSpecified: GoogleDataTransport, owner: google, version: 10.1.0, source: https://github.com/google/GoogleDataTransport
 
-name: grpc-binary, nameSpecified: gRPC, owner: google, version: 1.62.2, source: https://github.com/google/grpc-binary
+name: GoogleUtilities, nameSpecified: GoogleUtilities, owner: google, version: 8.1.0, source: https://github.com/google/GoogleUtilities
 
-name: gtm-session-fetcher, nameSpecified: gtm-session-fetcher, owner: google, version: 3.1.1, source: https://github.com/google/gtm-session-fetcher
+name: grpc-binary, nameSpecified: gRPC, owner: google, version: 1.69.1, source: https://github.com/google/grpc-binary
 
-name: interop-ios-for-google-sdks, nameSpecified: InteropForGoogle, owner: google, version: 100.0.0, source: https://github.com/google/interop-ios-for-google-sdks
+name: gtm-session-fetcher, nameSpecified: gtm-session-fetcher, owner: google, version: 5.0.0, source: https://github.com/google/gtm-session-fetcher
+
+name: IkigaJSON, nameSpecified: IkigaJSON, owner: Ikiga, version: 2.3.2, source: https://github.com/Ikiga/IkigaJSON
+
+name: interop-ios-for-google-sdks, nameSpecified: InteropForGoogle, owner: google, version: 101.0.0, source: https://github.com/google/interop-ios-for-google-sdks
 
 name: Japx, nameSpecified: Japx, owner: pace, version: 5.0.0, source: https://github.com/pace/Japx
 
 name: leveldb, nameSpecified: leveldb, owner: firebase, version: 1.22.2, source: https://github.com/firebase/leveldb
 
-name: nanopb, nameSpecified: nanopb, owner: firebase, version: 2.30909.0, source: https://github.com/firebase/nanopb
+name: nanopb, nameSpecified: nanopb, owner: firebase, version: 2.30910.0, source: https://github.com/firebase/nanopb
 
-name: promises, nameSpecified: Promises, owner: google, version: 2.3.1, source: https://github.com/google/promises
+name: promises, nameSpecified: Promises, owner: google, version: 2.4.0, source: https://github.com/google/promises
 
-name: sentry-cocoa, nameSpecified: Sentry, owner: getsentry, version: 8.36.0, source: https://github.com/getsentry/sentry-cocoa
+name: sentry-cocoa, nameSpecified: Sentry, owner: getsentry, version: 8.56.2, source: https://github.com/getsentry/sentry-cocoa
 
-name: SourceKitten, nameSpecified: SourceKitten, owner: jpsim, version: 0.35.0, source: https://github.com/jpsim/SourceKitten
+name: SourceKitten, nameSpecified: SourceKitten, owner: jpsim, version: 0.37.2, source: https://github.com/jpsim/SourceKitten
 
-name: swift-argument-parser, nameSpecified: swift-argument-parser, owner: apple, version: 1.2.3, source: https://github.com/apple/swift-argument-parser
+name: swift-argument-parser, nameSpecified: swift-argument-parser, owner: apple, version: 1.6.2, source: https://github.com/apple/swift-argument-parser
+
+name: swift-atomics, nameSpecified: swift-atomics, owner: apple, version: 1.3.0, source: https://github.com/apple/swift-atomics
+
+name: swift-collections, nameSpecified: swift-collections, owner: apple, version: 1.3.0, source: https://github.com/apple/swift-collections
+
+name: swift-nio, nameSpecified: swift-nio, owner: apple, version: 2.86.2, source: https://github.com/apple/swift-nio
 
 name: swift-protobuf, nameSpecified: SwiftProtobuf, owner: apple, version: 1.22.0, source: https://github.com/apple/swift-protobuf
 
-name: swift-syntax, nameSpecified: swift-syntax, owner: swiftlang, version: 600.0.0, source: https://github.com/swiftlang/swift-syntax
+name: swift-syntax, nameSpecified: swift-syntax, owner: swiftlang, version: 603.0.0-prerelease-2025-09-15, source: https://github.com/swiftlang/swift-syntax
 
-name: SwiftLint, nameSpecified: SwiftLint, owner: realm, version: 0.58.2, source: https://github.com/realm/SwiftLint
+name: swift-system, nameSpecified: swift-system, owner: apple, version: 1.6.3, source: https://github.com/apple/swift-system
+
+name: SwiftLint, nameSpecified: SwiftLint, owner: realm, version: 0.62.1, source: https://github.com/realm/SwiftLint
 
 name: SwiftyTextTable, nameSpecified: SwiftyTextTable, owner: scottrhoyt, version: 0.9.0, source: https://github.com/scottrhoyt/SwiftyTextTable
 
 name: SWXMLHash, nameSpecified: SWXMLHash, owner: drmohundro, version: 7.0.2, source: https://github.com/drmohundro/SWXMLHash
 
-name: Yams, nameSpecified: Yams, owner: jpsim, version: 5.1.2, source: https://github.com/jpsim/Yams
+name: Yams, nameSpecified: Yams, owner: jpsim, version: 6.2.0, source: https://github.com/jpsim/Yams
 
 add-version-numbers: true
 
