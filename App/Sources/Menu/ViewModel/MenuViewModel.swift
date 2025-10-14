@@ -66,7 +66,7 @@ class MenuViewModel: NSObject, ObservableObject {
                                                )))
                 return listItem
             } else {
-                let errorMessage = "[MenuViewModel] No HTML string and URL string \(menuItem.url) of menu item \(menuItem.name) for language \(menuItem.languageCode) is not a valid URL."
+                let errorMessage = "[MenuViewModel] No HTML string and URL string \(menuItem.url ?? "Missing url") of menu item \(menuItem.name) for language \(menuItem.languageCode) is not a valid URL."
                 logError(errorMessage)
                 return nil
             }

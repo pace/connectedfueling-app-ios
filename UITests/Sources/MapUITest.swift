@@ -1,5 +1,3 @@
-// Copyright © 2025 PACE Telematics GmbH. All rights reserved.
-
 import XCTest
 
 class MapUITest: TestBase {

@@ -93,7 +93,7 @@ struct ContentView: View {
 
     private func consentUpdatePages() async -> ConsentUpdateViewModel.ConsentUpdatePages {
         var pages: ConsentUpdateViewModel.ConsentUpdatePages = []
-        var consentStatuses = await consentManager.checkForUpdates()
+        let consentStatuses = await consentManager.checkForUpdates()
 
         guard let consentStatuses = consentStatuses else {
             return pages

@@ -25,8 +25,7 @@ struct POIManager {
             var gasStations: [GasStation] = []
 
             for poiStation in poiStations where poiStation.isConnectedFuelingAvailable {
-                guard let poiStationId = poiStation.id,
-                      let gasStation = self.makeGasStation(for: poiStation,
+                guard let gasStation = self.makeGasStation(for: poiStation,
                                                            selectedFuelType: selectedFuelType,
                                                            location: location) else { continue }
 

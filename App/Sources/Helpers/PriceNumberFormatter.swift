@@ -1,6 +1,6 @@
 import SwiftUI
 
-class PriceNumberFormatter: NumberFormatter {
+class PriceNumberFormatter: NumberFormatter, @unchecked Sendable {
 
     private var _formatString: String = "d.dds" {
         didSet {
