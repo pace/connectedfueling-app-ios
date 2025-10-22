@@ -29,8 +29,6 @@ struct PriceCardView: View {
 #Preview {
     Group {
         PriceCardView(title: "Super", priceText: "1,699€")
-            .previewLayout(.sizeThatFits)
         PriceCardView(title: "Super Premium", priceText: "9,999€")
-            .previewLayout(.sizeThatFits)
     }
 }

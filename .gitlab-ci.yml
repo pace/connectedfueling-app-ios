@@ -35,7 +35,7 @@ before_script:
 
 .runner_tags:
   tags:
-    - ios
+    - m1-xcode-26
 
 .base_template:
   extends: .runner_tags

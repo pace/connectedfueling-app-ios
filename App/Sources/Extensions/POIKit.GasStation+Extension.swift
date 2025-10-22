@@ -1,5 +1,3 @@
-// Copyright © 2024 PACE Telematics GmbH. All rights reserved.
-
 import PACECloudSDK
 
 extension POIKit.GasStation {

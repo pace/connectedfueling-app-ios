@@ -94,7 +94,7 @@ extension AnalyticsManager.FirebaseService: InAppMessagingDisplayDelegate {
     }
 
     func messageDismissed(_ inAppMessage: InAppMessagingDisplayMessage,
-                          dismissType: FIRInAppMessagingDismissType) {
+                          dismissType: InAppMessagingDismissType) {
         CofuLogger.i("[FirebaseMessagingService] In-App-Message dismissed")
     }
 
