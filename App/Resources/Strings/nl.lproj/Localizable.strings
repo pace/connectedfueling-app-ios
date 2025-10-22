@@ -107,6 +107,8 @@
 "legal_update_tracking_title" = "De gebruiksanalyse is veranderd";
 "list_price_not_available" = "Prijs niet beschikbaar";
 "list_tab_label" = "Lijst";
+"managed_payment_methods_empty_description" = "Neem contact op met uw wagenparkbeheerder om een tankkaart te kunnen gebruiken.";
+"managed_payment_methods_empty_title" = "Nog geen tankkaart beschikbaar";
 "map_tab_label" = "Kaart";
 "menu_items_analytics" = "Gebruiksanalyse";
 "menu_items_permissions" = "Toestemmingen";

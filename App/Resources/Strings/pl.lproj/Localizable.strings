@@ -107,6 +107,8 @@
 "legal_update_tracking_title" = "Analiza użytkowania uległa zmianie";
 "list_price_not_available" = "Cena niedostępna";
 "list_tab_label" = "Lista";
+"managed_payment_methods_empty_description" = "Aby móc korzystać z karty paliwowej, należy skontaktować się z menedżerem floty.";
+"managed_payment_methods_empty_title" = "Karta paliwowa nie jest jeszcze dostępna";
 "map_tab_label" = "Mapa";
 "menu_items_analytics" = "Analiza wykorzystania";
 "menu_items_permissions" = "Uprawnienia";

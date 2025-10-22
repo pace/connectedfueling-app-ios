@@ -107,6 +107,8 @@
 "legal_update_tracking_title" = "Analýza použití se změnila";
 "list_price_not_available" = "Cena není k dispozici";
 "list_tab_label" = "Seznam";
+"managed_payment_methods_empty_description" = "Chcete-li používat palivovou kartu, obraťte se na správce vozového parku.";
+"managed_payment_methods_empty_title" = "Zatím není k dispozici žádná palivová karta";
 "map_tab_label" = "Mapa";
 "menu_items_analytics" = "Analýza využití";
 "menu_items_permissions" = "Oprávnění";
