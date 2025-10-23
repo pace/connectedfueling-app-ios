@@ -107,6 +107,8 @@
 "legal_update_tracking_title" = "L'analisi dell'utilizzo è cambiata";
 "list_price_not_available" = "Prezzo non disponibile";
 "list_tab_label" = "Elenco";
+"managed_payment_methods_empty_description" = "Per poter utilizzare una carta carburante, contattare il responsabile della flotta.";
+"managed_payment_methods_empty_title" = "Non è ancora disponibile una carta carburante";
 "map_tab_label" = "Mappa";
 "menu_items_analytics" = "Analisi dell'utilizzo";
 "menu_items_permissions" = "Permessi";

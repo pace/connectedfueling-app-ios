@@ -107,6 +107,8 @@
 "legal_update_tracking_title" = "A análise de utilização foi alterada";
 "list_price_not_available" = "Preço não disponível";
 "list_tab_label" = "Lista";
+"managed_payment_methods_empty_description" = "Contacte o seu gestor de frota para poder utilizar um cartão de combustível.";
+"managed_payment_methods_empty_title" = "Ainda não está disponível nenhum cartão de combustível";
 "map_tab_label" = "Mapa";
 "menu_items_analytics" = "Análise de utilização";
 "menu_items_permissions" = "Permissões";

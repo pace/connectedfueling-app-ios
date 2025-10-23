@@ -166,6 +166,10 @@ internal enum L10n {
   internal static let listPriceNotAvailable = L10n.tr("Localizable", "list_price_not_available", fallback: "Price not available")
   /// List
   internal static let listTabLabel = L10n.tr("Localizable", "list_tab_label", fallback: "List")
+  /// Please contact your fleet manager to be able to use a fuel card.
+  internal static let managedPaymentMethodsEmptyDescription = L10n.tr("Localizable", "managed_payment_methods_empty_description", fallback: "Please contact your fleet manager to be able to use a fuel card.")
+  /// No fuel card available yet
+  internal static let managedPaymentMethodsEmptyTitle = L10n.tr("Localizable", "managed_payment_methods_empty_title", fallback: "No fuel card available yet")
   /// Map
   internal static let mapTabLabel = L10n.tr("Localizable", "map_tab_label", fallback: "Map")
   /// Usage analysis

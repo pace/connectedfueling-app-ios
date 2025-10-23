@@ -107,6 +107,8 @@
 "legal_update_tracking_title" = "Анализ использования изменился";
 "list_price_not_available" = "Цена недоступна";
 "list_tab_label" = "Список";
+"managed_payment_methods_empty_description" = "Чтобы получить возможность использовать топливную карту, обратитесь к менеджеру автопарка.";
+"managed_payment_methods_empty_title" = "Топливная карта пока не доступна";
 "map_tab_label" = "Карта";
 "menu_items_analytics" = "Анализ использования";
 "menu_items_permissions" = "Разрешения";

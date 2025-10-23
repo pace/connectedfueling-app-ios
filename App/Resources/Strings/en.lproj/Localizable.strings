@@ -107,6 +107,8 @@
 "legal_update_tracking_title" = "The usage analysis has changed";
 "list_price_not_available" = "Price not available";
 "list_tab_label" = "List";
+"managed_payment_methods_empty_description" = "Please contact your fleet manager to be able to use a fuel card.";
+"managed_payment_methods_empty_title" = "No fuel card available yet";
 "map_tab_label" = "Map";
 "menu_items_analytics" = "Usage analysis";
 "menu_items_permissions" = "Permissions";

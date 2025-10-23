@@ -107,6 +107,8 @@
 "legal_update_tracking_title" = "Analiza utilizării s-a schimbat";
 "list_price_not_available" = "Prețul nu este disponibil";
 "list_tab_label" = "Lista";
+"managed_payment_methods_empty_description" = "Vă rugăm să contactați managerul flotei pentru a putea utiliza un card de combustibil.";
+"managed_payment_methods_empty_title" = "Cardul de combustibil nu este încă disponibil";
 "map_tab_label" = "Hartă";
 "menu_items_analytics" = "Analiza utilizării";
 "menu_items_permissions" = "Permisiuni";

@@ -7,9 +7,17 @@ class PaymentMethodsViewModel: ObservableObject {
     @Published var paymentAppUrlString: String?
     private(set) var isNativePaymentMethodOnboardingEnabled: Bool
 
-    let emptyPaymentMethodsError: AppError = .init(title: L10n.paymentMethodsEmptyTitle,
-                                                   description: L10n.paymentMethodsEmptyDescription,
-                                                   icon: .image(.walletTabIcon.renderingMode(.template)))
+    var emptyPaymentMethodsError: AppError {
+        if isNativePaymentMethodOnboardingEnabled {
+            return .init(title: L10n.paymentMethodsEmptyTitle,
+                        description: L10n.paymentMethodsEmptyDescription,
+                        icon: .image(.walletTabIcon.renderingMode(.template)))
+        } else {
+            return .init(title: L10n.managedPaymentMethodsEmptyTitle,
+                        description: L10n.managedPaymentMethodsEmptyDescription,
+                        icon: .image(.walletTabIcon.renderingMode(.template)))
+        }
+    }
 
     private let paymentManager: PaymentManager
 

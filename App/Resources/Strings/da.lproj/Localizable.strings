@@ -107,6 +107,8 @@
 "legal_update_tracking_title" = "Brugsanalysen har ændret sig";
 "list_price_not_available" = "Pris ikke tilgængelig";
 "list_tab_label" = "Liste";
+"managed_payment_methods_empty_description" = "Kontakt din flådechef for at få mulighed for at bruge et brændstofkort.";
+"managed_payment_methods_empty_title" = "Intet brændstofkort tilgængeligt endnu";
 "map_tab_label" = "Kort";
 "menu_items_analytics" = "Analyse af udnyttelse";
 "menu_items_permissions" = "Tilladelser";
