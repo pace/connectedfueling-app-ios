@@ -32,7 +32,7 @@ struct GasStationListView: View {
                         viewModel.viewWillAppear()
                     }
             } else if let stations = viewModel.stations {
-                    list(of: stations)
+                list(of: stations)
             } else {
                 loadingView
                     .onAppear {
@@ -64,6 +64,12 @@ struct GasStationListView: View {
     @ViewBuilder
     private func list(of stations: [GasStation]) -> some View {
         List {
+            if let error = viewModel.noPaymentMethodError {
+                ErrorView(error)
+                    .listRowInsets(.init(top: 5, leading: 25, bottom: 10, trailing: 25))
+                    .listRowSeparator(.hidden)
+                    .listRowBackground(Color.clear)
+            }
             ForEach(stations, id: \.self) { gasStation in
                 GasStationListItemView(viewModel: .init(listViewModel: viewModel,
                                                         gasStation: gasStation,
