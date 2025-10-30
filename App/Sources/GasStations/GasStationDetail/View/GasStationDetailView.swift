@@ -13,6 +13,7 @@ struct IdentifiablePlace: Identifiable {
 
 struct GasStationDetailView: View {
     @ObservedObject private var viewModel: GasStationDetailViewModel
+    @State var isFullScreenViewVisible = false
 
     init(viewModel: GasStationDetailViewModel) {
         self.viewModel = viewModel
@@ -38,6 +39,24 @@ struct GasStationDetailView: View {
                 } message: {
                     Text(viewModel.fuelingPrecondition?.description ?? "")
                 }
+                .fullScreenCover(item: $viewModel.error){ _ in
+                    if let error = viewModel.error {
+                        errorView(with: error)
+                            .background(TransparentBackground())
+                            .onAppear {
+                                isFullScreenViewVisible = true
+                            }
+                            .onDisappear {
+                                isFullScreenViewVisible = false
+                            }
+                    }
+                }
+                .transaction({ transaction in
+                    if viewModel.error != nil || isFullScreenViewVisible{
+                        // disable the default FullScreenCover animation
+                        transaction.disablesAnimations = true
+                    }
+                })
     }
 
     @ViewBuilder
@@ -54,6 +73,16 @@ struct GasStationDetailView: View {
             button
         }
         .padding(.paddingM)
+    }
+    
+    @ViewBuilder
+    private func errorView(with error: AppError) -> some View {
+        VStack {
+            Spacer()
+            ErrorView(error)
+                .padding(.horizontal, .paddingM)
+            Spacer()
+        }
     }
 
     @ViewBuilder

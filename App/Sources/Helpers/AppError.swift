@@ -1,6 +1,8 @@
 import SwiftUI
 
-struct AppError {
+struct AppError: Identifiable {
+    var id: UUID
+    
     let title: String
     let description: String?
     let icon: Icon
@@ -10,6 +12,7 @@ struct AppError {
          description: String? = nil,
          icon: Icon = .imageResource(.errorIcon),
          retryAction: RetryAction? = nil) {
+        self.id = UUID()
         self.title = title
         self.description = description
         self.icon = icon

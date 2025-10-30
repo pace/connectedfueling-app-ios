@@ -2,6 +2,7 @@ import SwiftUI
 
 struct GasStationListItemView: View {
     @ObservedObject private var viewModel: GasStationListItemViewModel
+    @State var isFullScreenViewVisible = false
 
     init(viewModel: GasStationListItemViewModel) {
         self.viewModel = viewModel
@@ -24,6 +25,24 @@ struct GasStationListItemView: View {
                 } message: {
                     Text(viewModel.fuelingPrecondition?.description ?? "")
                 }
+            .fullScreenCover(item: $viewModel.error){ _ in
+                if let error = viewModel.error {
+                    errorView(with: error)
+                        .background(TransparentBackground())
+                        .onAppear {
+                            isFullScreenViewVisible = true
+                        }
+                        .onDisappear {
+                            isFullScreenViewVisible = false
+                        }
+                }
+            }
+            .transaction({ transaction in
+                if viewModel.error != nil || isFullScreenViewVisible{
+                    // disable the default FullScreenCover animation
+                    transaction.disablesAnimations = true
+                }
+            })
     }
 
     @ViewBuilder
@@ -87,6 +106,16 @@ struct GasStationListItemView: View {
         }
                      .buttonStyle(.plain)
                      .padding(.bottom, viewModel.isClosingSoon ? .paddingXXS : .paddingS)
+    }
+    
+    @ViewBuilder
+    private func errorView(with error: AppError) -> some View {
+        VStack {
+            Spacer()
+            ErrorView(error)
+                .padding(.horizontal, .paddingM)
+            Spacer()
+        }
     }
 
     @ViewBuilder
@@ -234,4 +263,22 @@ struct GasStationListItemView: View {
                                                                   fuelingURL: nil)))
     }
     .padding(.paddingM)
+}
+
+struct TransparentBackground: UIViewRepresentable {
+
+    func makeUIView(context: Context) -> UIView {
+        let view = UIView()
+        DispatchQueue.main.async {
+            view.superview?.superview?.backgroundColor = .black.withAlphaComponent(0.5)
+        }
+        return view
+    }
+
+    func updateUIView(_ uiView: UIView, context: Context) {}
+}
+struct TransparentBackgroundWrapper: View {
+    var body: some View {
+        Color.black.opacity(0.5).ignoresSafeArea()
+    }
 }
