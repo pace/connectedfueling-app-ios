@@ -5,6 +5,7 @@ import SwiftUI
 class GasStationListViewModel: ObservableObject {
     @Published var stations: [GasStation]?
     @Published var error: AppError?
+    @Published var noPaymentMethodError: AppError?
     @Published var selectedFuelingUrlString: String?
 
     private var currentLocation: CLLocation?
@@ -13,6 +14,7 @@ class GasStationListViewModel: ObservableObject {
     private let poiManager: POIManager
     private let locationManager: LocationManager
     private let analyticsManager: AnalyticsManager
+    private let paymentManager: PaymentManager
 
     let style: ConfigurationManager.Configuration.GasStationListStyle
 
@@ -20,17 +22,21 @@ class GasStationListViewModel: ObservableObject {
          stations: [GasStation]? = nil,
          poiManager: POIManager = .init(),
          analyticsManager: AnalyticsManager = .init(),
-         locationManager: LocationManager = .shared) {
+         locationManager: LocationManager = .shared,
+         paymentManager: PaymentManager = .init()) {
         self.style = configuration.gasStationListStyle
         self.stations = stations
         self.poiManager = poiManager
         self.locationManager = locationManager
         self.analyticsManager = analyticsManager
+        self.paymentManager = paymentManager
 
         self.locationManager.subscribe(self)
     }
 
     func viewWillAppear() {
+        checkPaymentMethodAvailability()
+
         guard locationManager.currentLocationPermissionStatus == .authorized else {
             error = .locationError
             return
@@ -39,7 +45,12 @@ class GasStationListViewModel: ObservableObject {
         locationManager.startUpdatingLocation()
     }
 
-    func reloadCofuStations() {
+    func reload() {
+        checkPaymentMethodAvailability()
+        reloadCofuStations()
+    }
+
+    private func reloadCofuStations() {
         guard let currentLocation = currentLocation else { return }
         fetchCofuStations(at: currentLocation)
     }
@@ -75,6 +86,21 @@ class GasStationListViewModel: ObservableObject {
         }
     }
 
+    private func checkPaymentMethodAvailability() {
+        Task { @MainActor [weak self] in
+            let hasPaymentMehtod = (try? await self?.paymentManager.hasPaymentMethods().get()) ?? false
+
+            if hasPaymentMehtod {
+                self?.noPaymentMethodError = nil
+            } else {
+                let nativeEnabled = await self?.paymentManager.isNativePaymentMethodOnboardingEnabled()
+                self?.noPaymentMethodError = .init(title: nativeEnabled == true ? L10n.paymentMethodsEmptyTitle : L10n.managedPaymentMethodsEmptyTitle,
+                                                   description: nativeEnabled == true ? L10n.paymentMethodsEmptyDescription : L10n.managedPaymentMethodsEmptyDescription,
+                                                   icon: .imageResource(.errorIcon))
+            }
+        }
+    }
+
     private func handleError(_ error: Error) {
         switch error {
         case let poiKitError as POIKit.POIKitAPIError:
@@ -103,7 +129,7 @@ class GasStationListViewModel: ObservableObject {
               description: L10n.Home.loadingFailedText,
               retryAction: .init(title: L10n.commonUseRetry,
                                  action: { [weak self] in
-            self?.reloadCofuStations()
+            self?.reload()
         }))
     }
 }
