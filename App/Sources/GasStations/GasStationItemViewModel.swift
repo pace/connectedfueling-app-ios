@@ -17,6 +17,7 @@ class GasStationItemViewModel: ObservableObject {
     @Published var showFuelingPreconditionAlert: Bool = false
     @Published var fuelingUrlString: String?
     @Published var gasStation: GasStation
+    @Published var error: AppError?
 
     let analyticsManager: AnalyticsManager
 
@@ -90,11 +91,18 @@ class GasStationItemViewModel: ObservableObject {
 
     var fuelingPrecondition: FuelingPrecondition?
     var fuelingPreconditionAction: (() -> Void)?
+    
+    var hasPaymentMethods: Bool = false
 
     init(gasStation: GasStation, analyticsManager: AnalyticsManager = .init()) {
         self.gasStation = gasStation
         self.priceFormatter = PriceNumberFormatter(with: gasStation.prices.first?.format ?? Constants.GasStation.priceFormatFallback)
         self.analyticsManager = analyticsManager
+        Task {
+            let paymentManager = PaymentManager()
+            let result = await paymentManager.hasPaymentMethods()
+            self.hasPaymentMethods = (try? result.get()) ?? true
+        }
     }
 
     func didTapActionButton() {
@@ -112,8 +120,19 @@ class GasStationItemViewModel: ObservableObject {
     }
 
     private func startFueling() {
-        guard checkFuelingPreConditions() else { return }
-        startFuelingProcess()
+        // Perform any async payment checks within a Task to keep this API non-async
+        let isNativePaymentMethodOnboardingEnabled = UserDefaults.isNativePaymentMethodOnboardingEnabled
+        if !hasPaymentMethods {
+            // show alert
+            if isNativePaymentMethodOnboardingEnabled {
+                error = AppError(title: L10n.paymentMethodsEmptyTitle, description: L10n.paymentMethodsEmptyDescription, retryAction: AppError.RetryAction(title: L10n.commonUseOk, action: {self.error = nil}))
+            } else {
+                error = AppError(title: L10n.managedPaymentMethodsEmptyTitle, description: L10n.managedPaymentMethodsEmptyDescription, retryAction: AppError.RetryAction(title: L10n.commonUseOk, action: {self.error = nil}))
+            }
+        } else {
+            guard self.checkFuelingPreConditions() else { return }
+            self.startFuelingProcess()
+        }
     }
 
     private func startFuelingProcess() {
