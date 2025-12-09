@@ -2008,7 +2008,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-weak_framework",
+					SwiftUICore,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = car.pace.cofu;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "SANDBOX CRASHLYTICS SENTRY ANALYTICS";
@@ -2128,7 +2132,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-weak_framework",
+					SwiftUICore,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = car.pace.cofu;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "PRODUCTION CRASHLYTICS SENTRY ANALYTICS";
@@ -2255,7 +2263,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-weak_framework",
+					SwiftUICore,
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = car.pace.cofu;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEVELOPMENT CRASHLYTICS SENTRY ANALYTICS";
