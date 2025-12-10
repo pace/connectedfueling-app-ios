@@ -218,7 +218,7 @@ struct GasStationListItemView: View {
                                                                           rule: .open)
                                                                   ],
                                                                   country: "DE", 
-                                                                  fuelingURL: nil)))
+                                                                  fuelingURL: nil), hasPaymentMethods: true))
         GasStationListItemView(viewModel: .init(listViewModel: .init(),
                                                 gasStation: .init(id: "id",
                                                                   name: "MobyPay 3435",
@@ -239,7 +239,7 @@ struct GasStationListItemView: View {
                                                                   lastUpdated: Date(),
                                                                   openingHours: [],
                                                                   country: "DE", 
-                                                                  fuelingURL: nil)))
+                                                                  fuelingURL: nil), hasPaymentMethods: true))
         GasStationListItemView(viewModel: .init(listViewModel: .init(),
                                                 gasStation: .init(id: "id",
                                                                   name: "MobyPay 3435",
@@ -260,7 +260,7 @@ struct GasStationListItemView: View {
                                                                   lastUpdated: Date(),
                                                                   openingHours: [],
                                                                   country: "DE", 
-                                                                  fuelingURL: nil)))
+                                                                  fuelingURL: nil), hasPaymentMethods: true))
     }
     .padding(.paddingM)
 }
