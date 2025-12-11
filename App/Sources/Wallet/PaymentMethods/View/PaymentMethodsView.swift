@@ -13,6 +13,9 @@ struct PaymentMethodsView: View {
                 paymentMethodsList
             }
         }
+        .onAppear {
+            viewModel.fetchPaymentMethods()
+        }
     }
 
     @ViewBuilder

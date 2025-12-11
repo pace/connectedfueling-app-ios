@@ -28,16 +28,10 @@ struct GasStationListView: View {
                 .padding(.bottom, .paddingM)
             if let error = viewModel.error {
                 errorView(with: error)
-                    .onAppear {
-                        viewModel.viewWillAppear()
-                    }
             } else if let stations = viewModel.stations {
                 list(of: stations)
             } else {
                 loadingView
-                    .onAppear {
-                        viewModel.viewWillAppear()
-                    }
             }
         }
         .accessibilityElement(children: .ignore)
@@ -73,6 +67,7 @@ struct GasStationListView: View {
             ForEach(stations, id: \.self) { gasStation in
                 GasStationListItemView(viewModel: .init(listViewModel: viewModel,
                                                         gasStation: gasStation,
+                                                        hasPaymentMethods: viewModel.noPaymentMethodError == nil,
                                                         analyticsManager: analyticsManager))
             }
             .listRowInsets(.init(top: 0, leading: 25, bottom: 10, trailing: 25))

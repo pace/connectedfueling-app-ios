@@ -24,11 +24,9 @@ class PaymentMethodsViewModel: ObservableObject {
     init(paymentManager: PaymentManager = .init()) {
         self.paymentManager = paymentManager
         self.isNativePaymentMethodOnboardingEnabled = UserDefaults.isNativePaymentMethodOnboardingEnabled
-
-        fetchPaymentMethods()
     }
 
-    private func fetchPaymentMethods() {
+    func fetchPaymentMethods() {
         isLoading = true
         Task { @MainActor [weak self] in
             defer {

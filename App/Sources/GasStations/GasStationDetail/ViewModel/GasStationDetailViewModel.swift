@@ -40,6 +40,14 @@ class GasStationDetailViewModel: GasStationItemViewModel {
         self.openingHourRows = parseGasStationOpeningHours()
     }
 
+    func viewWillAppear() {
+        Task {
+            let paymentManager = PaymentManager()
+            let result = await paymentManager.hasPaymentMethods()
+            self.hasPaymentMethods = (try? result.get()) ?? true
+        }
+    }
+
     private func parseGasStationOpeningHours() -> [OpeningHourInfo] {
         let openingHoursViewValues: [(String, String)] = gasStation.poiOpeningHours.openingHours().toReadableStrings()
         let openingValues: [OpeningHourInfo] = openingHoursViewValues.map { .init(days: $0.0, hours: $0.1) }

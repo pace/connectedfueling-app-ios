@@ -94,15 +94,11 @@ class GasStationItemViewModel: ObservableObject {
     
     var hasPaymentMethods: Bool = false
 
-    init(gasStation: GasStation, analyticsManager: AnalyticsManager = .init()) {
+    init(gasStation: GasStation, hasPaymentMethods: Bool = true, analyticsManager: AnalyticsManager = .init()) {
         self.gasStation = gasStation
         self.priceFormatter = PriceNumberFormatter(with: gasStation.prices.first?.format ?? Constants.GasStation.priceFormatFallback)
         self.analyticsManager = analyticsManager
-        Task {
-            let paymentManager = PaymentManager()
-            let result = await paymentManager.hasPaymentMethods()
-            self.hasPaymentMethods = (try? result.get()) ?? true
-        }
+        self.hasPaymentMethods = hasPaymentMethods
     }
 
     func didTapActionButton() {

@@ -44,12 +44,13 @@ class GasStationListItemViewModel: GasStationItemViewModel {
 
     init(listViewModel: GasStationListViewModel,
          gasStation: GasStation,
+         hasPaymentMethods: Bool,
          poiManager: POIManager = .init(),
          analyticsManager: AnalyticsManager = .init()) {
         self.listViewModel = listViewModel
         self.poiManager = poiManager
 
-        super.init(gasStation: gasStation, analyticsManager: analyticsManager)
+        super.init(gasStation: gasStation, hasPaymentMethods: hasPaymentMethods, analyticsManager: analyticsManager)
 
         poiManager
             .formattedPricePublisher(gasStation: gasStation,

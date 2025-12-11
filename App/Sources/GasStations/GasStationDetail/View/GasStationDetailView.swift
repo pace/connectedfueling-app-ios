@@ -57,6 +57,9 @@ struct GasStationDetailView: View {
                         transaction.disablesAnimations = true
                     }
                 })
+                .onAppear {
+                    viewModel.viewWillAppear()
+                }
     }
 
     @ViewBuilder
