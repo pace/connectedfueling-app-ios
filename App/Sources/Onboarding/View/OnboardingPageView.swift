@@ -19,7 +19,7 @@ struct OnboardingPageView: View {
                         completion: viewModel.didDismissAppView)
             }
             .sheet(item: $viewModel.webView) { webView in
-                webView
+                WebSheetContainer(webView: webView)
             }
             .sheet(item: $viewModel.textInputViewModel) { textInputViewModel in
                 AppNavigationView {

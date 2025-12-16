@@ -98,7 +98,7 @@ private extension MenuViewModel {
         .init(icon: .menuTermsIcon,
               title: L10n.Menu.Items.terms,
               action: .presentedContent(AnyView(
-                WebView(htmlString: loadLegalHtmlString(kind: .terms))
+                WebSheetContainer(webView: WebView(htmlString: loadLegalHtmlString(kind: .terms)))
               )))
     }
 
@@ -106,7 +106,7 @@ private extension MenuViewModel {
         .init(icon: .menuDataPrivacyIcon,
               title: L10n.Menu.Items.privacy,
               action: .presentedContent(AnyView(
-                WebView(htmlString: loadLegalHtmlString(kind: .dataPrivacy))
+                WebSheetContainer(webView: WebView(htmlString: loadLegalHtmlString(kind: .dataPrivacy)))
               )))
     }
 
@@ -114,7 +114,7 @@ private extension MenuViewModel {
         .init(icon: .menuImprintIcon,
               title: L10n.Menu.Items.imprint,
               action: .presentedContent(AnyView(
-                WebView(htmlString: loadImprintHtmlString())
+                WebSheetContainer(webView: WebView(htmlString: loadImprintHtmlString()))
               )))
     }
 

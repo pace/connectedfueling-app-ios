@@ -11,7 +11,7 @@ struct ConsentUpdatePageView: View {
     var body: some View {
         content
             .sheet(item: $viewModel.webView) { webView in
-                webView
+                WebSheetContainer(webView: webView)
             }
     }
 
