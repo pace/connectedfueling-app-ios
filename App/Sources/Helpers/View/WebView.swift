@@ -29,7 +29,7 @@ struct WebView: UIViewRepresentable, Identifiable {
 struct WebSheetContainer: View {
     @Environment(\.dismiss) private var dismiss
     let webView: WebView // or the actual type of viewModel.webView
-
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -39,15 +39,14 @@ struct WebSheetContainer: View {
                     dismiss()
                 } label: {
                     Image(systemName: "xmark")
+                        .font(.system(size: 14, weight: .semibold))
+                        .foregroundStyle(.primary)
                 }
-                .background(Color.clear)
-                .buttonStyle(.plain) // keeps the floating look
+                .buttonStyle(FloatingCloseButtonStyle())
                 .accessibilityLabel("Close")
-                .font(.system(size: 14, weight: .semibold))
-                .foregroundStyle(.primary)
-                .padding(10)
-                .background(.ultraThinMaterial, in: Circle())
             }
+            
         }
     }
 }
+

@@ -207,6 +207,8 @@
 		F2BCB94B2E68513A00A962B8 /* MenuUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BCB9472E68513A00A962B8 /* MenuUITest.swift */; };
 		F2BCB94D2E68549C00A962B8 /* TestBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2BCB94C2E68549C00A962B8 /* TestBase.swift */; };
 		F2D4973A2EBCEB2F0076ADBC /* PACECloudSDK in Frameworks */ = {isa = PBXBuildFile; productRef = F2D497392EBCEB2F0076ADBC /* PACECloudSDK */; };
+		F2FBD6702EF55D4100985805 /* PACECloudSDK in Frameworks */ = {isa = PBXBuildFile; productRef = F21241D82EBC861A0055CDC0 /* PACECloudSDK */; };
+		F2FBD6742EF56BF200985805 /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FBD6732EF56BF200985805 /* FloatingButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -485,6 +487,7 @@
 		F2BCB9472E68513A00A962B8 /* MenuUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuUITest.swift; sourceTree = "<group>"; };
 		F2BCB9482E68513A00A962B8 /* WalletUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletUITest.swift; sourceTree = "<group>"; };
 		F2BCB94C2E68549C00A962B8 /* TestBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestBase.swift; sourceTree = "<group>"; };
+		F2FBD6732EF56BF200985805 /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -492,6 +495,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2FBD6702EF55D4100985805 /* PACECloudSDK in Frameworks */,
 				F2D4973A2EBCEB2F0076ADBC /* PACECloudSDK in Frameworks */,
 				CD7F7F5E2E9E554C00A530E2 /* FirebaseAnalytics in Frameworks */,
 				CD7F7F602E9E555700A530E2 /* FirebaseInAppMessaging-Beta in Frameworks */,
@@ -1050,6 +1054,7 @@
 		3BAE605C2AD677C0006EA9DD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F2FBD6732EF56BF200985805 /* FloatingButton.swift */,
 				3B6254DE2B0F9FEC008FAB25 /* List */,
 				3B5585282B188C82009E300B /* TextField */,
 				3BAE60722AD7CBC4006EA9DD /* ActionButton.swift */,
@@ -1743,6 +1748,7 @@
 				3B6254E02B0F9FF8008FAB25 /* ListView.swift in Sources */,
 				3B9562EE2B06002B00AD4184 /* WalletView.swift in Sources */,
 				9A00F22B2B0E56320050C7FA /* DistanceTagView.swift in Sources */,
+				F2FBD6742EF56BF200985805 /* FloatingButton.swift in Sources */,
 				3B819DCE2B06699900B4803A /* PaymentMethod.swift in Sources */,
 				3BDE7B2B2ADD1C0F009A88DF /* OnboardingViewModel.swift in Sources */,
 				3BDE7B4A2ADD7DC7009A88DF /* OnboardingTextInputType.swift in Sources */,
