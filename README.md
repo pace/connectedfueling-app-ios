@@ -44,6 +44,14 @@ The project is localized for following languages:
 * Romanian
 * Russian
 
+Managing the localized Strings is done via [Lokalise](https://lokalise.com).
+To automatically download and integrate the Strings into the project execute the script `./scripts/update_strings.sh`.
+
+**Requirements**:
+A local properties file `lokalise.properties` must be provided in the root directory of this repo. 
+The script reads the project ID and the Lokalise API token from the file to successfully download the localized Strings.
+The repo already contains an example file `lokalise.example.properties` that you can use. Simply add the Lokalise API token and remove `.example` from the file name.
+
 ## Environment/Build Configurations
 
 To use the app with different environments several build configurations are available:
