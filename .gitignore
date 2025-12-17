@@ -118,6 +118,6 @@ Temporary Items
 # iCloud generated files
 *.icloud
 
-### Env
-# Local .env file
+### Local files
 .env
+lokalise.properties
