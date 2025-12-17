@@ -88,15 +88,23 @@ class GasStationListViewModel: ObservableObject {
 
     private func checkPaymentMethodAvailability() {
         Task { @MainActor [weak self] in
-            let hasPaymentMehtod = (try? await self?.paymentManager.hasPaymentMethods().get()) ?? false
-
-            if hasPaymentMehtod {
+            let hasPaymentMethod = await self?.paymentManager.hasPaymentMethods()
+            switch hasPaymentMethod {
+            case .success(let paymentMethodsAvailable):
+                if paymentMethodsAvailable {
+                    self?.noPaymentMethodError = nil
+                } else {
+                    let nativeEnabled = await self?.paymentManager.isNativePaymentMethodOnboardingEnabled()
+                    self?.noPaymentMethodError = .init(title: nativeEnabled == true ? L10n.paymentMethodsEmptyTitle : L10n.managedPaymentMethodsEmptyTitle,
+                                                       description: nativeEnabled == true ? L10n.paymentMethodsEmptyDescription : L10n.managedPaymentMethodsEmptyDescription,
+                                                       icon: .imageResource(.errorIcon))
+                }
+            case .failure(let error):
+                CofuLogger.e("[GasStationListViewModel] Failed checking payment methods with error \(error)")
                 self?.noPaymentMethodError = nil
-            } else {
-                let nativeEnabled = await self?.paymentManager.isNativePaymentMethodOnboardingEnabled()
-                self?.noPaymentMethodError = .init(title: nativeEnabled == true ? L10n.paymentMethodsEmptyTitle : L10n.managedPaymentMethodsEmptyTitle,
-                                                   description: nativeEnabled == true ? L10n.paymentMethodsEmptyDescription : L10n.managedPaymentMethodsEmptyDescription,
-                                                   icon: .imageResource(.errorIcon))
+            case .none:
+                CofuLogger.e("[GasStationListViewModel] Failed checking payment methods with status .none")
+                self?.noPaymentMethodError = nil
             }
         }
     }
