@@ -19,8 +19,34 @@ struct WebView: UIViewRepresentable, Identifiable {
         webView.isOpaque = false
         webView.loadHTMLString(htmlString, baseURL: nil)
         webView.navigationDelegate = delegate
+        webView.scrollView.clipsToBounds = false
         return webView
     }
 
     func updateUIView(_ uiView: WKWebView, context: UIViewRepresentableContext<WebView>) {}
 }
+
+struct WebSheetContainer: View {
+    @Environment(\.dismiss) private var dismiss
+    let webView: WebView // or the actual type of viewModel.webView
+    
+    var body: some View {
+        NavigationView {
+            VStack {
+                webView
+            }.toolbar {
+                Button {
+                    dismiss()
+                } label: {
+                    Image(systemName: "xmark")
+                        .font(.system(size: 14, weight: .semibold))
+                        .foregroundStyle(.primary)
+                }
+                .buttonStyle(FloatingCloseButtonStyle())
+                .accessibilityLabel("Close")
+            }
+            
+        }
+    }
+}
+
