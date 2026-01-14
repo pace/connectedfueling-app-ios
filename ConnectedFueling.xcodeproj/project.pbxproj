@@ -209,6 +209,9 @@
 		F2D4973A2EBCEB2F0076ADBC /* PACECloudSDK in Frameworks */ = {isa = PBXBuildFile; productRef = F2D497392EBCEB2F0076ADBC /* PACECloudSDK */; };
 		F2FBD6702EF55D4100985805 /* PACECloudSDK in Frameworks */ = {isa = PBXBuildFile; productRef = F21241D82EBC861A0055CDC0 /* PACECloudSDK */; };
 		F2FBD6742EF56BF200985805 /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FBD6732EF56BF200985805 /* FloatingButton.swift */; };
+		F2FBD73D2F10E76F00985805 /* ClusterMapSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = F2FBD73C2F10E76F00985805 /* ClusterMapSwiftUI */; };
+		F2FBD73F2F14E5D300985805 /* ClusterMap in Frameworks */ = {isa = PBXBuildFile; productRef = F2FBD73E2F14E5D300985805 /* ClusterMap */; };
+		F2FBD8FF2F1FA81200985805 /* MapClusterAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FBD8FE2F1FA80800985805 /* MapClusterAnnotationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -488,6 +491,7 @@
 		F2BCB9482E68513A00A962B8 /* WalletUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletUITest.swift; sourceTree = "<group>"; };
 		F2BCB94C2E68549C00A962B8 /* TestBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestBase.swift; sourceTree = "<group>"; };
 		F2FBD6732EF56BF200985805 /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
+		F2FBD8FE2F1FA80800985805 /* MapClusterAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapClusterAnnotationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -497,8 +501,10 @@
 			files = (
 				F2FBD6702EF55D4100985805 /* PACECloudSDK in Frameworks */,
 				F2D4973A2EBCEB2F0076ADBC /* PACECloudSDK in Frameworks */,
+				F2FBD73F2F14E5D300985805 /* ClusterMap in Frameworks */,
 				CD7F7F5E2E9E554C00A530E2 /* FirebaseAnalytics in Frameworks */,
 				CD7F7F602E9E555700A530E2 /* FirebaseInAppMessaging-Beta in Frameworks */,
+				F2FBD73D2F10E76F00985805 /* ClusterMapSwiftUI in Frameworks */,
 				3BCD5F222B5FA4D100C67CF5 /* FirebaseMessaging in Frameworks */,
 				3B7764582AF91FFD00BE185B /* Sentry in Frameworks */,
 				3B77645B2AF922F700BE185B /* FirebaseCrashlytics in Frameworks */,
@@ -655,6 +661,7 @@
 		3B0CFF9C2B27435200EFC3ED /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F2FBD8FE2F1FA80800985805 /* MapClusterAnnotationView.swift */,
 				3BA6C4612B23205C00A109F5 /* MapAnnotationView.swift */,
 				3B0CFF9F2B27476800EFC3ED /* MapTopAnnotationView.swift */,
 				3B0CFF9D2B27475C00EFC3ED /* MapBottomAnnotationView.swift */,
@@ -1426,6 +1433,8 @@
 				CD7F7F5F2E9E555700A530E2 /* FirebaseInAppMessaging-Beta */,
 				F21241D82EBC861A0055CDC0 /* PACECloudSDK */,
 				F2D497392EBCEB2F0076ADBC /* PACECloudSDK */,
+				F2FBD73C2F10E76F00985805 /* ClusterMapSwiftUI */,
+				F2FBD73E2F14E5D300985805 /* ClusterMap */,
 			);
 			productName = App;
 			productReference = A21D1F58961E1C012B58255C /* App.app */;
@@ -1487,6 +1496,7 @@
 				3B7764592AF922F700BE185B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				0B61CA452BDBC6FE00CE30E2 /* XCRemoteSwiftPackageReference "SwiftLint" */,
 				F2D497382EBCEB2F0076ADBC /* XCRemoteSwiftPackageReference "cloud-sdk-ios" */,
+				F2FBD73B2F10E76F00985805 /* XCRemoteSwiftPackageReference "ClusterMap" */,
 			);
 			projectDirPath = "";
 			projectRoot = "";
@@ -1618,6 +1628,7 @@
 				3BDE7B1C2AD96445009A88DF /* FuelType.swift in Sources */,
 				3BAE60732AD7CBC4006EA9DD /* ActionButton.swift in Sources */,
 				3B77644D2AF91B7400BE185B /* CrashReportingService.swift in Sources */,
+				F2FBD8FF2F1FA81200985805 /* MapClusterAnnotationView.swift in Sources */,
 				3B54208C2BA336F2002613D8 /* TransactionReceiptData.swift in Sources */,
 				3B65A4802B19D82D006B6890 /* TwoFactorAuthenticationView.swift in Sources */,
 				3BDE7B1A2AD94E06009A88DF /* FuelTypeButtonsGroup.swift in Sources */,
@@ -2401,6 +2412,14 @@
 				version = 25.2.0;
 			};
 		};
+		F2FBD73B2F10E76F00985805 /* XCRemoteSwiftPackageReference "ClusterMap" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vospennikov/ClusterMap";
+			requirement = {
+				kind = exactVersion;
+				version = 2.1.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -2442,6 +2461,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F2D497382EBCEB2F0076ADBC /* XCRemoteSwiftPackageReference "cloud-sdk-ios" */;
 			productName = PACECloudSDK;
+		};
+		F2FBD73C2F10E76F00985805 /* ClusterMapSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2FBD73B2F10E76F00985805 /* XCRemoteSwiftPackageReference "ClusterMap" */;
+			productName = ClusterMapSwiftUI;
+		};
+		F2FBD73E2F14E5D300985805 /* ClusterMap */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F2FBD73B2F10E76F00985805 /* XCRemoteSwiftPackageReference "ClusterMap" */;
+			productName = ClusterMap;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

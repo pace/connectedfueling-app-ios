@@ -95,7 +95,7 @@ struct GasStationDetailView: View {
                                                                                   longitudeDelta: Constants.Map.mapSpanDelta))),
             annotationItems: [IdentifiablePlace(coordinate: viewModel.location)]) { place in
             MapAnnotation(coordinate: place.coordinate) {
-                MapBottomAnnotationView(viewModel: .init(annotation: .init(gasStation: viewModel.gasStation)))
+                MapBottomAnnotationView(viewModel: .init(gasStation: viewModel.gasStation))
             }
         }
             .allowsHitTesting(false)
