@@ -1,5 +1,7 @@
 import MapKit
 import PACECloudSDK
+import Combine
+import ClusterMap
 import SwiftUI
 
 @MainActor
@@ -26,6 +28,12 @@ class MapViewModel: NSObject, ObservableObject {
     @Published var errorMessage: String?
 
     private var onShowAlert: ((_ alert: Alert) -> Void)?
+
+    let clusterManager = ClusterManager<GasStationAnnotation>(configuration: ClusterManager.Configuration(minCountForClustering: 3, clusterPosition: .average))
+    var mapSize: CGSize = .zero
+
+    var regionSubject = PassthroughSubject<MKCoordinateRegion, Never>()
+    private var cancellables = Set<AnyCancellable>()
 
     private var initialLoadingDone: Bool = false
 
@@ -82,20 +90,11 @@ class MapViewModel: NSObject, ObservableObject {
     }
 
     func didChangeRegion(_ region: MKCoordinateRegion) {
-        guard region.zoomLevel > 10 else {
-            annotations = []
-            if self.initialLoadingDone {
-                self.errorMessage = L10n.zoomInNote
-            }
-            initialLoadingDone = true
-            return
-        }
-
         initialLoadingDone = true
 
-        isTopAnnotationHidden = region.zoomLevel < 13
+        isTopAnnotationHidden = region.zoomLevel <= 10
 
-        let boundingBox = region.visibleBoundingBox(with: 0.85)
+        let boundingBox = region.visibleBoundingBox(with: 1.0)
 
         guard shouldFetch(for: boundingBox, trackingMode: trackingMode) else { return }
 
@@ -131,7 +130,14 @@ class MapViewModel: NSObject, ObservableObject {
                     self?.analyticsManager.logEvent(AnalyticEvents.StationNearbyEvent())
                 }
 
-                self?.annotations = cofuStations.map(GasStationAnnotation.init)
+                let newAnnotations = cofuStations.map {
+                    GasStationAnnotation(style: .single(gasStation: $0),
+                                         id: UUID(uuidString: $0.id) ?? UUID(),
+                                         coordinate: $0.location.coordinate)
+                }
+                await self!.clusterManager.removeAll()
+                await self!.clusterManager.add(newAnnotations)
+                await self!.reloadAnnotations()
 
             case .failure(let error):
                 self?.handleError(error)
@@ -292,3 +298,49 @@ extension MapViewModel: LocationManagerDelegate {
         checkForLocationError(newStatus)
     }
 }
+
+extension MapViewModel {
+    func bind() {
+        regionSubject
+            .debounce(for: .seconds(0.3), scheduler: DispatchQueue.main)
+            .sink { newRegion in
+                self.region = newRegion
+                Task { await self.reloadAnnotations() }
+            }
+            .store(in: &cancellables)
+    }
+    
+    private func reloadAnnotations() async {
+        async let changes = clusterManager.reload(mapViewSize: mapSize, coordinateRegion: region)
+        await applyChanges(changes)
+    }
+
+    @MainActor
+    private func applyChanges(_ difference: ClusterManager<GasStationAnnotation>.Difference) {
+        for removal in difference.removals {
+            switch removal {
+            case .annotation(let annotation):
+                annotations.removeAll { $0 == annotation }
+            case .cluster(let clusterAnnotation):
+                annotations.removeAll { $0.id == clusterAnnotation.id }
+            @unknown default:
+                fatalError()
+            }
+        }
+
+        for insertion in difference.insertions {
+            switch insertion {
+            case .annotation(let newItem):
+                if !annotations.contains(newItem) {
+                    annotations.append(newItem)
+                }
+            case .cluster(let newItem):
+                let annotation = GasStationAnnotation(style: .cluster(count: newItem.memberAnnotations.count), id: newItem.id, coordinate: newItem.coordinate)
+                annotations.append(annotation)
+            @unknown default:
+                fatalError()
+            }
+        }
+    }
+}
+

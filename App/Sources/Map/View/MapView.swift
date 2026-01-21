@@ -1,5 +1,6 @@
 import MapKit
 import SwiftUI
+import ClusterMapSwiftUI
 
 struct MapView: View {
     @StateObject private var viewModel: MapViewModel
@@ -21,7 +22,7 @@ struct MapView: View {
                 FollowModeButton(trackingMode: $viewModel.trackingMode, locationPermissionStatus: $viewModel.locationPermissionStatus, errorMessage: $viewModel.errorMessage) {
                     viewModel.showLocationPermissionAlert()
                 }
-                    .padding([.bottom, .trailing])
+                .padding([.bottom, .trailing])
             }
             .ignoresSafeArea(.keyboard) // Prevents view from moving upward when keyboard in search view appears
             .onAppear {
@@ -31,19 +32,34 @@ struct MapView: View {
             .accessibilityIdentifier(AccessibilityIdentifiers.mapView)
     }
 
+    private func mapItem(for annotation: GasStationAnnotation) -> some MapAnnotationProtocol {
+        switch annotation.style {
+        case .single(let gasStation):
+            GasStationMapAnnotationProtocol(
+                MapAnnotation(coordinate: annotation.coordinate, anchorPoint: CGPoint(x: 0.5, y: 1.0)) {
+                    MapAnnotationView(viewModel: .init(gasStation: gasStation), isTopAnnotationViewHidden: $viewModel.isTopAnnotationHidden)
+                        .id(annotation.id)
+                }
+            )
+        case .cluster(let count):
+            GasStationMapAnnotationProtocol(
+                MapAnnotation(coordinate: annotation.coordinate, anchorPoint: CGPoint(x: 0.5, y: 1.0)) {
+                    MapClusterAnnotationView(count: count)
+                        .id(annotation.id)
+            })
+        }
+    }
+
     @ViewBuilder
     private var map: some View {
         Map(coordinateRegion: $viewModel.region,
+            interactionModes: .all,
             showsUserLocation: true,
             userTrackingMode: $viewModel.trackingMode,
-            annotationItems: viewModel.annotations) { annotation in
-            MapAnnotation(coordinate: annotation.coordinate, anchorPoint: CGPoint(x: 0.5, y: 1.0)) {
-                MapAnnotationView(viewModel: .init(annotation: annotation), isTopAnnotationViewHidden: $viewModel.isTopAnnotationHidden)
-                    .id(annotation.id)
-            }
-        }
+            annotationItems: viewModel.annotations,
+            annotationContent: mapItem(for:))
             .accentColor(.primaryTint)
-            .onReceive(viewModel.$region.debounce(for: .milliseconds(500), scheduler: RunLoop.main), perform: { newRegion in
+            .onReceive(viewModel.$region.debounce(for: .milliseconds(500), scheduler: DispatchQueue.main), perform: { newRegion in
                 viewModel.didChangeRegion(newRegion)
             })
             .edgesIgnoringSafeArea(.top)
@@ -53,6 +69,12 @@ struct MapView: View {
             .onChange(of: viewModel.region) { _ in
                 viewModel.isSearchViewPresented = false // set this here because of the debounce in onReceive
             }
+            .onAppear {
+                viewModel.bind()
+            }
+            .readSize(onChange: { newValue in
+                viewModel.mapSize = newValue
+            })
     }
 
     // MARK: - Search

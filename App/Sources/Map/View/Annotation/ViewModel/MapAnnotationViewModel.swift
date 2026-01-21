@@ -5,7 +5,7 @@ class MapAnnotationViewModel: ObservableObject {
     @Published var formattedPrice: AttributedString?
 
     var name: String {
-        annotation.gasStation.name
+        gasStation.name
     }
 
     var showPrices: Bool {
@@ -17,27 +17,26 @@ class MapAnnotationViewModel: ObservableObject {
     }
 
     var isClosed: Bool {
-        annotation.gasStation.isClosed
+        gasStation.isClosed
     }
 
-    let annotation: GasStationAnnotation
+    let gasStation: GasStation
 
     private let priceFormatter: PriceNumberFormatter
     private let poiManager: POIManager
 
-    init(annotation: GasStationAnnotation,
+    init(gasStation: GasStation,
          poiManager: POIManager = .init()) {
-        self.annotation = annotation
+        self.gasStation = gasStation
         self.poiManager = poiManager
-        self.priceFormatter = PriceNumberFormatter(with: annotation.gasStation.prices.first?.format ?? Constants.GasStation.priceFormatFallback)
+        self.priceFormatter = PriceNumberFormatter(with: gasStation.prices.first?.format ?? Constants.GasStation.priceFormatFallback)
 
-        annotation
-            .gasStation
+        gasStation
             .$currentPrice
             .map { [weak self] currentPrice in
                 guard let self = self,
-                let currentPrice = currentPrice else { return nil }
-
+                      let currentPrice = currentPrice else { return nil }
+                
                 return self.formatPrice(price: currentPrice, priceFormatter: self.priceFormatter)
             }
             .eraseToAnyPublisher()

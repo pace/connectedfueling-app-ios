@@ -6,6 +6,8 @@ name: AppAuth-iOS, nameSpecified: AppAuth, owner: pace, version: 1.5.0, source: 
 
 name: cloud-sdk-ios, nameSpecified: PACECloudSDK, owner: pace, version: 25.2.0, source: https://github.com/pace/cloud-sdk-ios
 
+name: ClusterMap, nameSpecified: ClusterMap, owner: vospennikov, version: 2.1.1, source: https://github.com/vospennikov/ClusterMap
+
 name: CollectionConcurrencyKit, nameSpecified: CollectionConcurrencyKit, owner: JohnSundell, version: 0.2.0, source: https://github.com/JohnSundell/CollectionConcurrencyKit
 
 name: CryptoSwift, nameSpecified: CryptoSwift, owner: krzyzanowskim, version: 1.9.0, source: https://github.com/krzyzanowskim/CryptoSwift
@@ -69,6 +71,8 @@ name: app-check, nameSpecified: AppCheck, owner: google, version: 11.2.0, source
 name: AppAuth-iOS, nameSpecified: AppAuth, owner: pace, version: 1.5.0, source: https://github.com/pace/AppAuth-iOS
 
 name: cloud-sdk-ios, nameSpecified: PACECloudSDK, owner: pace, version: 25.2.0, source: https://github.com/pace/cloud-sdk-ios
+
+name: ClusterMap, nameSpecified: ClusterMap, owner: vospennikov, version: 2.1.1, source: https://github.com/vospennikov/ClusterMap
 
 name: CollectionConcurrencyKit, nameSpecified: CollectionConcurrencyKit, owner: JohnSundell, version: 0.2.0, source: https://github.com/JohnSundell/CollectionConcurrencyKit
 

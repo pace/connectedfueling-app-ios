@@ -26,22 +26,22 @@ struct MapBottomAnnotationView: View {
 }
 
 #Preview {
-    MapBottomAnnotationView(viewModel: .init(annotation: .init(gasStation: .init(id: "",
-                                                                                 name: "Tankstelle",
-                                                                                 addressLines: [],
-                                                                                 distance: nil,
-                                                                                 location: .init(latitude: 0,
-                                                                                                 longitude: 0),
-                                                                                 paymentMethods: [],
-                                                                                 isConnectedFuelingEnabled: true,
-                                                                                 prices: [
-                                                                                    .init(value: 1.89,
-                                                                                          fuelType: .diesel,
-                                                                                          currency: "EUR",
-                                                                                          format: "d.dds")
-                                                                                 ],
-                                                                                 lastUpdated: nil,
-                                                                                 openingHours: [],
-                                                                                 country: "DE",
-                                                                                 fuelingURL: nil))))
+    MapBottomAnnotationView(viewModel: .init(gasStation: .init(id: "",
+                                                               name: "Tankstelle",
+                                                               addressLines: [],
+                                                               distance: nil,
+                                                               location: .init(latitude: 0,
+                                                                               longitude: 0),
+                                                               paymentMethods: [],
+                                                               isConnectedFuelingEnabled: true,
+                                                               prices: [
+                                                                  .init(value: 1.89,
+                                                                        fuelType: .diesel,
+                                                                        currency: "EUR",
+                                                                        format: "d.dds")
+                                                               ],
+                                                               lastUpdated: nil,
+                                                               openingHours: [],
+                                                               country: "DE",
+                                                               fuelingURL: nil)))
 }
