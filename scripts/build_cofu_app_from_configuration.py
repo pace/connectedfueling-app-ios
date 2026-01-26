@@ -191,11 +191,46 @@ def replace_runtime_configuration():
     'menu_entries'
   ]
 
+  tokenExchangeKeys = [
+    'client_id',
+    'client_secret',
+    'issuer_id'
+  ]
+
+  externalOidcKeys = [
+    'account_deletion_url',
+    'auth_endpoint',
+    'client_id',
+    'client_secret',
+    'end_session_endpoint',
+    'redirect_uri',
+    'token_endpoint'
+  ]
+
   runtimeConfig = {}
+  tokenExchange = {}
+  externalOidc = {}
+  
+  for key in tokenExchangeKeys:
+    if configuration.get('token_exchange_' + key) is not None:
+        tokenExchange[key] = configuration.get('token_exchange_' + key)
+  
+  for key in externalOidcKeys:
+    if configuration.get('external_oidc_' + key) is not None:
+          externalOidc[key] = configuration.get('external_oidc_' + key)
 
   for key in keys:
     if configuration.get(key) is not None:
       runtimeConfig[key] = configuration.get(key)
+
+  if configuration.get('external_oidc_client_id') is not None:
+    runtimeConfig['client_id'] = configuration.get('external_oidc_client_id')
+
+  if bool(externalOidc):
+    runtimeConfig['external_oidc'] = externalOidc
+
+  if bool(tokenExchange):
+    runtimeConfig['token_exchange'] = tokenExchange
 
   runtimeConfig['onboarding_style'] = 'primary' if os.path.exists(get_asset_path('onboarding_header_image_ios.pdf')) else 'secondary'
   runtimeConfig['gas_station_list_style'] = 'primary' if os.path.exists(get_asset_path('list_header_image_ios.pdf')) else 'secondary'
