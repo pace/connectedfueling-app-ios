@@ -62,7 +62,6 @@ struct ContentView: View {
     private var content: some View {
         if isOnboardingCompleted {
             tabView
-                .pagingTransition()
         } else {
             onboarding
                 .pagingTransition()
