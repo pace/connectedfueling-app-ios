@@ -136,7 +136,6 @@ platform :ios do
 
   desc 'Publishes the configured app on TestFlight'
   lane :publish_cofu_app_from_configuration do |options|
-    app_store_connect_api_key(in_house: false)
     
     asc_team_id = options[:asc_team_id]
     app_identifier = options[:app_identifier]
@@ -248,7 +247,6 @@ platform :ios do
 
   desc "Builds the app"
   private_lane :build_application do |options|
-    app_store_connect_api_key(in_house: false)
     
     uses_match = options[:uses_match]
     team_id = options[:team_id]
